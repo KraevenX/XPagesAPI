@@ -1,0 +1,475 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_database_object_8cs">
+    <title>DatabaseObject.cs File Reference</title>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_database_object">DatabaseObject</link></para>
+<para><emphasis>&lt;summary&gt;
+An object representing a domino database object
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs</para>
+    </simplesect>
+    <literallayout><computeroutput>
+1 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>;
+2 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Collections;
+3 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Collections.Generic;
+4 <emphasis class="comment"></emphasis>
+5 <emphasis class="comment">///&#32;&lt;summary&gt;</emphasis>
+6 <emphasis class="comment">///&#32;An&#32;object&#32;representing&#32;a&#32;domino&#32;database&#32;object</emphasis>
+7 <emphasis class="comment">///&#32;&lt;/summary&gt;</emphasis>
+8 <emphasis class="comment">///&#32;&lt;example&gt;The&#32;following&#32;is&#32;an&#32;example&#32;of&#32;the&#32;usage&#32;of&#32;a</emphasis>
+9 <emphasis class="comment">///&#32;&lt;c&gt;DatabaseObject&lt;/c&gt;:</emphasis>
+10 <emphasis class="comment">///&#32;&#32;&#32;&lt;code&gt;</emphasis>
+11 <emphasis class="comment">///&#32;&#32;&#32;&#32;DatabaseObject&#32;dbObj&#32;=&#32;new&#32;DatabaseObject(filePath,&#32;dominoServerName,&#32;&#32;sessionObject);&#32;//&#32;by&#32;FilePath</emphasis>
+12 <emphasis class="comment">///&#32;&#32;&#32;&#32;//&#32;&#32;DatabaseObject&#32;dbObj&#32;=&#32;new&#32;DatabaseObject(sessionObject,&#32;replicationID,&#32;dominoServerName);&#32;//&#32;by&#32;ReplicationID</emphasis>
+13 <emphasis class="comment">///&#32;&#32;&#32;&#32;if(dbObj!=null&#32;&amp;&amp;&#32;dbObj.Initialize()){</emphasis>
+14 <emphasis class="comment">///&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;//&#32;your&#32;code&#32;here...&#32;</emphasis>
+15 <emphasis class="comment">///&#32;&#32;&#32;&#32;}</emphasis>
+16 <emphasis class="comment">///&#32;&#32;&#32;&lt;/code&gt;</emphasis>
+17 <emphasis class="comment">///&#32;&lt;/example&gt;</emphasis>
+<link linkend="class_database_object">18 </link><emphasis class="comment"></emphasis><emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="class_database_object">DatabaseObject</link>&#32;{
+19 
+20 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Variables</emphasis>
+21 
+22 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<link linkend="class_session_object">SessionObject</link>&#32;_Session;
+23 
+24 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;_isInitialized&#32;=&#32;<emphasis class="keyword">false</emphasis>;
+25 
+26 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;_FilePath&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+27 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;_ReplicationID&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+28 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;_ServerName&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+29 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;_Title&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+30 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;_Template&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+31 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;_Size&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+32 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;_Url&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+33 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;Dictionary&lt;String,&#32;DocumentObject&gt;&#32;_Documents&#32;=&#32;null;
+34 
+35 
+36 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion</emphasis>
+37 
+38 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Properties</emphasis>
+39 <emphasis class="comment"></emphasis>
+40 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+41 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Reference&#32;to&#32;the&#32;session&#32;object&#32;that&#32;retrieve&#32;this&#32;database&#32;object</emphasis>
+42 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07">43 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<link linkend="class_session_object">SessionObject</link>&#32;<link linkend="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07">Session</link>&#32;{
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;_Session;
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+47 &#32;&#32;&#32;&#32;}
+48 <emphasis class="comment"></emphasis>
+49 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+50 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Indicates&#32;is&#32;the&#32;DatabaseObject&#32;has&#32;been&#32;initialized</emphasis>
+51 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_database_object_1a5fe036d32a30eb10d1b3f6a30263f740">52 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_database_object_1a5fe036d32a30eb10d1b3f6a30263f740">IsInitialized</link>&#32;{
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;_isInitialized;
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+56 &#32;&#32;&#32;&#32;}
+57 <emphasis class="comment"></emphasis>
+58 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+59 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Database&#32;FilePath</emphasis>
+60 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_database_object_1a38a1a78430c6cd1fc4eef054e39145ce">61 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_database_object_1a38a1a78430c6cd1fc4eef054e39145ce">FilePath</link>&#32;{
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;_FilePath;
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">protected</emphasis>&#32;<emphasis class="keyword">internal</emphasis>&#32;<emphasis class="keyword">set</emphasis>&#32;{
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_FilePath&#32;=&#32;value;
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+68 &#32;&#32;&#32;&#32;}
+69 <emphasis class="comment"></emphasis>
+70 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+71 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Database&#32;ReplicationID</emphasis>
+72 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_database_object_1aaa091ee1a9a86d2d10fe2381ee2d1f4c">73 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_database_object_1aaa091ee1a9a86d2d10fe2381ee2d1f4c">ReplicationID</link>&#32;{
+74 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{
+75 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;_ReplicationID;
+76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">protected</emphasis>&#32;<emphasis class="keyword">internal</emphasis>&#32;<emphasis class="keyword">set</emphasis>&#32;{
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_ReplicationID&#32;=&#32;value;
+79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+80 &#32;&#32;&#32;&#32;}
+81 <emphasis class="comment"></emphasis>
+82 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+83 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Database&#32;ServerName</emphasis>
+84 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_database_object_1ad6bfcd30152f7a115ac5a1c7fbfa9fcb">85 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_database_object_1ad6bfcd30152f7a115ac5a1c7fbfa9fcb">ServerName</link>&#32;{
+86 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{
+87 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;_ServerName;
+88 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">protected</emphasis>&#32;<emphasis class="keyword">internal</emphasis>&#32;<emphasis class="keyword">set</emphasis>&#32;{
+90 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_ServerName&#32;=&#32;value;
+91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+92 &#32;&#32;&#32;&#32;}
+93 <emphasis class="comment"></emphasis>
+94 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+95 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Database&#32;Title</emphasis>
+96 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_database_object_1a9af3f75274dd39f7fa82a355dc4ddf39">97 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_database_object_1a9af3f75274dd39f7fa82a355dc4ddf39">Title</link>&#32;{
+98 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{
+99 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;_Title;
+100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">protected</emphasis>&#32;<emphasis class="keyword">internal</emphasis>&#32;<emphasis class="keyword">set</emphasis>&#32;{
+102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_Title&#32;=&#32;value;
+103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+104 &#32;&#32;&#32;&#32;}
+105 <emphasis class="comment"></emphasis>
+106 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+107 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Database&#32;Template&#32;name</emphasis>
+108 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_database_object_1ac8ecdbe9722c00f787a62aef7d3dfa5a">109 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_database_object_1ac8ecdbe9722c00f787a62aef7d3dfa5a">Template</link>&#32;{
+110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{
+111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;_Template;
+112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+113 
+114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">protected</emphasis>&#32;<emphasis class="keyword">internal</emphasis>&#32;<emphasis class="keyword">set</emphasis>&#32;{
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_Template&#32;=&#32;value;
+116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+117 &#32;&#32;&#32;&#32;}
+118 <emphasis class="comment"></emphasis>
+119 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+120 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Database&#32;size&#32;(bytes,&#32;Kb,&#32;Mb,&#32;Gb,&#32;Tb)</emphasis>
+121 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_database_object_1ad86f5dd95a9debdef284e21e32936e9e">122 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_database_object_1ad86f5dd95a9debdef284e21e32936e9e">Size</link>&#32;{
+123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{
+124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;_Size;
+125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+126 
+127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">protected</emphasis>&#32;<emphasis class="keyword">internal</emphasis>&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{
+128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_Size&#32;=&#32;value;
+129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+130 &#32;&#32;&#32;&#32;}
+131 <emphasis class="comment"></emphasis>
+132 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+133 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Database&#32;URL</emphasis>
+134 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_database_object_1a12da011e3dc03d3a10ac86df10c84f48">135 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_database_object_1a12da011e3dc03d3a10ac86df10c84f48">Url</link>&#32;{
+136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{
+137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;_Url;
+138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+139 
+140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">protected</emphasis>&#32;<emphasis class="keyword">internal</emphasis>&#32;<emphasis class="keyword">set</emphasis>&#32;{
+141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_Url&#32;=&#32;value;
+142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+143 &#32;&#32;&#32;&#32;}
+144 <emphasis class="comment"></emphasis>
+145 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+146 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Collection&#32;of&#32;retrieved&#32;DocumentObjects&#32;stored&#32;in&#32;a&#32;dictionary&#32;with&#32;key&#32;universalID&#32;of&#32;the&#32;document</emphasis>
+147 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_database_object_1afaf1159aa427c5bcce01c4b8c6f34514">148 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;Dictionary&lt;string,&#32;DocumentObject&gt;&#32;<link linkend="class_database_object_1afaf1159aa427c5bcce01c4b8c6f34514">Documents</link>&#32;{
+149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{
+150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;_Documents;
+151 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+152 
+153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">protected</emphasis>&#32;<emphasis class="keyword">internal</emphasis>&#32;<emphasis class="keyword">set</emphasis>&#32;{
+154 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_Documents&#32;=&#32;value;
+155 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+156 &#32;&#32;&#32;&#32;}
+157 
+158 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion</emphasis>
+159 
+160 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Constructors</emphasis>
+161 <emphasis class="comment"></emphasis>
+162 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+163 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Database&#32;constructor&#32;method</emphasis>
+164 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+165 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;filePath&quot;&gt;&lt;/param&gt;</emphasis>
+166 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;server&quot;&gt;&lt;/param&gt;</emphasis>
+167 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;session&quot;&gt;&lt;/param&gt;</emphasis>
+<link linkend="class_database_object_1ab16b4327b02ffedcd1b003cea9d949a1">168 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<link linkend="class_database_object_1ab16b4327b02ffedcd1b003cea9d949a1">DatabaseObject</link>(<emphasis class="keywordtype">string</emphasis>&#32;filePath,&#32;<emphasis class="keywordtype">string</emphasis>&#32;server,&#32;&#32;<link linkend="class_session_object">SessionObject</link>&#32;session)&#32;{
+169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_Session&#32;=&#32;session;
+170 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_FilePath&#32;=&#32;filePath;
+171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_ServerName&#32;=&#32;server;
+172 
+173 &#32;&#32;&#32;&#32;}
+174 <emphasis class="comment"></emphasis>
+175 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+176 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Database&#32;constructor&#32;method</emphasis>
+177 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+178 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;session&quot;&gt;&lt;/param&gt;</emphasis>
+179 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;replicationID&quot;&gt;&lt;/param&gt;</emphasis>
+180 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;server&quot;&gt;&lt;/param&gt;</emphasis>
+<link linkend="class_database_object_1a75d3e8a876c6899bd01b866e35475ed2">181 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<link linkend="class_database_object_1a75d3e8a876c6899bd01b866e35475ed2">DatabaseObject</link>(&#32;<link linkend="class_session_object">SessionObject</link>&#32;session,&#32;<emphasis class="keywordtype">string</emphasis>&#32;replicationID,&#32;<emphasis class="keywordtype">string</emphasis>&#32;server)&#32;{
+182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_Session&#32;=&#32;session;
+183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_ReplicationID&#32;=&#32;replicationID;
+184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_ServerName&#32;=&#32;server;
+185 &#32;&#32;&#32;&#32;}
+186 
+187 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion</emphasis>
+188 
+189 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Methods</emphasis>
+190 <emphasis class="comment"></emphasis>
+191 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+192 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&#32;Initializes&#32;the&#32;DatabaseObject&#32;by&#32;validating&#32;the&#32;input&#32;and&#32;triggering&#32;the&#32;database&#32;request</emphasis>
+193 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+194 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;Boolean&lt;/returns&gt;</emphasis>
+<link linkend="class_database_object_1a7de43a21bd287deec537cffec343f41d">195 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_database_object_1a7de43a21bd287deec537cffec343f41d">Initialize</link>()&#32;{
+196 
+197 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.ResetReturn();
+198 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;reset&#32;the&#32;list&#32;of&#32;docs</emphasis>
+199 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_Documents&#32;=&#32;null;
+200 
+201 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!ValidateInput())&#32;{
+202 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_isInitialized&#32;=&#32;<emphasis class="keyword">false</emphasis>;
+203 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a079bae21a5417efa53bfe8954c0f533f">hasError</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;
+204 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;&#32;&#32;&#32;<emphasis class="comment">//&#32;throws&#32;exception</emphasis>
+205 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+206 
+207 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;make&#32;a&#32;connection&#32;to&#32;the&#32;webservice&#32;database&#32;-&#32;this&#32;will&#32;check&#32;the&#32;users&#32;authentication&#32;on&#32;that&#32;database</emphasis>
+208 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(_Session.<link linkend="class_session_object_1a014bdbf705a753540e19bfb53030c55c">Connection</link>.Request.ExecuteDatabaseRequest(_Session.<link linkend="class_session_object_1a697c071c812fbf7ad1166b896fb44c16">WebServiceURL</link>,&#32;_ServerName,&#32;_FilePath,&#32;_ReplicationID,&#32;<emphasis class="keyword">this</emphasis>))&#32;{
+209 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_isInitialized&#32;=&#32;<emphasis class="keyword">true</emphasis>;
+210 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a079bae21a5417efa53bfe8954c0f533f">hasError</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
+211 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">true</emphasis>;
+212 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
+213 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//error&#32;messages&#32;written&#32;to&#32;Connection.ReturnMessages&#32;by&#32;Connection.Request.ExecuteSessionRequest</emphasis>
+214 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_isInitialized&#32;=&#32;<emphasis class="keyword">false</emphasis>;
+215 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+216 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+217 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+218 &#32;&#32;&#32;&#32;}
+219 <emphasis class="comment"></emphasis>
+220 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+221 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Validate&#32;the&#32;input&#32;provided&#32;by&#32;the&#32;user</emphasis>
+222 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+223 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;Boolean&lt;/returns&gt;</emphasis>
+224 <emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;ValidateInput()&#32;{
+225 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(_Session&#32;==&#32;null&#32;||&#32;!_Session.<link linkend="class_session_object_1ae0885b9054fc3ce287307ac16ff69990">IsInitialized</link>)&#32;{
+226 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//can&#32;only&#32;be&#32;initialized&#32;if&#32;valid&#32;connector&#32;and&#32;connector&#32;is&#32;initialized&#32;and&#32;connected</emphasis>
+227 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;DatabaseObject&#32;can&#32;not&#32;be&#32;validated&#32;:&#32;Session&#32;is&#32;not&#32;initialized!&#32;(DatabaseObject.ValidateInput)&quot;</emphasis>);
+228 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+229 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+230 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//check&#32;server,&#32;dbrep&#32;or&#32;filepath</emphasis>
+231 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(_ServerName))&#32;{
+232 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;DatabaseObject&#32;can&#32;not&#32;be&#32;validated&#32;:&#32;ServerName&#32;has&#32;not&#32;been&#32;provided!&#32;(DatabaseObject.ValidateInput)&quot;</emphasis>);
+233 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+234 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+235 
+236 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(_FilePath))&#32;{
+237 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//we&#32;must&#32;have&#32;a&#32;rep&#32;id</emphasis>
+238 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(_ReplicationID))&#32;{
+239 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;DatabaseObject&#32;can&#32;not&#32;be&#32;validated&#32;:&#32;FilePath/ReplicationID&#32;has&#32;not&#32;been&#32;provided!&#32;(DatabaseObject.ValidateInput)&quot;</emphasis>);
+240 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+241 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+242 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+243 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">true</emphasis>;
+244 &#32;&#32;&#32;&#32;}
+245 <emphasis class="comment"></emphasis>
+246 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+247 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Retrieve&#32;a&#32;document&#32;from&#32;this&#32;database&#32;by&#32;universalID</emphasis>
+248 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;Triggers&#32;a&#32;document&#32;request&lt;/para&gt;</emphasis>
+249 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;The&#32;document&#32;will&#32;be&#32;added&#32;to&#32;the&#32;property&#32;&apos;Documents&apos;&lt;/para&gt;</emphasis>
+250 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+251 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;unid&quot;&gt;&lt;/param&gt;</emphasis>
+252 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;DocumentObject&lt;/returns&gt;</emphasis>
+<link linkend="class_database_object_1a9435cc20fe3a92747e509011b7726aff">253 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<link linkend="class_document_object">DocumentObject</link>&#32;<link linkend="class_database_object_1a9435cc20fe3a92747e509011b7726aff">GetDocument</link>(<emphasis class="keywordtype">string</emphasis>&#32;unid)&#32;{
+254 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.ResetReturn();
+255 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_document_object">DocumentObject</link>&#32;docObj&#32;=&#32;null;
+256 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(_isInitialized)&#32;{
+257 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;docObj&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="class_document_object">DocumentObject</link>(<emphasis class="keyword">this</emphasis>,&#32;unid);
+258 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;&#32;(docObj.<link linkend="class_document_object_1af4298d6cfbb9ea60643d9995309b73f1">Initialize</link>())&#32;{
+259 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;docObj;
+260 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
+261 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;null;
+262 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+263 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+264 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;docObj;
+265 &#32;&#32;&#32;&#32;}
+266 <emphasis class="comment"></emphasis>
+267 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+268 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Retrieve&#32;a&#32;document&#32;from&#32;this&#32;database&#32;by&#32;searching&#32;for&#32;a&#32;specific&#32;value&#32;in&#32;the&#32;provided&#32;field.</emphasis>
+269 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;The&#32;first&#32;document&#32;found&#32;will&#32;be&#32;returned&lt;/para&gt;</emphasis>
+270 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;Triggers&#32;a&#32;document&#32;request&lt;/para&gt;</emphasis>
+271 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;The&#32;document&#32;will&#32;be&#32;added&#32;to&#32;the&#32;property&#32;&apos;Documents&apos;&lt;/para&gt;</emphasis>
+272 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+273 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;searchField&quot;&gt;&lt;/param&gt;</emphasis>
+274 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;searchValue&quot;&gt;&lt;/param&gt;</emphasis>
+275 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;DocumentObject&lt;/returns&gt;</emphasis>
+<link linkend="class_database_object_1a57bfc77d2754236cbcf6ac30a90da529">276 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<link linkend="class_document_object">DocumentObject</link>&#32;<link linkend="class_database_object_1a57bfc77d2754236cbcf6ac30a90da529">GetDocumentByKey</link>(<emphasis class="keywordtype">string</emphasis>&#32;searchField,&#32;<emphasis class="keywordtype">string</emphasis>&#32;searchValue)&#32;{
+277 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.ResetReturn();
+278 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_document_object">DocumentObject</link>&#32;docObj&#32;=&#32;null;
+279 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(_isInitialized)&#32;{
+280 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;docObj&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="class_document_object">DocumentObject</link>(<emphasis class="keyword">this</emphasis>,&#32;searchField,searchValue);
+281 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(docObj.<link linkend="class_document_object_1af4298d6cfbb9ea60643d9995309b73f1">Initialize</link>())&#32;{
+282 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;docObj;
+283 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
+284 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;null;
+285 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+286 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+287 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;docObj;
+288 &#32;&#32;&#32;&#32;}
+289 <emphasis class="comment"></emphasis>
+290 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+291 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Retrieve&#32;a&#32;document&#32;from&#32;this&#32;database&#32;by&#32;searching&#32;using&#32;the&#32;provided&#32;formula.</emphasis>
+292 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;The&#32;first&#32;document&#32;found&#32;will&#32;be&#32;returned&lt;/para&gt;</emphasis>
+293 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;Triggers&#32;a&#32;document&#32;request&lt;/para&gt;</emphasis>
+294 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;The&#32;document&#32;will&#32;be&#32;added&#32;to&#32;the&#32;property&#32;&apos;Documents&apos;&lt;/para&gt;</emphasis>
+295 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+296 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;formula&quot;&gt;&lt;/param&gt;</emphasis>
+297 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;DocumentObject&lt;/returns&gt;</emphasis>
+<link linkend="class_database_object_1ae5477aedfcd0d54b21017faa1389bc71">298 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<link linkend="class_document_object">DocumentObject</link>&#32;<link linkend="class_database_object_1ae5477aedfcd0d54b21017faa1389bc71">GetDocumentByFormula</link>(<emphasis class="keywordtype">string</emphasis>&#32;formula)&#32;{
+299 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.ResetReturn();
+300 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_document_object">DocumentObject</link>&#32;docObj&#32;=&#32;null;
+301 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(_isInitialized)&#32;{
+302 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;docObj&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="class_document_object">DocumentObject</link>(formula,<emphasis class="keyword">this</emphasis>);
+303 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(docObj.<link linkend="class_document_object_1af4298d6cfbb9ea60643d9995309b73f1">Initialize</link>())&#32;{
+304 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;docObj;
+305 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
+306 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;null;
+307 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+308 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+309 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;docObj;
+310 &#32;&#32;&#32;&#32;}
+311 <emphasis class="comment"></emphasis>
+312 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+313 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Retrieve&#32;all&#32;documents&#32;from&#32;the&#32;database</emphasis>
+314 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;Triggers&#32;an&#32;all&#32;documents&#32;request&lt;/para&gt;</emphasis>
+315 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;All&#32;documents&#32;found&#32;will&#32;be&#32;added&#32;to&#32;the&#32;property&#32;&apos;Documents&apos;&lt;/para&gt;</emphasis>
+316 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+317 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;Boolean&lt;/returns&gt;</emphasis>
+<link linkend="class_database_object_1ad3010e55b2e75d0863e168fed1e279c5">318 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_database_object_1ad3010e55b2e75d0863e168fed1e279c5">GetAllDocuments</link>()&#32;{
+319 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.ResetReturn();
+320 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(_isInitialized)&#32;{
+321 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(_Session.<link linkend="class_session_object_1a014bdbf705a753540e19bfb53030c55c">Connection</link>.Request.ExecuteAllDocumentsRequest(_Session.<link linkend="class_session_object_1a697c071c812fbf7ad1166b896fb44c16">WebServiceURL</link>,&#32;null,&#32;null,&#32;null,&#32;null,&#32;<emphasis class="keyword">this</emphasis>))&#32;{
+322 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">true</emphasis>;
+323 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
+324 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+325 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+326 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+327 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+328 &#32;&#32;&#32;&#32;}
+329 <emphasis class="comment"></emphasis>
+330 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+331 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Retrieve&#32;all&#32;documents&#32;from&#32;this&#32;database&#32;that&#32;correspond&#32;to&#32;the&#32;provided&#32;formula</emphasis>
+332 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;Triggers&#32;an&#32;all&#32;documents&#32;request&lt;/para&gt;</emphasis>
+333 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;All&#32;documents&#32;found&#32;will&#32;be&#32;added&#32;to&#32;the&#32;property&#32;&apos;Documents&apos;&lt;/para&gt;</emphasis>
+334 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+335 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;formula&quot;&gt;&lt;/param&gt;</emphasis>
+336 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;Boolean&lt;/returns&gt;</emphasis>
+<link linkend="class_database_object_1a6bfb480373a7e2bdbeaa67e4e3303a3a">337 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_database_object_1a6bfb480373a7e2bdbeaa67e4e3303a3a">GetAllDocumentsByFormula</link>(<emphasis class="keywordtype">string</emphasis>&#32;formula)&#32;{
+338 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.ResetReturn();
+339 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(_isInitialized)&#32;{
+340 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(_Session.<link linkend="class_session_object_1a014bdbf705a753540e19bfb53030c55c">Connection</link>.Request.ExecuteAllDocumentsRequest(_Session.<link linkend="class_session_object_1a697c071c812fbf7ad1166b896fb44c16">WebServiceURL</link>,&#32;null,&#32;null,&#32;formula,&#32;null,&#32;<emphasis class="keyword">this</emphasis>))&#32;{
+341 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">true</emphasis>;
+342 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
+343 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+344 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+345 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+346 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+347 &#32;&#32;&#32;&#32;}
+348 
+349 <emphasis class="comment"></emphasis>
+350 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+351 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Retrieve&#32;all&#32;documents&#32;from&#32;this&#32;database&#32;by&#32;universalIDs</emphasis>
+352 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;&#32;Provide&#32;the&#32;universalIds&#32;separated&#32;by&#32;;&lt;/para&gt;</emphasis>
+353 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;Triggers&#32;an&#32;all&#32;documents&#32;request&lt;/para&gt;</emphasis>
+354 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;All&#32;documents&#32;found&#32;will&#32;be&#32;added&#32;to&#32;the&#32;property&#32;&apos;Documents&apos;&lt;/para&gt;</emphasis>
+355 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+356 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;unids&quot;&gt;&lt;/param&gt;</emphasis>
+357 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;Boolean&lt;/returns&gt;</emphasis>
+<link linkend="class_database_object_1a4d8a7d73614f53a04fe8eb79bef2f614">358 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_database_object_1a4d8a7d73614f53a04fe8eb79bef2f614">GetAllDocumentsByUnids</link>(<emphasis class="keywordtype">string</emphasis>&#32;unids)&#32;{
+359 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.ResetReturn();
+360 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(_isInitialized)&#32;{
+361 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(_Session.<link linkend="class_session_object_1a014bdbf705a753540e19bfb53030c55c">Connection</link>.Request.ExecuteAllDocumentsRequest(_Session.<link linkend="class_session_object_1a697c071c812fbf7ad1166b896fb44c16">WebServiceURL</link>,&#32;null,&#32;null,&#32;null,&#32;unids,&#32;<emphasis class="keyword">this</emphasis>))&#32;{
+362 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">true</emphasis>;
+363 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
+364 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+365 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+366 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+367 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+368 &#32;&#32;&#32;&#32;}
+369 <emphasis class="comment"></emphasis>
+370 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+371 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Retrieve&#32;all&#32;documents&#32;from&#32;this&#32;database&#32;by&#32;universalIDs</emphasis>
+372 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;Triggers&#32;an&#32;all&#32;documents&#32;request&lt;/para&gt;</emphasis>
+373 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;All&#32;documents&#32;found&#32;will&#32;be&#32;added&#32;to&#32;the&#32;property&#32;&apos;Documents&apos;&lt;/para&gt;</emphasis>
+374 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+375 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;listUnids&quot;&gt;&lt;/param&gt;</emphasis>
+376 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;Boolean&lt;/returns&gt;</emphasis>
+<link linkend="class_database_object_1a92e80ea30e83cddf47f29d0f502b81c5">377 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_database_object_1a92e80ea30e83cddf47f29d0f502b81c5">GetAllDocumentsByUnids</link>(IList&#32;listUnids)&#32;{
+378 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.ResetReturn();
+379 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(_isInitialized)&#32;{
+380 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;unids&#32;=&#32;Common.GetListAsString(listUnids,&#32;<emphasis class="stringliteral">&quot;;&quot;</emphasis>);
+381 
+382 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(_Session.<link linkend="class_session_object_1a014bdbf705a753540e19bfb53030c55c">Connection</link>.Request.ExecuteAllDocumentsRequest(_Session.<link linkend="class_session_object_1a697c071c812fbf7ad1166b896fb44c16">WebServiceURL</link>,&#32;null,&#32;null,&#32;null,&#32;unids,&#32;<emphasis class="keyword">this</emphasis>))&#32;{
+383 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">true</emphasis>;
+384 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
+385 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+386 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+387 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+388 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+389 &#32;&#32;&#32;&#32;}
+390 <emphasis class="comment"></emphasis>
+391 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+392 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Retrieve&#32;all&#32;documents&#32;from&#32;this&#32;database&#32;by&#32;searching&#32;for&#32;a&#32;specific&#32;value&#32;in&#32;the&#32;provided&#32;field</emphasis>
+393 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;Triggers&#32;an&#32;all&#32;documents&#32;request&lt;/para&gt;</emphasis>
+394 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;All&#32;documents&#32;found&#32;will&#32;be&#32;added&#32;to&#32;the&#32;property&#32;&apos;Documents&apos;&lt;/para&gt;</emphasis>
+395 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+396 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;searchField&quot;&gt;&lt;/param&gt;</emphasis>
+397 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;searchValue&quot;&gt;&lt;/param&gt;</emphasis>
+398 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;Boolean&lt;/returns&gt;</emphasis>
+<link linkend="class_database_object_1ad4834e7677cd0418969a657eed99653c">399 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_database_object_1ad4834e7677cd0418969a657eed99653c">GetAllDocumentsByKey</link>(<emphasis class="keywordtype">string</emphasis>&#32;searchField,&#32;<emphasis class="keywordtype">string</emphasis>&#32;searchValue)&#32;{
+400 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.ResetReturn();
+401 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(_isInitialized)&#32;{
+402 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(_Session.<link linkend="class_session_object_1a014bdbf705a753540e19bfb53030c55c">Connection</link>.Request.ExecuteAllDocumentsRequest(_Session.<link linkend="class_session_object_1a697c071c812fbf7ad1166b896fb44c16">WebServiceURL</link>,searchField,searchValue,null,&#32;null,&#32;<emphasis class="keyword">this</emphasis>))&#32;{
+403 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">true</emphasis>;
+404 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
+405 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+406 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+407 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+408 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+409 &#32;&#32;&#32;&#32;}
+410 
+411 <emphasis class="comment"></emphasis>
+412 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+413 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Retrieve&#32;fields&#32;for&#32;all&#32;documents&#32;in&#32;the&#32;property&#32;&apos;Documents&apos;</emphasis>
+414 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;Provide&#32;the&#32;fields&#32;separated&#32;by&#32;;&lt;/para&gt;</emphasis>
+415 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;This&#32;action&#32;will&#32;update&#32;the&#32;property&#32;collection&#32;Fields&#32;inside&#32;each&#32;document&#32;object&lt;/para&gt;</emphasis>
+416 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+417 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;listFields&quot;&gt;&lt;/param&gt;</emphasis>
+418 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;Boolean&lt;/returns&gt;</emphasis>
+<link linkend="class_database_object_1a88ae0bcda671009e2742858ab945a18c">419 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_database_object_1a88ae0bcda671009e2742858ab945a18c">LoadDocumentFields</link>(<emphasis class="keywordtype">string</emphasis>&#32;listFields)&#32;{
+420 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.ResetReturn();
+421 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(_isInitialized&#32;&amp;&amp;&#32;_Documents&#32;!=&#32;null&#32;&amp;&amp;&#32;_Documents.Count&#32;&gt;&#32;0)&#32;{
+422 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(_Session.<link linkend="class_session_object_1a014bdbf705a753540e19bfb53030c55c">Connection</link>.Request.ExecuteAllFieldsRequest(_Session.<link linkend="class_session_object_1a697c071c812fbf7ad1166b896fb44c16">WebServiceURL</link>,<emphasis class="keyword">this</emphasis>,listFields))&#32;{
+423 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">true</emphasis>;
+424 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
+425 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+426 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+427 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+428 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">true</emphasis>;
+429 &#32;&#32;&#32;&#32;}
+430 <emphasis class="comment"></emphasis>
+431 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+432 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Retrieve&#32;fields&#32;for&#32;all&#32;documents&#32;in&#32;the&#32;property&#32;&apos;Documents&apos;</emphasis>
+433 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;This&#32;action&#32;will&#32;update&#32;the&#32;property&#32;collection&#32;Fields&#32;inside&#32;each&#32;document&#32;object&lt;/para&gt;</emphasis>
+434 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+435 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;listFields&quot;&gt;&lt;/param&gt;</emphasis>
+436 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;Boolean&lt;/returns&gt;</emphasis>
+<link linkend="class_database_object_1a8a64b91e2e4228b2fc552e51959987c4">437 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_database_object_1a8a64b91e2e4228b2fc552e51959987c4">LoadDocumentFields</link>(IList&#32;listFields)&#32;{
+438 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.ResetReturn();
+439 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(_isInitialized&#32;&amp;&amp;&#32;_Documents&#32;!=&#32;null&#32;&amp;&amp;&#32;_Documents.Count&#32;&gt;&#32;0)&#32;{
+440 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;fields&#32;=&#32;Common.GetListAsString(listFields,&#32;<emphasis class="stringliteral">&quot;;&quot;</emphasis>);
+441 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(_Session.<link linkend="class_session_object_1a014bdbf705a753540e19bfb53030c55c">Connection</link>.Request.ExecuteAllFieldsRequest(_Session.<link linkend="class_session_object_1a697c071c812fbf7ad1166b896fb44c16">WebServiceURL</link>,&#32;<emphasis class="keyword">this</emphasis>,&#32;fields))&#32;{
+442 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">true</emphasis>;
+443 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
+444 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+445 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+446 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+447 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">true</emphasis>;
+448 &#32;&#32;&#32;&#32;}
+449 
+450 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion</emphasis>
+451 
+452 }
+    </computeroutput></literallayout>
+</section>

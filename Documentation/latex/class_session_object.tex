@@ -1,0 +1,281 @@
+\hypertarget{class_session_object}{}\section{Session\+Object Class Reference}
+\label{class_session_object}\index{Session\+Object@{Session\+Object}}
+
+
+An object representing a Domino Session  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_session_object_a173822a7aec467880195d79a1bc9f520}{Session\+Object} (\hyperlink{class_connector}{Connector} Connector\+Object, string Domino\+Web\+Service\+U\+RL)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_session_object}{Session\+Object} Constructor method \end{DoxyCompactList}\item 
+bool \hyperlink{class_session_object_af3b9c9d56d98c848061952ed935f815b}{Initialize} ()
+\begin{DoxyCompactList}\small\item\em Initializes the \hyperlink{class_session_object}{Session\+Object} by validating the input and triggering the session request \end{DoxyCompactList}\item 
+\hyperlink{class_database_object}{Database\+Object} \hyperlink{class_session_object_aa4871ea2dac4215bef0274a2bd71ae72}{Get\+Database} (string file\+Path, string server\+Name)
+\begin{DoxyCompactList}\small\item\em Method to retrieve a specific database by filepath on the given server \end{DoxyCompactList}\item 
+\hyperlink{class_database_object}{Database\+Object} \hyperlink{class_session_object_ae53bad1d2fe161060ae409024b3e0de4}{Get\+Database\+By\+ID} (string replication\+ID, string server\+Name)
+\begin{DoxyCompactList}\small\item\em Method to retrieve a specific database by replication\+ID on the given server \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_session_object_ae0885b9054fc3ce287307ac16ff69990}{Is\+Initialized}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Indicates if the session has been intialized \end{DoxyCompactList}\item 
+string \hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{Web\+Service\+U\+RL}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em X\+Pages Rest Serive U\+RL Example\+: \href{http://antln-test.europe.jacobs.com/projects/jpix/Interface.nsf/xpJPIService.xsp/JPIService}{\tt http\+://antln-\/test.\+europe.\+jacobs.\+com/projects/jpix/\+Interface.\+nsf/xp\+J\+P\+I\+Service.\+xsp/\+J\+P\+I\+Service} \end{DoxyCompactList}\item 
+\hyperlink{class_connector}{Connector} \hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Reference to \hyperlink{class_connector}{Connector} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An object representing a Domino Session 
+
+The following is an example of the usage of a {\ttfamily \hyperlink{class_session_object}{Session\+Object}}\+: 
+\begin{DoxyCode}
+\hyperlink{class_session_object}{SessionObject} sObj = \textcolor{keyword}{new} \hyperlink{class_session_object_a173822a7aec467880195d79a1bc9f520}{SessionObject}(connectorObj, DominoWebServiceURL); \textcolor{comment}{// the
+       connector object and Full URL to the XPage database containing the Web Rest Service}
+
+\textcolor{keywordflow}{if}(sObj!=null && sObj.\hyperlink{class_session_object_af3b9c9d56d98c848061952ed935f815b}{Initialize}())\{
+     \textcolor{comment}{// here you can then get the database object}
+     \textcolor{comment}{// your code here... }
+\}
+\end{DoxyCode}
+ 
+
+Definition at line 15 of file Session\+Object.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_session_object_a173822a7aec467880195d79a1bc9f520}\label{class_session_object_a173822a7aec467880195d79a1bc9f520}} 
+\index{Session\+Object@{Session\+Object}!Session\+Object@{Session\+Object}}
+\index{Session\+Object@{Session\+Object}!Session\+Object@{Session\+Object}}
+\subsubsection{\texorpdfstring{Session\+Object()}{SessionObject()}}
+{\footnotesize\ttfamily Session\+Object.\+Session\+Object (\begin{DoxyParamCaption}\item[{\hyperlink{class_connector}{Connector}}]{Connector\+Object,  }\item[{string}]{Domino\+Web\+Service\+U\+RL }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{class_session_object}{Session\+Object} Constructor method 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Connector\+Object} & \\
+\hline
+{\em Domino\+Web\+Service\+U\+RL} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 32 of file Session\+Object.\+cs.
+
+
+\begin{DoxyCode}
+32                                                                                 \{
+33         \_Connection = ConnectorObject;
+34         \_WebServiceURL = DominoWebServiceURL;
+35     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_session_object_aa4871ea2dac4215bef0274a2bd71ae72}\label{class_session_object_aa4871ea2dac4215bef0274a2bd71ae72}} 
+\index{Session\+Object@{Session\+Object}!Get\+Database@{Get\+Database}}
+\index{Get\+Database@{Get\+Database}!Session\+Object@{Session\+Object}}
+\subsubsection{\texorpdfstring{Get\+Database()}{GetDatabase()}}
+{\footnotesize\ttfamily \hyperlink{class_database_object}{Database\+Object} Session\+Object.\+Get\+Database (\begin{DoxyParamCaption}\item[{string}]{file\+Path,  }\item[{string}]{server\+Name }\end{DoxyParamCaption})}
+
+
+
+Method to retrieve a specific database by filepath on the given server 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & \\
+\hline
+{\em server\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_database_object}{Database\+Object}
+\end{DoxyReturn}
+
+
+Definition at line 140 of file Session\+Object.\+cs.
+
+
+
+References Database\+Object.\+Initialize().
+
+
+\begin{DoxyCode}
+140                                                                           \{
+141         \hyperlink{class_database_object}{DatabaseObject} dbObj = null;
+142         \textcolor{keywordflow}{if} (\_isInitialized) \{
+143             dbObj = \textcolor{keyword}{new} \hyperlink{class_database_object}{DatabaseObject}(filePath, serverName, \textcolor{keyword}{this});
+144             \textcolor{keywordflow}{if} (dbObj.\hyperlink{class_database_object_a7de43a21bd287deec537cffec343f41d}{Initialize}()) \{
+145                 \textcolor{keywordflow}{return} dbObj;
+146             \}
+147         \}
+148         \textcolor{keywordflow}{return} dbObj;
+149     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_session_object_ae53bad1d2fe161060ae409024b3e0de4}\label{class_session_object_ae53bad1d2fe161060ae409024b3e0de4}} 
+\index{Session\+Object@{Session\+Object}!Get\+Database\+By\+ID@{Get\+Database\+By\+ID}}
+\index{Get\+Database\+By\+ID@{Get\+Database\+By\+ID}!Session\+Object@{Session\+Object}}
+\subsubsection{\texorpdfstring{Get\+Database\+By\+I\+D()}{GetDatabaseByID()}}
+{\footnotesize\ttfamily \hyperlink{class_database_object}{Database\+Object} Session\+Object.\+Get\+Database\+By\+ID (\begin{DoxyParamCaption}\item[{string}]{replication\+ID,  }\item[{string}]{server\+Name }\end{DoxyParamCaption})}
+
+
+
+Method to retrieve a specific database by replication\+ID on the given server 
+
+
+\begin{DoxyParams}{Parameters}
+{\em replication\+ID} & \\
+\hline
+{\em server\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 157 of file Session\+Object.\+cs.
+
+
+
+References Database\+Object.\+Initialize().
+
+
+\begin{DoxyCode}
+157                                                                                    \{
+158         \hyperlink{class_database_object}{DatabaseObject} dbObj = null;
+159         \textcolor{keywordflow}{if} (\_isInitialized) \{
+160             dbObj = \textcolor{keyword}{new} \hyperlink{class_database_object}{DatabaseObject}(\textcolor{keyword}{this}, replicationID, serverName);
+161             \textcolor{keywordflow}{if} (dbObj.\hyperlink{class_database_object_a7de43a21bd287deec537cffec343f41d}{Initialize}()) \{
+162                 \textcolor{keywordflow}{return} dbObj;
+163             \}
+164         \}
+165         \textcolor{keywordflow}{return} dbObj;
+166     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_session_object_af3b9c9d56d98c848061952ed935f815b}\label{class_session_object_af3b9c9d56d98c848061952ed935f815b}} 
+\index{Session\+Object@{Session\+Object}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Session\+Object@{Session\+Object}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily bool Session\+Object.\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the \hyperlink{class_session_object}{Session\+Object} by validating the input and triggering the session request 
+
+Sets is\+Initialized property
+
+\begin{DoxyReturn}{Returns}
+Boolean
+\end{DoxyReturn}
+
+
+Definition at line 79 of file Session\+Object.\+cs.
+
+
+
+References Connection, Connector.\+has\+Error, Connector.\+is\+Connected, Connector.\+is\+Initialized, Connector.\+Return\+Messages, and Web\+Service\+U\+RL.
+
+
+
+Referenced by Connector.\+Get\+Session().
+
+
+\begin{DoxyCode}
+79                              \{
+80         \hyperlink{class_connector}{Connector}.ResetReturn();
+81         \textcolor{comment}{//clear msgs}
+82 
+83         \textcolor{keywordflow}{if} (!ValidateInput()) \{
+84             \textcolor{comment}{//message written trigger exception}
+85             \_isInitialized = \textcolor{keyword}{false};
+86             \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError} = \textcolor{keyword}{true};
+87             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+88         \}
+89 
+90         \textcolor{comment}{// make a connection to the webservice database - this will check the users authentication on that
+       database}
+91         \textcolor{keywordflow}{if} (\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}.Request.ExecuteSessionRequest(\hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL})) \{
+92             \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}.Add(\textcolor{stringliteral}{"Session Initialized : "} + 
+      \hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL} + \textcolor{stringliteral}{" (SessionObject.Initialize)"});
+93             \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError} = \textcolor{keyword}{false};
+94             \_isInitialized = \textcolor{keyword}{true};
+95             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+96         \} \textcolor{keywordflow}{else} \{
+97             \textcolor{comment}{//error messages written to Connection.ReturnMessages by
+       Connection.Request.ExecuteSessionRequest}
+98             \_isInitialized = \textcolor{keyword}{false};
+99             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+100         \}
+101 
+102     \}
+\end{DoxyCode}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_session_object_a014bdbf705a753540e19bfb53030c55c}\label{class_session_object_a014bdbf705a753540e19bfb53030c55c}} 
+\index{Session\+Object@{Session\+Object}!Connection@{Connection}}
+\index{Connection@{Connection}!Session\+Object@{Session\+Object}}
+\subsubsection{\texorpdfstring{Connection}{Connection}}
+{\footnotesize\ttfamily \hyperlink{class_connector}{Connector} Session\+Object.\+Connection\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Reference to \hyperlink{class_connector}{Connector} 
+
+
+
+Definition at line 64 of file Session\+Object.\+cs.
+
+
+
+Referenced by Database\+Object.\+Get\+All\+Documents(), Database\+Object.\+Get\+All\+Documents\+By\+Formula(), Database\+Object.\+Get\+All\+Documents\+By\+Key(), Database\+Object.\+Get\+All\+Documents\+By\+Unids(), Document\+Object.\+Get\+All\+Fields(), Document\+Object.\+Get\+Fields(), Initialize(), Database\+Object.\+Initialize(), Document\+Object.\+Initialize(), and Database\+Object.\+Load\+Document\+Fields().
+
+\mbox{\Hypertarget{class_session_object_ae0885b9054fc3ce287307ac16ff69990}\label{class_session_object_ae0885b9054fc3ce287307ac16ff69990}} 
+\index{Session\+Object@{Session\+Object}!Is\+Initialized@{Is\+Initialized}}
+\index{Is\+Initialized@{Is\+Initialized}!Session\+Object@{Session\+Object}}
+\subsubsection{\texorpdfstring{Is\+Initialized}{IsInitialized}}
+{\footnotesize\ttfamily bool Session\+Object.\+Is\+Initialized\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Indicates if the session has been intialized 
+
+
+
+Definition at line 45 of file Session\+Object.\+cs.
+
+
+
+Referenced by Database\+Object.\+Initialize().
+
+\mbox{\Hypertarget{class_session_object_a697c071c812fbf7ad1166b896fb44c16}\label{class_session_object_a697c071c812fbf7ad1166b896fb44c16}} 
+\index{Session\+Object@{Session\+Object}!Web\+Service\+U\+RL@{Web\+Service\+U\+RL}}
+\index{Web\+Service\+U\+RL@{Web\+Service\+U\+RL}!Session\+Object@{Session\+Object}}
+\subsubsection{\texorpdfstring{Web\+Service\+U\+RL}{WebServiceURL}}
+{\footnotesize\ttfamily string Session\+Object.\+Web\+Service\+U\+RL\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+X\+Pages Rest Serive U\+RL Example\+: \href{http://antln-test.europe.jacobs.com/projects/jpix/Interface.nsf/xpJPIService.xsp/JPIService}{\tt http\+://antln-\/test.\+europe.\+jacobs.\+com/projects/jpix/\+Interface.\+nsf/xp\+J\+P\+I\+Service.\+xsp/\+J\+P\+I\+Service} 
+
+
+
+Definition at line 55 of file Session\+Object.\+cs.
+
+
+
+Referenced by Database\+Object.\+Get\+All\+Documents(), Database\+Object.\+Get\+All\+Documents\+By\+Formula(), Database\+Object.\+Get\+All\+Documents\+By\+Key(), Database\+Object.\+Get\+All\+Documents\+By\+Unids(), Document\+Object.\+Get\+All\+Fields(), Document\+Object.\+Get\+Fields(), Initialize(), Database\+Object.\+Initialize(), Document\+Object.\+Initialize(), and Database\+Object.\+Load\+Document\+Fields().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Acket\+K/stack/\+Dropbox/\+Programming/\+S\+V\+N Projects/\+S\+C\+M/\+X\+Pages\+Connector/\+C-\/\+Sharp/\+Xpages\+Connector/\+Objects/\hyperlink{_session_object_8cs}{Session\+Object.\+cs}\end{DoxyCompactItemize}

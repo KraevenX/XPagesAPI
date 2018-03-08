@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_common">
+<title>Common class Reference</title>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static string <link linkend="class_common_1a95a895bd81dcbd1ed2a07814462d0fc7">GetErrorInfo</link> (
+Exception ex)<para><emphasis>&lt;summary&gt;
+Get formatted  string from the provided exception 
+&lt;/summary&gt;</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static string <link linkend="class_common_1a6468d361244e4fd42f8be6e584075a21">GetListAsString</link> (
+IList arList, string separator)<para><emphasis>&lt;summary&gt;
+Get a string from a list of string separated by the provided separator
+&lt;/summary&gt;</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Class with common methods </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+                <para>Definition at line 9 of file Common.cs</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>Common.cs</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="class_common_1a95a895bd81dcbd1ed2a07814462d0fc7">
+                <title>static string Common.GetErrorInfo (Exception ex)</title> <emphasis>&lt;summary&gt;
+Get formatted  string from the provided exception 
+&lt;/summary&gt;</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>ex</entry>
+                                <entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para></para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="class_common_1a6468d361244e4fd42f8be6e584075a21">
+                <title>static string Common.GetListAsString (IList arList, string separator)</title> <emphasis>&lt;summary&gt;
+Get a string from a list of string separated by the provided separator
+&lt;/summary&gt;</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>arList</entry>
+                                <entry></entry>
+                            </row>
+                            <row>
+                                <entry>separator</entry>
+                                <entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para></para>
+</formalpara>
+</para>
+
+            </section>
+</section>

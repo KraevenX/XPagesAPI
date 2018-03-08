@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.13">
+  <compound refid="class_common" kind="class"><name>Common</name>
+    <member refid="class_common_1a95a895bd81dcbd1ed2a07814462d0fc7" kind="function"><name>GetErrorInfo</name></member>
+    <member refid="class_common_1a6468d361244e4fd42f8be6e584075a21" kind="function"><name>GetListAsString</name></member>
+  </compound>
+  <compound refid="class_connector" kind="class"><name>Connector</name>
+    <member refid="class_connector_1a967a778263c45f7cca13269f15c185f9" kind="variable"><name>_isInitialized</name></member>
+    <member refid="class_connector_1a7962119e409b2dcadf1ba17bc96840e9" kind="variable"><name>_isConnected</name></member>
+    <member refid="class_connector_1a6fc825797909d044ce552367e9798952" kind="variable"><name>_SessionObject</name></member>
+    <member refid="class_connector_1a67cb5bdda79e011540d02207bbc3980d" kind="variable"><name>_EncryptionIV</name></member>
+    <member refid="class_connector_1a7bdde14f7982ddd5e1fa21efd9f899ea" kind="variable"><name>_EncryptionPASSWORD</name></member>
+    <member refid="class_connector_1a3ae3d1f2f81d61d96d7c431d000076be" kind="variable"><name>_EncryptionSALT</name></member>
+    <member refid="class_connector_1a887552df3fe7eb165c83dee1eb098c7a" kind="variable"><name>_XPIdentity</name></member>
+    <member refid="class_connector_1a26cfd4ca2812289a3d91588e9d2f85c2" kind="variable"><name>_hasError</name></member>
+    <member refid="class_connector_1a45c9819bca6c0754d256a8a88b2ed66c" kind="variable"><name>_ReturnMessages</name></member>
+    <member refid="class_connector_1a614ab27a88e29fae6d71d112c90b1dce" kind="variable"><name>Request</name></member>
+    <member refid="class_connector_1a8ec0dcdbb4a85a56fa50f67686484c19" kind="variable"><name>ThrowException</name></member>
+    <member refid="class_connector_1a41d247f09774f0ed206ce1a4a2463fed" kind="variable"><name>UserName</name></member>
+    <member refid="class_connector_1a7dd469898462ef761d256392766461fe" kind="variable"><name>Password</name></member>
+    <member refid="class_connector_1ac0cae400459978dde8030f75208e48f1" kind="variable"><name>ServerURL</name></member>
+    <member refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" kind="property"><name>hasError</name></member>
+    <member refid="class_connector_1a1ed422674b344524fd77998dcf6a9ba6" kind="property"><name>ReturnMessages</name></member>
+    <member refid="class_connector_1acf2c3b519c360d02ed54543a01d199af" kind="property"><name>isConnected</name></member>
+    <member refid="class_connector_1a017d40b1f4cf2cbaa5d4b755cf09269e" kind="property"><name>isInitialized</name></member>
+    <member refid="class_connector_1a092e3e36f92c129c07c57df9b8fb91ca" kind="property"><name>XPIdentity</name></member>
+    <member refid="class_connector_1a62269f0d1749b4f2185a988c25bbe088" kind="property"><name>EncryptionIV</name></member>
+    <member refid="class_connector_1a03d18ba01d41974d0705049712356446" kind="property"><name>EncryptionPASSWORD</name></member>
+    <member refid="class_connector_1a41efb9b95da0b7da84bc82c09b913af9" kind="property"><name>EncryptionSALT</name></member>
+    <member refid="class_connector_1a0a7bb42f9530796c086ab50785147ce9" kind="property"><name>SessionObject</name></member>
+    <member refid="class_connector_1a259c6d94252479cc3028038ebbaa7dc8" kind="function"><name>Connector</name></member>
+    <member refid="class_connector_1a2ceb19719cfc04adc4c2d299e19e1447" kind="function"><name>Initialize</name></member>
+    <member refid="class_connector_1a0dcf8f969c37c4306c567417a872329a" kind="function"><name>Connect</name></member>
+    <member refid="class_connector_1a5d089c1639f255966f00b2b05add0993" kind="function"><name>GetSession</name></member>
+    <member refid="class_connector_1a14faa526d6fbf6f73ad2a676fc369f8a" kind="function"><name>ResetReturn</name></member>
+  </compound>
+  <compound refid="class_database_object" kind="class"><name>DatabaseObject</name>
+    <member refid="class_database_object_1ac531d114567a3841d8c55897fe31f307" kind="variable"><name>_Session</name></member>
+    <member refid="class_database_object_1a72e490420e7f1ad75f9b4a55fe6c3c8f" kind="variable"><name>_isInitialized</name></member>
+    <member refid="class_database_object_1a7a6a784a22749b5ae7d8933f3d0aa291" kind="variable"><name>_FilePath</name></member>
+    <member refid="class_database_object_1a2ce784179e0c37ac60e4dbf306016d01" kind="variable"><name>_ReplicationID</name></member>
+    <member refid="class_database_object_1a3ff6474c93008cabebf44ed0815cc9dd" kind="variable"><name>_ServerName</name></member>
+    <member refid="class_database_object_1afafd65bcfc1206fb18b549848f9d956d" kind="variable"><name>_Title</name></member>
+    <member refid="class_database_object_1ab6050f0f0a165fc529ec2229edafcdc0" kind="variable"><name>_Template</name></member>
+    <member refid="class_database_object_1ab4e131d88d1e39eca2253f8b11d08ad0" kind="variable"><name>_Size</name></member>
+    <member refid="class_database_object_1af9074c71aeb073b75d71511c78746797" kind="variable"><name>_Url</name></member>
+    <member refid="class_database_object_1aa3207a4fa3fb8daf0516478607974c63" kind="variable"><name>_Documents</name></member>
+    <member refid="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07" kind="property"><name>Session</name></member>
+    <member refid="class_database_object_1a5fe036d32a30eb10d1b3f6a30263f740" kind="property"><name>IsInitialized</name></member>
+    <member refid="class_database_object_1a38a1a78430c6cd1fc4eef054e39145ce" kind="property"><name>FilePath</name></member>
+    <member refid="class_database_object_1aaa091ee1a9a86d2d10fe2381ee2d1f4c" kind="property"><name>ReplicationID</name></member>
+    <member refid="class_database_object_1ad6bfcd30152f7a115ac5a1c7fbfa9fcb" kind="property"><name>ServerName</name></member>
+    <member refid="class_database_object_1a9af3f75274dd39f7fa82a355dc4ddf39" kind="property"><name>Title</name></member>
+    <member refid="class_database_object_1ac8ecdbe9722c00f787a62aef7d3dfa5a" kind="property"><name>Template</name></member>
+    <member refid="class_database_object_1ad86f5dd95a9debdef284e21e32936e9e" kind="property"><name>Size</name></member>
+    <member refid="class_database_object_1a12da011e3dc03d3a10ac86df10c84f48" kind="property"><name>Url</name></member>
+    <member refid="class_database_object_1afaf1159aa427c5bcce01c4b8c6f34514" kind="property"><name>Documents</name></member>
+    <member refid="class_database_object_1ab16b4327b02ffedcd1b003cea9d949a1" kind="function"><name>DatabaseObject</name></member>
+    <member refid="class_database_object_1a75d3e8a876c6899bd01b866e35475ed2" kind="function"><name>DatabaseObject</name></member>
+    <member refid="class_database_object_1a7de43a21bd287deec537cffec343f41d" kind="function"><name>Initialize</name></member>
+    <member refid="class_database_object_1a9435cc20fe3a92747e509011b7726aff" kind="function"><name>GetDocument</name></member>
+    <member refid="class_database_object_1a57bfc77d2754236cbcf6ac30a90da529" kind="function"><name>GetDocumentByKey</name></member>
+    <member refid="class_database_object_1ae5477aedfcd0d54b21017faa1389bc71" kind="function"><name>GetDocumentByFormula</name></member>
+    <member refid="class_database_object_1ad3010e55b2e75d0863e168fed1e279c5" kind="function"><name>GetAllDocuments</name></member>
+    <member refid="class_database_object_1a6bfb480373a7e2bdbeaa67e4e3303a3a" kind="function"><name>GetAllDocumentsByFormula</name></member>
+    <member refid="class_database_object_1a4d8a7d73614f53a04fe8eb79bef2f614" kind="function"><name>GetAllDocumentsByUnids</name></member>
+    <member refid="class_database_object_1a92e80ea30e83cddf47f29d0f502b81c5" kind="function"><name>GetAllDocumentsByUnids</name></member>
+    <member refid="class_database_object_1ad4834e7677cd0418969a657eed99653c" kind="function"><name>GetAllDocumentsByKey</name></member>
+    <member refid="class_database_object_1a88ae0bcda671009e2742858ab945a18c" kind="function"><name>LoadDocumentFields</name></member>
+    <member refid="class_database_object_1a8a64b91e2e4228b2fc552e51959987c4" kind="function"><name>LoadDocumentFields</name></member>
+    <member refid="class_database_object_1a591d685be9079e68a59473b4a1e2c687" kind="function"><name>ValidateInput</name></member>
+  </compound>
+  <compound refid="class_document_object" kind="class"><name>DocumentObject</name>
+    <member refid="class_document_object_1a7a9107e3718e78ec9857fbb1fbbef821" kind="variable"><name>_Database</name></member>
+    <member refid="class_document_object_1af242ee84f45c76369417a84391fa1439" kind="variable"><name>_isInitialized</name></member>
+    <member refid="class_document_object_1a806b3290bfec2a9eb711408a6c069ebc" kind="variable"><name>_DateCreated</name></member>
+    <member refid="class_document_object_1a88efdd20ebba2aea5b0be7bac37557d5" kind="variable"><name>_DateModified</name></member>
+    <member refid="class_document_object_1abe737cd57acd3950c7249b8a1e6300cf" kind="variable"><name>_UniversalID</name></member>
+    <member refid="class_document_object_1a2421fc68c7e4a42bf31df38711d63107" kind="variable"><name>_NoteID</name></member>
+    <member refid="class_document_object_1a8407f6933472bbf6c1d4d3e4beb4f1cd" kind="variable"><name>_SearchField</name></member>
+    <member refid="class_document_object_1a3e6c5344b7fda31cf3456fb14af7667d" kind="variable"><name>_SearchValue</name></member>
+    <member refid="class_document_object_1a2027ec5a67e68e811e9b7a72bf00b6bd" kind="variable"><name>_Formula</name></member>
+    <member refid="class_document_object_1af4eae32f9d7f740db5232be90f5a18a0" kind="variable"><name>_Size</name></member>
+    <member refid="class_document_object_1a727a6ecff108fa38ee54cfa8d89d66cd" kind="variable"><name>_Url</name></member>
+    <member refid="class_document_object_1a38bd268ccc77c3e74828d5e3a2d7b73c" kind="variable"><name>_Form</name></member>
+    <member refid="class_document_object_1a6f8b5a77924b2a1fa585c86393532ee5" kind="variable"><name>_Fields</name></member>
+    <member refid="class_document_object_1a69d5338c9835f748490323d2950eed09" kind="property"><name>Database</name></member>
+    <member refid="class_document_object_1a3b2075b73f38d05091b69decc6ce7992" kind="property"><name>IsInitialized</name></member>
+    <member refid="class_document_object_1abdc1a6dfc1bb2261b523cf94468448b9" kind="property"><name>Size</name></member>
+    <member refid="class_document_object_1ac86b730cf8931b2221af577d32ca2f31" kind="property"><name>Url</name></member>
+    <member refid="class_document_object_1ad3444a6c018474405064070fa9a94afe" kind="property"><name>Form</name></member>
+    <member refid="class_document_object_1ac447461e3dc7f8258695f902ef0758a7" kind="property"><name>NoteID</name></member>
+    <member refid="class_document_object_1ae203b8a3e40b6c428145d2335b71245c" kind="property"><name>Fields</name></member>
+    <member refid="class_document_object_1a8b96d04632a2802e7cc5466ca5cee8cf" kind="property"><name>UniversalID</name></member>
+    <member refid="class_document_object_1a819cb8baad094f6e5990c54ec1eee8b0" kind="property"><name>DateCreated</name></member>
+    <member refid="class_document_object_1a87ba1b3ac1b74b104972c25b245c504b" kind="property"><name>DateModified</name></member>
+    <member refid="class_document_object_1a46c89e7d40b15a91542a5482b2d8a084" kind="function"><name>DocumentObject</name></member>
+    <member refid="class_document_object_1a7c98c6485f7395697561500a8ff42d79" kind="function"><name>DocumentObject</name></member>
+    <member refid="class_document_object_1a4eb6c7aaa4774d1d5dbf5bf17dff23d9" kind="function"><name>DocumentObject</name></member>
+    <member refid="class_document_object_1af4298d6cfbb9ea60643d9995309b73f1" kind="function"><name>Initialize</name></member>
+    <member refid="class_document_object_1a8883fec3b5b1b6e2e43f4b5ca4092684" kind="function"><name>GetFields</name></member>
+    <member refid="class_document_object_1a8e38704e02850b2480d29d184ae2c0e0" kind="function"><name>GetFields</name></member>
+    <member refid="class_document_object_1a5e070c7c0a45ac06422ee992c841e780" kind="function"><name>GetAllFields</name></member>
+    <member refid="class_document_object_1a1a763aa01710b370634f46c89b7d2d8e" kind="function"><name>ExportFields</name></member>
+    <member refid="class_document_object_1a69c37390e7b77736c86315287674cc61" kind="function"><name>ValidateInput</name></member>
+  </compound>
+  <compound refid="class_encryptor" kind="class"><name>Encryptor</name>
+    <member refid="class_encryptor_1aaf6d24840413b8e75c700bf7c80feb05" kind="variable"><name>IV</name></member>
+    <member refid="class_encryptor_1acf0760ffab3011b5ebb78716b20c2a1e" kind="variable"><name>PASSWORD</name></member>
+    <member refid="class_encryptor_1af38c32db47420c134b17a3ed9ddbc958" kind="variable"><name>SALT</name></member>
+    <member refid="class_encryptor_1a67649ee1e1b16a45391f0a531e2ab693" kind="variable"><name>EncodedContent</name></member>
+    <member refid="class_encryptor_1aac047820916734ee47921ba6ba30a65c" kind="variable"><name>isInitialized</name></member>
+    <member refid="class_encryptor_1a3e35d06a4de0e180aa0be6f9cb6f5f37" kind="variable"><name>DecodedContent</name></member>
+    <member refid="class_encryptor_1a5e09dd98a033a40245e8d3ed480ba320" kind="variable"><name>Encode</name></member>
+    <member refid="class_encryptor_1ac8a4a056cfd1321dc82eb4b94b95d1ff" kind="function"><name>Encryptor</name></member>
+    <member refid="class_encryptor_1a6ce2d934ee25a0e554f97d027399ce09" kind="function"><name>Initialize</name></member>
+    <member refid="class_encryptor_1a2bc09300ed934e05bd465b2fae77b38e" kind="function"><name>EncryptAndEncode</name></member>
+    <member refid="class_encryptor_1a6c8fb36f29875f6c7bacb17ab845553f" kind="function"><name>DecodeAndDecrypt</name></member>
+    <member refid="class_encryptor_1ac0a2c64858c15d440fc6e2abf1631abe" kind="function"><name>GetCryptoTransform</name></member>
+  </compound>
+  <compound refid="class_field_object" kind="class"><name>FieldObject</name>
+    <member refid="class_field_object_1a760c99880840d085405ba65e9cb929bd" kind="variable"><name>_Name</name></member>
+    <member refid="class_field_object_1a942cd0e19decbe87f6870916eda8cfa4" kind="variable"><name>_Value</name></member>
+    <member refid="class_field_object_1a12f98770e3780f81e6b9d3d30d4a5166" kind="variable"><name>_Type</name></member>
+    <member refid="class_field_object_1ae5d972e96a3eca93407da8e8a89abfd1" kind="property"><name>Name</name></member>
+    <member refid="class_field_object_1a9764fb1824cec95b82cd6ac0b4cd8919" kind="property"><name>Value</name></member>
+    <member refid="class_field_object_1a370af2c26ae9c3e713b5d88b62a2a8f9" kind="property"><name>Type</name></member>
+    <member refid="class_field_object_1a87d8d3f1a36d94dec64e8e467950074b" kind="function"><name>FieldObject</name></member>
+    <member refid="class_field_object_1a8d962cda039f78f485232bd2764176c4" kind="function"><name>getValue</name></member>
+    <member refid="class_field_object_1ad223b04d429de4b2c57838ffb41d124b" kind="function"><name>GetValueAsString</name></member>
+    <member refid="class_field_object_1aafe2b7d3e7d414345d85e19dddce3c47" kind="function"><name>GetValueAsDouble</name></member>
+    <member refid="class_field_object_1a797ebc6615a86bafd9bd17f09562f2ee" kind="function"><name>GetValueAsDate</name></member>
+    <member refid="class_field_object_1a635d7598cbf7bbc29821cb1c012de964" kind="function"><name>GetValueAsList</name></member>
+  </compound>
+  <compound refid="class_requestor" kind="class"><name>Requestor</name>
+    <member refid="class_requestor_1a38f232bfa22d7732bbb68adbb4bf1c39" kind="variable"><name>Connection</name></member>
+    <member refid="class_requestor_1ac86d5f843bcfb2c1d99abb34252c8830" kind="variable"><name>AuthenticationCookie</name></member>
+    <member refid="class_requestor_1aa70492c35979546f8c4e1663e6f89214" kind="variable"><name>isInitialized</name></member>
+    <member refid="class_requestor_1aa658a1b5c2185e8f8e88d757dec92b74" kind="function"><name>Requestor</name></member>
+    <member refid="class_requestor_1a073cd75eae2b7ce17d8e600c03564cd3" kind="function"><name>AddIdentityHeader</name></member>
+    <member refid="class_requestor_1a39d23e40ee1f7ef2cabfae1f42b04968" kind="function"><name>Initialize</name></member>
+    <member refid="class_requestor_1abbdb09e9cfcb74f1b90ac00f87780630" kind="function"><name>ExecuteSessionRequest</name></member>
+    <member refid="class_requestor_1a9e460007336e77741a15815272988292" kind="function"><name>ExecuteDatabaseRequest</name></member>
+    <member refid="class_requestor_1abce2f7be8f91b5da4de34c0075bd2c6a" kind="function"><name>ExecuteDocumentRequest</name></member>
+    <member refid="class_requestor_1ac4b4d88f8ce2f1b1a6db7ee87c82f60a" kind="function"><name>ExecuteAllDocumentsRequest</name></member>
+    <member refid="class_requestor_1a79b18759ab798a2755a9a79a57478d82" kind="function"><name>ExecuteFieldsRequest</name></member>
+    <member refid="class_requestor_1a14632528cb1be88d2e390300da796faa" kind="function"><name>ExecuteAllFieldsRequest</name></member>
+  </compound>
+  <compound refid="class_session_object" kind="class"><name>SessionObject</name>
+    <member refid="class_session_object_1a8b7770781547c02f2ff569038da434d3" kind="variable"><name>_Connection</name></member>
+    <member refid="class_session_object_1afabc94b6d3db428764c9c90c1b58e698" kind="variable"><name>_WebServiceURL</name></member>
+    <member refid="class_session_object_1a0708cede6c10688726a2bcbdc1c76c5e" kind="variable"><name>_isInitialized</name></member>
+    <member refid="class_session_object_1ae0885b9054fc3ce287307ac16ff69990" kind="property"><name>IsInitialized</name></member>
+    <member refid="class_session_object_1a697c071c812fbf7ad1166b896fb44c16" kind="property"><name>WebServiceURL</name></member>
+    <member refid="class_session_object_1a014bdbf705a753540e19bfb53030c55c" kind="property"><name>Connection</name></member>
+    <member refid="class_session_object_1a173822a7aec467880195d79a1bc9f520" kind="function"><name>SessionObject</name></member>
+    <member refid="class_session_object_1af3b9c9d56d98c848061952ed935f815b" kind="function"><name>Initialize</name></member>
+    <member refid="class_session_object_1aa4871ea2dac4215bef0274a2bd71ae72" kind="function"><name>GetDatabase</name></member>
+    <member refid="class_session_object_1ae53bad1d2fe161060ae409024b3e0de4" kind="function"><name>GetDatabaseByID</name></member>
+    <member refid="class_session_object_1a0356749b1ead2f55edac9aee2414702a" kind="function"><name>ValidateInput</name></member>
+  </compound>
+  <compound refid="namespace_system" kind="namespace"><name>System</name>
+  </compound>
+  <compound refid="namespace_system_1_1_collections" kind="namespace"><name>System::Collections</name>
+  </compound>
+  <compound refid="namespace_system_1_1_collections_1_1_generic" kind="namespace"><name>System::Collections::Generic</name>
+  </compound>
+  <compound refid="namespace_system_1_1_i_o" kind="namespace"><name>System::IO</name>
+  </compound>
+  <compound refid="namespace_system_1_1_linq" kind="namespace"><name>System::Linq</name>
+  </compound>
+  <compound refid="namespace_system_1_1_net" kind="namespace"><name>System::Net</name>
+  </compound>
+  <compound refid="namespace_system_1_1_reflection" kind="namespace"><name>System::Reflection</name>
+  </compound>
+  <compound refid="namespace_system_1_1_runtime_1_1_compiler_services" kind="namespace"><name>System::Runtime::CompilerServices</name>
+  </compound>
+  <compound refid="namespace_system_1_1_runtime_1_1_interop_services" kind="namespace"><name>System::Runtime::InteropServices</name>
+  </compound>
+  <compound refid="namespace_system_1_1_security_1_1_cryptography" kind="namespace"><name>System::Security::Cryptography</name>
+  </compound>
+  <compound refid="namespace_system_1_1_text" kind="namespace"><name>System::Text</name>
+  </compound>
+  <compound refid="namespace_system_1_1_threading_1_1_tasks" kind="namespace"><name>System::Threading::Tasks</name>
+  </compound>
+  <compound refid="_common_8cs" kind="file"><name>Common.cs</name>
+  </compound>
+  <compound refid="_connector_8cs" kind="file"><name>Connector.cs</name>
+  </compound>
+  <compound refid="_encryptor_8cs" kind="file"><name>Encryptor.cs</name>
+  </compound>
+  <compound refid="_requestor_8cs" kind="file"><name>Requestor.cs</name>
+  </compound>
+  <compound refid="_temporary_generated_file__036_c0_b5_b-1481-4323-8_d20-8_f5_a_d_c_b23_d92_8cs" kind="file"><name>TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs</name>
+  </compound>
+  <compound refid="_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs" kind="file"><name>TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs</name>
+  </compound>
+  <compound refid="_temporary_generated_file___e7_a71_f73-0_f8_d-4_b9_b-_b56_e-8_e70_b10_b_c5_d3_8cs" kind="file"><name>TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs</name>
+  </compound>
+  <compound refid="_database_object_8cs" kind="file"><name>DatabaseObject.cs</name>
+  </compound>
+  <compound refid="_document_object_8cs" kind="file"><name>DocumentObject.cs</name>
+  </compound>
+  <compound refid="_field_object_8cs" kind="file"><name>FieldObject.cs</name>
+  </compound>
+  <compound refid="_session_object_8cs" kind="file"><name>SessionObject.cs</name>
+  </compound>
+  <compound refid="_assembly_info_8cs" kind="file"><name>AssemblyInfo.cs</name>
+  </compound>
+  <compound refid="dir_a71c3b2ad23b9ff58220dd012d201987" kind="dir"><name>C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/obj/Debug</name>
+  </compound>
+  <compound refid="dir_0b6ee6e7e9547e675db4add2e5de97da" kind="dir"><name>C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine</name>
+  </compound>
+  <compound refid="dir_43724e81dd40e09f32417973865cdd64" kind="dir"><name>C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/obj</name>
+  </compound>
+  <compound refid="dir_5dafd4660615c7e05a84a5ee9d9fd12b" kind="dir"><name>C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects</name>
+  </compound>
+  <compound refid="dir_d051c76eebdc544d9c3d734575641c72" kind="dir"><name>C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Properties</name>
+  </compound>
+</doxygenindex>

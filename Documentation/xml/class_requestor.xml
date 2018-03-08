@@ -1,0 +1,300 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_requestor" kind="class" language="C#" prot="package">
+    <compoundname>Requestor</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_requestor_1a38f232bfa22d7732bbb68adbb4bf1c39" prot="private" static="no" mutable="no">
+        <type><ref refid="class_connector" kindref="compound">Connector</ref></type>
+        <definition>Connector Requestor.Connection</definition>
+        <argsstring></argsstring>
+        <name>Connection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" line="13" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_requestor_1ac86d5f843bcfb2c1d99abb34252c8830" prot="private" static="no" mutable="no">
+        <type>CookieContainer</type>
+        <definition>CookieContainer Requestor.AuthenticationCookie</definition>
+        <argsstring></argsstring>
+        <name>AuthenticationCookie</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" line="15" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="class_requestor_1aa70492c35979546f8c4e1663e6f89214" prot="package" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Requestor.isInitialized</definition>
+        <argsstring></argsstring>
+        <name>isInitialized</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" line="14" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_requestor_1aa658a1b5c2185e8f8e88d757dec92b74" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Requestor.Requestor</definition>
+        <argsstring>(Connector Connector)</argsstring>
+        <name>Requestor</name>
+        <param>
+          <type><ref refid="class_connector" kindref="compound">Connector</ref></type>
+          <declname>Connector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" line="21" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" bodystart="21" bodyend="23"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_requestor_1a073cd75eae2b7ce17d8e600c03564cd3" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Requestor.AddIdentityHeader</definition>
+        <argsstring>(ref HttpWebRequest request)</argsstring>
+        <name>AddIdentityHeader</name>
+        <param>
+          <type>ref HttpWebRequest</type>
+          <declname>request</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" line="28" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" bodystart="28" bodyend="53"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-func">
+      <memberdef kind="function" id="class_requestor_1a39d23e40ee1f7ef2cabfae1f42b04968" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Requestor.Initialize</definition>
+        <argsstring>()</argsstring>
+        <name>Initialize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" line="59" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" bodystart="59" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="class_requestor_1abbdb09e9cfcb74f1b90ac00f87780630" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Requestor.ExecuteSessionRequest</definition>
+        <argsstring>(string WebServiceURL)</argsstring>
+        <name>ExecuteSessionRequest</name>
+        <param>
+          <type>string</type>
+          <declname>WebServiceURL</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" line="134" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" bodystart="134" bodyend="315"/>
+      </memberdef>
+      <memberdef kind="function" id="class_requestor_1a9e460007336e77741a15815272988292" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Requestor.ExecuteDatabaseRequest</definition>
+        <argsstring>(string WebServiceURL, string ServerName, string dbFilePath, string dbReplicationId, DatabaseObject dbObj)</argsstring>
+        <name>ExecuteDatabaseRequest</name>
+        <param>
+          <type>string</type>
+          <declname>WebServiceURL</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>ServerName</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>dbFilePath</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>dbReplicationId</declname>
+        </param>
+        <param>
+          <type><ref refid="class_database_object" kindref="compound">DatabaseObject</ref></type>
+          <declname>dbObj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" line="317" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" bodystart="317" bodyend="534"/>
+      </memberdef>
+      <memberdef kind="function" id="class_requestor_1abce2f7be8f91b5da4de34c0075bd2c6a" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Requestor.ExecuteDocumentRequest</definition>
+        <argsstring>(string WebServiceURL, string Unid, string searchField, string searchValue, string formula, DatabaseObject dbObj, DocumentObject docObj)</argsstring>
+        <name>ExecuteDocumentRequest</name>
+        <param>
+          <type>string</type>
+          <declname>WebServiceURL</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>Unid</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>searchField</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>searchValue</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>formula</declname>
+        </param>
+        <param>
+          <type><ref refid="class_database_object" kindref="compound">DatabaseObject</ref></type>
+          <declname>dbObj</declname>
+        </param>
+        <param>
+          <type><ref refid="class_document_object" kindref="compound">DocumentObject</ref></type>
+          <declname>docObj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" line="536" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" bodystart="536" bodyend="792"/>
+      </memberdef>
+      <memberdef kind="function" id="class_requestor_1ac4b4d88f8ce2f1b1a6db7ee87c82f60a" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Requestor.ExecuteAllDocumentsRequest</definition>
+        <argsstring>(string WebServiceURL, string searchField, string searchValue, string formula, string unids, DatabaseObject dbObj)</argsstring>
+        <name>ExecuteAllDocumentsRequest</name>
+        <param>
+          <type>string</type>
+          <declname>WebServiceURL</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>searchField</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>searchValue</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>formula</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>unids</declname>
+        </param>
+        <param>
+          <type><ref refid="class_database_object" kindref="compound">DatabaseObject</ref></type>
+          <declname>dbObj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" line="794" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" bodystart="794" bodyend="1098"/>
+      </memberdef>
+      <memberdef kind="function" id="class_requestor_1a79b18759ab798a2755a9a79a57478d82" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Requestor.ExecuteFieldsRequest</definition>
+        <argsstring>(string WebServiceURL, DocumentObject docObj, string fields)</argsstring>
+        <name>ExecuteFieldsRequest</name>
+        <param>
+          <type>string</type>
+          <declname>WebServiceURL</declname>
+        </param>
+        <param>
+          <type><ref refid="class_document_object" kindref="compound">DocumentObject</ref></type>
+          <declname>docObj</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>fields</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" line="1100" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" bodystart="1100" bodyend="1318"/>
+      </memberdef>
+      <memberdef kind="function" id="class_requestor_1a14632528cb1be88d2e390300da796faa" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Requestor.ExecuteAllFieldsRequest</definition>
+        <argsstring>(string WebServiceURL, DatabaseObject dbObj, string fields)</argsstring>
+        <name>ExecuteAllFieldsRequest</name>
+        <param>
+          <type>string</type>
+          <declname>WebServiceURL</declname>
+        </param>
+        <param>
+          <type><ref refid="class_database_object" kindref="compound">DatabaseObject</ref></type>
+          <declname>dbObj</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>fields</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" line="1320" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" bodystart="1320" bodyend="1605"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" line="9" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" bodystart="9" bodyend="1609"/>
+    <listofallmembers>
+      <member refid="class_requestor_1a073cd75eae2b7ce17d8e600c03564cd3" prot="private" virt="non-virtual"><scope>Requestor</scope><name>AddIdentityHeader</name></member>
+      <member refid="class_requestor_1ac86d5f843bcfb2c1d99abb34252c8830" prot="private" virt="non-virtual"><scope>Requestor</scope><name>AuthenticationCookie</name></member>
+      <member refid="class_requestor_1a38f232bfa22d7732bbb68adbb4bf1c39" prot="private" virt="non-virtual"><scope>Requestor</scope><name>Connection</name></member>
+      <member refid="class_requestor_1ac4b4d88f8ce2f1b1a6db7ee87c82f60a" prot="package" virt="non-virtual"><scope>Requestor</scope><name>ExecuteAllDocumentsRequest</name></member>
+      <member refid="class_requestor_1a14632528cb1be88d2e390300da796faa" prot="package" virt="non-virtual"><scope>Requestor</scope><name>ExecuteAllFieldsRequest</name></member>
+      <member refid="class_requestor_1a9e460007336e77741a15815272988292" prot="package" virt="non-virtual"><scope>Requestor</scope><name>ExecuteDatabaseRequest</name></member>
+      <member refid="class_requestor_1abce2f7be8f91b5da4de34c0075bd2c6a" prot="package" virt="non-virtual"><scope>Requestor</scope><name>ExecuteDocumentRequest</name></member>
+      <member refid="class_requestor_1a79b18759ab798a2755a9a79a57478d82" prot="package" virt="non-virtual"><scope>Requestor</scope><name>ExecuteFieldsRequest</name></member>
+      <member refid="class_requestor_1abbdb09e9cfcb74f1b90ac00f87780630" prot="package" virt="non-virtual"><scope>Requestor</scope><name>ExecuteSessionRequest</name></member>
+      <member refid="class_requestor_1a39d23e40ee1f7ef2cabfae1f42b04968" prot="package" virt="non-virtual"><scope>Requestor</scope><name>Initialize</name></member>
+      <member refid="class_requestor_1aa70492c35979546f8c4e1663e6f89214" prot="package" virt="non-virtual"><scope>Requestor</scope><name>isInitialized</name></member>
+      <member refid="class_requestor_1aa658a1b5c2185e8f8e88d757dec92b74" prot="public" virt="non-virtual"><scope>Requestor</scope><name>Requestor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

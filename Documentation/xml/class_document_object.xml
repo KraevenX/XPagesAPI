@@ -1,0 +1,649 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_document_object" kind="class" language="C#" prot="public">
+    <compoundname>DocumentObject</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_document_object_1a7a9107e3718e78ec9857fbb1fbbef821" prot="private" static="no" mutable="no">
+        <type><ref refid="class_database_object" kindref="compound">DatabaseObject</ref></type>
+        <definition>DatabaseObject DocumentObject._Database</definition>
+        <argsstring></argsstring>
+        <name>_Database</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="29" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_document_object_1af242ee84f45c76369417a84391fa1439" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool DocumentObject._isInitialized</definition>
+        <argsstring></argsstring>
+        <name>_isInitialized</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="31" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_document_object_1a806b3290bfec2a9eb711408a6c069ebc" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string DocumentObject._DateCreated</definition>
+        <argsstring></argsstring>
+        <name>_DateCreated</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="32" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_document_object_1a88efdd20ebba2aea5b0be7bac37557d5" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string DocumentObject._DateModified</definition>
+        <argsstring></argsstring>
+        <name>_DateModified</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="33" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_document_object_1abe737cd57acd3950c7249b8a1e6300cf" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string DocumentObject._UniversalID</definition>
+        <argsstring></argsstring>
+        <name>_UniversalID</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="34" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_document_object_1a2421fc68c7e4a42bf31df38711d63107" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string DocumentObject._NoteID</definition>
+        <argsstring></argsstring>
+        <name>_NoteID</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="35" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_document_object_1a8407f6933472bbf6c1d4d3e4beb4f1cd" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string DocumentObject._SearchField</definition>
+        <argsstring></argsstring>
+        <name>_SearchField</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="36" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_document_object_1a3e6c5344b7fda31cf3456fb14af7667d" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string DocumentObject._SearchValue</definition>
+        <argsstring></argsstring>
+        <name>_SearchValue</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="37" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_document_object_1a2027ec5a67e68e811e9b7a72bf00b6bd" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string DocumentObject._Formula</definition>
+        <argsstring></argsstring>
+        <name>_Formula</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="38" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_document_object_1af4eae32f9d7f740db5232be90f5a18a0" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string DocumentObject._Size</definition>
+        <argsstring></argsstring>
+        <name>_Size</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="39" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_document_object_1a727a6ecff108fa38ee54cfa8d89d66cd" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string DocumentObject._Url</definition>
+        <argsstring></argsstring>
+        <name>_Url</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="40" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_document_object_1a38bd268ccc77c3e74828d5e3a2d7b73c" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string DocumentObject._Form</definition>
+        <argsstring></argsstring>
+        <name>_Form</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="41" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_document_object_1a6f8b5a77924b2a1fa585c86393532ee5" prot="private" static="no" mutable="no">
+        <type>SortedDictionary&lt; String, <ref refid="class_field_object" kindref="compound">FieldObject</ref> &gt;</type>
+        <definition>SortedDictionary&lt;String, FieldObject&gt; DocumentObject._Fields</definition>
+        <argsstring></argsstring>
+        <name>_Fields</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="42" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_document_object_1a69d5338c9835f748490323d2950eed09" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type><ref refid="class_database_object" kindref="compound">DatabaseObject</ref></type>
+        <definition>DatabaseObject DocumentObject.Database</definition>
+        <argsstring></argsstring>
+        <name>Database</name>
+        <briefdescription>
+<para>Reference to this documents database object </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="51" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_document_object_1a3b2075b73f38d05091b69decc6ce7992" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>bool</type>
+        <definition>bool DocumentObject.IsInitialized</definition>
+        <argsstring></argsstring>
+        <name>IsInitialized</name>
+        <briefdescription>
+<para>Indicates that the document isInitialized </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="60" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_document_object_1abdc1a6dfc1bb2261b523cf94468448b9" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string DocumentObject.Size</definition>
+        <argsstring></argsstring>
+        <name>Size</name>
+        <briefdescription>
+<para>Document Size </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="72" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_document_object_1ac86b730cf8931b2221af577d32ca2f31" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string DocumentObject.Url</definition>
+        <argsstring></argsstring>
+        <name>Url</name>
+        <briefdescription>
+<para>Document URL </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="85" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_document_object_1ad3444a6c018474405064070fa9a94afe" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string DocumentObject.Form</definition>
+        <argsstring></argsstring>
+        <name>Form</name>
+        <briefdescription>
+<para>Documents Form (if any) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="98" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_document_object_1ac447461e3dc7f8258695f902ef0758a7" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string DocumentObject.NoteID</definition>
+        <argsstring></argsstring>
+        <name>NoteID</name>
+        <briefdescription>
+<para>Document NoteId </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="111" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_document_object_1ae203b8a3e40b6c428145d2335b71245c" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>SortedDictionary&lt; string, <ref refid="class_field_object" kindref="compound">FieldObject</ref> &gt;</type>
+        <definition>SortedDictionary&lt;string, FieldObject&gt; DocumentObject.Fields</definition>
+        <argsstring></argsstring>
+        <name>Fields</name>
+        <briefdescription>
+<para>Collection of retrieved FieldObjects stored in a dictionary with key name of the field </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="124" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="124" bodyend="-1"/>
+        <referencedby refid="class_document_object_1a1a763aa01710b370634f46c89b7d2d8e" compoundref="_document_object_8cs" startline="340" endline="378">ExportFields</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_document_object_1a8b96d04632a2802e7cc5466ca5cee8cf" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string DocumentObject.UniversalID</definition>
+        <argsstring></argsstring>
+        <name>UniversalID</name>
+        <briefdescription>
+<para>Document UniversalID </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="137" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="137" bodyend="-1"/>
+        <referencedby refid="class_document_object_1a46c89e7d40b15a91542a5482b2d8a084" compoundref="_document_object_8cs" startline="182" endline="185">DocumentObject</referencedby>
+        <referencedby refid="class_document_object_1a1a763aa01710b370634f46c89b7d2d8e" compoundref="_document_object_8cs" startline="340" endline="378">ExportFields</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_document_object_1a819cb8baad094f6e5990c54ec1eee8b0" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string DocumentObject.DateCreated</definition>
+        <argsstring></argsstring>
+        <name>DateCreated</name>
+        <briefdescription>
+<para>Document Creation Date </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="150" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_document_object_1a87ba1b3ac1b74b104972c25b245c504b" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string DocumentObject.DateModified</definition>
+        <argsstring></argsstring>
+        <name>DateModified</name>
+        <briefdescription>
+<para>Document Modification Date </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="163" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_document_object_1a46c89e7d40b15a91542a5482b2d8a084" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>DocumentObject.DocumentObject</definition>
+        <argsstring>(DatabaseObject dbObj, String UniversalID)</argsstring>
+        <name>DocumentObject</name>
+        <param>
+          <type><ref refid="class_database_object" kindref="compound">DatabaseObject</ref></type>
+          <declname>dbObj</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>UniversalID</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="class_document_object" kindref="compound">DocumentObject</ref> Constructor </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dbObj</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>UniversalID</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="182" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="182" bodyend="185"/>
+        <references refid="class_document_object_1a8b96d04632a2802e7cc5466ca5cee8cf" compoundref="_document_object_8cs" startline="137">UniversalID</references>
+      </memberdef>
+      <memberdef kind="function" id="class_document_object_1a7c98c6485f7395697561500a8ff42d79" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>DocumentObject.DocumentObject</definition>
+        <argsstring>(DatabaseObject dbObj, string SeachField, string SearchValue)</argsstring>
+        <name>DocumentObject</name>
+        <param>
+          <type><ref refid="class_database_object" kindref="compound">DatabaseObject</ref></type>
+          <declname>dbObj</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>SeachField</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>SearchValue</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="class_document_object" kindref="compound">DocumentObject</ref> Constructor </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dbObj</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>SeachField</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>SearchValue</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="193" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="193" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="function" id="class_document_object_1a4eb6c7aaa4774d1d5dbf5bf17dff23d9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>DocumentObject.DocumentObject</definition>
+        <argsstring>(string formula, DatabaseObject dbObj)</argsstring>
+        <name>DocumentObject</name>
+        <param>
+          <type>string</type>
+          <declname>formula</declname>
+        </param>
+        <param>
+          <type><ref refid="class_database_object" kindref="compound">DatabaseObject</ref></type>
+          <declname>dbObj</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="class_document_object" kindref="compound">DocumentObject</ref> Constructor </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>formula</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dbObj</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="204" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="204" bodyend="207"/>
+        <references refid="class_database_object_1a5fe036d32a30eb10d1b3f6a30263f740" compoundref="_database_object_8cs" startline="52">DatabaseObject.IsInitialized</references>
+        <references refid="class_connector_1a1ed422674b344524fd77998dcf6a9ba6" compoundref="_connector_8cs" startline="117">Connector.ReturnMessages</references>
+      </memberdef>
+      <memberdef kind="function" id="class_document_object_1af4298d6cfbb9ea60643d9995309b73f1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DocumentObject.Initialize</definition>
+        <argsstring>()</argsstring>
+        <name>Initialize</name>
+        <briefdescription>
+<para>Initializes the document by validating the input and triggering the document request </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Boolean</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="241" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="241" bodyend="262"/>
+        <references refid="class_session_object_1a014bdbf705a753540e19bfb53030c55c" compoundref="_session_object_8cs" startline="64">SessionObject.Connection</references>
+        <references refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" compoundref="_connector_8cs" startline="99">Connector.hasError</references>
+        <references refid="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07" compoundref="_database_object_8cs" startline="43">DatabaseObject.Session</references>
+        <references refid="class_session_object_1a697c071c812fbf7ad1166b896fb44c16" compoundref="_session_object_8cs" startline="55">SessionObject.WebServiceURL</references>
+        <referencedby refid="class_database_object_1a9435cc20fe3a92747e509011b7726aff" compoundref="_database_object_8cs" startline="253" endline="265">DatabaseObject.GetDocument</referencedby>
+        <referencedby refid="class_database_object_1ae5477aedfcd0d54b21017faa1389bc71" compoundref="_database_object_8cs" startline="298" endline="310">DatabaseObject.GetDocumentByFormula</referencedby>
+        <referencedby refid="class_database_object_1a57bfc77d2754236cbcf6ac30a90da529" compoundref="_database_object_8cs" startline="276" endline="288">DatabaseObject.GetDocumentByKey</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_document_object_1a8883fec3b5b1b6e2e43f4b5ca4092684" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DocumentObject.GetFields</definition>
+        <argsstring>(string fields)</argsstring>
+        <name>GetFields</name>
+        <param>
+          <type>string</type>
+          <declname>fields</declname>
+        </param>
+        <briefdescription>
+<para>Retrieve fields for this documents by triggering the field request </para>        </briefdescription>
+        <detaileddescription>
+<para>Provide the fields separated by ;</para><para>This action will update the property &apos;Fields&apos;</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fields</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Boolean</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="271" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="271" bodyend="286"/>
+        <references refid="class_session_object_1a014bdbf705a753540e19bfb53030c55c" compoundref="_session_object_8cs" startline="64">SessionObject.Connection</references>
+        <references refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" compoundref="_connector_8cs" startline="99">Connector.hasError</references>
+        <references refid="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07" compoundref="_database_object_8cs" startline="43">DatabaseObject.Session</references>
+        <references refid="class_session_object_1a697c071c812fbf7ad1166b896fb44c16" compoundref="_session_object_8cs" startline="55">SessionObject.WebServiceURL</references>
+      </memberdef>
+      <memberdef kind="function" id="class_document_object_1a8e38704e02850b2480d29d184ae2c0e0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DocumentObject.GetFields</definition>
+        <argsstring>(IList fields)</argsstring>
+        <name>GetFields</name>
+        <param>
+          <type>IList</type>
+          <declname>fields</declname>
+        </param>
+        <briefdescription>
+<para>Retrieve fields for this documents by triggering the field request </para>        </briefdescription>
+        <detaileddescription>
+<para>This action will update the property &apos;Fields&apos;</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fields</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Boolean</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="294" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="294" bodyend="310"/>
+        <references refid="class_session_object_1a014bdbf705a753540e19bfb53030c55c" compoundref="_session_object_8cs" startline="64">SessionObject.Connection</references>
+        <references refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" compoundref="_connector_8cs" startline="99">Connector.hasError</references>
+        <references refid="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07" compoundref="_database_object_8cs" startline="43">DatabaseObject.Session</references>
+        <references refid="class_session_object_1a697c071c812fbf7ad1166b896fb44c16" compoundref="_session_object_8cs" startline="55">SessionObject.WebServiceURL</references>
+      </memberdef>
+      <memberdef kind="function" id="class_document_object_1a5e070c7c0a45ac06422ee992c841e780" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DocumentObject.GetAllFields</definition>
+        <argsstring>()</argsstring>
+        <name>GetAllFields</name>
+        <briefdescription>
+<para>Retrieve all fields for this documents by triggering the field request </para>        </briefdescription>
+        <detaileddescription>
+<para>This action will update the property &apos;Fields&apos; </para><para><simplesect kind="return"><para>Boolean</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="317" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="317" bodyend="331"/>
+        <references refid="class_session_object_1a014bdbf705a753540e19bfb53030c55c" compoundref="_session_object_8cs" startline="64">SessionObject.Connection</references>
+        <references refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" compoundref="_connector_8cs" startline="99">Connector.hasError</references>
+        <references refid="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07" compoundref="_database_object_8cs" startline="43">DatabaseObject.Session</references>
+        <references refid="class_session_object_1a697c071c812fbf7ad1166b896fb44c16" compoundref="_session_object_8cs" startline="55">SessionObject.WebServiceURL</references>
+      </memberdef>
+      <memberdef kind="function" id="class_document_object_1a1a763aa01710b370634f46c89b7d2d8e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DocumentObject.ExportFields</definition>
+        <argsstring>(string filePath, bool overwriteExistingFile)</argsstring>
+        <name>ExportFields</name>
+        <param>
+          <type>string</type>
+          <declname>filePath</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>overwriteExistingFile</declname>
+        </param>
+        <briefdescription>
+<para>Exports the content of the property &apos;Fields&apos; to a file </para>        </briefdescription>
+        <detaileddescription>
+<para>Provide the path to the file and specify if you want ot overwrite this file if it exists</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filePath</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>overwriteExistingFile</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="340" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="340" bodyend="378"/>
+        <references refid="class_document_object_1ae203b8a3e40b6c428145d2335b71245c" compoundref="_document_object_8cs" startline="124">Fields</references>
+        <references refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" compoundref="_connector_8cs" startline="99">Connector.hasError</references>
+        <references refid="class_connector_1a1ed422674b344524fd77998dcf6a9ba6" compoundref="_connector_8cs" startline="117">Connector.ReturnMessages</references>
+        <references refid="class_document_object_1a8b96d04632a2802e7cc5466ca5cee8cf" compoundref="_document_object_8cs" startline="137">UniversalID</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_document_object_1a69c37390e7b77736c86315287674cc61" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DocumentObject.ValidateInput</definition>
+        <argsstring>()</argsstring>
+        <name>ValidateInput</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="213" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="213" bodyend="231"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>An object representing a Domino Document </para>    </briefdescription>
+    <detaileddescription>
+<para>The following is an example of the usage of a <computeroutput><ref refid="class_document_object" kindref="compound">DocumentObject</ref></computeroutput>: <programlisting><codeline><highlight class="normal">DocumentObject<sp/>docObj<sp/>=<sp/>new<sp/>DocumentObject(dbObj,<sp/>universalID);<sp/>//<sp/>create<sp/>new<sp/>doc<sp/>object<sp/>by<sp/>databaseobject<sp/>and<sp/>universalID</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>DocumentObject<sp/>docObj<sp/>=<sp/>new<sp/>DocumentObject(dbObj,<sp/>SeachField,<sp/>SearchValue);<sp/>//<sp/>create<sp/>new<sp/>doc<sp/>object<sp/>by<sp/>databaseobject<sp/>and<sp/>supplying<sp/>a<sp/>searchfield/value</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>DocumentObject<sp/>docObj<sp/>=<sp/>new<sp/>DocumentObject(formula,<sp/>dbObj);<sp/>//<sp/>create<sp/>new<sp/>doc<sp/>object<sp/>by<sp/>databaseobject<sp/>and<sp/>supplying<sp/>a<sp/>formula</highlight></codeline>
+<codeline><highlight class="normal">if(docObj!=null<sp/>&amp;&amp;<sp/>docObj.Initialize()){</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>//<sp/>here<sp/>you<sp/>can<sp/>then<sp/>get<sp/>the<sp/>fields<sp/>of<sp/>the<sp/>document<sp/>object</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>//<sp/>your<sp/>code<sp/>here...<sp/></highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" line="25" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs" bodystart="25" bodyend="382"/>
+    <listofallmembers>
+      <member refid="class_document_object_1a7a9107e3718e78ec9857fbb1fbbef821" prot="private" virt="non-virtual"><scope>DocumentObject</scope><name>_Database</name></member>
+      <member refid="class_document_object_1a806b3290bfec2a9eb711408a6c069ebc" prot="private" virt="non-virtual"><scope>DocumentObject</scope><name>_DateCreated</name></member>
+      <member refid="class_document_object_1a88efdd20ebba2aea5b0be7bac37557d5" prot="private" virt="non-virtual"><scope>DocumentObject</scope><name>_DateModified</name></member>
+      <member refid="class_document_object_1a6f8b5a77924b2a1fa585c86393532ee5" prot="private" virt="non-virtual"><scope>DocumentObject</scope><name>_Fields</name></member>
+      <member refid="class_document_object_1a38bd268ccc77c3e74828d5e3a2d7b73c" prot="private" virt="non-virtual"><scope>DocumentObject</scope><name>_Form</name></member>
+      <member refid="class_document_object_1a2027ec5a67e68e811e9b7a72bf00b6bd" prot="private" virt="non-virtual"><scope>DocumentObject</scope><name>_Formula</name></member>
+      <member refid="class_document_object_1af242ee84f45c76369417a84391fa1439" prot="private" virt="non-virtual"><scope>DocumentObject</scope><name>_isInitialized</name></member>
+      <member refid="class_document_object_1a2421fc68c7e4a42bf31df38711d63107" prot="private" virt="non-virtual"><scope>DocumentObject</scope><name>_NoteID</name></member>
+      <member refid="class_document_object_1a8407f6933472bbf6c1d4d3e4beb4f1cd" prot="private" virt="non-virtual"><scope>DocumentObject</scope><name>_SearchField</name></member>
+      <member refid="class_document_object_1a3e6c5344b7fda31cf3456fb14af7667d" prot="private" virt="non-virtual"><scope>DocumentObject</scope><name>_SearchValue</name></member>
+      <member refid="class_document_object_1af4eae32f9d7f740db5232be90f5a18a0" prot="private" virt="non-virtual"><scope>DocumentObject</scope><name>_Size</name></member>
+      <member refid="class_document_object_1abe737cd57acd3950c7249b8a1e6300cf" prot="private" virt="non-virtual"><scope>DocumentObject</scope><name>_UniversalID</name></member>
+      <member refid="class_document_object_1a727a6ecff108fa38ee54cfa8d89d66cd" prot="private" virt="non-virtual"><scope>DocumentObject</scope><name>_Url</name></member>
+      <member refid="class_document_object_1a69d5338c9835f748490323d2950eed09" prot="public" virt="non-virtual"><scope>DocumentObject</scope><name>Database</name></member>
+      <member refid="class_document_object_1a819cb8baad094f6e5990c54ec1eee8b0" prot="public" virt="non-virtual"><scope>DocumentObject</scope><name>DateCreated</name></member>
+      <member refid="class_document_object_1a87ba1b3ac1b74b104972c25b245c504b" prot="public" virt="non-virtual"><scope>DocumentObject</scope><name>DateModified</name></member>
+      <member refid="class_document_object_1a46c89e7d40b15a91542a5482b2d8a084" prot="public" virt="non-virtual"><scope>DocumentObject</scope><name>DocumentObject</name></member>
+      <member refid="class_document_object_1a7c98c6485f7395697561500a8ff42d79" prot="public" virt="non-virtual"><scope>DocumentObject</scope><name>DocumentObject</name></member>
+      <member refid="class_document_object_1a4eb6c7aaa4774d1d5dbf5bf17dff23d9" prot="public" virt="non-virtual"><scope>DocumentObject</scope><name>DocumentObject</name></member>
+      <member refid="class_document_object_1a1a763aa01710b370634f46c89b7d2d8e" prot="public" virt="non-virtual"><scope>DocumentObject</scope><name>ExportFields</name></member>
+      <member refid="class_document_object_1ae203b8a3e40b6c428145d2335b71245c" prot="public" virt="non-virtual"><scope>DocumentObject</scope><name>Fields</name></member>
+      <member refid="class_document_object_1ad3444a6c018474405064070fa9a94afe" prot="public" virt="non-virtual"><scope>DocumentObject</scope><name>Form</name></member>
+      <member refid="class_document_object_1a5e070c7c0a45ac06422ee992c841e780" prot="public" virt="non-virtual"><scope>DocumentObject</scope><name>GetAllFields</name></member>
+      <member refid="class_document_object_1a8883fec3b5b1b6e2e43f4b5ca4092684" prot="public" virt="non-virtual"><scope>DocumentObject</scope><name>GetFields</name></member>
+      <member refid="class_document_object_1a8e38704e02850b2480d29d184ae2c0e0" prot="public" virt="non-virtual"><scope>DocumentObject</scope><name>GetFields</name></member>
+      <member refid="class_document_object_1af4298d6cfbb9ea60643d9995309b73f1" prot="public" virt="non-virtual"><scope>DocumentObject</scope><name>Initialize</name></member>
+      <member refid="class_document_object_1a3b2075b73f38d05091b69decc6ce7992" prot="public" virt="non-virtual"><scope>DocumentObject</scope><name>IsInitialized</name></member>
+      <member refid="class_document_object_1ac447461e3dc7f8258695f902ef0758a7" prot="public" virt="non-virtual"><scope>DocumentObject</scope><name>NoteID</name></member>
+      <member refid="class_document_object_1abdc1a6dfc1bb2261b523cf94468448b9" prot="public" virt="non-virtual"><scope>DocumentObject</scope><name>Size</name></member>
+      <member refid="class_document_object_1a8b96d04632a2802e7cc5466ca5cee8cf" prot="public" virt="non-virtual"><scope>DocumentObject</scope><name>UniversalID</name></member>
+      <member refid="class_document_object_1ac86b730cf8931b2221af577d32ca2f31" prot="public" virt="non-virtual"><scope>DocumentObject</scope><name>Url</name></member>
+      <member refid="class_document_object_1a69c37390e7b77736c86315287674cc61" prot="private" virt="non-virtual"><scope>DocumentObject</scope><name>ValidateInput</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

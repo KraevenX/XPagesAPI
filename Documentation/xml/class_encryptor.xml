@@ -1,0 +1,224 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_encryptor" kind="class" language="C#" prot="package">
+    <compoundname>Encryptor</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_encryptor_1aaf6d24840413b8e75c700bf7c80feb05" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Encryptor.IV</definition>
+        <argsstring></argsstring>
+        <name>IV</name>
+        <initializer>= &quot;GeNar@tEdIv_K3y!&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs" line="9" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_encryptor_1acf0760ffab3011b5ebb78716b20c2a1e" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Encryptor.PASSWORD</definition>
+        <argsstring></argsstring>
+        <name>PASSWORD</name>
+        <initializer>= &quot;JPITeam@XPages!|&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs" line="10" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_encryptor_1af38c32db47420c134b17a3ed9ddbc958" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Encryptor.SALT</definition>
+        <argsstring></argsstring>
+        <name>SALT</name>
+        <initializer>= &quot;S@1tS@lt_Valu3@JPI_XP@ges&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs" line="11" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="class_encryptor_1a67649ee1e1b16a45391f0a531e2ab693" prot="package" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Encryptor.EncodedContent</definition>
+        <argsstring></argsstring>
+        <name>EncodedContent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs" line="13" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_encryptor_1aac047820916734ee47921ba6ba30a65c" prot="package" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Encryptor.isInitialized</definition>
+        <argsstring></argsstring>
+        <name>isInitialized</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs" line="14" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_encryptor_1a3e35d06a4de0e180aa0be6f9cb6f5f37" prot="package" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Encryptor.DecodedContent</definition>
+        <argsstring></argsstring>
+        <name>DecodedContent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs" line="15" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_encryptor_1a5e09dd98a033a40245e8d3ed480ba320" prot="package" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Encryptor.Encode</definition>
+        <argsstring></argsstring>
+        <name>Encode</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs" line="16" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-func">
+      <memberdef kind="function" id="class_encryptor_1ac8a4a056cfd1321dc82eb4b94b95d1ff" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Encryptor.Encryptor</definition>
+        <argsstring>(string content, bool encode, ref Connector Connector)</argsstring>
+        <name>Encryptor</name>
+        <param>
+          <type>string</type>
+          <declname>content</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>encode</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="class_connector" kindref="compound">Connector</ref></type>
+          <declname>Connector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs" line="22" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs" bodystart="22" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="class_encryptor_1a6ce2d934ee25a0e554f97d027399ce09" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Encryptor.Initialize</definition>
+        <argsstring>()</argsstring>
+        <name>Initialize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs" line="48" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs" bodystart="48" bodyend="72"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_encryptor_1a2bc09300ed934e05bd465b2fae77b38e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>string Encryptor.EncryptAndEncode</definition>
+        <argsstring>(string raw)</argsstring>
+        <name>EncryptAndEncode</name>
+        <param>
+          <type>string</type>
+          <declname>raw</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs" line="74" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs" bodystart="74" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="class_encryptor_1a6c8fb36f29875f6c7bacb17ab845553f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>string Encryptor.DecodeAndDecrypt</definition>
+        <argsstring>(string encrypted)</argsstring>
+        <name>DecodeAndDecrypt</name>
+        <param>
+          <type>string</type>
+          <declname>encrypted</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs" line="85" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs" bodystart="85" bodyend="94"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_encryptor_1ac0a2c64858c15d440fc6e2abf1631abe" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>ICryptoTransform</type>
+        <definition>ICryptoTransform Encryptor.GetCryptoTransform</definition>
+        <argsstring>(AesCryptoServiceProvider csp, bool encrypting)</argsstring>
+        <name>GetCryptoTransform</name>
+        <param>
+          <type>AesCryptoServiceProvider</type>
+          <declname>csp</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>encrypting</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs" line="100" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs" bodystart="100" bodyend="111"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs" line="5" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs" bodystart="5" bodyend="115"/>
+    <listofallmembers>
+      <member refid="class_encryptor_1a6c8fb36f29875f6c7bacb17ab845553f" prot="public" virt="non-virtual"><scope>Encryptor</scope><name>DecodeAndDecrypt</name></member>
+      <member refid="class_encryptor_1a3e35d06a4de0e180aa0be6f9cb6f5f37" prot="package" virt="non-virtual"><scope>Encryptor</scope><name>DecodedContent</name></member>
+      <member refid="class_encryptor_1a5e09dd98a033a40245e8d3ed480ba320" prot="package" virt="non-virtual"><scope>Encryptor</scope><name>Encode</name></member>
+      <member refid="class_encryptor_1a67649ee1e1b16a45391f0a531e2ab693" prot="package" virt="non-virtual"><scope>Encryptor</scope><name>EncodedContent</name></member>
+      <member refid="class_encryptor_1a2bc09300ed934e05bd465b2fae77b38e" prot="public" virt="non-virtual"><scope>Encryptor</scope><name>EncryptAndEncode</name></member>
+      <member refid="class_encryptor_1ac8a4a056cfd1321dc82eb4b94b95d1ff" prot="package" virt="non-virtual"><scope>Encryptor</scope><name>Encryptor</name></member>
+      <member refid="class_encryptor_1ac0a2c64858c15d440fc6e2abf1631abe" prot="private" virt="non-virtual"><scope>Encryptor</scope><name>GetCryptoTransform</name></member>
+      <member refid="class_encryptor_1a6ce2d934ee25a0e554f97d027399ce09" prot="package" virt="non-virtual"><scope>Encryptor</scope><name>Initialize</name></member>
+      <member refid="class_encryptor_1aac047820916734ee47921ba6ba30a65c" prot="package" virt="non-virtual"><scope>Encryptor</scope><name>isInitialized</name></member>
+      <member refid="class_encryptor_1aaf6d24840413b8e75c700bf7c80feb05" prot="private" virt="non-virtual"><scope>Encryptor</scope><name>IV</name></member>
+      <member refid="class_encryptor_1acf0760ffab3011b5ebb78716b20c2a1e" prot="private" virt="non-virtual"><scope>Encryptor</scope><name>PASSWORD</name></member>
+      <member refid="class_encryptor_1af38c32db47420c134b17a3ed9ddbc958" prot="private" virt="non-virtual"><scope>Encryptor</scope><name>SALT</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

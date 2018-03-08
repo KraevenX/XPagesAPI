@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_common" kind="class" language="C#" prot="public">
+    <compoundname>Common</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_common_1a95a895bd81dcbd1ed2a07814462d0fc7" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>static string Common.GetErrorInfo</definition>
+        <argsstring>(Exception ex)</argsstring>
+        <name>GetErrorInfo</name>
+        <param>
+          <type>Exception</type>
+          <declname>ex</declname>
+        </param>
+        <briefdescription>
+<para>Get formatted string from the provided exception </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ex</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Common.cs" line="17" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Common.cs" bodystart="17" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="class_common_1a6468d361244e4fd42f8be6e584075a21" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>static string Common.GetListAsString</definition>
+        <argsstring>(IList arList, string separator)</argsstring>
+        <name>GetListAsString</name>
+        <param>
+          <type>IList</type>
+          <declname>arList</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>separator</declname>
+        </param>
+        <briefdescription>
+<para>Get a string from a list of string separated by the provided separator </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>arList</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>separator</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Common.cs" line="48" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Common.cs" bodystart="48" bodyend="58"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class with common methods </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Common.cs" line="9" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Common.cs" bodystart="8" bodyend="61"/>
+    <listofallmembers>
+      <member refid="class_common_1a95a895bd81dcbd1ed2a07814462d0fc7" prot="public" virt="non-virtual"><scope>Common</scope><name>GetErrorInfo</name></member>
+      <member refid="class_common_1a6468d361244e4fd42f8be6e584075a21" prot="public" virt="non-virtual"><scope>Common</scope><name>GetListAsString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

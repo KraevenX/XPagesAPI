@@ -1,0 +1,467 @@
+\hypertarget{class_connector}{}\section{Connector Class Reference}
+\label{class_connector}\index{Connector@{Connector}}
+
+
+\hyperlink{class_connector}{Connector} Object -\/ Used to connect to a domino database -\/ by interfacing with a custom X\+Pages database and Rest Service  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_connector_a259c6d94252479cc3028038ebbaa7dc8}{Connector} (string User, string Pass, string server)
+\begin{DoxyCompactList}\small\item\em Constructor method, provide the users credentials to logon to a domino server \end{DoxyCompactList}\item 
+void \hyperlink{class_connector_a2ceb19719cfc04adc4c2d299e19e1447}{Initialize} (string Encryption\+Password=null, string Encryption\+IV=null, string Encryption\+Salt=null, string Identify=null)
+\begin{DoxyCompactList}\small\item\em Initializes the \hyperlink{class_connector}{Connector} and provides the possibility to use custom encryption keys and Identification header \end{DoxyCompactList}\item 
+bool \hyperlink{class_connector_a0dcf8f969c37c4306c567417a872329a}{Connect} ()
+\begin{DoxyCompactList}\small\item\em When the connector has been initialized, this method will establish a connection to the domino server using the provided credentials \end{DoxyCompactList}\item 
+\hyperlink{class_session_object}{Session\+Object} \hyperlink{class_connector_a5d089c1639f255966f00b2b05add0993}{Get\+Session} (string Domino\+Web\+Service\+U\+RL)
+\begin{DoxyCompactList}\small\item\em This method will try to create a \hyperlink{class_session_object}{Session\+Object}, by connecting to the X\+Pages database Rest Service \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+readonly string \hyperlink{class_connector_a41d247f09774f0ed206ce1a4a2463fed}{User\+Name}
+\begin{DoxyCompactList}\small\item\em Variable containing the supplied User\+Name (read-\/only) \end{DoxyCompactList}\item 
+readonly string \hyperlink{class_connector_a7dd469898462ef761d256392766461fe}{Password}
+\begin{DoxyCompactList}\small\item\em Variable containing the supplied Password (read-\/only) \end{DoxyCompactList}\item 
+readonly string \hyperlink{class_connector_ac0cae400459978dde8030f75208e48f1}{Server\+U\+RL}
+\begin{DoxyCompactList}\small\item\em Variable containing the supplied Server U\+RL (read-\/only) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_connector_a8ec0dcdbb4a85a56fa50f67686484c19}{Throw\+Exception} = false
+\begin{DoxyCompactList}\small\item\em A boolean to trigger the code to throw an exception when an error has been encountered. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{has\+Error}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em This boolean will indicate if an error has occurred in the library and based on the Throw\+Exception variable it will thow an execption when has\+Error is true \end{DoxyCompactList}\item 
+static Array\+List \hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{Return\+Messages}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em A list of messages generated in the library \end{DoxyCompactList}\item 
+bool \hyperlink{class_connector_acf2c3b519c360d02ed54543a01d199af}{is\+Connected}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Indicates if a connection to the domino has been established \end{DoxyCompactList}\item 
+bool \hyperlink{class_connector_a017d40b1f4cf2cbaa5d4b755cf09269e}{is\+Initialized}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Indicates if the connector has been initialized \end{DoxyCompactList}\item 
+string \hyperlink{class_connector_a092e3e36f92c129c07c57df9b8fb91ca}{X\+P\+Identity}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em A custom identification header, used when sending request to the domino database \end{DoxyCompactList}\item 
+\hyperlink{class_session_object}{Session\+Object} \hyperlink{class_connector_a0a7bb42f9530796c086ab50785147ce9}{Session\+Object}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em A \hyperlink{class_session_object}{Session\+Object} is used to establish a connection to the X\+Pages database that hosts the Rest Service \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_connector}{Connector} Object -\/ Used to connect to a domino database -\/ by interfacing with a custom X\+Pages database and Rest Service 
+
+The following is an example of initializing a {\ttfamily \hyperlink{class_connector}{Connector}} type\+: 
+\begin{DoxyCode}
+    \textcolor{comment}{// Create the connector}
+    \hyperlink{class_connector}{Connector} connector = \textcolor{keyword}{new} \hyperlink{class_connector_a259c6d94252479cc3028038ebbaa7dc8}{Connector}(\hyperlink{class_connector_a41d247f09774f0ed206ce1a4a2463fed}{UserName}, 
+      \hyperlink{class_connector_a7dd469898462ef761d256392766461fe}{Password}, serverURL);
+    \textcolor{comment}{// Initialize the connector}
+    connector.\hyperlink{class_connector_a2ceb19719cfc04adc4c2d299e19e1447}{Initialize}();
+    \textcolor{comment}{//must always be called, possibility to add pass,iv,salt by default this is already set}
+    \textcolor{keywordflow}{if} (connector.\hyperlink{class_connector_a017d40b1f4cf2cbaa5d4b755cf09269e}{isInitialized}) \{
+        \textcolor{keywordflow}{if} (connector.\hyperlink{class_connector_a0dcf8f969c37c4306c567417a872329a}{Connect}()) \{  \textcolor{comment}{// establish a connection to the domino server}
+@verbatim
+\textcolor{comment}{// From the connector you can now create a session object}
+\textcolor{comment}{// The session object gives you the possibility to get a database object}
+\textcolor{comment}{// From that database you can get the actual document objects}
+\textcolor{comment}{// From those document objects you can then get the field objects (key/value)}
+\textcolor{keyword}{@end}verbatim
+        \}   
+    \}
+\end{DoxyCode}
+ 
+
+Definition at line 26 of file Connector.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_connector_a259c6d94252479cc3028038ebbaa7dc8}\label{class_connector_a259c6d94252479cc3028038ebbaa7dc8}} 
+\index{Connector@{Connector}!Connector@{Connector}}
+\index{Connector@{Connector}!Connector@{Connector}}
+\subsubsection{\texorpdfstring{Connector()}{Connector()}}
+{\footnotesize\ttfamily Connector.\+Connector (\begin{DoxyParamCaption}\item[{string}]{User,  }\item[{string}]{Pass,  }\item[{string}]{server }\end{DoxyParamCaption})}
+
+
+
+Constructor method, provide the users credentials to logon to a domino server 
+
+
+\begin{DoxyParams}{Parameters}
+{\em User} & \\
+\hline
+{\em Pass} & \\
+\hline
+{\em server} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 73 of file Connector.\+cs.
+
+
+
+References has\+Error, and Return\+Messages.
+
+
+\begin{DoxyCode}
+73                                                               \{
+74         ResetReturn();
+75         \textcolor{keywordflow}{if} (User != null && Pass != null && server != null) \{
+76             this.\hyperlink{class_connector_a41d247f09774f0ed206ce1a4a2463fed}{UserName} = User;
+77             this.\hyperlink{class_connector_a7dd469898462ef761d256392766461fe}{Password} = Pass;
+78             this.\hyperlink{class_connector_ac0cae400459978dde8030f75208e48f1}{ServerURL} = server;
+79             \textcolor{comment}{// validate server -> contains http:// ?}
+80             \textcolor{keywordflow}{if} (server.ToLower().Contains(\textcolor{stringliteral}{"http://"}) || server.ToLower().Contains(\textcolor{stringliteral}{"https://"})) \{
+81                 \_isInitialized = \textcolor{keyword}{true};
+82             \} \textcolor{keywordflow}{else} \{
+83                 \textcolor{comment}{// not a valid URL}
+84                 \hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}.Add(\textcolor{stringliteral}{"Invalid Server URL Provided : "} + server);
+85                 \hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError} = \textcolor{keyword}{true};
+86             \}
+87         \} \textcolor{keywordflow}{else} \{
+88             \hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError} = \textcolor{keyword}{false};
+89         \}
+90     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_connector_a0dcf8f969c37c4306c567417a872329a}\label{class_connector_a0dcf8f969c37c4306c567417a872329a}} 
+\index{Connector@{Connector}!Connect@{Connect}}
+\index{Connect@{Connect}!Connector@{Connector}}
+\subsubsection{\texorpdfstring{Connect()}{Connect()}}
+{\footnotesize\ttfamily bool Connector.\+Connect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+When the connector has been initialized, this method will establish a connection to the domino server using the provided credentials 
+
+Sets is\+Connected property
+
+\begin{DoxyReturn}{Returns}
+boolean
+\end{DoxyReturn}
+
+
+Definition at line 251 of file Connector.\+cs.
+
+
+\begin{DoxyCode}
+251                           \{
+252         \textcolor{comment}{// only try to connect if initialized - all info needed is available}
+253         \textcolor{keywordflow}{if} (\_isInitialized) \{
+254             ResetReturn();
+255             \textcolor{comment}{// reset the error vars - will be populated by Requestor}
+256             Request = \textcolor{keyword}{new} Requestor(\textcolor{keyword}{this});
+257             \textcolor{comment}{// creates connection to domino and tries to login with supplied credentials}
+258             \textcolor{keywordflow}{if} (Request.Initialize()) \{
+259                 \_isConnected = \textcolor{keyword}{true};
+260                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+261             \} \textcolor{keywordflow}{else} \{
+262                 \textcolor{comment}{//unable to connect - hasError set to true & returnmessages added}
+263                 \_isConnected = \textcolor{keyword}{false};
+264                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+265             \}
+266         \} \textcolor{keywordflow}{else} \{
+267             \textcolor{comment}{//hasError is set to true (New()) and returnmessage contains reason}
+268             \_isConnected = \textcolor{keyword}{false};
+269             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+270         \}
+271     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_connector_a5d089c1639f255966f00b2b05add0993}\label{class_connector_a5d089c1639f255966f00b2b05add0993}} 
+\index{Connector@{Connector}!Get\+Session@{Get\+Session}}
+\index{Get\+Session@{Get\+Session}!Connector@{Connector}}
+\subsubsection{\texorpdfstring{Get\+Session()}{GetSession()}}
+{\footnotesize\ttfamily \hyperlink{class_session_object}{Session\+Object} Connector.\+Get\+Session (\begin{DoxyParamCaption}\item[{string}]{Domino\+Web\+Service\+U\+RL }\end{DoxyParamCaption})}
+
+
+
+This method will try to create a \hyperlink{class_session_object}{Session\+Object}, by connecting to the X\+Pages database Rest Service 
+
+In order to get the \hyperlink{class_session_object}{Session\+Object}, the user needs to have access to the X\+Pages database
+
+
+\begin{DoxyParams}{Parameters}
+{\em Domino\+Web\+Service\+U\+RL} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_session_object}{Session\+Object}
+\end{DoxyReturn}
+
+
+Definition at line 279 of file Connector.\+cs.
+
+
+
+References has\+Error, Session\+Object.\+Initialize(), Return\+Messages, and Session\+Object.
+
+
+\begin{DoxyCode}
+279                                                                 \{
+280         ResetReturn();
+281         \textcolor{comment}{// reset the error vars - will be populated by SessionObject}
+282         \textcolor{keywordflow}{if} (\_isConnected) \{
+283             \textcolor{comment}{//we have a valid Requestor}
+284             \textcolor{keywordflow}{if} (Request != null && Request.isInitialized) \{
+285                 \hyperlink{class_session_object}{SessionObject} sObj = \textcolor{keyword}{new} \hyperlink{class_connector_a0a7bb42f9530796c086ab50785147ce9}{SessionObject}(\textcolor{keyword}{this}, DominoWebServiceURL)
+      ;
+286                 \textcolor{keywordflow}{if} (sObj.\hyperlink{class_session_object_af3b9c9d56d98c848061952ed935f815b}{Initialize}()) \{
+287                     \_SessionObject = sObj;
+288                     \textcolor{keywordflow}{return} sObj;
+289                     \textcolor{comment}{//not written in initialize - just returning false}
+290                 \} \textcolor{keywordflow}{else} \{
+291                     \hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}.Add(\textcolor{stringliteral}{"Connector.GetSession unable to complete, unable to
+       initialize the session object"});
+292                     \hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError} = \textcolor{keyword}{true};
+293                     \textcolor{comment}{//throws exception}
+294                     \textcolor{keywordflow}{return} null;
+295                 \}
+296             \} \textcolor{keywordflow}{else} \{
+297                 \hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}.Add(\textcolor{stringliteral}{"Connector.GetSession unable to complete, the request
+       object is invalid or not initialized"});
+298                 \hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError} = \textcolor{keyword}{true};
+299                 \textcolor{comment}{//throws exception}
+300                 \textcolor{keywordflow}{return} null;
+301             \}
+302         \} \textcolor{keywordflow}{else} \{
+303             \hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}.Add(\textcolor{stringliteral}{"Connector.GetSession unable to complete, Connector is not
+       connected to domino"});
+304             \hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError} = \textcolor{keyword}{true};  \textcolor{comment}{//throws exception}
+305             \textcolor{keywordflow}{return} null;
+306         \}
+307 
+308     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_connector_a2ceb19719cfc04adc4c2d299e19e1447}\label{class_connector_a2ceb19719cfc04adc4c2d299e19e1447}} 
+\index{Connector@{Connector}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Connector@{Connector}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void Connector.\+Initialize (\begin{DoxyParamCaption}\item[{string}]{Encryption\+Password = {\ttfamily null},  }\item[{string}]{Encryption\+IV = {\ttfamily null},  }\item[{string}]{Encryption\+Salt = {\ttfamily null},  }\item[{string}]{Identify = {\ttfamily null} }\end{DoxyParamCaption})}
+
+
+
+Initializes the \hyperlink{class_connector}{Connector} and provides the possibility to use custom encryption keys and Identification header 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Encryption\+Password} & \\
+\hline
+{\em Encryption\+IV} & \\
+\hline
+{\em Encryption\+Salt} & \\
+\hline
+{\em Identify} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 224 of file Connector.\+cs.
+
+
+
+References X\+P\+Identity.
+
+
+\begin{DoxyCode}
+224                                                                                                            
+                                          \{
+225         ResetReturn();
+226         \textcolor{comment}{//no need to supply unless changes in XPages database - this will provide a way to enter new
+       paswords}
+227         \textcolor{keywordflow}{if} (EncryptionPassword != null) \{
+228             this.EncryptionPASSWORD = EncryptionPassword;
+229         \}
+230         \textcolor{keywordflow}{if} (EncryptionIV != null) \{
+231             this.EncryptionIV = EncryptionIV;
+232         \}
+233         \textcolor{keywordflow}{if} (EncryptionSalt != null) \{
+234             this.EncryptionSALT = EncryptionSalt;
+235         \}
+236         \textcolor{keywordflow}{if} (Identify != null) \{
+237             \hyperlink{class_connector_a092e3e36f92c129c07c57df9b8fb91ca}{XPIdentity} = Identify;
+238         \}
+239         \textcolor{keywordflow}{if} (!\_hasError) \{
+240             \_isInitialized = \textcolor{keyword}{true};
+241         \} \textcolor{keywordflow}{else} \{
+242             \_isInitialized = \textcolor{keyword}{false};
+243         \}
+244     \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_connector_a7dd469898462ef761d256392766461fe}\label{class_connector_a7dd469898462ef761d256392766461fe}} 
+\index{Connector@{Connector}!Password@{Password}}
+\index{Password@{Password}!Connector@{Connector}}
+\subsubsection{\texorpdfstring{Password}{Password}}
+{\footnotesize\ttfamily readonly string Connector.\+Password}
+
+
+
+Variable containing the supplied Password (read-\/only) 
+
+
+
+Definition at line 57 of file Connector.\+cs.
+
+\mbox{\Hypertarget{class_connector_ac0cae400459978dde8030f75208e48f1}\label{class_connector_ac0cae400459978dde8030f75208e48f1}} 
+\index{Connector@{Connector}!Server\+U\+RL@{Server\+U\+RL}}
+\index{Server\+U\+RL@{Server\+U\+RL}!Connector@{Connector}}
+\subsubsection{\texorpdfstring{Server\+U\+RL}{ServerURL}}
+{\footnotesize\ttfamily readonly string Connector.\+Server\+U\+RL}
+
+
+
+Variable containing the supplied Server U\+RL (read-\/only) 
+
+
+
+Definition at line 61 of file Connector.\+cs.
+
+\mbox{\Hypertarget{class_connector_a8ec0dcdbb4a85a56fa50f67686484c19}\label{class_connector_a8ec0dcdbb4a85a56fa50f67686484c19}} 
+\index{Connector@{Connector}!Throw\+Exception@{Throw\+Exception}}
+\index{Throw\+Exception@{Throw\+Exception}!Connector@{Connector}}
+\subsubsection{\texorpdfstring{Throw\+Exception}{ThrowException}}
+{\footnotesize\ttfamily bool Connector.\+Throw\+Exception = false\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+A boolean to trigger the code to throw an exception when an error has been encountered. 
+
+If set to false, the errors are just stored in the static list Return\+Messages and it will be indicated by is\+Error boolean variable
+
+Definition at line 48 of file Connector.\+cs.
+
+\mbox{\Hypertarget{class_connector_a41d247f09774f0ed206ce1a4a2463fed}\label{class_connector_a41d247f09774f0ed206ce1a4a2463fed}} 
+\index{Connector@{Connector}!User\+Name@{User\+Name}}
+\index{User\+Name@{User\+Name}!Connector@{Connector}}
+\subsubsection{\texorpdfstring{User\+Name}{UserName}}
+{\footnotesize\ttfamily readonly string Connector.\+User\+Name}
+
+
+
+Variable containing the supplied User\+Name (read-\/only) 
+
+
+
+Definition at line 53 of file Connector.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_connector_a079bae21a5417efa53bfe8954c0f533f}\label{class_connector_a079bae21a5417efa53bfe8954c0f533f}} 
+\index{Connector@{Connector}!has\+Error@{has\+Error}}
+\index{has\+Error@{has\+Error}!Connector@{Connector}}
+\subsubsection{\texorpdfstring{has\+Error}{hasError}}
+{\footnotesize\ttfamily bool Connector.\+has\+Error\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+This boolean will indicate if an error has occurred in the library and based on the Throw\+Exception variable it will thow an execption when has\+Error is true 
+
+
+
+Definition at line 99 of file Connector.\+cs.
+
+
+
+Referenced by Connector(), Document\+Object.\+Export\+Fields(), Document\+Object.\+Get\+All\+Fields(), Document\+Object.\+Get\+Fields(), Get\+Session(), Field\+Object.\+get\+Value(), Field\+Object.\+Get\+Value\+As\+Date(), Field\+Object.\+Get\+Value\+As\+Double(), Field\+Object.\+Get\+Value\+As\+List(), Field\+Object.\+Get\+Value\+As\+String(), Session\+Object.\+Initialize(), Database\+Object.\+Initialize(), and Document\+Object.\+Initialize().
+
+\mbox{\Hypertarget{class_connector_acf2c3b519c360d02ed54543a01d199af}\label{class_connector_acf2c3b519c360d02ed54543a01d199af}} 
+\index{Connector@{Connector}!is\+Connected@{is\+Connected}}
+\index{is\+Connected@{is\+Connected}!Connector@{Connector}}
+\subsubsection{\texorpdfstring{is\+Connected}{isConnected}}
+{\footnotesize\ttfamily bool Connector.\+is\+Connected\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Indicates if a connection to the domino has been established 
+
+
+
+Definition at line 133 of file Connector.\+cs.
+
+
+
+Referenced by Session\+Object.\+Initialize().
+
+\mbox{\Hypertarget{class_connector_a017d40b1f4cf2cbaa5d4b755cf09269e}\label{class_connector_a017d40b1f4cf2cbaa5d4b755cf09269e}} 
+\index{Connector@{Connector}!is\+Initialized@{is\+Initialized}}
+\index{is\+Initialized@{is\+Initialized}!Connector@{Connector}}
+\subsubsection{\texorpdfstring{is\+Initialized}{isInitialized}}
+{\footnotesize\ttfamily bool Connector.\+is\+Initialized\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Indicates if the connector has been initialized 
+
+When not initialized no other methods can be executed
+
+Definition at line 143 of file Connector.\+cs.
+
+
+
+Referenced by Session\+Object.\+Initialize().
+
+\mbox{\Hypertarget{class_connector_a1ed422674b344524fd77998dcf6a9ba6}\label{class_connector_a1ed422674b344524fd77998dcf6a9ba6}} 
+\index{Connector@{Connector}!Return\+Messages@{Return\+Messages}}
+\index{Return\+Messages@{Return\+Messages}!Connector@{Connector}}
+\subsubsection{\texorpdfstring{Return\+Messages}{ReturnMessages}}
+{\footnotesize\ttfamily Array\+List Connector.\+Return\+Messages\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+A list of messages generated in the library 
+
+This list is used as a return mechanism of actions performed in this library
+
+Definition at line 117 of file Connector.\+cs.
+
+
+
+Referenced by Connector(), Document\+Object.\+Document\+Object(), Document\+Object.\+Export\+Fields(), Get\+Session(), Field\+Object.\+get\+Value(), Field\+Object.\+Get\+Value\+As\+Date(), Field\+Object.\+Get\+Value\+As\+Double(), Field\+Object.\+Get\+Value\+As\+List(), Field\+Object.\+Get\+Value\+As\+String(), Session\+Object.\+Initialize(), and Database\+Object.\+Initialize().
+
+\mbox{\Hypertarget{class_connector_a0a7bb42f9530796c086ab50785147ce9}\label{class_connector_a0a7bb42f9530796c086ab50785147ce9}} 
+\index{Connector@{Connector}!Session\+Object@{Session\+Object}}
+\index{Session\+Object@{Session\+Object}!Connector@{Connector}}
+\subsubsection{\texorpdfstring{Session\+Object}{SessionObject}}
+{\footnotesize\ttfamily \hyperlink{class_session_object}{Session\+Object} Connector.\+Session\+Object\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+A \hyperlink{class_session_object}{Session\+Object} is used to establish a connection to the X\+Pages database that hosts the Rest Service 
+
+In order to get the \hyperlink{class_session_object}{Session\+Object}, the user needs to have access to the X\+Pages database
+
+Definition at line 207 of file Connector.\+cs.
+
+
+
+Referenced by Get\+Session().
+
+\mbox{\Hypertarget{class_connector_a092e3e36f92c129c07c57df9b8fb91ca}\label{class_connector_a092e3e36f92c129c07c57df9b8fb91ca}} 
+\index{Connector@{Connector}!X\+P\+Identity@{X\+P\+Identity}}
+\index{X\+P\+Identity@{X\+P\+Identity}!Connector@{Connector}}
+\subsubsection{\texorpdfstring{X\+P\+Identity}{XPIdentity}}
+{\footnotesize\ttfamily string Connector.\+X\+P\+Identity\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+A custom identification header, used when sending request to the domino database 
+
+
+
+Definition at line 154 of file Connector.\+cs.
+
+
+
+Referenced by Initialize().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Acket\+K/stack/\+Dropbox/\+Programming/\+S\+V\+N Projects/\+S\+C\+M/\+X\+Pages\+Connector/\+C-\/\+Sharp/\+Xpages\+Connector/\hyperlink{_connector_8cs}{Connector.\+cs}\end{DoxyCompactItemize}

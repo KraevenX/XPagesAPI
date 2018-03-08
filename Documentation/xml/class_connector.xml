@@ -1,0 +1,590 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_connector" kind="class" language="C#" prot="public">
+    <compoundname>Connector</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_connector_1a967a778263c45f7cca13269f15c185f9" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Connector._isInitialized</definition>
+        <argsstring></argsstring>
+        <name>_isInitialized</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" line="30" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_connector_1a7962119e409b2dcadf1ba17bc96840e9" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Connector._isConnected</definition>
+        <argsstring></argsstring>
+        <name>_isConnected</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" line="31" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_connector_1a6fc825797909d044ce552367e9798952" prot="private" static="no" mutable="no">
+        <type><ref refid="class_session_object" kindref="compound">SessionObject</ref></type>
+        <definition>SessionObject Connector._SessionObject</definition>
+        <argsstring></argsstring>
+        <name>_SessionObject</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" line="33" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_connector_1a67cb5bdda79e011540d02207bbc3980d" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Connector._EncryptionIV</definition>
+        <argsstring></argsstring>
+        <name>_EncryptionIV</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" line="39" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_connector_1a7bdde14f7982ddd5e1fa21efd9f899ea" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Connector._EncryptionPASSWORD</definition>
+        <argsstring></argsstring>
+        <name>_EncryptionPASSWORD</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" line="40" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_connector_1a3ae3d1f2f81d61d96d7c431d000076be" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Connector._EncryptionSALT</definition>
+        <argsstring></argsstring>
+        <name>_EncryptionSALT</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" line="41" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_connector_1a887552df3fe7eb165c83dee1eb098c7a" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Connector._XPIdentity</definition>
+        <argsstring></argsstring>
+        <name>_XPIdentity</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" line="42" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_connector_1a26cfd4ca2812289a3d91588e9d2f85c2" prot="private" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool Connector._hasError</definition>
+        <argsstring></argsstring>
+        <name>_hasError</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" line="32" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_connector_1a45c9819bca6c0754d256a8a88b2ed66c" prot="private" static="yes" mutable="no">
+        <type>ArrayList</type>
+        <definition>ArrayList Connector._ReturnMessages</definition>
+        <argsstring></argsstring>
+        <name>_ReturnMessages</name>
+        <initializer>= new ArrayList()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" line="35" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="class_connector_1a614ab27a88e29fae6d71d112c90b1dce" prot="package" static="no" mutable="no">
+        <type>Requestor</type>
+        <definition>Requestor Connector.Request</definition>
+        <argsstring></argsstring>
+        <name>Request</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" line="37" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_connector_1a8ec0dcdbb4a85a56fa50f67686484c19" prot="public" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool Connector.ThrowException</definition>
+        <argsstring></argsstring>
+        <name>ThrowException</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>A boolean to trigger the code to throw an exception when an error has been encountered. </para>        </briefdescription>
+        <detaileddescription>
+<para>If set to false, the errors are just stored in the static list ReturnMessages and it will be indicated by isError boolean variable</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" line="48" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_connector_1a41d247f09774f0ed206ce1a4a2463fed" prot="public" static="no" mutable="no">
+        <type>readonly string</type>
+        <definition>readonly string Connector.UserName</definition>
+        <argsstring></argsstring>
+        <name>UserName</name>
+        <briefdescription>
+<para>Variable containing the supplied UserName (read-only) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" line="53" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_connector_1a7dd469898462ef761d256392766461fe" prot="public" static="no" mutable="no">
+        <type>readonly string</type>
+        <definition>readonly string Connector.Password</definition>
+        <argsstring></argsstring>
+        <name>Password</name>
+        <briefdescription>
+<para>Variable containing the supplied Password (read-only) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" line="57" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_connector_1ac0cae400459978dde8030f75208e48f1" prot="public" static="no" mutable="no">
+        <type>readonly string</type>
+        <definition>readonly string Connector.ServerURL</definition>
+        <argsstring></argsstring>
+        <name>ServerURL</name>
+        <briefdescription>
+<para>Variable containing the supplied Server URL (read-only) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" line="61" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_connector_1a079bae21a5417efa53bfe8954c0f533f" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>bool</type>
+        <definition>bool Connector.hasError</definition>
+        <argsstring></argsstring>
+        <name>hasError</name>
+        <briefdescription>
+<para>This boolean will indicate if an error has occurred in the library and based on the ThrowException variable it will thow an execption when hasError is true </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" line="99" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" bodystart="99" bodyend="-1"/>
+        <referencedby refid="class_connector_1a259c6d94252479cc3028038ebbaa7dc8" compoundref="_connector_8cs" startline="73" endline="90">Connector</referencedby>
+        <referencedby refid="class_document_object_1a1a763aa01710b370634f46c89b7d2d8e" compoundref="_document_object_8cs" startline="340" endline="378">DocumentObject.ExportFields</referencedby>
+        <referencedby refid="class_document_object_1a5e070c7c0a45ac06422ee992c841e780" compoundref="_document_object_8cs" startline="317" endline="331">DocumentObject.GetAllFields</referencedby>
+        <referencedby refid="class_document_object_1a8883fec3b5b1b6e2e43f4b5ca4092684" compoundref="_document_object_8cs" startline="271" endline="286">DocumentObject.GetFields</referencedby>
+        <referencedby refid="class_connector_1a5d089c1639f255966f00b2b05add0993" compoundref="_connector_8cs" startline="279" endline="308">GetSession</referencedby>
+        <referencedby refid="class_field_object_1a8d962cda039f78f485232bd2764176c4" compoundref="_field_object_8cs" startline="79" endline="104">FieldObject.getValue</referencedby>
+        <referencedby refid="class_field_object_1a797ebc6615a86bafd9bd17f09562f2ee" compoundref="_field_object_8cs" startline="146" endline="156">FieldObject.GetValueAsDate</referencedby>
+        <referencedby refid="class_field_object_1aafe2b7d3e7d414345d85e19dddce3c47" compoundref="_field_object_8cs" startline="129" endline="140">FieldObject.GetValueAsDouble</referencedby>
+        <referencedby refid="class_field_object_1a635d7598cbf7bbc29821cb1c012de964" compoundref="_field_object_8cs" startline="162" endline="173">FieldObject.GetValueAsList</referencedby>
+        <referencedby refid="class_field_object_1ad223b04d429de4b2c57838ffb41d124b" compoundref="_field_object_8cs" startline="112" endline="123">FieldObject.GetValueAsString</referencedby>
+        <referencedby refid="class_session_object_1af3b9c9d56d98c848061952ed935f815b" compoundref="_session_object_8cs" startline="79" endline="102">SessionObject.Initialize</referencedby>
+        <referencedby refid="class_database_object_1a7de43a21bd287deec537cffec343f41d" compoundref="_database_object_8cs" startline="195" endline="218">DatabaseObject.Initialize</referencedby>
+        <referencedby refid="class_document_object_1af4298d6cfbb9ea60643d9995309b73f1" compoundref="_document_object_8cs" startline="241" endline="262">DocumentObject.Initialize</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_connector_1a1ed422674b344524fd77998dcf6a9ba6" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>ArrayList</type>
+        <definition>ArrayList Connector.ReturnMessages</definition>
+        <argsstring></argsstring>
+        <name>ReturnMessages</name>
+        <briefdescription>
+<para>A list of messages generated in the library </para>        </briefdescription>
+        <detaileddescription>
+<para>This list is used as a return mechanism of actions performed in this library</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" line="117" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" bodystart="117" bodyend="-1"/>
+        <referencedby refid="class_connector_1a259c6d94252479cc3028038ebbaa7dc8" compoundref="_connector_8cs" startline="73" endline="90">Connector</referencedby>
+        <referencedby refid="class_document_object_1a4eb6c7aaa4774d1d5dbf5bf17dff23d9" compoundref="_document_object_8cs" startline="204" endline="207">DocumentObject.DocumentObject</referencedby>
+        <referencedby refid="class_document_object_1a1a763aa01710b370634f46c89b7d2d8e" compoundref="_document_object_8cs" startline="340" endline="378">DocumentObject.ExportFields</referencedby>
+        <referencedby refid="class_connector_1a5d089c1639f255966f00b2b05add0993" compoundref="_connector_8cs" startline="279" endline="308">GetSession</referencedby>
+        <referencedby refid="class_field_object_1a8d962cda039f78f485232bd2764176c4" compoundref="_field_object_8cs" startline="79" endline="104">FieldObject.getValue</referencedby>
+        <referencedby refid="class_field_object_1a797ebc6615a86bafd9bd17f09562f2ee" compoundref="_field_object_8cs" startline="146" endline="156">FieldObject.GetValueAsDate</referencedby>
+        <referencedby refid="class_field_object_1aafe2b7d3e7d414345d85e19dddce3c47" compoundref="_field_object_8cs" startline="129" endline="140">FieldObject.GetValueAsDouble</referencedby>
+        <referencedby refid="class_field_object_1a635d7598cbf7bbc29821cb1c012de964" compoundref="_field_object_8cs" startline="162" endline="173">FieldObject.GetValueAsList</referencedby>
+        <referencedby refid="class_field_object_1ad223b04d429de4b2c57838ffb41d124b" compoundref="_field_object_8cs" startline="112" endline="123">FieldObject.GetValueAsString</referencedby>
+        <referencedby refid="class_session_object_1af3b9c9d56d98c848061952ed935f815b" compoundref="_session_object_8cs" startline="79" endline="102">SessionObject.Initialize</referencedby>
+        <referencedby refid="class_database_object_1a7de43a21bd287deec537cffec343f41d" compoundref="_database_object_8cs" startline="195" endline="218">DatabaseObject.Initialize</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_connector_1acf2c3b519c360d02ed54543a01d199af" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>bool</type>
+        <definition>bool Connector.isConnected</definition>
+        <argsstring></argsstring>
+        <name>isConnected</name>
+        <briefdescription>
+<para>Indicates if a connection to the domino has been established </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" line="133" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" bodystart="133" bodyend="-1"/>
+        <referencedby refid="class_session_object_1af3b9c9d56d98c848061952ed935f815b" compoundref="_session_object_8cs" startline="79" endline="102">SessionObject.Initialize</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_connector_1a017d40b1f4cf2cbaa5d4b755cf09269e" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>bool</type>
+        <definition>bool Connector.isInitialized</definition>
+        <argsstring></argsstring>
+        <name>isInitialized</name>
+        <briefdescription>
+<para>Indicates if the connector has been initialized </para>        </briefdescription>
+        <detaileddescription>
+<para>When not initialized no other methods can be executed</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" line="143" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" bodystart="143" bodyend="-1"/>
+        <referencedby refid="class_session_object_1af3b9c9d56d98c848061952ed935f815b" compoundref="_session_object_8cs" startline="79" endline="102">SessionObject.Initialize</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_connector_1a092e3e36f92c129c07c57df9b8fb91ca" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string Connector.XPIdentity</definition>
+        <argsstring></argsstring>
+        <name>XPIdentity</name>
+        <briefdescription>
+<para>A custom identification header, used when sending request to the domino database </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" line="154" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" bodystart="154" bodyend="-1"/>
+        <referencedby refid="class_connector_1a2ceb19719cfc04adc4c2d299e19e1447" compoundref="_connector_8cs" startline="224" endline="244">Initialize</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_connector_1a62269f0d1749b4f2185a988c25bbe088" prot="package" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string Connector.EncryptionIV</definition>
+        <argsstring></argsstring>
+        <name>EncryptionIV</name>
+        <briefdescription>
+<para>Encryption IV Key </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" line="167" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_connector_1a03d18ba01d41974d0705049712356446" prot="package" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string Connector.EncryptionPASSWORD</definition>
+        <argsstring></argsstring>
+        <name>EncryptionPASSWORD</name>
+        <briefdescription>
+<para>Encryption Password </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" line="180" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_connector_1a41efb9b95da0b7da84bc82c09b913af9" prot="package" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string Connector.EncryptionSALT</definition>
+        <argsstring></argsstring>
+        <name>EncryptionSALT</name>
+        <briefdescription>
+<para>Encryption Salt Key </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" line="193" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_connector_1a0a7bb42f9530796c086ab50785147ce9" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type><ref refid="class_session_object" kindref="compound">SessionObject</ref></type>
+        <definition>SessionObject Connector.SessionObject</definition>
+        <argsstring></argsstring>
+        <name>SessionObject</name>
+        <briefdescription>
+<para>A <ref refid="class_session_object" kindref="compound">SessionObject</ref> is used to establish a connection to the XPages database that hosts the Rest Service </para>        </briefdescription>
+        <detaileddescription>
+<para>In order to get the <ref refid="class_session_object" kindref="compound">SessionObject</ref>, the user needs to have access to the XPages database</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" line="207" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" bodystart="207" bodyend="-1"/>
+        <referencedby refid="class_connector_1a5d089c1639f255966f00b2b05add0993" compoundref="_connector_8cs" startline="279" endline="308">GetSession</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_connector_1a259c6d94252479cc3028038ebbaa7dc8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Connector.Connector</definition>
+        <argsstring>(string User, string Pass, string server)</argsstring>
+        <name>Connector</name>
+        <param>
+          <type>string</type>
+          <declname>User</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>Pass</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>server</declname>
+        </param>
+        <briefdescription>
+<para>Constructor method, provide the users credentials to logon to a domino server </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>User</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Pass</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>server</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" line="73" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" bodystart="73" bodyend="90"/>
+        <references refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" compoundref="_connector_8cs" startline="99">hasError</references>
+        <references refid="class_connector_1a1ed422674b344524fd77998dcf6a9ba6" compoundref="_connector_8cs" startline="117">ReturnMessages</references>
+      </memberdef>
+      <memberdef kind="function" id="class_connector_1a2ceb19719cfc04adc4c2d299e19e1447" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Connector.Initialize</definition>
+        <argsstring>(string EncryptionPassword=null, string EncryptionIV=null, string EncryptionSalt=null, string Identify=null)</argsstring>
+        <name>Initialize</name>
+        <param>
+          <type>string</type>
+          <declname>EncryptionPassword</declname>
+          <defval>null</defval>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>EncryptionIV</declname>
+          <defval>null</defval>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>EncryptionSalt</declname>
+          <defval>null</defval>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>Identify</declname>
+          <defval>null</defval>
+        </param>
+        <briefdescription>
+<para>Initializes the <ref refid="class_connector" kindref="compound">Connector</ref> and provides the possibility to use custom encryption keys and Identification header </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>EncryptionPassword</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>EncryptionIV</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>EncryptionSalt</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Identify</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" line="224" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" bodystart="224" bodyend="244"/>
+        <references refid="class_connector_1a092e3e36f92c129c07c57df9b8fb91ca" compoundref="_connector_8cs" startline="154">XPIdentity</references>
+      </memberdef>
+      <memberdef kind="function" id="class_connector_1a0dcf8f969c37c4306c567417a872329a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Connector.Connect</definition>
+        <argsstring>()</argsstring>
+        <name>Connect</name>
+        <briefdescription>
+<para>When the connector has been initialized, this method will establish a connection to the domino server using the provided credentials </para>        </briefdescription>
+        <detaileddescription>
+<para>Sets isConnected property</para><para><simplesect kind="return"><para>boolean</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" line="251" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" bodystart="251" bodyend="271"/>
+      </memberdef>
+      <memberdef kind="function" id="class_connector_1a5d089c1639f255966f00b2b05add0993" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_session_object" kindref="compound">SessionObject</ref></type>
+        <definition>SessionObject Connector.GetSession</definition>
+        <argsstring>(string DominoWebServiceURL)</argsstring>
+        <name>GetSession</name>
+        <param>
+          <type>string</type>
+          <declname>DominoWebServiceURL</declname>
+        </param>
+        <briefdescription>
+<para>This method will try to create a <ref refid="class_session_object" kindref="compound">SessionObject</ref>, by connecting to the XPages database Rest Service </para>        </briefdescription>
+        <detaileddescription>
+<para>In order to get the <ref refid="class_session_object" kindref="compound">SessionObject</ref>, the user needs to have access to the XPages database</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>DominoWebServiceURL</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="class_session_object" kindref="compound">SessionObject</ref></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" line="279" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" bodystart="279" bodyend="308"/>
+        <references refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" compoundref="_connector_8cs" startline="99">hasError</references>
+        <references refid="class_session_object_1af3b9c9d56d98c848061952ed935f815b" compoundref="_session_object_8cs" startline="79" endline="102">SessionObject.Initialize</references>
+        <references refid="class_connector_1a1ed422674b344524fd77998dcf6a9ba6" compoundref="_connector_8cs" startline="117">ReturnMessages</references>
+        <references refid="class_connector_1a0a7bb42f9530796c086ab50785147ce9" compoundref="_connector_8cs" startline="207">SessionObject</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-static-func">
+      <memberdef kind="function" id="class_connector_1a14faa526d6fbf6f73ad2a676fc369f8a" prot="package" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Connector.ResetReturn</definition>
+        <argsstring>()</argsstring>
+        <name>ResetReturn</name>
+        <briefdescription>
+<para>Internal method to reset the return mechanism </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" line="317" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" bodystart="317" bodyend="320"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="class_connector" kindref="compound">Connector</ref> Object - Used to connect to a domino database - by interfacing with a custom XPages database and Rest Service </para>    </briefdescription>
+    <detaileddescription>
+<para>The following is an example of initializing a <computeroutput><ref refid="class_connector" kindref="compound">Connector</ref></computeroutput> type: <programlisting><codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Create<sp/>the<sp/>connector</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Connector<sp/>connector<sp/>=<sp/>new<sp/>Connector(UserName,<sp/>Password,<sp/>serverURL);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Initialize<sp/>the<sp/>connector</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>connector.Initialize();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//must<sp/>always<sp/>be<sp/>called,<sp/>possibility<sp/>to<sp/>add<sp/>pass,iv,salt<sp/>by<sp/>default<sp/>this<sp/>is<sp/>already<sp/>set</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(connector.isInitialized)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(connector.Connect())<sp/>{<sp/><sp/>//<sp/>establish<sp/>a<sp/>connection<sp/>to<sp/>the<sp/>domino<sp/>server</highlight></codeline>
+<codeline><highlight class="normal">@verbatim</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>From<sp/>the<sp/>connector<sp/>you<sp/>can<sp/>now<sp/>create<sp/>a<sp/>session<sp/>object</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>The<sp/>session<sp/>object<sp/>gives<sp/>you<sp/>the<sp/>possibility<sp/>to<sp/>get<sp/>a<sp/>database<sp/>object</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>From<sp/>that<sp/>database<sp/>you<sp/>can<sp/>get<sp/>the<sp/>actual<sp/>document<sp/>objects</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>From<sp/>those<sp/>document<sp/>objects<sp/>you<sp/>can<sp/>then<sp/>get<sp/>the<sp/>field<sp/>objects<sp/>(key/value)</highlight></codeline>
+<codeline><highlight class="normal">@endverbatim</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="4">
+        <label>Requestor</label>
+      </node>
+      <node id="3">
+        <label>Connector</label>
+        <link refid="class_connector"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>Request</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" line="26" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs" bodystart="26" bodyend="324"/>
+    <listofallmembers>
+      <member refid="class_connector_1a67cb5bdda79e011540d02207bbc3980d" prot="private" virt="non-virtual"><scope>Connector</scope><name>_EncryptionIV</name></member>
+      <member refid="class_connector_1a7bdde14f7982ddd5e1fa21efd9f899ea" prot="private" virt="non-virtual"><scope>Connector</scope><name>_EncryptionPASSWORD</name></member>
+      <member refid="class_connector_1a3ae3d1f2f81d61d96d7c431d000076be" prot="private" virt="non-virtual"><scope>Connector</scope><name>_EncryptionSALT</name></member>
+      <member refid="class_connector_1a26cfd4ca2812289a3d91588e9d2f85c2" prot="private" virt="non-virtual"><scope>Connector</scope><name>_hasError</name></member>
+      <member refid="class_connector_1a7962119e409b2dcadf1ba17bc96840e9" prot="private" virt="non-virtual"><scope>Connector</scope><name>_isConnected</name></member>
+      <member refid="class_connector_1a967a778263c45f7cca13269f15c185f9" prot="private" virt="non-virtual"><scope>Connector</scope><name>_isInitialized</name></member>
+      <member refid="class_connector_1a45c9819bca6c0754d256a8a88b2ed66c" prot="private" virt="non-virtual"><scope>Connector</scope><name>_ReturnMessages</name></member>
+      <member refid="class_connector_1a6fc825797909d044ce552367e9798952" prot="private" virt="non-virtual"><scope>Connector</scope><name>_SessionObject</name></member>
+      <member refid="class_connector_1a887552df3fe7eb165c83dee1eb098c7a" prot="private" virt="non-virtual"><scope>Connector</scope><name>_XPIdentity</name></member>
+      <member refid="class_connector_1a0dcf8f969c37c4306c567417a872329a" prot="public" virt="non-virtual"><scope>Connector</scope><name>Connect</name></member>
+      <member refid="class_connector_1a259c6d94252479cc3028038ebbaa7dc8" prot="public" virt="non-virtual"><scope>Connector</scope><name>Connector</name></member>
+      <member refid="class_connector_1a62269f0d1749b4f2185a988c25bbe088" prot="package" virt="non-virtual"><scope>Connector</scope><name>EncryptionIV</name></member>
+      <member refid="class_connector_1a03d18ba01d41974d0705049712356446" prot="package" virt="non-virtual"><scope>Connector</scope><name>EncryptionPASSWORD</name></member>
+      <member refid="class_connector_1a41efb9b95da0b7da84bc82c09b913af9" prot="package" virt="non-virtual"><scope>Connector</scope><name>EncryptionSALT</name></member>
+      <member refid="class_connector_1a5d089c1639f255966f00b2b05add0993" prot="public" virt="non-virtual"><scope>Connector</scope><name>GetSession</name></member>
+      <member refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" prot="public" virt="non-virtual"><scope>Connector</scope><name>hasError</name></member>
+      <member refid="class_connector_1a2ceb19719cfc04adc4c2d299e19e1447" prot="public" virt="non-virtual"><scope>Connector</scope><name>Initialize</name></member>
+      <member refid="class_connector_1acf2c3b519c360d02ed54543a01d199af" prot="public" virt="non-virtual"><scope>Connector</scope><name>isConnected</name></member>
+      <member refid="class_connector_1a017d40b1f4cf2cbaa5d4b755cf09269e" prot="public" virt="non-virtual"><scope>Connector</scope><name>isInitialized</name></member>
+      <member refid="class_connector_1a7dd469898462ef761d256392766461fe" prot="public" virt="non-virtual"><scope>Connector</scope><name>Password</name></member>
+      <member refid="class_connector_1a614ab27a88e29fae6d71d112c90b1dce" prot="package" virt="non-virtual"><scope>Connector</scope><name>Request</name></member>
+      <member refid="class_connector_1a14faa526d6fbf6f73ad2a676fc369f8a" prot="package" virt="non-virtual"><scope>Connector</scope><name>ResetReturn</name></member>
+      <member refid="class_connector_1a1ed422674b344524fd77998dcf6a9ba6" prot="public" virt="non-virtual"><scope>Connector</scope><name>ReturnMessages</name></member>
+      <member refid="class_connector_1ac0cae400459978dde8030f75208e48f1" prot="public" virt="non-virtual"><scope>Connector</scope><name>ServerURL</name></member>
+      <member refid="class_connector_1a0a7bb42f9530796c086ab50785147ce9" prot="public" virt="non-virtual"><scope>Connector</scope><name>SessionObject</name></member>
+      <member refid="class_connector_1a8ec0dcdbb4a85a56fa50f67686484c19" prot="public" virt="non-virtual"><scope>Connector</scope><name>ThrowException</name></member>
+      <member refid="class_connector_1a41d247f09774f0ed206ce1a4a2463fed" prot="public" virt="non-virtual"><scope>Connector</scope><name>UserName</name></member>
+      <member refid="class_connector_1a092e3e36f92c129c07c57df9b8fb91ca" prot="public" virt="non-virtual"><scope>Connector</scope><name>XPIdentity</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

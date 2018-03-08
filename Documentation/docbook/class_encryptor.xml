@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_encryptor">
+<title>Encryptor class Reference</title>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string IV</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string PASSWORD</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string SALT</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string EncodedContent</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool isInitialized</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string DecodedContent</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool Encode</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_encryptor_1ac8a4a056cfd1321dc82eb4b94b95d1ff">Encryptor</link> (
+string content, bool encode, ref <link linkend="class_connector">Connector</link> Connector)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_encryptor_1a6ce2d934ee25a0e554f97d027399ce09">Initialize</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string <link linkend="class_encryptor_1a2bc09300ed934e05bd465b2fae77b38e">EncryptAndEncode</link> (
+string raw)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string <link linkend="class_encryptor_1a6c8fb36f29875f6c7bacb17ab845553f">DecodeAndDecrypt</link> (
+string encrypted)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>ICryptoTransform <link linkend="class_encryptor_1ac0a2c64858c15d440fc6e2abf1631abe">GetCryptoTransform</link> (
+AesCryptoServiceProvider csp, bool encrypting)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_encryptor_1ac8a4a056cfd1321dc82eb4b94b95d1ff">
+                <title>Encryptor.Encryptor (string content, bool encode, ref Connector Connector)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_encryptor_1a6ce2d934ee25a0e554f97d027399ce09">
+                <title>bool Encryptor.Initialize ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_encryptor_1a2bc09300ed934e05bd465b2fae77b38e">
+                <title>string Encryptor.EncryptAndEncode (string raw)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_encryptor_1a6c8fb36f29875f6c7bacb17ab845553f">
+                <title>string Encryptor.DecodeAndDecrypt (string encrypted)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_encryptor_1ac0a2c64858c15d440fc6e2abf1631abe">
+                <title>ICryptoTransform Encryptor.GetCryptoTransform (AesCryptoServiceProvider csp, bool encrypting)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

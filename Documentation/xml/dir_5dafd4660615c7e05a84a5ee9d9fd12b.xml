@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_5dafd4660615c7e05a84a5ee9d9fd12b" kind="dir">
+    <compoundname>C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects</compoundname>
+    <innerfile refid="_database_object_8cs">DatabaseObject.cs</innerfile>
+    <innerfile refid="_document_object_8cs">DocumentObject.cs</innerfile>
+    <innerfile refid="_field_object_8cs">FieldObject.cs</innerfile>
+    <innerfile refid="_session_object_8cs">SessionObject.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/"/>
+  </compounddef>
+</doxygen>

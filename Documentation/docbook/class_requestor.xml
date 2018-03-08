@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_requestor">
+<title>Requestor class Reference</title>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Connector Connection</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>CookieContainer AuthenticationCookie</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool isInitialized</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_requestor_1aa658a1b5c2185e8f8e88d757dec92b74">Requestor</link> (
+<link linkend="class_connector">Connector</link> Connector)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_requestor_1a073cd75eae2b7ce17d8e600c03564cd3">AddIdentityHeader</link> (
+ref HttpWebRequest request)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_requestor_1a39d23e40ee1f7ef2cabfae1f42b04968">Initialize</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_requestor_1abbdb09e9cfcb74f1b90ac00f87780630">ExecuteSessionRequest</link> (
+string WebServiceURL)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_requestor_1a9e460007336e77741a15815272988292">ExecuteDatabaseRequest</link> (
+string WebServiceURL, string ServerName, string dbFilePath, string dbReplicationId, <link linkend="class_database_object">DatabaseObject</link> dbObj)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_requestor_1abce2f7be8f91b5da4de34c0075bd2c6a">ExecuteDocumentRequest</link> (
+string WebServiceURL, string Unid, string searchField, string searchValue, string formula, <link linkend="class_database_object">DatabaseObject</link> dbObj, <link linkend="class_document_object">DocumentObject</link> docObj)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_requestor_1ac4b4d88f8ce2f1b1a6db7ee87c82f60a">ExecuteAllDocumentsRequest</link> (
+string WebServiceURL, string searchField, string searchValue, string formula, string unids, <link linkend="class_database_object">DatabaseObject</link> dbObj)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_requestor_1a79b18759ab798a2755a9a79a57478d82">ExecuteFieldsRequest</link> (
+string WebServiceURL, <link linkend="class_document_object">DocumentObject</link> docObj, string fields)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_requestor_1a14632528cb1be88d2e390300da796faa">ExecuteAllFieldsRequest</link> (
+string WebServiceURL, <link linkend="class_database_object">DatabaseObject</link> dbObj, string fields)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_requestor_1aa658a1b5c2185e8f8e88d757dec92b74">
+                <title>Requestor.Requestor (Connector Connector)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_requestor_1a073cd75eae2b7ce17d8e600c03564cd3">
+                <title>bool Requestor.AddIdentityHeader (ref HttpWebRequest request)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_requestor_1a39d23e40ee1f7ef2cabfae1f42b04968">
+                <title>bool Requestor.Initialize ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_requestor_1abbdb09e9cfcb74f1b90ac00f87780630">
+                <title>bool Requestor.ExecuteSessionRequest (string WebServiceURL)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_requestor_1a9e460007336e77741a15815272988292">
+                <title>bool Requestor.ExecuteDatabaseRequest (string WebServiceURL, string ServerName, string dbFilePath, string dbReplicationId, DatabaseObject dbObj)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_requestor_1abce2f7be8f91b5da4de34c0075bd2c6a">
+                <title>bool Requestor.ExecuteDocumentRequest (string WebServiceURL, string Unid, string searchField, string searchValue, string formula, DatabaseObject dbObj, DocumentObject docObj)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_requestor_1ac4b4d88f8ce2f1b1a6db7ee87c82f60a">
+                <title>bool Requestor.ExecuteAllDocumentsRequest (string WebServiceURL, string searchField, string searchValue, string formula, string unids, DatabaseObject dbObj)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_requestor_1a79b18759ab798a2755a9a79a57478d82">
+                <title>bool Requestor.ExecuteFieldsRequest (string WebServiceURL, DocumentObject docObj, string fields)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_requestor_1a14632528cb1be88d2e390300da796faa">
+                <title>bool Requestor.ExecuteAllFieldsRequest (string WebServiceURL, DatabaseObject dbObj, string fields)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

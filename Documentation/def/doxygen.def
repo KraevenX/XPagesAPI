@@ -1,0 +1,4015 @@
+AutoGen Definitions dummy;
+class = {
+  cp-id     = 'class_common';
+  cp-name   = 'Common';
+  cp-section = {
+    sec-kind = 'public-static-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_common_1a95a895bd81dcbd1ed2a07814462d0fc7';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+static string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetErrorInfo';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+Exception
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'ex';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Common.cs';
+      sec-mem-desc-line = '17';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Get formatted  string from the provided exception 
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<param name="ex"></param>
+<returns></returns>  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_common_1a6468d361244e4fd42f8be6e584075a21';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+static string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetListAsString';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+IList
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'arList';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'separator';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Common.cs';
+      sec-mem-desc-line = '48';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Get a string from a list of string separated by the provided separator
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<param name="arList"></param>
+<param name="separator"></param>
+<returns></returns>  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Common.cs';
+  cp-fileline  = '9';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+<summary>
+Class with common methods
+</summary>
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'class_connector';
+  cp-name   = 'Connector';
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_connector_1a259c6d94252479cc3028038ebbaa7dc8';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Connector';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'User';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'Pass';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'server';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs';
+      sec-mem-desc-line = '73';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Constructor method, provide the users credentials to logon to a domino server
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<param name="User"></param>
+<param name="Pass"></param>
+<param name="server"></param>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1a079bae21a5417efa53bfe8954c0f533f';
+        sec-mem-ref-line = '99';
+        sec-mem-ref-name = 'hasError';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1a1ed422674b344524fd77998dcf6a9ba6';
+        sec-mem-ref-line = '117';
+        sec-mem-ref-name = 'ReturnMessages';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_connector_1a2ceb19719cfc04adc4c2d299e19e1447';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Initialize';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'EncryptionPassword';
+        sec-mem-param-defval = <<_EnD_oF_dEf_TeXt_
+null
+_EnD_oF_dEf_TeXt_;
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'EncryptionIV';
+        sec-mem-param-defval = <<_EnD_oF_dEf_TeXt_
+null
+_EnD_oF_dEf_TeXt_;
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'EncryptionSalt';
+        sec-mem-param-defval = <<_EnD_oF_dEf_TeXt_
+null
+_EnD_oF_dEf_TeXt_;
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'Identify';
+        sec-mem-param-defval = <<_EnD_oF_dEf_TeXt_
+null
+_EnD_oF_dEf_TeXt_;
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs';
+      sec-mem-desc-line = '224';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Initializes the Connector and provides the possibility to use custom encryption keys and Identification header
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<param name="EncryptionPassword"></param>
+<param name="EncryptionIV"></param>
+<param name="EncryptionSalt"></param>
+<param name="Identify"></param>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1a092e3e36f92c129c07c57df9b8fb91ca';
+        sec-mem-ref-line = '154';
+        sec-mem-ref-name = 'XPIdentity';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_connector_1a0dcf8f969c37c4306c567417a872329a';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Connect';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs';
+      sec-mem-desc-line = '251';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+When the connector has been initialized, this method will establish a connection to the domino server using the provided credentials
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>Sets isConnected property</para>
+</summary>
+<returns>boolean</returns>  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_connector_1a5d089c1639f255966f00b2b05add0993';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+SessionObject
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetSession';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'DominoWebServiceURL';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs';
+      sec-mem-desc-line = '279';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+This method will try to create a SessionObject, by connecting to the XPages database Rest Service
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>In order to get the SessionObject, the user needs to have access to the XPages database</para>
+</summary>
+<param name="DominoWebServiceURL"></param>
+<returns>SessionObject</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1a079bae21a5417efa53bfe8954c0f533f';
+        sec-mem-ref-line = '99';
+        sec-mem-ref-name = 'hasError';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1af3b9c9d56d98c848061952ed935f815b';
+        sec-mem-ref-line = '79';
+        sec-mem-ref-name = 'SessionObject::Initialize';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1a1ed422674b344524fd77998dcf6a9ba6';
+        sec-mem-ref-line = '117';
+        sec-mem-ref-name = 'ReturnMessages';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1a0a7bb42f9530796c086ab50785147ce9';
+        sec-mem-ref-line = '207';
+        sec-mem-ref-name = 'SessionObject';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_connector_1a41d247f09774f0ed206ce1a4a2463fed';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+readonly string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'UserName';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs';
+      sec-mem-desc-line = '53';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Variable containing the supplied UserName (read-only)
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_connector_1a7dd469898462ef761d256392766461fe';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+readonly string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Password';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs';
+      sec-mem-desc-line = '57';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Variable containing the supplied Password (read-only)
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_connector_1ac0cae400459978dde8030f75208e48f1';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+readonly string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'ServerURL';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs';
+      sec-mem-desc-line = '61';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Variable containing the supplied Server URL (read-only)
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'property';
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_connector_1a079bae21a5417efa53bfe8954c0f533f';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+static bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'hasError';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs';
+      sec-mem-desc-line = '99';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+This boolean will indicate if an error has occurred in the library and based on the ThrowException variable it will thow an execption when hasError is true
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_connector_8cs_1a259c6d94252479cc3028038ebbaa7dc8';
+        sec-mem-ref-line = '73';
+        sec-mem-ref-name = 'Connector';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_document_object_8cs_1a1a763aa01710b370634f46c89b7d2d8e';
+        sec-mem-ref-line = '340';
+        sec-mem-ref-name = 'DocumentObject::ExportFields';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_document_object_8cs_1a5e070c7c0a45ac06422ee992c841e780';
+        sec-mem-ref-line = '317';
+        sec-mem-ref-name = 'DocumentObject::GetAllFields';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_document_object_8cs_1a8883fec3b5b1b6e2e43f4b5ca4092684';
+        sec-mem-ref-line = '271';
+        sec-mem-ref-name = 'DocumentObject::GetFields';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_connector_8cs_1a5d089c1639f255966f00b2b05add0993';
+        sec-mem-ref-line = '279';
+        sec-mem-ref-name = 'GetSession';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_field_object_8cs_1a8d962cda039f78f485232bd2764176c4';
+        sec-mem-ref-line = '79';
+        sec-mem-ref-name = 'FieldObject::getValue';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_field_object_8cs_1a797ebc6615a86bafd9bd17f09562f2ee';
+        sec-mem-ref-line = '146';
+        sec-mem-ref-name = 'FieldObject::GetValueAsDate';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_field_object_8cs_1aafe2b7d3e7d414345d85e19dddce3c47';
+        sec-mem-ref-line = '129';
+        sec-mem-ref-name = 'FieldObject::GetValueAsDouble';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_field_object_8cs_1a635d7598cbf7bbc29821cb1c012de964';
+        sec-mem-ref-line = '162';
+        sec-mem-ref-name = 'FieldObject::GetValueAsList';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_field_object_8cs_1ad223b04d429de4b2c57838ffb41d124b';
+        sec-mem-ref-line = '112';
+        sec-mem-ref-name = 'FieldObject::GetValueAsString';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_session_object_8cs_1af3b9c9d56d98c848061952ed935f815b';
+        sec-mem-ref-line = '79';
+        sec-mem-ref-name = 'SessionObject::Initialize';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1a7de43a21bd287deec537cffec343f41d';
+        sec-mem-ref-line = '195';
+        sec-mem-ref-name = 'DatabaseObject::Initialize';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_document_object_8cs_1af4298d6cfbb9ea60643d9995309b73f1';
+        sec-mem-ref-line = '241';
+        sec-mem-ref-name = 'DocumentObject::Initialize';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_connector_1a1ed422674b344524fd77998dcf6a9ba6';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+static ArrayList
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'ReturnMessages';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs';
+      sec-mem-desc-line = '117';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+A list of messages generated in the library
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>This list is used as a return mechanism of actions performed in this library</para>
+</summary>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_connector_8cs_1a259c6d94252479cc3028038ebbaa7dc8';
+        sec-mem-ref-line = '73';
+        sec-mem-ref-name = 'Connector';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_document_object_8cs_1a4eb6c7aaa4774d1d5dbf5bf17dff23d9';
+        sec-mem-ref-line = '204';
+        sec-mem-ref-name = 'DocumentObject::DocumentObject';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_document_object_8cs_1a1a763aa01710b370634f46c89b7d2d8e';
+        sec-mem-ref-line = '340';
+        sec-mem-ref-name = 'DocumentObject::ExportFields';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_connector_8cs_1a5d089c1639f255966f00b2b05add0993';
+        sec-mem-ref-line = '279';
+        sec-mem-ref-name = 'GetSession';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_field_object_8cs_1a8d962cda039f78f485232bd2764176c4';
+        sec-mem-ref-line = '79';
+        sec-mem-ref-name = 'FieldObject::getValue';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_field_object_8cs_1a797ebc6615a86bafd9bd17f09562f2ee';
+        sec-mem-ref-line = '146';
+        sec-mem-ref-name = 'FieldObject::GetValueAsDate';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_field_object_8cs_1aafe2b7d3e7d414345d85e19dddce3c47';
+        sec-mem-ref-line = '129';
+        sec-mem-ref-name = 'FieldObject::GetValueAsDouble';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_field_object_8cs_1a635d7598cbf7bbc29821cb1c012de964';
+        sec-mem-ref-line = '162';
+        sec-mem-ref-name = 'FieldObject::GetValueAsList';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_field_object_8cs_1ad223b04d429de4b2c57838ffb41d124b';
+        sec-mem-ref-line = '112';
+        sec-mem-ref-name = 'FieldObject::GetValueAsString';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_session_object_8cs_1af3b9c9d56d98c848061952ed935f815b';
+        sec-mem-ref-line = '79';
+        sec-mem-ref-name = 'SessionObject::Initialize';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1a7de43a21bd287deec537cffec343f41d';
+        sec-mem-ref-line = '195';
+        sec-mem-ref-name = 'DatabaseObject::Initialize';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_connector_1acf2c3b519c360d02ed54543a01d199af';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'isConnected';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs';
+      sec-mem-desc-line = '133';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Indicates if a connection to the domino has been established
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_session_object_8cs_1af3b9c9d56d98c848061952ed935f815b';
+        sec-mem-ref-line = '79';
+        sec-mem-ref-name = 'SessionObject::Initialize';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_connector_1a017d40b1f4cf2cbaa5d4b755cf09269e';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'isInitialized';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs';
+      sec-mem-desc-line = '143';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Indicates if the connector has been initialized
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>When not initialized no other methods can be executed</para>
+</summary>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_session_object_8cs_1af3b9c9d56d98c848061952ed935f815b';
+        sec-mem-ref-line = '79';
+        sec-mem-ref-name = 'SessionObject::Initialize';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_connector_1a092e3e36f92c129c07c57df9b8fb91ca';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'XPIdentity';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs';
+      sec-mem-desc-line = '154';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+A custom identification header, used when sending request to the domino database
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_connector_8cs_1a2ceb19719cfc04adc4c2d299e19e1447';
+        sec-mem-ref-line = '224';
+        sec-mem-ref-name = 'Initialize';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_connector_1a62269f0d1749b4f2185a988c25bbe088';
+      sec-mem-virt = normal;
+      sec-mem-prot = package;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'EncryptionIV';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs';
+      sec-mem-desc-line = '167';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Encryption IV Key
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_connector_1a03d18ba01d41974d0705049712356446';
+      sec-mem-virt = normal;
+      sec-mem-prot = package;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'EncryptionPASSWORD';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs';
+      sec-mem-desc-line = '180';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Encryption Password
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_connector_1a41efb9b95da0b7da84bc82c09b913af9';
+      sec-mem-virt = normal;
+      sec-mem-prot = package;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'EncryptionSALT';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs';
+      sec-mem-desc-line = '193';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Encryption Salt Key
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_connector_1a0a7bb42f9530796c086ab50785147ce9';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+SessionObject
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'SessionObject';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs';
+      sec-mem-desc-line = '207';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+A SessionObject is used to establish a connection to the XPages database that hosts the Rest Service
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>In order to get the SessionObject, the user needs to have access to the XPages database</para>
+</summary>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_connector_8cs_1a5d089c1639f255966f00b2b05add0993';
+        sec-mem-ref-line = '279';
+        sec-mem-ref-name = 'GetSession';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'public-static-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_connector_1a8ec0dcdbb4a85a56fa50f67686484c19';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+static bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'ThrowException';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= false
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs';
+      sec-mem-desc-line = '48';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+A boolean to trigger the code to throw an exception when an error has been encountered.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>If set to false, the errors are just stored in the static list ReturnMessages and it will be indicated by isError boolean variable</para>
+</summary>  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_connector_1a967a778263c45f7cca13269f15c185f9';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_isInitialized';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= false
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs';
+      sec-mem-desc-line = '30';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_connector_1a7962119e409b2dcadf1ba17bc96840e9';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_isConnected';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= false
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs';
+      sec-mem-desc-line = '31';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_connector_1a6fc825797909d044ce552367e9798952';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+SessionObject
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_SessionObject';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= null
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs';
+      sec-mem-desc-line = '33';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_connector_1a67cb5bdda79e011540d02207bbc3980d';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_EncryptionIV';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= ""
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs';
+      sec-mem-desc-line = '39';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_connector_1a7bdde14f7982ddd5e1fa21efd9f899ea';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_EncryptionPASSWORD';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= ""
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs';
+      sec-mem-desc-line = '40';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_connector_1a3ae3d1f2f81d61d96d7c431d000076be';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_EncryptionSALT';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= ""
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs';
+      sec-mem-desc-line = '41';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_connector_1a887552df3fe7eb165c83dee1eb098c7a';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_XPIdentity';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= ""
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs';
+      sec-mem-desc-line = '42';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-static-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_connector_1a26cfd4ca2812289a3d91588e9d2f85c2';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+static bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_hasError';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= false
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs';
+      sec-mem-desc-line = '32';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_connector_1a45c9819bca6c0754d256a8a88b2ed66c';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+static ArrayList
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_ReturnMessages';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= new ArrayList()
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs';
+      sec-mem-desc-line = '35';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs';
+  cp-fileline  = '26';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+<summary>
+Connector Object - Used to connect to a domino database - by interfacing with a custom XPages database and Rest Service
+</summary>
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+<example>The following is an example of initializing a
+<c>Connector</c> type:
+  <code>
+    // Create the connector
+    Connector connector = new Connector(UserName, Password, serverURL);
+    // Initialize the connector
+    connector.Initialize();
+    //must always be called, possibility to add pass,iv,salt by default this is already set
+    if (connector.isInitialized) {
+        if (connector.Connect()) {  // establish a connection to the domino server
+@verbatim
+// From the connector you can now create a session object
+// The session object gives you the possibility to get a database object
+// From that database you can get the actual document objects
+// From those document objects you can then get the field objects (key/value)
+@endverbatim
+        }   
+    }
+  </code>
+</example>  
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 21;
+        node-label = 'Requestor';
+      }; /* node */
+      node = {
+        node-id    = 20;
+        node-label = 'Connector';
+        node-link = {
+          node-link-id = 'class_connector';
+        };
+        node-child = {
+          child-id = '21';
+          relation = usage;
+          edgelabel = <<_EnD_oF_dEf_TeXt_
+Request
+_EnD_oF_dEf_TeXt_;
+        }; /* node-child */
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'class_database_object';
+  cp-name   = 'DatabaseObject';
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_database_object_1ab16b4327b02ffedcd1b003cea9d949a1';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'DatabaseObject';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'filePath';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'server';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+SessionObject
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'session';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '168';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Database constructor method
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<param name="filePath"></param>
+<param name="server"></param>
+<param name="session"></param>  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_database_object_1a75d3e8a876c6899bd01b866e35475ed2';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'DatabaseObject';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+SessionObject
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'session';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'replicationID';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'server';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '181';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Database constructor method
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<param name="session"></param>
+<param name="replicationID"></param>
+<param name="server"></param>  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_database_object_1a7de43a21bd287deec537cffec343f41d';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Initialize';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '195';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+ Initializes the DatabaseObject by validating the input and triggering the database request
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<returns>Boolean</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a014bdbf705a753540e19bfb53030c55c';
+        sec-mem-ref-line = '64';
+        sec-mem-ref-name = 'SessionObject::Connection';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1a079bae21a5417efa53bfe8954c0f533f';
+        sec-mem-ref-line = '99';
+        sec-mem-ref-name = 'Connector::hasError';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1ae0885b9054fc3ce287307ac16ff69990';
+        sec-mem-ref-line = '45';
+        sec-mem-ref-name = 'SessionObject::IsInitialized';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1a1ed422674b344524fd77998dcf6a9ba6';
+        sec-mem-ref-line = '117';
+        sec-mem-ref-name = 'Connector::ReturnMessages';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a697c071c812fbf7ad1166b896fb44c16';
+        sec-mem-ref-line = '55';
+        sec-mem-ref-name = 'SessionObject::WebServiceURL';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_session_object_8cs_1aa4871ea2dac4215bef0274a2bd71ae72';
+        sec-mem-ref-line = '140';
+        sec-mem-ref-name = 'SessionObject::GetDatabase';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_session_object_8cs_1ae53bad1d2fe161060ae409024b3e0de4';
+        sec-mem-ref-line = '157';
+        sec-mem-ref-name = 'SessionObject::GetDatabaseByID';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_database_object_1a9435cc20fe3a92747e509011b7726aff';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+DocumentObject
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetDocument';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'unid';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '253';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Retrieve a document from this database by universalID
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>Triggers a document request</para>
+<para>The document will be added to the property 'Documents'</para>
+</summary>
+<param name="unid"></param>
+<returns>DocumentObject</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_document_object_8cs_1af4298d6cfbb9ea60643d9995309b73f1';
+        sec-mem-ref-line = '241';
+        sec-mem-ref-name = 'DocumentObject::Initialize';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_database_object_1a57bfc77d2754236cbcf6ac30a90da529';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+DocumentObject
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetDocumentByKey';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'searchField';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'searchValue';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '276';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Retrieve a document from this database by searching for a specific value in the provided field.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>The first document found will be returned</para>
+<para>Triggers a document request</para>
+<para>The document will be added to the property 'Documents'</para>
+</summary>
+<param name="searchField"></param>
+<param name="searchValue"></param>
+<returns>DocumentObject</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_document_object_8cs_1af4298d6cfbb9ea60643d9995309b73f1';
+        sec-mem-ref-line = '241';
+        sec-mem-ref-name = 'DocumentObject::Initialize';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_database_object_1ae5477aedfcd0d54b21017faa1389bc71';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+DocumentObject
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetDocumentByFormula';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'formula';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '298';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Retrieve a document from this database by searching using the provided formula.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>The first document found will be returned</para>
+<para>Triggers a document request</para>
+<para>The document will be added to the property 'Documents'</para>
+</summary>
+<param name="formula"></param>
+<returns>DocumentObject</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_document_object_8cs_1af4298d6cfbb9ea60643d9995309b73f1';
+        sec-mem-ref-line = '241';
+        sec-mem-ref-name = 'DocumentObject::Initialize';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_database_object_1ad3010e55b2e75d0863e168fed1e279c5';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetAllDocuments';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '318';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Retrieve all documents from the database
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>Triggers an all documents request</para>
+<para>All documents found will be added to the property 'Documents'</para>
+</summary>
+<returns>Boolean</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a014bdbf705a753540e19bfb53030c55c';
+        sec-mem-ref-line = '64';
+        sec-mem-ref-name = 'SessionObject::Connection';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a697c071c812fbf7ad1166b896fb44c16';
+        sec-mem-ref-line = '55';
+        sec-mem-ref-name = 'SessionObject::WebServiceURL';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_database_object_1a6bfb480373a7e2bdbeaa67e4e3303a3a';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetAllDocumentsByFormula';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'formula';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '337';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Retrieve all documents from this database that correspond to the provided formula
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>Triggers an all documents request</para>
+<para>All documents found will be added to the property 'Documents'</para>
+</summary>
+<param name="formula"></param>
+<returns>Boolean</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a014bdbf705a753540e19bfb53030c55c';
+        sec-mem-ref-line = '64';
+        sec-mem-ref-name = 'SessionObject::Connection';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a697c071c812fbf7ad1166b896fb44c16';
+        sec-mem-ref-line = '55';
+        sec-mem-ref-name = 'SessionObject::WebServiceURL';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_database_object_1a4d8a7d73614f53a04fe8eb79bef2f614';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetAllDocumentsByUnids';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'unids';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '358';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Retrieve all documents from this database by universalIDs
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para> Provide the universalIds separated by ;</para>
+<para>Triggers an all documents request</para>
+<para>All documents found will be added to the property 'Documents'</para>
+</summary>
+<param name="unids"></param>
+<returns>Boolean</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a014bdbf705a753540e19bfb53030c55c';
+        sec-mem-ref-line = '64';
+        sec-mem-ref-name = 'SessionObject::Connection';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a697c071c812fbf7ad1166b896fb44c16';
+        sec-mem-ref-line = '55';
+        sec-mem-ref-name = 'SessionObject::WebServiceURL';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_database_object_1a92e80ea30e83cddf47f29d0f502b81c5';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetAllDocumentsByUnids';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+IList
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'listUnids';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '377';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Retrieve all documents from this database by universalIDs
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>Triggers an all documents request</para>
+<para>All documents found will be added to the property 'Documents'</para>
+</summary>
+<param name="listUnids"></param>
+<returns>Boolean</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a014bdbf705a753540e19bfb53030c55c';
+        sec-mem-ref-line = '64';
+        sec-mem-ref-name = 'SessionObject::Connection';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a697c071c812fbf7ad1166b896fb44c16';
+        sec-mem-ref-line = '55';
+        sec-mem-ref-name = 'SessionObject::WebServiceURL';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_database_object_1ad4834e7677cd0418969a657eed99653c';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetAllDocumentsByKey';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'searchField';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'searchValue';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '399';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Retrieve all documents from this database by searching for a specific value in the provided field
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>Triggers an all documents request</para>
+<para>All documents found will be added to the property 'Documents'</para>
+</summary>
+<param name="searchField"></param>
+<param name="searchValue"></param>
+<returns>Boolean</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a014bdbf705a753540e19bfb53030c55c';
+        sec-mem-ref-line = '64';
+        sec-mem-ref-name = 'SessionObject::Connection';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a697c071c812fbf7ad1166b896fb44c16';
+        sec-mem-ref-line = '55';
+        sec-mem-ref-name = 'SessionObject::WebServiceURL';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_database_object_1a88ae0bcda671009e2742858ab945a18c';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'LoadDocumentFields';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'listFields';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '419';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Retrieve fields for all documents in the property 'Documents'
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>Provide the fields separated by ;</para>
+<para>This action will update the property collection Fields inside each document object</para>
+</summary>
+<param name="listFields"></param>
+<returns>Boolean</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a014bdbf705a753540e19bfb53030c55c';
+        sec-mem-ref-line = '64';
+        sec-mem-ref-name = 'SessionObject::Connection';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a697c071c812fbf7ad1166b896fb44c16';
+        sec-mem-ref-line = '55';
+        sec-mem-ref-name = 'SessionObject::WebServiceURL';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_database_object_1a8a64b91e2e4228b2fc552e51959987c4';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'LoadDocumentFields';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+IList
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'listFields';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '437';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Retrieve fields for all documents in the property 'Documents'
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>This action will update the property collection Fields inside each document object</para>
+</summary>
+<param name="listFields"></param>
+<returns>Boolean</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a014bdbf705a753540e19bfb53030c55c';
+        sec-mem-ref-line = '64';
+        sec-mem-ref-name = 'SessionObject::Connection';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a697c071c812fbf7ad1166b896fb44c16';
+        sec-mem-ref-line = '55';
+        sec-mem-ref-name = 'SessionObject::WebServiceURL';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'property';
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+SessionObject
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Session';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '43';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Reference to the session object that retrieve this database object
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_document_object_8cs_1a5e070c7c0a45ac06422ee992c841e780';
+        sec-mem-ref-line = '317';
+        sec-mem-ref-name = 'DocumentObject::GetAllFields';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_document_object_8cs_1a8883fec3b5b1b6e2e43f4b5ca4092684';
+        sec-mem-ref-line = '271';
+        sec-mem-ref-name = 'DocumentObject::GetFields';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_document_object_8cs_1af4298d6cfbb9ea60643d9995309b73f1';
+        sec-mem-ref-line = '241';
+        sec-mem-ref-name = 'DocumentObject::Initialize';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_database_object_1a5fe036d32a30eb10d1b3f6a30263f740';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'IsInitialized';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '52';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Indicates is the DatabaseObject has been initialized
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_document_object_8cs_1a4eb6c7aaa4774d1d5dbf5bf17dff23d9';
+        sec-mem-ref-line = '204';
+        sec-mem-ref-name = 'DocumentObject::DocumentObject';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_database_object_1a38a1a78430c6cd1fc4eef054e39145ce';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'FilePath';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '61';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Database FilePath
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_database_object_1aaa091ee1a9a86d2d10fe2381ee2d1f4c';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'ReplicationID';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '73';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Database ReplicationID
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_database_object_1ad6bfcd30152f7a115ac5a1c7fbfa9fcb';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'ServerName';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '85';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Database ServerName
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_database_object_1a9af3f75274dd39f7fa82a355dc4ddf39';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Title';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '97';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Database Title
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_database_object_1ac8ecdbe9722c00f787a62aef7d3dfa5a';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Template';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '109';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Database Template name
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_database_object_1ad86f5dd95a9debdef284e21e32936e9e';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Size';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '122';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Database size (bytes, Kb, Mb, Gb, Tb)
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_database_object_1a12da011e3dc03d3a10ac86df10c84f48';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Url';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '135';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Database URL
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_database_object_1afaf1159aa427c5bcce01c4b8c6f34514';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+Dictionary< string, DocumentObject >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Documents';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '148';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Collection of retrieved DocumentObjects stored in a dictionary with key universalID of the document
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_database_object_1a591d685be9079e68a59473b4a1e2c687';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'ValidateInput';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '224';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Validate the input provided by the user
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<returns>Boolean</returns>  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_database_object_1ac531d114567a3841d8c55897fe31f307';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+SessionObject
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_Session';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '22';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_database_object_1a72e490420e7f1ad75f9b4a55fe6c3c8f';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_isInitialized';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= false
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '24';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_database_object_1a7a6a784a22749b5ae7d8933f3d0aa291';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_FilePath';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= ""
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '26';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_database_object_1a2ce784179e0c37ac60e4dbf306016d01';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_ReplicationID';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= ""
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '27';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_database_object_1a3ff6474c93008cabebf44ed0815cc9dd';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_ServerName';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= ""
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '28';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_database_object_1afafd65bcfc1206fb18b549848f9d956d';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_Title';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= ""
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '29';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_database_object_1ab6050f0f0a165fc529ec2229edafcdc0';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_Template';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= ""
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '30';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_database_object_1ab4e131d88d1e39eca2253f8b11d08ad0';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_Size';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= ""
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '31';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_database_object_1af9074c71aeb073b75d71511c78746797';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_Url';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= ""
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '32';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_database_object_1aa3207a4fa3fb8daf0516478607974c63';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+Dictionary< String, DocumentObject >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_Documents';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= null
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '33';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+  cp-fileline  = '18';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+<summary>
+An object representing a domino database object
+</summary>
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+<example>The following is an example of the usage of a
+<c>DatabaseObject</c>:
+  <code>
+   DatabaseObject dbObj = new DatabaseObject(filePath, dominoServerName,  sessionObject); // by FilePath
+   //  DatabaseObject dbObj = new DatabaseObject(sessionObject, replicationID, dominoServerName); // by ReplicationID
+   if(dbObj!=null && dbObj.Initialize()){
+        // your code here... 
+   }
+  </code>
+</example>  
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'class_document_object';
+  cp-name   = 'DocumentObject';
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_document_object_1a46c89e7d40b15a91542a5482b2d8a084';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'DocumentObject';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+DatabaseObject
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'dbObj';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+String
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'UniversalID';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '182';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+DocumentObject Constructor
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<param name="dbObj"></param>
+<param name="UniversalID"></param>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_document_object_8cs_1a8b96d04632a2802e7cc5466ca5cee8cf';
+        sec-mem-ref-line = '137';
+        sec-mem-ref-name = 'UniversalID';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_document_object_1a7c98c6485f7395697561500a8ff42d79';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'DocumentObject';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+DatabaseObject
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'dbObj';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'SeachField';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'SearchValue';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '193';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+DocumentObject Constructor
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<param name="dbObj"></param>
+<param name="SeachField"></param>
+<param name="SearchValue"></param>  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_document_object_1a4eb6c7aaa4774d1d5dbf5bf17dff23d9';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'DocumentObject';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'formula';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+DatabaseObject
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'dbObj';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '204';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+DocumentObject Constructor
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<param name="formula"></param>
+<param name="dbObj"></param>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1a5fe036d32a30eb10d1b3f6a30263f740';
+        sec-mem-ref-line = '52';
+        sec-mem-ref-name = 'DatabaseObject::IsInitialized';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1a1ed422674b344524fd77998dcf6a9ba6';
+        sec-mem-ref-line = '117';
+        sec-mem-ref-name = 'Connector::ReturnMessages';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_document_object_1af4298d6cfbb9ea60643d9995309b73f1';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Initialize';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '241';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Initializes the document by validating the input and triggering the document request
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<returns>Boolean</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a014bdbf705a753540e19bfb53030c55c';
+        sec-mem-ref-line = '64';
+        sec-mem-ref-name = 'SessionObject::Connection';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1a079bae21a5417efa53bfe8954c0f533f';
+        sec-mem-ref-line = '99';
+        sec-mem-ref-name = 'Connector::hasError';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1aa8484162b7d2a7c4c9426bca13c64c07';
+        sec-mem-ref-line = '43';
+        sec-mem-ref-name = 'DatabaseObject::Session';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a697c071c812fbf7ad1166b896fb44c16';
+        sec-mem-ref-line = '55';
+        sec-mem-ref-name = 'SessionObject::WebServiceURL';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1a9435cc20fe3a92747e509011b7726aff';
+        sec-mem-ref-line = '253';
+        sec-mem-ref-name = 'DatabaseObject::GetDocument';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1ae5477aedfcd0d54b21017faa1389bc71';
+        sec-mem-ref-line = '298';
+        sec-mem-ref-name = 'DatabaseObject::GetDocumentByFormula';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1a57bfc77d2754236cbcf6ac30a90da529';
+        sec-mem-ref-line = '276';
+        sec-mem-ref-name = 'DatabaseObject::GetDocumentByKey';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_document_object_1a8883fec3b5b1b6e2e43f4b5ca4092684';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetFields';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'fields';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '271';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Retrieve fields for this documents by triggering the field request
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>Provide the fields separated by ;</para>
+<para>This action will update the property 'Fields'</para>
+</summary>
+<param name="fields"></param>
+<returns>Boolean</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a014bdbf705a753540e19bfb53030c55c';
+        sec-mem-ref-line = '64';
+        sec-mem-ref-name = 'SessionObject::Connection';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1a079bae21a5417efa53bfe8954c0f533f';
+        sec-mem-ref-line = '99';
+        sec-mem-ref-name = 'Connector::hasError';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1aa8484162b7d2a7c4c9426bca13c64c07';
+        sec-mem-ref-line = '43';
+        sec-mem-ref-name = 'DatabaseObject::Session';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a697c071c812fbf7ad1166b896fb44c16';
+        sec-mem-ref-line = '55';
+        sec-mem-ref-name = 'SessionObject::WebServiceURL';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_document_object_1a8e38704e02850b2480d29d184ae2c0e0';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetFields';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+IList
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'fields';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '294';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Retrieve fields for this documents by triggering the field request
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>This action will update the property 'Fields'</para>
+</summary>
+<param name="fields"></param>
+<returns>Boolean</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a014bdbf705a753540e19bfb53030c55c';
+        sec-mem-ref-line = '64';
+        sec-mem-ref-name = 'SessionObject::Connection';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1a079bae21a5417efa53bfe8954c0f533f';
+        sec-mem-ref-line = '99';
+        sec-mem-ref-name = 'Connector::hasError';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1aa8484162b7d2a7c4c9426bca13c64c07';
+        sec-mem-ref-line = '43';
+        sec-mem-ref-name = 'DatabaseObject::Session';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a697c071c812fbf7ad1166b896fb44c16';
+        sec-mem-ref-line = '55';
+        sec-mem-ref-name = 'SessionObject::WebServiceURL';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_document_object_1a5e070c7c0a45ac06422ee992c841e780';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetAllFields';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '317';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Retrieve all fields for this documents by triggering the field request
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para> This action will update the property 'Fields' </para>
+</summary>
+<returns>Boolean</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a014bdbf705a753540e19bfb53030c55c';
+        sec-mem-ref-line = '64';
+        sec-mem-ref-name = 'SessionObject::Connection';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1a079bae21a5417efa53bfe8954c0f533f';
+        sec-mem-ref-line = '99';
+        sec-mem-ref-name = 'Connector::hasError';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1aa8484162b7d2a7c4c9426bca13c64c07';
+        sec-mem-ref-line = '43';
+        sec-mem-ref-name = 'DatabaseObject::Session';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a697c071c812fbf7ad1166b896fb44c16';
+        sec-mem-ref-line = '55';
+        sec-mem-ref-name = 'SessionObject::WebServiceURL';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_document_object_1a1a763aa01710b370634f46c89b7d2d8e';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'ExportFields';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'filePath';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'overwriteExistingFile';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '340';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Exports the content of the property 'Fields' to a file
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>Provide the path to the file and specify if you want ot overwrite this file if it exists</para>
+</summary>
+<param name="filePath"></param>
+<param name="overwriteExistingFile"></param>
+<returns></returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_document_object_8cs_1ae203b8a3e40b6c428145d2335b71245c';
+        sec-mem-ref-line = '124';
+        sec-mem-ref-name = 'Fields';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1a079bae21a5417efa53bfe8954c0f533f';
+        sec-mem-ref-line = '99';
+        sec-mem-ref-name = 'Connector::hasError';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1a1ed422674b344524fd77998dcf6a9ba6';
+        sec-mem-ref-line = '117';
+        sec-mem-ref-name = 'Connector::ReturnMessages';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_document_object_8cs_1a8b96d04632a2802e7cc5466ca5cee8cf';
+        sec-mem-ref-line = '137';
+        sec-mem-ref-name = 'UniversalID';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'property';
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_document_object_1a69d5338c9835f748490323d2950eed09';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+DatabaseObject
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Database';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '51';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Reference to this documents database object
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_document_object_1a3b2075b73f38d05091b69decc6ce7992';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'IsInitialized';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '60';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Indicates that the document isInitialized
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_document_object_1abdc1a6dfc1bb2261b523cf94468448b9';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Size';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '72';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Document Size
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_document_object_1ac86b730cf8931b2221af577d32ca2f31';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Url';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '85';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Document URL
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_document_object_1ad3444a6c018474405064070fa9a94afe';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Form';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '98';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Documents Form (if any)
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_document_object_1ac447461e3dc7f8258695f902ef0758a7';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'NoteID';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '111';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Document NoteId
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_document_object_1ae203b8a3e40b6c428145d2335b71245c';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+SortedDictionary< string, FieldObject >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Fields';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '124';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Collection of retrieved FieldObjects stored in a dictionary with key name of the field
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_document_object_8cs_1a1a763aa01710b370634f46c89b7d2d8e';
+        sec-mem-ref-line = '340';
+        sec-mem-ref-name = 'ExportFields';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_document_object_1a8b96d04632a2802e7cc5466ca5cee8cf';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'UniversalID';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '137';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Document UniversalID
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_document_object_8cs_1a46c89e7d40b15a91542a5482b2d8a084';
+        sec-mem-ref-line = '182';
+        sec-mem-ref-name = 'DocumentObject';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_document_object_8cs_1a1a763aa01710b370634f46c89b7d2d8e';
+        sec-mem-ref-line = '340';
+        sec-mem-ref-name = 'ExportFields';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_document_object_1a819cb8baad094f6e5990c54ec1eee8b0';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'DateCreated';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '150';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Document Creation Date
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_document_object_1a87ba1b3ac1b74b104972c25b245c504b';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'DateModified';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '163';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Document Modification Date
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_document_object_1a69c37390e7b77736c86315287674cc61';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'ValidateInput';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '213';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_document_object_1a7a9107e3718e78ec9857fbb1fbbef821';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+DatabaseObject
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_Database';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '29';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_document_object_1af242ee84f45c76369417a84391fa1439';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_isInitialized';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= false
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '31';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_document_object_1a806b3290bfec2a9eb711408a6c069ebc';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_DateCreated';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= ""
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '32';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_document_object_1a88efdd20ebba2aea5b0be7bac37557d5';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_DateModified';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= ""
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '33';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_document_object_1abe737cd57acd3950c7249b8a1e6300cf';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_UniversalID';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= ""
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '34';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_document_object_1a2421fc68c7e4a42bf31df38711d63107';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_NoteID';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= ""
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '35';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_document_object_1a8407f6933472bbf6c1d4d3e4beb4f1cd';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_SearchField';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= ""
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '36';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_document_object_1a3e6c5344b7fda31cf3456fb14af7667d';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_SearchValue';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= ""
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '37';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_document_object_1a2027ec5a67e68e811e9b7a72bf00b6bd';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_Formula';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= ""
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '38';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_document_object_1af4eae32f9d7f740db5232be90f5a18a0';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_Size';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= ""
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '39';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_document_object_1a727a6ecff108fa38ee54cfa8d89d66cd';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_Url';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= ""
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '40';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_document_object_1a38bd268ccc77c3e74828d5e3a2d7b73c';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_Form';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= ""
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '41';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_document_object_1a6f8b5a77924b2a1fa585c86393532ee5';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+SortedDictionary< String, FieldObject >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_Fields';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= null
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '42';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+  cp-fileline  = '25';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+<summary>
+An object representing a Domino Document
+</summary>
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+<example>The following is an example of the usage of a
+<c>DocumentObject</c>:
+  <code>
+   DocumentObject docObj = new DocumentObject(dbObj, universalID); // create new doc object by databaseobject and universalID
+   // DocumentObject docObj = new DocumentObject(dbObj, SeachField, SearchValue); // create new doc object by databaseobject and supplying a searchfield/value
+   // DocumentObject docObj = new DocumentObject(formula, dbObj); // create new doc object by databaseobject and supplying a formula
+   if(docObj!=null && docObj.Initialize()){
+        // here you can then get the fields of the document object
+        // your code here... 
+   }
+  </code>
+</example>  
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'class_encryptor';
+  cp-name   = 'Encryptor';
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_encryptor_1a2bc09300ed934e05bd465b2fae77b38e';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'EncryptAndEncode';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'raw';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs';
+      sec-mem-desc-line = '74';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_encryptor_1a6c8fb36f29875f6c7bacb17ab845553f';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'DecodeAndDecrypt';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'encrypted';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs';
+      sec-mem-desc-line = '85';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_encryptor_1ac0a2c64858c15d440fc6e2abf1631abe';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+ICryptoTransform
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetCryptoTransform';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+AesCryptoServiceProvider
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'csp';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'encrypting';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs';
+      sec-mem-desc-line = '100';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_encryptor_1aaf6d24840413b8e75c700bf7c80feb05';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'IV';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= "GeNar@tEdIv_K3y!"
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs';
+      sec-mem-desc-line = '9';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_encryptor_1acf0760ffab3011b5ebb78716b20c2a1e';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'PASSWORD';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= "JPITeam@XPages!|"
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs';
+      sec-mem-desc-line = '10';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_encryptor_1af38c32db47420c134b17a3ed9ddbc958';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'SALT';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= "S@1tS@lt_Valu3@JPI_XP@ges"
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs';
+      sec-mem-desc-line = '11';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs';
+  cp-fileline  = '5';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'class_field_object';
+  cp-name   = 'FieldObject';
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_field_object_1a87d8d3f1a36d94dec64e8e467950074b';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'FieldObject';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'name';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs';
+      sec-mem-desc-line = '67';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Field Constructor 
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<param name="name"></param>  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_field_object_1a8d962cda039f78f485232bd2764176c4';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+object
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'getValue';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs';
+      sec-mem-desc-line = '79';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Method to get the value of the field, by converting it to the provided type
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<returns></returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1a079bae21a5417efa53bfe8954c0f533f';
+        sec-mem-ref-line = '99';
+        sec-mem-ref-name = 'Connector::hasError';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1a1ed422674b344524fd77998dcf6a9ba6';
+        sec-mem-ref-line = '117';
+        sec-mem-ref-name = 'Connector::ReturnMessages';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_field_object_1ad223b04d429de4b2c57838ffb41d124b';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetValueAsString';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs';
+      sec-mem-desc-line = '112';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Get the value of the field as string
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<returns></returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1a079bae21a5417efa53bfe8954c0f533f';
+        sec-mem-ref-line = '99';
+        sec-mem-ref-name = 'Connector::hasError';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1a1ed422674b344524fd77998dcf6a9ba6';
+        sec-mem-ref-line = '117';
+        sec-mem-ref-name = 'Connector::ReturnMessages';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_field_object_1aafe2b7d3e7d414345d85e19dddce3c47';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+double
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetValueAsDouble';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs';
+      sec-mem-desc-line = '129';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Get the value of the field as double
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<returns></returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1a079bae21a5417efa53bfe8954c0f533f';
+        sec-mem-ref-line = '99';
+        sec-mem-ref-name = 'Connector::hasError';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1a1ed422674b344524fd77998dcf6a9ba6';
+        sec-mem-ref-line = '117';
+        sec-mem-ref-name = 'Connector::ReturnMessages';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_field_object_1a797ebc6615a86bafd9bd17f09562f2ee';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+DateTime
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetValueAsDate';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs';
+      sec-mem-desc-line = '146';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Get the value of the field as Date
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<returns></returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1a079bae21a5417efa53bfe8954c0f533f';
+        sec-mem-ref-line = '99';
+        sec-mem-ref-name = 'Connector::hasError';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1a1ed422674b344524fd77998dcf6a9ba6';
+        sec-mem-ref-line = '117';
+        sec-mem-ref-name = 'Connector::ReturnMessages';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_field_object_1a635d7598cbf7bbc29821cb1c012de964';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+List< string >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetValueAsList';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs';
+      sec-mem-desc-line = '162';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Get the value of the field as list of strings
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<returns></returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1a079bae21a5417efa53bfe8954c0f533f';
+        sec-mem-ref-line = '99';
+        sec-mem-ref-name = 'Connector::hasError';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1a1ed422674b344524fd77998dcf6a9ba6';
+        sec-mem-ref-line = '117';
+        sec-mem-ref-name = 'Connector::ReturnMessages';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'property';
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_field_object_1ae5d972e96a3eca93407da8e8a89abfd1';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Name';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs';
+      sec-mem-desc-line = '23';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Name of the field
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_field_object_1a9764fb1824cec95b82cd6ac0b4cd8919';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+object
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Value';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs';
+      sec-mem-desc-line = '36';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Value of the field
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_field_object_1a370af2c26ae9c3e713b5d88b62a2a8f9';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Type';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs';
+      sec-mem-desc-line = '49';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Type of the field
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_field_object_1a760c99880840d085405ba65e9cb929bd';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_Name';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= ""
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs';
+      sec-mem-desc-line = '12';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_field_object_1a942cd0e19decbe87f6870916eda8cfa4';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+object
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_Value';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= null
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs';
+      sec-mem-desc-line = '13';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_field_object_1a12f98770e3780f81e6b9d3d30d4a5166';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_Type';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= ""
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs';
+      sec-mem-desc-line = '14';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs';
+  cp-fileline  = '8';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+<summary>
+An object representing a Domino item
+</summary>
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'class_requestor';
+  cp-name   = 'Requestor';
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_requestor_1aa658a1b5c2185e8f8e88d757dec92b74';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Requestor';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+Connector
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'Connector';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs';
+      sec-mem-desc-line = '21';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_requestor_1a073cd75eae2b7ce17d8e600c03564cd3';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'AddIdentityHeader';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+ref HttpWebRequest
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'request';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs';
+      sec-mem-desc-line = '28';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_requestor_1a38f232bfa22d7732bbb68adbb4bf1c39';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+Connector
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Connection';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs';
+      sec-mem-desc-line = '13';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_requestor_1ac86d5f843bcfb2c1d99abb34252c8830';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+CookieContainer
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'AuthenticationCookie';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs';
+      sec-mem-desc-line = '15';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs';
+  cp-fileline  = '9';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'class_session_object';
+  cp-name   = 'SessionObject';
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_session_object_1a173822a7aec467880195d79a1bc9f520';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'SessionObject';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+Connector
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'ConnectorObject';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'DominoWebServiceURL';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs';
+      sec-mem-desc-line = '32';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+SessionObject Constructor method
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<param name="ConnectorObject"></param>
+<param name="DominoWebServiceURL"></param>  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_session_object_1af3b9c9d56d98c848061952ed935f815b';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Initialize';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs';
+      sec-mem-desc-line = '79';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Initializes the SessionObject by validating the input and triggering the session request
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>Sets isInitialized property</para>
+</summary>
+<returns>Boolean</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a014bdbf705a753540e19bfb53030c55c';
+        sec-mem-ref-line = '64';
+        sec-mem-ref-name = 'Connection';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1a079bae21a5417efa53bfe8954c0f533f';
+        sec-mem-ref-line = '99';
+        sec-mem-ref-name = 'Connector::hasError';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1acf2c3b519c360d02ed54543a01d199af';
+        sec-mem-ref-line = '133';
+        sec-mem-ref-name = 'Connector::isConnected';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1a017d40b1f4cf2cbaa5d4b755cf09269e';
+        sec-mem-ref-line = '143';
+        sec-mem-ref-name = 'Connector::isInitialized';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1a1ed422674b344524fd77998dcf6a9ba6';
+        sec-mem-ref-line = '117';
+        sec-mem-ref-name = 'Connector::ReturnMessages';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a697c071c812fbf7ad1166b896fb44c16';
+        sec-mem-ref-line = '55';
+        sec-mem-ref-name = 'WebServiceURL';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_connector_8cs_1a5d089c1639f255966f00b2b05add0993';
+        sec-mem-ref-line = '279';
+        sec-mem-ref-name = 'Connector::GetSession';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_session_object_1aa4871ea2dac4215bef0274a2bd71ae72';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+DatabaseObject
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetDatabase';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'filePath';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'serverName';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs';
+      sec-mem-desc-line = '140';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Method to retrieve a specific database by filepath on the given server
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<param name="filePath"></param>
+<param name="serverName"></param>
+<returns>DatabaseObject</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1a7de43a21bd287deec537cffec343f41d';
+        sec-mem-ref-line = '195';
+        sec-mem-ref-name = 'DatabaseObject::Initialize';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_session_object_1ae53bad1d2fe161060ae409024b3e0de4';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+DatabaseObject
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetDatabaseByID';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'replicationID';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'serverName';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs';
+      sec-mem-desc-line = '157';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Method to retrieve a specific database by replicationID on the given server
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<param name="replicationID"></param>
+<param name="serverName"></param>
+<returns></returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1a7de43a21bd287deec537cffec343f41d';
+        sec-mem-ref-line = '195';
+        sec-mem-ref-name = 'DatabaseObject::Initialize';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'property';
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_session_object_1ae0885b9054fc3ce287307ac16ff69990';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'IsInitialized';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs';
+      sec-mem-desc-line = '45';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Indicates if the session has been intialized
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1a7de43a21bd287deec537cffec343f41d';
+        sec-mem-ref-line = '195';
+        sec-mem-ref-name = 'DatabaseObject::Initialize';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_session_object_1a697c071c812fbf7ad1166b896fb44c16';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'WebServiceURL';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs';
+      sec-mem-desc-line = '55';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+XPages Rest Serive URL
+Example: http://antln-test.europe.jacobs.com/projects/jpix/Interface.nsf/xpJPIService.xsp/JPIService
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1ad3010e55b2e75d0863e168fed1e279c5';
+        sec-mem-ref-line = '318';
+        sec-mem-ref-name = 'DatabaseObject::GetAllDocuments';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1a6bfb480373a7e2bdbeaa67e4e3303a3a';
+        sec-mem-ref-line = '337';
+        sec-mem-ref-name = 'DatabaseObject::GetAllDocumentsByFormula';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1ad4834e7677cd0418969a657eed99653c';
+        sec-mem-ref-line = '399';
+        sec-mem-ref-name = 'DatabaseObject::GetAllDocumentsByKey';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1a4d8a7d73614f53a04fe8eb79bef2f614';
+        sec-mem-ref-line = '358';
+        sec-mem-ref-name = 'DatabaseObject::GetAllDocumentsByUnids';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_document_object_8cs_1a5e070c7c0a45ac06422ee992c841e780';
+        sec-mem-ref-line = '317';
+        sec-mem-ref-name = 'DocumentObject::GetAllFields';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_document_object_8cs_1a8883fec3b5b1b6e2e43f4b5ca4092684';
+        sec-mem-ref-line = '271';
+        sec-mem-ref-name = 'DocumentObject::GetFields';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_session_object_8cs_1af3b9c9d56d98c848061952ed935f815b';
+        sec-mem-ref-line = '79';
+        sec-mem-ref-name = 'Initialize';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1a7de43a21bd287deec537cffec343f41d';
+        sec-mem-ref-line = '195';
+        sec-mem-ref-name = 'DatabaseObject::Initialize';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_document_object_8cs_1af4298d6cfbb9ea60643d9995309b73f1';
+        sec-mem-ref-line = '241';
+        sec-mem-ref-name = 'DocumentObject::Initialize';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1a88ae0bcda671009e2742858ab945a18c';
+        sec-mem-ref-line = '419';
+        sec-mem-ref-name = 'DatabaseObject::LoadDocumentFields';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'property';
+      sec-mem-id   = 'class_session_object_1a014bdbf705a753540e19bfb53030c55c';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+Connector
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Connection';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs';
+      sec-mem-desc-line = '64';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Reference to Connector
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1ad3010e55b2e75d0863e168fed1e279c5';
+        sec-mem-ref-line = '318';
+        sec-mem-ref-name = 'DatabaseObject::GetAllDocuments';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1a6bfb480373a7e2bdbeaa67e4e3303a3a';
+        sec-mem-ref-line = '337';
+        sec-mem-ref-name = 'DatabaseObject::GetAllDocumentsByFormula';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1ad4834e7677cd0418969a657eed99653c';
+        sec-mem-ref-line = '399';
+        sec-mem-ref-name = 'DatabaseObject::GetAllDocumentsByKey';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1a4d8a7d73614f53a04fe8eb79bef2f614';
+        sec-mem-ref-line = '358';
+        sec-mem-ref-name = 'DatabaseObject::GetAllDocumentsByUnids';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_document_object_8cs_1a5e070c7c0a45ac06422ee992c841e780';
+        sec-mem-ref-line = '317';
+        sec-mem-ref-name = 'DocumentObject::GetAllFields';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_document_object_8cs_1a8883fec3b5b1b6e2e43f4b5ca4092684';
+        sec-mem-ref-line = '271';
+        sec-mem-ref-name = 'DocumentObject::GetFields';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_session_object_8cs_1af3b9c9d56d98c848061952ed935f815b';
+        sec-mem-ref-line = '79';
+        sec-mem-ref-name = 'Initialize';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1a7de43a21bd287deec537cffec343f41d';
+        sec-mem-ref-line = '195';
+        sec-mem-ref-name = 'DatabaseObject::Initialize';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_document_object_8cs_1af4298d6cfbb9ea60643d9995309b73f1';
+        sec-mem-ref-line = '241';
+        sec-mem-ref-name = 'DocumentObject::Initialize';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1a88ae0bcda671009e2742858ab945a18c';
+        sec-mem-ref-line = '419';
+        sec-mem-ref-name = 'DatabaseObject::LoadDocumentFields';
+    };
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_session_object_1a0356749b1ead2f55edac9aee2414702a';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'ValidateInput';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs';
+      sec-mem-desc-line = '108';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Validate the input provided by the user
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<returns>Boolean</returns>  
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_session_object_1a8b7770781547c02f2ff569038da434d3';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+Connector
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_Connection';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs';
+      sec-mem-desc-line = '19';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_session_object_1afabc94b6d3db428764c9c90c1b58e698';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_WebServiceURL';
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs';
+      sec-mem-desc-line = '20';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'class_session_object_1a0708cede6c10688726a2bcbdc1c76c5e';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '_isInitialized';
+      sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= false
+_EnD_oF_dEf_TeXt_;
+      sec-mem-desc-file = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs';
+      sec-mem-desc-line = '21';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs';
+  cp-fileline  = '15';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+<summary>
+An object representing a Domino Session
+</summary>
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+<example>The following is an example of the usage of a
+<c>SessionObject</c>:
+  <code>
+   SessionObject sObj = new SessionObject(connectorObj, DominoWebServiceURL); // the connector object and Full URL to the XPage database containing the Web Rest Service
+
+   if(sObj!=null && sObj.Initialize()){
+        // here you can then get the database object
+        // your code here... 
+   }
+  </code>
+</example>  
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+file = {
+  file-id   = '_common_8cs';
+  file-name = 'Common.cs';
+  file-full-name  = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Common.cs';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = '_connector_8cs';
+  file-name = 'Connector.cs';
+  file-full-name  = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Connector.cs';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = '_encryptor_8cs';
+  file-name = 'Encryptor.cs';
+  file-full-name  = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Encryptor.cs';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = '_requestor_8cs';
+  file-name = 'Requestor.cs';
+  file-full-name  = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = '_temporary_generated_file__036_c0_b5_b-1481-4323-8_d20-8_f5_a_d_c_b23_d92_8cs';
+  file-name = 'TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs';
+  file-full-name  = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = '_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs';
+  file-name = 'TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs';
+  file-full-name  = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = '_temporary_generated_file___e7_a71_f73-0_f8_d-4_b9_b-_b56_e-8_e70_b10_b_c5_d3_8cs';
+  file-name = 'TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs';
+  file-full-name  = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = '_database_object_8cs';
+  file-name = 'DatabaseObject.cs';
+  file-full-name  = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DatabaseObject.cs';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = '_document_object_8cs';
+  file-name = 'DocumentObject.cs';
+  file-full-name  = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/DocumentObject.cs';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = '_field_object_8cs';
+  file-name = 'FieldObject.cs';
+  file-full-name  = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = '_session_object_8cs';
+  file-name = 'SessionObject.cs';
+  file-full-name  = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = '_assembly_info_8cs';
+  file-name = 'AssemblyInfo.cs';
+  file-full-name  = 'C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Properties/AssemblyInfo.cs';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */

@@ -1,0 +1,603 @@
+\hypertarget{class_document_object}{}\section{Document\+Object Class Reference}
+\label{class_document_object}\index{Document\+Object@{Document\+Object}}
+
+
+An object representing a Domino Document  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_document_object_a46c89e7d40b15a91542a5482b2d8a084}{Document\+Object} (\hyperlink{class_database_object}{Database\+Object} db\+Obj, String \hyperlink{class_document_object_a8b96d04632a2802e7cc5466ca5cee8cf}{Universal\+ID})
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_document_object}{Document\+Object} Constructor \end{DoxyCompactList}\item 
+\hyperlink{class_document_object_a7c98c6485f7395697561500a8ff42d79}{Document\+Object} (\hyperlink{class_database_object}{Database\+Object} db\+Obj, string Seach\+Field, string Search\+Value)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_document_object}{Document\+Object} Constructor \end{DoxyCompactList}\item 
+\hyperlink{class_document_object_a4eb6c7aaa4774d1d5dbf5bf17dff23d9}{Document\+Object} (string formula, \hyperlink{class_database_object}{Database\+Object} db\+Obj)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_document_object}{Document\+Object} Constructor \end{DoxyCompactList}\item 
+bool \hyperlink{class_document_object_af4298d6cfbb9ea60643d9995309b73f1}{Initialize} ()
+\begin{DoxyCompactList}\small\item\em Initializes the document by validating the input and triggering the document request \end{DoxyCompactList}\item 
+bool \hyperlink{class_document_object_a8883fec3b5b1b6e2e43f4b5ca4092684}{Get\+Fields} (string fields)
+\begin{DoxyCompactList}\small\item\em Retrieve fields for this documents by triggering the field request \end{DoxyCompactList}\item 
+bool \hyperlink{class_document_object_a8e38704e02850b2480d29d184ae2c0e0}{Get\+Fields} (I\+List fields)
+\begin{DoxyCompactList}\small\item\em Retrieve fields for this documents by triggering the field request \end{DoxyCompactList}\item 
+bool \hyperlink{class_document_object_a5e070c7c0a45ac06422ee992c841e780}{Get\+All\+Fields} ()
+\begin{DoxyCompactList}\small\item\em Retrieve all fields for this documents by triggering the field request \end{DoxyCompactList}\item 
+bool \hyperlink{class_document_object_a1a763aa01710b370634f46c89b7d2d8e}{Export\+Fields} (string file\+Path, bool overwrite\+Existing\+File)
+\begin{DoxyCompactList}\small\item\em Exports the content of the property \textquotesingle{}Fields\textquotesingle{} to a file \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_database_object}{Database\+Object} \hyperlink{class_document_object_a69d5338c9835f748490323d2950eed09}{Database}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Reference to this documents database object \end{DoxyCompactList}\item 
+bool \hyperlink{class_document_object_a3b2075b73f38d05091b69decc6ce7992}{Is\+Initialized}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Indicates that the document is\+Initialized \end{DoxyCompactList}\item 
+string \hyperlink{class_document_object_abdc1a6dfc1bb2261b523cf94468448b9}{Size}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Document Size \end{DoxyCompactList}\item 
+string \hyperlink{class_document_object_ac86b730cf8931b2221af577d32ca2f31}{Url}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Document U\+RL \end{DoxyCompactList}\item 
+string \hyperlink{class_document_object_ad3444a6c018474405064070fa9a94afe}{Form}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Documents Form (if any) \end{DoxyCompactList}\item 
+string \hyperlink{class_document_object_ac447461e3dc7f8258695f902ef0758a7}{Note\+ID}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Document Note\+Id \end{DoxyCompactList}\item 
+Sorted\+Dictionary$<$ string, \hyperlink{class_field_object}{Field\+Object} $>$ \hyperlink{class_document_object_ae203b8a3e40b6c428145d2335b71245c}{Fields}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Collection of retrieved Field\+Objects stored in a dictionary with key name of the field \end{DoxyCompactList}\item 
+string \hyperlink{class_document_object_a8b96d04632a2802e7cc5466ca5cee8cf}{Universal\+ID}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Document Universal\+ID \end{DoxyCompactList}\item 
+string \hyperlink{class_document_object_a819cb8baad094f6e5990c54ec1eee8b0}{Date\+Created}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Document Creation Date \end{DoxyCompactList}\item 
+string \hyperlink{class_document_object_a87ba1b3ac1b74b104972c25b245c504b}{Date\+Modified}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Document Modification Date \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An object representing a Domino Document 
+
+The following is an example of the usage of a {\ttfamily \hyperlink{class_document_object}{Document\+Object}}\+: 
+\begin{DoxyCode}
+\hyperlink{class_document_object}{DocumentObject} docObj = \textcolor{keyword}{new} \hyperlink{class_document_object_a46c89e7d40b15a91542a5482b2d8a084}{DocumentObject}(dbObj, universalID); \textcolor{comment}{// create new
+       doc object by databaseobject and universalID}
+\textcolor{comment}{// DocumentObject docObj = new DocumentObject(dbObj, SeachField, SearchValue); // create new doc object by
+       databaseobject and supplying a searchfield/value}
+\textcolor{comment}{// DocumentObject docObj = new DocumentObject(formula, dbObj); // create new doc object by databaseobject
+       and supplying a formula}
+\textcolor{keywordflow}{if}(docObj!=null && docObj.\hyperlink{class_document_object_af4298d6cfbb9ea60643d9995309b73f1}{Initialize}())\{
+     \textcolor{comment}{// here you can then get the fields of the document object}
+     \textcolor{comment}{// your code here... }
+\}
+\end{DoxyCode}
+ 
+
+Definition at line 25 of file Document\+Object.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_document_object_a46c89e7d40b15a91542a5482b2d8a084}\label{class_document_object_a46c89e7d40b15a91542a5482b2d8a084}} 
+\index{Document\+Object@{Document\+Object}!Document\+Object@{Document\+Object}}
+\index{Document\+Object@{Document\+Object}!Document\+Object@{Document\+Object}}
+\subsubsection{\texorpdfstring{Document\+Object()}{DocumentObject()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Document\+Object.\+Document\+Object (\begin{DoxyParamCaption}\item[{\hyperlink{class_database_object}{Database\+Object}}]{db\+Obj,  }\item[{String}]{Universal\+ID }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{class_document_object}{Document\+Object} Constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em db\+Obj} & \\
+\hline
+{\em Universal\+ID} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 182 of file Document\+Object.\+cs.
+
+
+
+References Universal\+ID.
+
+
+\begin{DoxyCode}
+182                                                                     \{
+183         \_Database = dbObj;
+184         \_UniversalID = \hyperlink{class_document_object_a8b96d04632a2802e7cc5466ca5cee8cf}{UniversalID};
+185     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_document_object_a7c98c6485f7395697561500a8ff42d79}\label{class_document_object_a7c98c6485f7395697561500a8ff42d79}} 
+\index{Document\+Object@{Document\+Object}!Document\+Object@{Document\+Object}}
+\index{Document\+Object@{Document\+Object}!Document\+Object@{Document\+Object}}
+\subsubsection{\texorpdfstring{Document\+Object()}{DocumentObject()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Document\+Object.\+Document\+Object (\begin{DoxyParamCaption}\item[{\hyperlink{class_database_object}{Database\+Object}}]{db\+Obj,  }\item[{string}]{Seach\+Field,  }\item[{string}]{Search\+Value }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{class_document_object}{Document\+Object} Constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em db\+Obj} & \\
+\hline
+{\em Seach\+Field} & \\
+\hline
+{\em Search\+Value} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 193 of file Document\+Object.\+cs.
+
+
+\begin{DoxyCode}
+193                                                                                        \{
+194         \_Database = dbObj;
+195         \_SearchField = SeachField;
+196         \_SearchValue = SearchValue;
+197     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_document_object_a4eb6c7aaa4774d1d5dbf5bf17dff23d9}\label{class_document_object_a4eb6c7aaa4774d1d5dbf5bf17dff23d9}} 
+\index{Document\+Object@{Document\+Object}!Document\+Object@{Document\+Object}}
+\index{Document\+Object@{Document\+Object}!Document\+Object@{Document\+Object}}
+\subsubsection{\texorpdfstring{Document\+Object()}{DocumentObject()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Document\+Object.\+Document\+Object (\begin{DoxyParamCaption}\item[{string}]{formula,  }\item[{\hyperlink{class_database_object}{Database\+Object}}]{db\+Obj }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{class_document_object}{Document\+Object} Constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em formula} & \\
+\hline
+{\em db\+Obj} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 204 of file Document\+Object.\+cs.
+
+
+
+References Database\+Object.\+Is\+Initialized, and Connector.\+Return\+Messages.
+
+
+\begin{DoxyCode}
+204                                                                 \{
+205         \_Database = dbObj;
+206         \_Formula = formula;
+207     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_document_object_a1a763aa01710b370634f46c89b7d2d8e}\label{class_document_object_a1a763aa01710b370634f46c89b7d2d8e}} 
+\index{Document\+Object@{Document\+Object}!Export\+Fields@{Export\+Fields}}
+\index{Export\+Fields@{Export\+Fields}!Document\+Object@{Document\+Object}}
+\subsubsection{\texorpdfstring{Export\+Fields()}{ExportFields()}}
+{\footnotesize\ttfamily bool Document\+Object.\+Export\+Fields (\begin{DoxyParamCaption}\item[{string}]{file\+Path,  }\item[{bool}]{overwrite\+Existing\+File }\end{DoxyParamCaption})}
+
+
+
+Exports the content of the property \textquotesingle{}Fields\textquotesingle{} to a file 
+
+Provide the path to the file and specify if you want ot overwrite this file if it exists
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & \\
+\hline
+{\em overwrite\+Existing\+File} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 340 of file Document\+Object.\+cs.
+
+
+
+References Fields, Connector.\+has\+Error, Connector.\+Return\+Messages, and Universal\+ID.
+
+
+\begin{DoxyCode}
+340                                                                           \{
+341         \hyperlink{class_connector}{Connector}.ResetReturn();
+342         \textcolor{keywordflow}{try} \{
+343             \textcolor{keywordflow}{if} (\hyperlink{class_document_object_ae203b8a3e40b6c428145d2335b71245c}{Fields} != null && \hyperlink{class_document_object_ae203b8a3e40b6c428145d2335b71245c}{Fields}.Count > 0) \{
+344                 \textcolor{comment}{//write all to stringbuilder, output to file }
+345                 StringBuilder sb = \textcolor{keyword}{new} StringBuilder();
+346                 \textcolor{keywordflow}{foreach} (KeyValuePair<string, FieldObject> field \textcolor{keywordflow}{in} \hyperlink{class_document_object_ae203b8a3e40b6c428145d2335b71245c}{Fields}) \{
+347                     \textcolor{keywordflow}{if} (field.Value.Type.Equals(\textcolor{stringliteral}{"[FIELDNOTFOUND]"})) \{
+348                         sb.AppendLine(field.Value.Name + \textcolor{stringliteral}{" : "} + field.Value.Type); \textcolor{comment}{// add type to indicate
+       the field was not found}
+349                     \} \textcolor{keywordflow}{else} \{
+350                         sb.AppendLine(field.Value.Name + \textcolor{stringliteral}{" : "} + field.Value.GetValueAsString()); \textcolor{comment}{//+ " ("
+       + field.Value.Type + ")");}
+351                     \}
+352                 \}
+353                 \textcolor{keywordflow}{if} (File.Exists(filePath)) \{
+354                     \textcolor{keywordflow}{if} (overwriteExistingFile) \{
+355                         File.Delete(filePath);
+356                     \} \textcolor{keywordflow}{else} \{
+357                         \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}.Add(\textcolor{stringliteral}{"Unable to export the fields to
+       the file : "} + filePath);
+358                         \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}.Add(\textcolor{stringliteral}{"A file already exist with the
+       same name, provide a new file path"});
+359                         \textcolor{comment}{// Connector.hasError = true;}
+360                         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+361                     \}
+362                 \}
+363                 \textcolor{comment}{//File.CreateText(filePath);}
+364                 File.WriteAllText(filePath, sb.ToString());
+365                 \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}.Add(\textcolor{stringliteral}{"Exported all fields of document : "} + 
+      \hyperlink{class_document_object_a8b96d04632a2802e7cc5466ca5cee8cf}{UniversalID} + \textcolor{stringliteral}{" to the file : "} + filePath);
+366                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+367             \} \textcolor{keywordflow}{else} \{
+368                 \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}.Add(\textcolor{stringliteral}{"The document : "} + 
+      \hyperlink{class_document_object_a8b96d04632a2802e7cc5466ca5cee8cf}{UniversalID} + \textcolor{stringliteral}{" does not contain any fields to export"});
+369                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+370             \}
+371 
+372         \} \textcolor{keywordflow}{catch} (Exception ex) \{
+373             \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}.Add(\textcolor{stringliteral}{"Unable to export the fields to the file : 
+      "} + filePath);
+374             \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}.Add(Common.GetErrorInfo(ex));
+375             \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError} = \textcolor{keyword}{true};
+376             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+377         \}
+378     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_document_object_a5e070c7c0a45ac06422ee992c841e780}\label{class_document_object_a5e070c7c0a45ac06422ee992c841e780}} 
+\index{Document\+Object@{Document\+Object}!Get\+All\+Fields@{Get\+All\+Fields}}
+\index{Get\+All\+Fields@{Get\+All\+Fields}!Document\+Object@{Document\+Object}}
+\subsubsection{\texorpdfstring{Get\+All\+Fields()}{GetAllFields()}}
+{\footnotesize\ttfamily bool Document\+Object.\+Get\+All\+Fields (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieve all fields for this documents by triggering the field request 
+
+This action will update the property \textquotesingle{}Fields\textquotesingle{} 
+
+\begin{DoxyReturn}{Returns}
+Boolean
+\end{DoxyReturn}
+
+
+Definition at line 317 of file Document\+Object.\+cs.
+
+
+
+References Session\+Object.\+Connection, Connector.\+has\+Error, Database\+Object.\+Session, and Session\+Object.\+Web\+Service\+U\+RL.
+
+
+\begin{DoxyCode}
+317                                \{
+318         \textcolor{comment}{//get all the fields from the domino document and store them in Fields}
+319         \hyperlink{class_connector}{Connector}.ResetReturn();
+320 
+321         \textcolor{keywordflow}{if} (\_isInitialized) \{
+322 
+323             \textcolor{keywordflow}{if} (\_Database.\hyperlink{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}{Session}.\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}.Request.ExecuteFieldsRequest(\_Database.
+      \hyperlink{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}{Session}.\hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}, \textcolor{keyword}{this}, null)) \{
+324                 \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError} = \textcolor{keyword}{false};
+325                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+326             \}
+327 
+328         \}
+329         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+330 
+331     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_document_object_a8883fec3b5b1b6e2e43f4b5ca4092684}\label{class_document_object_a8883fec3b5b1b6e2e43f4b5ca4092684}} 
+\index{Document\+Object@{Document\+Object}!Get\+Fields@{Get\+Fields}}
+\index{Get\+Fields@{Get\+Fields}!Document\+Object@{Document\+Object}}
+\subsubsection{\texorpdfstring{Get\+Fields()}{GetFields()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Document\+Object.\+Get\+Fields (\begin{DoxyParamCaption}\item[{string}]{fields }\end{DoxyParamCaption})}
+
+
+
+Retrieve fields for this documents by triggering the field request 
+
+Provide the fields separated by ;
+
+This action will update the property \textquotesingle{}Fields\textquotesingle{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em fields} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean
+\end{DoxyReturn}
+
+
+Definition at line 271 of file Document\+Object.\+cs.
+
+
+
+References Session\+Object.\+Connection, Connector.\+has\+Error, Database\+Object.\+Session, and Session\+Object.\+Web\+Service\+U\+RL.
+
+
+\begin{DoxyCode}
+271                                          \{
+272         \hyperlink{class_connector}{Connector}.ResetReturn();
+273 
+274         \textcolor{keywordflow}{if} (\_isInitialized) \{
+275             \textcolor{comment}{// if (!String.IsNullOrEmpty(fields)) \{}
+276             \textcolor{comment}{//this will update \_Fields list in this object}
+277             \textcolor{keywordflow}{if} (\_Database.\hyperlink{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}{Session}.\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}.Request.ExecuteFieldsRequest(\_Database.
+      \hyperlink{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}{Session}.\hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}, \textcolor{keyword}{this}, fields)) \{
+278                 \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError} = \textcolor{keyword}{false};
+279                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+280             \}
+281             \textcolor{comment}{//\}}
+282         \}
+283         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+284         \textcolor{comment}{// get the fields from XPages}
+285 
+286     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_document_object_a8e38704e02850b2480d29d184ae2c0e0}\label{class_document_object_a8e38704e02850b2480d29d184ae2c0e0}} 
+\index{Document\+Object@{Document\+Object}!Get\+Fields@{Get\+Fields}}
+\index{Get\+Fields@{Get\+Fields}!Document\+Object@{Document\+Object}}
+\subsubsection{\texorpdfstring{Get\+Fields()}{GetFields()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Document\+Object.\+Get\+Fields (\begin{DoxyParamCaption}\item[{I\+List}]{fields }\end{DoxyParamCaption})}
+
+
+
+Retrieve fields for this documents by triggering the field request 
+
+This action will update the property \textquotesingle{}Fields\textquotesingle{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em fields} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean
+\end{DoxyReturn}
+
+
+Definition at line 294 of file Document\+Object.\+cs.
+
+
+
+References Session\+Object.\+Connection, Connector.\+has\+Error, Database\+Object.\+Session, and Session\+Object.\+Web\+Service\+U\+RL.
+
+
+\begin{DoxyCode}
+294                                         \{
+295         \hyperlink{class_connector}{Connector}.ResetReturn();
+296         \textcolor{keywordtype}{string} f = \textcolor{stringliteral}{""};
+297         \textcolor{keywordflow}{if} (\_isInitialized) \{
+298 
+299             f = Common.GetListAsString(fields, \textcolor{stringliteral}{";"}); \textcolor{comment}{// can be empty - get's all fields}
+300             \textcolor{comment}{// if (!String.IsNullOrEmpty(fields)) \{}
+301             \textcolor{comment}{//this will update \_Fields list in this object}
+302             \textcolor{keywordflow}{if} (\_Database.\hyperlink{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}{Session}.\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}.Request.ExecuteFieldsRequest(\_Database.
+      \hyperlink{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}{Session}.\hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}, \textcolor{keyword}{this}, f)) \{
+303                 \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError} = \textcolor{keyword}{false};
+304                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+305             \}
+306             \textcolor{comment}{//\}}
+307 
+308         \}
+309         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+310     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_document_object_af4298d6cfbb9ea60643d9995309b73f1}\label{class_document_object_af4298d6cfbb9ea60643d9995309b73f1}} 
+\index{Document\+Object@{Document\+Object}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Document\+Object@{Document\+Object}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily bool Document\+Object.\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the document by validating the input and triggering the document request 
+
+\begin{DoxyReturn}{Returns}
+Boolean
+\end{DoxyReturn}
+
+
+Definition at line 241 of file Document\+Object.\+cs.
+
+
+
+References Session\+Object.\+Connection, Connector.\+has\+Error, Database\+Object.\+Session, and Session\+Object.\+Web\+Service\+U\+RL.
+
+
+
+Referenced by Database\+Object.\+Get\+Document(), Database\+Object.\+Get\+Document\+By\+Formula(), and Database\+Object.\+Get\+Document\+By\+Key().
+
+
+\begin{DoxyCode}
+241                              \{
+242 
+243         \hyperlink{class_connector}{Connector}.ResetReturn();
+244 
+245         \textcolor{keywordflow}{if} (!ValidateInput()) \{
+246             \_isInitialized = \textcolor{keyword}{false};
+247             \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError} = \textcolor{keyword}{true};
+248             \textcolor{keywordflow}{return} \textcolor{keyword}{false};   \textcolor{comment}{// throws exception}
+249         \}
+250 
+251         \textcolor{comment}{// make a connection to the webservice database - this will check the users authentication on that
+       database}
+252         \textcolor{keywordflow}{if} (\_Database.\hyperlink{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}{Session}.\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}.Request.ExecuteDocumentRequest(\_Database.
+      \hyperlink{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}{Session}.\hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}, \_UniversalID, \_SearchField, \_SearchValue, \_Formula, \_Database, \textcolor{keyword}{
+      this})) \{
+253             \_isInitialized = \textcolor{keyword}{true};
+254             \textcolor{comment}{//  Connector.ReturnMessages.Add("Document Initialized : " + \_UniversalID + " in : " +
+       \_Database.FilePath + " from : "+\_Database.ServerName + " (DocumentObject.Initialize)");}
+255             \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError} = \textcolor{keyword}{false};
+256             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+257         \} \textcolor{keywordflow}{else} \{
+258             \textcolor{comment}{//error messages written to Connection.ReturnMessages by
+       Connection.Request.ExecuteSessionRequest}
+259             \_isInitialized = \textcolor{keyword}{false};
+260             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+261         \}
+262     \}
+\end{DoxyCode}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_document_object_a69d5338c9835f748490323d2950eed09}\label{class_document_object_a69d5338c9835f748490323d2950eed09}} 
+\index{Document\+Object@{Document\+Object}!Database@{Database}}
+\index{Database@{Database}!Document\+Object@{Document\+Object}}
+\subsubsection{\texorpdfstring{Database}{Database}}
+{\footnotesize\ttfamily \hyperlink{class_database_object}{Database\+Object} Document\+Object.\+Database\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Reference to this documents database object 
+
+
+
+Definition at line 51 of file Document\+Object.\+cs.
+
+\mbox{\Hypertarget{class_document_object_a819cb8baad094f6e5990c54ec1eee8b0}\label{class_document_object_a819cb8baad094f6e5990c54ec1eee8b0}} 
+\index{Document\+Object@{Document\+Object}!Date\+Created@{Date\+Created}}
+\index{Date\+Created@{Date\+Created}!Document\+Object@{Document\+Object}}
+\subsubsection{\texorpdfstring{Date\+Created}{DateCreated}}
+{\footnotesize\ttfamily string Document\+Object.\+Date\+Created\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Document Creation Date 
+
+
+
+Definition at line 150 of file Document\+Object.\+cs.
+
+\mbox{\Hypertarget{class_document_object_a87ba1b3ac1b74b104972c25b245c504b}\label{class_document_object_a87ba1b3ac1b74b104972c25b245c504b}} 
+\index{Document\+Object@{Document\+Object}!Date\+Modified@{Date\+Modified}}
+\index{Date\+Modified@{Date\+Modified}!Document\+Object@{Document\+Object}}
+\subsubsection{\texorpdfstring{Date\+Modified}{DateModified}}
+{\footnotesize\ttfamily string Document\+Object.\+Date\+Modified\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Document Modification Date 
+
+
+
+Definition at line 163 of file Document\+Object.\+cs.
+
+\mbox{\Hypertarget{class_document_object_ae203b8a3e40b6c428145d2335b71245c}\label{class_document_object_ae203b8a3e40b6c428145d2335b71245c}} 
+\index{Document\+Object@{Document\+Object}!Fields@{Fields}}
+\index{Fields@{Fields}!Document\+Object@{Document\+Object}}
+\subsubsection{\texorpdfstring{Fields}{Fields}}
+{\footnotesize\ttfamily Sorted\+Dictionary$<$string, \hyperlink{class_field_object}{Field\+Object}$>$ Document\+Object.\+Fields\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Collection of retrieved Field\+Objects stored in a dictionary with key name of the field 
+
+
+
+Definition at line 124 of file Document\+Object.\+cs.
+
+
+
+Referenced by Export\+Fields().
+
+\mbox{\Hypertarget{class_document_object_ad3444a6c018474405064070fa9a94afe}\label{class_document_object_ad3444a6c018474405064070fa9a94afe}} 
+\index{Document\+Object@{Document\+Object}!Form@{Form}}
+\index{Form@{Form}!Document\+Object@{Document\+Object}}
+\subsubsection{\texorpdfstring{Form}{Form}}
+{\footnotesize\ttfamily string Document\+Object.\+Form\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Documents Form (if any) 
+
+
+
+Definition at line 98 of file Document\+Object.\+cs.
+
+\mbox{\Hypertarget{class_document_object_a3b2075b73f38d05091b69decc6ce7992}\label{class_document_object_a3b2075b73f38d05091b69decc6ce7992}} 
+\index{Document\+Object@{Document\+Object}!Is\+Initialized@{Is\+Initialized}}
+\index{Is\+Initialized@{Is\+Initialized}!Document\+Object@{Document\+Object}}
+\subsubsection{\texorpdfstring{Is\+Initialized}{IsInitialized}}
+{\footnotesize\ttfamily bool Document\+Object.\+Is\+Initialized\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Indicates that the document is\+Initialized 
+
+
+
+Definition at line 60 of file Document\+Object.\+cs.
+
+\mbox{\Hypertarget{class_document_object_ac447461e3dc7f8258695f902ef0758a7}\label{class_document_object_ac447461e3dc7f8258695f902ef0758a7}} 
+\index{Document\+Object@{Document\+Object}!Note\+ID@{Note\+ID}}
+\index{Note\+ID@{Note\+ID}!Document\+Object@{Document\+Object}}
+\subsubsection{\texorpdfstring{Note\+ID}{NoteID}}
+{\footnotesize\ttfamily string Document\+Object.\+Note\+ID\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Document Note\+Id 
+
+
+
+Definition at line 111 of file Document\+Object.\+cs.
+
+\mbox{\Hypertarget{class_document_object_abdc1a6dfc1bb2261b523cf94468448b9}\label{class_document_object_abdc1a6dfc1bb2261b523cf94468448b9}} 
+\index{Document\+Object@{Document\+Object}!Size@{Size}}
+\index{Size@{Size}!Document\+Object@{Document\+Object}}
+\subsubsection{\texorpdfstring{Size}{Size}}
+{\footnotesize\ttfamily string Document\+Object.\+Size\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Document Size 
+
+
+
+Definition at line 72 of file Document\+Object.\+cs.
+
+\mbox{\Hypertarget{class_document_object_a8b96d04632a2802e7cc5466ca5cee8cf}\label{class_document_object_a8b96d04632a2802e7cc5466ca5cee8cf}} 
+\index{Document\+Object@{Document\+Object}!Universal\+ID@{Universal\+ID}}
+\index{Universal\+ID@{Universal\+ID}!Document\+Object@{Document\+Object}}
+\subsubsection{\texorpdfstring{Universal\+ID}{UniversalID}}
+{\footnotesize\ttfamily string Document\+Object.\+Universal\+ID\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Document Universal\+ID 
+
+
+
+Definition at line 137 of file Document\+Object.\+cs.
+
+
+
+Referenced by Document\+Object(), and Export\+Fields().
+
+\mbox{\Hypertarget{class_document_object_ac86b730cf8931b2221af577d32ca2f31}\label{class_document_object_ac86b730cf8931b2221af577d32ca2f31}} 
+\index{Document\+Object@{Document\+Object}!Url@{Url}}
+\index{Url@{Url}!Document\+Object@{Document\+Object}}
+\subsubsection{\texorpdfstring{Url}{Url}}
+{\footnotesize\ttfamily string Document\+Object.\+Url\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Document U\+RL 
+
+
+
+Definition at line 85 of file Document\+Object.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Acket\+K/stack/\+Dropbox/\+Programming/\+S\+V\+N Projects/\+S\+C\+M/\+X\+Pages\+Connector/\+C-\/\+Sharp/\+Xpages\+Connector/\+Objects/\hyperlink{_document_object_8cs}{Document\+Object.\+cs}\end{DoxyCompactItemize}

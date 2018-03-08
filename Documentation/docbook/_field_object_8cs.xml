@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_field_object_8cs">
+    <title>FieldObject.cs File Reference</title>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_field_object">FieldObject</link></para>
+<para><emphasis>&lt;summary&gt;
+An object representing a Domino item
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs</para>
+    </simplesect>
+    <literallayout><computeroutput>
+1 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>;
+2 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Collections.Generic;
+3 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Linq;
+4 <emphasis class="comment"></emphasis>
+5 <emphasis class="comment">///&#32;&lt;summary&gt;</emphasis>
+6 <emphasis class="comment">///&#32;An&#32;object&#32;representing&#32;a&#32;Domino&#32;item</emphasis>
+7 <emphasis class="comment">///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_field_object">8 </link><emphasis class="comment"></emphasis><emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="class_field_object">FieldObject</link>&#32;{
+9 
+10 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Variables</emphasis>
+11 
+12 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;_Name&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+13 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">object</emphasis>&#32;_Value&#32;=&#32;null;
+14 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;_Type&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+15 
+16 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion</emphasis>
+17 
+18 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Properties</emphasis>
+19 <emphasis class="comment"></emphasis>
+20 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+21 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Name&#32;of&#32;the&#32;field</emphasis>
+22 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_field_object_1ae5d972e96a3eca93407da8e8a89abfd1">23 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_field_object_1ae5d972e96a3eca93407da8e8a89abfd1">Name</link>&#32;{
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;_Name;
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+27 
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">protected</emphasis>&#32;<emphasis class="keyword">internal</emphasis>&#32;<emphasis class="keyword">set</emphasis>&#32;{
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_Name&#32;=&#32;value;
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+31 &#32;&#32;&#32;&#32;}
+32 <emphasis class="comment"></emphasis>
+33 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+34 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Value&#32;of&#32;the&#32;field</emphasis>
+35 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_field_object_1a9764fb1824cec95b82cd6ac0b4cd8919">36 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">object</emphasis>&#32;<link linkend="class_field_object_1a9764fb1824cec95b82cd6ac0b4cd8919">Value</link>&#32;{
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;_Value;
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+40 
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">protected</emphasis>&#32;<emphasis class="keyword">internal</emphasis>&#32;<emphasis class="keyword">set</emphasis>&#32;{
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_Value&#32;=&#32;value;
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+44 &#32;&#32;&#32;&#32;}
+45 <emphasis class="comment"></emphasis>
+46 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+47 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Type&#32;of&#32;the&#32;field</emphasis>
+48 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_field_object_1a370af2c26ae9c3e713b5d88b62a2a8f9">49 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_field_object_1a370af2c26ae9c3e713b5d88b62a2a8f9">Type</link>&#32;{
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;_Type;
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+53 
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">protected</emphasis>&#32;<emphasis class="keyword">internal</emphasis>&#32;<emphasis class="keyword">set</emphasis>&#32;{
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_Type&#32;=&#32;value;
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+57 &#32;&#32;&#32;&#32;}
+58 
+59 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion</emphasis>
+60 
+61 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Constructor</emphasis>
+62 <emphasis class="comment"></emphasis>
+63 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+64 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Field&#32;Constructor&#32;</emphasis>
+65 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+66 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;name&quot;&gt;&lt;/param&gt;</emphasis>
+<link linkend="class_field_object_1a87d8d3f1a36d94dec64e8e467950074b">67 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<link linkend="class_field_object_1a87d8d3f1a36d94dec64e8e467950074b">FieldObject</link>(<emphasis class="keywordtype">string</emphasis>&#32;name)&#32;{
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_Name&#32;=&#32;name;
+69 &#32;&#32;&#32;&#32;}
+70 
+71 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion</emphasis>
+72 
+73 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Methods</emphasis>
+74 &#32;&#32;&#32;&#32;<emphasis class="comment"></emphasis>
+75 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+76 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Method&#32;to&#32;get&#32;the&#32;value&#32;of&#32;the&#32;field,&#32;by&#32;converting&#32;it&#32;to&#32;the&#32;provided&#32;type</emphasis>
+77 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+78 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;&lt;/returns&gt;</emphasis>
+<link linkend="class_field_object_1a8d962cda039f78f485232bd2764176c4">79 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">object</emphasis>&#32;<link linkend="class_field_object_1a8d962cda039f78f485232bd2764176c4">getValue</link>()&#32;{
+80 
+81 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>&#32;{
+82 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;return&#32;converted&#32;value</emphasis>
+83 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(_Type&#32;==&#32;<emphasis class="stringliteral">&quot;String&quot;</emphasis>)&#32;{
+84 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;(String)&#32;_Value;
+85 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;<emphasis class="keywordflow">if</emphasis>&#32;(_Type&#32;==&#32;<emphasis class="stringliteral">&quot;Number&quot;</emphasis>)&#32;{
+86 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;(<emphasis class="keywordtype">double</emphasis>)&#32;_Value;
+87 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;<emphasis class="keywordflow">if</emphasis>&#32;(_Type&#32;==&#32;<emphasis class="stringliteral">&quot;Date&quot;</emphasis>)&#32;{
+88 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;(DateTime)&#32;_Value;
+89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;<emphasis class="keywordflow">if</emphasis>&#32;(_Type&#32;==&#32;<emphasis class="stringliteral">&quot;List&quot;</emphasis>)&#32;{
+90 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;List&lt;string&gt;&#32;list&#32;=&#32;null;
+91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;list&#32;=&#32;_Value.ToString().Split(<emphasis class="charliteral">&apos;;&apos;</emphasis>).ToList&lt;<emphasis class="keywordtype">string</emphasis>&gt;();
+92 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;list;
+93 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
+94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;_Value;
+95 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(Exception&#32;ex)&#32;{
+97 
+98 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;Unable&#32;to&#32;get&#32;the&#32;value&#32;of&#32;the&#32;field&#32;:&#32;&quot;</emphasis>&#32;+&#32;_Name);
+99 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(Common.GetErrorInfo(ex));
+100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a079bae21a5417efa53bfe8954c0f533f">hasError</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;
+101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;null;
+102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+103 &#32;&#32;&#32;&#32;&#32;&#32;
+104 &#32;&#32;&#32;&#32;}
+105 &#32;&#32;
+106 &#32;&#32;&#32;
+107 <emphasis class="comment"></emphasis>
+108 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+109 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Get&#32;the&#32;value&#32;of&#32;the&#32;field&#32;as&#32;string</emphasis>
+110 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+111 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;&lt;/returns&gt;</emphasis>
+<link linkend="class_field_object_1ad223b04d429de4b2c57838ffb41d124b">112 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_field_object_1ad223b04d429de4b2c57838ffb41d124b">GetValueAsString</link>()&#32;{
+113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>&#32;{
+114 
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;(<emphasis class="keywordtype">string</emphasis>)&#32;_Value;
+116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">catch</emphasis>(Exception&#32;ex)&#32;{
+117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;Unable&#32;to&#32;get&#32;field&#32;:&#32;&quot;</emphasis>&#32;+&#32;_Name&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;as&#32;string&quot;</emphasis>);
+118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(Common.GetErrorInfo(ex));
+119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a079bae21a5417efa53bfe8954c0f533f">hasError</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;
+120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+123 &#32;&#32;&#32;&#32;}
+124 <emphasis class="comment"></emphasis>
+125 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+126 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Get&#32;the&#32;value&#32;of&#32;the&#32;field&#32;as&#32;double</emphasis>
+127 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+128 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;&lt;/returns&gt;</emphasis>
+<link linkend="class_field_object_1aafe2b7d3e7d414345d85e19dddce3c47">129 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">double</emphasis>&#32;<link linkend="class_field_object_1aafe2b7d3e7d414345d85e19dddce3c47">GetValueAsDouble</link>()&#32;{
+130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>&#32;{
+131 
+132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;(<emphasis class="keywordtype">double</emphasis>)&#32;_Value;
+133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">catch</emphasis>(Exception&#32;ex)&#32;{
+134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;Unable&#32;to&#32;get&#32;field&#32;:&#32;&quot;</emphasis>&#32;+&#32;_Name&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;as&#32;double&quot;</emphasis>);
+135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(Common.GetErrorInfo(ex));
+136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a079bae21a5417efa53bfe8954c0f533f">hasError</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;
+137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;0;
+138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;
+140 &#32;&#32;&#32;&#32;}
+141 <emphasis class="comment"></emphasis>
+142 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+143 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Get&#32;the&#32;value&#32;of&#32;the&#32;field&#32;as&#32;Date</emphasis>
+144 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+145 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;&lt;/returns&gt;</emphasis>
+<link linkend="class_field_object_1a797ebc6615a86bafd9bd17f09562f2ee">146 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;DateTime&#32;<link linkend="class_field_object_1a797ebc6615a86bafd9bd17f09562f2ee">GetValueAsDate</link>()&#32;{
+147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>&#32;{
+148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;(DateTime)&#32;_Value;
+149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(Exception&#32;ex)&#32;{
+150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;Unable&#32;to&#32;get&#32;field&#32;:&#32;&quot;</emphasis>&#32;+&#32;_Name&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;as&#32;date&quot;</emphasis>);
+151 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(Common.GetErrorInfo(ex));
+152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a079bae21a5417efa53bfe8954c0f533f">hasError</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;
+153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">new</emphasis>&#32;DateTime(0);
+154 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+155 &#32;&#32;&#32;&#32;&#32;&#32;&#32;
+156 &#32;&#32;&#32;&#32;}
+157 <emphasis class="comment"></emphasis>
+158 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+159 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Get&#32;the&#32;value&#32;of&#32;the&#32;field&#32;as&#32;list&#32;of&#32;strings</emphasis>
+160 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+161 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;&lt;/returns&gt;</emphasis>
+<link linkend="class_field_object_1a635d7598cbf7bbc29821cb1c012de964">162 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;List&lt;string&gt;&#32;<link linkend="class_field_object_1a635d7598cbf7bbc29821cb1c012de964">GetValueAsList</link>()&#32;{
+163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>&#32;{
+164 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;List&lt;string&gt;&#32;list&#32;=&#32;null;
+165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;list&#32;=&#32;_Value.ToString().Split(<emphasis class="charliteral">&apos;;&apos;</emphasis>).ToList&lt;<emphasis class="keywordtype">string</emphasis>&gt;();
+166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;list;
+167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(Exception&#32;ex)&#32;{
+168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;Unable&#32;to&#32;get&#32;field&#32;:&#32;&quot;</emphasis>&#32;+&#32;_Name&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;as&#32;list&quot;</emphasis>);
+169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(Common.GetErrorInfo(ex));
+170 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a079bae21a5417efa53bfe8954c0f533f">hasError</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;
+171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;null;
+172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+173 &#32;&#32;&#32;&#32;&#32;}
+174 
+175 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion</emphasis>
+176 
+177 }
+    </computeroutput></literallayout>
+</section>

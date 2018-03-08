@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_field_object" kind="class" language="C#" prot="public">
+    <compoundname>FieldObject</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_field_object_1a760c99880840d085405ba65e9cb929bd" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string FieldObject._Name</definition>
+        <argsstring></argsstring>
+        <name>_Name</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs" line="12" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_field_object_1a942cd0e19decbe87f6870916eda8cfa4" prot="private" static="no" mutable="no">
+        <type>object</type>
+        <definition>object FieldObject._Value</definition>
+        <argsstring></argsstring>
+        <name>_Value</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs" line="13" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_field_object_1a12f98770e3780f81e6b9d3d30d4a5166" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string FieldObject._Type</definition>
+        <argsstring></argsstring>
+        <name>_Type</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs" line="14" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_field_object_1ae5d972e96a3eca93407da8e8a89abfd1" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string FieldObject.Name</definition>
+        <argsstring></argsstring>
+        <name>Name</name>
+        <briefdescription>
+<para>Name of the field </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs" line="23" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_field_object_1a9764fb1824cec95b82cd6ac0b4cd8919" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>object</type>
+        <definition>object FieldObject.Value</definition>
+        <argsstring></argsstring>
+        <name>Value</name>
+        <briefdescription>
+<para>Value of the field </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs" line="36" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_field_object_1a370af2c26ae9c3e713b5d88b62a2a8f9" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string FieldObject.Type</definition>
+        <argsstring></argsstring>
+        <name>Type</name>
+        <briefdescription>
+<para>Type of the field </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs" line="49" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_field_object_1a87d8d3f1a36d94dec64e8e467950074b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>FieldObject.FieldObject</definition>
+        <argsstring>(string name)</argsstring>
+        <name>FieldObject</name>
+        <param>
+          <type>string</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Field Constructor </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs" line="67" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs" bodystart="67" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="class_field_object_1a8d962cda039f78f485232bd2764176c4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>object</type>
+        <definition>object FieldObject.getValue</definition>
+        <argsstring>()</argsstring>
+        <name>getValue</name>
+        <briefdescription>
+<para>Method to get the value of the field, by converting it to the provided type </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs" line="79" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs" bodystart="79" bodyend="104"/>
+        <references refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" compoundref="_connector_8cs" startline="99">Connector.hasError</references>
+        <references refid="class_connector_1a1ed422674b344524fd77998dcf6a9ba6" compoundref="_connector_8cs" startline="117">Connector.ReturnMessages</references>
+      </memberdef>
+      <memberdef kind="function" id="class_field_object_1ad223b04d429de4b2c57838ffb41d124b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>string FieldObject.GetValueAsString</definition>
+        <argsstring>()</argsstring>
+        <name>GetValueAsString</name>
+        <briefdescription>
+<para>Get the value of the field as string </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs" line="112" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs" bodystart="112" bodyend="123"/>
+        <references refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" compoundref="_connector_8cs" startline="99">Connector.hasError</references>
+        <references refid="class_connector_1a1ed422674b344524fd77998dcf6a9ba6" compoundref="_connector_8cs" startline="117">Connector.ReturnMessages</references>
+      </memberdef>
+      <memberdef kind="function" id="class_field_object_1aafe2b7d3e7d414345d85e19dddce3c47" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double FieldObject.GetValueAsDouble</definition>
+        <argsstring>()</argsstring>
+        <name>GetValueAsDouble</name>
+        <briefdescription>
+<para>Get the value of the field as double </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs" line="129" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs" bodystart="129" bodyend="140"/>
+        <references refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" compoundref="_connector_8cs" startline="99">Connector.hasError</references>
+        <references refid="class_connector_1a1ed422674b344524fd77998dcf6a9ba6" compoundref="_connector_8cs" startline="117">Connector.ReturnMessages</references>
+      </memberdef>
+      <memberdef kind="function" id="class_field_object_1a797ebc6615a86bafd9bd17f09562f2ee" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>DateTime</type>
+        <definition>DateTime FieldObject.GetValueAsDate</definition>
+        <argsstring>()</argsstring>
+        <name>GetValueAsDate</name>
+        <briefdescription>
+<para>Get the value of the field as Date </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs" line="146" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs" bodystart="146" bodyend="156"/>
+        <references refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" compoundref="_connector_8cs" startline="99">Connector.hasError</references>
+        <references refid="class_connector_1a1ed422674b344524fd77998dcf6a9ba6" compoundref="_connector_8cs" startline="117">Connector.ReturnMessages</references>
+      </memberdef>
+      <memberdef kind="function" id="class_field_object_1a635d7598cbf7bbc29821cb1c012de964" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; string &gt;</type>
+        <definition>List&lt;string&gt; FieldObject.GetValueAsList</definition>
+        <argsstring>()</argsstring>
+        <name>GetValueAsList</name>
+        <briefdescription>
+<para>Get the value of the field as list of strings </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs" line="162" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs" bodystart="162" bodyend="173"/>
+        <references refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" compoundref="_connector_8cs" startline="99">Connector.hasError</references>
+        <references refid="class_connector_1a1ed422674b344524fd77998dcf6a9ba6" compoundref="_connector_8cs" startline="117">Connector.ReturnMessages</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>An object representing a Domino item </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs" line="8" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs" bodystart="8" bodyend="177"/>
+    <listofallmembers>
+      <member refid="class_field_object_1a760c99880840d085405ba65e9cb929bd" prot="private" virt="non-virtual"><scope>FieldObject</scope><name>_Name</name></member>
+      <member refid="class_field_object_1a12f98770e3780f81e6b9d3d30d4a5166" prot="private" virt="non-virtual"><scope>FieldObject</scope><name>_Type</name></member>
+      <member refid="class_field_object_1a942cd0e19decbe87f6870916eda8cfa4" prot="private" virt="non-virtual"><scope>FieldObject</scope><name>_Value</name></member>
+      <member refid="class_field_object_1a87d8d3f1a36d94dec64e8e467950074b" prot="public" virt="non-virtual"><scope>FieldObject</scope><name>FieldObject</name></member>
+      <member refid="class_field_object_1a8d962cda039f78f485232bd2764176c4" prot="public" virt="non-virtual"><scope>FieldObject</scope><name>getValue</name></member>
+      <member refid="class_field_object_1a797ebc6615a86bafd9bd17f09562f2ee" prot="public" virt="non-virtual"><scope>FieldObject</scope><name>GetValueAsDate</name></member>
+      <member refid="class_field_object_1aafe2b7d3e7d414345d85e19dddce3c47" prot="public" virt="non-virtual"><scope>FieldObject</scope><name>GetValueAsDouble</name></member>
+      <member refid="class_field_object_1a635d7598cbf7bbc29821cb1c012de964" prot="public" virt="non-virtual"><scope>FieldObject</scope><name>GetValueAsList</name></member>
+      <member refid="class_field_object_1ad223b04d429de4b2c57838ffb41d124b" prot="public" virt="non-virtual"><scope>FieldObject</scope><name>GetValueAsString</name></member>
+      <member refid="class_field_object_1ae5d972e96a3eca93407da8e8a89abfd1" prot="public" virt="non-virtual"><scope>FieldObject</scope><name>Name</name></member>
+      <member refid="class_field_object_1a370af2c26ae9c3e713b5d88b62a2a8f9" prot="public" virt="non-virtual"><scope>FieldObject</scope><name>Type</name></member>
+      <member refid="class_field_object_1a9764fb1824cec95b82cd6ac0b4cd8919" prot="public" virt="non-virtual"><scope>FieldObject</scope><name>Value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

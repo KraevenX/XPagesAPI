@@ -1,0 +1,497 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_document_object">
+<title>DocumentObject class Reference</title>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>DatabaseObject _Database</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool _isInitialized</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string _DateCreated</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string _DateModified</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string _UniversalID</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string _NoteID</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string _SearchField</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string _SearchValue</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string _Formula</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string _Size</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string _Url</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string _Form</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>SortedDictionary&lt; String, FieldObject &gt; _Fields</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_document_object_1a46c89e7d40b15a91542a5482b2d8a084">DocumentObject</link> (
+<link linkend="class_database_object">DatabaseObject</link> dbObj, String UniversalID)<para><emphasis>&lt;summary&gt;
+DocumentObject Constructor
+&lt;/summary&gt;</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_document_object_1a7c98c6485f7395697561500a8ff42d79">DocumentObject</link> (
+<link linkend="class_database_object">DatabaseObject</link> dbObj, string SeachField, string SearchValue)<para><emphasis>&lt;summary&gt;
+DocumentObject Constructor
+&lt;/summary&gt;</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_document_object_1a4eb6c7aaa4774d1d5dbf5bf17dff23d9">DocumentObject</link> (
+string formula, <link linkend="class_database_object">DatabaseObject</link> dbObj)<para><emphasis>&lt;summary&gt;
+DocumentObject Constructor
+&lt;/summary&gt;</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_document_object_1af4298d6cfbb9ea60643d9995309b73f1">Initialize</link> (
+)<para><emphasis>&lt;summary&gt;
+Initializes the document by validating the input and triggering the document request
+&lt;/summary&gt;</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_document_object_1a8883fec3b5b1b6e2e43f4b5ca4092684">GetFields</link> (
+string fields)<para><emphasis>&lt;summary&gt;
+Retrieve fields for this documents by triggering the field request</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_document_object_1a8e38704e02850b2480d29d184ae2c0e0">GetFields</link> (
+IList fields)<para><emphasis>&lt;summary&gt;
+Retrieve fields for this documents by triggering the field request</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_document_object_1a5e070c7c0a45ac06422ee992c841e780">GetAllFields</link> (
+)<para><emphasis>&lt;summary&gt;
+Retrieve all fields for this documents by triggering the field request</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_document_object_1a1a763aa01710b370634f46c89b7d2d8e">ExportFields</link> (
+string filePath, bool overwriteExistingFile)<para><emphasis>&lt;summary&gt;
+Exports the content of the property &apos;Fields&apos; to a file</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_document_object_1a69c37390e7b77736c86315287674cc61">ValidateInput</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>An object representing a Domino Document </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>The following is an example of the usage of a <computeroutput><link linkend="class_document_object">DocumentObject</link></computeroutput>: <literallayout><computeroutput>DocumentObject&#32;docObj&#32;=&#32;new&#32;DocumentObject(dbObj,&#32;universalID);&#32;//&#32;create&#32;new&#32;doc&#32;object&#32;by&#32;databaseobject&#32;and&#32;universalID
+//&#32;DocumentObject&#32;docObj&#32;=&#32;new&#32;DocumentObject(dbObj,&#32;SeachField,&#32;SearchValue);&#32;//&#32;create&#32;new&#32;doc&#32;object&#32;by&#32;databaseobject&#32;and&#32;supplying&#32;a&#32;searchfield/value
+//&#32;DocumentObject&#32;docObj&#32;=&#32;new&#32;DocumentObject(formula,&#32;dbObj);&#32;//&#32;create&#32;new&#32;doc&#32;object&#32;by&#32;databaseobject&#32;and&#32;supplying&#32;a&#32;formula
+if(docObj!=null&#32;&amp;&amp;&#32;docObj.Initialize()){
+&#32;&#32;&#32;&#32;&#32;//&#32;here&#32;you&#32;can&#32;then&#32;get&#32;the&#32;fields&#32;of&#32;the&#32;document&#32;object
+&#32;&#32;&#32;&#32;&#32;//&#32;your&#32;code&#32;here...&#32;
+}
+</computeroutput></literallayout> </para>
+                <para>Definition at line 25 of file DocumentObject.cs</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>DocumentObject.cs</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_document_object_1a46c89e7d40b15a91542a5482b2d8a084">
+                <title>DocumentObject.DocumentObject (DatabaseObject dbObj, String UniversalID)</title> <emphasis>&lt;summary&gt;
+DocumentObject Constructor
+&lt;/summary&gt;</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>dbObj</entry>
+                                <entry></entry>
+                            </row>
+                            <row>
+                                <entry>UniversalID</entry>
+                                <entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="class_document_object_1a7c98c6485f7395697561500a8ff42d79">
+                <title>DocumentObject.DocumentObject (DatabaseObject dbObj, string SeachField, string SearchValue)</title> <emphasis>&lt;summary&gt;
+DocumentObject Constructor
+&lt;/summary&gt;</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>dbObj</entry>
+                                <entry></entry>
+                            </row>
+                            <row>
+                                <entry>SeachField</entry>
+                                <entry></entry>
+                            </row>
+                            <row>
+                                <entry>SearchValue</entry>
+                                <entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="class_document_object_1a4eb6c7aaa4774d1d5dbf5bf17dff23d9">
+                <title>DocumentObject.DocumentObject (string formula, DatabaseObject dbObj)</title> <emphasis>&lt;summary&gt;
+DocumentObject Constructor
+&lt;/summary&gt;</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>formula</entry>
+                                <entry></entry>
+                            </row>
+                            <row>
+                                <entry>dbObj</entry>
+                                <entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="class_document_object_1af4298d6cfbb9ea60643d9995309b73f1">
+                <title>bool DocumentObject.Initialize ()</title> <emphasis>&lt;summary&gt;
+Initializes the document by validating the input and triggering the document request
+&lt;/summary&gt;</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>Boolean</para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="class_document_object_1a8883fec3b5b1b6e2e43f4b5ca4092684">
+                <title>bool DocumentObject.GetFields (string fields)</title> <emphasis>&lt;summary&gt;
+Retrieve fields for this documents by triggering the field request</emphasis>
+                
+<para>Provide the fields separated by ;</para>
+
+<para>This action will update the property &apos;Fields&apos;</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>fields</entry>
+                                <entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>Boolean</para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="class_document_object_1a8e38704e02850b2480d29d184ae2c0e0">
+                <title>bool DocumentObject.GetFields (IList fields)</title> <emphasis>&lt;summary&gt;
+Retrieve fields for this documents by triggering the field request</emphasis>
+                
+<para>This action will update the property &apos;Fields&apos;</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>fields</entry>
+                                <entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>Boolean</para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="class_document_object_1a5e070c7c0a45ac06422ee992c841e780">
+                <title>bool DocumentObject.GetAllFields ()</title> <emphasis>&lt;summary&gt;
+Retrieve all fields for this documents by triggering the field request</emphasis>
+                
+<para>This action will update the property &apos;Fields&apos; </para>
+
+<para><formalpara><title>Returns: </title>
+
+<para>Boolean</para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="class_document_object_1a1a763aa01710b370634f46c89b7d2d8e">
+                <title>bool DocumentObject.ExportFields (string filePath, bool overwriteExistingFile)</title> <emphasis>&lt;summary&gt;
+Exports the content of the property &apos;Fields&apos; to a file</emphasis>
+                
+<para>Provide the path to the file and specify if you want ot overwrite this file if it exists</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>filePath</entry>
+                                <entry></entry>
+                            </row>
+                            <row>
+                                <entry>overwriteExistingFile</entry>
+                                <entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para></para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="class_document_object_1a69c37390e7b77736c86315287674cc61">
+                <title>bool DocumentObject.ValidateInput ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>
