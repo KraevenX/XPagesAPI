@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="class_common" kind="class" language="C#" prot="public">
     <compoundname>Common</compoundname>
       <sectiondef kind="public-static-func">
@@ -27,7 +27,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Common.cs" line="17" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Common.cs" bodystart="17" bodyend="39"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Common.cs" line="17" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Common.cs" bodystart="17" bodyend="39"/>
       </memberdef>
       <memberdef kind="function" id="class_common_1a6468d361244e4fd42f8be6e584075a21" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>string</type>
@@ -64,15 +64,53 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Common.cs" line="48" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Common.cs" bodystart="48" bodyend="58"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Common.cs" line="48" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Common.cs" bodystart="48" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="class_common_1a13db3c30d3b537be69e3b9e1dc636a3e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Common.ExceptionHandler</definition>
+        <argsstring>(object sender, System.UnhandledExceptionEventArgs e)</argsstring>
+        <name>ExceptionHandler</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>System.UnhandledExceptionEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Application Uncaught Exception Handler </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Common.cs" line="67" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Common.cs" bodystart="67" bodyend="76"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>Class with common methods </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Common.cs" line="9" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Common.cs" bodystart="8" bodyend="61"/>
+    <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Common.cs" line="9" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Common.cs" bodystart="8" bodyend="77"/>
     <listofallmembers>
+      <member refid="class_common_1a13db3c30d3b537be69e3b9e1dc636a3e" prot="public" virt="non-virtual"><scope>Common</scope><name>ExceptionHandler</name></member>
       <member refid="class_common_1a95a895bd81dcbd1ed2a07814462d0fc7" prot="public" virt="non-virtual"><scope>Common</scope><name>GetErrorInfo</name></member>
       <member refid="class_common_1a6468d361244e4fd42f8be6e584075a21" prot="public" virt="non-virtual"><scope>Common</scope><name>GetListAsString</name></member>
     </listofallmembers>

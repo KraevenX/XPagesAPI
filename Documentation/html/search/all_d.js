@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['template',['Template',['../class_database_object.html#ac8ecdbe9722c00f787a62aef7d3dfa5a',1,'DatabaseObject']]],
-  ['temporarygeneratedfile_5f036c0b5b_2d1481_2d4323_2d8d20_2d8f5adcb23d92_2ecs',['TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs',['../_temporary_generated_file__036_c0_b5_b-1481-4323-8_d20-8_f5_a_d_c_b23_d92_8cs.html',1,'']]],
-  ['temporarygeneratedfile_5f5937a670_2d0e60_2d4077_2d877b_2df7221da3dda1_2ecs',['TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs',['../_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs.html',1,'']]],
-  ['temporarygeneratedfile_5fe7a71f73_2d0f8d_2d4b9b_2db56e_2d8e70b10bc5d3_2ecs',['TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs',['../_temporary_generated_file___e7_a71_f73-0_f8_d-4_b9_b-_b56_e-8_e70_b10_b_c5_d3_8cs.html',1,'']]],
-  ['throwexception',['ThrowException',['../class_connector.html#a8ec0dcdbb4a85a56fa50f67686484c19',1,'Connector']]],
-  ['title',['Title',['../class_database_object.html#a9af3f75274dd39f7fa82a355dc4ddf39',1,'DatabaseObject']]],
-  ['type',['Type',['../class_field_object.html#a370af2c26ae9c3e713b5d88b62a2a8f9',1,'FieldObject']]]
+  ['servername',['ServerName',['../class_database_object.html#ad6bfcd30152f7a115ac5a1c7fbfa9fcb',1,'DatabaseObject']]],
+  ['serverurl',['ServerURL',['../class_connector.html#ac0cae400459978dde8030f75208e48f1',1,'Connector']]],
+  ['session',['Session',['../class_database_object.html#aa8484162b7d2a7c4c9426bca13c64c07',1,'DatabaseObject']]],
+  ['sessionobject',['SessionObject',['../class_session_object.html',1,'SessionObject'],['../class_connector.html#a0a7bb42f9530796c086ab50785147ce9',1,'Connector.SessionObject()'],['../class_session_object.html#a173822a7aec467880195d79a1bc9f520',1,'SessionObject.SessionObject()']]],
+  ['sessionobject_2ecs',['SessionObject.cs',['../_session_object_8cs.html',1,'']]],
+  ['size',['Size',['../class_database_object.html#ad86f5dd95a9debdef284e21e32936e9e',1,'DatabaseObject.Size()'],['../class_document_object.html#abdc1a6dfc1bb2261b523cf94468448b9',1,'DocumentObject.Size()'],['../class_file_object.html#a7aa7737c1ce05f4424ba16dded444949',1,'FileObject.Size()']]],
+  ['softclass',['SoftClass',['../class_file_object.html#a5e9b8f083b53ea0450a0560c16292a2f',1,'FileObject']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['haserror',['hasError',['../class_connector.html#a079bae21a5417efa53bfe8954c0f533f',1,'Connector']]]
+  ['extension',['Extension',['../class_file_object.html#ae25b58dc19def323da91a48e17ba13ed',1,'FileObject']]]
 ];

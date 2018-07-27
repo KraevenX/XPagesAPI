@@ -1,22 +1,20 @@
-#pragma warning disable CS1570 // XML comment has badly formed XML
-                              /// <summary>
-                              /// An object representing a Domino Session
-                              /// </summary>
-                              /// <example>The following is an example of the usage of a
-                              /// <c>SessionObject</c>:
-                              ///   <code>
-                              ///    SessionObject sObj = new SessionObject(connectorObj, DominoWebServiceURL); // the connector object and Full URL to the XPage database containing the Web Rest Service
-                              ///    
-                              ///    if(sObj!=null && sObj.Initialize()){
-                              ///         // here you can then get the database object
-                              ///         // your code here... 
-                              ///    }
-                              ///   </code>
-                              /// </example>
+// XML comment has badly formed XML
+/// <summary>
+/// An object representing a Domino Session
+/// </summary>
+/// <example>The following is an example of the usage of a
+/// <c>SessionObject</c>:
+///   <code>
+///    SessionObject sObj = new SessionObject(connectorObj, DominoWebServiceURL); // the connector object and Full URL to the XPage database containing the Web Rest Service
+///    
+///    if(sObj!=null &amp;&amp; sObj.Initialize()){
+///         // here you can then get the database object
+///         // your code here... 
+///    }
+///   </code>
+/// </example>
 public class SessionObject
 {
-#pragma warning restore CS1570 // XML comment has badly formed XML
-
     #region Variables
 
     private Connector _Connection;

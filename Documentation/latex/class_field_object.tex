@@ -8,26 +8,26 @@ An object representing a Domino item
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_field_object_a87d8d3f1a36d94dec64e8e467950074b}{Field\+Object} (string name)
+\mbox{\hyperlink{class_field_object_a87d8d3f1a36d94dec64e8e467950074b}{Field\+Object}} (string name)
 \begin{DoxyCompactList}\small\item\em Field Constructor \end{DoxyCompactList}\item 
-object \hyperlink{class_field_object_a8d962cda039f78f485232bd2764176c4}{get\+Value} ()
+object \mbox{\hyperlink{class_field_object_a8d962cda039f78f485232bd2764176c4}{get\+Value}} ()
 \begin{DoxyCompactList}\small\item\em Method to get the value of the field, by converting it to the provided type \end{DoxyCompactList}\item 
-string \hyperlink{class_field_object_ad223b04d429de4b2c57838ffb41d124b}{Get\+Value\+As\+String} ()
+string \mbox{\hyperlink{class_field_object_ad223b04d429de4b2c57838ffb41d124b}{Get\+Value\+As\+String}} ()
 \begin{DoxyCompactList}\small\item\em Get the value of the field as string \end{DoxyCompactList}\item 
-double \hyperlink{class_field_object_aafe2b7d3e7d414345d85e19dddce3c47}{Get\+Value\+As\+Double} ()
+double \mbox{\hyperlink{class_field_object_aafe2b7d3e7d414345d85e19dddce3c47}{Get\+Value\+As\+Double}} ()
 \begin{DoxyCompactList}\small\item\em Get the value of the field as double \end{DoxyCompactList}\item 
-Date\+Time \hyperlink{class_field_object_a797ebc6615a86bafd9bd17f09562f2ee}{Get\+Value\+As\+Date} ()
+Date\+Time \mbox{\hyperlink{class_field_object_a797ebc6615a86bafd9bd17f09562f2ee}{Get\+Value\+As\+Date}} ()
 \begin{DoxyCompactList}\small\item\em Get the value of the field as Date \end{DoxyCompactList}\item 
-List$<$ string $>$ \hyperlink{class_field_object_a635d7598cbf7bbc29821cb1c012de964}{Get\+Value\+As\+List} ()
+List$<$ string $>$ \mbox{\hyperlink{class_field_object_a635d7598cbf7bbc29821cb1c012de964}{Get\+Value\+As\+List}} ()
 \begin{DoxyCompactList}\small\item\em Get the value of the field as list of strings \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-string \hyperlink{class_field_object_ae5d972e96a3eca93407da8e8a89abfd1}{Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+string \mbox{\hyperlink{class_field_object_ae5d972e96a3eca93407da8e8a89abfd1}{Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Name of the field \end{DoxyCompactList}\item 
-object \hyperlink{class_field_object_a9764fb1824cec95b82cd6ac0b4cd8919}{Value}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+object \mbox{\hyperlink{class_field_object_a9764fb1824cec95b82cd6ac0b4cd8919}{Value}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Value of the field \end{DoxyCompactList}\item 
-string \hyperlink{class_field_object_a370af2c26ae9c3e713b5d88b62a2a8f9}{Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+string \mbox{\hyperlink{class_field_object_a370af2c26ae9c3e713b5d88b62a2a8f9}{Type}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Type of the field \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -111,10 +111,10 @@ References Connector.\+has\+Error, and Connector.\+Return\+Messages.
 95             \}
 96         \} \textcolor{keywordflow}{catch} (Exception ex) \{
 97 
-98             \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}.Add(\textcolor{stringliteral}{"Unable to get the value of the field : "} +
+98             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"Unable to get the value of the field : "} +
        \_Name);
-99             \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}.Add(Common.GetErrorInfo(ex));
-100             \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError} = \textcolor{keyword}{true};
+99             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(Common.GetErrorInfo(ex));
+100             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError}} = \textcolor{keyword}{true};
 101             \textcolor{keywordflow}{return} null;
 102         \}
 103       
@@ -147,10 +147,10 @@ References Connector.\+has\+Error, and Connector.\+Return\+Messages.
 147         \textcolor{keywordflow}{try} \{
 148             \textcolor{keywordflow}{return} (DateTime) \_Value;
 149         \} \textcolor{keywordflow}{catch} (Exception ex) \{
-150             \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}.Add(\textcolor{stringliteral}{"Unable to get field : "} + \_Name + \textcolor{stringliteral}{" as
+150             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"Unable to get field : "} + \_Name + \textcolor{stringliteral}{" as
        date"});
-151             \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}.Add(Common.GetErrorInfo(ex));
-152             \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError} = \textcolor{keyword}{true};
+151             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(Common.GetErrorInfo(ex));
+152             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError}} = \textcolor{keyword}{true};
 153             \textcolor{keywordflow}{return} \textcolor{keyword}{new} DateTime(0);
 154         \}
 155        
@@ -184,10 +184,10 @@ References Connector.\+has\+Error, and Connector.\+Return\+Messages.
 131 
 132             \textcolor{keywordflow}{return} (\textcolor{keywordtype}{double}) \_Value;
 133         \} \textcolor{keywordflow}{catch}(Exception ex) \{
-134             \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}.Add(\textcolor{stringliteral}{"Unable to get field : "} + \_Name + \textcolor{stringliteral}{" as
+134             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"Unable to get field : "} + \_Name + \textcolor{stringliteral}{" as
        double"});
-135             \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}.Add(Common.GetErrorInfo(ex));
-136             \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError} = \textcolor{keyword}{true};
+135             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(Common.GetErrorInfo(ex));
+136             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError}} = \textcolor{keyword}{true};
 137             \textcolor{keywordflow}{return} 0;
 138         \}
 139        
@@ -222,10 +222,10 @@ References Connector.\+has\+Error, and Connector.\+Return\+Messages.
 165             list = \_Value.ToString().Split(\textcolor{charliteral}{';'}).ToList<\textcolor{keywordtype}{string}>();
 166             \textcolor{keywordflow}{return} list;
 167         \} \textcolor{keywordflow}{catch} (Exception ex) \{
-168             \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}.Add(\textcolor{stringliteral}{"Unable to get field : "} + \_Name + \textcolor{stringliteral}{" as
+168             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"Unable to get field : "} + \_Name + \textcolor{stringliteral}{" as
        list"});
-169             \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}.Add(Common.GetErrorInfo(ex));
-170             \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError} = \textcolor{keyword}{true};
+169             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(Common.GetErrorInfo(ex));
+170             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError}} = \textcolor{keyword}{true};
 171             \textcolor{keywordflow}{return} null;
 172         \}
 173      \}
@@ -258,10 +258,10 @@ References Connector.\+has\+Error, and Connector.\+Return\+Messages.
 114 
 115             \textcolor{keywordflow}{return} (\textcolor{keywordtype}{string}) \_Value;
 116         \} \textcolor{keywordflow}{catch}(Exception ex) \{
-117             \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}.Add(\textcolor{stringliteral}{"Unable to get field : "} + \_Name + \textcolor{stringliteral}{" as
+117             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"Unable to get field : "} + \_Name + \textcolor{stringliteral}{" as
        string"});
-118             \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}.Add(Common.GetErrorInfo(ex));
-119             \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError} = \textcolor{keyword}{true};
+118             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(Common.GetErrorInfo(ex));
+119             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError}} = \textcolor{keyword}{true};
 120             \textcolor{keywordflow}{return} \textcolor{stringliteral}{""};
 121         \}
 122         
@@ -284,6 +284,18 @@ Name of the field
 
 Definition at line 23 of file Field\+Object.\+cs.
 
+
+\begin{DoxyCode}
+23                        \{
+24         \textcolor{keyword}{get} \{
+25             \textcolor{keywordflow}{return} \_Name;
+26         \}
+27 
+28         \textcolor{keyword}{protected} \textcolor{keyword}{internal} \textcolor{keyword}{set} \{
+29             \_Name = value;
+30         \}
+31     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{class_field_object_a370af2c26ae9c3e713b5d88b62a2a8f9}\label{class_field_object_a370af2c26ae9c3e713b5d88b62a2a8f9}} 
 \index{Field\+Object@{Field\+Object}!Type@{Type}}
 \index{Type@{Type}!Field\+Object@{Field\+Object}}
@@ -298,6 +310,18 @@ Type of the field
 
 Definition at line 49 of file Field\+Object.\+cs.
 
+
+\begin{DoxyCode}
+49                        \{
+50         \textcolor{keyword}{get} \{
+51             \textcolor{keywordflow}{return} \_Type;
+52         \}
+53 
+54         \textcolor{keyword}{protected} \textcolor{keyword}{internal} \textcolor{keyword}{set} \{
+55             \_Type = value;
+56         \}
+57     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{class_field_object_a9764fb1824cec95b82cd6ac0b4cd8919}\label{class_field_object_a9764fb1824cec95b82cd6ac0b4cd8919}} 
 \index{Field\+Object@{Field\+Object}!Value@{Value}}
 \index{Value@{Value}!Field\+Object@{Field\+Object}}
@@ -313,7 +337,19 @@ Value of the field
 Definition at line 36 of file Field\+Object.\+cs.
 
 
+\begin{DoxyCode}
+36                         \{
+37         \textcolor{keyword}{get} \{
+38             \textcolor{keywordflow}{return} \_Value;
+39         \}
+40 
+41         \textcolor{keyword}{protected} \textcolor{keyword}{internal} \textcolor{keyword}{set} \{
+42             \_Value = value;
+43         \}
+44     \}
+\end{DoxyCode}
+
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+Acket\+K/stack/\+Dropbox/\+Programming/\+S\+V\+N Projects/\+S\+C\+M/\+X\+Pages\+Connector/\+C-\/\+Sharp/\+Xpages\+Connector/\+Objects/\hyperlink{_field_object_8cs}{Field\+Object.\+cs}\end{DoxyCompactItemize}
+C\+:/\+Users/\+Acketk/source/repos/\+V\+S\+T\+S/\+X\+Pages\+A\+P\+I/\+X\+Pages\+A\+P\+I/\+Objects/\mbox{\hyperlink{_field_object_8cs}{Field\+Object.\+cs}}\end{DoxyCompactItemize}

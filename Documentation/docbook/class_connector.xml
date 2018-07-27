@@ -258,7 +258,7 @@ Internal method to reset the return mechanism
 //&#32;From&#32;those&#32;document&#32;objects&#32;you&#32;can&#32;then&#32;get&#32;the&#32;field&#32;objects&#32;(key/value)
 @endverbatim
 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;&#32;&#32;
-&#32;&#32;&#32;&#32;}
+&lt;br&gt;&#32;&#32;&#32;&#32;}
 </computeroutput></literallayout> </para>
                 <para>Definition at line 26 of file Connector.cs</para>
                 <para>The Documentation for this struct was generated from the following file: </para>

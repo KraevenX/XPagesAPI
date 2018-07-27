@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="class_requestor" kind="class" language="C#" prot="package">
     <compoundname>Requestor</compoundname>
       <sectiondef kind="private-attrib">
@@ -14,7 +14,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" line="13" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" bodystart="13" bodyend="-1"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="14" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="14" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_requestor_1ac86d5f843bcfb2c1d99abb34252c8830" prot="private" static="no" mutable="no">
         <type>CookieContainer</type>
@@ -27,7 +27,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" line="15" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" bodystart="15" bodyend="-1"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="16" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="16" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="package-attrib">
@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" line="14" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" bodystart="14" bodyend="-1"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="15" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="15" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -62,7 +62,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" line="21" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" bodystart="21" bodyend="23"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="22" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="22" bodyend="25"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -81,7 +81,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" line="28" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" bodystart="28" bodyend="53"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="30" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="30" bodyend="64"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="package-func">
@@ -96,7 +96,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" line="59" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" bodystart="59" bodyend="132"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="70" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="70" bodyend="158"/>
       </memberdef>
       <memberdef kind="function" id="class_requestor_1abbdb09e9cfcb74f1b90ac00f87780630" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -113,7 +113,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" line="134" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" bodystart="134" bodyend="315"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="160" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="160" bodyend="396"/>
       </memberdef>
       <memberdef kind="function" id="class_requestor_1a9e460007336e77741a15815272988292" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -146,7 +146,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" line="317" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" bodystart="317" bodyend="534"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="398" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="398" bodyend="674"/>
       </memberdef>
       <memberdef kind="function" id="class_requestor_1abce2f7be8f91b5da4de34c0075bd2c6a" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -187,7 +187,48 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" line="536" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" bodystart="536" bodyend="792"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="676" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="676" bodyend="996"/>
+      </memberdef>
+      <memberdef kind="function" id="class_requestor_1a20ef458488f2a22a7fe57012ad59add3" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Requestor.ExecuteDocumentFilesRequest</definition>
+        <argsstring>(string WebServiceURL, string Unid, string searchField, string searchValue, string formula, DatabaseObject dbObj, DocumentObject docObj)</argsstring>
+        <name>ExecuteDocumentFilesRequest</name>
+        <param>
+          <type>string</type>
+          <declname>WebServiceURL</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>Unid</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>searchField</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>searchValue</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>formula</declname>
+        </param>
+        <param>
+          <type><ref refid="class_database_object" kindref="compound">DatabaseObject</ref></type>
+          <declname>dbObj</declname>
+        </param>
+        <param>
+          <type><ref refid="class_document_object" kindref="compound">DocumentObject</ref></type>
+          <declname>docObj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="998" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="998" bodyend="1346"/>
       </memberdef>
       <memberdef kind="function" id="class_requestor_1ac4b4d88f8ce2f1b1a6db7ee87c82f60a" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -224,7 +265,44 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" line="794" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" bodystart="794" bodyend="1098"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="1348" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="1348" bodyend="1731"/>
+      </memberdef>
+      <memberdef kind="function" id="class_requestor_1a7e0df3b1d9d9d479f0b896e19be28a76" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Requestor.ExecuteAllDocumentsFilesRequest</definition>
+        <argsstring>(string WebServiceURL, string searchField, string searchValue, string formula, string unids, DatabaseObject dbObj)</argsstring>
+        <name>ExecuteAllDocumentsFilesRequest</name>
+        <param>
+          <type>string</type>
+          <declname>WebServiceURL</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>searchField</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>searchValue</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>formula</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>unids</declname>
+        </param>
+        <param>
+          <type><ref refid="class_database_object" kindref="compound">DatabaseObject</ref></type>
+          <declname>dbObj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="1733" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="1733" bodyend="2148"/>
       </memberdef>
       <memberdef kind="function" id="class_requestor_1a79b18759ab798a2755a9a79a57478d82" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -249,7 +327,28 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" line="1100" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" bodystart="1100" bodyend="1318"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="2150" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="2150" bodyend="2424"/>
+      </memberdef>
+      <memberdef kind="function" id="class_requestor_1a990a0641252e7863cc855212d300822a" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Requestor.ExecuteAllFilesRequest</definition>
+        <argsstring>(string WebServiceURL, DatabaseObject dbObj)</argsstring>
+        <name>ExecuteAllFilesRequest</name>
+        <param>
+          <type>string</type>
+          <declname>WebServiceURL</declname>
+        </param>
+        <param>
+          <type><ref refid="class_database_object" kindref="compound">DatabaseObject</ref></type>
+          <declname>dbObj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="2426" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="2426" bodyend="2846"/>
       </memberdef>
       <memberdef kind="function" id="class_requestor_1a14632528cb1be88d2e390300da796faa" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -274,23 +373,48 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" line="1320" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" bodystart="1320" bodyend="1605"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="2848" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="2848" bodyend="3199"/>
+      </memberdef>
+      <memberdef kind="function" id="class_requestor_1a55f57bbe4ec3c072c65171907e6428dc" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Requestor.ExecuteGetFileRequest</definition>
+        <argsstring>(string FileURL, string LocalFilePath)</argsstring>
+        <name>ExecuteGetFileRequest</name>
+        <param>
+          <type>string</type>
+          <declname>FileURL</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>LocalFilePath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="3201" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="3201" bodyend="3271"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" line="9" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine/Requestor.cs" bodystart="9" bodyend="1609"/>
+    <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="10" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="9" bodyend="3275"/>
     <listofallmembers>
       <member refid="class_requestor_1a073cd75eae2b7ce17d8e600c03564cd3" prot="private" virt="non-virtual"><scope>Requestor</scope><name>AddIdentityHeader</name></member>
       <member refid="class_requestor_1ac86d5f843bcfb2c1d99abb34252c8830" prot="private" virt="non-virtual"><scope>Requestor</scope><name>AuthenticationCookie</name></member>
       <member refid="class_requestor_1a38f232bfa22d7732bbb68adbb4bf1c39" prot="private" virt="non-virtual"><scope>Requestor</scope><name>Connection</name></member>
+      <member refid="class_requestor_1a7e0df3b1d9d9d479f0b896e19be28a76" prot="package" virt="non-virtual"><scope>Requestor</scope><name>ExecuteAllDocumentsFilesRequest</name></member>
       <member refid="class_requestor_1ac4b4d88f8ce2f1b1a6db7ee87c82f60a" prot="package" virt="non-virtual"><scope>Requestor</scope><name>ExecuteAllDocumentsRequest</name></member>
       <member refid="class_requestor_1a14632528cb1be88d2e390300da796faa" prot="package" virt="non-virtual"><scope>Requestor</scope><name>ExecuteAllFieldsRequest</name></member>
+      <member refid="class_requestor_1a990a0641252e7863cc855212d300822a" prot="package" virt="non-virtual"><scope>Requestor</scope><name>ExecuteAllFilesRequest</name></member>
       <member refid="class_requestor_1a9e460007336e77741a15815272988292" prot="package" virt="non-virtual"><scope>Requestor</scope><name>ExecuteDatabaseRequest</name></member>
+      <member refid="class_requestor_1a20ef458488f2a22a7fe57012ad59add3" prot="package" virt="non-virtual"><scope>Requestor</scope><name>ExecuteDocumentFilesRequest</name></member>
       <member refid="class_requestor_1abce2f7be8f91b5da4de34c0075bd2c6a" prot="package" virt="non-virtual"><scope>Requestor</scope><name>ExecuteDocumentRequest</name></member>
       <member refid="class_requestor_1a79b18759ab798a2755a9a79a57478d82" prot="package" virt="non-virtual"><scope>Requestor</scope><name>ExecuteFieldsRequest</name></member>
+      <member refid="class_requestor_1a55f57bbe4ec3c072c65171907e6428dc" prot="package" virt="non-virtual"><scope>Requestor</scope><name>ExecuteGetFileRequest</name></member>
       <member refid="class_requestor_1abbdb09e9cfcb74f1b90ac00f87780630" prot="package" virt="non-virtual"><scope>Requestor</scope><name>ExecuteSessionRequest</name></member>
       <member refid="class_requestor_1a39d23e40ee1f7ef2cabfae1f42b04968" prot="package" virt="non-virtual"><scope>Requestor</scope><name>Initialize</name></member>
       <member refid="class_requestor_1aa70492c35979546f8c4e1663e6f89214" prot="package" virt="non-virtual"><scope>Requestor</scope><name>isInitialized</name></member>

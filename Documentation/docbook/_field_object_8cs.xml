@@ -16,7 +16,7 @@ An object representing a Domino item
         </section>
     <simplesect>
         <title>Detailed Description</title>
-    <para>Definition in file C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/FieldObject.cs</para>
+    <para>Definition in file C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FieldObject.cs</para>
     </simplesect>
     <literallayout><computeroutput>
 1 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>;

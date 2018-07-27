@@ -9,7 +9,7 @@ public static class Common
 {
 
 	/// <summary>
-    /// Get formatted  string from the provided exception 
+    /// Get formatted string from the provided exception 
     /// </summary>
     /// <param name="ex"></param>
     /// <returns></returns>
@@ -57,5 +57,21 @@ public static class Common
 		return returnString;
 	}
 
+    /// <summary>
+    /// Application Uncaught Exception Handler
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    /// <returns></returns>
+    [System.Diagnostics.DebuggerStepThrough()]
+    public static void ExceptionHandler(object sender, System.UnhandledExceptionEventArgs e)
+    {
+        Exception Excep;
+        Excep = (Exception) e.ExceptionObject;
+        Connector.ResetReturn();
+        Connector.ReturnMessages.Add("Unhandled error occured in application: " + Environment.NewLine + "Application aborted on " + DateTime.Now +Environment.NewLine + GetErrorInfo(Excep));
+        Connector.hasError = true;
     
+        GC.Collect();
+    }
 }
