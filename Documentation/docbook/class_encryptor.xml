@@ -99,6 +99,22 @@ string encrypted)</para>
             <para>
                 <itemizedlist>
                     <listitem>
+                        <para>byte [] <link linkend="class_encryptor_1aba0cd968ebee7432f1807c7c38ce1990">DeflaterCompress</link> (
+byte [] toCompress)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>byte [] <link linkend="class_encryptor_1a737fe41d9a282cb7a32c49ba4fd385b0">DeflaterDecompress</link> (
+byte [] toDecompress)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
                         <para>ICryptoTransform <link linkend="class_encryptor_1ac0a2c64858c15d440fc6e2abf1631abe">GetCryptoTransform</link> (
 AesCryptoServiceProvider csp, bool encrypting)</para>
                     </listitem>
@@ -122,6 +138,14 @@ AesCryptoServiceProvider csp, bool encrypting)</para>
             </section>
             <section xml:id="class_encryptor_1a6c8fb36f29875f6c7bacb17ab845553f">
                 <title>string Encryptor.DecodeAndDecrypt (string encrypted)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_encryptor_1aba0cd968ebee7432f1807c7c38ce1990">
+                <title>byte [] Encryptor.DeflaterCompress (byte[] toCompress)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_encryptor_1a737fe41d9a282cb7a32c49ba4fd385b0">
+                <title>byte [] Encryptor.DeflaterDecompress (byte[] toDecompress)</title> <emphasis></emphasis>
                 
             </section>
             <section xml:id="class_encryptor_1ac0a2c64858c15d440fc6e2abf1631abe">

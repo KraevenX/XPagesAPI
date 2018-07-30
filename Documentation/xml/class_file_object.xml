@@ -1,0 +1,519 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_file_object" kind="class" language="C#" prot="public">
+    <compoundname>FileObject</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_file_object_1afcaee43b7d295bdaf71c9d0454ba4e56" prot="private" static="no" mutable="no">
+        <type><ref refid="class_document_object" kindref="compound">DocumentObject</ref></type>
+        <definition>DocumentObject FileObject._Document</definition>
+        <argsstring></argsstring>
+        <name>_Document</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="19" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_file_object_1a7c93f14915c6f930a95fdba53391f585" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool FileObject._isInitialized</definition>
+        <argsstring></argsstring>
+        <name>_isInitialized</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="21" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_file_object_1a73efb4bda7119145bfe5b018ae010af0" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string FileObject._Name</definition>
+        <argsstring></argsstring>
+        <name>_Name</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="22" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_file_object_1a802165b4db45879d79f4501f1d1f3080" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string FileObject._URL</definition>
+        <argsstring></argsstring>
+        <name>_URL</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="23" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_file_object_1a201fde3afccada07331aba755440e2a3" prot="private" static="no" mutable="no">
+        <type>long</type>
+        <definition>long FileObject._Size</definition>
+        <argsstring></argsstring>
+        <name>_Size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="24" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_file_object_1a7039564d9a0f450ff97110f09950c912" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string FileObject.strSize</definition>
+        <argsstring></argsstring>
+        <name>strSize</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="26" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_file_object_1a080f632fa28edf3d210f68e544da1709" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string FileObject.strDateCreated</definition>
+        <argsstring></argsstring>
+        <name>strDateCreated</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="27" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_file_object_1a5a59425cf5fea90d6f3b654422424734" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string FileObject.strDateModified</definition>
+        <argsstring></argsstring>
+        <name>strDateModified</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="28" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_file_object_1acabbe6cabb8a3b0e19cd5e0ce15c926b" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string FileObject._Application</definition>
+        <argsstring></argsstring>
+        <name>_Application</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="30" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_file_object_1a21749782d3fc6bbbf04ba68b57d6102d" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string FileObject._Creator</definition>
+        <argsstring></argsstring>
+        <name>_Creator</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="31" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_file_object_1aaab19475b58e5e45935b4376b08b1908" prot="private" static="no" mutable="no">
+        <type>DateTime</type>
+        <definition>DateTime FileObject._DateCreated</definition>
+        <argsstring></argsstring>
+        <name>_DateCreated</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="32" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_file_object_1a5bd10bc25049326d9f985eecdc463aab" prot="private" static="no" mutable="no">
+        <type>DateTime</type>
+        <definition>DateTime FileObject._DateModified</definition>
+        <argsstring></argsstring>
+        <name>_DateModified</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="33" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_file_object_1a3ec8a8144adc76e1713d72a321a15b12" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string FileObject._FieldName</definition>
+        <argsstring></argsstring>
+        <name>_FieldName</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="34" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_file_object_1ac110171c6cc6930409dde9a8c679b9af" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string FileObject._Extension</definition>
+        <argsstring></argsstring>
+        <name>_Extension</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="35" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_file_object_1a8d1c531f1ad1d639e08854e698f9704a" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string FileObject._Other</definition>
+        <argsstring></argsstring>
+        <name>_Other</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="36" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_file_object_1a40822db122ecef8cfd90987ffe39749a" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string FileObject._SoftClass</definition>
+        <argsstring></argsstring>
+        <name>_SoftClass</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="37" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_file_object_1a0c9650a6ae1efb95f8211f9fa3b883fe" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type><ref refid="class_document_object" kindref="compound">DocumentObject</ref></type>
+        <definition>DocumentObject FileObject.Document</definition>
+        <argsstring></argsstring>
+        <name>Document</name>
+        <briefdescription>
+<para>Reference to this files document object </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="47" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="47" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="property" id="class_file_object_1a9d47aff166393cb47490da2661576d62" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string FileObject.Name</definition>
+        <argsstring></argsstring>
+        <name>Name</name>
+        <briefdescription>
+<para>The file name of the domino attachment </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="55" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="55" bodyend="55"/>
+        <referencedby refid="class_document_object_1a8753abc5a871bf84fc910e6a99936b2b" compoundref="_document_object_8cs" startline="497" endline="557">DocumentObject.ExportFiles</referencedby>
+      </memberdef>
+      <memberdef kind="property" id="class_file_object_1a7355eaeea3fe40bd8862d7f1f9b479da" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string FileObject.URL</definition>
+        <argsstring></argsstring>
+        <name>URL</name>
+        <briefdescription>
+<para>URL of the domino attachment </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="60" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="60" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="property" id="class_file_object_1a7aa7737c1ce05f4424ba16dded444949" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>long</type>
+        <definition>long FileObject.Size</definition>
+        <argsstring></argsstring>
+        <name>Size</name>
+        <briefdescription>
+<para>Size of the domino attachment in bytes </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="65" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="65" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="property" id="class_file_object_1a5e9b8f083b53ea0450a0560c16292a2f" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string FileObject.SoftClass</definition>
+        <argsstring></argsstring>
+        <name>SoftClass</name>
+        <briefdescription>
+<para>JPI Soft Class of the domino attachment (Acad,ustn,office) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="70" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="70" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="property" id="class_file_object_1a39640cdc4b16ee66e9c73803f4510396" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string FileObject.Application</definition>
+        <argsstring></argsstring>
+        <name>Application</name>
+        <briefdescription>
+<para>JPI associated application of the domino attachment </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="75" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="75" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="property" id="class_file_object_1a1ab7d29c80841b60b276b7430f4e5ec7" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string FileObject.Creator</definition>
+        <argsstring></argsstring>
+        <name>Creator</name>
+        <briefdescription>
+<para>Creator of the domino attachment </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="80" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="80" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="property" id="class_file_object_1a372b9a7dad068368526b0698550f9504" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>DateTime</type>
+        <definition>DateTime FileObject.DateCreated</definition>
+        <argsstring></argsstring>
+        <name>DateCreated</name>
+        <briefdescription>
+<para>Creation date of the domino attachment </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="85" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="85" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="property" id="class_file_object_1a9a4c52e205bee3f8bdfa7040f465b6af" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>DateTime</type>
+        <definition>DateTime FileObject.DateModified</definition>
+        <argsstring></argsstring>
+        <name>DateModified</name>
+        <briefdescription>
+<para>Modified date of the domino attachment </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="90" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="90" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="property" id="class_file_object_1a26fa0ac628fee2387b7f89c78f93842e" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string FileObject.FieldName</definition>
+        <argsstring></argsstring>
+        <name>FieldName</name>
+        <briefdescription>
+<para>FieldName (Rich-Text item) associated to the domino attachment if available </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="95" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="95" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="property" id="class_file_object_1ae25b58dc19def323da91a48e17ba13ed" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string FileObject.Extension</definition>
+        <argsstring></argsstring>
+        <name>Extension</name>
+        <briefdescription>
+<para>The file extension of the domino attachment </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="100" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="100" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="property" id="class_file_object_1ab91b5eca56a04784f8d0187247e1280c" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string FileObject.Other</definition>
+        <argsstring></argsstring>
+        <name>Other</name>
+        <briefdescription>
+<para>Additional JPI information of the domino attachment </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="105" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="105" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="property" id="class_file_object_1a36ff6c07d0662885402bfe7d98cf2988" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>bool</type>
+        <definition>bool FileObject.IsInitialized</definition>
+        <argsstring></argsstring>
+        <name>IsInitialized</name>
+        <briefdescription>
+<para>Indicates that the file isInitialized </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="110" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="110" bodyend="117"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_file_object_1a0820c64117f9bcebf4ac750fbb320295" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>FileObject.FileObject</definition>
+        <argsstring>(DocumentObject docObj)</argsstring>
+        <name>FileObject</name>
+        <param>
+          <type><ref refid="class_document_object" kindref="compound">DocumentObject</ref></type>
+          <declname>docObj</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="class_file_object" kindref="compound">FileObject</ref> Constructor </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="125" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="125" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="class_file_object_1a1d371eb0e306cda4b80d2e8d32e987e0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool FileObject.Initialize</definition>
+        <argsstring>(string initString)</argsstring>
+        <name>Initialize</name>
+        <param>
+          <type>string</type>
+          <declname>initString</declname>
+        </param>
+        <briefdescription>
+<para>Initialize the file object, parses the initialization string into their respective properties </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>initString</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="135" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="135" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="class_file_object_1ae21fac09c5ab2f9fac96a3f084cb9ddc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool FileObject.ExtractFile</definition>
+        <argsstring>(String filePath)</argsstring>
+        <name>ExtractFile</name>
+        <param>
+          <type>String</type>
+          <declname>filePath</declname>
+        </param>
+        <briefdescription>
+<para>Extract the file from the XPages URL to a given file path </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filePath</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="230" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="230" bodyend="243"/>
+        <references refid="class_session_object_1a014bdbf705a753540e19bfb53030c55c" compoundref="_session_object_8cs" startline="65" endline="69">SessionObject.Connection</references>
+        <references refid="class_document_object_1a69d5338c9835f748490323d2950eed09" compoundref="_document_object_8cs" startline="52" endline="56">DocumentObject.Database</references>
+        <references refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" compoundref="_connector_8cs" startline="101" endline="113">Connector.hasError</references>
+        <references refid="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07" compoundref="_database_object_8cs" startline="45" endline="49">DatabaseObject.Session</references>
+        <referencedby refid="class_document_object_1a8753abc5a871bf84fc910e6a99936b2b" compoundref="_document_object_8cs" startline="497" endline="557">DocumentObject.ExportFiles</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>An object representing a Domino File Attachment </para>    </briefdescription>
+    <detaileddescription>
+<para>The following is an example of the usage of a <computeroutput><ref refid="class_file_object" kindref="compound">FileObject</ref></computeroutput>: <programlisting><codeline><highlight class="normal">FileObject<sp/>fObj<sp/>=<sp/>new<sp/>FileObject(docObj);<sp/>//<sp/>create<sp/>new<sp/>file<sp/>object<sp/>by<sp/>providing<sp/>the<sp/>documentobject</highlight></codeline>
+<codeline><highlight class="normal">if(fObj!=null<sp/>&amp;amp;&amp;amp;<sp/>fObj.Initialize(initializationString)){<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>//<sp/>your<sp/>code<sp/>here...<sp/></highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> </para>    </detaileddescription>
+    <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="15" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="14" bodyend="253"/>
+    <listofallmembers>
+      <member refid="class_file_object_1acabbe6cabb8a3b0e19cd5e0ce15c926b" prot="private" virt="non-virtual"><scope>FileObject</scope><name>_Application</name></member>
+      <member refid="class_file_object_1a21749782d3fc6bbbf04ba68b57d6102d" prot="private" virt="non-virtual"><scope>FileObject</scope><name>_Creator</name></member>
+      <member refid="class_file_object_1aaab19475b58e5e45935b4376b08b1908" prot="private" virt="non-virtual"><scope>FileObject</scope><name>_DateCreated</name></member>
+      <member refid="class_file_object_1a5bd10bc25049326d9f985eecdc463aab" prot="private" virt="non-virtual"><scope>FileObject</scope><name>_DateModified</name></member>
+      <member refid="class_file_object_1afcaee43b7d295bdaf71c9d0454ba4e56" prot="private" virt="non-virtual"><scope>FileObject</scope><name>_Document</name></member>
+      <member refid="class_file_object_1ac110171c6cc6930409dde9a8c679b9af" prot="private" virt="non-virtual"><scope>FileObject</scope><name>_Extension</name></member>
+      <member refid="class_file_object_1a3ec8a8144adc76e1713d72a321a15b12" prot="private" virt="non-virtual"><scope>FileObject</scope><name>_FieldName</name></member>
+      <member refid="class_file_object_1a7c93f14915c6f930a95fdba53391f585" prot="private" virt="non-virtual"><scope>FileObject</scope><name>_isInitialized</name></member>
+      <member refid="class_file_object_1a73efb4bda7119145bfe5b018ae010af0" prot="private" virt="non-virtual"><scope>FileObject</scope><name>_Name</name></member>
+      <member refid="class_file_object_1a8d1c531f1ad1d639e08854e698f9704a" prot="private" virt="non-virtual"><scope>FileObject</scope><name>_Other</name></member>
+      <member refid="class_file_object_1a201fde3afccada07331aba755440e2a3" prot="private" virt="non-virtual"><scope>FileObject</scope><name>_Size</name></member>
+      <member refid="class_file_object_1a40822db122ecef8cfd90987ffe39749a" prot="private" virt="non-virtual"><scope>FileObject</scope><name>_SoftClass</name></member>
+      <member refid="class_file_object_1a802165b4db45879d79f4501f1d1f3080" prot="private" virt="non-virtual"><scope>FileObject</scope><name>_URL</name></member>
+      <member refid="class_file_object_1a39640cdc4b16ee66e9c73803f4510396" prot="public" virt="non-virtual"><scope>FileObject</scope><name>Application</name></member>
+      <member refid="class_file_object_1a1ab7d29c80841b60b276b7430f4e5ec7" prot="public" virt="non-virtual"><scope>FileObject</scope><name>Creator</name></member>
+      <member refid="class_file_object_1a372b9a7dad068368526b0698550f9504" prot="public" virt="non-virtual"><scope>FileObject</scope><name>DateCreated</name></member>
+      <member refid="class_file_object_1a9a4c52e205bee3f8bdfa7040f465b6af" prot="public" virt="non-virtual"><scope>FileObject</scope><name>DateModified</name></member>
+      <member refid="class_file_object_1a0c9650a6ae1efb95f8211f9fa3b883fe" prot="public" virt="non-virtual"><scope>FileObject</scope><name>Document</name></member>
+      <member refid="class_file_object_1ae25b58dc19def323da91a48e17ba13ed" prot="public" virt="non-virtual"><scope>FileObject</scope><name>Extension</name></member>
+      <member refid="class_file_object_1ae21fac09c5ab2f9fac96a3f084cb9ddc" prot="public" virt="non-virtual"><scope>FileObject</scope><name>ExtractFile</name></member>
+      <member refid="class_file_object_1a26fa0ac628fee2387b7f89c78f93842e" prot="public" virt="non-virtual"><scope>FileObject</scope><name>FieldName</name></member>
+      <member refid="class_file_object_1a0820c64117f9bcebf4ac750fbb320295" prot="public" virt="non-virtual"><scope>FileObject</scope><name>FileObject</name></member>
+      <member refid="class_file_object_1a1d371eb0e306cda4b80d2e8d32e987e0" prot="public" virt="non-virtual"><scope>FileObject</scope><name>Initialize</name></member>
+      <member refid="class_file_object_1a36ff6c07d0662885402bfe7d98cf2988" prot="public" virt="non-virtual"><scope>FileObject</scope><name>IsInitialized</name></member>
+      <member refid="class_file_object_1a9d47aff166393cb47490da2661576d62" prot="public" virt="non-virtual"><scope>FileObject</scope><name>Name</name></member>
+      <member refid="class_file_object_1ab91b5eca56a04784f8d0187247e1280c" prot="public" virt="non-virtual"><scope>FileObject</scope><name>Other</name></member>
+      <member refid="class_file_object_1a7aa7737c1ce05f4424ba16dded444949" prot="public" virt="non-virtual"><scope>FileObject</scope><name>Size</name></member>
+      <member refid="class_file_object_1a5e9b8f083b53ea0450a0560c16292a2f" prot="public" virt="non-virtual"><scope>FileObject</scope><name>SoftClass</name></member>
+      <member refid="class_file_object_1a080f632fa28edf3d210f68e544da1709" prot="private" virt="non-virtual"><scope>FileObject</scope><name>strDateCreated</name></member>
+      <member refid="class_file_object_1a5a59425cf5fea90d6f3b654422424734" prot="private" virt="non-virtual"><scope>FileObject</scope><name>strDateModified</name></member>
+      <member refid="class_file_object_1a7039564d9a0f450ff97110f09950c912" prot="private" virt="non-virtual"><scope>FileObject</scope><name>strSize</name></member>
+      <member refid="class_file_object_1a7355eaeea3fe40bd8862d7f1f9b479da" prot="public" virt="non-virtual"><scope>FileObject</scope><name>URL</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

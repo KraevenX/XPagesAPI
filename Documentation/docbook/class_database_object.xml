@@ -185,9 +185,31 @@ Retrieve a document from this database by universalID</emphasis></para>
             <para>
                 <itemizedlist>
                     <listitem>
+                        <para><link linkend="class_document_object">DocumentObject</link> <link linkend="class_database_object_1a9be31ba852e56a107e93f7d925f8a0c3">GetDocumentAndFiles</link> (
+string unid)<para><emphasis>&lt;summary&gt;
+Retrieve a document from this database by universalID
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
                         <para><link linkend="class_document_object">DocumentObject</link> <link linkend="class_database_object_1a57bfc77d2754236cbcf6ac30a90da529">GetDocumentByKey</link> (
 string searchField, string searchValue)<para><emphasis>&lt;summary&gt;
 Retrieve a document from this database by searching for a specific value in the provided field.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="class_document_object">DocumentObject</link> <link linkend="class_database_object_1a30968034c65328e44ddb0fdac8ab1435">GetDocumentAndFilesByKey</link> (
+string searchField, string searchValue)<para><emphasis>&lt;summary&gt;
+Retrieve a document from this database by searching for a specific value in the provided field.
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects</emphasis></para>
 </para>
                     </listitem>
                 </itemizedlist>
@@ -205,9 +227,31 @@ Retrieve a document from this database by searching using the provided formula.<
             <para>
                 <itemizedlist>
                     <listitem>
+                        <para><link linkend="class_document_object">DocumentObject</link> <link linkend="class_database_object_1a1d35f51baee4be6adb69a954efe5b4bf">GetDocumentAndFilesByFormula</link> (
+string formula)<para><emphasis>&lt;summary&gt;
+Retrieve a document from this database by searching using the provided formula.
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
                         <para>bool <link linkend="class_database_object_1ad3010e55b2e75d0863e168fed1e279c5">GetAllDocuments</link> (
 )<para><emphasis>&lt;summary&gt;
 Retrieve all documents from the database</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_database_object_1a72239fa2b2a549665e45cdd340cd70a0">GetAllDocumentsAndFiles</link> (
+)<para><emphasis>&lt;summary&gt;
+Retrieve all documents from the database
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects</emphasis></para>
 </para>
                     </listitem>
                 </itemizedlist>
@@ -225,9 +269,31 @@ Retrieve all documents from this database that correspond to the provided formul
             <para>
                 <itemizedlist>
                     <listitem>
+                        <para>bool <link linkend="class_database_object_1ac478ff9264805edc8569d510916c4c00">GetAllDocumentsAndFilesByFormula</link> (
+string formula)<para><emphasis>&lt;summary&gt;
+Retrieve all documents from this database that correspond to the provided formula
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
                         <para>bool <link linkend="class_database_object_1a4d8a7d73614f53a04fe8eb79bef2f614">GetAllDocumentsByUnids</link> (
 string unids)<para><emphasis>&lt;summary&gt;
 Retrieve all documents from this database by universalIDs</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_database_object_1a9332713c924ab14195fe51bf0b8d35d1">GetAllDocumentsAndFilesByUnids</link> (
+string unids)<para><emphasis>&lt;summary&gt;
+Retrieve all documents from this database by universalIDs
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects</emphasis></para>
 </para>
                     </listitem>
                 </itemizedlist>
@@ -245,9 +311,31 @@ Retrieve all documents from this database by universalIDs</emphasis></para>
             <para>
                 <itemizedlist>
                     <listitem>
+                        <para>bool <link linkend="class_database_object_1aa69262a50977a28a2decf400d1eedd20">GetAllDocumentsAndFilesByUnids</link> (
+IList listUnids)<para><emphasis>&lt;summary&gt;
+Retrieve all documents from this database by universalIDs
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
                         <para>bool <link linkend="class_database_object_1ad4834e7677cd0418969a657eed99653c">GetAllDocumentsByKey</link> (
 string searchField, string searchValue)<para><emphasis>&lt;summary&gt;
 Retrieve all documents from this database by searching for a specific value in the provided field</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_database_object_1a6c2fb05fb6972d74d5bea67e323985fb">GetAllDocumentsAndFilesByKey</link> (
+string searchField, string searchValue)<para><emphasis>&lt;summary&gt;
+Retrieve all documents from this database by searching for a specific value in the provided field
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects</emphasis></para>
 </para>
                     </listitem>
                 </itemizedlist>
@@ -268,6 +356,16 @@ Retrieve fields for all documents in the property &apos;Documents&apos;</emphasi
                         <para>bool <link linkend="class_database_object_1a8a64b91e2e4228b2fc552e51959987c4">LoadDocumentFields</link> (
 IList listFields)<para><emphasis>&lt;summary&gt;
 Retrieve fields for all documents in the property &apos;Documents&apos;</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_database_object_1acdf5c9ee898d4473350a2f4878af5a23">LoadDocumentFiles</link> (
+)<para><emphasis>&lt;summary&gt;
+Retrieve file objects for all documents in the property &apos;Documents&apos;</emphasis></para>
 </para>
                     </listitem>
                 </itemizedlist>
@@ -296,11 +394,11 @@ Validate the input provided by the user
 
 <para>The following is an example of the usage of a <computeroutput><link linkend="class_database_object">DatabaseObject</link></computeroutput>: <literallayout><computeroutput>DatabaseObject&#32;dbObj&#32;=&#32;new&#32;DatabaseObject(filePath,&#32;dominoServerName,&#32;&#32;sessionObject);&#32;//&#32;by&#32;FilePath
 //&#32;&#32;DatabaseObject&#32;dbObj&#32;=&#32;new&#32;DatabaseObject(sessionObject,&#32;replicationID,&#32;dominoServerName);&#32;//&#32;by&#32;ReplicationID
-if(dbObj!=null&#32;&amp;&amp;&#32;dbObj.Initialize()){
+if(dbObj!=null&#32;&amp;amp;&amp;amp;&#32;dbObj.Initialize()){
 &#32;&#32;&#32;&#32;&#32;//&#32;your&#32;code&#32;here...&#32;
 }
 </computeroutput></literallayout> </para>
-                <para>Definition at line 18 of file DatabaseObject.cs</para>
+                <para>Definition at line 19 of file DatabaseObject.cs</para>
                 <para>The Documentation for this struct was generated from the following file: </para>
                 <para><itemizedlist><listitem><para>DatabaseObject.cs</para></listitem></itemizedlist></para>
         </simplesect>
@@ -417,9 +515,81 @@ Retrieve a document from this database by universalID</emphasis>
 </para>
 
             </section>
+            <section xml:id="class_database_object_1a9be31ba852e56a107e93f7d925f8a0c3">
+                <title>DocumentObject DatabaseObject.GetDocumentAndFiles (string unid)</title> <emphasis>&lt;summary&gt;
+Retrieve a document from this database by universalID
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects</emphasis>
+                
+<para>Triggers a document request</para>
+
+<para>The document will be added to the property &apos;Documents&apos;</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>unid</entry>
+                                <entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para><link linkend="class_document_object">DocumentObject</link></para>
+</formalpara>
+</para>
+
+            </section>
             <section xml:id="class_database_object_1a57bfc77d2754236cbcf6ac30a90da529">
                 <title>DocumentObject DatabaseObject.GetDocumentByKey (string searchField, string searchValue)</title> <emphasis>&lt;summary&gt;
 Retrieve a document from this database by searching for a specific value in the provided field.</emphasis>
+                
+<para>The first document found will be returned</para>
+
+<para>Triggers a document request</para>
+
+<para>The document will be added to the property &apos;Documents&apos;</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>searchField</entry>
+                                <entry></entry>
+                            </row>
+                            <row>
+                                <entry>searchValue</entry>
+                                <entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para><link linkend="class_document_object">DocumentObject</link></para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="class_database_object_1a30968034c65328e44ddb0fdac8ab1435">
+                <title>DocumentObject DatabaseObject.GetDocumentAndFilesByKey (string searchField, string searchValue)</title> <emphasis>&lt;summary&gt;
+Retrieve a document from this database by searching for a specific value in the provided field.
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects</emphasis>
                 
 <para>The first document found will be returned</para>
 
@@ -489,6 +659,41 @@ Retrieve a document from this database by searching using the provided formula.<
 </para>
 
             </section>
+            <section xml:id="class_database_object_1a1d35f51baee4be6adb69a954efe5b4bf">
+                <title>DocumentObject DatabaseObject.GetDocumentAndFilesByFormula (string formula)</title> <emphasis>&lt;summary&gt;
+Retrieve a document from this database by searching using the provided formula.
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects</emphasis>
+                
+<para>The first document found will be returned</para>
+
+<para>Triggers a document request</para>
+
+<para>The document will be added to the property &apos;Documents&apos;</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>formula</entry>
+                                <entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para><link linkend="class_document_object">DocumentObject</link></para>
+</formalpara>
+</para>
+
+            </section>
             <section xml:id="class_database_object_1ad3010e55b2e75d0863e168fed1e279c5">
                 <title>bool DatabaseObject.GetAllDocuments ()</title> <emphasis>&lt;summary&gt;
 Retrieve all documents from the database</emphasis>
@@ -504,9 +709,58 @@ Retrieve all documents from the database</emphasis>
 </para>
 
             </section>
+            <section xml:id="class_database_object_1a72239fa2b2a549665e45cdd340cd70a0">
+                <title>bool DatabaseObject.GetAllDocumentsAndFiles ()</title> <emphasis>&lt;summary&gt;
+Retrieve all documents from the database
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects</emphasis>
+                
+<para>Triggers an all documents request</para>
+
+<para>All documents found will be added to the property &apos;Documents&apos;</para>
+
+<para><formalpara><title>Returns: </title>
+
+<para>Boolean</para>
+</formalpara>
+</para>
+
+            </section>
             <section xml:id="class_database_object_1a6bfb480373a7e2bdbeaa67e4e3303a3a">
                 <title>bool DatabaseObject.GetAllDocumentsByFormula (string formula)</title> <emphasis>&lt;summary&gt;
 Retrieve all documents from this database that correspond to the provided formula</emphasis>
+                
+<para>Triggers an all documents request</para>
+
+<para>All documents found will be added to the property &apos;Documents&apos;</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>formula</entry>
+                                <entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>Boolean</para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="class_database_object_1ac478ff9264805edc8569d510916c4c00">
+                <title>bool DatabaseObject.GetAllDocumentsAndFilesByFormula (string formula)</title> <emphasis>&lt;summary&gt;
+Retrieve all documents from this database that correspond to the provided formula
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects</emphasis>
                 
 <para>Triggers an all documents request</para>
 
@@ -570,6 +824,41 @@ Retrieve all documents from this database by universalIDs</emphasis>
 </para>
 
             </section>
+            <section xml:id="class_database_object_1a9332713c924ab14195fe51bf0b8d35d1">
+                <title>bool DatabaseObject.GetAllDocumentsAndFilesByUnids (string unids)</title> <emphasis>&lt;summary&gt;
+Retrieve all documents from this database by universalIDs
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects</emphasis>
+                
+<para>Provide the universalIds separated by ;</para>
+
+<para>Triggers an all documents request</para>
+
+<para>All documents found will be added to the property &apos;Documents&apos;</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>unids</entry>
+                                <entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>Boolean</para>
+</formalpara>
+</para>
+
+            </section>
             <section xml:id="class_database_object_1a92e80ea30e83cddf47f29d0f502b81c5">
                 <title>bool DatabaseObject.GetAllDocumentsByUnids (IList listUnids)</title> <emphasis>&lt;summary&gt;
 Retrieve all documents from this database by universalIDs</emphasis>
@@ -602,9 +891,79 @@ Retrieve all documents from this database by universalIDs</emphasis>
 </para>
 
             </section>
+            <section xml:id="class_database_object_1aa69262a50977a28a2decf400d1eedd20">
+                <title>bool DatabaseObject.GetAllDocumentsAndFilesByUnids (IList listUnids)</title> <emphasis>&lt;summary&gt;
+Retrieve all documents from this database by universalIDs
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects</emphasis>
+                
+<para>Triggers an all documents request</para>
+
+<para>All documents found will be added to the property &apos;Documents&apos;</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>listUnids</entry>
+                                <entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>Boolean</para>
+</formalpara>
+</para>
+
+            </section>
             <section xml:id="class_database_object_1ad4834e7677cd0418969a657eed99653c">
                 <title>bool DatabaseObject.GetAllDocumentsByKey (string searchField, string searchValue)</title> <emphasis>&lt;summary&gt;
 Retrieve all documents from this database by searching for a specific value in the provided field</emphasis>
+                
+<para>Triggers an all documents request</para>
+
+<para>All documents found will be added to the property &apos;Documents&apos;</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>searchField</entry>
+                                <entry></entry>
+                            </row>
+                            <row>
+                                <entry>searchValue</entry>
+                                <entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>Boolean</para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="class_database_object_1a6c2fb05fb6972d74d5bea67e323985fb">
+                <title>bool DatabaseObject.GetAllDocumentsAndFilesByKey (string searchField, string searchValue)</title> <emphasis>&lt;summary&gt;
+Retrieve all documents from this database by searching for a specific value in the provided field
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects</emphasis>
                 
 <para>Triggers an all documents request</para>
 
@@ -694,6 +1053,19 @@ Retrieve fields for all documents in the property &apos;Documents&apos;</emphasi
                     </table>
                 </formalpara>
                 <formalpara><title>Returns: </title>
+
+<para>Boolean</para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="class_database_object_1acdf5c9ee898d4473350a2f4878af5a23">
+                <title>bool DatabaseObject.LoadDocumentFiles ()</title> <emphasis>&lt;summary&gt;
+Retrieve file objects for all documents in the property &apos;Documents&apos;</emphasis>
+                
+<para>This action will update the property collection Files inside each document object</para>
+
+<para><formalpara><title>Returns: </title>
 
 <para>Boolean</para>
 </formalpara>

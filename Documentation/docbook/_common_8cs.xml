@@ -40,7 +40,7 @@ Class with common methods
         </simplesect>
     <simplesect>
         <title>Detailed Description</title>
-    <para>Definition in file C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Common.cs</para>
+    <para>Definition in file C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Common.cs</para>
     </simplesect>
     <literallayout><computeroutput>
 1 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>;
@@ -54,7 +54,7 @@ Class with common methods
 9 {
 10 <emphasis class="comment"></emphasis>
 11 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-12 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Get&#32;formatted&#32;&#32;string&#32;from&#32;the&#32;provided&#32;exception&#32;</emphasis>
+12 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Get&#32;formatted&#32;string&#32;from&#32;the&#32;provided&#32;exception&#32;</emphasis>
 13 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
 14 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;ex&quot;&gt;&lt;/param&gt;</emphasis>
 15 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;&lt;/returns&gt;</emphasis>
@@ -101,8 +101,24 @@ Class with common methods
 56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
 57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;returnString;
 58 &#32;&#32;&#32;&#32;}
-59 
-60 &#32;&#32;&#32;&#32;
-61 }
+59 <emphasis class="comment"></emphasis>
+60 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+61 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Application&#32;Uncaught&#32;Exception&#32;Handler</emphasis>
+62 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+63 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;sender&quot;&gt;&lt;/param&gt;</emphasis>
+64 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;e&quot;&gt;&lt;/param&gt;</emphasis>
+65 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;&lt;/returns&gt;</emphasis>
+66 <emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;[<link linkend="namespace_system">System</link>.Diagnostics.DebuggerStepThrough()]
+67 &#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;ExceptionHandler(<emphasis class="keywordtype">object</emphasis>&#32;sender,&#32;<link linkend="namespace_system">System</link>.UnhandledExceptionEventArgs&#32;e)
+68 &#32;&#32;&#32;&#32;{
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Exception&#32;Excep;
+70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Excep&#32;=&#32;(Exception)&#32;e.ExceptionObject;
+71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.ResetReturn();
+72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;Unhandled&#32;error&#32;occured&#32;in&#32;application:&#32;&quot;</emphasis>&#32;+&#32;Environment.NewLine&#32;+&#32;<emphasis class="stringliteral">&quot;Application&#32;aborted&#32;on&#32;&quot;</emphasis>&#32;+&#32;DateTime.Now&#32;+Environment.NewLine&#32;+&#32;GetErrorInfo(Excep));
+73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a079bae21a5417efa53bfe8954c0f533f">hasError</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;
+74 &#32;&#32;&#32;&#32;
+75 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;GC.Collect();
+76 &#32;&#32;&#32;&#32;}
+77 }
     </computeroutput></literallayout>
 </section>

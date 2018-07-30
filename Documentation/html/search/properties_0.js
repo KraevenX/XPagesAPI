@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['connection',['Connection',['../class_session_object.html#a014bdbf705a753540e19bfb53030c55c',1,'SessionObject']]]
+  ['application',['Application',['../class_file_object.html#a39640cdc4b16ee66e9c73803f4510396',1,'FileObject']]]
 ];

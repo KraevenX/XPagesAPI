@@ -6,7 +6,8 @@ using System.Linq;
 using System.Net;
 using System.Text;
 
-internal class Requestor {
+internal class Requestor
+{
 
     #region Variables
 
@@ -18,32 +19,42 @@ internal class Requestor {
 
     #region Constructor
 
-    public Requestor(Connector Connector) {
+    public Requestor(Connector Connector)
+    {
         Connection = Connector;
     }
     #endregion
 
     #region Private Methods
 
-    private bool AddIdentityHeader(ref HttpWebRequest request) {
-        try {
-            if (request != null) {
+    private bool AddIdentityHeader(ref HttpWebRequest request)
+    {
+        try
+        {
+            if (request != null)
+            {
                 string XPIdentity = "JPI$XP@ges!C0nn3nt0r|Id3nTity@Request";
-                if (!string.IsNullOrEmpty(Connection.XPIdentity)) {
+                if (!string.IsNullOrEmpty(Connection.XPIdentity))
+                {
                     XPIdentity = Connection.XPIdentity;
                 }
                 //  Const XPIdentity As String = "JPI$XP@ges!C0nn3nt0r|Id3nTity@Request"
 
                 Encryptor EncodedEncryptedContent = new Encryptor(XPIdentity, true, ref Connection);
-                if (EncodedEncryptedContent.Initialize()) {
+                if (EncodedEncryptedContent.Initialize())
+                {
                     request.Headers.Add("Identity", EncodedEncryptedContent.EncodedContent);
                     return true;
                 }
-            } else {
+            }
+            else
+            {
                 //request is nothing ' error added in calling function
             }
             return false;
-        } catch (Exception ex) {
+        }
+        catch (Exception ex)
+        {
             Connector.ReturnMessages.Add("Unable to add Identity Header to XPages Request");
             Connector.ReturnMessages.Add(Common.GetErrorInfo(ex));
             Connector.hasError = true; //throws exception
@@ -56,13 +67,18 @@ internal class Requestor {
 
     #region Protected Internal Methods
 
-    protected internal bool Initialize() {
+    protected internal bool Initialize()
+    {
 
         HttpWebRequest request = null;
 
-        // use the XpagesConnector ReturnMessages & hasError
-        try {
-            ServicePointManager.Expect100Continue = false;
+        // use the XPagesAPI ReturnMessages & hasError
+        try
+        {
+            //ServicePointManager.Expect100Continue = false;
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls;
+            ServicePointManager.DefaultConnectionLimit = 9999;
 
             // Cookie container to store authentication cookie
             CookieContainer cookies = new CookieContainer();
@@ -71,7 +87,8 @@ internal class Requestor {
             //Login - check for "/names.nsf?Login"
             string serverURL = "";
             serverURL = Connection.ServerURL;
-            if (!serverURL.Contains("/names.nsf?Login")) {
+            if (!serverURL.Contains("/names.nsf?Login"))
+            {
                 serverURL = serverURL + "/names.nsf?Login";
             }
 
@@ -98,29 +115,38 @@ internal class Requestor {
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 
             // Check if we are authenticated properly
-            if ((response.StatusCode == HttpStatusCode.OK) || (response.StatusCode == HttpStatusCode.Found) || (response.StatusCode == HttpStatusCode.Redirect) || (response.StatusCode == HttpStatusCode.Moved) || (response.StatusCode == HttpStatusCode.MovedPermanently)) {
-                foreach (Cookie cooky in response.Cookies) {
+            if ((response.StatusCode == HttpStatusCode.OK) || (response.StatusCode == HttpStatusCode.Found) || (response.StatusCode == HttpStatusCode.Redirect) || (response.StatusCode == HttpStatusCode.Moved) || (response.StatusCode == HttpStatusCode.MovedPermanently))
+            {
+                foreach (Cookie cooky in response.Cookies)
+                {
                     cookies.Add(cooky);
                 }
 
                 this.AuthenticationCookie = cookies;
 
-                if (response.Cookies != null && response.Cookies.Count > 0) {
+                if (response.Cookies != null && response.Cookies.Count > 0)
+                {
                     Connector.ReturnMessages.Add(Connection.UserName + " Successfully Authenticated On Domino Server " + Connection.ServerURL);
                     Connector.hasError = false;
-                } else {
+                }
+                else
+                {
                     Connector.ReturnMessages.Add(Connection.UserName + " was unable to authenticate to the domino server " + Connection.ServerURL);
                     Connector.hasError = true;
                     //thows exception
                 }
-            } else {
+            }
+            else
+            {
                 Connector.ReturnMessages.Add(Connection.UserName + " was unable to authenticate to the domino server " + Connection.ServerURL);
                 Connector.hasError = true;
                 //thows exception
             }
             isInitialized = true;
             return true;
-        } catch (Exception ex) {
+        }
+        catch (Exception ex)
+        {
             Connector.ReturnMessages.Add(Connection.UserName + " was unable to authenticate to the domino server " + Connection.ServerURL);
             Connector.ReturnMessages.Add(Common.GetErrorInfo(ex));
             Connector.hasError = true;
@@ -131,11 +157,14 @@ internal class Requestor {
 
     }
 
-    protected internal bool ExecuteSessionRequest(string WebServiceURL) {
+    protected internal bool ExecuteSessionRequest(string WebServiceURL)
+    {
         HttpWebRequest request = null;
 
-        try {
-            if (!isInitialized) {
+        try
+        {
+            if (!isInitialized)
+            {
                 Connector.ReturnMessages.Add("Unable to execute the Session Request - Not Initialized/Connected To Server");
                 Connector.hasError = true;
                 return false;
@@ -159,7 +188,8 @@ internal class Requestor {
             string result;
 
             //add a identifier in the header to be use in JPI Service to check if the request is coming from a valid source aka JPI XPages Connector
-            if (!AddIdentityHeader(ref request)) {
+            if (!AddIdentityHeader(ref request))
+            {
                 Connector.ReturnMessages.Add("Unable to Execute Session Request : Identity Header could not be added!");
                 Connector.hasError = true;
                 return false;
@@ -170,31 +200,40 @@ internal class Requestor {
 
             // User Name
             sb.AppendLine("UserName : " + Connection.UserName);
-            sb.AppendLine("Connecting via XPagesConnector");
+            sb.AppendLine("Connecting via XPagesAPI");
 
 
             byte[] b = Encoding.Default.GetBytes(sb.ToString().Replace(Environment.NewLine, " | "));
             string myString = Encoding.UTF8.GetString(b);
             Encryptor EncodedEncryptedContent = new Encryptor(myString, true, ref Connection);
-            if (EncodedEncryptedContent.Initialize()) {
+            if (EncodedEncryptedContent.Initialize())
+            {
 
                 Stream requestStream = null;
-                try {
+                try
+                {
                     requestStream = request.GetRequestStream();
-                    using (StreamWriter writer = new StreamWriter(requestStream, Encoding.UTF8)) {
+                    using (StreamWriter writer = new StreamWriter(requestStream, Encoding.UTF8))
+                    {
                         writer.Write(EncodedEncryptedContent.EncodedContent);
                     }
-                } catch (Exception e) {
-                    Connector.ReturnMessages.Add("Unable to execute the Request : " + Common.GetErrorInfo(e));
+                }
+                catch (Exception e)
+                {
+                    Connector.ReturnMessages.Add("Unable to execute the Session Request : " + Common.GetErrorInfo(e));
                     Connector.hasError = true;  //throws exception
                     return false;
-                } finally {
+                }
+                finally
+                {
                     //if (requestStream != null) {
                     //    requestStream.Dispose();
                     //}
                 }
 
-            } else {
+            }
+            else
+            {
                 Connector.ReturnMessages.Add("Executing Session Request - Unable to encode/encrypt the content of the request!");
                 Connector.hasError = true; //throws exception
                 return false;
@@ -203,26 +242,45 @@ internal class Requestor {
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             //can give webexception error 500
 
-            if ((response.StatusCode == HttpStatusCode.OK) || (response.StatusCode == HttpStatusCode.Found) || (response.StatusCode == HttpStatusCode.Redirect) || (response.StatusCode == HttpStatusCode.Moved) || (response.StatusCode == HttpStatusCode.MovedPermanently)) {
+            if ((response.StatusCode == HttpStatusCode.OK) || (response.StatusCode == HttpStatusCode.Found) || (response.StatusCode == HttpStatusCode.Redirect) || (response.StatusCode == HttpStatusCode.Moved) || (response.StatusCode == HttpStatusCode.MovedPermanently))
+            {
                 Stream responseStream = null;
-                try {
+                try
+                {
                     responseStream = request.GetResponse().GetResponseStream();
-                    using (StreamReader reader = new StreamReader(responseStream, true)) {
+                    using (StreamReader reader = new StreamReader(responseStream, true))
+                    {
                         result = reader.ReadToEnd();
                     }
-                } catch (Exception e) {
-                    Connector.ReturnMessages.Add("Unable to execute the Request : " + Common.GetErrorInfo(e));
+                }
+                catch (Exception e)
+                {
+                    Connector.ReturnMessages.Add("Unable to execute the Session Request : " + Common.GetErrorInfo(e));
                     Connector.hasError = true;  //throws exception
                     return false;
-                } finally {
+                }
+                finally
+                {
                     //if (responseStream != null) {
                     //    responseStream.Dispose();
                     //}
                 }
 
-                if (result != null) {
+                if (result != null)
+                {
+                    //check if the page returned is not just the login page - we need to get encoded & encrypted content here - check if start with <! 
+                    if (result.StartsWith("<!"))
+                    {
+                        //possible wrong password !
+                        Connector.ReturnMessages.Add("Executing Session Request -  Unable to get the session - Authentication/Password Issue");
+                        Connector.hasError = true;
+                        //throws exception
+                        return false;
+                    }
+
                     Encryptor DecodeDecryptedContent = new Encryptor(result, false, ref Connection);
-                    if (DecodeDecryptedContent.Initialize()) {
+                    if (DecodeDecryptedContent.Initialize())
+                    {
                         ArrayList arList = new ArrayList();
 
                         string[] ar = null;
@@ -233,41 +291,53 @@ internal class Requestor {
 
                         ar = DecodeDecryptedContent.DecodedContent.Split(new[] { " | " }, StringSplitOptions.None);
                         arList.AddRange(ar);
-                        foreach (string str in arList) {
+                        foreach (string str in arList)
+                        {
                             //YES/NO
-                            if (str.StartsWith("Error: ")) {
-                                if (str.Replace("Error: ", "").Equals("YES", StringComparison.OrdinalIgnoreCase)) {
+                            if (str.StartsWith("Error: "))
+                            {
+                                if (str.Replace("Error: ", "").Equals("YES", StringComparison.OrdinalIgnoreCase))
+                                {
                                     isError = true;
                                 }
                             }
-                            if (str.StartsWith("Message: ")) {
+                            if (str.StartsWith("Message: "))
+                            {
                                 message = str.Replace("Message: ", "");
                             }
-                            if (str.StartsWith("Details: ")) {
+                            if (str.StartsWith("Details: "))
+                            {
                                 details = str.Replace("Details: ", "");
                             }
 
                         }
-                        if (isError) {
+                        if (isError)
+                        {
                             Connector.ReturnMessages.Add(message);
                             Connector.ReturnMessages.Add(details);
                             Connector.hasError = true;
                             //throws exception
                             return false;
-                        } else {
+                        }
+                        else
+                        {
                             Connector.ReturnMessages.Add(message);
                             Connector.ReturnMessages.Add(details);
                             Connector.hasError = false;
                             //SUCCESS
                         }
 
-                    } else {
+                    }
+                    else
+                    {
                         Connector.ReturnMessages.Add("Executing Session Request - Unable to decode/decrypt the content of the response!");
                         Connector.hasError = true;
                         //throws exception
                         return false;
                     }
-                } else {
+                }
+                else
+                {
                     //no response from server
                     Connector.ReturnMessages.Add("Executing Session Request -  Unable to get response from XPages!");
                     Connector.hasError = true;
@@ -276,20 +346,27 @@ internal class Requestor {
 
                 }
                 return true;
-            } else {
+            }
+            else
+            {
                 Connector.ReturnMessages.Add("Executing Session Request -  Unable to get the session - Authentication Issue");
                 Connector.hasError = true;
                 //throws exception
                 return false;
             }
 
-        } catch (Exception ex) {
-            if (ex.GetType() == typeof(WebException)) {
+        }
+        catch (Exception ex)
+        {
+            if (ex.GetType() == typeof(WebException))
+            {
                 WebException webex;
                 webex = (WebException)ex;
-                if (webex.Response != null) {
+                if (webex.Response != null)
+                {
                     Stream stream = webex.Response.GetResponseStream();
-                    using (StreamReader reader = new StreamReader(stream)) {
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
                         string errorResp = reader.ReadToEnd();
                         // errorResp = errorResp.Replace("{", "").Replace("}", "").Replace("\\r\\n\\", Environment.NewLine).Replace(",", Environment.NewLine).Replace(((char)34).ToString(), "").Replace("\\r\\n", Environment.NewLine);
                         errorResp = errorResp.Replace("{", "").Replace("}", "").Replace("\\\\r\\\\n\\\\", Environment.NewLine).Replace(",", Environment.NewLine).Replace(((char)34).ToString(), "").Replace("\\\\r\\\\n", Environment.NewLine);
@@ -299,13 +376,17 @@ internal class Requestor {
                         return false;
                     }
 
-                } else {
+                }
+                else
+                {
                     Connector.ReturnMessages.Add("Unable to Execute the Session Request : " + Common.GetErrorInfo(ex));
                     Connector.hasError = true;
                     //throws exception
                     return false;
                 }
-            } else {
+            }
+            else
+            {
                 Connector.ReturnMessages.Add("Unable to Execute the Session Request : " + Common.GetErrorInfo(ex));
                 Connector.hasError = true;
                 //throws exception
@@ -314,11 +395,14 @@ internal class Requestor {
         }
     }
 
-    protected internal bool ExecuteDatabaseRequest(string WebServiceURL, string ServerName, string dbFilePath, string dbReplicationId, DatabaseObject dbObj) {
+    protected internal bool ExecuteDatabaseRequest(string WebServiceURL, string ServerName, string dbFilePath, string dbReplicationId, DatabaseObject dbObj)
+    {
         HttpWebRequest request = null;
 
-        try {
-            if (!isInitialized) {
+        try
+        {
+            if (!isInitialized)
+            {
                 Connector.ReturnMessages.Add("Unable to execute the Database Request - Not Initialized/Connected To Server");
                 Connector.hasError = true;
                 return false;
@@ -340,7 +424,8 @@ internal class Requestor {
             string result;
 
             //add a identifier in the header to be use in JPI Service to check if the request is coming from a valid source aka JPI XPages Connector
-            if (!AddIdentityHeader(ref request)) {
+            if (!AddIdentityHeader(ref request))
+            {
                 Connector.ReturnMessages.Add("Unable to Execute Database Request : Identity Header could not be added!");
                 Connector.hasError = true;  //throws error
                 return false;
@@ -354,28 +439,37 @@ internal class Requestor {
             sb.AppendLine("FilePath: " + dbFilePath);
             sb.AppendLine("ReplicationID: " + dbReplicationId);
 
-            sb.AppendLine("Connecting via XPagesConnector");
+            sb.AppendLine("Connecting via XPagesAPI");
 
             byte[] b = Encoding.Default.GetBytes(sb.ToString().Replace(Environment.NewLine, " | "));
             string myString = Encoding.UTF8.GetString(b);
             Encryptor EncodedEncryptedContent = new Encryptor(myString, true, ref Connection);
-            if (EncodedEncryptedContent.Initialize()) {
+            if (EncodedEncryptedContent.Initialize())
+            {
                 Stream requestStream = null;
-                try {
+                try
+                {
                     requestStream = request.GetRequestStream();
-                    using (StreamWriter writer = new StreamWriter(requestStream, Encoding.UTF8)) {
+                    using (StreamWriter writer = new StreamWriter(requestStream, Encoding.UTF8))
+                    {
                         writer.Write(EncodedEncryptedContent.EncodedContent);
                     }
-                } catch (Exception e) {
+                }
+                catch (Exception e)
+                {
                     Connector.ReturnMessages.Add("Unable to execute the Request : " + Common.GetErrorInfo(e));
                     Connector.hasError = true;  //throws exception
                     return false;
-                } finally {
+                }
+                finally
+                {
                     //if (requestStream != null) {
                     //    requestStream.Dispose();
                     //}
                 }
-            } else {
+            }
+            else
+            {
                 Connector.ReturnMessages.Add("Executing Database Request - Unable to encode/encrypt the content of the request!");
                 Connector.hasError = true; //throws exception
                 return false;
@@ -383,26 +477,35 @@ internal class Requestor {
 
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();  //can give webexception error 500
 
-            if ((response.StatusCode == HttpStatusCode.OK) || (response.StatusCode == HttpStatusCode.Found) || (response.StatusCode == HttpStatusCode.Redirect) || (response.StatusCode == HttpStatusCode.Moved) || (response.StatusCode == HttpStatusCode.MovedPermanently)) {
+            if ((response.StatusCode == HttpStatusCode.OK) || (response.StatusCode == HttpStatusCode.Found) || (response.StatusCode == HttpStatusCode.Redirect) || (response.StatusCode == HttpStatusCode.Moved) || (response.StatusCode == HttpStatusCode.MovedPermanently))
+            {
                 Stream responseStream = null;
-                try {
+                try
+                {
                     responseStream = request.GetResponse().GetResponseStream();
-                    using (StreamReader reader = new StreamReader(responseStream, true)) {
+                    using (StreamReader reader = new StreamReader(responseStream, true))
+                    {
                         result = reader.ReadToEnd();
                     }
-                } catch (Exception e) {
+                }
+                catch (Exception e)
+                {
                     Connector.ReturnMessages.Add("Unable to execute the Request : " + Common.GetErrorInfo(e));
                     Connector.hasError = true;  //throws exception
                     return false;
-                } finally {
+                }
+                finally
+                {
                     //if (responseStream != null) {
                     //    responseStream.Dispose();
                     //}
                 }
 
-                if (result != null) {
+                if (result != null)
+                {
                     Encryptor DecodeDecryptedContent = new Encryptor(result, false, ref Connection);
-                    if (DecodeDecryptedContent.Initialize()) {
+                    if (DecodeDecryptedContent.Initialize())
+                    {
                         ArrayList arList = new ArrayList();
 
                         string[] ar = null;
@@ -414,85 +517,111 @@ internal class Requestor {
 
                         ar = DecodeDecryptedContent.DecodedContent.Split(new[] { " | " }, StringSplitOptions.None);
                         arList.AddRange(ar);
-                        foreach (string str in arList) {
+                        foreach (string str in arList)
+                        {
                             //YES/NO
-                            if (str.StartsWith("Error: ")) {
-                                if (str.Replace("Error: ", "").Equals("YES", StringComparison.OrdinalIgnoreCase)) {
+                            if (str.StartsWith("Error: "))
+                            {
+                                if (str.Replace("Error: ", "").Equals("YES", StringComparison.OrdinalIgnoreCase))
+                                {
                                     isError = true;
                                 }
                             }
-                            if (str.StartsWith("Message: ")) {
+                            if (str.StartsWith("Message: "))
+                            {
                                 message = str.Replace("Message: ", "");
                             }
-                            if (str.StartsWith("Details: ")) {
+                            if (str.StartsWith("Details: "))
+                            {
                                 details = str.Replace("Details: ", "");
                             }
-                            if (str.StartsWith("ServerName: ")) {
+                            if (str.StartsWith("ServerName: "))
+                            {
                                 value = str.Replace("ServerName: ", "");
-                                if (!string.IsNullOrEmpty(value)) {
+                                if (!string.IsNullOrEmpty(value))
+                                {
                                     dbObj.ServerName = value;
                                 }
                             }
-                            if (str.StartsWith("FilePath: ")) {
+                            if (str.StartsWith("FilePath: "))
+                            {
                                 value = str.Replace("FilePath: ", "");
-                                if (!string.IsNullOrEmpty(value)) {
+                                if (!string.IsNullOrEmpty(value))
+                                {
                                     dbObj.FilePath = value;
                                 }
                             }
-                            if (str.StartsWith("ReplicationID: ")) {
+                            if (str.StartsWith("ReplicationID: "))
+                            {
                                 value = str.Replace("ReplicationID: ", "");
-                                if (!string.IsNullOrEmpty(value)) {
+                                if (!string.IsNullOrEmpty(value))
+                                {
                                     dbObj.ReplicationID = value;
                                 }
                             }
 
-                            if (str.StartsWith("Title: ")) {
+                            if (str.StartsWith("Title: "))
+                            {
                                 value = str.Replace("Title: ", "");
-                                if (!string.IsNullOrEmpty(value)) {
+                                if (!string.IsNullOrEmpty(value))
+                                {
                                     dbObj.Title = value;
                                 }
                             }
 
-                            if (str.StartsWith("Template: ")) {
+                            if (str.StartsWith("Template: "))
+                            {
                                 value = str.Replace("Template: ", "");
-                                if (!string.IsNullOrEmpty(value)) {
+                                if (!string.IsNullOrEmpty(value))
+                                {
                                     dbObj.Template = value;
                                 }
                             }
 
-                            if (str.StartsWith("Size: ")) {
+                            if (str.StartsWith("Size: "))
+                            {
                                 value = str.Replace("Size: ", "");
-                                if (!string.IsNullOrEmpty(value)) {
+                                if (!string.IsNullOrEmpty(value))
+                                {
                                     dbObj.Size = value;
                                 }
                             }
 
-                            if (str.StartsWith("URL: ")) {
+                            if (str.StartsWith("URL: "))
+                            {
                                 value = str.Replace("URL: ", "");
-                                if (!string.IsNullOrEmpty(value)) {
+                                if (!string.IsNullOrEmpty(value))
+                                {
                                     dbObj.Url = value;
                                 }
                             }
 
                         }
 
-                        if (isError) {
+                        if (isError)
+                        {
                             Connector.ReturnMessages.Add(message);
                             Connector.ReturnMessages.Add(details);
                             Connector.hasError = true; //throws exception
                             return false;
-                        } else {
+                        }
+                        else
+                        {
                             Connector.ReturnMessages.Add(message);
                             Connector.ReturnMessages.Add(details);
                             Connector.hasError = false; //SUCCESS
                         }
 
-                    } else {
+                    }
+                    else
+                    {
                         Connector.ReturnMessages.Add("Executing Database Request - Unable to decode/decrypt the content of the response!");
                         Connector.hasError = true;  //throws exception
                         return false;
                     }
-                } else {
+                }
+                else
+                {
                     //no response from server
                     Connector.ReturnMessages.Add("Executing Database Request -  Unable to get response from XPages!");
                     Connector.hasError = true;  //throws exception
@@ -500,19 +629,26 @@ internal class Requestor {
 
                 }
                 return true;
-            } else {
+            }
+            else
+            {
                 Connector.ReturnMessages.Add("Executing Database Request -  Unable to get the Database - Authentication Issue");
                 Connector.hasError = true;  //throws exception
                 return false;
             }
 
-        } catch (Exception ex) {
-            if (ex.GetType() == typeof(WebException)) {
+        }
+        catch (Exception ex)
+        {
+            if (ex.GetType() == typeof(WebException))
+            {
                 WebException webex;
                 webex = (WebException)ex;
-                if (webex.Response != null) {
+                if (webex.Response != null)
+                {
                     Stream stream = webex.Response.GetResponseStream();
-                    using (StreamReader reader = new StreamReader(stream)) {
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
                         string errorResp = reader.ReadToEnd();
                         errorResp = errorResp.Replace("{", "").Replace("}", "").Replace("\\\\r\\\\n\\\\", Environment.NewLine).Replace(",", Environment.NewLine).Replace(((char)34).ToString(), "").Replace("\\\\r\\\\n", Environment.NewLine);
                         Connector.ReturnMessages.Add("Unable to Execute the Database Request : Invalid request or not authenticated : " + Environment.NewLine + "Web Request Error Response : " + errorResp);
@@ -520,12 +656,16 @@ internal class Requestor {
                         return false;
                     }
 
-                } else {
+                }
+                else
+                {
                     Connector.ReturnMessages.Add("Unable to Execute the Database Request : " + Common.GetErrorInfo(ex));
                     Connector.hasError = true;  //throws exception
                     return false;
                 }
-            } else {
+            }
+            else
+            {
                 Connector.ReturnMessages.Add("Unable to Execute the Database Request : " + Common.GetErrorInfo(ex));
                 Connector.hasError = true;  //throws exception
                 return false;
@@ -533,11 +673,14 @@ internal class Requestor {
         }
     }
 
-    protected internal bool ExecuteDocumentRequest(string WebServiceURL, string Unid, string searchField, string searchValue, string formula, DatabaseObject dbObj, DocumentObject docObj) {
+    protected internal bool ExecuteDocumentRequest(string WebServiceURL, string Unid, string searchField, string searchValue, string formula, DatabaseObject dbObj, DocumentObject docObj)
+    {
         HttpWebRequest request = null;
 
-        try {
-            if (!isInitialized) {
+        try
+        {
+            if (!isInitialized)
+            {
                 Connector.ReturnMessages.Add("Unable to execute the Document Request - Not Initialized/Connected To Server");
                 Connector.hasError = true;
                 return false;
@@ -559,7 +702,8 @@ internal class Requestor {
             string result;
 
             //add a identifier in the header to be use in JPI Service to check if the request is coming from a valid source aka JPI XPages Connector
-            if (!AddIdentityHeader(ref request)) {
+            if (!AddIdentityHeader(ref request))
+            {
                 Connector.ReturnMessages.Add("Unable to Execute Document Request : Identity Header could not be added!");
                 Connector.hasError = true;  //throws error
                 return false;
@@ -576,28 +720,37 @@ internal class Requestor {
             sb.AppendLine("SearchField: " + searchField);
             sb.AppendLine("SearchValue: " + searchValue);
             sb.AppendLine("Formula: " + formula);
-            sb.AppendLine("Connecting via XPagesConnector");
+            sb.AppendLine("Connecting via XPagesAPI");
 
             byte[] b = Encoding.Default.GetBytes(sb.ToString().Replace(Environment.NewLine, " | "));
             string myString = Encoding.UTF8.GetString(b);
             Encryptor EncodedEncryptedContent = new Encryptor(myString, true, ref Connection);
-            if (EncodedEncryptedContent.Initialize()) {
+            if (EncodedEncryptedContent.Initialize())
+            {
                 Stream requestStream = null;
-                try {
+                try
+                {
                     requestStream = request.GetRequestStream();
-                    using (StreamWriter writer = new StreamWriter(requestStream, Encoding.UTF8)) {
+                    using (StreamWriter writer = new StreamWriter(requestStream, Encoding.UTF8))
+                    {
                         writer.Write(EncodedEncryptedContent.EncodedContent);
                     }
-                } catch (Exception e) {
+                }
+                catch (Exception e)
+                {
                     Connector.ReturnMessages.Add("Unable to execute the Request : " + Common.GetErrorInfo(e));
                     Connector.hasError = true;  //throws exception
                     return false;
-                } finally {
+                }
+                finally
+                {
                     //if (requestStream != null) {
                     //    requestStream.Dispose();
                     //}
                 }
-            } else {
+            }
+            else
+            {
                 Connector.ReturnMessages.Add("Executing Document Request - Unable to encode/encrypt the content of the request!");
                 Connector.hasError = true; //throws exception
                 return false;
@@ -605,26 +758,35 @@ internal class Requestor {
 
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();  //can give webexception error 500
 
-            if ((response.StatusCode == HttpStatusCode.OK) || (response.StatusCode == HttpStatusCode.Found) || (response.StatusCode == HttpStatusCode.Redirect) || (response.StatusCode == HttpStatusCode.Moved) || (response.StatusCode == HttpStatusCode.MovedPermanently)) {
+            if ((response.StatusCode == HttpStatusCode.OK) || (response.StatusCode == HttpStatusCode.Found) || (response.StatusCode == HttpStatusCode.Redirect) || (response.StatusCode == HttpStatusCode.Moved) || (response.StatusCode == HttpStatusCode.MovedPermanently))
+            {
                 Stream responseStream = null;
-                try {
+                try
+                {
                     responseStream = request.GetResponse().GetResponseStream();
-                    using (StreamReader reader = new StreamReader(responseStream, true)) {
+                    using (StreamReader reader = new StreamReader(responseStream, true))
+                    {
                         result = reader.ReadToEnd();
                     }
-                } catch (Exception e) {
+                }
+                catch (Exception e)
+                {
                     Connector.ReturnMessages.Add("Unable to execute the Request : " + Common.GetErrorInfo(e));
                     Connector.hasError = true;  //throws exception
                     return false;
-                } finally {
+                }
+                finally
+                {
                     //if (responseStream != null) {
                     //    responseStream.Dispose();
                     //}
                 }
 
-                if (result != null) {
+                if (result != null)
+                {
                     Encryptor DecodeDecryptedContent = new Encryptor(result, false, ref Connection);
-                    if (DecodeDecryptedContent.Initialize()) {
+                    if (DecodeDecryptedContent.Initialize())
+                    {
                         ArrayList arList = new ArrayList();
 
                         string[] ar = null;
@@ -644,82 +806,106 @@ internal class Requestor {
                         ar = DecodeDecryptedContent.DecodedContent.Split(new[] { " | " }, StringSplitOptions.None);
                         arList.AddRange(ar);
 
-                        foreach (string str in arList) {
+                        foreach (string str in arList)
+                        {
                             //YES/NO
-                            if (str.StartsWith("Error: ")) {
-                                if (str.Replace("Error: ", "").Equals("YES", StringComparison.OrdinalIgnoreCase)) {
+                            if (str.StartsWith("Error: "))
+                            {
+                                if (str.Replace("Error: ", "").Equals("YES", StringComparison.OrdinalIgnoreCase))
+                                {
                                     isError = true;
                                 }
                             }
-                            if (str.StartsWith("Message: ")) {
+                            if (str.StartsWith("Message: "))
+                            {
                                 message = str.Replace("Message: ", "");
                             }
-                            if (str.StartsWith("Details: ")) {
+                            if (str.StartsWith("Details: "))
+                            {
                                 details = str.Replace("Details: ", "");
                             }
 
-                            if (str.StartsWith("NoteID: ")) {
+                            if (str.StartsWith("NoteID: "))
+                            {
                                 value = str.Replace("NoteID: ", "");
-                                if (!string.IsNullOrEmpty(value)) {
+                                if (!string.IsNullOrEmpty(value))
+                                {
                                     noteId = value;
                                 }
                             }
-                            if (str.StartsWith("Unid: ")) {
+                            if (str.StartsWith("Unid: "))
+                            {
                                 value = str.Replace("Unid: ", "");
-                                if (!string.IsNullOrEmpty(value)) {
+                                if (!string.IsNullOrEmpty(value))
+                                {
                                     unid = value;
                                 }
                             }
-                            if (str.StartsWith("Form: ")) {
+                            if (str.StartsWith("Form: "))
+                            {
                                 value = str.Replace("Form: ", "");
-                                if (!string.IsNullOrEmpty(value)) {
+                                if (!string.IsNullOrEmpty(value))
+                                {
                                     form = value;
                                 }
                             }
 
-                            if (str.StartsWith("Size: ")) {
+                            if (str.StartsWith("Size: "))
+                            {
                                 value = str.Replace("Size: ", "");
-                                if (!string.IsNullOrEmpty(value)) {
+                                if (!string.IsNullOrEmpty(value))
+                                {
                                     size = value;
                                 }
                             }
 
-                            if (str.StartsWith("URL: ")) {
+                            if (str.StartsWith("URL: "))
+                            {
                                 value = str.Replace("URL: ", "");
-                                if (!string.IsNullOrEmpty(value)) {
+                                if (!string.IsNullOrEmpty(value))
+                                {
                                     url = value;
                                 }
                             }
 
 
-                            if (str.StartsWith("Created: ")) {
+                            if (str.StartsWith("Created: "))
+                            {
                                 value = str.Replace("Created: ", "");
-                                if (!string.IsNullOrEmpty(value)) {
+                                if (!string.IsNullOrEmpty(value))
+                                {
                                     created = value;
                                 }
                             }
 
 
-                            if (str.StartsWith("Modified: ")) {
+                            if (str.StartsWith("Modified: "))
+                            {
                                 value = str.Replace("Modified: ", "");
-                                if (!string.IsNullOrEmpty(value)) {
+                                if (!string.IsNullOrEmpty(value))
+                                {
                                     modified = value;
                                 }
                             }
                         }
 
-                        if (isError) {
+                        if (isError)
+                        {
                             Connector.ReturnMessages.Add(message);
                             Connector.ReturnMessages.Add(details);
                             Connector.hasError = true; //throws exception
                             return false;
-                        } else {
+                        }
+                        else
+                        {
 
                             // add doc to list
-                            if (dbObj.Documents == null) {
+                            if (dbObj.Documents == null)
+                            {
                                 dbObj.Documents = new Dictionary<string, DocumentObject>();
                             }
-                            if (!string.IsNullOrEmpty(unid)) {
+                            if (!string.IsNullOrEmpty(unid))
+                            {
                                 //docObj = new DocumentObject(dbObj, unid);
                                 docObj.UniversalID = unid;
                                 docObj.NoteID = noteId;
@@ -728,14 +914,17 @@ internal class Requestor {
                                 docObj.Form = form;
                                 docObj.DateCreated = created;
                                 docObj.DateModified = modified;
-                                if (dbObj.Documents.ContainsKey(unid)) {
+                                if (dbObj.Documents.ContainsKey(unid))
+                                {
                                     dbObj.Documents.Remove(unid);
                                 }
                                 dbObj.Documents.Add(unid, docObj);
                                 Connector.ReturnMessages.Add(message);
                                 Connector.ReturnMessages.Add(details);
                                 Connector.hasError = false; //SUCCESS
-                            } else {
+                            }
+                            else
+                            {
                                 // unid not found??
                                 Connector.ReturnMessages.Add(message);
                                 Connector.ReturnMessages.Add(details);
@@ -745,12 +934,16 @@ internal class Requestor {
 
                         }
 
-                    } else {
+                    }
+                    else
+                    {
                         Connector.ReturnMessages.Add("Executing Document Request - Unable to decode/decrypt the content of the response!");
                         Connector.hasError = true;  //throws exception
                         return false;
                     }
-                } else {
+                }
+                else
+                {
                     //no response from server
                     Connector.ReturnMessages.Add("Executing Document Request -  Unable to get response from XPages!");
                     Connector.hasError = true;  //throws exception
@@ -758,19 +951,26 @@ internal class Requestor {
 
                 }
                 return true;
-            } else {
+            }
+            else
+            {
                 Connector.ReturnMessages.Add("Executing Document Request -  Unable to get the Document - Authentication Issue");
                 Connector.hasError = true;  //throws exception
                 return false;
             }
 
-        } catch (Exception ex) {
-            if (ex.GetType() == typeof(WebException)) {
+        }
+        catch (Exception ex)
+        {
+            if (ex.GetType() == typeof(WebException))
+            {
                 WebException webex;
                 webex = (WebException)ex;
-                if (webex.Response != null) {
+                if (webex.Response != null)
+                {
                     Stream stream = webex.Response.GetResponseStream();
-                    using (StreamReader reader = new StreamReader(stream)) {
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
                         string errorResp = reader.ReadToEnd();
                         errorResp = errorResp.Replace("{", "").Replace("}", "").Replace("\\\\r\\\\n\\\\", Environment.NewLine).Replace(",", Environment.NewLine).Replace(((char)34).ToString(), "").Replace("\\\\r\\\\n", Environment.NewLine);
                         Connector.ReturnMessages.Add("Unable to Execute the Document Request : Invalid request or not authenticated : " + Environment.NewLine + "Web Request Error Response : " + errorResp);
@@ -778,12 +978,16 @@ internal class Requestor {
                         return false;
                     }
 
-                } else {
+                }
+                else
+                {
                     Connector.ReturnMessages.Add("Unable to Execute the Document Request : " + Common.GetErrorInfo(ex));
                     Connector.hasError = true;  //throws exception
                     return false;
                 }
-            } else {
+            }
+            else
+            {
                 Connector.ReturnMessages.Add("Unable to Execute the Document Request : " + Common.GetErrorInfo(ex));
                 Connector.hasError = true;  //throws exception
                 return false;
@@ -791,12 +995,365 @@ internal class Requestor {
         }
     }
 
-    protected internal bool ExecuteAllDocumentsRequest(string WebServiceURL, string searchField, string searchValue, string formula, string unids, DatabaseObject dbObj) {
+    protected internal bool ExecuteDocumentFilesRequest(string WebServiceURL, string Unid, string searchField, string searchValue, string formula, DatabaseObject dbObj, DocumentObject docObj)
+    {
         HttpWebRequest request = null;
 
-        try {
-            if (!isInitialized) {
-                Connector.ReturnMessages.Add("Unable to execute the Document Request - Not Initialized/Connected To Server");
+        try
+        {
+            if (!isInitialized)
+            {
+                Connector.ReturnMessages.Add("Unable to execute the DocumentFiles Request - Not Initialized/Connected To Server");
+                Connector.hasError = true;
+                return false;
+            }
+
+            ServicePointManager.Expect100Continue = false;
+
+            //create an HTTP request
+
+            request = (HttpWebRequest)WebRequest.Create(WebServiceURL + "?API_Files");
+
+            request.CookieContainer = this.AuthenticationCookie;
+            //  request.KeepAlive = True
+            request.AllowAutoRedirect = true;
+
+            request.Method = WebRequestMethods.Http.Post;   //"POST"
+            request.ContentType = "application/jpi; charset=utf-8"; //application/json
+                                                                    // Set the request stream
+            string result;
+
+            //add a identifier in the header to be use in JPI Service to check if the request is coming from a valid source aka JPI XPages Connector
+            if (!AddIdentityHeader(ref request))
+            {
+                Connector.ReturnMessages.Add("Unable to Execute DocumentFiles Request : Identity Header could not be added!");
+                Connector.hasError = true;  //throws error
+                return false;
+            }
+
+            //test with encryption
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("UserName: " + Connection.UserName);
+            sb.AppendLine("ServerName: " + docObj.Database.ServerName);
+            sb.AppendLine("FilePath: " + docObj.Database.FilePath);
+            sb.AppendLine("ReplicationID: " + docObj.Database.ReplicationID);
+            sb.AppendLine("UniversalID: " + Unid);
+            sb.AppendLine("SearchField: " + searchField);
+            sb.AppendLine("SearchValue: " + searchValue);
+            sb.AppendLine("Formula: " + formula);
+            sb.AppendLine("Connecting via XPagesAPI");
+
+            byte[] b = Encoding.Default.GetBytes(sb.ToString().Replace(Environment.NewLine, " | "));
+            string myString = Encoding.UTF8.GetString(b);
+            Encryptor EncodedEncryptedContent = new Encryptor(myString, true, ref Connection);
+            if (EncodedEncryptedContent.Initialize())
+            {
+                Stream requestStream = null;
+                try
+                {
+                    requestStream = request.GetRequestStream();
+                    using (StreamWriter writer = new StreamWriter(requestStream, Encoding.UTF8))
+                    {
+                        writer.Write(EncodedEncryptedContent.EncodedContent);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Connector.ReturnMessages.Add("Unable to execute the DocumentFiles Request : " + Common.GetErrorInfo(e));
+                    Connector.hasError = true;  //throws exception
+                    return false;
+                }
+                finally
+                {
+                    //if (requestStream != null) {
+                    //    requestStream.Dispose();
+                    //}
+                }
+            }
+            else
+            {
+                Connector.ReturnMessages.Add("Executing DocumentFiles Request - Unable to encode/encrypt the content of the request!");
+                Connector.hasError = true; //throws exception
+                return false;
+            }
+
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();  //can give webexception error 500
+
+            if ((response.StatusCode == HttpStatusCode.OK) || (response.StatusCode == HttpStatusCode.Found) || (response.StatusCode == HttpStatusCode.Redirect) || (response.StatusCode == HttpStatusCode.Moved) || (response.StatusCode == HttpStatusCode.MovedPermanently))
+            {
+                Stream responseStream = null;
+                try
+                {
+                    responseStream = request.GetResponse().GetResponseStream();
+                    using (StreamReader reader = new StreamReader(responseStream, true))
+                    {
+                        result = reader.ReadToEnd();
+                    }
+                }
+                catch (Exception e)
+                {
+                    Connector.ReturnMessages.Add("Unable to execute the DocumentFiles Request : " + Common.GetErrorInfo(e));
+                    Connector.hasError = true;  //throws exception
+                    return false;
+                }
+                finally
+                {
+                    //if (responseStream != null) {
+                    //    responseStream.Dispose();
+                    //}
+                }
+
+                if (result != null)
+                {
+                    Encryptor DecodeDecryptedContent = new Encryptor(result, false, ref Connection);
+                    if (DecodeDecryptedContent.Initialize())
+                    {
+                        ArrayList arList = new ArrayList();
+
+                        string[] ar = null;
+                        bool isError = false;
+
+                        string message = "";
+                        string details = "";
+                        string value = "";
+                        string unid = "";
+                        string noteId = "";
+                        string form = "";
+                        string size = "";
+                        string url = "";
+                        string created = "";
+                        string modified = "";
+                        List<string> fList = new List<String>();
+
+
+                        ar = DecodeDecryptedContent.DecodedContent.Split(new[] { " | " }, StringSplitOptions.None);
+                        arList.AddRange(ar);
+
+                        foreach (string str in arList)
+                        {
+                            //YES/NO
+                            if (str.StartsWith("Error: "))
+                            {
+                                if (str.Replace("Error: ", "").Equals("YES", StringComparison.OrdinalIgnoreCase))
+                                {
+                                    isError = true;
+                                }
+                            }
+                            if (str.StartsWith("Message: "))
+                            {
+                                message = str.Replace("Message: ", "");
+                            }
+                            if (str.StartsWith("Details: "))
+                            {
+                                details = str.Replace("Details: ", "");
+                            }
+
+                            if (str.StartsWith("NoteID: "))
+                            {
+                                value = str.Replace("NoteID: ", "");
+                                if (!string.IsNullOrEmpty(value))
+                                {
+                                    noteId = value;
+                                }
+                            }
+                            if (str.StartsWith("Unid: "))
+                            {
+                                value = str.Replace("Unid: ", "");
+                                if (!string.IsNullOrEmpty(value))
+                                {
+                                    unid = value;
+                                }
+                            }
+                            if (str.StartsWith("Form: "))
+                            {
+                                value = str.Replace("Form: ", "");
+                                if (!string.IsNullOrEmpty(value))
+                                {
+                                    form = value;
+                                }
+                            }
+
+                            if (str.StartsWith("Size: "))
+                            {
+                                value = str.Replace("Size: ", "");
+                                if (!string.IsNullOrEmpty(value))
+                                {
+                                    size = value;
+                                }
+                            }
+
+                            if (str.StartsWith("URL: "))
+                            {
+                                value = str.Replace("URL: ", "");
+                                if (!string.IsNullOrEmpty(value))
+                                {
+                                    url = value;
+                                }
+                            }
+
+
+                            if (str.StartsWith("Created: "))
+                            {
+                                value = str.Replace("Created: ", "");
+                                if (!string.IsNullOrEmpty(value))
+                                {
+                                    created = value;
+                                }
+                            }
+
+
+                            if (str.StartsWith("Modified: "))
+                            {
+                                value = str.Replace("Modified: ", "");
+                                if (!string.IsNullOrEmpty(value))
+                                {
+                                    modified = value;
+                                }
+                            }
+
+                            if (str.StartsWith("FileObject: "))
+                            {
+                                value = str.Replace("FileObject: ", "");
+                                if (!string.IsNullOrEmpty(value))
+                                {
+                                    // files = value;
+                                    fList.Add(value);
+                                }
+                            }
+                        }
+
+                        if (isError)
+                        {
+                            Connector.ReturnMessages.Add(message);
+                            Connector.ReturnMessages.Add(details);
+                            Connector.hasError = true; //throws exception
+                            return false;
+                        }
+                        else
+                        {
+
+                            // add doc to list
+                            if (dbObj.Documents == null)
+                            {
+                                dbObj.Documents = new Dictionary<string, DocumentObject>();
+                            }
+                            if (!string.IsNullOrEmpty(unid))
+                            {
+                                //docObj = new DocumentObject(dbObj, unid);
+                                docObj.UniversalID = unid;
+                                docObj.NoteID = noteId;
+                                docObj.Size = size;
+                                docObj.Url = url;
+                                docObj.Form = form;
+                                docObj.DateCreated = created;
+                                docObj.DateModified = modified;
+                                //create file objects
+                                docObj.Files = new SortedDictionary<string, FileObject>();
+                                FileObject fObj = null;
+                                foreach (string str in fList)
+                                {
+                                    if (!string.IsNullOrEmpty(str) && !str.Contains("<NO_FILES_ATTACHED>"))
+                                    {
+                                        //can be valid file here split on § and count
+                                        //fObj.Application + "§" + fObj.Creator + "§" + fObj.DateCreated + "§" + fObj.DateModfied + "$" + fObj.FieldName + "§" + fObj.FileExtension + "§" + fObj.FileName + "$" + fObj.FileSize + "$" + fObj.LinkToFile + "$" + fObj.Other + "$" + fObj.SoftClass);
+                                        fObj = new FileObject(docObj);
+                                        if (fObj.Initialize(str))
+                                        {
+                                            docObj.Files.Add(fObj.Name, fObj);
+                                        }
+                                    }
+                                }
+                                if (dbObj.Documents.ContainsKey(unid))
+                                {
+                                    dbObj.Documents.Remove(unid);
+                                }
+                                dbObj.Documents.Add(unid, docObj);
+                                Connector.ReturnMessages.Add(message);
+                                Connector.ReturnMessages.Add(details);
+                                Connector.hasError = false; //SUCCESS
+                            }
+                            else
+                            {
+                                // unid not found??
+                                Connector.ReturnMessages.Add(message);
+                                Connector.ReturnMessages.Add(details);
+                                Connector.ReturnMessages.Add("Universal ID not found!");
+                                Connector.hasError = true; // throws exception
+                            }
+
+                        }
+
+                    }
+                    else
+                    {
+                        Connector.ReturnMessages.Add("Executing DocumentFiles Request - Unable to decode/decrypt the content of the response!");
+                        Connector.hasError = true;  //throws exception
+                        return false;
+                    }
+                }
+                else
+                {
+                    //no response from server
+                    Connector.ReturnMessages.Add("Executing DocumentFiles Request -  Unable to get response from XPages!");
+                    Connector.hasError = true;  //throws exception
+                    return false;
+
+                }
+                return true;
+            }
+            else
+            {
+                Connector.ReturnMessages.Add("Executing DocumentFiles Request -  Unable to get the Document - Authentication Issue");
+                Connector.hasError = true;  //throws exception
+                return false;
+            }
+
+        }
+        catch (Exception ex)
+        {
+            if (ex.GetType() == typeof(WebException))
+            {
+                WebException webex;
+                webex = (WebException)ex;
+                if (webex.Response != null)
+                {
+                    Stream stream = webex.Response.GetResponseStream();
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
+                        string errorResp = reader.ReadToEnd();
+                        errorResp = errorResp.Replace("{", "").Replace("}", "").Replace("\\\\r\\\\n\\\\", Environment.NewLine).Replace(",", Environment.NewLine).Replace(((char)34).ToString(), "").Replace("\\\\r\\\\n", Environment.NewLine);
+                        Connector.ReturnMessages.Add("Unable to Execute the DocumentFiles Request : Invalid request or not authenticated : " + Environment.NewLine + "Web Request Error Response : " + errorResp);
+                        Connector.hasError = true;  //throws exception
+                        return false;
+                    }
+
+                }
+                else
+                {
+                    Connector.ReturnMessages.Add("Unable to Execute the DocumentFiles Request : " + Common.GetErrorInfo(ex));
+                    Connector.hasError = true;  //throws exception
+                    return false;
+                }
+            }
+            else
+            {
+                Connector.ReturnMessages.Add("Unable to Execute the DocumentFiles Request : " + Common.GetErrorInfo(ex));
+                Connector.hasError = true;  //throws exception
+                return false;
+            }
+        }
+    }
+
+    protected internal bool ExecuteAllDocumentsRequest(string WebServiceURL, string searchField, string searchValue, string formula, string unids, DatabaseObject dbObj)
+    {
+        HttpWebRequest request = null;
+
+        try
+        {
+            if (!isInitialized)
+            {
+                Connector.ReturnMessages.Add("Unable to execute the All Documents Request - Not Initialized/Connected To Server");
                 Connector.hasError = true;
                 return false;
             }
@@ -817,8 +1374,9 @@ internal class Requestor {
             string result;
 
             //add a identifier in the header to be use in JPI Service to check if the request is coming from a valid source aka JPI XPages Connector
-            if (!AddIdentityHeader(ref request)) {
-                Connector.ReturnMessages.Add("Unable to Execute Document Request : Identity Header could not be added!");
+            if (!AddIdentityHeader(ref request))
+            {
+                Connector.ReturnMessages.Add("Unable to Execute All Documents Request : Identity Header could not be added!");
                 Connector.hasError = true;  //throws error
                 return false;
             }
@@ -834,55 +1392,73 @@ internal class Requestor {
             sb.AppendLine("SearchValue: " + searchValue);
             sb.AppendLine("Formula: " + formula);
             sb.AppendLine("Unids: " + unids);
-            sb.AppendLine("Connecting via XPagesConnector");
+            sb.AppendLine("Connecting via XPagesAPI");
 
             byte[] b = Encoding.Default.GetBytes(sb.ToString().Replace(Environment.NewLine, " | "));
             string myString = Encoding.UTF8.GetString(b);
             Encryptor EncodedEncryptedContent = new Encryptor(myString, true, ref Connection);
-            if (EncodedEncryptedContent.Initialize()) {
+            if (EncodedEncryptedContent.Initialize())
+            {
                 Stream requestStream = null;
-                try {
+                try
+                {
                     requestStream = request.GetRequestStream();
-                    using (StreamWriter writer = new StreamWriter(requestStream, Encoding.UTF8)) {
+                    using (StreamWriter writer = new StreamWriter(requestStream, Encoding.UTF8))
+                    {
                         writer.Write(EncodedEncryptedContent.EncodedContent);
                     }
-                } catch (Exception e) {
-                    Connector.ReturnMessages.Add("Unable to execute the Request : " + Common.GetErrorInfo(e));
+                }
+                catch (Exception e)
+                {
+                    Connector.ReturnMessages.Add("Unable to execute the All Documents Request : " + Common.GetErrorInfo(e));
                     Connector.hasError = true;  //throws exception
                     return false;
-                } finally {
+                }
+                finally
+                {
                     //if (requestStream != null) {
                     //    requestStream.Dispose();
                     //}
                 }
-            } else {
-                Connector.ReturnMessages.Add("Executing Document Request - Unable to encode/encrypt the content of the request!");
+            }
+            else
+            {
+                Connector.ReturnMessages.Add("Executing All Documents Request - Unable to encode/encrypt the content of the request!");
                 Connector.hasError = true; //throws exception
                 return false;
             }
 
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();  //can give webexception error 500
 
-            if ((response.StatusCode == HttpStatusCode.OK) || (response.StatusCode == HttpStatusCode.Found) || (response.StatusCode == HttpStatusCode.Redirect) || (response.StatusCode == HttpStatusCode.Moved) || (response.StatusCode == HttpStatusCode.MovedPermanently)) {
+            if ((response.StatusCode == HttpStatusCode.OK) || (response.StatusCode == HttpStatusCode.Found) || (response.StatusCode == HttpStatusCode.Redirect) || (response.StatusCode == HttpStatusCode.Moved) || (response.StatusCode == HttpStatusCode.MovedPermanently))
+            {
                 Stream responseStream = null;
-                try {
+                try
+                {
                     responseStream = request.GetResponse().GetResponseStream();
-                    using (StreamReader reader = new StreamReader(responseStream, true)) {
+                    using (StreamReader reader = new StreamReader(responseStream, true))
+                    {
                         result = reader.ReadToEnd();
                     }
-                } catch (Exception e) {
-                    Connector.ReturnMessages.Add("Unable to execute the Request : " + Common.GetErrorInfo(e));
+                }
+                catch (Exception e)
+                {
+                    Connector.ReturnMessages.Add("Unable to execute the All Documents Request : " + Common.GetErrorInfo(e));
                     Connector.hasError = true;  //throws exception
                     return false;
-                } finally {
+                }
+                finally
+                {
                     //if (responseStream != null) {
                     //    responseStream.Dispose();
                     //}
                 }
 
-                if (result != null) {
+                if (result != null)
+                {
                     Encryptor DecodeDecryptedContent = new Encryptor(result, false, ref Connection);
-                    if (DecodeDecryptedContent.Initialize()) {
+                    if (DecodeDecryptedContent.Initialize())
+                    {
                         ArrayList arList = new ArrayList();
 
                         string[] ar = null;
@@ -902,67 +1478,86 @@ internal class Requestor {
 
                         ar = DecodeDecryptedContent.DecodedContent.Split(new[] { " | " }, StringSplitOptions.None);
                         arList.AddRange(ar);
-                        foreach (string str in arList) {
+                        foreach (string str in arList)
+                        {
                             //YES/NO
-                            if (str.StartsWith("Error: ")) {
-                                if (str.Replace("Error: ", "").Equals("YES", StringComparison.OrdinalIgnoreCase)) {
+                            if (str.StartsWith("Error: "))
+                            {
+                                if (str.Replace("Error: ", "").Equals("YES", StringComparison.OrdinalIgnoreCase))
+                                {
                                     isError = true;
                                 }
                             }
-                            if (str.StartsWith("Message: ")) {
+                            if (str.StartsWith("Message: "))
+                            {
                                 message = str.Replace("Message: ", "");
                             }
-                            if (str.StartsWith("Details: ")) {
+                            if (str.StartsWith("Details: "))
+                            {
                                 details = str.Replace("Details: ", "");
                             }
 
-                            if (str.StartsWith("Unids: ")) {
+                            if (str.StartsWith("Unids: "))
+                            {
                                 value = str.Replace("Unids: ", "");
-                                if (!string.IsNullOrEmpty(value)) {
+                                if (!string.IsNullOrEmpty(value))
+                                {
                                     Unids = value.Split(sep, StringSplitOptions.None);
                                 }
                             }
 
-                            if (str.StartsWith("NoteIDs: ")) {
+                            if (str.StartsWith("NoteIDs: "))
+                            {
                                 value = str.Replace("NoteIDs: ", "");
-                                if (!string.IsNullOrEmpty(value)) {
+                                if (!string.IsNullOrEmpty(value))
+                                {
                                     NoteIds = value.Split(sep, StringSplitOptions.None);
                                 }
                             }
 
-                            if (str.StartsWith("Forms: ")) {
+                            if (str.StartsWith("Forms: "))
+                            {
                                 value = str.Replace("Forms: ", "");
-                                if (!string.IsNullOrEmpty(value)) {
+                                if (!string.IsNullOrEmpty(value))
+                                {
                                     Forms = value.Split(sep, StringSplitOptions.None);
                                 }
                             }
 
-                            if (str.StartsWith("Sizes: ")) {
+                            if (str.StartsWith("Sizes: "))
+                            {
                                 value = str.Replace("Sizes: ", "");
-                                if (!string.IsNullOrEmpty(value)) {
+                                if (!string.IsNullOrEmpty(value))
+                                {
                                     Sizes = value.Split(sep, StringSplitOptions.None);
                                 }
                             }
 
-                            if (str.StartsWith("URLs: ")) {
+                            if (str.StartsWith("URLs: "))
+                            {
                                 value = str.Replace("URLs: ", "");
-                                if (!string.IsNullOrEmpty(value)) {
+                                if (!string.IsNullOrEmpty(value))
+                                {
                                     URLs = value.Split(sep, StringSplitOptions.None);
                                 }
                             }
 
 
-                            if (str.StartsWith("Created: ")) {
+                            if (str.StartsWith("Created: "))
+                            {
                                 value = str.Replace("Created: ", "");
-                                if (!string.IsNullOrEmpty(value)) {
+                                if (!string.IsNullOrEmpty(value))
+                                {
                                     Created = value.Split(sep, StringSplitOptions.None);
                                 }
                             }
 
 
-                            if (str.StartsWith("Modified: ")) {
+                            if (str.StartsWith("Modified: "))
+                            {
                                 value = str.Replace("Modified: ", "");
-                                if (!string.IsNullOrEmpty(value)) {
+                                if (!string.IsNullOrEmpty(value))
+                                {
                                     Modified = value.Split(sep, StringSplitOptions.None);
                                 }
                             }
@@ -971,14 +1566,19 @@ internal class Requestor {
                         //loop through unids, notesids, forms, sizes, urls and create document objects
                         // check if all have the same number of items!
                         int count = 0;
-                        if (Unids != null && Unids.Length > 0) {
+                        if (Unids != null && Unids.Length > 0)
+                        {
                             count = Unids.Length;
-                            if (NoteIds != null && NoteIds.Length > 0) {
-                                if (count != NoteIds.Length) {
+                            if (NoteIds != null && NoteIds.Length > 0)
+                            {
+                                if (count != NoteIds.Length)
+                                {
                                     Connector.ReturnMessages.Add("Executing All Documents Request -  Unable to get the Documents - Unids <> NoteIds");
                                     Connector.hasError = true;  //throws exception
                                     return false;
-                                } else {
+                                }
+                                else
+                                {
                                     // form can be empty!!
                                     //if (Forms != null && Forms.Length > 0) {
                                     //    if (count != Forms.Length) {
@@ -986,14 +1586,20 @@ internal class Requestor {
                                     //        Connector.hasError = true;  //throws exception
                                     //        return false;
                                     //    } else {
-                                    if (Sizes != null && Sizes.Length > 0) {
-                                        if (count != Sizes.Length) {
+                                    if (Sizes != null && Sizes.Length > 0)
+                                    {
+                                        if (count != Sizes.Length)
+                                        {
                                             Connector.ReturnMessages.Add("Executing All Documents Request -  Unable to get the Documents - Unids <> Sizes");
                                             Connector.hasError = true;  //throws exception
                                             return false;
-                                        } else {
-                                            if (URLs != null && URLs.Length > 0) {
-                                                if (count != URLs.Length) {
+                                        }
+                                        else
+                                        {
+                                            if (URLs != null && URLs.Length > 0)
+                                            {
+                                                if (count != URLs.Length)
+                                                {
                                                     Connector.ReturnMessages.Add("Executing All Documents Request -  Unable to get the Documents - Unids <> URLs");
                                                     Connector.hasError = true;  //throws exception
                                                     return false;
@@ -1007,30 +1613,39 @@ internal class Requestor {
                             }
                             // loop through and create doc obj
                             DocumentObject docObj = null;
-                            if (dbObj.Documents == null) {
+                            if (dbObj.Documents == null)
+                            {
                                 dbObj.Documents = new Dictionary<string, DocumentObject>();
                             }
-                            for (int i = 0; i < Unids.Length; i++) {
+                            for (int i = 0; i < Unids.Length; i++)
+                            {
                                 docObj = new DocumentObject(dbObj, Unids[i]);
-                                if (NoteIds.Length - 1 >= i) {
+                                if (NoteIds.Length - 1 >= i)
+                                {
                                     docObj.NoteID = NoteIds[i];
                                 }
-                                if (Forms.Length - 1 >= i) {
+                                if (Forms.Length - 1 >= i)
+                                {
                                     docObj.Form = Forms[i];
                                 }
-                                if (Sizes.Length - 1 >= i) {
+                                if (Sizes.Length - 1 >= i)
+                                {
                                     docObj.Size = Sizes[i];
                                 }
-                                if (URLs.Length - 1 >= i) {
+                                if (URLs.Length - 1 >= i)
+                                {
                                     docObj.Url = URLs[i];
                                 }
-                                if (Created.Length - 1 >= i) {
+                                if (Created.Length - 1 >= i)
+                                {
                                     docObj.DateCreated = Created[i];
                                 }
-                                if (Modified.Length - 1 >= i) {
+                                if (Modified.Length - 1 >= i)
+                                {
                                     docObj.DateModified = Modified[i];
                                 }
-                                if (dbObj.Documents.ContainsKey(Unids[i])) {
+                                if (dbObj.Documents.ContainsKey(Unids[i]))
+                                {
                                     dbObj.Documents.Remove(Unids[i]);
                                 }
                                 docObj.IsInitialized = true;
@@ -1040,68 +1655,506 @@ internal class Requestor {
 
 
 
-                        if (isError) {
+                        if (isError)
+                        {
                             Connector.ReturnMessages.Add(message);
                             Connector.ReturnMessages.Add(details);
                             Connector.hasError = true; //throws exception
                             return false;
-                        } else {
+                        }
+                        else
+                        {
                             Connector.ReturnMessages.Add(message);
                             Connector.ReturnMessages.Add(details);
                             Connector.hasError = false; //SUCCESS
                         }
 
-                    } else {
-                        Connector.ReturnMessages.Add("Executing Document Request - Unable to decode/decrypt the content of the response!");
+                    }
+                    else
+                    {
+                        Connector.ReturnMessages.Add("Executing All Documents Request - Unable to decode/decrypt the content of the response!");
                         Connector.hasError = true;  //throws exception
                         return false;
                     }
-                } else {
+                }
+                else
+                {
                     //no response from server
-                    Connector.ReturnMessages.Add("Executing Document Request -  Unable to get response from XPages!");
+                    Connector.ReturnMessages.Add("Executing All Documents Request -  Unable to get response from XPages!");
                     Connector.hasError = true;  //throws exception
                     return false;
 
                 }
                 return true;
-            } else {
-                Connector.ReturnMessages.Add("Executing Document Request -  Unable to get the Document - Authentication Issue");
+            }
+            else
+            {
+                Connector.ReturnMessages.Add("Executing All Documents Request -  Unable to get the Document - Authentication Issue");
                 Connector.hasError = true;  //throws exception
                 return false;
             }
 
-        } catch (Exception ex) {
-            if (ex.GetType() == typeof(WebException)) {
+        }
+        catch (Exception ex)
+        {
+            if (ex.GetType() == typeof(WebException))
+            {
                 WebException webex;
                 webex = (WebException)ex;
-                if (webex.Response != null) {
+                if (webex.Response != null)
+                {
                     Stream stream = webex.Response.GetResponseStream();
-                    using (StreamReader reader = new StreamReader(stream)) {
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
                         string errorResp = reader.ReadToEnd();
                         errorResp = errorResp.Replace("{", "").Replace("}", "").Replace("\\\\r\\\\n\\\\", Environment.NewLine).Replace(",", Environment.NewLine).Replace(((char)34).ToString(), "").Replace("\\\\r\\\\n", Environment.NewLine);
-                        Connector.ReturnMessages.Add("Unable to Execute the All Document Request : Invalid request or not authenticated : " + Environment.NewLine + "Web Request Error Response : " + errorResp);
+                        Connector.ReturnMessages.Add("Unable to Execute the All Documents Request : Invalid request or not authenticated : " + Environment.NewLine + "Web Request Error Response : " + errorResp);
                         Connector.hasError = true;  //throws exception
                         return false;
                     }
 
-                } else {
-                    Connector.ReturnMessages.Add("Unable to Execute the Document Request : " + Common.GetErrorInfo(ex));
+                }
+                else
+                {
+                    Connector.ReturnMessages.Add("Unable to Execute the All Documents Request : " + Common.GetErrorInfo(ex));
                     Connector.hasError = true;  //throws exception
                     return false;
                 }
-            } else {
-                Connector.ReturnMessages.Add("Unable to Execute the Document Request : " + Common.GetErrorInfo(ex));
+            }
+            else
+            {
+                Connector.ReturnMessages.Add("Unable to Execute the All Documents Request : " + Common.GetErrorInfo(ex));
                 Connector.hasError = true;  //throws exception
                 return false;
             }
         }
     }
 
-    protected internal bool ExecuteFieldsRequest(string WebServiceURL, DocumentObject docObj, string fields) {
+    protected internal bool ExecuteAllDocumentsFilesRequest(string WebServiceURL, string searchField, string searchValue, string formula, string unids, DatabaseObject dbObj)
+    {
         HttpWebRequest request = null;
 
-        try {
-            if (!isInitialized) {
+        try
+        {
+            if (!isInitialized)
+            {
+                Connector.ReturnMessages.Add("Unable to execute the AllDocumentsFiles Request - Not Initialized/Connected To Server");
+                Connector.hasError = true;
+                return false;
+            }
+
+            ServicePointManager.Expect100Continue = false;
+
+            //create an HTTP request
+
+            request = (HttpWebRequest)WebRequest.Create(WebServiceURL + "?API_AllFiles");
+            request.Timeout = 300000; // set timeout to 5minutes
+            request.CookieContainer = this.AuthenticationCookie;
+            //  request.KeepAlive = True
+            request.AllowAutoRedirect = true;
+
+            request.Method = WebRequestMethods.Http.Post;   //"POST"
+            request.ContentType = "application/jpi; charset=utf-8"; //application/json
+                                                                    // Set the request stream
+            string result;
+
+            //add a identifier in the header to be use in JPI Service to check if the request is coming from a valid source aka JPI XPages Connector
+            if (!AddIdentityHeader(ref request))
+            {
+                Connector.ReturnMessages.Add("Unable to Execute AllDocumentsFiles Request : Identity Header could not be added!");
+                Connector.hasError = true;  //throws error
+                return false;
+            }
+
+            //test with encryption
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("UserName: " + Connection.UserName);
+            sb.AppendLine("ServerName: " + dbObj.ServerName);
+            sb.AppendLine("FilePath: " + dbObj.FilePath);
+            sb.AppendLine("ReplicationID: " + dbObj.ReplicationID);
+            sb.AppendLine("SearchField: " + searchField);
+            sb.AppendLine("SearchValue: " + searchValue);
+            sb.AppendLine("Formula: " + formula);
+            sb.AppendLine("Unids: " + unids);
+            sb.AppendLine("Connecting via XPagesAPI");
+
+            byte[] b = Encoding.Default.GetBytes(sb.ToString().Replace(Environment.NewLine, " | "));
+            string myString = Encoding.UTF8.GetString(b);
+            Encryptor EncodedEncryptedContent = new Encryptor(myString, true, ref Connection);
+            if (EncodedEncryptedContent.Initialize())
+            {
+                Stream requestStream = null;
+                try
+                {
+                    requestStream = request.GetRequestStream();
+                    using (StreamWriter writer = new StreamWriter(requestStream, Encoding.UTF8))
+                    {
+                        writer.Write(EncodedEncryptedContent.EncodedContent);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Connector.ReturnMessages.Add("Unable to execute the AllDocumentsFiles Request : " + Common.GetErrorInfo(e));
+                    Connector.hasError = true;  //throws exception
+                    return false;
+                }
+                finally
+                {
+                    //if (requestStream != null) {
+                    //    requestStream.Dispose();
+                    //}
+                }
+            }
+            else
+            {
+                Connector.ReturnMessages.Add("Executing AllDocumentsFiles Request - Unable to encode/encrypt the content of the request!");
+                Connector.hasError = true; //throws exception
+                return false;
+            }
+
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();  //can give webexception error 500
+
+            if ((response.StatusCode == HttpStatusCode.OK) || (response.StatusCode == HttpStatusCode.Found) || (response.StatusCode == HttpStatusCode.Redirect) || (response.StatusCode == HttpStatusCode.Moved) || (response.StatusCode == HttpStatusCode.MovedPermanently))
+            {
+                Stream responseStream = null;
+                try
+                {
+                    responseStream = request.GetResponse().GetResponseStream();
+                    using (StreamReader reader = new StreamReader(responseStream, true))
+                    {
+                        result = reader.ReadToEnd();
+                    }
+                }
+                catch (Exception e)
+                {
+                    Connector.ReturnMessages.Add("Unable to execute the AllDocumentsFiles Request : " + Common.GetErrorInfo(e));
+                    Connector.hasError = true;  //throws exception
+                    return false;
+                }
+                finally
+                {
+                    //if (responseStream != null) {
+                    //    responseStream.Dispose();
+                    //}
+                }
+
+                if (result != null)
+                {
+                    Encryptor DecodeDecryptedContent = new Encryptor(result, false, ref Connection);
+                    if (DecodeDecryptedContent.Initialize())
+                    {
+                        ArrayList arList = new ArrayList();
+
+                        string[] ar = null;
+                        bool isError = false;
+
+                        string message = "";
+                        string details = "";
+                        string value = "";
+                        string[] sep = { "||" };
+                        string[] NoteIds = { };
+                        string[] Unids = { };
+                        string[] Forms = { };
+                        string[] Sizes = { };
+                        string[] URLs = { };
+                        string[] Created = { };
+                        string[] Modified = { };
+                        string[] Files = { };
+
+                        ar = DecodeDecryptedContent.DecodedContent.Split(new[] { " | " }, StringSplitOptions.None);
+                        arList.AddRange(ar);
+                        foreach (string str in arList)
+                        {
+                            //YES/NO
+                            if (str.StartsWith("Error: "))
+                            {
+                                if (str.Replace("Error: ", "").Equals("YES", StringComparison.OrdinalIgnoreCase))
+                                {
+                                    isError = true;
+                                }
+                            }
+                            if (str.StartsWith("Message: "))
+                            {
+                                message = str.Replace("Message: ", "");
+                            }
+                            if (str.StartsWith("Details: "))
+                            {
+                                details = str.Replace("Details: ", "");
+                            }
+
+                            if (str.StartsWith("Unids: "))
+                            {
+                                value = str.Replace("Unids: ", "");
+                                if (!string.IsNullOrEmpty(value))
+                                {
+                                    Unids = value.Split(sep, StringSplitOptions.None);
+                                }
+                            }
+
+                            if (str.StartsWith("NoteIDs: "))
+                            {
+                                value = str.Replace("NoteIDs: ", "");
+                                if (!string.IsNullOrEmpty(value))
+                                {
+                                    NoteIds = value.Split(sep, StringSplitOptions.None);
+                                }
+                            }
+
+                            if (str.StartsWith("Forms: "))
+                            {
+                                value = str.Replace("Forms: ", "");
+                                if (!string.IsNullOrEmpty(value))
+                                {
+                                    Forms = value.Split(sep, StringSplitOptions.None);
+                                }
+                            }
+
+                            if (str.StartsWith("Sizes: "))
+                            {
+                                value = str.Replace("Sizes: ", "");
+                                if (!string.IsNullOrEmpty(value))
+                                {
+                                    Sizes = value.Split(sep, StringSplitOptions.None);
+                                }
+                            }
+
+                            if (str.StartsWith("URLs: "))
+                            {
+                                value = str.Replace("URLs: ", "");
+                                if (!string.IsNullOrEmpty(value))
+                                {
+                                    URLs = value.Split(sep, StringSplitOptions.None);
+                                }
+                            }
+
+
+                            if (str.StartsWith("Created: "))
+                            {
+                                value = str.Replace("Created: ", "");
+                                if (!string.IsNullOrEmpty(value))
+                                {
+                                    Created = value.Split(sep, StringSplitOptions.None);
+                                }
+                            }
+
+
+                            if (str.StartsWith("Modified: "))
+                            {
+                                value = str.Replace("Modified: ", "");
+                                if (!string.IsNullOrEmpty(value))
+                                {
+                                    Modified = value.Split(sep, StringSplitOptions.None);
+                                }
+                            }
+
+                            if (str.StartsWith("FileObjects: "))
+                            {
+                                value = str.Replace("FileObjects: ", "");
+                                if (!string.IsNullOrEmpty(value))
+                                {
+                                    Files = value.Split(sep, StringSplitOptions.None);
+                                }
+                            }
+                        }
+
+                        //loop through unids, notesids, forms, sizes, urls and create document objects
+                        // check if all have the same number of items!
+                        int count = 0;
+                        if (Unids != null && Unids.Length > 0)
+                        {
+                            count = Unids.Length;
+                            if (NoteIds != null && NoteIds.Length > 0)
+                            {
+                                if (count != NoteIds.Length)
+                                {
+                                    Connector.ReturnMessages.Add("Executing AllDocumentsFiles Request -  Unable to get the Documents - Unids <> NoteIds");
+                                    Connector.hasError = true;  //throws exception
+                                    return false;
+                                }
+                                else
+                                {
+                                    // form can be empty!!
+                                    //if (Forms != null && Forms.Length > 0) {
+                                    //    if (count != Forms.Length) {
+                                    //        Connector.ReturnMessages.Add("Executing All Documents Request -  Unable to get the Documents - Unids <> Forms");
+                                    //        Connector.hasError = true;  //throws exception
+                                    //        return false;
+                                    //    } else {
+                                    if (Sizes != null && Sizes.Length > 0)
+                                    {
+                                        if (count != Sizes.Length)
+                                        {
+                                            Connector.ReturnMessages.Add("Executing AllDocumentsFiles Request -  Unable to get the Documents - Unids <> Sizes");
+                                            Connector.hasError = true;  //throws exception
+                                            return false;
+                                        }
+                                        else
+                                        {
+                                            if (URLs != null && URLs.Length > 0)
+                                            {
+                                                if (count != URLs.Length)
+                                                {
+                                                    Connector.ReturnMessages.Add("Executing AllDocumentsFiles Request -  Unable to get the Documents - Unids <> URLs");
+                                                    Connector.hasError = true;  //throws exception
+                                                    return false;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    //   }
+                                    // }
+                                }
+                            }
+                            // loop through and create doc obj
+                            DocumentObject docObj = null;
+                            if (dbObj.Documents == null)
+                            {
+                                dbObj.Documents = new Dictionary<string, DocumentObject>();
+                            }
+                            for (int i = 0; i < Unids.Length; i++)
+                            {
+                                docObj = new DocumentObject(dbObj, Unids[i]);
+                                if (NoteIds.Length - 1 >= i)
+                                {
+                                    docObj.NoteID = NoteIds[i];
+                                }
+                                if (Forms.Length - 1 >= i)
+                                {
+                                    docObj.Form = Forms[i];
+                                }
+                                if (Sizes.Length - 1 >= i)
+                                {
+                                    docObj.Size = Sizes[i];
+                                }
+                                if (URLs.Length - 1 >= i)
+                                {
+                                    docObj.Url = URLs[i];
+                                }
+                                if (Created.Length - 1 >= i)
+                                {
+                                    docObj.DateCreated = Created[i];
+                                }
+                                if (Modified.Length - 1 >= i)
+                                {
+                                    docObj.DateModified = Modified[i];
+                                }
+                                if (Files.Length - 1 >= i)
+                                {
+                                    //docObj.DateModified = Files[i];
+                                    //get all files into fileobjects here - split on 'FileObject: '
+                                    docObj.Files = new SortedDictionary<string, FileObject>();
+                                    FileObject fObj = null;
+                                    string[] arFiles = Files[i].Split(new[] { "§§FileObject: " }, StringSplitOptions.RemoveEmptyEntries);
+
+                                    foreach (string str in arFiles)
+                                    {
+                                        if (!string.IsNullOrEmpty(str) && !str.Contains("<NO_FILES_ATTACHED>"))
+                                        {
+                                            //can be valid file here split on § and count
+                                            //fObj.Application + "§" + fObj.Creator + "§" + fObj.DateCreated + "§" + fObj.DateModfied + "$" + fObj.FieldName + "§" + fObj.FileExtension + "§" + fObj.FileName + "§" + fObj.FileSize + "§" + fObj.LinkToFile + "§" + fObj.Other + "§" + fObj.SoftClass);
+                                            fObj = new FileObject(docObj);
+                                            if (fObj.Initialize(str))
+                                            {
+                                                docObj.Files.Add(fObj.Name, fObj);
+                                            }
+                                        }
+                                    }
+                                }
+                                if (dbObj.Documents.ContainsKey(Unids[i]))
+                                {
+                                    dbObj.Documents.Remove(Unids[i]);
+                                }
+                                docObj.IsInitialized = true;
+                                dbObj.Documents.Add(Unids[i], docObj);
+                            }
+                        }
+
+
+
+                        if (isError)
+                        {
+                            Connector.ReturnMessages.Add(message);
+                            Connector.ReturnMessages.Add(details);
+                            Connector.hasError = true; //throws exception
+                            return false;
+                        }
+                        else
+                        {
+                            Connector.ReturnMessages.Add(message);
+                            Connector.ReturnMessages.Add(details);
+                            Connector.hasError = false; //SUCCESS
+                        }
+
+                    }
+                    else
+                    {
+                        Connector.ReturnMessages.Add("Executing AllDocumentsFiles Request - Unable to decode/decrypt the content of the response!");
+                        Connector.hasError = true;  //throws exception
+                        return false;
+                    }
+                }
+                else
+                {
+                    //no response from server
+                    Connector.ReturnMessages.Add("Executing AllDocumentsFiles Request -  Unable to get response from XPages!");
+                    Connector.hasError = true;  //throws exception
+                    return false;
+
+                }
+                return true;
+            }
+            else
+            {
+                Connector.ReturnMessages.Add("Executing AllDocumentsFiles Request -  Unable to get the Document - Authentication Issue");
+                Connector.hasError = true;  //throws exception
+                return false;
+            }
+
+        }
+        catch (Exception ex)
+        {
+            if (ex.GetType() == typeof(WebException))
+            {
+                WebException webex;
+                webex = (WebException)ex;
+                if (webex.Response != null)
+                {
+                    Stream stream = webex.Response.GetResponseStream();
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
+                        string errorResp = reader.ReadToEnd();
+                        errorResp = errorResp.Replace("{", "").Replace("}", "").Replace("\\\\r\\\\n\\\\", Environment.NewLine).Replace(",", Environment.NewLine).Replace(((char)34).ToString(), "").Replace("\\\\r\\\\n", Environment.NewLine);
+                        Connector.ReturnMessages.Add("Unable to Execute the AllDocumentsFiles Request : Invalid request or not authenticated : " + Environment.NewLine + "Web Request Error Response : " + errorResp);
+                        Connector.hasError = true;  //throws exception
+                        return false;
+                    }
+
+                }
+                else
+                {
+                    Connector.ReturnMessages.Add("Unable to Execute the AllDocumentsFiles Request : " + Common.GetErrorInfo(ex));
+                    Connector.hasError = true;  //throws exception
+                    return false;
+                }
+            }
+            else
+            {
+                Connector.ReturnMessages.Add("Unable to Execute the AllDocumentsFiles Request : " + Common.GetErrorInfo(ex));
+                Connector.hasError = true;  //throws exception
+                return false;
+            }
+        }
+    }
+
+    protected internal bool ExecuteFieldsRequest(string WebServiceURL, DocumentObject docObj, string fields)
+    {
+        HttpWebRequest request = null;
+
+        try
+        {
+            if (!isInitialized)
+            {
                 Connector.ReturnMessages.Add("Unable to execute the Fields Request - Not Initialized/Connected To Server");
                 Connector.hasError = true;
                 return false;
@@ -1123,7 +2176,8 @@ internal class Requestor {
             string result;
 
             //add a identifier in the header to be use in JPI Service to check if the request is coming from a valid source aka JPI XPages Connector
-            if (!AddIdentityHeader(ref request)) {
+            if (!AddIdentityHeader(ref request))
+            {
                 Connector.ReturnMessages.Add("Unable to Execute Fields Request : Identity Header could not be added!");
                 Connector.hasError = true;  //throws error
                 return false;
@@ -1138,28 +2192,37 @@ internal class Requestor {
             sb.AppendLine("ReplicationID: " + docObj.Database.ReplicationID);
             sb.AppendLine("UniversalID: " + docObj.UniversalID);
             sb.AppendLine("Fields: " + fields);
-            sb.AppendLine("Connecting via XPagesConnector");
+            sb.AppendLine("Connecting via XPagesAPI");
 
             byte[] b = Encoding.Default.GetBytes(sb.ToString().Replace(Environment.NewLine, " | "));
             string myString = Encoding.UTF8.GetString(b);
             Encryptor EncodedEncryptedContent = new Encryptor(myString, true, ref Connection);
-            if (EncodedEncryptedContent.Initialize()) {
+            if (EncodedEncryptedContent.Initialize())
+            {
                 Stream requestStream = null;
-                try {
+                try
+                {
                     requestStream = request.GetRequestStream();
-                    using (StreamWriter writer = new StreamWriter(requestStream, Encoding.UTF8)) {
+                    using (StreamWriter writer = new StreamWriter(requestStream, Encoding.UTF8))
+                    {
                         writer.Write(EncodedEncryptedContent.EncodedContent);
                     }
-                } catch (Exception e) {
+                }
+                catch (Exception e)
+                {
                     Connector.ReturnMessages.Add("Unable to execute the Request : " + Common.GetErrorInfo(e));
                     Connector.hasError = true;  //throws exception
                     return false;
-                } finally {
+                }
+                finally
+                {
                     //if (requestStream != null) {
                     //    requestStream.Dispose();
                     //}
                 }
-            } else {
+            }
+            else
+            {
                 Connector.ReturnMessages.Add("Executing Fields Request - Unable to encode/encrypt the content of the request!");
                 Connector.hasError = true; //throws exception
                 return false;
@@ -1167,27 +2230,36 @@ internal class Requestor {
 
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();  //can give webexception error 500
 
-            if ((response.StatusCode == HttpStatusCode.OK) || (response.StatusCode == HttpStatusCode.Found) || (response.StatusCode == HttpStatusCode.Redirect) || (response.StatusCode == HttpStatusCode.Moved) || (response.StatusCode == HttpStatusCode.MovedPermanently)) {
+            if ((response.StatusCode == HttpStatusCode.OK) || (response.StatusCode == HttpStatusCode.Found) || (response.StatusCode == HttpStatusCode.Redirect) || (response.StatusCode == HttpStatusCode.Moved) || (response.StatusCode == HttpStatusCode.MovedPermanently))
+            {
 
                 Stream responseStream = null;
-                try {
+                try
+                {
                     responseStream = request.GetResponse().GetResponseStream();
-                    using (StreamReader reader = new StreamReader(responseStream, true)) {
+                    using (StreamReader reader = new StreamReader(responseStream, true))
+                    {
                         result = reader.ReadToEnd();
                     }
-                } catch (Exception e) {
+                }
+                catch (Exception e)
+                {
                     Connector.ReturnMessages.Add("Unable to execute the Request : " + Common.GetErrorInfo(e));
                     Connector.hasError = true;  //throws exception
                     return false;
-                } finally {
+                }
+                finally
+                {
                     //if (responseStream != null) {
                     //    responseStream.Dispose();
                     //}
                 }
 
-                if (result != null) {
+                if (result != null)
+                {
                     Encryptor DecodeDecryptedContent = new Encryptor(result, false, ref Connection);
-                    if (DecodeDecryptedContent.Initialize()) {
+                    if (DecodeDecryptedContent.Initialize())
+                    {
                         ArrayList arList = new ArrayList();
 
                         string[] ar = null;
@@ -1204,79 +2276,102 @@ internal class Requestor {
 
                         ar = DecodeDecryptedContent.DecodedContent.Split(new[] { " | " }, StringSplitOptions.None);
                         arList.AddRange(ar);
-                        foreach (string str in arList) {
+                        foreach (string str in arList)
+                        {
                             //YES/NO
-                            if (str.StartsWith("Error: ")) {
-                                if (str.Replace("Error: ", "").Equals("YES", StringComparison.OrdinalIgnoreCase)) {
+                            if (str.StartsWith("Error: "))
+                            {
+                                if (str.Replace("Error: ", "").Equals("YES", StringComparison.OrdinalIgnoreCase))
+                                {
                                     isError = true;
                                 }
                             }
-                            if (str.StartsWith("Message: ")) {
+                            if (str.StartsWith("Message: "))
+                            {
                                 message = str.Replace("Message: ", "");
                             }
-                            if (str.StartsWith("Details: ")) {
+                            if (str.StartsWith("Details: "))
+                            {
                                 details = str.Replace("Details: ", "");
                             }
 
-                            if (str.StartsWith("FieldNames: ")) {
+                            if (str.StartsWith("FieldNames: "))
+                            {
                                 value = str.Replace("FieldNames: ", "");
-                                if (!string.IsNullOrEmpty(value)) {
+                                if (!string.IsNullOrEmpty(value))
+                                {
                                     fieldnames = value.Split(sep, StringSplitOptions.None);
                                 }
                             }
 
-                            if (str.StartsWith("FieldValues: ")) {
+                            if (str.StartsWith("FieldValues: "))
+                            {
                                 value = str.Replace("FieldValues: ", "");
-                                if (!string.IsNullOrEmpty(value)) {
+                                if (!string.IsNullOrEmpty(value))
+                                {
                                     fieldvalues = value.Split(sep, StringSplitOptions.None);
                                 }
                             }
 
-                            if (str.StartsWith("FieldTypes: ")) {
+                            if (str.StartsWith("FieldTypes: "))
+                            {
                                 value = str.Replace("FieldTypes: ", "");
-                                if (!string.IsNullOrEmpty(value)) {
+                                if (!string.IsNullOrEmpty(value))
+                                {
                                     fieldtypes = value.Split(sep, StringSplitOptions.None);
                                 }
                             }
 
                         }
                         FieldObject fObj = null;
-                        if (docObj.Fields == null) {
+                        if (docObj.Fields == null)
+                        {
                             docObj.Fields = new SortedDictionary<string, FieldObject>();
                         }
-                        for (int i = 0; i < fieldnames.Length; i++) {
+                        for (int i = 0; i < fieldnames.Length; i++)
+                        {
                             fObj = new FieldObject(fieldnames[i]);
-                            if (fieldvalues.Length - 1 >= i) {
+                            if (fieldvalues.Length - 1 >= i)
+                            {
                                 fObj.Value = fieldvalues[i];
                             }
-                            if (fieldtypes.Length - 1 >= i) {
+                            if (fieldtypes.Length - 1 >= i)
+                            {
                                 fObj.Type = fieldtypes[i];
                             }
 
-                            if (docObj.Fields.ContainsKey(fObj.Name)) {
+                            if (docObj.Fields.ContainsKey(fObj.Name))
+                            {
                                 docObj.Fields.Remove(fObj.Name);
                             }
                             docObj.Fields.Add(fObj.Name, fObj);
 
                         }
 
-                        if (isError) {
+                        if (isError)
+                        {
                             Connector.ReturnMessages.Add(message);
                             Connector.ReturnMessages.Add(details);
                             Connector.hasError = true; //throws exception
                             return false;
-                        } else {
+                        }
+                        else
+                        {
                             Connector.ReturnMessages.Add(message);
                             Connector.ReturnMessages.Add(details);
                             Connector.hasError = false; //SUCCESS
                         }
 
-                    } else {
+                    }
+                    else
+                    {
                         Connector.ReturnMessages.Add("Executing Fields Request - Unable to decode/decrypt the content of the response!");
                         Connector.hasError = true;  //throws exception
                         return false;
                     }
-                } else {
+                }
+                else
+                {
                     //no response from server
                     Connector.ReturnMessages.Add("Executing Fields Request -  Unable to get response from XPages!");
                     Connector.hasError = true;  //throws exception
@@ -1284,19 +2379,26 @@ internal class Requestor {
 
                 }
                 return true;
-            } else {
+            }
+            else
+            {
                 Connector.ReturnMessages.Add("Executing Fields Request -  Unable to get the Document - Authentication Issue");
                 Connector.hasError = true;  //throws exception
                 return false;
             }
 
-        } catch (Exception ex) {
-            if (ex.GetType() == typeof(WebException)) {
+        }
+        catch (Exception ex)
+        {
+            if (ex.GetType() == typeof(WebException))
+            {
                 WebException webex;
                 webex = (WebException)ex;
-                if (webex.Response != null) {
+                if (webex.Response != null)
+                {
                     Stream stream = webex.Response.GetResponseStream();
-                    using (StreamReader reader = new StreamReader(stream)) {
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
                         string errorResp = reader.ReadToEnd();
                         errorResp = errorResp.Replace("{", "").Replace("}", "").Replace("\\\\r\\\\n\\\\", Environment.NewLine).Replace(",", Environment.NewLine).Replace(((char)34).ToString(), "").Replace("\\\\r\\\\n", Environment.NewLine);
                         Connector.ReturnMessages.Add("Unable to Execute the Fields Request : Invalid request or not authenticated : " + Environment.NewLine + "Web Request Error Response : " + errorResp);
@@ -1304,12 +2406,16 @@ internal class Requestor {
                         return false;
                     }
 
-                } else {
+                }
+                else
+                {
                     Connector.ReturnMessages.Add("Unable to Execute the Fields Request : " + Common.GetErrorInfo(ex));
                     Connector.hasError = true;  //throws exception
                     return false;
                 }
-            } else {
+            }
+            else
+            {
                 Connector.ReturnMessages.Add("Unable to Execute the Fields Request : " + Common.GetErrorInfo(ex));
                 Connector.hasError = true;  //throws exception
                 return false;
@@ -1317,11 +2423,436 @@ internal class Requestor {
         }
     }
 
-    protected internal bool ExecuteAllFieldsRequest(string WebServiceURL, DatabaseObject dbObj, string fields) {
+    protected internal bool ExecuteAllFilesRequest(string WebServiceURL, DatabaseObject dbObj)
+    {
         HttpWebRequest request = null;
 
-        try {
-            if (!isInitialized) {
+        try
+        {
+            if (!isInitialized)
+            {
+                Connector.ReturnMessages.Add("Unable to execute the All Files Request - Not Initialized/Connected To Server");
+                Connector.hasError = true;
+                return false;
+            }
+
+          //  ServicePointManager.Expect100Continue = false;
+
+            //create an HTTP request
+
+            request = (HttpWebRequest)WebRequest.Create(WebServiceURL + "?API_AllFiles");
+            request.Timeout = 300000; // set timeout to 5minutes
+            request.CookieContainer = this.AuthenticationCookie;
+            //  request.KeepAlive = True
+            request.AllowAutoRedirect = true;
+
+            request.Method = WebRequestMethods.Http.Post;   //"POST"
+            request.ContentType = "application/jpi; charset=utf-8"; //application/json
+                                                                    // Set the request stream
+            string result;
+
+            //add a identifier in the header to be use in JPI Service to check if the request is coming from a valid source aka JPI XPages Connector
+            if (!AddIdentityHeader(ref request))
+            {
+                Connector.ReturnMessages.Add("Unable to Execute All Files Request : Identity Header could not be added!");
+                Connector.hasError = true;  //throws error
+                return false;
+            }
+
+            //test with encryption
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("UserName: " + Connection.UserName);
+            sb.AppendLine("ServerName: " + dbObj.ServerName);
+            sb.AppendLine("FilePath: " + dbObj.FilePath);
+            sb.AppendLine("ReplicationID: " + dbObj.ReplicationID);
+            //sb.AppendLine("SearchField: " + searchField);
+            sb.AppendLine("SearchField: ");
+            //sb.AppendLine("SearchValue: " + searchValue);
+            sb.AppendLine("SearchValue: ");
+            //sb.AppendLine("Formula: " + formula);
+            sb.AppendLine("Formula: ");
+            string listUnids = String.Join(";", dbObj.Documents.Keys.ToArray());
+
+            sb.AppendLine("Unids: " + listUnids);
+            sb.AppendLine("Connecting via XPagesAPI");
+
+            byte[] b = Encoding.Default.GetBytes(sb.ToString().Replace(Environment.NewLine, " | "));
+            string myString = Encoding.UTF8.GetString(b);
+            Encryptor EncodedEncryptedContent = new Encryptor(myString, true, ref Connection);
+            if (EncodedEncryptedContent.Initialize())
+            {
+                Stream requestStream = null;
+                try
+                {
+                    requestStream = request.GetRequestStream();
+                    using (StreamWriter writer = new StreamWriter(requestStream, Encoding.UTF8))
+                    {
+                        writer.Write(EncodedEncryptedContent.EncodedContent);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Connector.ReturnMessages.Add("Unable to execute the All Files Request : " + Common.GetErrorInfo(e));
+                    Connector.hasError = true;  //throws exception
+                    return false;
+                }
+                finally
+                {
+                    //if (requestStream != null) {
+                    //    requestStream.Dispose();
+                    //}
+                }
+            }
+            else
+            {
+                Connector.ReturnMessages.Add("Executing All Files Request - Unable to encode/encrypt the content of the request!");
+                Connector.hasError = true; //throws exception
+                return false;
+            }
+
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();  //can give webexception error 500
+
+            if ((response.StatusCode == HttpStatusCode.OK) || (response.StatusCode == HttpStatusCode.Found) || (response.StatusCode == HttpStatusCode.Redirect) || (response.StatusCode == HttpStatusCode.Moved) || (response.StatusCode == HttpStatusCode.MovedPermanently))
+            {
+                Stream responseStream = null;
+                try
+                {
+                    responseStream = request.GetResponse().GetResponseStream();
+                    using (StreamReader reader = new StreamReader(responseStream, true))
+                    {
+                        result = reader.ReadToEnd();
+                    }
+                }
+                catch (Exception e)
+                {
+                    Connector.ReturnMessages.Add("Unable to execute the All Files Request : " + Common.GetErrorInfo(e));
+                    Connector.hasError = true;  //throws exception
+                    return false;
+                }
+                finally
+                {
+                    //if (responseStream != null) {
+                    //    responseStream.Dispose();
+                    //}
+                }
+
+                if (result != null)
+                {
+                    Encryptor DecodeDecryptedContent = new Encryptor(result, false, ref Connection);
+                    if (DecodeDecryptedContent.Initialize())
+                    {
+                        ArrayList arList = new ArrayList();
+
+                        string[] ar = null;
+                        bool isError = false;
+
+                        string message = "";
+                        string details = "";
+                        string value = "";
+                        string[] sep = { "||" };
+                        string[] NoteIds = { };
+                        string[] Unids = { };
+                        string[] Forms = { };
+                        string[] Sizes = { };
+                        string[] URLs = { };
+                        string[] Created = { };
+                        string[] Modified = { };
+                        string[] Files = { };
+
+                        ar = DecodeDecryptedContent.DecodedContent.Split(new[] { " | " }, StringSplitOptions.None);
+                        arList.AddRange(ar);
+                        foreach (string str in arList)
+                        {
+                            //YES/NO
+                            if (str.StartsWith("Error: "))
+                            {
+                                if (str.Replace("Error: ", "").Equals("YES", StringComparison.OrdinalIgnoreCase))
+                                {
+                                    isError = true;
+                                }
+                            }
+                            if (str.StartsWith("Message: "))
+                            {
+                                message = str.Replace("Message: ", "");
+                            }
+                            if (str.StartsWith("Details: "))
+                            {
+                                details = str.Replace("Details: ", "");
+                            }
+
+                            if (str.StartsWith("Unids: "))
+                            {
+                                value = str.Replace("Unids: ", "");
+                                if (!string.IsNullOrEmpty(value))
+                                {
+                                    Unids = value.Split(sep, StringSplitOptions.None);
+                                }
+                            }
+
+                            if (str.StartsWith("NoteIDs: "))
+                            {
+                                value = str.Replace("NoteIDs: ", "");
+                                if (!string.IsNullOrEmpty(value))
+                                {
+                                    NoteIds = value.Split(sep, StringSplitOptions.None);
+                                }
+                            }
+
+                            if (str.StartsWith("Forms: "))
+                            {
+                                value = str.Replace("Forms: ", "");
+                                if (!string.IsNullOrEmpty(value))
+                                {
+                                    Forms = value.Split(sep, StringSplitOptions.None);
+                                }
+                            }
+
+                            if (str.StartsWith("Sizes: "))
+                            {
+                                value = str.Replace("Sizes: ", "");
+                                if (!string.IsNullOrEmpty(value))
+                                {
+                                    Sizes = value.Split(sep, StringSplitOptions.None);
+                                }
+                            }
+
+                            if (str.StartsWith("URLs: "))
+                            {
+                                value = str.Replace("URLs: ", "");
+                                if (!string.IsNullOrEmpty(value))
+                                {
+                                    URLs = value.Split(sep, StringSplitOptions.None);
+                                }
+                            }
+
+
+                            if (str.StartsWith("Created: "))
+                            {
+                                value = str.Replace("Created: ", "");
+                                if (!string.IsNullOrEmpty(value))
+                                {
+                                    Created = value.Split(sep, StringSplitOptions.None);
+                                }
+                            }
+
+
+                            if (str.StartsWith("Modified: "))
+                            {
+                                value = str.Replace("Modified: ", "");
+                                if (!string.IsNullOrEmpty(value))
+                                {
+                                    Modified = value.Split(sep, StringSplitOptions.None);
+                                }
+                            }
+
+                            if (str.StartsWith("FileObjects: "))
+                            {
+                                value = str.Replace("FileObjects: ", "");
+                                if (!string.IsNullOrEmpty(value))
+                                {
+                                    Files = value.Split(sep, StringSplitOptions.None);
+                                }
+                            }
+                        }
+
+                        //loop through unids, notesids, forms, sizes, urls and create document objects
+                        // check if all have the same number of items!
+                        int count = 0;
+                        if (Unids != null && Unids.Length > 0)
+                        {
+                            count = Unids.Length;
+                            if (NoteIds != null && NoteIds.Length > 0)
+                            {
+                                if (count != NoteIds.Length)
+                                {
+                                    Connector.ReturnMessages.Add("Executing All Files Request -  Unable to get the Documents - Unids <> NoteIds");
+                                    Connector.hasError = true;  //throws exception
+                                    return false;
+                                }
+                                else
+                                {
+                                    // form can be empty!!
+                                    //if (Forms != null && Forms.Length > 0) {
+                                    //    if (count != Forms.Length) {
+                                    //        Connector.ReturnMessages.Add("Executing All Documents Request -  Unable to get the Documents - Unids <> Forms");
+                                    //        Connector.hasError = true;  //throws exception
+                                    //        return false;
+                                    //    } else {
+                                    if (Sizes != null && Sizes.Length > 0)
+                                    {
+                                        if (count != Sizes.Length)
+                                        {
+                                            Connector.ReturnMessages.Add("Executing All Files Request -  Unable to get the Documents - Unids <> Sizes");
+                                            Connector.hasError = true;  //throws exception
+                                            return false;
+                                        }
+                                        else
+                                        {
+                                            if (URLs != null && URLs.Length > 0)
+                                            {
+                                                if (count != URLs.Length)
+                                                {
+                                                    Connector.ReturnMessages.Add("Executing All Files Request -  Unable to get the Documents - Unids <> URLs");
+                                                    Connector.hasError = true;  //throws exception
+                                                    return false;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    //   }
+                                    // }
+                                }
+                            }
+                            // loop through and create doc obj
+                            DocumentObject docObj = null;
+                            if (dbObj.Documents == null)
+                            {
+                                dbObj.Documents = new Dictionary<string, DocumentObject>();
+                            }
+                            for (int i = 0; i < Unids.Length; i++)
+                            {
+                                docObj = new DocumentObject(dbObj, Unids[i]);
+                                if (NoteIds.Length - 1 >= i)
+                                {
+                                    docObj.NoteID = NoteIds[i];
+                                }
+                                if (Forms.Length - 1 >= i)
+                                {
+                                    docObj.Form = Forms[i];
+                                }
+                                if (Sizes.Length - 1 >= i)
+                                {
+                                    docObj.Size = Sizes[i];
+                                }
+                                if (URLs.Length - 1 >= i)
+                                {
+                                    docObj.Url = URLs[i];
+                                }
+                                if (Created.Length - 1 >= i)
+                                {
+                                    docObj.DateCreated = Created[i];
+                                }
+                                if (Modified.Length - 1 >= i)
+                                {
+                                    docObj.DateModified = Modified[i];
+                                }
+                                if (Files.Length - 1 >= i)
+                                {
+                                    //docObj.DateModified = Files[i];
+                                    //get all files into fileobjects here - split on 'FileObject: '
+                                    docObj.Files = new SortedDictionary<string, FileObject>();
+                                    FileObject fObj = null;
+                                    string[] arFiles = Files[i].Split(new[] { "FileObject: " }, StringSplitOptions.RemoveEmptyEntries);
+
+                                    foreach (string str in arFiles)
+                                    {
+                                        if (!string.IsNullOrEmpty(str) && !str.Contains("<NO_FILES_ATTACHED>"))
+                                        {
+                                            //can be valid file here split on § and count
+                                            //fObj.Application + "§" + fObj.Creator + "§" + fObj.DateCreated + "§" + fObj.DateModfied + "$" + fObj.FieldName + "§" + fObj.FileExtension + "§" + fObj.FileName + "$" + fObj.FileSize + "$" + fObj.LinkToFile + "$" + fObj.Other + "$" + fObj.SoftClass);
+                                            fObj = new FileObject(docObj);
+                                            if (fObj.Initialize(str))
+                                            {
+                                                docObj.Files.Add(fObj.Name, fObj);
+                                            }
+                                        }
+                                    }
+                                }
+                                if (dbObj.Documents.ContainsKey(Unids[i]))
+                                {
+                                    dbObj.Documents.Remove(Unids[i]);
+                                }
+                                docObj.IsInitialized = true;
+                                dbObj.Documents.Add(Unids[i], docObj);
+                            }
+                        }
+
+
+
+                        if (isError)
+                        {
+                            Connector.ReturnMessages.Add(message);
+                            Connector.ReturnMessages.Add(details);
+                            Connector.hasError = true; //throws exception
+                            return false;
+                        }
+                        else
+                        {
+                            Connector.ReturnMessages.Add(message);
+                            Connector.ReturnMessages.Add(details);
+                            Connector.hasError = false; //SUCCESS
+                        }
+
+                    }
+                    else
+                    {
+                        Connector.ReturnMessages.Add("Executing All Files Request - Unable to decode/decrypt the content of the response!");
+                        Connector.hasError = true;  //throws exception
+                        return false;
+                    }
+                }
+                else
+                {
+                    //no response from server
+                    Connector.ReturnMessages.Add("Executing All Files Request -  Unable to get response from XPages!");
+                    Connector.hasError = true;  //throws exception
+                    return false;
+
+                }
+                return true;
+            }
+            else
+            {
+                Connector.ReturnMessages.Add("Executing All Files Request -  Unable to get the Document - Authentication Issue");
+                Connector.hasError = true;  //throws exception
+                return false;
+            }
+
+        }
+        catch (Exception ex)
+        {
+            if (ex.GetType() == typeof(WebException))
+            {
+                WebException webex;
+                webex = (WebException)ex;
+                if (webex.Response != null)
+                {
+                    Stream stream = webex.Response.GetResponseStream();
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
+                        string errorResp = reader.ReadToEnd();
+                        errorResp = errorResp.Replace("{", "").Replace("}", "").Replace("\\\\r\\\\n\\\\", Environment.NewLine).Replace(",", Environment.NewLine).Replace(((char)34).ToString(), "").Replace("\\\\r\\\\n", Environment.NewLine);
+                        Connector.ReturnMessages.Add("Unable to Execute the All Files Request : Invalid request or not authenticated : " + Environment.NewLine + "Web Request Error Response : " + errorResp);
+                        Connector.hasError = true;  //throws exception
+                        return false;
+                    }
+
+                }
+                else
+                {
+                    Connector.ReturnMessages.Add("Unable to Execute the All Files Request : " + Common.GetErrorInfo(ex));
+                    Connector.hasError = true;  //throws exception
+                    return false;
+                }
+            }
+            else
+            {
+                Connector.ReturnMessages.Add("Unable to Execute the All Files Request : " + Common.GetErrorInfo(ex));
+                Connector.hasError = true;  //throws exception
+                return false;
+            }
+        }
+    }
+
+    protected internal bool ExecuteAllFieldsRequest(string WebServiceURL, DatabaseObject dbObj, string fields)
+    {
+        HttpWebRequest request = null;
+
+        try
+        {
+            if (!isInitialized)
+            {
                 Connector.ReturnMessages.Add("Unable to execute the Fields Request - Not Initialized/Connected To Server");
                 Connector.hasError = true;
                 return false;
@@ -1343,7 +2874,8 @@ internal class Requestor {
             string result;
 
             //add a identifier in the header to be use in JPI Service to check if the request is coming from a valid source aka JPI XPages Connector
-            if (!AddIdentityHeader(ref request)) {
+            if (!AddIdentityHeader(ref request))
+            {
                 Connector.ReturnMessages.Add("Unable to Execute Fields Request : Identity Header could not be added!");
                 Connector.hasError = true;  //throws error
                 return false;
@@ -1366,28 +2898,37 @@ internal class Requestor {
             sb.AppendLine("UniversalIDs: " + listUnids);
             sb.AppendLine("Fields: " + fields);
 
-            sb.AppendLine("Connecting via XPagesConnector");
+            sb.AppendLine("Connecting via XPagesAPI");
 
             byte[] b = Encoding.Default.GetBytes(sb.ToString().Replace(Environment.NewLine, " | "));
             string myString = Encoding.UTF8.GetString(b);
             Encryptor EncodedEncryptedContent = new Encryptor(myString, true, ref Connection);
-            if (EncodedEncryptedContent.Initialize()) {
+            if (EncodedEncryptedContent.Initialize())
+            {
                 Stream requestStream = null;
-                try {
+                try
+                {
                     requestStream = request.GetRequestStream();
-                    using (StreamWriter writer = new StreamWriter(requestStream, Encoding.UTF8)) {
+                    using (StreamWriter writer = new StreamWriter(requestStream, Encoding.UTF8))
+                    {
                         writer.Write(EncodedEncryptedContent.EncodedContent);
                     }
-                } catch (Exception e) {
+                }
+                catch (Exception e)
+                {
                     Connector.ReturnMessages.Add("Unable to execute the Request : " + Common.GetErrorInfo(e));
                     Connector.hasError = true;  //throws exception
                     return false;
-                } finally {
+                }
+                finally
+                {
                     //if (requestStream != null) {
                     //    requestStream.Dispose();
                     //}
                 }
-            } else {
+            }
+            else
+            {
                 Connector.ReturnMessages.Add("Executing Fields Request - Unable to encode/encrypt the content of the request!");
                 Connector.hasError = true; //throws exception
                 return false;
@@ -1395,26 +2936,35 @@ internal class Requestor {
 
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();  //can give webexception error 500
 
-            if ((response.StatusCode == HttpStatusCode.OK) || (response.StatusCode == HttpStatusCode.Found) || (response.StatusCode == HttpStatusCode.Redirect) || (response.StatusCode == HttpStatusCode.Moved) || (response.StatusCode == HttpStatusCode.MovedPermanently)) {
+            if ((response.StatusCode == HttpStatusCode.OK) || (response.StatusCode == HttpStatusCode.Found) || (response.StatusCode == HttpStatusCode.Redirect) || (response.StatusCode == HttpStatusCode.Moved) || (response.StatusCode == HttpStatusCode.MovedPermanently))
+            {
                 Stream responseStream = null;
-                try {
+                try
+                {
                     responseStream = request.GetResponse().GetResponseStream();
-                    using (StreamReader reader = new StreamReader(responseStream, true)) {
+                    using (StreamReader reader = new StreamReader(responseStream, true))
+                    {
                         result = reader.ReadToEnd();
                     }
-                } catch (Exception e) {
+                }
+                catch (Exception e)
+                {
                     Connector.ReturnMessages.Add("Unable to execute the Request : " + Common.GetErrorInfo(e));
                     Connector.hasError = true;  //throws exception
                     return false;
-                } finally {
+                }
+                finally
+                {
                     //if (responseStream != null) {
                     //    responseStream.Dispose();
                     //}
                 }
 
-                if (result != null) {
+                if (result != null)
+                {
                     Encryptor DecodeDecryptedContent = new Encryptor(result, false, ref Connection);
-                    if (DecodeDecryptedContent.Initialize()) {
+                    if (DecodeDecryptedContent.Initialize())
+                    {
                         ArrayList arList = new ArrayList();
 
                         string[] ar = null;
@@ -1433,32 +2983,41 @@ internal class Requestor {
 
                         ar = DecodeDecryptedContent.DecodedContent.Split(new[] { " | " }, StringSplitOptions.None);
                         arList.AddRange(ar);
-                        foreach (string str in arList) {
+                        foreach (string str in arList)
+                        {
                             //YES/NO
-                            if (str.StartsWith("Error: ")) {
-                                if (str.Replace("Error: ", "").Equals("YES", StringComparison.OrdinalIgnoreCase)) {
+                            if (str.StartsWith("Error: "))
+                            {
+                                if (str.Replace("Error: ", "").Equals("YES", StringComparison.OrdinalIgnoreCase))
+                                {
                                     isError = true;
                                 }
                             }
-                            if (str.StartsWith("Message: ")) {
+                            if (str.StartsWith("Message: "))
+                            {
                                 message = str.Replace("Message: ", "");
                             }
-                            if (str.StartsWith("Details: ")) {
+                            if (str.StartsWith("Details: "))
+                            {
                                 details = str.Replace("Details: ", "");
                             }
 
                             // 'FieldNames: Unid: '
-                            if (str.StartsWith("FieldNames: ")) {
+                            if (str.StartsWith("FieldNames: "))
+                            {
                                 value = str.Replace("FieldNames: ", "");
                                 //get the unid C125760F0054EEFBC1257356002F192D
-                                if (value.Length > 34) { //Unid is 32 + ': '
+                                if (value.Length > 34)
+                                { //Unid is 32 + ': '
                                     unid = value.Substring(0, 32);
                                     //remove unid
                                     value = value.Remove(0, 34);
-                                    if (!string.IsNullOrEmpty(value)) {
+                                    if (!string.IsNullOrEmpty(value))
+                                    {
                                         fieldnames = value.Split(sep, StringSplitOptions.None);
                                         // check if item is already in dict
-                                        if (!dict.ContainsKey(unid)) {
+                                        if (!dict.ContainsKey(unid))
+                                        {
                                             dict.Add(unid, new List<string[]>());
                                         }
                                         dict[unid].Add(fieldnames);
@@ -1469,16 +3028,20 @@ internal class Requestor {
 
                             }
 
-                            if (str.StartsWith("FieldValues: ")) {
+                            if (str.StartsWith("FieldValues: "))
+                            {
                                 value = str.Replace("FieldValues: ", "");
-                                if (value.Length > 34) { //Unid is 32 + ': '
+                                if (value.Length > 34)
+                                { //Unid is 32 + ': '
                                     unid = value.Substring(0, 32);
                                     //remove unid
                                     value = value.Remove(0, 34);
-                                    if (!string.IsNullOrEmpty(value)) {
+                                    if (!string.IsNullOrEmpty(value))
+                                    {
                                         fieldvalues = value.Split(sep, StringSplitOptions.None);
                                         // check if item is already in dict
-                                        if (!dict.ContainsKey(unid)) {
+                                        if (!dict.ContainsKey(unid))
+                                        {
                                             dict.Add(unid, new List<string[]>());
                                         }
                                         dict[unid].Add(fieldvalues);
@@ -1488,16 +3051,20 @@ internal class Requestor {
                             }
 
 
-                            if (str.StartsWith("FieldTypes: ")) {
+                            if (str.StartsWith("FieldTypes: "))
+                            {
                                 value = str.Replace("FieldTypes: ", "");
-                                if (value.Length > 34) { //Unid is 32 + ': '
+                                if (value.Length > 34)
+                                { //Unid is 32 + ': '
                                     unid = value.Substring(0, 32);
                                     //remove unid
                                     value = value.Remove(0, 34);
-                                    if (!string.IsNullOrEmpty(value)) {
+                                    if (!string.IsNullOrEmpty(value))
+                                    {
                                         fieldtypes = value.Split(sep, StringSplitOptions.None);
                                         // check if item is already in dict
-                                        if (!dict.ContainsKey(unid)) {
+                                        if (!dict.ContainsKey(unid))
+                                        {
                                             dict.Add(unid, new List<string[]>());
                                         }
                                         dict[unid].Add(fieldtypes);
@@ -1510,10 +3077,13 @@ internal class Requestor {
                         DocumentObject docObj = null;
                         FieldObject fObj = null;
 
-                        foreach (KeyValuePair<string, List<string[]>> kvp in dict) {
-                            if (dbObj.Documents.ContainsKey(kvp.Key)) {
+                        foreach (KeyValuePair<string, List<string[]>> kvp in dict)
+                        {
+                            if (dbObj.Documents.ContainsKey(kvp.Key))
+                            {
                                 docObj = dbObj.Documents[kvp.Key];
-                                if (docObj.Fields == null) {
+                                if (docObj.Fields == null)
+                                {
                                     docObj.Fields = new SortedDictionary<string, FieldObject>();
                                 }
                                 //reset
@@ -1525,45 +3095,58 @@ internal class Requestor {
                                 fieldvalues = kvp.Value[1];
                                 fieldtypes = kvp.Value[2];
 
-                                for (int i = 0; i < fieldnames.Length; i++) {//fieldnames
+                                for (int i = 0; i < fieldnames.Length; i++)
+                                {//fieldnames
                                     fObj = new FieldObject(fieldnames[i]);
-                                    if (fieldvalues.Length - 1 >= i) {
+                                    if (fieldvalues.Length - 1 >= i)
+                                    {
                                         fObj.Value = fieldvalues[i];
                                     }
-                                    if (fieldtypes.Length - 1 >= i) {
+                                    if (fieldtypes.Length - 1 >= i)
+                                    {
                                         fObj.Type = fieldtypes[i];
                                     }
 
-                                    if (docObj.Fields.ContainsKey(fObj.Name)) {
+                                    if (docObj.Fields.ContainsKey(fObj.Name))
+                                    {
                                         docObj.Fields.Remove(fObj.Name);
                                     }
                                     docObj.Fields.Add(fObj.Name, fObj);
 
                                 }
-                            } else {
+                            }
+                            else
+                            {
                                 Connector.ReturnMessages.Add("Unable to find the document in the databaseobject :" + kvp.Key);
                                 isError = true;
                             }
 
                         }
 
-                        if (isError) {
+                        if (isError)
+                        {
                             Connector.ReturnMessages.Add(message);
                             Connector.ReturnMessages.Add(details);
                             Connector.hasError = true; //throws exception
                             return false;
-                        } else {
+                        }
+                        else
+                        {
                             Connector.ReturnMessages.Add(message);
                             Connector.ReturnMessages.Add(details);
                             Connector.hasError = false; //SUCCESS
                         }
 
-                    } else {
+                    }
+                    else
+                    {
                         Connector.ReturnMessages.Add("Executing Fields Request - Unable to decode/decrypt the content of the response!");
                         Connector.hasError = true;  //throws exception
                         return false;
                     }
-                } else {
+                }
+                else
+                {
                     //no response from server
                     Connector.ReturnMessages.Add("Executing Fields Request -  Unable to get response from XPages!");
                     Connector.hasError = true;  //throws exception
@@ -1571,19 +3154,26 @@ internal class Requestor {
 
                 }
                 return true;
-            } else {
+            }
+            else
+            {
                 Connector.ReturnMessages.Add("Executing Fields Request -  Unable to get the Document - Authentication Issue");
                 Connector.hasError = true;  //throws exception
                 return false;
             }
 
-        } catch (Exception ex) {
-            if (ex.GetType() == typeof(WebException)) {
+        }
+        catch (Exception ex)
+        {
+            if (ex.GetType() == typeof(WebException))
+            {
                 WebException webex;
                 webex = (WebException)ex;
-                if (webex.Response != null) {
+                if (webex.Response != null)
+                {
                     Stream stream = webex.Response.GetResponseStream();
-                    using (StreamReader reader = new StreamReader(stream)) {
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
                         string errorResp = reader.ReadToEnd();
                         errorResp = errorResp.Replace("{", "").Replace("}", "").Replace("\\\\r\\\\n\\\\", Environment.NewLine).Replace(",", Environment.NewLine).Replace(((char)34).ToString(), "").Replace("\\\\r\\\\n", Environment.NewLine);
                         Connector.ReturnMessages.Add("Unable to Execute the All Fields Request : Invalid request or not authenticated : " + Environment.NewLine + "Web Request Error Response : " + errorResp);
@@ -1591,13 +3181,89 @@ internal class Requestor {
                         return false;
                     }
 
-                } else {
+                }
+                else
+                {
                     Connector.ReturnMessages.Add("Unable to Execute the All Fields Request : " + Common.GetErrorInfo(ex));
                     Connector.hasError = true;  //throws exception
                     return false;
                 }
-            } else {
+            }
+            else
+            {
                 Connector.ReturnMessages.Add("Unable to Execute the All Fields Request : " + Common.GetErrorInfo(ex));
+                Connector.hasError = true;  //throws exception
+                return false;
+            }
+        }
+    }
+    
+    protected internal bool ExecuteGetFileRequest(string FileURL, string LocalFilePath)
+    {
+        HttpWebRequest request = null;  
+        try
+        {
+
+            if (!isInitialized)
+            {
+                Connector.ReturnMessages.Add("Unable to execute the Get File Request - Not Initialized/Connected To Server");
+                Connector.hasError = true;
+                return false;
+            }
+
+            request = request = (HttpWebRequest)WebRequest.Create(FileURL);
+        
+            request.CookieContainer = AuthenticationCookie;
+            request.AllowAutoRedirect = true;
+            request.Method = WebRequestMethods.Http.Get;
+            const int BUFFER_SIZE = 16 * 1024;
+           byte[] buffer = new byte[BUFFER_SIZE - 1];
+            int bytesRead;
+
+            using (var outputFileStream = File.Create(LocalFilePath, BUFFER_SIZE))
+            {
+                using (var response2 = request.GetResponse())
+                {
+                    using (var responseStream = response2.GetResponseStream())
+                    {
+                        while ((bytesRead = responseStream.Read(buffer, 0, buffer.Length)) > 0)
+                        {
+                            outputFileStream.Write(buffer, 0, bytesRead);
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+        catch (Exception ex)
+        {
+            if (ex.GetType() == typeof(WebException))
+            {
+                WebException webex;
+                webex = (WebException)ex;
+                if (webex.Response != null)
+                {
+                    Stream stream = webex.Response.GetResponseStream();
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
+                        string errorResp = reader.ReadToEnd();
+                        errorResp = errorResp.Replace("{", "").Replace("}", "").Replace("\\\\r\\\\n\\\\", Environment.NewLine).Replace(",", Environment.NewLine).Replace(((char)34).ToString(), "").Replace("\\\\r\\\\n", Environment.NewLine);
+                        Connector.ReturnMessages.Add("Unable to Execute the Get File Request : Invalid request or not authenticated : " + Environment.NewLine + "Web Request Error Response : " + errorResp);
+                        Connector.hasError = true;  //throws exception
+                        return false;
+                    }
+
+                }
+                else
+                {
+                    Connector.ReturnMessages.Add("Unable to Execute the Get File Request : " + Common.GetErrorInfo(ex));
+                    Connector.hasError = true;  //throws exception
+                    return false;
+                }
+            }
+            else
+            {
+                Connector.ReturnMessages.Add("Unable to Execute the Get File Request : " + Common.GetErrorInfo(ex));
                 Connector.hasError = true;  //throws exception
                 return false;
             }

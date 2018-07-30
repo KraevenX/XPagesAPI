@@ -4,5 +4,6 @@ var annotated_dup =
     [ "DatabaseObject", "class_database_object.html", "class_database_object" ],
     [ "DocumentObject", "class_document_object.html", "class_document_object" ],
     [ "FieldObject", "class_field_object.html", "class_field_object" ],
+    [ "FileObject", "class_file_object.html", "class_file_object" ],
     [ "SessionObject", "class_session_object.html", "class_session_object" ]
 ];

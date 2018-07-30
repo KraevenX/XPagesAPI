@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['universalid',['UniversalID',['../class_document_object.html#a8b96d04632a2802e7cc5466ca5cee8cf',1,'DocumentObject']]],
-  ['url',['Url',['../class_database_object.html#a12da011e3dc03d3a10ac86df10c84f48',1,'DatabaseObject.Url()'],['../class_document_object.html#ac86b730cf8931b2221af577d32ca2f31',1,'DocumentObject.Url()']]],
-  ['username',['UserName',['../class_connector.html#a41d247f09774f0ed206ce1a4a2463fed',1,'Connector']]]
+  ['template',['Template',['../class_database_object.html#ac8ecdbe9722c00f787a62aef7d3dfa5a',1,'DatabaseObject']]],
+  ['throwexception',['ThrowException',['../class_connector.html#a8ec0dcdbb4a85a56fa50f67686484c19',1,'Connector']]],
+  ['title',['Title',['../class_database_object.html#a9af3f75274dd39f7fa82a355dc4ddf39',1,'DatabaseObject']]],
+  ['type',['Type',['../class_field_object.html#a370af2c26ae9c3e713b5d88b62a2a8f9',1,'FieldObject']]]
 ];

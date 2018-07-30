@@ -58,35 +58,35 @@ namespace TestDLL {
                                   
                                     if (!string.IsNullOrEmpty(txtUnid.Text)) {
                                         if (txtUnid.Text.Contains(";")) {
-                                            if (!dbObj.GetAllDocumentsByUnids(txtUnid.Text)) {
+                                            if (!dbObj.GetAllDocumentsAndFilesByUnids(txtUnid.Text)) {
                                                 MessageBox.Show("Error while retrieving all documents by Unid " + GetArrayListAsString(Connector.ReturnMessages, Environment.NewLine));
                                             }
                                         } else {
-                                            docObj = dbObj.GetDocument(txtUnid.Text);
+                                            docObj = dbObj.GetDocumentAndFiles(txtUnid.Text);
                                             //dbObj.Documents.Add(docObj.UniversalID, docObj); // already added
                                         }
 
                                     } else {
 
                                         if (!string.IsNullOrEmpty(txtSearchField.Text) && !string.IsNullOrEmpty(txtSearchValue.Text)) {
-                                            if (!dbObj.GetAllDocumentsByKey(txtSearchField.Text, txtSearchValue.Text)) {
+                                            if (!dbObj.GetAllDocumentsAndFilesByKey(txtSearchField.Text, txtSearchValue.Text)) {
                                                 MessageBox.Show("Error while retrieving all documents by search field & value " + GetArrayListAsString(Connector.ReturnMessages, Environment.NewLine));
                                             }
                                         } else {
                                             //search by formula
                                             if (!string.IsNullOrEmpty(txtSearchFormula.Text)) {
                                                 if (!txtSearchFormula.Text.Contains(";")) {
-                                                    docObj = dbObj.GetDocumentByFormula(txtSearchFormula.Text);
+                                                    docObj = dbObj.GetDocumentAndFilesByFormula(txtSearchFormula.Text);
                                                    // dbObj.Documents.Add(docObj.UniversalID, docObj);
                                                 } else {
-                                                    if (!dbObj.GetAllDocumentsByFormula(txtSearchFormula.Text)) {
+                                                    if (!dbObj.GetAllDocumentsAndFilesByFormula(txtSearchFormula.Text)) {
                                                         MessageBox.Show("Error while retrieving all documents by formula " + GetArrayListAsString(Connector.ReturnMessages, Environment.NewLine));
                                                     }
                                                 }
                                                    
                                             } else {
                                                 //search for all docs
-                                                if (!dbObj.GetAllDocuments()) {
+                                                if (!dbObj.GetAllDocumentsAndFiles()) {
                                                     MessageBox.Show("Error while retrieving all documents from the database " + GetArrayListAsString(Connector.ReturnMessages, Environment.NewLine));
                                                 }
                                             }
@@ -117,10 +117,22 @@ namespace TestDLL {
                                                         foreach (KeyValuePair<string, FieldObject> kvp in docObj.Fields) {
                                                             sb.Append(kvp.Value.GetValueAsString() + ";");
                                                         }
-                                                    sb.Append(Environment.NewLine);
-                                                    }                                               
+                                                    //sb.Append(Environment.NewLine);
+                                                }
+                                                if(docObj.Files != null && docObj.Files.Count > 0)
+                                                {
+                                                    foreach (KeyValuePair<string, FileObject> kvp in docObj.Files)
+                                                    {
+                                                        sb.Append(kvp.Value.Name  + " : " +  kvp.Value.URL + ";");
+                                                      
+                                                    }
+                                                    
+                                                }
+                                                sb.Append(Environment.NewLine);
+                                                //extract the files
+                                                docObj.ExportFiles("C:\\JPI_Exported", true);
                                             } // end for
-
+                                           
                                             if (System.IO.File.Exists(txtExportFile.Text + "_EXPORTED.csv")){
                                                 System.IO.File.Delete(txtExportFile.Text + "_EXPORTED.csv");
                                             }

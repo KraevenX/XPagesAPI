@@ -53,13 +53,20 @@
     <Compile Include="Objects\DatabaseObject.cs" />
     <Compile Include="Objects\DocumentObject.cs" />
     <Compile Include="Objects\FieldObject.cs" />
+    <Compile Include="Objects\FileObject.cs" />
     <Compile Include="Objects\SessionObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Database-Connect.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>$(SolutionDir)packages\Doxygen.1.8.14\tools\doxygen.exe  $(SolutionDir)XPagesAPI\doxyfile</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

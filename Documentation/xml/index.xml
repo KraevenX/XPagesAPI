@@ -1,8 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.13">
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.14">
   <compound refid="class_common" kind="class"><name>Common</name>
     <member refid="class_common_1a95a895bd81dcbd1ed2a07814462d0fc7" kind="function"><name>GetErrorInfo</name></member>
     <member refid="class_common_1a6468d361244e4fd42f8be6e584075a21" kind="function"><name>GetListAsString</name></member>
+    <member refid="class_common_1a13db3c30d3b537be69e3b9e1dc636a3e" kind="function"><name>ExceptionHandler</name></member>
   </compound>
   <compound refid="class_connector" kind="class"><name>Connector</name>
     <member refid="class_connector_1a967a778263c45f7cca13269f15c185f9" kind="variable"><name>_isInitialized</name></member>
@@ -59,15 +60,24 @@
     <member refid="class_database_object_1a75d3e8a876c6899bd01b866e35475ed2" kind="function"><name>DatabaseObject</name></member>
     <member refid="class_database_object_1a7de43a21bd287deec537cffec343f41d" kind="function"><name>Initialize</name></member>
     <member refid="class_database_object_1a9435cc20fe3a92747e509011b7726aff" kind="function"><name>GetDocument</name></member>
+    <member refid="class_database_object_1a9be31ba852e56a107e93f7d925f8a0c3" kind="function"><name>GetDocumentAndFiles</name></member>
     <member refid="class_database_object_1a57bfc77d2754236cbcf6ac30a90da529" kind="function"><name>GetDocumentByKey</name></member>
+    <member refid="class_database_object_1a30968034c65328e44ddb0fdac8ab1435" kind="function"><name>GetDocumentAndFilesByKey</name></member>
     <member refid="class_database_object_1ae5477aedfcd0d54b21017faa1389bc71" kind="function"><name>GetDocumentByFormula</name></member>
+    <member refid="class_database_object_1a1d35f51baee4be6adb69a954efe5b4bf" kind="function"><name>GetDocumentAndFilesByFormula</name></member>
     <member refid="class_database_object_1ad3010e55b2e75d0863e168fed1e279c5" kind="function"><name>GetAllDocuments</name></member>
+    <member refid="class_database_object_1a72239fa2b2a549665e45cdd340cd70a0" kind="function"><name>GetAllDocumentsAndFiles</name></member>
     <member refid="class_database_object_1a6bfb480373a7e2bdbeaa67e4e3303a3a" kind="function"><name>GetAllDocumentsByFormula</name></member>
+    <member refid="class_database_object_1ac478ff9264805edc8569d510916c4c00" kind="function"><name>GetAllDocumentsAndFilesByFormula</name></member>
     <member refid="class_database_object_1a4d8a7d73614f53a04fe8eb79bef2f614" kind="function"><name>GetAllDocumentsByUnids</name></member>
+    <member refid="class_database_object_1a9332713c924ab14195fe51bf0b8d35d1" kind="function"><name>GetAllDocumentsAndFilesByUnids</name></member>
     <member refid="class_database_object_1a92e80ea30e83cddf47f29d0f502b81c5" kind="function"><name>GetAllDocumentsByUnids</name></member>
+    <member refid="class_database_object_1aa69262a50977a28a2decf400d1eedd20" kind="function"><name>GetAllDocumentsAndFilesByUnids</name></member>
     <member refid="class_database_object_1ad4834e7677cd0418969a657eed99653c" kind="function"><name>GetAllDocumentsByKey</name></member>
+    <member refid="class_database_object_1a6c2fb05fb6972d74d5bea67e323985fb" kind="function"><name>GetAllDocumentsAndFilesByKey</name></member>
     <member refid="class_database_object_1a88ae0bcda671009e2742858ab945a18c" kind="function"><name>LoadDocumentFields</name></member>
     <member refid="class_database_object_1a8a64b91e2e4228b2fc552e51959987c4" kind="function"><name>LoadDocumentFields</name></member>
+    <member refid="class_database_object_1acdf5c9ee898d4473350a2f4878af5a23" kind="function"><name>LoadDocumentFiles</name></member>
     <member refid="class_database_object_1a591d685be9079e68a59473b4a1e2c687" kind="function"><name>ValidateInput</name></member>
   </compound>
   <compound refid="class_document_object" kind="class"><name>DocumentObject</name>
@@ -84,6 +94,7 @@
     <member refid="class_document_object_1a727a6ecff108fa38ee54cfa8d89d66cd" kind="variable"><name>_Url</name></member>
     <member refid="class_document_object_1a38bd268ccc77c3e74828d5e3a2d7b73c" kind="variable"><name>_Form</name></member>
     <member refid="class_document_object_1a6f8b5a77924b2a1fa585c86393532ee5" kind="variable"><name>_Fields</name></member>
+    <member refid="class_document_object_1a77cdaf09cbe7e9f61a5e59c8023d2671" kind="variable"><name>_Files</name></member>
     <member refid="class_document_object_1a69d5338c9835f748490323d2950eed09" kind="property"><name>Database</name></member>
     <member refid="class_document_object_1a3b2075b73f38d05091b69decc6ce7992" kind="property"><name>IsInitialized</name></member>
     <member refid="class_document_object_1abdc1a6dfc1bb2261b523cf94468448b9" kind="property"><name>Size</name></member>
@@ -91,6 +102,7 @@
     <member refid="class_document_object_1ad3444a6c018474405064070fa9a94afe" kind="property"><name>Form</name></member>
     <member refid="class_document_object_1ac447461e3dc7f8258695f902ef0758a7" kind="property"><name>NoteID</name></member>
     <member refid="class_document_object_1ae203b8a3e40b6c428145d2335b71245c" kind="property"><name>Fields</name></member>
+    <member refid="class_document_object_1afe6bcf5175607f91dde768491f23a0a4" kind="property"><name>Files</name></member>
     <member refid="class_document_object_1a8b96d04632a2802e7cc5466ca5cee8cf" kind="property"><name>UniversalID</name></member>
     <member refid="class_document_object_1a819cb8baad094f6e5990c54ec1eee8b0" kind="property"><name>DateCreated</name></member>
     <member refid="class_document_object_1a87ba1b3ac1b74b104972c25b245c504b" kind="property"><name>DateModified</name></member>
@@ -98,10 +110,13 @@
     <member refid="class_document_object_1a7c98c6485f7395697561500a8ff42d79" kind="function"><name>DocumentObject</name></member>
     <member refid="class_document_object_1a4eb6c7aaa4774d1d5dbf5bf17dff23d9" kind="function"><name>DocumentObject</name></member>
     <member refid="class_document_object_1af4298d6cfbb9ea60643d9995309b73f1" kind="function"><name>Initialize</name></member>
+    <member refid="class_document_object_1a83f0e855adc5fb7afd02d2e34767f5c8" kind="function"><name>InitializeWithFiles</name></member>
     <member refid="class_document_object_1a8883fec3b5b1b6e2e43f4b5ca4092684" kind="function"><name>GetFields</name></member>
+    <member refid="class_document_object_1a2c8aee9450e8fdd1e84e8ff26d0950a1" kind="function"><name>GetFiles</name></member>
     <member refid="class_document_object_1a8e38704e02850b2480d29d184ae2c0e0" kind="function"><name>GetFields</name></member>
     <member refid="class_document_object_1a5e070c7c0a45ac06422ee992c841e780" kind="function"><name>GetAllFields</name></member>
     <member refid="class_document_object_1a1a763aa01710b370634f46c89b7d2d8e" kind="function"><name>ExportFields</name></member>
+    <member refid="class_document_object_1a8753abc5a871bf84fc910e6a99936b2b" kind="function"><name>ExportFiles</name></member>
     <member refid="class_document_object_1a69c37390e7b77736c86315287674cc61" kind="function"><name>ValidateInput</name></member>
   </compound>
   <compound refid="class_encryptor" kind="class"><name>Encryptor</name>
@@ -116,6 +131,8 @@
     <member refid="class_encryptor_1a6ce2d934ee25a0e554f97d027399ce09" kind="function"><name>Initialize</name></member>
     <member refid="class_encryptor_1a2bc09300ed934e05bd465b2fae77b38e" kind="function"><name>EncryptAndEncode</name></member>
     <member refid="class_encryptor_1a6c8fb36f29875f6c7bacb17ab845553f" kind="function"><name>DecodeAndDecrypt</name></member>
+    <member refid="class_encryptor_1aba0cd968ebee7432f1807c7c38ce1990" kind="function"><name>DeflaterCompress</name></member>
+    <member refid="class_encryptor_1a737fe41d9a282cb7a32c49ba4fd385b0" kind="function"><name>DeflaterDecompress</name></member>
     <member refid="class_encryptor_1ac0a2c64858c15d440fc6e2abf1631abe" kind="function"><name>GetCryptoTransform</name></member>
   </compound>
   <compound refid="class_field_object" kind="class"><name>FieldObject</name>
@@ -132,6 +149,40 @@
     <member refid="class_field_object_1a797ebc6615a86bafd9bd17f09562f2ee" kind="function"><name>GetValueAsDate</name></member>
     <member refid="class_field_object_1a635d7598cbf7bbc29821cb1c012de964" kind="function"><name>GetValueAsList</name></member>
   </compound>
+  <compound refid="class_file_object" kind="class"><name>FileObject</name>
+    <member refid="class_file_object_1afcaee43b7d295bdaf71c9d0454ba4e56" kind="variable"><name>_Document</name></member>
+    <member refid="class_file_object_1a7c93f14915c6f930a95fdba53391f585" kind="variable"><name>_isInitialized</name></member>
+    <member refid="class_file_object_1a73efb4bda7119145bfe5b018ae010af0" kind="variable"><name>_Name</name></member>
+    <member refid="class_file_object_1a802165b4db45879d79f4501f1d1f3080" kind="variable"><name>_URL</name></member>
+    <member refid="class_file_object_1a201fde3afccada07331aba755440e2a3" kind="variable"><name>_Size</name></member>
+    <member refid="class_file_object_1a7039564d9a0f450ff97110f09950c912" kind="variable"><name>strSize</name></member>
+    <member refid="class_file_object_1a080f632fa28edf3d210f68e544da1709" kind="variable"><name>strDateCreated</name></member>
+    <member refid="class_file_object_1a5a59425cf5fea90d6f3b654422424734" kind="variable"><name>strDateModified</name></member>
+    <member refid="class_file_object_1acabbe6cabb8a3b0e19cd5e0ce15c926b" kind="variable"><name>_Application</name></member>
+    <member refid="class_file_object_1a21749782d3fc6bbbf04ba68b57d6102d" kind="variable"><name>_Creator</name></member>
+    <member refid="class_file_object_1aaab19475b58e5e45935b4376b08b1908" kind="variable"><name>_DateCreated</name></member>
+    <member refid="class_file_object_1a5bd10bc25049326d9f985eecdc463aab" kind="variable"><name>_DateModified</name></member>
+    <member refid="class_file_object_1a3ec8a8144adc76e1713d72a321a15b12" kind="variable"><name>_FieldName</name></member>
+    <member refid="class_file_object_1ac110171c6cc6930409dde9a8c679b9af" kind="variable"><name>_Extension</name></member>
+    <member refid="class_file_object_1a8d1c531f1ad1d639e08854e698f9704a" kind="variable"><name>_Other</name></member>
+    <member refid="class_file_object_1a40822db122ecef8cfd90987ffe39749a" kind="variable"><name>_SoftClass</name></member>
+    <member refid="class_file_object_1a0c9650a6ae1efb95f8211f9fa3b883fe" kind="property"><name>Document</name></member>
+    <member refid="class_file_object_1a9d47aff166393cb47490da2661576d62" kind="property"><name>Name</name></member>
+    <member refid="class_file_object_1a7355eaeea3fe40bd8862d7f1f9b479da" kind="property"><name>URL</name></member>
+    <member refid="class_file_object_1a7aa7737c1ce05f4424ba16dded444949" kind="property"><name>Size</name></member>
+    <member refid="class_file_object_1a5e9b8f083b53ea0450a0560c16292a2f" kind="property"><name>SoftClass</name></member>
+    <member refid="class_file_object_1a39640cdc4b16ee66e9c73803f4510396" kind="property"><name>Application</name></member>
+    <member refid="class_file_object_1a1ab7d29c80841b60b276b7430f4e5ec7" kind="property"><name>Creator</name></member>
+    <member refid="class_file_object_1a372b9a7dad068368526b0698550f9504" kind="property"><name>DateCreated</name></member>
+    <member refid="class_file_object_1a9a4c52e205bee3f8bdfa7040f465b6af" kind="property"><name>DateModified</name></member>
+    <member refid="class_file_object_1a26fa0ac628fee2387b7f89c78f93842e" kind="property"><name>FieldName</name></member>
+    <member refid="class_file_object_1ae25b58dc19def323da91a48e17ba13ed" kind="property"><name>Extension</name></member>
+    <member refid="class_file_object_1ab91b5eca56a04784f8d0187247e1280c" kind="property"><name>Other</name></member>
+    <member refid="class_file_object_1a36ff6c07d0662885402bfe7d98cf2988" kind="property"><name>IsInitialized</name></member>
+    <member refid="class_file_object_1a0820c64117f9bcebf4ac750fbb320295" kind="function"><name>FileObject</name></member>
+    <member refid="class_file_object_1a1d371eb0e306cda4b80d2e8d32e987e0" kind="function"><name>Initialize</name></member>
+    <member refid="class_file_object_1ae21fac09c5ab2f9fac96a3f084cb9ddc" kind="function"><name>ExtractFile</name></member>
+  </compound>
   <compound refid="class_requestor" kind="class"><name>Requestor</name>
     <member refid="class_requestor_1a38f232bfa22d7732bbb68adbb4bf1c39" kind="variable"><name>Connection</name></member>
     <member refid="class_requestor_1ac86d5f843bcfb2c1d99abb34252c8830" kind="variable"><name>AuthenticationCookie</name></member>
@@ -142,9 +193,13 @@
     <member refid="class_requestor_1abbdb09e9cfcb74f1b90ac00f87780630" kind="function"><name>ExecuteSessionRequest</name></member>
     <member refid="class_requestor_1a9e460007336e77741a15815272988292" kind="function"><name>ExecuteDatabaseRequest</name></member>
     <member refid="class_requestor_1abce2f7be8f91b5da4de34c0075bd2c6a" kind="function"><name>ExecuteDocumentRequest</name></member>
+    <member refid="class_requestor_1a20ef458488f2a22a7fe57012ad59add3" kind="function"><name>ExecuteDocumentFilesRequest</name></member>
     <member refid="class_requestor_1ac4b4d88f8ce2f1b1a6db7ee87c82f60a" kind="function"><name>ExecuteAllDocumentsRequest</name></member>
+    <member refid="class_requestor_1a7e0df3b1d9d9d479f0b896e19be28a76" kind="function"><name>ExecuteAllDocumentsFilesRequest</name></member>
     <member refid="class_requestor_1a79b18759ab798a2755a9a79a57478d82" kind="function"><name>ExecuteFieldsRequest</name></member>
+    <member refid="class_requestor_1a990a0641252e7863cc855212d300822a" kind="function"><name>ExecuteAllFilesRequest</name></member>
     <member refid="class_requestor_1a14632528cb1be88d2e390300da796faa" kind="function"><name>ExecuteAllFieldsRequest</name></member>
+    <member refid="class_requestor_1a55f57bbe4ec3c072c65171907e6428dc" kind="function"><name>ExecuteGetFileRequest</name></member>
   </compound>
   <compound refid="class_session_object" kind="class"><name>SessionObject</name>
     <member refid="class_session_object_1a8b7770781547c02f2ff569038da434d3" kind="variable"><name>_Connection</name></member>
@@ -166,6 +221,8 @@
   <compound refid="namespace_system_1_1_collections_1_1_generic" kind="namespace"><name>System::Collections::Generic</name>
   </compound>
   <compound refid="namespace_system_1_1_i_o" kind="namespace"><name>System::IO</name>
+  </compound>
+  <compound refid="namespace_system_1_1_i_o_1_1_compression" kind="namespace"><name>System::IO::Compression</name>
   </compound>
   <compound refid="namespace_system_1_1_linq" kind="namespace"><name>System::Linq</name>
   </compound>
@@ -191,30 +248,22 @@
   </compound>
   <compound refid="_requestor_8cs" kind="file"><name>Requestor.cs</name>
   </compound>
-  <compound refid="_temporary_generated_file__036_c0_b5_b-1481-4323-8_d20-8_f5_a_d_c_b23_d92_8cs" kind="file"><name>TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs</name>
-  </compound>
-  <compound refid="_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs" kind="file"><name>TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs</name>
-  </compound>
-  <compound refid="_temporary_generated_file___e7_a71_f73-0_f8_d-4_b9_b-_b56_e-8_e70_b10_b_c5_d3_8cs" kind="file"><name>TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs</name>
-  </compound>
   <compound refid="_database_object_8cs" kind="file"><name>DatabaseObject.cs</name>
   </compound>
   <compound refid="_document_object_8cs" kind="file"><name>DocumentObject.cs</name>
   </compound>
   <compound refid="_field_object_8cs" kind="file"><name>FieldObject.cs</name>
   </compound>
+  <compound refid="_file_object_8cs" kind="file"><name>FileObject.cs</name>
+  </compound>
   <compound refid="_session_object_8cs" kind="file"><name>SessionObject.cs</name>
   </compound>
   <compound refid="_assembly_info_8cs" kind="file"><name>AssemblyInfo.cs</name>
   </compound>
-  <compound refid="dir_a71c3b2ad23b9ff58220dd012d201987" kind="dir"><name>C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/obj/Debug</name>
+  <compound refid="dir_0b6ee6e7e9547e675db4add2e5de97da" kind="dir"><name>C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine</name>
   </compound>
-  <compound refid="dir_0b6ee6e7e9547e675db4add2e5de97da" kind="dir"><name>C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Engine</name>
+  <compound refid="dir_5dafd4660615c7e05a84a5ee9d9fd12b" kind="dir"><name>C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects</name>
   </compound>
-  <compound refid="dir_43724e81dd40e09f32417973865cdd64" kind="dir"><name>C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/obj</name>
-  </compound>
-  <compound refid="dir_5dafd4660615c7e05a84a5ee9d9fd12b" kind="dir"><name>C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects</name>
-  </compound>
-  <compound refid="dir_d051c76eebdc544d9c3d734575641c72" kind="dir"><name>C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Properties</name>
+  <compound refid="dir_d051c76eebdc544d9c3d734575641c72" kind="dir"><name>C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Properties</name>
   </compound>
 </doxygenindex>

@@ -72,6 +72,8 @@ public class Connector {
     /// <param name="server"></param>
     public Connector(string User, string Pass, string server) {
         ResetReturn();
+        AppDomain.CurrentDomain.UnhandledException += new System.UnhandledExceptionEventHandler(Common.ExceptionHandler);
+
         if (User != null && Pass != null && server != null) {
             this.UserName = User;
             this.Password = Pass;

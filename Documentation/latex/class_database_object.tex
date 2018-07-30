@@ -8,67 +8,85 @@ An object representing a domino database object
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_database_object_ab16b4327b02ffedcd1b003cea9d949a1}{Database\+Object} (string file\+Path, string server, \hyperlink{class_session_object}{Session\+Object} session)
+\mbox{\hyperlink{class_database_object_ab16b4327b02ffedcd1b003cea9d949a1}{Database\+Object}} (string file\+Path, string server, \mbox{\hyperlink{class_session_object}{Session\+Object}} session)
 \begin{DoxyCompactList}\small\item\em Database constructor method \end{DoxyCompactList}\item 
-\hyperlink{class_database_object_a75d3e8a876c6899bd01b866e35475ed2}{Database\+Object} (\hyperlink{class_session_object}{Session\+Object} session, string replication\+ID, string server)
+\mbox{\hyperlink{class_database_object_a75d3e8a876c6899bd01b866e35475ed2}{Database\+Object}} (\mbox{\hyperlink{class_session_object}{Session\+Object}} session, string replication\+ID, string server)
 \begin{DoxyCompactList}\small\item\em Database constructor method \end{DoxyCompactList}\item 
-bool \hyperlink{class_database_object_a7de43a21bd287deec537cffec343f41d}{Initialize} ()
-\begin{DoxyCompactList}\small\item\em Initializes the \hyperlink{class_database_object}{Database\+Object} by validating the input and triggering the database request \end{DoxyCompactList}\item 
-\hyperlink{class_document_object}{Document\+Object} \hyperlink{class_database_object_a9435cc20fe3a92747e509011b7726aff}{Get\+Document} (string unid)
+bool \mbox{\hyperlink{class_database_object_a7de43a21bd287deec537cffec343f41d}{Initialize}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the \mbox{\hyperlink{class_database_object}{Database\+Object}} by validating the input and triggering the database request \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_document_object}{Document\+Object}} \mbox{\hyperlink{class_database_object_a9435cc20fe3a92747e509011b7726aff}{Get\+Document}} (string unid)
 \begin{DoxyCompactList}\small\item\em Retrieve a document from this database by universal\+ID \end{DoxyCompactList}\item 
-\hyperlink{class_document_object}{Document\+Object} \hyperlink{class_database_object_a57bfc77d2754236cbcf6ac30a90da529}{Get\+Document\+By\+Key} (string search\+Field, string search\+Value)
+\mbox{\hyperlink{class_document_object}{Document\+Object}} \mbox{\hyperlink{class_database_object_a9be31ba852e56a107e93f7d925f8a0c3}{Get\+Document\+And\+Files}} (string unid)
+\begin{DoxyCompactList}\small\item\em Retrieve a document from this database by universal\+ID This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_document_object}{Document\+Object}} \mbox{\hyperlink{class_database_object_a57bfc77d2754236cbcf6ac30a90da529}{Get\+Document\+By\+Key}} (string search\+Field, string search\+Value)
 \begin{DoxyCompactList}\small\item\em Retrieve a document from this database by searching for a specific value in the provided field. \end{DoxyCompactList}\item 
-\hyperlink{class_document_object}{Document\+Object} \hyperlink{class_database_object_ae5477aedfcd0d54b21017faa1389bc71}{Get\+Document\+By\+Formula} (string formula)
+\mbox{\hyperlink{class_document_object}{Document\+Object}} \mbox{\hyperlink{class_database_object_a30968034c65328e44ddb0fdac8ab1435}{Get\+Document\+And\+Files\+By\+Key}} (string search\+Field, string search\+Value)
+\begin{DoxyCompactList}\small\item\em Retrieve a document from this database by searching for a specific value in the provided field. This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_document_object}{Document\+Object}} \mbox{\hyperlink{class_database_object_ae5477aedfcd0d54b21017faa1389bc71}{Get\+Document\+By\+Formula}} (string formula)
 \begin{DoxyCompactList}\small\item\em Retrieve a document from this database by searching using the provided formula. \end{DoxyCompactList}\item 
-bool \hyperlink{class_database_object_ad3010e55b2e75d0863e168fed1e279c5}{Get\+All\+Documents} ()
+\mbox{\hyperlink{class_document_object}{Document\+Object}} \mbox{\hyperlink{class_database_object_a1d35f51baee4be6adb69a954efe5b4bf}{Get\+Document\+And\+Files\+By\+Formula}} (string formula)
+\begin{DoxyCompactList}\small\item\em Retrieve a document from this database by searching using the provided formula. This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_database_object_ad3010e55b2e75d0863e168fed1e279c5}{Get\+All\+Documents}} ()
 \begin{DoxyCompactList}\small\item\em Retrieve all documents from the database \end{DoxyCompactList}\item 
-bool \hyperlink{class_database_object_a6bfb480373a7e2bdbeaa67e4e3303a3a}{Get\+All\+Documents\+By\+Formula} (string formula)
+bool \mbox{\hyperlink{class_database_object_a72239fa2b2a549665e45cdd340cd70a0}{Get\+All\+Documents\+And\+Files}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve all documents from the database This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_database_object_a6bfb480373a7e2bdbeaa67e4e3303a3a}{Get\+All\+Documents\+By\+Formula}} (string formula)
 \begin{DoxyCompactList}\small\item\em Retrieve all documents from this database that correspond to the provided formula \end{DoxyCompactList}\item 
-bool \hyperlink{class_database_object_a4d8a7d73614f53a04fe8eb79bef2f614}{Get\+All\+Documents\+By\+Unids} (string unids)
+bool \mbox{\hyperlink{class_database_object_ac478ff9264805edc8569d510916c4c00}{Get\+All\+Documents\+And\+Files\+By\+Formula}} (string formula)
+\begin{DoxyCompactList}\small\item\em Retrieve all documents from this database that correspond to the provided formula This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_database_object_a4d8a7d73614f53a04fe8eb79bef2f614}{Get\+All\+Documents\+By\+Unids}} (string unids)
 \begin{DoxyCompactList}\small\item\em Retrieve all documents from this database by universal\+I\+Ds \end{DoxyCompactList}\item 
-bool \hyperlink{class_database_object_a92e80ea30e83cddf47f29d0f502b81c5}{Get\+All\+Documents\+By\+Unids} (I\+List list\+Unids)
+bool \mbox{\hyperlink{class_database_object_a9332713c924ab14195fe51bf0b8d35d1}{Get\+All\+Documents\+And\+Files\+By\+Unids}} (string unids)
+\begin{DoxyCompactList}\small\item\em Retrieve all documents from this database by universal\+I\+Ds This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_database_object_a92e80ea30e83cddf47f29d0f502b81c5}{Get\+All\+Documents\+By\+Unids}} (I\+List list\+Unids)
 \begin{DoxyCompactList}\small\item\em Retrieve all documents from this database by universal\+I\+Ds \end{DoxyCompactList}\item 
-bool \hyperlink{class_database_object_ad4834e7677cd0418969a657eed99653c}{Get\+All\+Documents\+By\+Key} (string search\+Field, string search\+Value)
+bool \mbox{\hyperlink{class_database_object_aa69262a50977a28a2decf400d1eedd20}{Get\+All\+Documents\+And\+Files\+By\+Unids}} (I\+List list\+Unids)
+\begin{DoxyCompactList}\small\item\em Retrieve all documents from this database by universal\+I\+Ds This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_database_object_ad4834e7677cd0418969a657eed99653c}{Get\+All\+Documents\+By\+Key}} (string search\+Field, string search\+Value)
 \begin{DoxyCompactList}\small\item\em Retrieve all documents from this database by searching for a specific value in the provided field \end{DoxyCompactList}\item 
-bool \hyperlink{class_database_object_a88ae0bcda671009e2742858ab945a18c}{Load\+Document\+Fields} (string list\+Fields)
+bool \mbox{\hyperlink{class_database_object_a6c2fb05fb6972d74d5bea67e323985fb}{Get\+All\+Documents\+And\+Files\+By\+Key}} (string search\+Field, string search\+Value)
+\begin{DoxyCompactList}\small\item\em Retrieve all documents from this database by searching for a specific value in the provided field This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_database_object_a88ae0bcda671009e2742858ab945a18c}{Load\+Document\+Fields}} (string list\+Fields)
 \begin{DoxyCompactList}\small\item\em Retrieve fields for all documents in the property \textquotesingle{}Documents\textquotesingle{} \end{DoxyCompactList}\item 
-bool \hyperlink{class_database_object_a8a64b91e2e4228b2fc552e51959987c4}{Load\+Document\+Fields} (I\+List list\+Fields)
-\begin{DoxyCompactList}\small\item\em Retrieve fields for all documents in the property \textquotesingle{}Documents\textquotesingle{} \end{DoxyCompactList}\end{DoxyCompactItemize}
+bool \mbox{\hyperlink{class_database_object_a8a64b91e2e4228b2fc552e51959987c4}{Load\+Document\+Fields}} (I\+List list\+Fields)
+\begin{DoxyCompactList}\small\item\em Retrieve fields for all documents in the property \textquotesingle{}Documents\textquotesingle{} \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_database_object_acdf5c9ee898d4473350a2f4878af5a23}{Load\+Document\+Files}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve file objects for all documents in the property \textquotesingle{}Documents\textquotesingle{} \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_session_object}{Session\+Object} \hyperlink{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}{Session}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\mbox{\hyperlink{class_session_object}{Session\+Object}} \mbox{\hyperlink{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}{Session}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Reference to the session object that retrieve this database object \end{DoxyCompactList}\item 
-bool \hyperlink{class_database_object_a5fe036d32a30eb10d1b3f6a30263f740}{Is\+Initialized}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\begin{DoxyCompactList}\small\item\em Indicates is the \hyperlink{class_database_object}{Database\+Object} has been initialized \end{DoxyCompactList}\item 
-string \hyperlink{class_database_object_a38a1a78430c6cd1fc4eef054e39145ce}{File\+Path}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+bool \mbox{\hyperlink{class_database_object_a5fe036d32a30eb10d1b3f6a30263f740}{Is\+Initialized}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Indicates is the \mbox{\hyperlink{class_database_object}{Database\+Object}} has been initialized \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_database_object_a38a1a78430c6cd1fc4eef054e39145ce}{File\+Path}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Database File\+Path \end{DoxyCompactList}\item 
-string \hyperlink{class_database_object_aaa091ee1a9a86d2d10fe2381ee2d1f4c}{Replication\+ID}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+string \mbox{\hyperlink{class_database_object_aaa091ee1a9a86d2d10fe2381ee2d1f4c}{Replication\+ID}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Database Replication\+ID \end{DoxyCompactList}\item 
-string \hyperlink{class_database_object_ad6bfcd30152f7a115ac5a1c7fbfa9fcb}{Server\+Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+string \mbox{\hyperlink{class_database_object_ad6bfcd30152f7a115ac5a1c7fbfa9fcb}{Server\+Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Database Server\+Name \end{DoxyCompactList}\item 
-string \hyperlink{class_database_object_a9af3f75274dd39f7fa82a355dc4ddf39}{Title}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+string \mbox{\hyperlink{class_database_object_a9af3f75274dd39f7fa82a355dc4ddf39}{Title}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Database Title \end{DoxyCompactList}\item 
-string \hyperlink{class_database_object_ac8ecdbe9722c00f787a62aef7d3dfa5a}{Template}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+string \mbox{\hyperlink{class_database_object_ac8ecdbe9722c00f787a62aef7d3dfa5a}{Template}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Database Template name \end{DoxyCompactList}\item 
-string \hyperlink{class_database_object_ad86f5dd95a9debdef284e21e32936e9e}{Size}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+string \mbox{\hyperlink{class_database_object_ad86f5dd95a9debdef284e21e32936e9e}{Size}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Database size (bytes, Kb, Mb, Gb, Tb) \end{DoxyCompactList}\item 
-string \hyperlink{class_database_object_a12da011e3dc03d3a10ac86df10c84f48}{Url}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+string \mbox{\hyperlink{class_database_object_a12da011e3dc03d3a10ac86df10c84f48}{Url}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Database U\+RL \end{DoxyCompactList}\item 
-Dictionary$<$ string, \hyperlink{class_document_object}{Document\+Object} $>$ \hyperlink{class_database_object_afaf1159aa427c5bcce01c4b8c6f34514}{Documents}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+Dictionary$<$ string, \mbox{\hyperlink{class_document_object}{Document\+Object}} $>$ \mbox{\hyperlink{class_database_object_afaf1159aa427c5bcce01c4b8c6f34514}{Documents}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Collection of retrieved Document\+Objects stored in a dictionary with key universal\+ID of the document \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 An object representing a domino database object 
 
-The following is an example of the usage of a {\ttfamily \hyperlink{class_database_object}{Database\+Object}}\+: 
+The following is an example of the usage of a {\ttfamily \mbox{\hyperlink{class_database_object}{Database\+Object}}}\+: 
 \begin{DoxyCode}
-\hyperlink{class_database_object}{DatabaseObject} dbObj = \textcolor{keyword}{new} \hyperlink{class_database_object_ab16b4327b02ffedcd1b003cea9d949a1}{DatabaseObject}(filePath, dominoServerName,  
+\mbox{\hyperlink{class_database_object}{DatabaseObject}} dbObj = \textcolor{keyword}{new} \mbox{\hyperlink{class_database_object_ab16b4327b02ffedcd1b003cea9d949a1}{DatabaseObject}}(filePath, dominoServerName,  
       sessionObject); \textcolor{comment}{// by FilePath}
 \textcolor{comment}{//  DatabaseObject dbObj = new DatabaseObject(sessionObject, replicationID, dominoServerName); // by
        ReplicationID}
-\textcolor{keywordflow}{if}(dbObj!=null && dbObj.\hyperlink{class_database_object_a7de43a21bd287deec537cffec343f41d}{Initialize}())\{
+\textcolor{keywordflow}{if}(dbObj!=null &amp;&amp; dbObj.\mbox{\hyperlink{class_database_object_a7de43a21bd287deec537cffec343f41d}{Initialize}}())\{
      \textcolor{comment}{// your code here... }
 \}
 \end{DoxyCode}
@@ -83,7 +101,7 @@ Definition at line 18 of file Database\+Object.\+cs.
 \index{Database\+Object@{Database\+Object}!Database\+Object@{Database\+Object}}
 \index{Database\+Object@{Database\+Object}!Database\+Object@{Database\+Object}}
 \subsubsection{\texorpdfstring{Database\+Object()}{DatabaseObject()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Database\+Object.\+Database\+Object (\begin{DoxyParamCaption}\item[{string}]{file\+Path,  }\item[{string}]{server,  }\item[{\hyperlink{class_session_object}{Session\+Object}}]{session }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Database\+Object.\+Database\+Object (\begin{DoxyParamCaption}\item[{string}]{file\+Path,  }\item[{string}]{server,  }\item[{\mbox{\hyperlink{class_session_object}{Session\+Object}}}]{session }\end{DoxyParamCaption})}
 
 
 
@@ -100,22 +118,22 @@ Database constructor method
 \end{DoxyParams}
 
 
-Definition at line 168 of file Database\+Object.\+cs.
+Definition at line 170 of file Database\+Object.\+cs.
 
 
 \begin{DoxyCode}
-168                                                                                   \{
-169         \_Session = session;
-170         \_FilePath = filePath;
-171         \_ServerName = server;
-172 
-173     \}
+170                                                                                   \{
+171         \_Session = session;
+172         \_FilePath = filePath;
+173         \_ServerName = server;
+174 
+175     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_database_object_a75d3e8a876c6899bd01b866e35475ed2}\label{class_database_object_a75d3e8a876c6899bd01b866e35475ed2}} 
 \index{Database\+Object@{Database\+Object}!Database\+Object@{Database\+Object}}
 \index{Database\+Object@{Database\+Object}!Database\+Object@{Database\+Object}}
 \subsubsection{\texorpdfstring{Database\+Object()}{DatabaseObject()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily Database\+Object.\+Database\+Object (\begin{DoxyParamCaption}\item[{\hyperlink{class_session_object}{Session\+Object}}]{session,  }\item[{string}]{replication\+ID,  }\item[{string}]{server }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Database\+Object.\+Database\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_session_object}{Session\+Object}}}]{session,  }\item[{string}]{replication\+ID,  }\item[{string}]{server }\end{DoxyParamCaption})}
 
 
 
@@ -132,15 +150,15 @@ Database constructor method
 \end{DoxyParams}
 
 
-Definition at line 181 of file Database\+Object.\+cs.
+Definition at line 183 of file Database\+Object.\+cs.
 
 
 \begin{DoxyCode}
-181                                                                                        \{
-182         \_Session = session;
-183         \_ReplicationID = replicationID;
-184         \_ServerName = server;
-185     \}
+183                                                                                        \{
+184         \_Session = session;
+185         \_ReplicationID = replicationID;
+186         \_ServerName = server;
+187     \}
 \end{DoxyCode}
 
 
@@ -164,7 +182,7 @@ Boolean
 \end{DoxyReturn}
 
 
-Definition at line 318 of file Database\+Object.\+cs.
+Definition at line 404 of file Database\+Object.\+cs.
 
 
 
@@ -172,18 +190,264 @@ References Session\+Object.\+Connection, and Session\+Object.\+Web\+Service\+U\+
 
 
 \begin{DoxyCode}
-318                                   \{
-319         \hyperlink{class_connector}{Connector}.ResetReturn();
-320         \textcolor{keywordflow}{if} (\_isInitialized) \{
-321             \textcolor{keywordflow}{if} (\_Session.\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}.Request.ExecuteAllDocumentsRequest(\_Session.
-      \hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}, null, null, null, null, \textcolor{keyword}{this})) \{
-322                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-323             \} \textcolor{keywordflow}{else} \{
-324                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-325             \}
-326         \}
-327         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-328     \}
+404                                   \{
+405         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+406         \textcolor{keywordflow}{if} (\_isInitialized) \{
+407             \textcolor{keywordflow}{if} (\_Session.\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.ExecuteAllDocumentsRequest(\_Session.
+      \mbox{\hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}}, null, null, null, null, \textcolor{keyword}{this})) \{
+408                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+409             \} \textcolor{keywordflow}{else} \{
+410                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+411             \}
+412         \}
+413         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+414     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_database_object_a72239fa2b2a549665e45cdd340cd70a0}\label{class_database_object_a72239fa2b2a549665e45cdd340cd70a0}} 
+\index{Database\+Object@{Database\+Object}!Get\+All\+Documents\+And\+Files@{Get\+All\+Documents\+And\+Files}}
+\index{Get\+All\+Documents\+And\+Files@{Get\+All\+Documents\+And\+Files}!Database\+Object@{Database\+Object}}
+\subsubsection{\texorpdfstring{Get\+All\+Documents\+And\+Files()}{GetAllDocumentsAndFiles()}}
+{\footnotesize\ttfamily bool Database\+Object.\+Get\+All\+Documents\+And\+Files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieve all documents from the database This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects 
+
+Triggers an all documents request
+
+All documents found will be added to the property \textquotesingle{}Documents\textquotesingle{}
+
+\begin{DoxyReturn}{Returns}
+Boolean
+\end{DoxyReturn}
+
+
+Definition at line 423 of file Database\+Object.\+cs.
+
+
+
+References Session\+Object.\+Connection, and Session\+Object.\+Web\+Service\+U\+RL.
+
+
+\begin{DoxyCode}
+424     \{
+425         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+426         \textcolor{keywordflow}{if} (\_isInitialized)
+427         \{
+428             \textcolor{keywordflow}{if} (\_Session.\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.ExecuteAllDocumentsFilesRequest(\_Session.
+      \mbox{\hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}}, null, null, null, null, \textcolor{keyword}{this}))
+429             \{
+430                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+431             \}
+432             \textcolor{keywordflow}{else}
+433             \{
+434                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+435             \}
+436         \}
+437         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+438     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_database_object_ac478ff9264805edc8569d510916c4c00}\label{class_database_object_ac478ff9264805edc8569d510916c4c00}} 
+\index{Database\+Object@{Database\+Object}!Get\+All\+Documents\+And\+Files\+By\+Formula@{Get\+All\+Documents\+And\+Files\+By\+Formula}}
+\index{Get\+All\+Documents\+And\+Files\+By\+Formula@{Get\+All\+Documents\+And\+Files\+By\+Formula}!Database\+Object@{Database\+Object}}
+\subsubsection{\texorpdfstring{Get\+All\+Documents\+And\+Files\+By\+Formula()}{GetAllDocumentsAndFilesByFormula()}}
+{\footnotesize\ttfamily bool Database\+Object.\+Get\+All\+Documents\+And\+Files\+By\+Formula (\begin{DoxyParamCaption}\item[{string}]{formula }\end{DoxyParamCaption})}
+
+
+
+Retrieve all documents from this database that correspond to the provided formula This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects 
+
+Triggers an all documents request
+
+All documents found will be added to the property \textquotesingle{}Documents\textquotesingle{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em formula} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean
+\end{DoxyReturn}
+
+
+Definition at line 467 of file Database\+Object.\+cs.
+
+
+
+References Session\+Object.\+Connection, and Session\+Object.\+Web\+Service\+U\+RL.
+
+
+\begin{DoxyCode}
+468     \{
+469         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+470         \textcolor{keywordflow}{if} (\_isInitialized)
+471         \{
+472             \textcolor{keywordflow}{if} (\_Session.\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.ExecuteAllDocumentsFilesRequest(\_Session.
+      \mbox{\hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}}, null, null, formula, null, \textcolor{keyword}{this}))
+473             \{
+474                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+475             \}
+476             \textcolor{keywordflow}{else}
+477             \{
+478                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+479             \}
+480         \}
+481         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+482     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_database_object_a6c2fb05fb6972d74d5bea67e323985fb}\label{class_database_object_a6c2fb05fb6972d74d5bea67e323985fb}} 
+\index{Database\+Object@{Database\+Object}!Get\+All\+Documents\+And\+Files\+By\+Key@{Get\+All\+Documents\+And\+Files\+By\+Key}}
+\index{Get\+All\+Documents\+And\+Files\+By\+Key@{Get\+All\+Documents\+And\+Files\+By\+Key}!Database\+Object@{Database\+Object}}
+\subsubsection{\texorpdfstring{Get\+All\+Documents\+And\+Files\+By\+Key()}{GetAllDocumentsAndFilesByKey()}}
+{\footnotesize\ttfamily bool Database\+Object.\+Get\+All\+Documents\+And\+Files\+By\+Key (\begin{DoxyParamCaption}\item[{string}]{search\+Field,  }\item[{string}]{search\+Value }\end{DoxyParamCaption})}
+
+
+
+Retrieve all documents from this database by searching for a specific value in the provided field This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects 
+
+Triggers an all documents request
+
+All documents found will be added to the property \textquotesingle{}Documents\textquotesingle{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em search\+Field} & \\
+\hline
+{\em search\+Value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean
+\end{DoxyReturn}
+
+
+Definition at line 608 of file Database\+Object.\+cs.
+
+
+
+References Session\+Object.\+Connection, and Session\+Object.\+Web\+Service\+U\+RL.
+
+
+\begin{DoxyCode}
+609     \{
+610         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+611         \textcolor{keywordflow}{if} (\_isInitialized)
+612         \{
+613             \textcolor{keywordflow}{if} (\_Session.\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.ExecuteAllDocumentsFilesRequest(\_Session.
+      \mbox{\hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}}, searchField, searchValue, null, null, \textcolor{keyword}{this}))
+614             \{
+615                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+616             \}
+617             \textcolor{keywordflow}{else}
+618             \{
+619                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+620             \}
+621         \}
+622         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+623     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_database_object_a9332713c924ab14195fe51bf0b8d35d1}\label{class_database_object_a9332713c924ab14195fe51bf0b8d35d1}} 
+\index{Database\+Object@{Database\+Object}!Get\+All\+Documents\+And\+Files\+By\+Unids@{Get\+All\+Documents\+And\+Files\+By\+Unids}}
+\index{Get\+All\+Documents\+And\+Files\+By\+Unids@{Get\+All\+Documents\+And\+Files\+By\+Unids}!Database\+Object@{Database\+Object}}
+\subsubsection{\texorpdfstring{Get\+All\+Documents\+And\+Files\+By\+Unids()}{GetAllDocumentsAndFilesByUnids()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Database\+Object.\+Get\+All\+Documents\+And\+Files\+By\+Unids (\begin{DoxyParamCaption}\item[{string}]{unids }\end{DoxyParamCaption})}
+
+
+
+Retrieve all documents from this database by universal\+I\+Ds This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects 
+
+Provide the universal\+Ids separated by ;
+
+Triggers an all documents request
+
+All documents found will be added to the property \textquotesingle{}Documents\textquotesingle{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em unids} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean
+\end{DoxyReturn}
+
+
+Definition at line 513 of file Database\+Object.\+cs.
+
+
+
+References Session\+Object.\+Connection, and Session\+Object.\+Web\+Service\+U\+RL.
+
+
+\begin{DoxyCode}
+514     \{
+515         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+516         \textcolor{keywordflow}{if} (\_isInitialized)
+517         \{
+518             \textcolor{keywordflow}{if} (\_Session.\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.ExecuteAllDocumentsFilesRequest(\_Session.
+      \mbox{\hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}}, null, null, null, unids, \textcolor{keyword}{this}))
+519             \{
+520                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+521             \}
+522             \textcolor{keywordflow}{else}
+523             \{
+524                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+525             \}
+526         \}
+527         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+528     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_database_object_aa69262a50977a28a2decf400d1eedd20}\label{class_database_object_aa69262a50977a28a2decf400d1eedd20}} 
+\index{Database\+Object@{Database\+Object}!Get\+All\+Documents\+And\+Files\+By\+Unids@{Get\+All\+Documents\+And\+Files\+By\+Unids}}
+\index{Get\+All\+Documents\+And\+Files\+By\+Unids@{Get\+All\+Documents\+And\+Files\+By\+Unids}!Database\+Object@{Database\+Object}}
+\subsubsection{\texorpdfstring{Get\+All\+Documents\+And\+Files\+By\+Unids()}{GetAllDocumentsAndFilesByUnids()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Database\+Object.\+Get\+All\+Documents\+And\+Files\+By\+Unids (\begin{DoxyParamCaption}\item[{I\+List}]{list\+Unids }\end{DoxyParamCaption})}
+
+
+
+Retrieve all documents from this database by universal\+I\+Ds This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects 
+
+Triggers an all documents request
+
+All documents found will be added to the property \textquotesingle{}Documents\textquotesingle{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Unids} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean
+\end{DoxyReturn}
+
+
+Definition at line 559 of file Database\+Object.\+cs.
+
+
+
+References Session\+Object.\+Connection, and Session\+Object.\+Web\+Service\+U\+RL.
+
+
+\begin{DoxyCode}
+560     \{
+561         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+562         \textcolor{keywordflow}{if} (\_isInitialized)
+563         \{
+564             \textcolor{keywordtype}{string} unids = Common.GetListAsString(listUnids, \textcolor{stringliteral}{";"});
+565 
+566             \textcolor{keywordflow}{if} (\_Session.\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.ExecuteAllDocumentsFilesRequest(\_Session.
+      \mbox{\hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}}, null, null, null, unids, \textcolor{keyword}{this}))
+567             \{
+568                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+569             \}
+570             \textcolor{keywordflow}{else}
+571             \{
+572                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+573             \}
+574         \}
+575         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+576     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_database_object_a6bfb480373a7e2bdbeaa67e4e3303a3a}\label{class_database_object_a6bfb480373a7e2bdbeaa67e4e3303a3a}} 
 \index{Database\+Object@{Database\+Object}!Get\+All\+Documents\+By\+Formula@{Get\+All\+Documents\+By\+Formula}}
@@ -209,7 +473,7 @@ Boolean
 \end{DoxyReturn}
 
 
-Definition at line 337 of file Database\+Object.\+cs.
+Definition at line 447 of file Database\+Object.\+cs.
 
 
 
@@ -217,18 +481,18 @@ References Session\+Object.\+Connection, and Session\+Object.\+Web\+Service\+U\+
 
 
 \begin{DoxyCode}
-337                                                          \{
-338         \hyperlink{class_connector}{Connector}.ResetReturn();
-339         \textcolor{keywordflow}{if} (\_isInitialized) \{
-340             \textcolor{keywordflow}{if} (\_Session.\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}.Request.ExecuteAllDocumentsRequest(\_Session.
-      \hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}, null, null, formula, null, \textcolor{keyword}{this})) \{
-341                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-342             \} \textcolor{keywordflow}{else} \{
-343                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-344             \}
-345         \}
-346         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-347     \}
+447                                                          \{
+448         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+449         \textcolor{keywordflow}{if} (\_isInitialized) \{
+450             \textcolor{keywordflow}{if} (\_Session.\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.ExecuteAllDocumentsRequest(\_Session.
+      \mbox{\hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}}, null, null, formula, null, \textcolor{keyword}{this})) \{
+451                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+452             \} \textcolor{keywordflow}{else} \{
+453                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+454             \}
+455         \}
+456         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+457     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_database_object_ad4834e7677cd0418969a657eed99653c}\label{class_database_object_ad4834e7677cd0418969a657eed99653c}} 
 \index{Database\+Object@{Database\+Object}!Get\+All\+Documents\+By\+Key@{Get\+All\+Documents\+By\+Key}}
@@ -256,7 +520,7 @@ Boolean
 \end{DoxyReturn}
 
 
-Definition at line 399 of file Database\+Object.\+cs.
+Definition at line 586 of file Database\+Object.\+cs.
 
 
 
@@ -264,18 +528,18 @@ References Session\+Object.\+Connection, and Session\+Object.\+Web\+Service\+U\+
 
 
 \begin{DoxyCode}
-399                                                                              \{
-400         \hyperlink{class_connector}{Connector}.ResetReturn();
-401         \textcolor{keywordflow}{if} (\_isInitialized) \{
-402             \textcolor{keywordflow}{if} (\_Session.\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}.Request.ExecuteAllDocumentsRequest(\_Session.
-      \hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL},searchField,searchValue,null, null, \textcolor{keyword}{this})) \{
-403                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-404             \} \textcolor{keywordflow}{else} \{
-405                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-406             \}
-407         \}
-408         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-409     \}
+586                                                                              \{
+587         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+588         \textcolor{keywordflow}{if} (\_isInitialized) \{
+589             \textcolor{keywordflow}{if} (\_Session.\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.ExecuteAllDocumentsRequest(\_Session.
+      \mbox{\hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}},searchField,searchValue,null, null, \textcolor{keyword}{this})) \{
+590                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+591             \} \textcolor{keywordflow}{else} \{
+592                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+593             \}
+594         \}
+595         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+596     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_database_object_a4d8a7d73614f53a04fe8eb79bef2f614}\label{class_database_object_a4d8a7d73614f53a04fe8eb79bef2f614}} 
 \index{Database\+Object@{Database\+Object}!Get\+All\+Documents\+By\+Unids@{Get\+All\+Documents\+By\+Unids}}
@@ -303,7 +567,7 @@ Boolean
 \end{DoxyReturn}
 
 
-Definition at line 358 of file Database\+Object.\+cs.
+Definition at line 492 of file Database\+Object.\+cs.
 
 
 
@@ -311,18 +575,18 @@ References Session\+Object.\+Connection, and Session\+Object.\+Web\+Service\+U\+
 
 
 \begin{DoxyCode}
-358                                                      \{
-359         \hyperlink{class_connector}{Connector}.ResetReturn();
-360         \textcolor{keywordflow}{if} (\_isInitialized) \{
-361             \textcolor{keywordflow}{if} (\_Session.\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}.Request.ExecuteAllDocumentsRequest(\_Session.
-      \hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}, null, null, null, unids, \textcolor{keyword}{this})) \{
-362                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-363             \} \textcolor{keywordflow}{else} \{
-364                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-365             \}
-366         \}
-367         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-368     \}
+492                                                      \{
+493         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+494         \textcolor{keywordflow}{if} (\_isInitialized) \{
+495             \textcolor{keywordflow}{if} (\_Session.\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.ExecuteAllDocumentsRequest(\_Session.
+      \mbox{\hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}}, null, null, null, unids, \textcolor{keyword}{this})) \{
+496                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+497             \} \textcolor{keywordflow}{else} \{
+498                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+499             \}
+500         \}
+501         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+502     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_database_object_a92e80ea30e83cddf47f29d0f502b81c5}\label{class_database_object_a92e80ea30e83cddf47f29d0f502b81c5}} 
 \index{Database\+Object@{Database\+Object}!Get\+All\+Documents\+By\+Unids@{Get\+All\+Documents\+By\+Unids}}
@@ -348,7 +612,7 @@ Boolean
 \end{DoxyReturn}
 
 
-Definition at line 377 of file Database\+Object.\+cs.
+Definition at line 537 of file Database\+Object.\+cs.
 
 
 
@@ -356,26 +620,26 @@ References Session\+Object.\+Connection, and Session\+Object.\+Web\+Service\+U\+
 
 
 \begin{DoxyCode}
-377                                                         \{
-378         \hyperlink{class_connector}{Connector}.ResetReturn();
-379         \textcolor{keywordflow}{if} (\_isInitialized) \{
-380             \textcolor{keywordtype}{string} unids = Common.GetListAsString(listUnids, \textcolor{stringliteral}{";"});
-381 
-382             \textcolor{keywordflow}{if} (\_Session.\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}.Request.ExecuteAllDocumentsRequest(\_Session.
-      \hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}, null, null, null, unids, \textcolor{keyword}{this})) \{
-383                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-384             \} \textcolor{keywordflow}{else} \{
-385                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-386             \}
-387         \}
-388         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-389     \}
+537                                                         \{
+538         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+539         \textcolor{keywordflow}{if} (\_isInitialized) \{
+540             \textcolor{keywordtype}{string} unids = Common.GetListAsString(listUnids, \textcolor{stringliteral}{";"});
+541 
+542             \textcolor{keywordflow}{if} (\_Session.\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.ExecuteAllDocumentsRequest(\_Session.
+      \mbox{\hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}}, null, null, null, unids, \textcolor{keyword}{this})) \{
+543                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+544             \} \textcolor{keywordflow}{else} \{
+545                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+546             \}
+547         \}
+548         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+549     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_database_object_a9435cc20fe3a92747e509011b7726aff}\label{class_database_object_a9435cc20fe3a92747e509011b7726aff}} 
 \index{Database\+Object@{Database\+Object}!Get\+Document@{Get\+Document}}
 \index{Get\+Document@{Get\+Document}!Database\+Object@{Database\+Object}}
 \subsubsection{\texorpdfstring{Get\+Document()}{GetDocument()}}
-{\footnotesize\ttfamily \hyperlink{class_document_object}{Document\+Object} Database\+Object.\+Get\+Document (\begin{DoxyParamCaption}\item[{string}]{unid }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_document_object}{Document\+Object}} Database\+Object.\+Get\+Document (\begin{DoxyParamCaption}\item[{string}]{unid }\end{DoxyParamCaption})}
 
 
 
@@ -391,11 +655,11 @@ The document will be added to the property \textquotesingle{}Documents\textquote
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-\hyperlink{class_document_object}{Document\+Object}
+\mbox{\hyperlink{class_document_object}{Document\+Object}}
 \end{DoxyReturn}
 
 
-Definition at line 253 of file Database\+Object.\+cs.
+Definition at line 255 of file Database\+Object.\+cs.
 
 
 
@@ -403,25 +667,181 @@ References Document\+Object.\+Initialize().
 
 
 \begin{DoxyCode}
-253                                                    \{
-254         \hyperlink{class_connector}{Connector}.ResetReturn();
-255         \hyperlink{class_document_object}{DocumentObject} docObj = null;
-256         \textcolor{keywordflow}{if} (\_isInitialized) \{
-257             docObj = \textcolor{keyword}{new} \hyperlink{class_document_object}{DocumentObject}(\textcolor{keyword}{this}, unid);
-258             \textcolor{keywordflow}{if}  (docObj.\hyperlink{class_document_object_af4298d6cfbb9ea60643d9995309b73f1}{Initialize}()) \{
-259                 \textcolor{keywordflow}{return} docObj;
-260             \} \textcolor{keywordflow}{else} \{
-261                 \textcolor{keywordflow}{return} null;
-262             \}
-263         \}
-264         \textcolor{keywordflow}{return} docObj;
-265     \}
+255                                                    \{
+256         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+257         \mbox{\hyperlink{class_document_object}{DocumentObject}} docObj = null;
+258         \textcolor{keywordflow}{if} (\_isInitialized) \{
+259             docObj = \textcolor{keyword}{new} \mbox{\hyperlink{class_document_object}{DocumentObject}}(\textcolor{keyword}{this}, unid);
+260             \textcolor{keywordflow}{if}  (docObj.\mbox{\hyperlink{class_document_object_af4298d6cfbb9ea60643d9995309b73f1}{Initialize}}()) \{
+261                 \textcolor{keywordflow}{return} docObj;
+262             \} \textcolor{keywordflow}{else} \{
+263                 \textcolor{keywordflow}{return} null;
+264             \}
+265         \}
+266         \textcolor{keywordflow}{return} docObj;
+267     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_database_object_a9be31ba852e56a107e93f7d925f8a0c3}\label{class_database_object_a9be31ba852e56a107e93f7d925f8a0c3}} 
+\index{Database\+Object@{Database\+Object}!Get\+Document\+And\+Files@{Get\+Document\+And\+Files}}
+\index{Get\+Document\+And\+Files@{Get\+Document\+And\+Files}!Database\+Object@{Database\+Object}}
+\subsubsection{\texorpdfstring{Get\+Document\+And\+Files()}{GetDocumentAndFiles()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_document_object}{Document\+Object}} Database\+Object.\+Get\+Document\+And\+Files (\begin{DoxyParamCaption}\item[{string}]{unid }\end{DoxyParamCaption})}
+
+
+
+Retrieve a document from this database by universal\+ID This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects 
+
+Triggers a document request
+
+The document will be added to the property \textquotesingle{}Documents\textquotesingle{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em unid} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_document_object}{Document\+Object}}
+\end{DoxyReturn}
+
+
+Definition at line 277 of file Database\+Object.\+cs.
+
+
+
+References Document\+Object.\+Initialize\+With\+Files().
+
+
+\begin{DoxyCode}
+278     \{
+279         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+280         \mbox{\hyperlink{class_document_object}{DocumentObject}} docObj = null;
+281         \textcolor{keywordflow}{if} (\_isInitialized)
+282         \{
+283             docObj = \textcolor{keyword}{new} \mbox{\hyperlink{class_document_object}{DocumentObject}}(\textcolor{keyword}{this}, unid);
+284             \textcolor{keywordflow}{if} (docObj.\mbox{\hyperlink{class_document_object_a83f0e855adc5fb7afd02d2e34767f5c8}{InitializeWithFiles}}())
+285             \{
+286                 \textcolor{keywordflow}{return} docObj;
+287             \}
+288             \textcolor{keywordflow}{else}
+289             \{
+290                 \textcolor{keywordflow}{return} null;
+291             \}
+292         \}
+293         \textcolor{keywordflow}{return} docObj;
+294     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_database_object_a1d35f51baee4be6adb69a954efe5b4bf}\label{class_database_object_a1d35f51baee4be6adb69a954efe5b4bf}} 
+\index{Database\+Object@{Database\+Object}!Get\+Document\+And\+Files\+By\+Formula@{Get\+Document\+And\+Files\+By\+Formula}}
+\index{Get\+Document\+And\+Files\+By\+Formula@{Get\+Document\+And\+Files\+By\+Formula}!Database\+Object@{Database\+Object}}
+\subsubsection{\texorpdfstring{Get\+Document\+And\+Files\+By\+Formula()}{GetDocumentAndFilesByFormula()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_document_object}{Document\+Object}} Database\+Object.\+Get\+Document\+And\+Files\+By\+Formula (\begin{DoxyParamCaption}\item[{string}]{formula }\end{DoxyParamCaption})}
+
+
+
+Retrieve a document from this database by searching using the provided formula. This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects 
+
+The first document found will be returned
+
+Triggers a document request
+
+The document will be added to the property \textquotesingle{}Documents\textquotesingle{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em formula} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_document_object}{Document\+Object}}
+\end{DoxyReturn}
+
+
+Definition at line 379 of file Database\+Object.\+cs.
+
+
+
+References Document\+Object.\+Initialize\+With\+Files().
+
+
+\begin{DoxyCode}
+380     \{
+381         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+382         \mbox{\hyperlink{class_document_object}{DocumentObject}} docObj = null;
+383         \textcolor{keywordflow}{if} (\_isInitialized)
+384         \{
+385             docObj = \textcolor{keyword}{new} \mbox{\hyperlink{class_document_object}{DocumentObject}}(formula, \textcolor{keyword}{this});
+386             \textcolor{keywordflow}{if} (docObj.\mbox{\hyperlink{class_document_object_a83f0e855adc5fb7afd02d2e34767f5c8}{InitializeWithFiles}}())
+387             \{
+388                 \textcolor{keywordflow}{return} docObj;
+389             \}
+390             \textcolor{keywordflow}{else}
+391             \{
+392                 \textcolor{keywordflow}{return} null;
+393             \}
+394         \}
+395         \textcolor{keywordflow}{return} docObj;
+396     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_database_object_a30968034c65328e44ddb0fdac8ab1435}\label{class_database_object_a30968034c65328e44ddb0fdac8ab1435}} 
+\index{Database\+Object@{Database\+Object}!Get\+Document\+And\+Files\+By\+Key@{Get\+Document\+And\+Files\+By\+Key}}
+\index{Get\+Document\+And\+Files\+By\+Key@{Get\+Document\+And\+Files\+By\+Key}!Database\+Object@{Database\+Object}}
+\subsubsection{\texorpdfstring{Get\+Document\+And\+Files\+By\+Key()}{GetDocumentAndFilesByKey()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_document_object}{Document\+Object}} Database\+Object.\+Get\+Document\+And\+Files\+By\+Key (\begin{DoxyParamCaption}\item[{string}]{search\+Field,  }\item[{string}]{search\+Value }\end{DoxyParamCaption})}
+
+
+
+Retrieve a document from this database by searching for a specific value in the provided field. This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects 
+
+The first document found will be returned
+
+Triggers a document request
+
+The document will be added to the property \textquotesingle{}Documents\textquotesingle{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em search\+Field} & \\
+\hline
+{\em search\+Value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_document_object}{Document\+Object}}
+\end{DoxyReturn}
+
+
+Definition at line 329 of file Database\+Object.\+cs.
+
+
+
+References Document\+Object.\+Initialize\+With\+Files().
+
+
+\begin{DoxyCode}
+330     \{
+331         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+332         \mbox{\hyperlink{class_document_object}{DocumentObject}} docObj = null;
+333         \textcolor{keywordflow}{if} (\_isInitialized)
+334         \{
+335             docObj = \textcolor{keyword}{new} \mbox{\hyperlink{class_document_object}{DocumentObject}}(\textcolor{keyword}{this}, searchField, searchValue);
+336             \textcolor{keywordflow}{if} (docObj.\mbox{\hyperlink{class_document_object_a83f0e855adc5fb7afd02d2e34767f5c8}{InitializeWithFiles}}())
+337             \{
+338                 \textcolor{keywordflow}{return} docObj;
+339             \}
+340             \textcolor{keywordflow}{else}
+341             \{
+342                 \textcolor{keywordflow}{return} null;
+343             \}
+344         \}
+345         \textcolor{keywordflow}{return} docObj;
+346     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_database_object_ae5477aedfcd0d54b21017faa1389bc71}\label{class_database_object_ae5477aedfcd0d54b21017faa1389bc71}} 
 \index{Database\+Object@{Database\+Object}!Get\+Document\+By\+Formula@{Get\+Document\+By\+Formula}}
 \index{Get\+Document\+By\+Formula@{Get\+Document\+By\+Formula}!Database\+Object@{Database\+Object}}
 \subsubsection{\texorpdfstring{Get\+Document\+By\+Formula()}{GetDocumentByFormula()}}
-{\footnotesize\ttfamily \hyperlink{class_document_object}{Document\+Object} Database\+Object.\+Get\+Document\+By\+Formula (\begin{DoxyParamCaption}\item[{string}]{formula }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_document_object}{Document\+Object}} Database\+Object.\+Get\+Document\+By\+Formula (\begin{DoxyParamCaption}\item[{string}]{formula }\end{DoxyParamCaption})}
 
 
 
@@ -439,11 +859,11 @@ The document will be added to the property \textquotesingle{}Documents\textquote
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-\hyperlink{class_document_object}{Document\+Object}
+\mbox{\hyperlink{class_document_object}{Document\+Object}}
 \end{DoxyReturn}
 
 
-Definition at line 298 of file Database\+Object.\+cs.
+Definition at line 356 of file Database\+Object.\+cs.
 
 
 
@@ -451,25 +871,25 @@ References Document\+Object.\+Initialize().
 
 
 \begin{DoxyCode}
-298                                                                \{
-299         \hyperlink{class_connector}{Connector}.ResetReturn();
-300         \hyperlink{class_document_object}{DocumentObject} docObj = null;
-301         \textcolor{keywordflow}{if} (\_isInitialized) \{
-302             docObj = \textcolor{keyword}{new} \hyperlink{class_document_object}{DocumentObject}(formula,\textcolor{keyword}{this});
-303             \textcolor{keywordflow}{if} (docObj.\hyperlink{class_document_object_af4298d6cfbb9ea60643d9995309b73f1}{Initialize}()) \{
-304                 \textcolor{keywordflow}{return} docObj;
-305             \} \textcolor{keywordflow}{else} \{
-306                 \textcolor{keywordflow}{return} null;
-307             \}
-308         \}
-309         \textcolor{keywordflow}{return} docObj;
-310     \}
+356                                                                \{
+357         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+358         \mbox{\hyperlink{class_document_object}{DocumentObject}} docObj = null;
+359         \textcolor{keywordflow}{if} (\_isInitialized) \{
+360             docObj = \textcolor{keyword}{new} \mbox{\hyperlink{class_document_object}{DocumentObject}}(formula,\textcolor{keyword}{this});
+361             \textcolor{keywordflow}{if} (docObj.\mbox{\hyperlink{class_document_object_af4298d6cfbb9ea60643d9995309b73f1}{Initialize}}()) \{
+362                 \textcolor{keywordflow}{return} docObj;
+363             \} \textcolor{keywordflow}{else} \{
+364                 \textcolor{keywordflow}{return} null;
+365             \}
+366         \}
+367         \textcolor{keywordflow}{return} docObj;
+368     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_database_object_a57bfc77d2754236cbcf6ac30a90da529}\label{class_database_object_a57bfc77d2754236cbcf6ac30a90da529}} 
 \index{Database\+Object@{Database\+Object}!Get\+Document\+By\+Key@{Get\+Document\+By\+Key}}
 \index{Get\+Document\+By\+Key@{Get\+Document\+By\+Key}!Database\+Object@{Database\+Object}}
 \subsubsection{\texorpdfstring{Get\+Document\+By\+Key()}{GetDocumentByKey()}}
-{\footnotesize\ttfamily \hyperlink{class_document_object}{Document\+Object} Database\+Object.\+Get\+Document\+By\+Key (\begin{DoxyParamCaption}\item[{string}]{search\+Field,  }\item[{string}]{search\+Value }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_document_object}{Document\+Object}} Database\+Object.\+Get\+Document\+By\+Key (\begin{DoxyParamCaption}\item[{string}]{search\+Field,  }\item[{string}]{search\+Value }\end{DoxyParamCaption})}
 
 
 
@@ -489,11 +909,11 @@ The document will be added to the property \textquotesingle{}Documents\textquote
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-\hyperlink{class_document_object}{Document\+Object}
+\mbox{\hyperlink{class_document_object}{Document\+Object}}
 \end{DoxyReturn}
 
 
-Definition at line 276 of file Database\+Object.\+cs.
+Definition at line 305 of file Database\+Object.\+cs.
 
 
 
@@ -501,19 +921,19 @@ References Document\+Object.\+Initialize().
 
 
 \begin{DoxyCode}
-276                                                                                    \{
-277         \hyperlink{class_connector}{Connector}.ResetReturn();
-278         \hyperlink{class_document_object}{DocumentObject} docObj = null;
-279         \textcolor{keywordflow}{if} (\_isInitialized) \{
-280             docObj = \textcolor{keyword}{new} \hyperlink{class_document_object}{DocumentObject}(\textcolor{keyword}{this}, searchField,searchValue);
-281             \textcolor{keywordflow}{if} (docObj.\hyperlink{class_document_object_af4298d6cfbb9ea60643d9995309b73f1}{Initialize}()) \{
-282                 \textcolor{keywordflow}{return} docObj;
-283             \} \textcolor{keywordflow}{else} \{
-284                 \textcolor{keywordflow}{return} null;
-285             \}
-286         \}
-287         \textcolor{keywordflow}{return} docObj;
-288     \}
+305                                                                                    \{
+306         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+307         \mbox{\hyperlink{class_document_object}{DocumentObject}} docObj = null;
+308         \textcolor{keywordflow}{if} (\_isInitialized) \{
+309             docObj = \textcolor{keyword}{new} \mbox{\hyperlink{class_document_object}{DocumentObject}}(\textcolor{keyword}{this}, searchField,searchValue);
+310             \textcolor{keywordflow}{if} (docObj.\mbox{\hyperlink{class_document_object_af4298d6cfbb9ea60643d9995309b73f1}{Initialize}}()) \{
+311                 \textcolor{keywordflow}{return} docObj;
+312             \} \textcolor{keywordflow}{else} \{
+313                 \textcolor{keywordflow}{return} null;
+314             \}
+315         \}
+316         \textcolor{keywordflow}{return} docObj;
+317     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_database_object_a7de43a21bd287deec537cffec343f41d}\label{class_database_object_a7de43a21bd287deec537cffec343f41d}} 
 \index{Database\+Object@{Database\+Object}!Initialize@{Initialize}}
@@ -523,18 +943,18 @@ References Document\+Object.\+Initialize().
 
 
 
-Initializes the \hyperlink{class_database_object}{Database\+Object} by validating the input and triggering the database request 
+Initializes the \mbox{\hyperlink{class_database_object}{Database\+Object}} by validating the input and triggering the database request 
 
 \begin{DoxyReturn}{Returns}
 Boolean
 \end{DoxyReturn}
 
 
-Definition at line 195 of file Database\+Object.\+cs.
+Definition at line 197 of file Database\+Object.\+cs.
 
 
 
-References Session\+Object.\+Connection, Connector.\+has\+Error, Session\+Object.\+Is\+Initialized, Connector.\+Return\+Messages, and Session\+Object.\+Web\+Service\+U\+RL.
+References Session\+Object.\+Connection, Connector.\+has\+Error, and Session\+Object.\+Web\+Service\+U\+RL.
 
 
 
@@ -542,33 +962,33 @@ Referenced by Session\+Object.\+Get\+Database(), and Session\+Object.\+Get\+Data
 
 
 \begin{DoxyCode}
-195                              \{
-196 
-197         \hyperlink{class_connector}{Connector}.ResetReturn();
-198         \textcolor{comment}{// reset the list of docs}
-199         \_Documents = null;
-200 
-201         \textcolor{keywordflow}{if} (!ValidateInput()) \{
-202             \_isInitialized = \textcolor{keyword}{false};
-203             \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError} = \textcolor{keyword}{true};
-204             \textcolor{keywordflow}{return} \textcolor{keyword}{false};   \textcolor{comment}{// throws exception}
-205         \}
-206 
-207         \textcolor{comment}{// make a connection to the webservice database - this will check the users authentication on that
+197                              \{
+198 
+199         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+200         \textcolor{comment}{// reset the list of docs}
+201         \_Documents = null;
+202 
+203         \textcolor{keywordflow}{if} (!ValidateInput()) \{
+204             \_isInitialized = \textcolor{keyword}{false};
+205             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError}} = \textcolor{keyword}{true};
+206             \textcolor{keywordflow}{return} \textcolor{keyword}{false};   \textcolor{comment}{// throws exception}
+207         \}
+208 
+209         \textcolor{comment}{// make a connection to the webservice database - this will check the users authentication on that
        database}
-208         \textcolor{keywordflow}{if} (\_Session.\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}.Request.ExecuteDatabaseRequest(\_Session.
-      \hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}, \_ServerName, \_FilePath, \_ReplicationID, \textcolor{keyword}{this})) \{
-209             \_isInitialized = \textcolor{keyword}{true};
-210             \hyperlink{class_connector}{Connector}.\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError} = \textcolor{keyword}{false};
-211             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-212         \} \textcolor{keywordflow}{else} \{
-213             \textcolor{comment}{//error messages written to Connection.ReturnMessages by
+210         \textcolor{keywordflow}{if} (\_Session.\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.ExecuteDatabaseRequest(\_Session.
+      \mbox{\hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}}, \_ServerName, \_FilePath, \_ReplicationID, \textcolor{keyword}{this})) \{
+211             \_isInitialized = \textcolor{keyword}{true};
+212             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError}} = \textcolor{keyword}{false};
+213             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+214         \} \textcolor{keywordflow}{else} \{
+215             \textcolor{comment}{//error messages written to Connection.ReturnMessages by
        Connection.Request.ExecuteSessionRequest}
-214             \_isInitialized = \textcolor{keyword}{false};
-215             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-216         \}
-217                 
-218     \}
+216             \_isInitialized = \textcolor{keyword}{false};
+217             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+218         \}
+219                 
+220     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_database_object_a88ae0bcda671009e2742858ab945a18c}\label{class_database_object_a88ae0bcda671009e2742858ab945a18c}} 
 \index{Database\+Object@{Database\+Object}!Load\+Document\+Fields@{Load\+Document\+Fields}}
@@ -594,7 +1014,7 @@ Boolean
 \end{DoxyReturn}
 
 
-Definition at line 419 of file Database\+Object.\+cs.
+Definition at line 632 of file Database\+Object.\+cs.
 
 
 
@@ -602,18 +1022,18 @@ References Session\+Object.\+Connection, and Session\+Object.\+Web\+Service\+U\+
 
 
 \begin{DoxyCode}
-419                                                       \{
-420         \hyperlink{class_connector}{Connector}.ResetReturn();
-421         \textcolor{keywordflow}{if} (\_isInitialized && \_Documents != null && \_Documents.Count > 0) \{
-422             \textcolor{keywordflow}{if} (\_Session.\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}.Request.ExecuteAllFieldsRequest(\_Session.
-      \hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL},\textcolor{keyword}{this},listFields)) \{
-423                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-424             \} \textcolor{keywordflow}{else} \{
-425                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-426             \}
-427         \}
-428         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-429     \}
+632                                                       \{
+633         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+634         \textcolor{keywordflow}{if} (\_isInitialized && \_Documents != null && \_Documents.Count > 0) \{
+635             \textcolor{keywordflow}{if} (\_Session.\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.ExecuteAllFieldsRequest(\_Session.
+      \mbox{\hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}},\textcolor{keyword}{this},listFields)) \{
+636                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+637             \} \textcolor{keywordflow}{else} \{
+638                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+639             \}
+640         \}
+641         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+642     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_database_object_a8a64b91e2e4228b2fc552e51959987c4}\label{class_database_object_a8a64b91e2e4228b2fc552e51959987c4}} 
 \index{Database\+Object@{Database\+Object}!Load\+Document\+Fields@{Load\+Document\+Fields}}
@@ -637,7 +1057,7 @@ Boolean
 \end{DoxyReturn}
 
 
-Definition at line 437 of file Database\+Object.\+cs.
+Definition at line 650 of file Database\+Object.\+cs.
 
 
 
@@ -645,19 +1065,61 @@ References Session\+Object.\+Connection, and Session\+Object.\+Web\+Service\+U\+
 
 
 \begin{DoxyCode}
-437                                                      \{
-438         \hyperlink{class_connector}{Connector}.ResetReturn();
-439         \textcolor{keywordflow}{if} (\_isInitialized && \_Documents != null && \_Documents.Count > 0) \{
-440             \textcolor{keywordtype}{string} fields = Common.GetListAsString(listFields, \textcolor{stringliteral}{";"});
-441             \textcolor{keywordflow}{if} (\_Session.\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}.Request.ExecuteAllFieldsRequest(\_Session.
-      \hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}, \textcolor{keyword}{this}, fields)) \{
-442                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-443             \} \textcolor{keywordflow}{else} \{
-444                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-445             \}
-446         \}
-447         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-448     \}
+650                                                      \{
+651         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+652         \textcolor{keywordflow}{if} (\_isInitialized && \_Documents != null && \_Documents.Count > 0) \{
+653             \textcolor{keywordtype}{string} fields = Common.GetListAsString(listFields, \textcolor{stringliteral}{";"});
+654             \textcolor{keywordflow}{if} (\_Session.\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.ExecuteAllFieldsRequest(\_Session.
+      \mbox{\hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}}, \textcolor{keyword}{this}, fields)) \{
+655                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+656             \} \textcolor{keywordflow}{else} \{
+657                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+658             \}
+659         \}
+660         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+661     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_database_object_acdf5c9ee898d4473350a2f4878af5a23}\label{class_database_object_acdf5c9ee898d4473350a2f4878af5a23}} 
+\index{Database\+Object@{Database\+Object}!Load\+Document\+Files@{Load\+Document\+Files}}
+\index{Load\+Document\+Files@{Load\+Document\+Files}!Database\+Object@{Database\+Object}}
+\subsubsection{\texorpdfstring{Load\+Document\+Files()}{LoadDocumentFiles()}}
+{\footnotesize\ttfamily bool Database\+Object.\+Load\+Document\+Files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieve file objects for all documents in the property \textquotesingle{}Documents\textquotesingle{} 
+
+This action will update the property collection Files inside each document object
+
+\begin{DoxyReturn}{Returns}
+Boolean
+\end{DoxyReturn}
+
+
+Definition at line 668 of file Database\+Object.\+cs.
+
+
+
+References Session\+Object.\+Connection, and Session\+Object.\+Web\+Service\+U\+RL.
+
+
+\begin{DoxyCode}
+669     \{
+670         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+671         \textcolor{keywordflow}{if} (\_isInitialized && \_Documents != null && \_Documents.Count > 0)
+672         \{
+673             \textcolor{keywordflow}{if} (\_Session.\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.ExecuteAllFilesRequest(\_Session.
+      \mbox{\hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}}, \textcolor{keyword}{this}))
+674             \{
+675                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+676             \}
+677             \textcolor{keywordflow}{else}
+678             \{
+679                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+680             \}
+681         \}
+682         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+683     \}
 \end{DoxyCode}
 
 
@@ -666,7 +1128,7 @@ References Session\+Object.\+Connection, and Session\+Object.\+Web\+Service\+U\+
 \index{Database\+Object@{Database\+Object}!Documents@{Documents}}
 \index{Documents@{Documents}!Database\+Object@{Database\+Object}}
 \subsubsection{\texorpdfstring{Documents}{Documents}}
-{\footnotesize\ttfamily Dictionary$<$string, \hyperlink{class_document_object}{Document\+Object}$>$ Database\+Object.\+Documents\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+{\footnotesize\ttfamily Dictionary$<$string, \mbox{\hyperlink{class_document_object}{Document\+Object}}$>$ Database\+Object.\+Documents\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
 
 
@@ -674,8 +1136,20 @@ Collection of retrieved Document\+Objects stored in a dictionary with key univer
 
 
 
-Definition at line 148 of file Database\+Object.\+cs.
+Definition at line 150 of file Database\+Object.\+cs.
 
+
+\begin{DoxyCode}
+150                                                         \{
+151         \textcolor{keyword}{get} \{
+152             \textcolor{keywordflow}{return} \_Documents;
+153         \}
+154 
+155         \textcolor{keyword}{protected} \textcolor{keyword}{internal} \textcolor{keyword}{set} \{
+156             \_Documents = value;
+157         \}
+158     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{class_database_object_a38a1a78430c6cd1fc4eef054e39145ce}\label{class_database_object_a38a1a78430c6cd1fc4eef054e39145ce}} 
 \index{Database\+Object@{Database\+Object}!File\+Path@{File\+Path}}
 \index{File\+Path@{File\+Path}!Database\+Object@{Database\+Object}}
@@ -688,8 +1162,19 @@ Database File\+Path
 
 
 
-Definition at line 61 of file Database\+Object.\+cs.
+Definition at line 63 of file Database\+Object.\+cs.
 
+
+\begin{DoxyCode}
+63                            \{
+64         \textcolor{keyword}{get} \{
+65             \textcolor{keywordflow}{return} \_FilePath;
+66         \}
+67         \textcolor{keyword}{protected} \textcolor{keyword}{internal} \textcolor{keyword}{set} \{
+68             \_FilePath = value;
+69         \}
+70     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{class_database_object_a5fe036d32a30eb10d1b3f6a30263f740}\label{class_database_object_a5fe036d32a30eb10d1b3f6a30263f740}} 
 \index{Database\+Object@{Database\+Object}!Is\+Initialized@{Is\+Initialized}}
 \index{Is\+Initialized@{Is\+Initialized}!Database\+Object@{Database\+Object}}
@@ -698,16 +1183,20 @@ Definition at line 61 of file Database\+Object.\+cs.
 
 
 
-Indicates is the \hyperlink{class_database_object}{Database\+Object} has been initialized 
+Indicates is the \mbox{\hyperlink{class_database_object}{Database\+Object}} has been initialized 
 
 
 
-Definition at line 52 of file Database\+Object.\+cs.
+Definition at line 54 of file Database\+Object.\+cs.
 
 
-
-Referenced by Document\+Object.\+Document\+Object().
-
+\begin{DoxyCode}
+54                               \{
+55         \textcolor{keyword}{get} \{
+56             \textcolor{keywordflow}{return} \_isInitialized;
+57         \}
+58     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{class_database_object_aaa091ee1a9a86d2d10fe2381ee2d1f4c}\label{class_database_object_aaa091ee1a9a86d2d10fe2381ee2d1f4c}} 
 \index{Database\+Object@{Database\+Object}!Replication\+ID@{Replication\+ID}}
 \index{Replication\+ID@{Replication\+ID}!Database\+Object@{Database\+Object}}
@@ -720,8 +1209,19 @@ Database Replication\+ID
 
 
 
-Definition at line 73 of file Database\+Object.\+cs.
+Definition at line 75 of file Database\+Object.\+cs.
 
+
+\begin{DoxyCode}
+75                                 \{
+76         \textcolor{keyword}{get} \{
+77             \textcolor{keywordflow}{return} \_ReplicationID;
+78         \}
+79         \textcolor{keyword}{protected} \textcolor{keyword}{internal} \textcolor{keyword}{set} \{
+80             \_ReplicationID = value;
+81         \}
+82     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{class_database_object_ad6bfcd30152f7a115ac5a1c7fbfa9fcb}\label{class_database_object_ad6bfcd30152f7a115ac5a1c7fbfa9fcb}} 
 \index{Database\+Object@{Database\+Object}!Server\+Name@{Server\+Name}}
 \index{Server\+Name@{Server\+Name}!Database\+Object@{Database\+Object}}
@@ -734,13 +1234,24 @@ Database Server\+Name
 
 
 
-Definition at line 85 of file Database\+Object.\+cs.
+Definition at line 87 of file Database\+Object.\+cs.
 
+
+\begin{DoxyCode}
+87                              \{
+88         \textcolor{keyword}{get} \{
+89             \textcolor{keywordflow}{return} \_ServerName;
+90         \}
+91         \textcolor{keyword}{protected} \textcolor{keyword}{internal} \textcolor{keyword}{set} \{
+92             \_ServerName = value;
+93         \}
+94     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}\label{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}} 
 \index{Database\+Object@{Database\+Object}!Session@{Session}}
 \index{Session@{Session}!Database\+Object@{Database\+Object}}
 \subsubsection{\texorpdfstring{Session}{Session}}
-{\footnotesize\ttfamily \hyperlink{class_session_object}{Session\+Object} Database\+Object.\+Session\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_session_object}{Session\+Object}} Database\+Object.\+Session\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
@@ -748,12 +1259,20 @@ Reference to the session object that retrieve this database object
 
 
 
-Definition at line 43 of file Database\+Object.\+cs.
+Definition at line 45 of file Database\+Object.\+cs.
 
 
 
-Referenced by Document\+Object.\+Get\+All\+Fields(), Document\+Object.\+Get\+Fields(), and Document\+Object.\+Initialize().
+Referenced by File\+Object.\+Extract\+File(), Document\+Object.\+Get\+All\+Fields(), Document\+Object.\+Get\+Fields(), Document\+Object.\+Get\+Files(), Document\+Object.\+Initialize(), and Document\+Object.\+Initialize\+With\+Files().
 
+
+\begin{DoxyCode}
+45                                  \{
+46         \textcolor{keyword}{get} \{
+47             \textcolor{keywordflow}{return} \_Session;
+48         \}
+49     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{class_database_object_ad86f5dd95a9debdef284e21e32936e9e}\label{class_database_object_ad86f5dd95a9debdef284e21e32936e9e}} 
 \index{Database\+Object@{Database\+Object}!Size@{Size}}
 \index{Size@{Size}!Database\+Object@{Database\+Object}}
@@ -766,8 +1285,20 @@ Database size (bytes, Kb, Mb, Gb, Tb)
 
 
 
-Definition at line 122 of file Database\+Object.\+cs.
+Definition at line 124 of file Database\+Object.\+cs.
 
+
+\begin{DoxyCode}
+124                        \{
+125         \textcolor{keyword}{get} \{
+126             \textcolor{keywordflow}{return} \_Size;
+127         \}
+128 
+129           \textcolor{keyword}{protected} \textcolor{keyword}{internal}  \textcolor{keyword}{set} \{
+130             \_Size = value;
+131         \}
+132     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{class_database_object_ac8ecdbe9722c00f787a62aef7d3dfa5a}\label{class_database_object_ac8ecdbe9722c00f787a62aef7d3dfa5a}} 
 \index{Database\+Object@{Database\+Object}!Template@{Template}}
 \index{Template@{Template}!Database\+Object@{Database\+Object}}
@@ -780,8 +1311,20 @@ Database Template name
 
 
 
-Definition at line 109 of file Database\+Object.\+cs.
+Definition at line 111 of file Database\+Object.\+cs.
 
+
+\begin{DoxyCode}
+111                            \{
+112         \textcolor{keyword}{get} \{
+113             \textcolor{keywordflow}{return} \_Template;
+114         \}
+115 
+116         \textcolor{keyword}{protected} \textcolor{keyword}{internal} \textcolor{keyword}{set} \{
+117             \_Template = value;
+118         \}
+119     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{class_database_object_a9af3f75274dd39f7fa82a355dc4ddf39}\label{class_database_object_a9af3f75274dd39f7fa82a355dc4ddf39}} 
 \index{Database\+Object@{Database\+Object}!Title@{Title}}
 \index{Title@{Title}!Database\+Object@{Database\+Object}}
@@ -794,8 +1337,19 @@ Database Title
 
 
 
-Definition at line 97 of file Database\+Object.\+cs.
+Definition at line 99 of file Database\+Object.\+cs.
 
+
+\begin{DoxyCode}
+99                         \{
+100         \textcolor{keyword}{get} \{
+101             \textcolor{keywordflow}{return} \_Title;
+102         \}
+103         \textcolor{keyword}{protected} \textcolor{keyword}{internal} \textcolor{keyword}{set} \{
+104             \_Title = value;
+105         \}
+106     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{class_database_object_a12da011e3dc03d3a10ac86df10c84f48}\label{class_database_object_a12da011e3dc03d3a10ac86df10c84f48}} 
 \index{Database\+Object@{Database\+Object}!Url@{Url}}
 \index{Url@{Url}!Database\+Object@{Database\+Object}}
@@ -808,10 +1362,22 @@ Database U\+RL
 
 
 
-Definition at line 135 of file Database\+Object.\+cs.
+Definition at line 137 of file Database\+Object.\+cs.
 
+
+\begin{DoxyCode}
+137                       \{
+138         \textcolor{keyword}{get} \{
+139             \textcolor{keywordflow}{return} \_Url;
+140         \}
+141 
+142         \textcolor{keyword}{protected} \textcolor{keyword}{internal} \textcolor{keyword}{set} \{
+143             \_Url = value;
+144         \}
+145     \}
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+Acket\+K/stack/\+Dropbox/\+Programming/\+S\+V\+N Projects/\+S\+C\+M/\+X\+Pages\+Connector/\+C-\/\+Sharp/\+Xpages\+Connector/\+Objects/\hyperlink{_database_object_8cs}{Database\+Object.\+cs}\end{DoxyCompactItemize}
+C\+:/\+Users/\+Acketk/source/repos/\+V\+S\+T\+S/\+X\+Pages\+A\+P\+I/\+X\+Pages\+A\+P\+I/\+Objects/\mbox{\hyperlink{_database_object_8cs}{Database\+Object.\+cs}}\end{DoxyCompactItemize}

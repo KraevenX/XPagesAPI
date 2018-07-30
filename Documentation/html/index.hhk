@@ -4,6 +4,7 @@
 <param name="FrameName" value="right">
 </OBJECT>
 <UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#a39640cdc4b16ee66e9c73803f4510396"><param name="Name" value="Application"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_connector.html#a0dcf8f969c37c4306c567417a872329a"><param name="Name" value="Connect"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_session_object.html#a014bdbf705a753540e19bfb53030c55c"><param name="Name" value="Connection"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_connector.html"><param name="Name" value="Connector"></OBJECT>
@@ -23,6 +24,7 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_connector.html#a41d247f09774f0ed206ce1a4a2463fed"><param name="Name" value="UserName"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_connector.html#a092e3e36f92c129c07c57df9b8fb91ca"><param name="Name" value="XPIdentity"></OBJECT>
   </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#a1ab7d29c80841b60b276b7430f4e5ec7"><param name="Name" value="Creator"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#a69d5338c9835f748490323d2950eed09"><param name="Name" value="Database"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html"><param name="Name" value="DatabaseObject"></OBJECT>
   <UL>
@@ -30,15 +32,23 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#afaf1159aa427c5bcce01c4b8c6f34514"><param name="Name" value="Documents"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a38a1a78430c6cd1fc4eef054e39145ce"><param name="Name" value="FilePath"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#ad3010e55b2e75d0863e168fed1e279c5"><param name="Name" value="GetAllDocuments"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a72239fa2b2a549665e45cdd340cd70a0"><param name="Name" value="GetAllDocumentsAndFiles"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#ac478ff9264805edc8569d510916c4c00"><param name="Name" value="GetAllDocumentsAndFilesByFormula"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a6c2fb05fb6972d74d5bea67e323985fb"><param name="Name" value="GetAllDocumentsAndFilesByKey"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a9332713c924ab14195fe51bf0b8d35d1"><param name="Name" value="GetAllDocumentsAndFilesByUnids"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a6bfb480373a7e2bdbeaa67e4e3303a3a"><param name="Name" value="GetAllDocumentsByFormula"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#ad4834e7677cd0418969a657eed99653c"><param name="Name" value="GetAllDocumentsByKey"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a4d8a7d73614f53a04fe8eb79bef2f614"><param name="Name" value="GetAllDocumentsByUnids"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a9435cc20fe3a92747e509011b7726aff"><param name="Name" value="GetDocument"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a9be31ba852e56a107e93f7d925f8a0c3"><param name="Name" value="GetDocumentAndFiles"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a1d35f51baee4be6adb69a954efe5b4bf"><param name="Name" value="GetDocumentAndFilesByFormula"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a30968034c65328e44ddb0fdac8ab1435"><param name="Name" value="GetDocumentAndFilesByKey"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#ae5477aedfcd0d54b21017faa1389bc71"><param name="Name" value="GetDocumentByFormula"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a57bfc77d2754236cbcf6ac30a90da529"><param name="Name" value="GetDocumentByKey"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a7de43a21bd287deec537cffec343f41d"><param name="Name" value="Initialize"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a5fe036d32a30eb10d1b3f6a30263f740"><param name="Name" value="IsInitialized"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a88ae0bcda671009e2742858ab945a18c"><param name="Name" value="LoadDocumentFields"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#acdf5c9ee898d4473350a2f4878af5a23"><param name="Name" value="LoadDocumentFiles"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#aaa091ee1a9a86d2d10fe2381ee2d1f4c"><param name="Name" value="ReplicationID"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#ad6bfcd30152f7a115ac5a1c7fbfa9fcb"><param name="Name" value="ServerName"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#aa8484162b7d2a7c4c9426bca13c64c07"><param name="Name" value="Session"></OBJECT>
@@ -48,7 +58,16 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a12da011e3dc03d3a10ac86df10c84f48"><param name="Name" value="Url"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#a819cb8baad094f6e5990c54ec1eee8b0"><param name="Name" value="DateCreated"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#a819cb8baad094f6e5990c54ec1eee8b0"><param name="Name" value="DocumentObject"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#a372b9a7dad068368526b0698550f9504"><param name="Name" value="FileObject"></OBJECT>
+  </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#a87ba1b3ac1b74b104972c25b245c504b"><param name="Name" value="DateModified"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#a87ba1b3ac1b74b104972c25b245c504b"><param name="Name" value="DocumentObject"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#a9a4c52e205bee3f8bdfa7040f465b6af"><param name="Name" value="FileObject"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#a0c9650a6ae1efb95f8211f9fa3b883fe"><param name="Name" value="Document"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html"><param name="Name" value="DocumentObject"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#a69d5338c9835f748490323d2950eed09"><param name="Name" value="Database"></OBJECT>
@@ -56,11 +75,15 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#a87ba1b3ac1b74b104972c25b245c504b"><param name="Name" value="DateModified"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#a46c89e7d40b15a91542a5482b2d8a084"><param name="Name" value="DocumentObject"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#a1a763aa01710b370634f46c89b7d2d8e"><param name="Name" value="ExportFields"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#a8753abc5a871bf84fc910e6a99936b2b"><param name="Name" value="ExportFiles"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#ae203b8a3e40b6c428145d2335b71245c"><param name="Name" value="Fields"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#afe6bcf5175607f91dde768491f23a0a4"><param name="Name" value="Files"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#ad3444a6c018474405064070fa9a94afe"><param name="Name" value="Form"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#a5e070c7c0a45ac06422ee992c841e780"><param name="Name" value="GetAllFields"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#a8883fec3b5b1b6e2e43f4b5ca4092684"><param name="Name" value="GetFields"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#a2c8aee9450e8fdd1e84e8ff26d0950a1"><param name="Name" value="GetFiles"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#af4298d6cfbb9ea60643d9995309b73f1"><param name="Name" value="Initialize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#a83f0e855adc5fb7afd02d2e34767f5c8"><param name="Name" value="InitializeWithFiles"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#a3b2075b73f38d05091b69decc6ce7992"><param name="Name" value="IsInitialized"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#ac447461e3dc7f8258695f902ef0758a7"><param name="Name" value="NoteID"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#abdc1a6dfc1bb2261b523cf94468448b9"><param name="Name" value="Size"></OBJECT>
@@ -69,6 +92,10 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#afaf1159aa427c5bcce01c4b8c6f34514"><param name="Name" value="Documents"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#a1a763aa01710b370634f46c89b7d2d8e"><param name="Name" value="ExportFields"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#a8753abc5a871bf84fc910e6a99936b2b"><param name="Name" value="ExportFiles"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#ae25b58dc19def323da91a48e17ba13ed"><param name="Name" value="Extension"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#ae21fac09c5ab2f9fac96a3f084cb9ddc"><param name="Name" value="ExtractFile"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#a26fa0ac628fee2387b7f89c78f93842e"><param name="Name" value="FieldName"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_field_object.html"><param name="Name" value="FieldObject"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_field_object.html#a87d8d3f1a36d94dec64e8e467950074b"><param name="Name" value="FieldObject"></OBJECT>
@@ -82,9 +109,33 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_field_object.html#a9764fb1824cec95b82cd6ac0b4cd8919"><param name="Name" value="Value"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#ae203b8a3e40b6c428145d2335b71245c"><param name="Name" value="Fields"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html"><param name="Name" value="FileObject"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#a39640cdc4b16ee66e9c73803f4510396"><param name="Name" value="Application"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#a1ab7d29c80841b60b276b7430f4e5ec7"><param name="Name" value="Creator"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#a372b9a7dad068368526b0698550f9504"><param name="Name" value="DateCreated"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#a9a4c52e205bee3f8bdfa7040f465b6af"><param name="Name" value="DateModified"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#a0c9650a6ae1efb95f8211f9fa3b883fe"><param name="Name" value="Document"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#ae25b58dc19def323da91a48e17ba13ed"><param name="Name" value="Extension"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#ae21fac09c5ab2f9fac96a3f084cb9ddc"><param name="Name" value="ExtractFile"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#a26fa0ac628fee2387b7f89c78f93842e"><param name="Name" value="FieldName"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#a0820c64117f9bcebf4ac750fbb320295"><param name="Name" value="FileObject"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#a1d371eb0e306cda4b80d2e8d32e987e0"><param name="Name" value="Initialize"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#a36ff6c07d0662885402bfe7d98cf2988"><param name="Name" value="IsInitialized"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#a9d47aff166393cb47490da2661576d62"><param name="Name" value="Name"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#ab91b5eca56a04784f8d0187247e1280c"><param name="Name" value="Other"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#a7aa7737c1ce05f4424ba16dded444949"><param name="Name" value="Size"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#a5e9b8f083b53ea0450a0560c16292a2f"><param name="Name" value="SoftClass"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#a7355eaeea3fe40bd8862d7f1f9b479da"><param name="Name" value="URL"></OBJECT>
+  </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a38a1a78430c6cd1fc4eef054e39145ce"><param name="Name" value="FilePath"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#afe6bcf5175607f91dde768491f23a0a4"><param name="Name" value="Files"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#ad3444a6c018474405064070fa9a94afe"><param name="Name" value="Form"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#ad3010e55b2e75d0863e168fed1e279c5"><param name="Name" value="GetAllDocuments"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a72239fa2b2a549665e45cdd340cd70a0"><param name="Name" value="GetAllDocumentsAndFiles"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#ac478ff9264805edc8569d510916c4c00"><param name="Name" value="GetAllDocumentsAndFilesByFormula"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a6c2fb05fb6972d74d5bea67e323985fb"><param name="Name" value="GetAllDocumentsAndFilesByKey"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a9332713c924ab14195fe51bf0b8d35d1"><param name="Name" value="GetAllDocumentsAndFilesByUnids"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a6bfb480373a7e2bdbeaa67e4e3303a3a"><param name="Name" value="GetAllDocumentsByFormula"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#ad4834e7677cd0418969a657eed99653c"><param name="Name" value="GetAllDocumentsByKey"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a4d8a7d73614f53a04fe8eb79bef2f614"><param name="Name" value="GetAllDocumentsByUnids"></OBJECT>
@@ -92,9 +143,13 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_session_object.html#aa4871ea2dac4215bef0274a2bd71ae72"><param name="Name" value="GetDatabase"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_session_object.html#ae53bad1d2fe161060ae409024b3e0de4"><param name="Name" value="GetDatabaseByID"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a9435cc20fe3a92747e509011b7726aff"><param name="Name" value="GetDocument"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a9be31ba852e56a107e93f7d925f8a0c3"><param name="Name" value="GetDocumentAndFiles"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a1d35f51baee4be6adb69a954efe5b4bf"><param name="Name" value="GetDocumentAndFilesByFormula"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a30968034c65328e44ddb0fdac8ab1435"><param name="Name" value="GetDocumentAndFilesByKey"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#ae5477aedfcd0d54b21017faa1389bc71"><param name="Name" value="GetDocumentByFormula"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a57bfc77d2754236cbcf6ac30a90da529"><param name="Name" value="GetDocumentByKey"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#a8883fec3b5b1b6e2e43f4b5ca4092684"><param name="Name" value="GetFields"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#a2c8aee9450e8fdd1e84e8ff26d0950a1"><param name="Name" value="GetFiles"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_connector.html#a5d089c1639f255966f00b2b05add0993"><param name="Name" value="GetSession"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_field_object.html#a8d962cda039f78f485232bd2764176c4"><param name="Name" value="getValue"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_field_object.html#a797ebc6615a86bafd9bd17f09562f2ee"><param name="Name" value="GetValueAsDate"></OBJECT>
@@ -107,19 +162,28 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_connector.html#a2ceb19719cfc04adc4c2d299e19e1447"><param name="Name" value="Connector"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a7de43a21bd287deec537cffec343f41d"><param name="Name" value="DatabaseObject"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#af4298d6cfbb9ea60643d9995309b73f1"><param name="Name" value="DocumentObject"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#a1d371eb0e306cda4b80d2e8d32e987e0"><param name="Name" value="FileObject"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_session_object.html#af3b9c9d56d98c848061952ed935f815b"><param name="Name" value="SessionObject"></OBJECT>
   </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#a83f0e855adc5fb7afd02d2e34767f5c8"><param name="Name" value="InitializeWithFiles"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_connector.html#acf2c3b519c360d02ed54543a01d199af"><param name="Name" value="isConnected"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_connector.html#a017d40b1f4cf2cbaa5d4b755cf09269e"><param name="Name" value="isInitialized"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a5fe036d32a30eb10d1b3f6a30263f740"><param name="Name" value="IsInitialized"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a5fe036d32a30eb10d1b3f6a30263f740"><param name="Name" value="DatabaseObject"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#a3b2075b73f38d05091b69decc6ce7992"><param name="Name" value="DocumentObject"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#a36ff6c07d0662885402bfe7d98cf2988"><param name="Name" value="FileObject"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_session_object.html#ae0885b9054fc3ce287307ac16ff69990"><param name="Name" value="SessionObject"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a88ae0bcda671009e2742858ab945a18c"><param name="Name" value="LoadDocumentFields"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#acdf5c9ee898d4473350a2f4878af5a23"><param name="Name" value="LoadDocumentFiles"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_field_object.html#ae5d972e96a3eca93407da8e8a89abfd1"><param name="Name" value="Name"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_field_object.html#ae5d972e96a3eca93407da8e8a89abfd1"><param name="Name" value="FieldObject"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#a9d47aff166393cb47490da2661576d62"><param name="Name" value="FileObject"></OBJECT>
+  </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#ac447461e3dc7f8258695f902ef0758a7"><param name="Name" value="NoteID"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#ab91b5eca56a04784f8d0187247e1280c"><param name="Name" value="Other"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_connector.html#a7dd469898462ef761d256392766461fe"><param name="Name" value="Password"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#aaa091ee1a9a86d2d10fe2381ee2d1f4c"><param name="Name" value="ReplicationID"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_connector.html#a1ed422674b344524fd77998dcf6a9ba6"><param name="Name" value="ReturnMessages"></OBJECT>
@@ -141,7 +205,9 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#ad86f5dd95a9debdef284e21e32936e9e"><param name="Name" value="DatabaseObject"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#abdc1a6dfc1bb2261b523cf94468448b9"><param name="Name" value="DocumentObject"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#a7aa7737c1ce05f4424ba16dded444949"><param name="Name" value="FileObject"></OBJECT>
   </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#a5e9b8f083b53ea0450a0560c16292a2f"><param name="Name" value="SoftClass"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#ac8ecdbe9722c00f787a62aef7d3dfa5a"><param name="Name" value="Template"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_connector.html#a8ec0dcdbb4a85a56fa50f67686484c19"><param name="Name" value="ThrowException"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a9af3f75274dd39f7fa82a355dc4ddf39"><param name="Name" value="Title"></OBJECT>
@@ -152,6 +218,7 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_database_object.html#a12da011e3dc03d3a10ac86df10c84f48"><param name="Name" value="DatabaseObject"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="class_document_object.html#ac86b730cf8931b2221af577d32ca2f31"><param name="Name" value="DocumentObject"></OBJECT>
   </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="class_file_object.html#a7355eaeea3fe40bd8862d7f1f9b479da"><param name="Name" value="URL"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_connector.html#a41d247f09774f0ed206ce1a4a2463fed"><param name="Name" value="UserName"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_field_object.html#a9764fb1824cec95b82cd6ac0b4cd8919"><param name="Name" value="Value"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="class_session_object.html#a697c071c812fbf7ad1166b896fb44c16"><param name="Name" value="WebServiceURL"></OBJECT>

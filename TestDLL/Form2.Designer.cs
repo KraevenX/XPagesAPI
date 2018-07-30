@@ -61,7 +61,7 @@ namespace TestDLL
             // 
             // btnConnect
             // 
-            this.btnConnect.Location = new System.Drawing.Point(15, 366);
+            this.btnConnect.Location = new System.Drawing.Point(15, 375);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(75, 23);
             this.btnConnect.TabIndex = 0;

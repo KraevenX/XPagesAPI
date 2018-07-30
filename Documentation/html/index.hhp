@@ -1,4 +1,5 @@
 [OPTIONS]
+Compiled file=HelpFile.chm
 Compatibility=1.1
 Full-text search=Yes
 Contents file=index.hhc
@@ -6,34 +7,30 @@ Default Window=main
 Default topic=index.html
 Index file=index.hhk
 Language=0x409 English (United States)
-Title=XPagesConnector
+Title=XPagesAPI
 
 [WINDOWS]
-main="XPagesConnector","index.hhc","index.hhk","index.html","index.html",,,,,0x23520,,0x10387e,,,,,,,,0
+main="XPagesAPI","index.hhc","index.hhk","index.html","index.html",,,,,0x23520,,0x10387e,,,,,,,,0
 
 [FILES]
 _common_8cs_source.html
 _connector_8cs_source.html
 _encryptor_8cs_source.html
 _requestor_8cs_source.html
-_temporary_generated_file__036_c0_b5_b-1481-4323-8_d20-8_f5_a_d_c_b23_d92_8cs_source.html
-_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs_source.html
-_temporary_generated_file___e7_a71_f73-0_f8_d-4_b9_b-_b56_e-8_e70_b10_b_c5_d3_8cs_source.html
 _database_object_8cs_source.html
 _document_object_8cs_source.html
 _field_object_8cs_source.html
+_file_object_8cs_source.html
 _session_object_8cs_source.html
 _assembly_info_8cs_source.html
 _common_8cs.html
 _connector_8cs.html
 _encryptor_8cs.html
 _requestor_8cs.html
-_temporary_generated_file__036_c0_b5_b-1481-4323-8_d20-8_f5_a_d_c_b23_d92_8cs.html
-_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs.html
-_temporary_generated_file___e7_a71_f73-0_f8_d-4_b9_b-_b56_e-8_e70_b10_b_c5_d3_8cs.html
 _database_object_8cs.html
 _document_object_8cs.html
 _field_object_8cs.html
+_file_object_8cs.html
 _session_object_8cs.html
 _assembly_info_8cs.html
 class_connector.html
@@ -44,11 +41,11 @@ class_document_object.html
 class_document_object-members.html
 class_field_object.html
 class_field_object-members.html
+class_file_object.html
+class_file_object-members.html
 class_session_object.html
 class_session_object-members.html
-dir_a71c3b2ad23b9ff58220dd012d201987.html
 dir_0b6ee6e7e9547e675db4add2e5de97da.html
-dir_43724e81dd40e09f32417973865cdd64.html
 dir_5dafd4660615c7e05a84a5ee9d9fd12b.html
 dir_d051c76eebdc544d9c3d734575641c72.html
 index.html

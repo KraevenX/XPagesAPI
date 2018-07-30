@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="dir_43724e81dd40e09f32417973865cdd64" kind="dir">
-    <compoundname>C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/obj</compoundname>
-    <innerdir refid="dir_a71c3b2ad23b9ff58220dd012d201987">C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/obj/Debug</innerdir>
+    <compoundname>C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/obj</compoundname>
+    <innerdir refid="dir_a71c3b2ad23b9ff58220dd012d201987">C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/obj/Debug</innerdir>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/obj/"/>
+    <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/obj/"/>
   </compounddef>
 </doxygen>

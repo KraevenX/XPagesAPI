@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="class_session_object" kind="class" language="C#" prot="public">
     <compoundname>SessionObject</compoundname>
       <sectiondef kind="private-attrib">
@@ -14,7 +14,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs" line="19" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs" bodystart="19" bodyend="-1"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/SessionObject.cs" line="20" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/SessionObject.cs" bodystart="20" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_session_object_1afabc94b6d3db428764c9c90c1b58e698" prot="private" static="no" mutable="no">
         <type>string</type>
@@ -27,7 +27,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs" line="20" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs" bodystart="20" bodyend="-1"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/SessionObject.cs" line="21" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/SessionObject.cs" bodystart="21" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_session_object_1a0708cede6c10688726a2bcbdc1c76c5e" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs" line="21" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs" bodystart="21" bodyend="-1"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/SessionObject.cs" line="22" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/SessionObject.cs" bodystart="22" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="property">
@@ -56,8 +56,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs" line="45" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs" bodystart="45" bodyend="-1"/>
-        <referencedby refid="class_database_object_1a7de43a21bd287deec537cffec343f41d" compoundref="_database_object_8cs" startline="195" endline="218">DatabaseObject.Initialize</referencedby>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/SessionObject.cs" line="46" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/SessionObject.cs" bodystart="46" bodyend="50"/>
       </memberdef>
       <memberdef kind="property" id="class_session_object_1a697c071c812fbf7ad1166b896fb44c16" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
         <type>string</type>
@@ -70,17 +69,24 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs" line="55" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs" bodystart="55" bodyend="-1"/>
-        <referencedby refid="class_database_object_1ad3010e55b2e75d0863e168fed1e279c5" compoundref="_database_object_8cs" startline="318" endline="328">DatabaseObject.GetAllDocuments</referencedby>
-        <referencedby refid="class_database_object_1a6bfb480373a7e2bdbeaa67e4e3303a3a" compoundref="_database_object_8cs" startline="337" endline="347">DatabaseObject.GetAllDocumentsByFormula</referencedby>
-        <referencedby refid="class_database_object_1ad4834e7677cd0418969a657eed99653c" compoundref="_database_object_8cs" startline="399" endline="409">DatabaseObject.GetAllDocumentsByKey</referencedby>
-        <referencedby refid="class_database_object_1a4d8a7d73614f53a04fe8eb79bef2f614" compoundref="_database_object_8cs" startline="358" endline="368">DatabaseObject.GetAllDocumentsByUnids</referencedby>
-        <referencedby refid="class_document_object_1a5e070c7c0a45ac06422ee992c841e780" compoundref="_document_object_8cs" startline="317" endline="331">DocumentObject.GetAllFields</referencedby>
-        <referencedby refid="class_document_object_1a8883fec3b5b1b6e2e43f4b5ca4092684" compoundref="_document_object_8cs" startline="271" endline="286">DocumentObject.GetFields</referencedby>
-        <referencedby refid="class_session_object_1af3b9c9d56d98c848061952ed935f815b" compoundref="_session_object_8cs" startline="79" endline="102">Initialize</referencedby>
-        <referencedby refid="class_database_object_1a7de43a21bd287deec537cffec343f41d" compoundref="_database_object_8cs" startline="195" endline="218">DatabaseObject.Initialize</referencedby>
-        <referencedby refid="class_document_object_1af4298d6cfbb9ea60643d9995309b73f1" compoundref="_document_object_8cs" startline="241" endline="262">DocumentObject.Initialize</referencedby>
-        <referencedby refid="class_database_object_1a88ae0bcda671009e2742858ab945a18c" compoundref="_database_object_8cs" startline="419" endline="429">DatabaseObject.LoadDocumentFields</referencedby>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/SessionObject.cs" line="56" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/SessionObject.cs" bodystart="56" bodyend="60"/>
+        <referencedby refid="class_database_object_1ad3010e55b2e75d0863e168fed1e279c5" compoundref="_database_object_8cs" startline="404" endline="414">DatabaseObject.GetAllDocuments</referencedby>
+        <referencedby refid="class_database_object_1a72239fa2b2a549665e45cdd340cd70a0" compoundref="_database_object_8cs" startline="423" endline="438">DatabaseObject.GetAllDocumentsAndFiles</referencedby>
+        <referencedby refid="class_database_object_1ac478ff9264805edc8569d510916c4c00" compoundref="_database_object_8cs" startline="467" endline="482">DatabaseObject.GetAllDocumentsAndFilesByFormula</referencedby>
+        <referencedby refid="class_database_object_1a6c2fb05fb6972d74d5bea67e323985fb" compoundref="_database_object_8cs" startline="608" endline="623">DatabaseObject.GetAllDocumentsAndFilesByKey</referencedby>
+        <referencedby refid="class_database_object_1a9332713c924ab14195fe51bf0b8d35d1" compoundref="_database_object_8cs" startline="513" endline="528">DatabaseObject.GetAllDocumentsAndFilesByUnids</referencedby>
+        <referencedby refid="class_database_object_1a6bfb480373a7e2bdbeaa67e4e3303a3a" compoundref="_database_object_8cs" startline="447" endline="457">DatabaseObject.GetAllDocumentsByFormula</referencedby>
+        <referencedby refid="class_database_object_1ad4834e7677cd0418969a657eed99653c" compoundref="_database_object_8cs" startline="586" endline="596">DatabaseObject.GetAllDocumentsByKey</referencedby>
+        <referencedby refid="class_database_object_1a4d8a7d73614f53a04fe8eb79bef2f614" compoundref="_database_object_8cs" startline="492" endline="502">DatabaseObject.GetAllDocumentsByUnids</referencedby>
+        <referencedby refid="class_document_object_1a5e070c7c0a45ac06422ee992c841e780" compoundref="_document_object_8cs" startline="409" endline="426">DocumentObject.GetAllFields</referencedby>
+        <referencedby refid="class_document_object_1a8883fec3b5b1b6e2e43f4b5ca4092684" compoundref="_document_object_8cs" startline="331" endline="349">DocumentObject.GetFields</referencedby>
+        <referencedby refid="class_document_object_1a2c8aee9450e8fdd1e84e8ff26d0950a1" compoundref="_document_object_8cs" startline="356" endline="373">DocumentObject.GetFiles</referencedby>
+        <referencedby refid="class_session_object_1af3b9c9d56d98c848061952ed935f815b" compoundref="_session_object_8cs" startline="80" endline="103">Initialize</referencedby>
+        <referencedby refid="class_database_object_1a7de43a21bd287deec537cffec343f41d" compoundref="_database_object_8cs" startline="197" endline="220">DatabaseObject.Initialize</referencedby>
+        <referencedby refid="class_document_object_1af4298d6cfbb9ea60643d9995309b73f1" compoundref="_document_object_8cs" startline="263" endline="289">DocumentObject.Initialize</referencedby>
+        <referencedby refid="class_document_object_1a83f0e855adc5fb7afd02d2e34767f5c8" compoundref="_document_object_8cs" startline="296" endline="322">DocumentObject.InitializeWithFiles</referencedby>
+        <referencedby refid="class_database_object_1a88ae0bcda671009e2742858ab945a18c" compoundref="_database_object_8cs" startline="632" endline="642">DatabaseObject.LoadDocumentFields</referencedby>
+        <referencedby refid="class_database_object_1acdf5c9ee898d4473350a2f4878af5a23" compoundref="_database_object_8cs" startline="668" endline="683">DatabaseObject.LoadDocumentFiles</referencedby>
       </memberdef>
       <memberdef kind="property" id="class_session_object_1a014bdbf705a753540e19bfb53030c55c" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
         <type><ref refid="class_connector" kindref="compound">Connector</ref></type>
@@ -93,17 +99,25 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs" line="64" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs" bodystart="64" bodyend="-1"/>
-        <referencedby refid="class_database_object_1ad3010e55b2e75d0863e168fed1e279c5" compoundref="_database_object_8cs" startline="318" endline="328">DatabaseObject.GetAllDocuments</referencedby>
-        <referencedby refid="class_database_object_1a6bfb480373a7e2bdbeaa67e4e3303a3a" compoundref="_database_object_8cs" startline="337" endline="347">DatabaseObject.GetAllDocumentsByFormula</referencedby>
-        <referencedby refid="class_database_object_1ad4834e7677cd0418969a657eed99653c" compoundref="_database_object_8cs" startline="399" endline="409">DatabaseObject.GetAllDocumentsByKey</referencedby>
-        <referencedby refid="class_database_object_1a4d8a7d73614f53a04fe8eb79bef2f614" compoundref="_database_object_8cs" startline="358" endline="368">DatabaseObject.GetAllDocumentsByUnids</referencedby>
-        <referencedby refid="class_document_object_1a5e070c7c0a45ac06422ee992c841e780" compoundref="_document_object_8cs" startline="317" endline="331">DocumentObject.GetAllFields</referencedby>
-        <referencedby refid="class_document_object_1a8883fec3b5b1b6e2e43f4b5ca4092684" compoundref="_document_object_8cs" startline="271" endline="286">DocumentObject.GetFields</referencedby>
-        <referencedby refid="class_session_object_1af3b9c9d56d98c848061952ed935f815b" compoundref="_session_object_8cs" startline="79" endline="102">Initialize</referencedby>
-        <referencedby refid="class_database_object_1a7de43a21bd287deec537cffec343f41d" compoundref="_database_object_8cs" startline="195" endline="218">DatabaseObject.Initialize</referencedby>
-        <referencedby refid="class_document_object_1af4298d6cfbb9ea60643d9995309b73f1" compoundref="_document_object_8cs" startline="241" endline="262">DocumentObject.Initialize</referencedby>
-        <referencedby refid="class_database_object_1a88ae0bcda671009e2742858ab945a18c" compoundref="_database_object_8cs" startline="419" endline="429">DatabaseObject.LoadDocumentFields</referencedby>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/SessionObject.cs" line="65" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/SessionObject.cs" bodystart="65" bodyend="69"/>
+        <referencedby refid="class_file_object_1ae21fac09c5ab2f9fac96a3f084cb9ddc" compoundref="_file_object_8cs" startline="230" endline="243">FileObject.ExtractFile</referencedby>
+        <referencedby refid="class_database_object_1ad3010e55b2e75d0863e168fed1e279c5" compoundref="_database_object_8cs" startline="404" endline="414">DatabaseObject.GetAllDocuments</referencedby>
+        <referencedby refid="class_database_object_1a72239fa2b2a549665e45cdd340cd70a0" compoundref="_database_object_8cs" startline="423" endline="438">DatabaseObject.GetAllDocumentsAndFiles</referencedby>
+        <referencedby refid="class_database_object_1ac478ff9264805edc8569d510916c4c00" compoundref="_database_object_8cs" startline="467" endline="482">DatabaseObject.GetAllDocumentsAndFilesByFormula</referencedby>
+        <referencedby refid="class_database_object_1a6c2fb05fb6972d74d5bea67e323985fb" compoundref="_database_object_8cs" startline="608" endline="623">DatabaseObject.GetAllDocumentsAndFilesByKey</referencedby>
+        <referencedby refid="class_database_object_1a9332713c924ab14195fe51bf0b8d35d1" compoundref="_database_object_8cs" startline="513" endline="528">DatabaseObject.GetAllDocumentsAndFilesByUnids</referencedby>
+        <referencedby refid="class_database_object_1a6bfb480373a7e2bdbeaa67e4e3303a3a" compoundref="_database_object_8cs" startline="447" endline="457">DatabaseObject.GetAllDocumentsByFormula</referencedby>
+        <referencedby refid="class_database_object_1ad4834e7677cd0418969a657eed99653c" compoundref="_database_object_8cs" startline="586" endline="596">DatabaseObject.GetAllDocumentsByKey</referencedby>
+        <referencedby refid="class_database_object_1a4d8a7d73614f53a04fe8eb79bef2f614" compoundref="_database_object_8cs" startline="492" endline="502">DatabaseObject.GetAllDocumentsByUnids</referencedby>
+        <referencedby refid="class_document_object_1a5e070c7c0a45ac06422ee992c841e780" compoundref="_document_object_8cs" startline="409" endline="426">DocumentObject.GetAllFields</referencedby>
+        <referencedby refid="class_document_object_1a8883fec3b5b1b6e2e43f4b5ca4092684" compoundref="_document_object_8cs" startline="331" endline="349">DocumentObject.GetFields</referencedby>
+        <referencedby refid="class_document_object_1a2c8aee9450e8fdd1e84e8ff26d0950a1" compoundref="_document_object_8cs" startline="356" endline="373">DocumentObject.GetFiles</referencedby>
+        <referencedby refid="class_session_object_1af3b9c9d56d98c848061952ed935f815b" compoundref="_session_object_8cs" startline="80" endline="103">Initialize</referencedby>
+        <referencedby refid="class_database_object_1a7de43a21bd287deec537cffec343f41d" compoundref="_database_object_8cs" startline="197" endline="220">DatabaseObject.Initialize</referencedby>
+        <referencedby refid="class_document_object_1af4298d6cfbb9ea60643d9995309b73f1" compoundref="_document_object_8cs" startline="263" endline="289">DocumentObject.Initialize</referencedby>
+        <referencedby refid="class_document_object_1a83f0e855adc5fb7afd02d2e34767f5c8" compoundref="_document_object_8cs" startline="296" endline="322">DocumentObject.InitializeWithFiles</referencedby>
+        <referencedby refid="class_database_object_1a88ae0bcda671009e2742858ab945a18c" compoundref="_database_object_8cs" startline="632" endline="642">DatabaseObject.LoadDocumentFields</referencedby>
+        <referencedby refid="class_database_object_1acdf5c9ee898d4473350a2f4878af5a23" compoundref="_database_object_8cs" startline="668" endline="683">DatabaseObject.LoadDocumentFiles</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -141,7 +155,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs" line="32" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs" bodystart="32" bodyend="35"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/SessionObject.cs" line="33" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/SessionObject.cs" bodystart="33" bodyend="36"/>
       </memberdef>
       <memberdef kind="function" id="class_session_object_1af3b9c9d56d98c848061952ed935f815b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -155,14 +169,12 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs" line="79" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs" bodystart="79" bodyend="102"/>
-        <references refid="class_session_object_1a014bdbf705a753540e19bfb53030c55c" compoundref="_session_object_8cs" startline="64">Connection</references>
-        <references refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" compoundref="_connector_8cs" startline="99">Connector.hasError</references>
-        <references refid="class_connector_1acf2c3b519c360d02ed54543a01d199af" compoundref="_connector_8cs" startline="133">Connector.isConnected</references>
-        <references refid="class_connector_1a017d40b1f4cf2cbaa5d4b755cf09269e" compoundref="_connector_8cs" startline="143">Connector.isInitialized</references>
-        <references refid="class_connector_1a1ed422674b344524fd77998dcf6a9ba6" compoundref="_connector_8cs" startline="117">Connector.ReturnMessages</references>
-        <references refid="class_session_object_1a697c071c812fbf7ad1166b896fb44c16" compoundref="_session_object_8cs" startline="55">WebServiceURL</references>
-        <referencedby refid="class_connector_1a5d089c1639f255966f00b2b05add0993" compoundref="_connector_8cs" startline="279" endline="308">Connector.GetSession</referencedby>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/SessionObject.cs" line="80" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/SessionObject.cs" bodystart="80" bodyend="103"/>
+        <references refid="class_session_object_1a014bdbf705a753540e19bfb53030c55c" compoundref="_session_object_8cs" startline="65" endline="69">Connection</references>
+        <references refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" compoundref="_connector_8cs" startline="101" endline="113">Connector.hasError</references>
+        <references refid="class_connector_1a1ed422674b344524fd77998dcf6a9ba6" compoundref="_connector_8cs" startline="119" endline="126">Connector.ReturnMessages</references>
+        <references refid="class_session_object_1a697c071c812fbf7ad1166b896fb44c16" compoundref="_session_object_8cs" startline="56" endline="60">WebServiceURL</references>
+        <referencedby refid="class_connector_1a5d089c1639f255966f00b2b05add0993" compoundref="_connector_8cs" startline="281" endline="310">Connector.GetSession</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_session_object_1aa4871ea2dac4215bef0274a2bd71ae72" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_database_object" kindref="compound">DatabaseObject</ref></type>
@@ -199,8 +211,8 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs" line="140" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs" bodystart="140" bodyend="149"/>
-        <references refid="class_database_object_1a7de43a21bd287deec537cffec343f41d" compoundref="_database_object_8cs" startline="195" endline="218">DatabaseObject.Initialize</references>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/SessionObject.cs" line="141" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/SessionObject.cs" bodystart="141" bodyend="150"/>
+        <references refid="class_database_object_1a7de43a21bd287deec537cffec343f41d" compoundref="_database_object_8cs" startline="197" endline="220">DatabaseObject.Initialize</references>
       </memberdef>
       <memberdef kind="function" id="class_session_object_1ae53bad1d2fe161060ae409024b3e0de4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_database_object" kindref="compound">DatabaseObject</ref></type>
@@ -237,8 +249,8 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs" line="157" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs" bodystart="157" bodyend="166"/>
-        <references refid="class_database_object_1a7de43a21bd287deec537cffec343f41d" compoundref="_database_object_8cs" startline="195" endline="218">DatabaseObject.Initialize</references>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/SessionObject.cs" line="158" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/SessionObject.cs" bodystart="158" bodyend="167"/>
+        <references refid="class_database_object_1a7de43a21bd287deec537cffec343f41d" compoundref="_database_object_8cs" startline="197" endline="220">DatabaseObject.Initialize</references>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -254,7 +266,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs" line="108" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs" bodystart="108" bodyend="132"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/SessionObject.cs" line="109" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/SessionObject.cs" bodystart="109" bodyend="133"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -262,12 +274,12 @@
     <detaileddescription>
 <para>The following is an example of the usage of a <computeroutput><ref refid="class_session_object" kindref="compound">SessionObject</ref></computeroutput>: <programlisting><codeline><highlight class="normal">SessionObject<sp/>sObj<sp/>=<sp/>new<sp/>SessionObject(connectorObj,<sp/>DominoWebServiceURL);<sp/>//<sp/>the<sp/>connector<sp/>object<sp/>and<sp/>Full<sp/>URL<sp/>to<sp/>the<sp/>XPage<sp/>database<sp/>containing<sp/>the<sp/>Web<sp/>Rest<sp/>Service</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">if(sObj!=null<sp/>&amp;&amp;<sp/>sObj.Initialize()){</highlight></codeline>
+<codeline><highlight class="normal">if(sObj!=null<sp/>&amp;amp;&amp;amp;<sp/>sObj.Initialize()){</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>//<sp/>here<sp/>you<sp/>can<sp/>then<sp/>get<sp/>the<sp/>database<sp/>object</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>//<sp/>your<sp/>code<sp/>here...<sp/></highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting> </para>    </detaileddescription>
-    <location file="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs" line="15" column="1" bodyfile="C:/Users/AcketK/stack/Dropbox/Programming/SVN Projects/SCM/XPagesConnector/C-Sharp/XpagesConnector/Objects/SessionObject.cs" bodystart="15" bodyend="170"/>
+    <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/SessionObject.cs" line="17" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/SessionObject.cs" bodystart="16" bodyend="171"/>
     <listofallmembers>
       <member refid="class_session_object_1a8b7770781547c02f2ff569038da434d3" prot="private" virt="non-virtual"><scope>SessionObject</scope><name>_Connection</name></member>
       <member refid="class_session_object_1a0708cede6c10688726a2bcbdc1c76c5e" prot="private" virt="non-virtual"><scope>SessionObject</scope><name>_isInitialized</name></member>
