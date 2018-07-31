@@ -248,6 +248,12 @@
   </compound>
   <compound refid="_requestor_8cs" kind="file"><name>Requestor.cs</name>
   </compound>
+  <compound refid="_temporary_generated_file__036_c0_b5_b-1481-4323-8_d20-8_f5_a_d_c_b23_d92_8cs" kind="file"><name>TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs</name>
+  </compound>
+  <compound refid="_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs" kind="file"><name>TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs</name>
+  </compound>
+  <compound refid="_temporary_generated_file___e7_a71_f73-0_f8_d-4_b9_b-_b56_e-8_e70_b10_b_c5_d3_8cs" kind="file"><name>TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs</name>
+  </compound>
   <compound refid="_database_object_8cs" kind="file"><name>DatabaseObject.cs</name>
   </compound>
   <compound refid="_document_object_8cs" kind="file"><name>DocumentObject.cs</name>
@@ -262,8 +268,12 @@
   </compound>
   <compound refid="dir_0b6ee6e7e9547e675db4add2e5de97da" kind="dir"><name>C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine</name>
   </compound>
+  <compound refid="dir_43724e81dd40e09f32417973865cdd64" kind="dir"><name>C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/obj</name>
+  </compound>
   <compound refid="dir_5dafd4660615c7e05a84a5ee9d9fd12b" kind="dir"><name>C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects</name>
   </compound>
   <compound refid="dir_d051c76eebdc544d9c3d734575641c72" kind="dir"><name>C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Properties</name>
+  </compound>
+  <compound refid="dir_9fe5cc214b8578ee5b8e153089aca810" kind="dir"><name>C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/obj/Release</name>
   </compound>
 </doxygenindex>

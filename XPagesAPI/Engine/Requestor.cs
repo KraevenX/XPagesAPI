@@ -2,8 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
+using System.Linq;
 using System.Text;
 
 internal class Requestor
@@ -77,9 +77,11 @@ internal class Requestor
         {
             //ServicePointManager.Expect100Continue = false;
             ServicePointManager.Expect100Continue = true;
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls;
+          //  ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
             ServicePointManager.DefaultConnectionLimit = 9999;
 
+           
             // Cookie container to store authentication cookie
             CookieContainer cookies = new CookieContainer();
 
@@ -170,7 +172,7 @@ internal class Requestor
                 return false;
             }
 
-            ServicePointManager.Expect100Continue = false;
+            //ServicePointManager.Expect100Continue = false;
 
             //create an HTTP request
             // WebURL use this without ?CheckOut or ?CheckIn
@@ -408,7 +410,7 @@ internal class Requestor
                 return false;
             }
 
-            ServicePointManager.Expect100Continue = false;
+          //  ServicePointManager.Expect100Continue = false;
 
             //create an HTTP request
 
@@ -686,7 +688,7 @@ internal class Requestor
                 return false;
             }
 
-            ServicePointManager.Expect100Continue = false;
+           // ServicePointManager.Expect100Continue = false;
 
             //create an HTTP request
 
@@ -1008,7 +1010,7 @@ internal class Requestor
                 return false;
             }
 
-            ServicePointManager.Expect100Continue = false;
+           // ServicePointManager.Expect100Continue = false;
 
             //create an HTTP request
 
@@ -1359,7 +1361,7 @@ internal class Requestor
                 return false;
             }
 
-            ServicePointManager.Expect100Continue = false;
+          //  ServicePointManager.Expect100Continue = false;
 
             //create an HTTP request
 
@@ -1744,7 +1746,7 @@ internal class Requestor
                 return false;
             }
 
-            ServicePointManager.Expect100Continue = false;
+        //    ServicePointManager.Expect100Continue = false;
 
             //create an HTTP request
 
@@ -2161,7 +2163,7 @@ internal class Requestor
                 return false;
             }
 
-            ServicePointManager.Expect100Continue = false;
+           // ServicePointManager.Expect100Continue = false;
 
             //create an HTTP request
 
@@ -2859,7 +2861,7 @@ internal class Requestor
                 return false;
             }
 
-            ServicePointManager.Expect100Continue = false;
+           // ServicePointManager.Expect100Continue = false;
 
             //create an HTTP request
 

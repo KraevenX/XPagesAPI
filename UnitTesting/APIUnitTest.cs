@@ -9,6 +9,29 @@ namespace APITesting {
 
         private TestContext testContextInstance;
 
+        // Test intranet connection (http)
+        //private const string ServerName = "http://antln-test.europe.jacobs.com";
+        //private const string UserName = "Kim Acket";
+        //private const string Password = "Je082018";
+
+        // Test internet connection (https)
+        private const string ServerURL = "https://jpi2.jacobs.com";
+        private const string UserName = "Kim Acket";
+        private const string Password = "Lambam1608";
+
+        // XPages JPI Service URL on intranet (http)
+        //private const string XPagesServiceURL = "http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService";
+        //private const string XPagesServiceURL = "http://antln-test.europe.jacobs.com/projects/jpix/XPageDev1300_XP.nsf/xpJPIService.xsp/JPIService";
+        
+        // XPages JPI Service URL on internet (https)
+        private const string XPagesServiceURL = "https://jpi2.jacobs.com/projects/jpix/XPageDev1300_XP.nsf/xpJPIService.xsp/JPIService";
+
+        //Database To Access
+        private const string DatabaseFilePath = "projects\\jpi4\\XP2015_JP.nsf";
+        //Server To Access
+       // private const string DominoServerName = "ANTLN-TEST/ANTWERPEN/JacobsEngineering";
+        private const string DominoServerName = "JPI2/JPI";
+
         /// <summary>
         ///  Gets or sets the test context which provides
         ///  information about and functionality for the current test run.
@@ -24,7 +47,7 @@ namespace APITesting {
                 // to start the session we need to setup the connector
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
-                connector = new Connector("Kim Acket", "Je082018", "http://antln-test.europe.jacobs.com");
+                connector = new Connector(UserName, Password, ServerURL);
                 // in the initialize function you can specify the encryption pass, iv and salt 
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
@@ -54,7 +77,7 @@ namespace APITesting {
                 // to start the session we need to setup the connector
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
-                connector = new Connector("Kim Acket", "Je082018", "http://antln-test.europe.jacobs.com");
+                connector = new Connector(UserName, Password, ServerURL);
                 // in the initialize function you can specify the encryption pass, iv and salt 
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
@@ -65,7 +88,7 @@ namespace APITesting {
                         // create a new session to JPI via the XPages Interface Database - JPIService
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
-                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService");
+                        session = connector.GetSession(XPagesServiceURL);
                         if (Connector.hasError || session == null) {
                             //we have an error in creating/getting the session object
                             Assert.Fail("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + GetReturnMessages(Connector.ReturnMessages));
@@ -91,7 +114,7 @@ namespace APITesting {
                 // to start the session we need to setup the connector
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
-                connector = new Connector("Kim Acket", "Je082018", "http://antln-test.europe.jacobs.com");
+                connector = new Connector(UserName, Password, ServerURL);
                 // in the initialize function you can specify the encryption pass, iv and salt 
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
@@ -102,7 +125,7 @@ namespace APITesting {
                         // create a new session to JPI via the XPages Interface Database - JPIService
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
-                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService");
+                        session = connector.GetSession(XPagesServiceURL);
                         if (Connector.hasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -110,7 +133,7 @@ namespace APITesting {
                         } else {
                             // Retrieve a Database via the session object - provide the server & database filepath to connect to
                             DatabaseObject dbObj = null;
-                            dbObj = new DatabaseObject("projects\\jpi4\\XP2015_JP.nsf", "ANTLN-TEST/ANTWERPEN/JACOBSENGINEERING", session);
+                            dbObj = new DatabaseObject(DatabaseFilePath, DominoServerName, session);
                             // Call initialize to establish a connection to the given database - if you have the access and the database can be found 
                             if (dbObj.Initialize()) {
                                 // Database found - db Isinitialized is set to true
@@ -144,7 +167,7 @@ namespace APITesting {
                 // to start the session we need to setup the connector
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
-                connector = new Connector("Kim Acket", "Je082018", "http://antln-test.europe.jacobs.com");
+                connector = new Connector(UserName, Password, ServerURL);
                 // in the initialize function you can specify the encryption pass, iv and salt 
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
@@ -155,7 +178,7 @@ namespace APITesting {
                         // create a new session to JPI via the XPages Interface Database - JPIService
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
-                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService");
+                        session = connector.GetSession(XPagesServiceURL);
                         if (Connector.hasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -163,7 +186,7 @@ namespace APITesting {
                         } else {
                             // Retrieve a Database via the session object - provide the server & database filepath to connect to
                             DatabaseObject dbObj = null;
-                            dbObj = new DatabaseObject("projects\\jpi4\\XP2015_JP.nsf", "ANTLN-TEST/ANTWERPEN/JACOBSENGINEERING", session);
+                            dbObj = new DatabaseObject(DatabaseFilePath, DominoServerName, session);
                             // Call initialize to establish a connection to the given database - if you have the access and the database can be found 
                             if (dbObj.Initialize()) {
                                 // Database found - db Isinitialized is set to true
@@ -212,7 +235,7 @@ namespace APITesting {
                 // to start the session we need to setup the connector
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
-                connector = new Connector("Kim Acket", "Je082018", "http://antln-test.europe.jacobs.com");
+                connector = new Connector(UserName, Password, ServerURL);
                 // in the initialize function you can specify the encryption pass, iv and salt 
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
@@ -223,7 +246,7 @@ namespace APITesting {
                         // create a new session to JPI via the XPages Interface Database - JPIService
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
-                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService");
+                        session = connector.GetSession(XPagesServiceURL);
                         if (Connector.hasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -231,7 +254,7 @@ namespace APITesting {
                         } else {
                             // Retrieve a Database via the session object - provide the server & database filepath to connect to
                             DatabaseObject dbObj = null;
-                            dbObj = new DatabaseObject("projects\\jpi4\\XP2015_JP.nsf", "ANTLN-TEST/ANTWERPEN/JACOBSENGINEERING", session);
+                            dbObj = new DatabaseObject(DatabaseFilePath, DominoServerName, session);
                             // Call initialize to establish a connection to the given database - if you have the access and the database can be found 
                             if (dbObj.Initialize()) {
                                 // Database found - db Isinitialized is set to true
@@ -281,7 +304,7 @@ namespace APITesting {
                 // to start the session we need to setup the connector
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
-                connector = new Connector("Kim Acket", "Je082018", "http://antln-test.europe.jacobs.com");
+                connector = new Connector(UserName, Password, ServerURL);
                 // in the initialize function you can specify the encryption pass, iv and salt 
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
@@ -292,7 +315,7 @@ namespace APITesting {
                         // create a new session to JPI via the XPages Interface Database - JPIService
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
-                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService");
+                        session = connector.GetSession(XPagesServiceURL);
                         if (Connector.hasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -300,7 +323,7 @@ namespace APITesting {
                         } else {
                             // Retrieve a Database via the session object - provide the server & database filepath to connect to
                             DatabaseObject dbObj = null;
-                            dbObj = new DatabaseObject("projects\\jpi4\\XP2015_JP.nsf", "ANTLN-TEST/ANTWERPEN/JACOBSENGINEERING", session);
+                            dbObj = new DatabaseObject(DatabaseFilePath, DominoServerName, session);
                             // Call initialize to establish a connection to the given database - if you have the access and the database can be found 
                             if (dbObj.Initialize()) {
                                 // Database found - db Isinitialized is set to true
@@ -350,7 +373,7 @@ namespace APITesting {
                 // to start the session we need to setup the connector
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
-                connector = new Connector("Kim Acket", "Je082018", "http://antln-test.europe.jacobs.com");
+                connector = new Connector(UserName, Password, ServerURL);
                 // in the initialize function you can specify the encryption pass, iv and salt 
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
@@ -361,7 +384,7 @@ namespace APITesting {
                         // create a new session to JPI via the XPages Interface Database - JPIService
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
-                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService");
+                        session = connector.GetSession(XPagesServiceURL);
                         if (Connector.hasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -369,7 +392,7 @@ namespace APITesting {
                         } else {
                             // Retrieve a Database via the session object - provide the server & database filepath to connect to
                             DatabaseObject dbObj = null;
-                            dbObj = new DatabaseObject("projects\\jpi4\\XP2015_JP.nsf", "ANTLN-TEST/ANTWERPEN/JACOBSENGINEERING", session);
+                            dbObj = new DatabaseObject(DatabaseFilePath, DominoServerName, session);
                             // Call initialize to establish a connection to the given database - if you have the access and the database can be found 
                             if (dbObj.Initialize()) {
                                 // Database found - db Isinitialized is set to true
@@ -433,7 +456,7 @@ namespace APITesting {
                 // to start the session we need to setup the connector
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
-                connector = new Connector("Kim Acket", "Je082018", "http://antln-test.europe.jacobs.com");
+                connector = new Connector(UserName, Password, ServerURL);
                 // in the initialize function you can specify the encryption pass, iv and salt 
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
@@ -444,7 +467,7 @@ namespace APITesting {
                         // create a new session to JPI via the XPages Interface Database - JPIService
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
-                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService");
+                        session = connector.GetSession(XPagesServiceURL);
                         if (Connector.hasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -452,7 +475,7 @@ namespace APITesting {
                         } else {
                             // Retrieve a Database via the session object - provide the server & database filepath to connect to
                             DatabaseObject dbObj = null;
-                            dbObj = new DatabaseObject("projects\\jpi4\\XP2015_JP.nsf", "ANTLN-TEST/ANTWERPEN/JACOBSENGINEERING", session);
+                            dbObj = new DatabaseObject(DatabaseFilePath, DominoServerName, session);
                             // Call initialize to establish a connection to the given database - if you have the access and the database can be found 
                             if (dbObj.Initialize()) {
                                 // Database found - db Isinitialized is set to true
@@ -516,7 +539,7 @@ namespace APITesting {
                 // to start the session we need to setup the connector
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
-                connector = new Connector("Kim Acket", "Je082018", "http://antln-test.europe.jacobs.com");
+                connector = new Connector(UserName, Password, ServerURL);
                 // in the initialize function you can specify the encryption pass, iv and salt 
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
@@ -527,7 +550,7 @@ namespace APITesting {
                         // create a new session to JPI via the XPages Interface Database - JPIService
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
-                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService");
+                        session = connector.GetSession(XPagesServiceURL);
                         if (Connector.hasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -535,7 +558,7 @@ namespace APITesting {
                         } else {
                             // Retrieve a Database via the session object - provide the server & database filepath to connect to
                             DatabaseObject dbObj = null;
-                            dbObj = new DatabaseObject("projects\\jpi4\\XP2015_JP.nsf", "ANTLN-TEST/ANTWERPEN/JACOBSENGINEERING", session);
+                            dbObj = new DatabaseObject(DatabaseFilePath, DominoServerName, session);
                             // Call initialize to establish a connection to the given database - if you have the access and the database can be found 
                             if (dbObj.Initialize()) {
                                 // Database found - db Isinitialized is set to true
@@ -599,7 +622,7 @@ namespace APITesting {
                 // to start the session we need to setup the connector
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
-                connector = new Connector("Kim Acket", "Je082018", "http://antln-test.europe.jacobs.com");
+                connector = new Connector(UserName, Password, ServerURL);
                 // in the initialize function you can specify the encryption pass, iv and salt 
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
@@ -610,7 +633,7 @@ namespace APITesting {
                         // create a new session to JPI via the XPages Interface Database - JPIService
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
-                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService");
+                        session = connector.GetSession(XPagesServiceURL);
                         if (Connector.hasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -618,7 +641,7 @@ namespace APITesting {
                         } else {
                             // Retrieve a Database via the session object - provide the server & database filepath to connect to
                             DatabaseObject dbObj = null;
-                            dbObj = new DatabaseObject("projects\\jpi4\\XP2015_JP.nsf", "ANTLN-TEST/ANTWERPEN/JACOBSENGINEERING", session);
+                            dbObj = new DatabaseObject(DatabaseFilePath, DominoServerName, session);
                             // Call initialize to establish a connection to the given database - if you have the access and the database can be found 
                             if (dbObj.Initialize()) {
                                 // Database found - db Isinitialized is set to true
@@ -681,7 +704,7 @@ namespace APITesting {
                 // to start the session we need to setup the connector
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
-                connector = new Connector("Kim Acket", "Je082018", "http://antln-test.europe.jacobs.com");
+                connector = new Connector(UserName, Password, ServerURL);
                 // in the initialize function you can specify the encryption pass, iv and salt 
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
@@ -692,7 +715,7 @@ namespace APITesting {
                         // create a new session to JPI via the XPages Interface Database - JPIService
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
-                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService");
+                        session = connector.GetSession(XPagesServiceURL);
                         if (Connector.hasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -700,7 +723,7 @@ namespace APITesting {
                         } else {
                             // Retrieve a Database via the session object - provide the server & database filepath to connect to
                             DatabaseObject dbObj = null;
-                            dbObj = new DatabaseObject("projects\\jpi4\\XP2015_JP.nsf", "ANTLN-TEST/ANTWERPEN/JACOBSENGINEERING", session);
+                            dbObj = new DatabaseObject(DatabaseFilePath, DominoServerName, session);
                             // Call initialize to establish a connection to the given database - if you have the access and the database can be found 
                             if (dbObj.Initialize()) {
                                 // Database found - db Isinitialized is set to true
@@ -763,7 +786,7 @@ namespace APITesting {
                 // to start the session we need to setup the connector
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
-                connector = new Connector("Kim Acket", "Je082018", "http://antln-test.europe.jacobs.com");
+                connector = new Connector(UserName, Password, ServerURL);
                 // in the initialize function you can specify the encryption pass, iv and salt 
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
@@ -774,7 +797,7 @@ namespace APITesting {
                         // create a new session to JPI via the XPages Interface Database - JPIService
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
-                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService");
+                        session = connector.GetSession(XPagesServiceURL);
                         if (Connector.hasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -782,7 +805,7 @@ namespace APITesting {
                         } else {
                             // Retrieve a Database via the session object - provide the server & database filepath to connect to
                             DatabaseObject dbObj = null;
-                            dbObj = new DatabaseObject("projects\\jpi4\\XP2015_JP.nsf", "ANTLN-TEST/ANTWERPEN/JACOBSENGINEERING", session);
+                            dbObj = new DatabaseObject(DatabaseFilePath, DominoServerName, session);
                             // Call initialize to establish a connection to the given database - if you have the access and the database can be found 
                             if (dbObj.Initialize()) {
                                 // Database found - db Isinitialized is set to true
@@ -846,7 +869,7 @@ namespace APITesting {
                 // to start the session we need to setup the connector
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
-                connector = new Connector("Kim Acket", "Je082018", "http://antln-test.europe.jacobs.com");
+                connector = new Connector(UserName, Password, ServerURL);
                 // in the initialize function you can specify the encryption pass, iv and salt 
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
@@ -857,7 +880,7 @@ namespace APITesting {
                         // create a new session to JPI via the XPages Interface Database - JPIService
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
-                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService");
+                        session = connector.GetSession(XPagesServiceURL);
                         if (Connector.hasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -865,7 +888,7 @@ namespace APITesting {
                         } else {
                             // Retrieve a Database via the session object - provide the server & database filepath to connect to
                             DatabaseObject dbObj = null;
-                            dbObj = new DatabaseObject("projects\\jpi4\\XP2015_JP.nsf", "ANTLN-TEST/ANTWERPEN/JACOBSENGINEERING", session);
+                            dbObj = new DatabaseObject(DatabaseFilePath, DominoServerName, session);
                             // Call initialize to establish a connection to the given database - if you have the access and the database can be found 
                             if (dbObj.Initialize()) {
                                 // Database found - db Isinitialized is set to true
@@ -929,7 +952,7 @@ namespace APITesting {
                 // to start the session we need to setup the connector
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
-                connector = new Connector("Kim Acket", "Je082018", "http://antln-test.europe.jacobs.com");
+                connector = new Connector(UserName, Password, ServerURL);
                 // in the initialize function you can specify the encryption pass, iv and salt 
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
@@ -940,7 +963,7 @@ namespace APITesting {
                         // create a new session to JPI via the XPages Interface Database - JPIService
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
-                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService");
+                        session = connector.GetSession(XPagesServiceURL);
                         if (Connector.hasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -948,7 +971,7 @@ namespace APITesting {
                         } else {
                             // Retrieve a Database via the session object - provide the server & database filepath to connect to
                             DatabaseObject dbObj = null;
-                            dbObj = new DatabaseObject("projects\\jpi4\\XP2015_JP.nsf", "ANTLN-TEST/ANTWERPEN/JACOBSENGINEERING", session);
+                            dbObj = new DatabaseObject(DatabaseFilePath, DominoServerName, session);
                             // Call initialize to establish a connection to the given database - if you have the access and the database can be found 
                             if (dbObj.Initialize()) {
                                 // Database found - db Isinitialized is set to true
@@ -1012,7 +1035,7 @@ namespace APITesting {
                 // to start the session we need to setup the connector
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
-                connector = new Connector("Kim Acket", "Je082018", "http://antln-test.europe.jacobs.com");
+                connector = new Connector(UserName, Password, ServerURL);
                 // in the initialize function you can specify the encryption pass, iv and salt 
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
@@ -1023,7 +1046,7 @@ namespace APITesting {
                         // create a new session to JPI via the XPages Interface Database - JPIService
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
-                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService");
+                        session = connector.GetSession(XPagesServiceURL);
                         if (Connector.hasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -1031,7 +1054,7 @@ namespace APITesting {
                         } else {
                             // Retrieve a Database via the session object - provide the server & database filepath to connect to
                             DatabaseObject dbObj = null;
-                            dbObj = new DatabaseObject("projects\\jpi4\\XP2015_JP.nsf", "ANTLN-TEST/ANTWERPEN/JACOBSENGINEERING", session);
+                            dbObj = new DatabaseObject(DatabaseFilePath, DominoServerName, session);
                             // Call initialize to establish a connection to the given database - if you have the access and the database can be found 
                             if (dbObj.Initialize()) {
                                 // Database found - db Isinitialized is set to true
