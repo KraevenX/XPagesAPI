@@ -65,7 +65,7 @@ namespace APITesting {
                         // create a new session to JPI via the XPages Interface Database - JPIService
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
-                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XpageDev1300_XP.nsf/xpJPIService.xsp/JPIService");
+                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService");
                         if (Connector.hasError || session == null) {
                             //we have an error in creating/getting the session object
                             Assert.Fail("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + GetReturnMessages(Connector.ReturnMessages));
@@ -102,7 +102,7 @@ namespace APITesting {
                         // create a new session to JPI via the XPages Interface Database - JPIService
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
-                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XpageDev1300_XP.nsf/xpJPIService.xsp/JPIService");
+                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService");
                         if (Connector.hasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -155,7 +155,7 @@ namespace APITesting {
                         // create a new session to JPI via the XPages Interface Database - JPIService
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
-                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XpageDev1300_XP.nsf/xpJPIService.xsp/JPIService");
+                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService");
                         if (Connector.hasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -223,7 +223,7 @@ namespace APITesting {
                         // create a new session to JPI via the XPages Interface Database - JPIService
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
-                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XpageDev1300_XP.nsf/xpJPIService.xsp/JPIService");
+                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService");
                         if (Connector.hasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -292,7 +292,7 @@ namespace APITesting {
                         // create a new session to JPI via the XPages Interface Database - JPIService
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
-                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XpageDev1300_XP.nsf/xpJPIService.xsp/JPIService");
+                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService");
                         if (Connector.hasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -361,7 +361,7 @@ namespace APITesting {
                         // create a new session to JPI via the XPages Interface Database - JPIService
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
-                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XpageDev1300_XP.nsf/xpJPIService.xsp/JPIService");
+                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService");
                         if (Connector.hasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -444,7 +444,7 @@ namespace APITesting {
                         // create a new session to JPI via the XPages Interface Database - JPIService
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
-                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XpageDev1300_XP.nsf/xpJPIService.xsp/JPIService");
+                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService");
                         if (Connector.hasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -527,7 +527,7 @@ namespace APITesting {
                         // create a new session to JPI via the XPages Interface Database - JPIService
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
-                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XpageDev1300_XP.nsf/xpJPIService.xsp/JPIService");
+                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService");
                         if (Connector.hasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -610,7 +610,7 @@ namespace APITesting {
                         // create a new session to JPI via the XPages Interface Database - JPIService
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
-                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XpageDev1300_XP.nsf/xpJPIService.xsp/JPIService");
+                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService");
                         if (Connector.hasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -692,7 +692,7 @@ namespace APITesting {
                         // create a new session to JPI via the XPages Interface Database - JPIService
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
-                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XpageDev1300_XP.nsf/xpJPIService.xsp/JPIService");
+                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService");
                         if (Connector.hasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -774,7 +774,7 @@ namespace APITesting {
                         // create a new session to JPI via the XPages Interface Database - JPIService
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
-                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XpageDev1300_XP.nsf/xpJPIService.xsp/JPIService");
+                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService");
                         if (Connector.hasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -857,7 +857,7 @@ namespace APITesting {
                         // create a new session to JPI via the XPages Interface Database - JPIService
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
-                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XpageDev1300_XP.nsf/xpJPIService.xsp/JPIService");
+                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService");
                         if (Connector.hasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -940,7 +940,7 @@ namespace APITesting {
                         // create a new session to JPI via the XPages Interface Database - JPIService
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
-                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XpageDev1300_XP.nsf/xpJPIService.xsp/JPIService");
+                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService");
                         if (Connector.hasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -1023,7 +1023,7 @@ namespace APITesting {
                         // create a new session to JPI via the XPages Interface Database - JPIService
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
-                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XpageDev1300_XP.nsf/xpJPIService.xsp/JPIService");
+                        session = connector.GetSession("http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService");
                         if (Connector.hasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
