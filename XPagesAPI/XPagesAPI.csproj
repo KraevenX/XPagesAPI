@@ -37,7 +37,7 @@
     </ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -68,8 +68,10 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>$(SolutionDir)XPagesAPI\SignRelease.cmd
-$(SolutionDir)packages\Doxygen.1.8.14\tools\doxygen.exe  $(SolutionDir)XPagesAPI\doxyfile</PostBuildEvent>
+    <PostBuildEvent>call $(SolutionDir)packages\Doxygen.1.8.14\tools\doxygen.exe  $(SolutionDir)XPagesAPI\doxyfile
+call "C:\Program Files (x86)\HTML Help Workshop\hhc.exe" "$(SolutionDir)Documentation\html\index.hhp"
+copy /Y "$(SolutionDir)\Documentation\html\HelpFile.chm" "$(SolutionDir)\XPagesAPI\bin\Release\XPagesAPI.chm"
+call $(SolutionDir)XPagesAPI\SignRelease.cmd</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
