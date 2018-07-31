@@ -29,7 +29,7 @@ namespace APITesting {
         //Database To Access
         private const string DatabaseFilePath = "projects\\jpi4\\XP2015_JP.nsf";
         //Server To Access
-       // private const string DominoServerName = "ANTLN-TEST/ANTWERPEN/JacobsEngineering";
+        // private const string DominoServerName = "ANTLN-TEST/ANTWERPEN/JacobsEngineering";
         private const string DominoServerName = "JPI2/JPI";
 
         /// <summary>
