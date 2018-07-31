@@ -296,7 +296,7 @@ internal class Requestor
                             //YES/NO
                             if (str.StartsWith("Error: "))
                             {
-                                if (str.Replace("Error: ", "").Equals("YES", StringComparison.OrdinalIgnoreCase))
+                                if (str.Replace("Error: ", "").Equals("Y", StringComparison.OrdinalIgnoreCase))
                                 {
                                     isError = true;
                                 }
@@ -457,7 +457,7 @@ internal class Requestor
                 }
                 catch (Exception e)
                 {
-                    Connector.ReturnMessages.Add("Unable to execute the Request : " + Common.GetErrorInfo(e));
+                    Connector.ReturnMessages.Add("Unable to execute the Database Request : " + Common.GetErrorInfo(e));
                     Connector.hasError = true;  //throws exception
                     return false;
                 }
@@ -490,7 +490,7 @@ internal class Requestor
                 }
                 catch (Exception e)
                 {
-                    Connector.ReturnMessages.Add("Unable to execute the Request : " + Common.GetErrorInfo(e));
+                    Connector.ReturnMessages.Add("Unable to execute the Database Request : " + Common.GetErrorInfo(e));
                     Connector.hasError = true;  //throws exception
                     return false;
                 }
@@ -522,7 +522,7 @@ internal class Requestor
                             //YES/NO
                             if (str.StartsWith("Error: "))
                             {
-                                if (str.Replace("Error: ", "").Equals("YES", StringComparison.OrdinalIgnoreCase))
+                                if (str.Replace("Error: ", "").Equals("Y", StringComparison.OrdinalIgnoreCase))
                                 {
                                     isError = true;
                                 }
@@ -811,7 +811,7 @@ internal class Requestor
                             //YES/NO
                             if (str.StartsWith("Error: "))
                             {
-                                if (str.Replace("Error: ", "").Equals("YES", StringComparison.OrdinalIgnoreCase))
+                                if (str.Replace("Error: ", "").Equals("Y", StringComparison.OrdinalIgnoreCase))
                                 {
                                     isError = true;
                                 }
@@ -1135,7 +1135,7 @@ internal class Requestor
                             //YES/NO
                             if (str.StartsWith("Error: "))
                             {
-                                if (str.Replace("Error: ", "").Equals("YES", StringComparison.OrdinalIgnoreCase))
+                                if (str.Replace("Error: ", "").Equals("Y", StringComparison.OrdinalIgnoreCase))
                                 {
                                     isError = true;
                                 }
@@ -1249,7 +1249,7 @@ internal class Requestor
                                 docObj.DateCreated = created;
                                 docObj.DateModified = modified;
                                 //create file objects
-                                docObj.Files = new SortedDictionary<string, FileObject>();
+                                SortedDictionary<string, FileObject> files = new SortedDictionary<string, FileObject>();
                                 FileObject fObj = null;
                                 foreach (string str in fList)
                                 {
@@ -1260,10 +1260,11 @@ internal class Requestor
                                         fObj = new FileObject(docObj);
                                         if (fObj.Initialize(str))
                                         {
-                                            docObj.Files.Add(fObj.Name, fObj);
+                                            files.Add(fObj.Name, fObj);
                                         }
                                     }
                                 }
+                                docObj.Files = files;
                                 if (dbObj.Documents.ContainsKey(unid))
                                 {
                                     dbObj.Documents.Remove(unid);
@@ -1483,7 +1484,7 @@ internal class Requestor
                             //YES/NO
                             if (str.StartsWith("Error: "))
                             {
-                                if (str.Replace("Error: ", "").Equals("YES", StringComparison.OrdinalIgnoreCase))
+                                if (str.Replace("Error: ", "").Equals("Y", StringComparison.OrdinalIgnoreCase))
                                 {
                                     isError = true;
                                 }
@@ -1869,7 +1870,7 @@ internal class Requestor
                             //YES/NO
                             if (str.StartsWith("Error: "))
                             {
-                                if (str.Replace("Error: ", "").Equals("YES", StringComparison.OrdinalIgnoreCase))
+                                if (str.Replace("Error: ", "").Equals("Y", StringComparison.OrdinalIgnoreCase))
                                 {
                                     isError = true;
                                 }
@@ -2281,7 +2282,7 @@ internal class Requestor
                             //YES/NO
                             if (str.StartsWith("Error: "))
                             {
-                                if (str.Replace("Error: ", "").Equals("YES", StringComparison.OrdinalIgnoreCase))
+                                if (str.Replace("Error: ", "").Equals("Y", StringComparison.OrdinalIgnoreCase))
                                 {
                                     isError = true;
                                 }
@@ -2567,7 +2568,7 @@ internal class Requestor
                             //YES/NO
                             if (str.StartsWith("Error: "))
                             {
-                                if (str.Replace("Error: ", "").Equals("YES", StringComparison.OrdinalIgnoreCase))
+                                if (str.Replace("Error: ", "").Equals("Y", StringComparison.OrdinalIgnoreCase))
                                 {
                                     isError = true;
                                 }
@@ -2988,7 +2989,7 @@ internal class Requestor
                             //YES/NO
                             if (str.StartsWith("Error: "))
                             {
-                                if (str.Replace("Error: ", "").Equals("YES", StringComparison.OrdinalIgnoreCase))
+                                if (str.Replace("Error: ", "").Equals("Y", StringComparison.OrdinalIgnoreCase))
                                 {
                                     isError = true;
                                 }

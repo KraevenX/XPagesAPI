@@ -10,7 +10,7 @@
 \item 
 \mbox{\hyperlink{class_connector_a259c6d94252479cc3028038ebbaa7dc8}{Connector}} (string User, string Pass, string server)
 \begin{DoxyCompactList}\small\item\em Constructor method, provide the users credentials to logon to a domino server \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_connector_a2ceb19719cfc04adc4c2d299e19e1447}{Initialize}} (string Encryption\+Password=null, string Encryption\+IV=null, string Encryption\+Salt=null, string Identify=null)
+bool \mbox{\hyperlink{class_connector_a376c1ed70efd33d0bb18bb36e5cf076e}{Initialize}} (string Encryption\+Password=null, string Encryption\+IV=null, string Encryption\+Salt=null, string Identify=null)
 \begin{DoxyCompactList}\small\item\em Initializes the \mbox{\hyperlink{class_connector}{Connector}} and provides the possibility to use custom encryption keys and Identification header \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_connector_a0dcf8f969c37c4306c567417a872329a}{Connect}} ()
 \begin{DoxyCompactList}\small\item\em When the connector has been initialized, this method will establish a connection to the domino server using the provided credentials \end{DoxyCompactList}\item 
@@ -56,7 +56,7 @@ The following is an example of initializing a {\ttfamily \mbox{\hyperlink{class_
     \mbox{\hyperlink{class_connector}{Connector}} connector = \textcolor{keyword}{new} \mbox{\hyperlink{class_connector_a259c6d94252479cc3028038ebbaa7dc8}{Connector}}(\mbox{\hyperlink{class_connector_a41d247f09774f0ed206ce1a4a2463fed}{UserName}}, 
       \mbox{\hyperlink{class_connector_a7dd469898462ef761d256392766461fe}{Password}}, serverURL);
     \textcolor{comment}{// Initialize the connector}
-    connector.\mbox{\hyperlink{class_connector_a2ceb19719cfc04adc4c2d299e19e1447}{Initialize}}();
+    connector.\mbox{\hyperlink{class_connector_a376c1ed70efd33d0bb18bb36e5cf076e}{Initialize}}();
     \textcolor{comment}{//must always be called, possibility to add pass,iv,salt by default this is already set}
     \textcolor{keywordflow}{if} (connector.\mbox{\hyperlink{class_connector_a017d40b1f4cf2cbaa5d4b755cf09269e}{isInitialized}}) \{
         \textcolor{keywordflow}{if} (connector.\mbox{\hyperlink{class_connector_a0dcf8f969c37c4306c567417a872329a}{Connect}}()) \{  \textcolor{comment}{// establish a connection to the domino server}
@@ -143,35 +143,35 @@ When the connector has been initialized, this method will establish a connection
 Sets is\+Connected property
 
 \begin{DoxyReturn}{Returns}
-boolean
+bool
 \end{DoxyReturn}
 
 
-Definition at line 253 of file Connector.\+cs.
+Definition at line 255 of file Connector.\+cs.
 
 
 \begin{DoxyCode}
-253                           \{
-254         \textcolor{comment}{// only try to connect if initialized - all info needed is available}
-255         \textcolor{keywordflow}{if} (\_isInitialized) \{
-256             ResetReturn();
-257             \textcolor{comment}{// reset the error vars - will be populated by Requestor}
-258             Request = \textcolor{keyword}{new} Requestor(\textcolor{keyword}{this});
-259             \textcolor{comment}{// creates connection to domino and tries to login with supplied credentials}
-260             \textcolor{keywordflow}{if} (Request.Initialize()) \{
-261                 \_isConnected = \textcolor{keyword}{true};
-262                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-263             \} \textcolor{keywordflow}{else} \{
-264                 \textcolor{comment}{//unable to connect - hasError set to true & returnmessages added}
-265                 \_isConnected = \textcolor{keyword}{false};
-266                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-267             \}
-268         \} \textcolor{keywordflow}{else} \{
-269             \textcolor{comment}{//hasError is set to true (New()) and returnmessage contains reason}
-270             \_isConnected = \textcolor{keyword}{false};
-271             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-272         \}
-273     \}
+255                           \{
+256         \textcolor{comment}{// only try to connect if initialized - all info needed is available}
+257         \textcolor{keywordflow}{if} (\_isInitialized) \{
+258             ResetReturn();
+259             \textcolor{comment}{// reset the error vars - will be populated by Requestor}
+260             Request = \textcolor{keyword}{new} Requestor(\textcolor{keyword}{this});
+261             \textcolor{comment}{// creates connection to domino and tries to login with supplied credentials}
+262             \textcolor{keywordflow}{if} (Request.Initialize()) \{
+263                 \_isConnected = \textcolor{keyword}{true};
+264                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+265             \} \textcolor{keywordflow}{else} \{
+266                 \textcolor{comment}{//unable to connect - hasError set to true & returnmessages added}
+267                 \_isConnected = \textcolor{keyword}{false};
+268                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+269             \}
+270         \} \textcolor{keywordflow}{else} \{
+271             \textcolor{comment}{//hasError is set to true (New()) and returnmessage contains reason}
+272             \_isConnected = \textcolor{keyword}{false};
+273             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+274         \}
+275     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_connector_a5d089c1639f255966f00b2b05add0993}\label{class_connector_a5d089c1639f255966f00b2b05add0993}} 
 \index{Connector@{Connector}!Get\+Session@{Get\+Session}}
@@ -195,7 +195,7 @@ In order to get the \mbox{\hyperlink{class_session_object}{Session\+Object}}, th
 \end{DoxyReturn}
 
 
-Definition at line 281 of file Connector.\+cs.
+Definition at line 283 of file Connector.\+cs.
 
 
 
@@ -203,46 +203,46 @@ References has\+Error, Session\+Object.\+Initialize(), Return\+Messages, and Ses
 
 
 \begin{DoxyCode}
-281                                                                 \{
-282         ResetReturn();
-283         \textcolor{comment}{// reset the error vars - will be populated by SessionObject}
-284         \textcolor{keywordflow}{if} (\_isConnected) \{
-285             \textcolor{comment}{//we have a valid Requestor}
-286             \textcolor{keywordflow}{if} (Request != null && Request.isInitialized) \{
-287                 \mbox{\hyperlink{class_session_object}{SessionObject}} sObj = \textcolor{keyword}{new} \mbox{\hyperlink{class_connector_a0a7bb42f9530796c086ab50785147ce9}{SessionObject}}(\textcolor{keyword}{this}, DominoWebServiceURL)
+283                                                                 \{
+284         ResetReturn();
+285         \textcolor{comment}{// reset the error vars - will be populated by SessionObject}
+286         \textcolor{keywordflow}{if} (\_isConnected) \{
+287             \textcolor{comment}{//we have a valid Requestor}
+288             \textcolor{keywordflow}{if} (Request != null && Request.isInitialized) \{
+289                 \mbox{\hyperlink{class_session_object}{SessionObject}} sObj = \textcolor{keyword}{new} \mbox{\hyperlink{class_connector_a0a7bb42f9530796c086ab50785147ce9}{SessionObject}}(\textcolor{keyword}{this}, DominoWebServiceURL)
       ;
-288                 \textcolor{keywordflow}{if} (sObj.\mbox{\hyperlink{class_session_object_af3b9c9d56d98c848061952ed935f815b}{Initialize}}()) \{
-289                     \_SessionObject = sObj;
-290                     \textcolor{keywordflow}{return} sObj;
-291                     \textcolor{comment}{//not written in initialize - just returning false}
-292                 \} \textcolor{keywordflow}{else} \{
-293                     \mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"Connector.GetSession unable to complete, unable to
+290                 \textcolor{keywordflow}{if} (sObj.\mbox{\hyperlink{class_session_object_af3b9c9d56d98c848061952ed935f815b}{Initialize}}()) \{
+291                     \_SessionObject = sObj;
+292                     \textcolor{keywordflow}{return} sObj;
+293                     \textcolor{comment}{//not written in initialize - just returning false}
+294                 \} \textcolor{keywordflow}{else} \{
+295                     \mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"Connector.GetSession unable to complete, unable to
        initialize the session object"});
-294                     \mbox{\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError}} = \textcolor{keyword}{true};
-295                     \textcolor{comment}{//throws exception}
-296                     \textcolor{keywordflow}{return} null;
-297                 \}
-298             \} \textcolor{keywordflow}{else} \{
-299                 \mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"Connector.GetSession unable to complete, the request
+296                     \mbox{\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError}} = \textcolor{keyword}{true};
+297                     \textcolor{comment}{//throws exception}
+298                     \textcolor{keywordflow}{return} null;
+299                 \}
+300             \} \textcolor{keywordflow}{else} \{
+301                 \mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"Connector.GetSession unable to complete, the request
        object is invalid or not initialized"});
-300                 \mbox{\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError}} = \textcolor{keyword}{true};
-301                 \textcolor{comment}{//throws exception}
-302                 \textcolor{keywordflow}{return} null;
-303             \}
-304         \} \textcolor{keywordflow}{else} \{
-305             \mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"Connector.GetSession unable to complete, Connector is not
+302                 \mbox{\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError}} = \textcolor{keyword}{true};
+303                 \textcolor{comment}{//throws exception}
+304                 \textcolor{keywordflow}{return} null;
+305             \}
+306         \} \textcolor{keywordflow}{else} \{
+307             \mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"Connector.GetSession unable to complete, Connector is not
        connected to domino"});
-306             \mbox{\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError}} = \textcolor{keyword}{true};  \textcolor{comment}{//throws exception}
-307             \textcolor{keywordflow}{return} null;
-308         \}
-309 
-310     \}
+308             \mbox{\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError}} = \textcolor{keyword}{true};  \textcolor{comment}{//throws exception}
+309             \textcolor{keywordflow}{return} null;
+310         \}
+311 
+312     \}
 \end{DoxyCode}
-\mbox{\Hypertarget{class_connector_a2ceb19719cfc04adc4c2d299e19e1447}\label{class_connector_a2ceb19719cfc04adc4c2d299e19e1447}} 
+\mbox{\Hypertarget{class_connector_a376c1ed70efd33d0bb18bb36e5cf076e}\label{class_connector_a376c1ed70efd33d0bb18bb36e5cf076e}} 
 \index{Connector@{Connector}!Initialize@{Initialize}}
 \index{Initialize@{Initialize}!Connector@{Connector}}
 \subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
-{\footnotesize\ttfamily void Connector.\+Initialize (\begin{DoxyParamCaption}\item[{string}]{Encryption\+Password = {\ttfamily null},  }\item[{string}]{Encryption\+IV = {\ttfamily null},  }\item[{string}]{Encryption\+Salt = {\ttfamily null},  }\item[{string}]{Identify = {\ttfamily null} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool Connector.\+Initialize (\begin{DoxyParamCaption}\item[{string}]{Encryption\+Password = {\ttfamily null},  }\item[{string}]{Encryption\+IV = {\ttfamily null},  }\item[{string}]{Encryption\+Salt = {\ttfamily null},  }\item[{string}]{Identify = {\ttfamily null} }\end{DoxyParamCaption})}
 
 
 
@@ -259,9 +259,12 @@ Initializes the \mbox{\hyperlink{class_connector}{Connector}} and provides the p
 {\em Identify} & \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
 
 
-Definition at line 226 of file Connector.\+cs.
+Definition at line 227 of file Connector.\+cs.
 
 
 
@@ -269,29 +272,30 @@ References X\+P\+Identity.
 
 
 \begin{DoxyCode}
-226                                                                                                            
+227                                                                                                            
                                           \{
-227         ResetReturn();
-228         \textcolor{comment}{//no need to supply unless changes in XPages database - this will provide a way to enter new
+228         ResetReturn();
+229         \textcolor{comment}{//no need to supply unless changes in XPages database - this will provide a way to enter new
        paswords}
-229         \textcolor{keywordflow}{if} (EncryptionPassword != null) \{
-230             this.EncryptionPASSWORD = EncryptionPassword;
-231         \}
-232         \textcolor{keywordflow}{if} (EncryptionIV != null) \{
-233             this.EncryptionIV = EncryptionIV;
-234         \}
-235         \textcolor{keywordflow}{if} (EncryptionSalt != null) \{
-236             this.EncryptionSALT = EncryptionSalt;
-237         \}
-238         \textcolor{keywordflow}{if} (Identify != null) \{
-239             \mbox{\hyperlink{class_connector_a092e3e36f92c129c07c57df9b8fb91ca}{XPIdentity}} = Identify;
-240         \}
-241         \textcolor{keywordflow}{if} (!\_hasError) \{
-242             \_isInitialized = \textcolor{keyword}{true};
-243         \} \textcolor{keywordflow}{else} \{
-244             \_isInitialized = \textcolor{keyword}{false};
-245         \}
-246     \}
+230         \textcolor{keywordflow}{if} (EncryptionPassword != null) \{
+231             this.EncryptionPASSWORD = EncryptionPassword;
+232         \}
+233         \textcolor{keywordflow}{if} (EncryptionIV != null) \{
+234             this.EncryptionIV = EncryptionIV;
+235         \}
+236         \textcolor{keywordflow}{if} (EncryptionSalt != null) \{
+237             this.EncryptionSALT = EncryptionSalt;
+238         \}
+239         \textcolor{keywordflow}{if} (Identify != null) \{
+240             \mbox{\hyperlink{class_connector_a092e3e36f92c129c07c57df9b8fb91ca}{XPIdentity}} = Identify;
+241         \}
+242         \textcolor{keywordflow}{if} (!\_hasError) \{
+243             \_isInitialized = \textcolor{keyword}{true};
+244         \} \textcolor{keywordflow}{else} \{
+245             \_isInitialized = \textcolor{keyword}{false};
+246         \}
+247         \textcolor{keywordflow}{return} \_isInitialized;
+248     \}
 \end{DoxyCode}
 
 

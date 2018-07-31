@@ -185,8 +185,8 @@ An object representing a domino database object
 164 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
 165 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Database&#32;constructor&#32;method</emphasis>
 166 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-167 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;filePath&quot;&gt;&lt;/param&gt;</emphasis>
-168 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;server&quot;&gt;&lt;/param&gt;</emphasis>
+167 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;filePath&quot;&gt;The&#32;domino&#32;file&#32;path&#32;(root&#32;=&#32;data&#32;folder)&lt;/param&gt;</emphasis>
+168 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;server&quot;&gt;The&#32;server&#32;name&#32;abbreviated&#32;(ANTLN-TEST/ANTWERPEN/JacobsEngineering)&#32;&lt;/param&gt;</emphasis>
 169 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;session&quot;&gt;&lt;/param&gt;</emphasis>
 <link linkend="class_database_object_1ab16b4327b02ffedcd1b003cea9d949a1">170 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<link linkend="class_database_object_1ab16b4327b02ffedcd1b003cea9d949a1">DatabaseObject</link>(<emphasis class="keywordtype">string</emphasis>&#32;filePath,&#32;<emphasis class="keywordtype">string</emphasis>&#32;server,&#32;&#32;<link linkend="class_session_object">SessionObject</link>&#32;session)&#32;{
 171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_Session&#32;=&#32;session;
@@ -200,7 +200,7 @@ An object representing a domino database object
 179 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
 180 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;session&quot;&gt;&lt;/param&gt;</emphasis>
 181 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;replicationID&quot;&gt;&lt;/param&gt;</emphasis>
-182 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;server&quot;&gt;&lt;/param&gt;</emphasis>
+182 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;server&quot;&gt;The&#32;server&#32;name&#32;abbreviated&#32;(ANTLN-TEST/ANTWERPEN/JacobsEngineering)&#32;&lt;/param&gt;</emphasis>
 <link linkend="class_database_object_1a75d3e8a876c6899bd01b866e35475ed2">183 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<link linkend="class_database_object_1a75d3e8a876c6899bd01b866e35475ed2">DatabaseObject</link>(&#32;<link linkend="class_session_object">SessionObject</link>&#32;session,&#32;<emphasis class="keywordtype">string</emphasis>&#32;replicationID,&#32;<emphasis class="keywordtype">string</emphasis>&#32;server)&#32;{
 184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_Session&#32;=&#32;session;
 185 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_ReplicationID&#32;=&#32;replicationID;

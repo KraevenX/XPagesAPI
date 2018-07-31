@@ -30,7 +30,7 @@
     <member refid="class_connector_1a41efb9b95da0b7da84bc82c09b913af9" kind="property"><name>EncryptionSALT</name></member>
     <member refid="class_connector_1a0a7bb42f9530796c086ab50785147ce9" kind="property"><name>SessionObject</name></member>
     <member refid="class_connector_1a259c6d94252479cc3028038ebbaa7dc8" kind="function"><name>Connector</name></member>
-    <member refid="class_connector_1a2ceb19719cfc04adc4c2d299e19e1447" kind="function"><name>Initialize</name></member>
+    <member refid="class_connector_1a376c1ed70efd33d0bb18bb36e5cf076e" kind="function"><name>Initialize</name></member>
     <member refid="class_connector_1a0dcf8f969c37c4306c567417a872329a" kind="function"><name>Connect</name></member>
     <member refid="class_connector_1a5d089c1639f255966f00b2b05add0993" kind="function"><name>GetSession</name></member>
     <member refid="class_connector_1a14faa526d6fbf6f73ad2a676fc369f8a" kind="function"><name>ResetReturn</name></member>

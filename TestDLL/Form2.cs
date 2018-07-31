@@ -105,8 +105,29 @@ namespace TestDLL {
                                         //MessageBox.Show(unidlist);
 
                                         StringBuilder sb = new StringBuilder();
-                                        sb.AppendLine("Universal ID;" + txtFields.Text);
+                                        if(txtFields.Text != "")
+                                        {
+                                            // get all fields
+                                            sb.AppendLine("Universal ID;" + txtFields.Text);
+                                        }
+                                     
                                         if (dbObj.LoadDocumentFields(txtFields.Text)) {
+                                            //here we need to get a list of fields
+                                            if (txtFields.Text == "")
+                                            {
+                                                // get all fields for first doc
+                                                if(dbObj.Documents!=null && dbObj.Documents.Count > 0)
+                                                {
+                                                    sb.AppendLine("Universal ID;");
+                                                    DocumentObject docObject = dbObj.Documents.ElementAt(0).Value;
+                                                    foreach (KeyValuePair<string, FieldObject> kvp in docObject.Fields)
+                                                    {
+                                                        sb.Append(kvp.Key + ";");
+                                                    }
+                                                }
+                                               
+                                            }
+
                                             // string str = "";
                                             foreach (KeyValuePair<string, DocumentObject> kvpDoc in dbObj.Documents) {
                                                 // str = str + "Unid: " + kvp.Value.UniversalID + "NoteID: " + kvp.Value.NoteID + Environment.NewLine + "Form: " + kvp.Value.Form + Environment.NewLine + "Size: " + kvp.Value.Size + Environment.NewLine + "URL: " + kvp.Value.Url + Environment.NewLine + Environment.NewLine;
@@ -114,7 +135,8 @@ namespace TestDLL {
                                                 sb.Append(docObj.UniversalID + ";");
 
                                                 if (docObj.Fields != null && docObj.Fields.Count > 0) {
-                                                        foreach (KeyValuePair<string, FieldObject> kvp in docObj.Fields) {
+                                                   
+                                                    foreach (KeyValuePair<string, FieldObject> kvp in docObj.Fields) {
                                                             sb.Append(kvp.Value.GetValueAsString() + ";");
                                                         }
                                                     //sb.Append(Environment.NewLine);

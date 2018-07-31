@@ -164,8 +164,8 @@ public class DatabaseObject
     /// <summary>
     /// Database constructor method
     /// </summary>
-    /// <param name="filePath"></param>
-    /// <param name="server"></param>
+    /// <param name="filePath">The domino file path (root = data folder)</param>
+    /// <param name="server">The server name abbreviated (ANTLN-TEST/ANTWERPEN/JacobsEngineering) </param>
     /// <param name="session"></param>
     public DatabaseObject(string filePath, string server,  SessionObject session) {
         _Session = session;
@@ -179,7 +179,7 @@ public class DatabaseObject
     /// </summary>
     /// <param name="session"></param>
     /// <param name="replicationID"></param>
-    /// <param name="server"></param>
+    /// <param name="server">The server name abbreviated (ANTLN-TEST/ANTWERPEN/JacobsEngineering) </param>
     public DatabaseObject( SessionObject session, string replicationID, string server) {
         _Session = session;
         _ReplicationID = replicationID;

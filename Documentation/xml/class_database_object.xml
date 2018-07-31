@@ -307,14 +307,14 @@
 <parametername>filePath</parametername>
 </parameternamelist>
 <parameterdescription>
-</parameterdescription>
+<para>The domino file path (root = data folder)</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>server</parametername>
 </parameternamelist>
 <parameterdescription>
-</parameterdescription>
+<para>The server name abbreviated (ANTLN-TEST/ANTWERPEN/JacobsEngineering) </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -368,7 +368,7 @@
 <parametername>server</parametername>
 </parameternamelist>
 <parameterdescription>
-</parameterdescription>
+<para>The server name abbreviated (ANTLN-TEST/ANTWERPEN/JacobsEngineering) </para></parameterdescription>
 </parameteritem>
 </parameterlist>
 </para>        </detaileddescription>

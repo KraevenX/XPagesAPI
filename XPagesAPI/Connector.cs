@@ -223,7 +223,8 @@ public class Connector {
     /// <param name="EncryptionIV"></param>
     /// <param name="EncryptionSalt"></param>
     /// <param name="Identify"></param>
-    public void Initialize(string EncryptionPassword = null, string EncryptionIV = null, string EncryptionSalt = null, string Identify = null) {
+    /// <returns>bool</returns>
+    public bool Initialize(string EncryptionPassword = null, string EncryptionIV = null, string EncryptionSalt = null, string Identify = null) {
         ResetReturn();
         //no need to supply unless changes in XPages database - this will provide a way to enter new paswords
         if (EncryptionPassword != null) {
@@ -243,13 +244,14 @@ public class Connector {
         } else {
             _isInitialized = false;
         }
+        return _isInitialized;
     }
 
     /// <summary>
     /// When the connector has been initialized, this method will establish a connection to the domino server using the provided credentials
     /// <para>Sets isConnected property</para>
     /// </summary>
-    /// <returns>boolean</returns>
+    /// <returns>bool</returns>
     public bool Connect() {
         // only try to connect if initialized - all info needed is available
         if (_isInitialized) {

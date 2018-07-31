@@ -421,11 +421,15 @@ Database constructor method
                         <tbody>
                             <row>
                                 <entry>filePath</entry>
-                                <entry></entry>
+                                <entry>
+<para>The domino file path (root = data folder)</para>
+</entry>
                             </row>
                             <row>
                                 <entry>server</entry>
-                                <entry></entry>
+                                <entry>
+<para>The server name abbreviated (ANTLN-TEST/ANTWERPEN/JacobsEngineering) </para>
+</entry>
                             </row>
                             <row>
                                 <entry>session</entry>
@@ -462,7 +466,9 @@ Database constructor method
                             </row>
                             <row>
                                 <entry>server</entry>
-                                <entry></entry>
+                                <entry>
+<para>The server name abbreviated (ANTLN-TEST/ANTWERPEN/JacobsEngineering) </para>
+</entry>
                             </row>
                         </tbody>
                         </tgroup>

@@ -194,7 +194,7 @@ Constructor method, provide the users credentials to logon to a domino server
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>void <link linkend="class_connector_1a2ceb19719cfc04adc4c2d299e19e1447">Initialize</link> (
+                        <para>bool <link linkend="class_connector_1a376c1ed70efd33d0bb18bb36e5cf076e">Initialize</link> (
 string EncryptionPassword, string EncryptionIV, string EncryptionSalt, string Identify)<para><emphasis>&lt;summary&gt;
 Initializes the Connector and provides the possibility to use custom encryption keys and Identification header
 &lt;/summary&gt;</emphasis></para>
@@ -329,8 +329,8 @@ Constructor method, provide the users credentials to logon to a domino server
                 </para>
 
             </section>
-            <section xml:id="class_connector_1a2ceb19719cfc04adc4c2d299e19e1447">
-                <title>void Connector.Initialize (string EncryptionPassword=null, string EncryptionIV=null, string EncryptionSalt=null, string Identify=null)</title> <emphasis>&lt;summary&gt;
+            <section xml:id="class_connector_1a376c1ed70efd33d0bb18bb36e5cf076e">
+                <title>bool Connector.Initialize (string EncryptionPassword=null, string EncryptionIV=null, string EncryptionSalt=null, string Identify=null)</title> <emphasis>&lt;summary&gt;
 Initializes the Connector and provides the possibility to use custom encryption keys and Identification header
 &lt;/summary&gt;</emphasis>
                 
@@ -363,7 +363,11 @@ Initializes the Connector and provides the possibility to use custom encryption 
                         </tgroup>
                     </table>
                 </formalpara>
-                </para>
+                <formalpara><title>Returns: </title>
+
+<para>bool</para>
+</formalpara>
+</para>
 
             </section>
             <section xml:id="class_connector_1a0dcf8f969c37c4306c567417a872329a">
@@ -374,7 +378,7 @@ When the connector has been initialized, this method will establish a connection
 
 <para><formalpara><title>Returns: </title>
 
-<para>boolean</para>
+<para>bool</para>
 </formalpara>
 </para>
 

@@ -224,7 +224,7 @@
         <referencedby refid="class_document_object_1a5e070c7c0a45ac06422ee992c841e780" compoundref="_document_object_8cs" startline="409" endline="426">DocumentObject.GetAllFields</referencedby>
         <referencedby refid="class_document_object_1a8883fec3b5b1b6e2e43f4b5ca4092684" compoundref="_document_object_8cs" startline="331" endline="349">DocumentObject.GetFields</referencedby>
         <referencedby refid="class_document_object_1a2c8aee9450e8fdd1e84e8ff26d0950a1" compoundref="_document_object_8cs" startline="356" endline="373">DocumentObject.GetFiles</referencedby>
-        <referencedby refid="class_connector_1a5d089c1639f255966f00b2b05add0993" compoundref="_connector_8cs" startline="281" endline="310">GetSession</referencedby>
+        <referencedby refid="class_connector_1a5d089c1639f255966f00b2b05add0993" compoundref="_connector_8cs" startline="283" endline="312">GetSession</referencedby>
         <referencedby refid="class_field_object_1a8d962cda039f78f485232bd2764176c4" compoundref="_field_object_8cs" startline="79" endline="104">FieldObject.getValue</referencedby>
         <referencedby refid="class_field_object_1a797ebc6615a86bafd9bd17f09562f2ee" compoundref="_field_object_8cs" startline="146" endline="156">FieldObject.GetValueAsDate</referencedby>
         <referencedby refid="class_field_object_1aafe2b7d3e7d414345d85e19dddce3c47" compoundref="_field_object_8cs" startline="129" endline="140">FieldObject.GetValueAsDouble</referencedby>
@@ -250,7 +250,7 @@
         <referencedby refid="class_connector_1a259c6d94252479cc3028038ebbaa7dc8" compoundref="_connector_8cs" startline="73" endline="92">Connector</referencedby>
         <referencedby refid="class_document_object_1a1a763aa01710b370634f46c89b7d2d8e" compoundref="_document_object_8cs" startline="435" endline="488">DocumentObject.ExportFields</referencedby>
         <referencedby refid="class_document_object_1a8753abc5a871bf84fc910e6a99936b2b" compoundref="_document_object_8cs" startline="497" endline="557">DocumentObject.ExportFiles</referencedby>
-        <referencedby refid="class_connector_1a5d089c1639f255966f00b2b05add0993" compoundref="_connector_8cs" startline="281" endline="310">GetSession</referencedby>
+        <referencedby refid="class_connector_1a5d089c1639f255966f00b2b05add0993" compoundref="_connector_8cs" startline="283" endline="312">GetSession</referencedby>
         <referencedby refid="class_field_object_1a8d962cda039f78f485232bd2764176c4" compoundref="_field_object_8cs" startline="79" endline="104">FieldObject.getValue</referencedby>
         <referencedby refid="class_field_object_1a797ebc6615a86bafd9bd17f09562f2ee" compoundref="_field_object_8cs" startline="146" endline="156">FieldObject.GetValueAsDate</referencedby>
         <referencedby refid="class_field_object_1aafe2b7d3e7d414345d85e19dddce3c47" compoundref="_field_object_8cs" startline="129" endline="140">FieldObject.GetValueAsDouble</referencedby>
@@ -296,7 +296,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs" line="156" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs" bodystart="156" bodyend="164"/>
-        <referencedby refid="class_connector_1a2ceb19719cfc04adc4c2d299e19e1447" compoundref="_connector_8cs" startline="226" endline="246">Initialize</referencedby>
+        <referencedby refid="class_connector_1a376c1ed70efd33d0bb18bb36e5cf076e" compoundref="_connector_8cs" startline="227" endline="248">Initialize</referencedby>
       </memberdef>
       <memberdef kind="property" id="class_connector_1a62269f0d1749b4f2185a988c25bbe088" prot="package" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>string</type>
@@ -349,7 +349,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs" line="209" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs" bodystart="209" bodyend="213"/>
-        <referencedby refid="class_connector_1a5d089c1639f255966f00b2b05add0993" compoundref="_connector_8cs" startline="281" endline="310">GetSession</referencedby>
+        <referencedby refid="class_connector_1a5d089c1639f255966f00b2b05add0993" compoundref="_connector_8cs" startline="283" endline="312">GetSession</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -402,9 +402,9 @@
         <references refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" compoundref="_connector_8cs" startline="101" endline="113">hasError</references>
         <references refid="class_connector_1a1ed422674b344524fd77998dcf6a9ba6" compoundref="_connector_8cs" startline="119" endline="126">ReturnMessages</references>
       </memberdef>
-      <memberdef kind="function" id="class_connector_1a2ceb19719cfc04adc4c2d299e19e1447" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void Connector.Initialize</definition>
+      <memberdef kind="function" id="class_connector_1a376c1ed70efd33d0bb18bb36e5cf076e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Connector.Initialize</definition>
         <argsstring>(string EncryptionPassword=null, string EncryptionIV=null, string EncryptionSalt=null, string Identify=null)</argsstring>
         <name>Initialize</name>
         <param>
@@ -459,10 +459,11 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
+<simplesect kind="return"><para>bool</para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs" line="226" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs" bodystart="226" bodyend="246"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs" line="227" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs" bodystart="227" bodyend="248"/>
         <references refid="class_connector_1a092e3e36f92c129c07c57df9b8fb91ca" compoundref="_connector_8cs" startline="156" endline="164">XPIdentity</references>
       </memberdef>
       <memberdef kind="function" id="class_connector_1a0dcf8f969c37c4306c567417a872329a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
@@ -473,11 +474,11 @@
         <briefdescription>
 <para>When the connector has been initialized, this method will establish a connection to the domino server using the provided credentials </para>        </briefdescription>
         <detaileddescription>
-<para>Sets isConnected property</para><para><simplesect kind="return"><para>boolean</para></simplesect>
+<para>Sets isConnected property</para><para><simplesect kind="return"><para>bool</para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs" line="253" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs" bodystart="253" bodyend="273"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs" line="255" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs" bodystart="255" bodyend="275"/>
       </memberdef>
       <memberdef kind="function" id="class_connector_1a5d089c1639f255966f00b2b05add0993" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_session_object" kindref="compound">SessionObject</ref></type>
@@ -503,7 +504,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs" line="281" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs" bodystart="281" bodyend="310"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs" line="283" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs" bodystart="283" bodyend="312"/>
         <references refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" compoundref="_connector_8cs" startline="101" endline="113">hasError</references>
         <references refid="class_session_object_1af3b9c9d56d98c848061952ed935f815b" compoundref="_session_object_8cs" startline="80" endline="103">SessionObject.Initialize</references>
         <references refid="class_connector_1a1ed422674b344524fd77998dcf6a9ba6" compoundref="_connector_8cs" startline="119" endline="126">ReturnMessages</references>
@@ -522,7 +523,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs" line="319" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs" bodystart="319" bodyend="322"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs" line="321" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs" bodystart="321" bodyend="324"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -556,7 +557,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs" line="26" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs" bodystart="26" bodyend="326"/>
+    <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs" line="26" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs" bodystart="26" bodyend="328"/>
     <listofallmembers>
       <member refid="class_connector_1a67cb5bdda79e011540d02207bbc3980d" prot="private" virt="non-virtual"><scope>Connector</scope><name>_EncryptionIV</name></member>
       <member refid="class_connector_1a7bdde14f7982ddd5e1fa21efd9f899ea" prot="private" virt="non-virtual"><scope>Connector</scope><name>_EncryptionPASSWORD</name></member>
@@ -574,7 +575,7 @@
       <member refid="class_connector_1a41efb9b95da0b7da84bc82c09b913af9" prot="package" virt="non-virtual"><scope>Connector</scope><name>EncryptionSALT</name></member>
       <member refid="class_connector_1a5d089c1639f255966f00b2b05add0993" prot="public" virt="non-virtual"><scope>Connector</scope><name>GetSession</name></member>
       <member refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" prot="public" virt="non-virtual"><scope>Connector</scope><name>hasError</name></member>
-      <member refid="class_connector_1a2ceb19719cfc04adc4c2d299e19e1447" prot="public" virt="non-virtual"><scope>Connector</scope><name>Initialize</name></member>
+      <member refid="class_connector_1a376c1ed70efd33d0bb18bb36e5cf076e" prot="public" virt="non-virtual"><scope>Connector</scope><name>Initialize</name></member>
       <member refid="class_connector_1acf2c3b519c360d02ed54543a01d199af" prot="public" virt="non-virtual"><scope>Connector</scope><name>isConnected</name></member>
       <member refid="class_connector_1a017d40b1f4cf2cbaa5d4b755cf09269e" prot="public" virt="non-virtual"><scope>Connector</scope><name>isInitialized</name></member>
       <member refid="class_connector_1a7dd469898462ef761d256392766461fe" prot="public" virt="non-virtual"><scope>Connector</scope><name>Password</name></member>

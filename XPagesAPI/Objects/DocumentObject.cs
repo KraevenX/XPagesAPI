@@ -362,7 +362,7 @@ public class DocumentObject
 
             //this will update _Fields list in this object
             //string WebServiceURL, string Unid, string searchField, string searchValue, string formula, DatabaseObject dbObj, DocumentObject docObj
-            if (_Database.Session.Connection.Request.ExecuteDocumentFilesRequest(_Database.Session.WebServiceURL, this._UniversalID,this._SearchField,this._SearchValue, this._Formula,this._Database,this))
+            if (_Database.Session.Connection.Request.ExecuteDocumentFilesRequest(_Database.Session.WebServiceURL, this._UniversalID,this._SearchField,this._SearchValue, this._Formula,this._Database, this))
             {
                 Connector.hasError = false;
                 return true;

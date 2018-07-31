@@ -168,11 +168,11 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'class_connector_1a2ceb19719cfc04adc4c2d299e19e1447';
+      sec-mem-id   = 'class_connector_1a376c1ed70efd33d0bb18bb36e5cf076e';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
-void
+bool
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'Initialize';
       sec-mem-param = {
@@ -212,7 +212,7 @@ null
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs';
-      sec-mem-desc-line = '226';
+      sec-mem-desc-line = '227';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 <summary>
 Initializes the Connector and provides the possibility to use custom encryption keys and Identification header
@@ -222,7 +222,8 @@ _EnD_oF_dEf_TeXt_;
 <param name="EncryptionPassword"></param>
 <param name="EncryptionIV"></param>
 <param name="EncryptionSalt"></param>
-<param name="Identify"></param>  
+<param name="Identify"></param>
+<returns>bool</returns>  
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
         sec-mem-ref-id = '_connector_8cs_1a092e3e36f92c129c07c57df9b8fb91ca';
@@ -240,7 +241,7 @@ bool
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'Connect';
       sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs';
-      sec-mem-desc-line = '253';
+      sec-mem-desc-line = '255';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 <summary>
 When the connector has been initialized, this method will establish a connection to the domino server using the provided credentials
@@ -248,7 +249,7 @@ _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
 <para>Sets isConnected property</para>
 </summary>
-<returns>boolean</returns>  
+<returns>bool</returns>  
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
@@ -267,7 +268,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'DominoWebServiceURL';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs';
-      sec-mem-desc-line = '281';
+      sec-mem-desc-line = '283';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 <summary>
 This method will try to create a SessionObject, by connecting to the XPages database Rest Service
@@ -421,7 +422,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_connector_8cs_1a5d089c1639f255966f00b2b05add0993';
-        sec-mem-ref-line = '281';
+        sec-mem-ref-line = '283';
         sec-mem-ref-name = 'GetSession';
     };
       sec-mem-referenceby = {
@@ -506,7 +507,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_connector_8cs_1a5d089c1639f255966f00b2b05add0993';
-        sec-mem-ref-line = '281';
+        sec-mem-ref-line = '283';
         sec-mem-ref-name = 'GetSession';
     };
       sec-mem-referenceby = {
@@ -600,8 +601,8 @@ _EnD_oF_dEf_TeXt_;
   
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceby = {
-        sec-mem-ref-id = '_connector_8cs_1a2ceb19719cfc04adc4c2d299e19e1447';
-        sec-mem-ref-line = '226';
+        sec-mem-ref-id = '_connector_8cs_1a376c1ed70efd33d0bb18bb36e5cf076e';
+        sec-mem-ref-line = '227';
         sec-mem-ref-name = 'Initialize';
     };
     }; /* sec-member */
@@ -686,7 +687,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceby = {
         sec-mem-ref-id = '_connector_8cs_1a5d089c1639f255966f00b2b05add0993';
-        sec-mem-ref-line = '281';
+        sec-mem-ref-line = '283';
         sec-mem-ref-name = 'GetSession';
     };
     }; /* sec-member */
@@ -1003,8 +1004,8 @@ Database constructor method
 </summary>
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-<param name="filePath"></param>
-<param name="server"></param>
+<param name="filePath">The domino file path (root = data folder)</param>
+<param name="server">The server name abbreviated (ANTLN-TEST/ANTWERPEN/JacobsEngineering) </param>
 <param name="session"></param>  
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
@@ -1045,7 +1046,7 @@ _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
 <param name="session"></param>
 <param name="replicationID"></param>
-<param name="server"></param>  
+<param name="server">The server name abbreviated (ANTLN-TEST/ANTWERPEN/JacobsEngineering) </param>  
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
@@ -4869,7 +4870,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_connector_8cs_1a5d089c1639f255966f00b2b05add0993';
-        sec-mem-ref-line = '281';
+        sec-mem-ref-line = '283';
         sec-mem-ref-name = 'Connector::GetSession';
     };
     }; /* sec-member */

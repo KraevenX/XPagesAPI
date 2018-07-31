@@ -174,7 +174,7 @@
         <references refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" compoundref="_connector_8cs" startline="101" endline="113">Connector.hasError</references>
         <references refid="class_connector_1a1ed422674b344524fd77998dcf6a9ba6" compoundref="_connector_8cs" startline="119" endline="126">Connector.ReturnMessages</references>
         <references refid="class_session_object_1a697c071c812fbf7ad1166b896fb44c16" compoundref="_session_object_8cs" startline="56" endline="60">WebServiceURL</references>
-        <referencedby refid="class_connector_1a5d089c1639f255966f00b2b05add0993" compoundref="_connector_8cs" startline="281" endline="310">Connector.GetSession</referencedby>
+        <referencedby refid="class_connector_1a5d089c1639f255966f00b2b05add0993" compoundref="_connector_8cs" startline="283" endline="312">Connector.GetSession</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_session_object_1aa4871ea2dac4215bef0274a2bd71ae72" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_database_object" kindref="compound">DatabaseObject</ref></type>
