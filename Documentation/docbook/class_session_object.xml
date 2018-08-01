@@ -121,7 +121,7 @@ Validate the input provided by the user
 
 if(sObj!=null&#32;&amp;amp;&amp;amp;&#32;sObj.Initialize()){
 &#32;&#32;&#32;&#32;&#32;//&#32;here&#32;you&#32;can&#32;then&#32;get&#32;the&#32;database&#32;object
-&#32;&#32;&#32;&#32;&#32;//&#32;your&#32;code&#32;here...&#32;
+&#32;&#32;&#32;&#32;&#32;//&#32;your&#32;code&#32;here...
 }
 </computeroutput></literallayout> </para>
                 <para>Definition at line 17 of file SessionObject.cs</para>

@@ -24,36 +24,35 @@ public class FieldObject {
     /// </summary>
     public string Type { get; protected internal set; } = "";
 
-    #endregion
+    #endregion Properties
 
     #region Constructor
 
     /// <summary>
-    /// Field Constructor 
+    /// Field Constructor
     /// </summary>
     /// <param name="name"></param>
     internal FieldObject(string name) {
         Name = name;
     }
 
-    #endregion
+    #endregion Constructor
 
     #region Methods
-    
+
     /// <summary>
     /// Method to get the value of the field, by converting it to the provided type
     /// </summary>
     /// <returns></returns>
     public object GetValue() {
-
         try {
             // return converted value
             if (Type == "String") {
-                return (String) Value;
+                return (String)Value;
             } else if (Type == "Number") {
-                return (double) Value;
+                return (double)Value;
             } else if (Type == "Date") {
-                return (DateTime) Value;
+                return (DateTime)Value;
             } else if (Type == "List") {
                 List<string> list = null;
                 list = Value.ToString().Split(';').ToList<string>();
@@ -62,16 +61,12 @@ public class FieldObject {
                 return Value;
             }
         } catch (Exception ex) {
-
             Connector.ReturnMessages.Add("Unable to get the value of the field : " + Name);
             Connector.ReturnMessages.Add(Common.GetErrorInfo(ex));
-            Connector.hasError = true;
+            Connector.HasError = true;
             return null;
         }
-      
     }
-  
-   
 
     /// <summary>
     /// Get the value of the field as string
@@ -79,15 +74,13 @@ public class FieldObject {
     /// <returns></returns>
     public string GetValueAsString() {
         try {
-
-            return (string) Value;
-        } catch(Exception ex) {
+            return (string)Value;
+        } catch (Exception ex) {
             Connector.ReturnMessages.Add("Unable to get field : " + Name + " as string");
             Connector.ReturnMessages.Add(Common.GetErrorInfo(ex));
-            Connector.hasError = true;
+            Connector.HasError = true;
             return "";
         }
-        
     }
 
     /// <summary>
@@ -96,15 +89,13 @@ public class FieldObject {
     /// <returns></returns>
     public double GetValueAsDouble() {
         try {
-
-            return (double) Value;
-        } catch(Exception ex) {
+            return (double)Value;
+        } catch (Exception ex) {
             Connector.ReturnMessages.Add("Unable to get field : " + Name + " as double");
             Connector.ReturnMessages.Add(Common.GetErrorInfo(ex));
-            Connector.hasError = true;
+            Connector.HasError = true;
             return 0;
         }
-       
     }
 
     /// <summary>
@@ -113,14 +104,13 @@ public class FieldObject {
     /// <returns></returns>
     public DateTime GetValueAsDate() {
         try {
-            return (DateTime) Value;
+            return (DateTime)Value;
         } catch (Exception ex) {
             Connector.ReturnMessages.Add("Unable to get field : " + Name + " as date");
             Connector.ReturnMessages.Add(Common.GetErrorInfo(ex));
-            Connector.hasError = true;
+            Connector.HasError = true;
             return new DateTime(0);
         }
-       
     }
 
     /// <summary>
@@ -135,11 +125,10 @@ public class FieldObject {
         } catch (Exception ex) {
             Connector.ReturnMessages.Add("Unable to get field : " + Name + " as list");
             Connector.ReturnMessages.Add(Common.GetErrorInfo(ex));
-            Connector.hasError = true;
+            Connector.HasError = true;
             return null;
         }
-     }
+    }
 
-    #endregion
-
+    #endregion Methods
 }

@@ -8,7 +8,7 @@
                     <listitem>
                         <para>static string <link linkend="class_common_1a95a895bd81dcbd1ed2a07814462d0fc7">GetErrorInfo</link> (
 Exception ex)<para><emphasis>&lt;summary&gt;
-Get formatted string from the provided exception 
+Get formatted string from the provided exception
 &lt;/summary&gt;</emphasis></para>
 </para>
                     </listitem>
@@ -43,13 +43,13 @@ Application Uncaught Exception Handler
     </simplesect>
         <simplesect>
             <title>Detailed Description</title>
-                <para>Definition at line 9 of file Common.cs</para>
+                <para>Definition at line 7 of file Common.cs</para>
                 <para>The Documentation for this struct was generated from the following file: </para>
                 <para><itemizedlist><listitem><para>Common.cs</para></listitem></itemizedlist></para>
         </simplesect>
             <section xml:id="class_common_1a95a895bd81dcbd1ed2a07814462d0fc7">
                 <title>static string Common.GetErrorInfo (Exception ex)</title> <emphasis>&lt;summary&gt;
-Get formatted string from the provided exception 
+Get formatted string from the provided exception
 &lt;/summary&gt;</emphasis>
                 
 <para>

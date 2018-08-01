@@ -29,7 +29,7 @@
                     <listitem>
                         <para> <link linkend="class_field_object_1a87d8d3f1a36d94dec64e8e467950074b">FieldObject</link> (
 string name)<para><emphasis>&lt;summary&gt;
-Field Constructor 
+Field Constructor
 &lt;/summary&gt;</emphasis></para>
 </para>
                     </listitem>
@@ -106,7 +106,7 @@ Get the value of the field as list of strings
         </simplesect>
             <section xml:id="class_field_object_1a87d8d3f1a36d94dec64e8e467950074b">
                 <title>FieldObject.FieldObject (string name)</title> <emphasis>&lt;summary&gt;
-Field Constructor 
+Field Constructor
 &lt;/summary&gt;</emphasis>
                 
 <para>

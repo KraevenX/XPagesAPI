@@ -348,10 +348,10 @@ Validate the input provided by the user
 <para>The following is an example of the usage of a <computeroutput><link linkend="class_database_object">DatabaseObject</link></computeroutput>: <literallayout><computeroutput>DatabaseObject&#32;dbObj&#32;=&#32;new&#32;DatabaseObject(filePath,&#32;dominoServerName,&#32;&#32;sessionObject);&#32;//&#32;by&#32;FilePath
 //&#32;&#32;DatabaseObject&#32;dbObj&#32;=&#32;new&#32;DatabaseObject(sessionObject,&#32;replicationID,&#32;dominoServerName);&#32;//&#32;by&#32;ReplicationID
 if(dbObj!=null&#32;&amp;amp;&amp;amp;&#32;dbObj.Initialize()){
-&#32;&#32;&#32;&#32;&#32;//&#32;your&#32;code&#32;here...&#32;
+&#32;&#32;&#32;&#32;&#32;//&#32;your&#32;code&#32;here...
 }
 </computeroutput></literallayout> </para>
-                <para>Definition at line 19 of file DatabaseObject.cs</para>
+                <para>Definition at line 18 of file DatabaseObject.cs</para>
                 <para>The Documentation for this struct was generated from the following file: </para>
                 <para><itemizedlist><listitem><para>DatabaseObject.cs</para></listitem></itemizedlist></para>
         </simplesect>

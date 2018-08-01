@@ -16,20 +16,6 @@
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>struct <link linkend="namespace_system_1_1_security_1_1_cryptography">System::Security::Cryptography</link></para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>struct <link linkend="namespace_system_1_1_text">System::Text</link></para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
                         <para>struct <link linkend="namespace_system_1_1_i_o">System::IO</link></para>
                     </listitem>
                 </itemizedlist>
@@ -41,32 +27,46 @@
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_system_1_1_security_1_1_cryptography">System::Security::Cryptography</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_system_1_1_text">System::Text</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </simplesect>
     <simplesect>
         <title>Detailed Description</title>
     <para>Definition in file C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs</para>
     </simplesect>
     <literallayout><computeroutput>
-1 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Security.Cryptography;
-2 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Text;
-3 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>;
-4 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.IO;
-5 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.IO.Compression;
+1 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>;
+2 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.IO;
+3 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.IO.Compression;
+4 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Security.Cryptography;
+5 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Text;
 6 
 7 <emphasis class="keyword">internal</emphasis>&#32;<emphasis class="keyword">class&#32;</emphasis>Encryptor&#32;{
 8 
 9 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Variables</emphasis>
 10 
-11 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;IV&#32;=&#32;<emphasis class="stringliteral">&quot;GeNar@tEdIv_K3y!&quot;</emphasis>;&#32;<emphasis class="comment">//&#32;&quot;IV_VALUE_16_BYTE&quot;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;</emphasis>
-12 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;PASSWORD&#32;=&#32;<emphasis class="stringliteral">&quot;JPITeam@XPages!|&quot;</emphasis>;&#32;<emphasis class="comment">//&#32;&quot;PASSWORD_VALUE&quot;</emphasis>
-13 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;SALT&#32;=&#32;<emphasis class="stringliteral">&quot;S@1tS@lt_Valu3@JPI_XP@ges&quot;</emphasis>;&#32;<emphasis class="comment">//&quot;SALT_VALUE&quot;</emphasis>
+11 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;readonly&#32;<emphasis class="keywordtype">string</emphasis>&#32;IV&#32;=&#32;<emphasis class="stringliteral">&quot;GeNar@tEdIv_K3y!&quot;</emphasis>;&#32;<emphasis class="comment">//&#32;&quot;IV_VALUE_16_BYTE&quot;</emphasis>
+12 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;readonly&#32;<emphasis class="keywordtype">string</emphasis>&#32;PASSWORD&#32;=&#32;<emphasis class="stringliteral">&quot;JPITeam@XPages!|&quot;</emphasis>;&#32;<emphasis class="comment">//&#32;&quot;PASSWORD_VALUE&quot;</emphasis>
+13 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;readonly&#32;<emphasis class="keywordtype">string</emphasis>&#32;SALT&#32;=&#32;<emphasis class="stringliteral">&quot;S@1tS@lt_Valu3@JPI_XP@ges&quot;</emphasis>;&#32;<emphasis class="comment">//&quot;SALT_VALUE&quot;</emphasis>
 14 
 15 &#32;&#32;&#32;&#32;<emphasis class="keyword">protected</emphasis>&#32;<emphasis class="keyword">internal</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;EncodedContent;
 16 &#32;&#32;&#32;&#32;<emphasis class="keyword">protected</emphasis>&#32;<emphasis class="keyword">internal</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;isInitialized&#32;=&#32;<emphasis class="keyword">false</emphasis>;
 17 &#32;&#32;&#32;&#32;<emphasis class="keyword">protected</emphasis>&#32;<emphasis class="keyword">internal</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;DecodedContent;
 18 &#32;&#32;&#32;&#32;<emphasis class="keyword">protected</emphasis>&#32;<emphasis class="keyword">internal</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;Encode&#32;=&#32;<emphasis class="keyword">false</emphasis>;
 19 
-20 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion</emphasis>
+20 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion&#32;Variables</emphasis>
 21 
 22 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Constructor</emphasis>
 23 
@@ -92,7 +92,7 @@
 43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
 44 &#32;&#32;&#32;&#32;}
 45 
-46 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion</emphasis>
+46 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion&#32;Constructor</emphasis>
 47 
 48 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Public&#32;Methods</emphasis>
 49 
@@ -119,80 +119,78 @@
 70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
 71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
 72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-73 
-74 &#32;&#32;&#32;&#32;}
-75 &#32;&#32;&#32;&#32;
-76 &#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;EncryptAndEncode(<emphasis class="keywordtype">string</emphasis>&#32;raw)&#32;{
-77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;AesCryptoServiceProvider&#32;csp&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;AesCryptoServiceProvider();
-78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(csp)&#32;{
-79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ICryptoTransform&#32;e&#32;=&#32;GetCryptoTransform(csp,&#32;<emphasis class="keyword">true</emphasis>);
-80 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;byte[]&#32;inputBuffer&#32;=&#32;Encoding.UTF8.GetBytes(raw);
-81 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;byte[]&#32;output&#32;=&#32;e.TransformFinalBlock(inputBuffer,&#32;0,&#32;inputBuffer.Length);
-82 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;output&#32;=&#32;DeflaterCompress(output);
-83 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;encrypted&#32;=&#32;Convert.ToBase64String(output);
-84 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;encrypted;
-85 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-86 &#32;&#32;&#32;&#32;}
-87 
-88 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;byte[]&#32;DeflaterCompress(byte[]&#32;toCompress)&#32;{
-89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//compression</emphasis>
-90 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(MemoryStream&#32;compressedStream&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;MemoryStream())&#32;{
-91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;compressedStream.Position&#32;=&#32;0;
-92 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(DeflateStream&#32;deflater&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;DeflateStream(compressedStream,&#32;CompressionMode.Compress))&#32;{
-93 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;deflater.Write(toCompress,&#32;0,&#32;toCompress.Length);
-94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-95 
-96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;compressedStream.ToArray();
-97 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-98 &#32;&#32;&#32;&#32;}
-99 
-100 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;byte[]&#32;DeflaterDecompress(byte[]&#32;toDecompress)&#32;{
-101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//decompression</emphasis>
-102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(MemoryStream&#32;decompressedStream&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;MemoryStream())&#32;{
-103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(MemoryStream&#32;compressedStream&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;MemoryStream(toDecompress))&#32;{
-104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(DeflateStream&#32;deflater&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;DeflateStream(compressedStream,&#32;CompressionMode.Decompress))&#32;{
-105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;c&#32;=&#32;0;
-106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">while</emphasis>&#32;((c&#32;=&#32;deflater.ReadByte())&#32;!=&#32;-1)&#32;{
-107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;decompressedStream.WriteByte((byte)c);
-108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;decompressedStream.ToArray();
-112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-113 &#32;&#32;&#32;&#32;}
-114 
-115 &#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;DecodeAndDecrypt(<emphasis class="keywordtype">string</emphasis>&#32;encrypted)&#32;{
-116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//this&#32;will&#32;be&#32;in&#32;base64&#32;-&#32;base64&#32;is&#32;zipped</emphasis>
-117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;AesCryptoServiceProvider&#32;csp&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;AesCryptoServiceProvider();
-118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(csp)&#32;{
-119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ICryptoTransform&#32;d&#32;=&#32;GetCryptoTransform(csp,&#32;<emphasis class="keyword">false</emphasis>);
-120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;byte[]&#32;output&#32;=&#32;Convert.FromBase64String(encrypted);
-121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;output&#32;=&#32;DeflaterDecompress(output);
-122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;byte[]&#32;decryptedOutput&#32;=&#32;d.TransformFinalBlock(output,&#32;0,&#32;output.Length);
-123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;decypted&#32;=&#32;Encoding.UTF8.GetString(decryptedOutput);
-124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;decypted;
-125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-126 &#32;&#32;&#32;&#32;}
-127 
-128 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion</emphasis>
-129 
-130 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Private&#32;Methods</emphasis>
-131 
-132 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;ICryptoTransform&#32;GetCryptoTransform(AesCryptoServiceProvider&#32;csp,&#32;<emphasis class="keywordtype">bool</emphasis>&#32;encrypting)&#32;{
-133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;csp.Mode&#32;=&#32;CipherMode.CBC;
-134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;csp.Padding&#32;=&#32;PaddingMode.PKCS7;
-135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Rfc2898DeriveBytes&#32;spec&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;Rfc2898DeriveBytes(Encoding.UTF8.GetBytes(PASSWORD),&#32;Encoding.UTF8.GetBytes(SALT),&#32;65536);
-136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;byte&#32;[]&#32;key&#32;=&#32;spec.GetBytes(16);
-137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;csp.IV&#32;=&#32;Encoding.UTF8.GetBytes(IV);
-138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;csp.Key&#32;=&#32;key;
-139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(encrypting)&#32;{
-140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;csp.CreateEncryptor();
-141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;csp.CreateDecryptor();
-143 &#32;&#32;&#32;&#32;}
-144 
-145 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion</emphasis>
-146 
-147 }
+73 &#32;&#32;&#32;&#32;}
+74 
+75 &#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;EncryptAndEncode(<emphasis class="keywordtype">string</emphasis>&#32;raw)&#32;{
+76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;AesCryptoServiceProvider&#32;csp&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;AesCryptoServiceProvider();
+77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(csp)&#32;{
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ICryptoTransform&#32;e&#32;=&#32;GetCryptoTransform(csp,&#32;<emphasis class="keyword">true</emphasis>);
+79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;byte[]&#32;inputBuffer&#32;=&#32;Encoding.UTF8.GetBytes(raw);
+80 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;byte[]&#32;output&#32;=&#32;e.TransformFinalBlock(inputBuffer,&#32;0,&#32;inputBuffer.Length);
+81 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;output&#32;=&#32;DeflaterCompress(output);
+82 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;encrypted&#32;=&#32;Convert.ToBase64String(output);
+83 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;encrypted;
+84 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+85 &#32;&#32;&#32;&#32;}
+86 
+87 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;byte[]&#32;DeflaterCompress(byte[]&#32;toCompress)&#32;{
+88 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//compression</emphasis>
+89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(MemoryStream&#32;compressedStream&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;MemoryStream())&#32;{
+90 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;compressedStream.Position&#32;=&#32;0;
+91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(DeflateStream&#32;deflater&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;DeflateStream(compressedStream,&#32;CompressionMode.Compress))&#32;{
+92 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;deflater.Write(toCompress,&#32;0,&#32;toCompress.Length);
+93 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+94 
+95 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;compressedStream.ToArray();
+96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+97 &#32;&#32;&#32;&#32;}
+98 
+99 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;byte[]&#32;DeflaterDecompress(byte[]&#32;toDecompress)&#32;{
+100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//decompression</emphasis>
+101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(MemoryStream&#32;decompressedStream&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;MemoryStream())&#32;{
+102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(MemoryStream&#32;compressedStream&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;MemoryStream(toDecompress))&#32;{
+103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(DeflateStream&#32;deflater&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;DeflateStream(compressedStream,&#32;CompressionMode.Decompress))&#32;{
+104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;c&#32;=&#32;0;
+105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">while</emphasis>&#32;((c&#32;=&#32;deflater.ReadByte())&#32;!=&#32;-1)&#32;{
+106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;decompressedStream.WriteByte((byte)c);
+107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;decompressedStream.ToArray();
+111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+112 &#32;&#32;&#32;&#32;}
+113 
+114 &#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;DecodeAndDecrypt(<emphasis class="keywordtype">string</emphasis>&#32;encrypted)&#32;{
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//this&#32;will&#32;be&#32;in&#32;base64&#32;-&#32;base64&#32;is&#32;zipped</emphasis>
+116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;AesCryptoServiceProvider&#32;csp&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;AesCryptoServiceProvider();
+117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(csp)&#32;{
+118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ICryptoTransform&#32;d&#32;=&#32;GetCryptoTransform(csp,&#32;<emphasis class="keyword">false</emphasis>);
+119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;byte[]&#32;output&#32;=&#32;Convert.FromBase64String(encrypted);
+120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;output&#32;=&#32;DeflaterDecompress(output);
+121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;byte[]&#32;decryptedOutput&#32;=&#32;d.TransformFinalBlock(output,&#32;0,&#32;output.Length);
+122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;decypted&#32;=&#32;Encoding.UTF8.GetString(decryptedOutput);
+123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;decypted;
+124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+125 &#32;&#32;&#32;&#32;}
+126 
+127 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion&#32;Public&#32;Methods</emphasis>
+128 
+129 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Private&#32;Methods</emphasis>
+130 
+131 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;ICryptoTransform&#32;GetCryptoTransform(AesCryptoServiceProvider&#32;csp,&#32;<emphasis class="keywordtype">bool</emphasis>&#32;encrypting)&#32;{
+132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;csp.Mode&#32;=&#32;CipherMode.CBC;
+133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;csp.Padding&#32;=&#32;PaddingMode.PKCS7;
+134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Rfc2898DeriveBytes&#32;spec&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;Rfc2898DeriveBytes(Encoding.UTF8.GetBytes(PASSWORD),&#32;Encoding.UTF8.GetBytes(SALT),&#32;65536);
+135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;byte[]&#32;key&#32;=&#32;spec.GetBytes(16);
+136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;csp.IV&#32;=&#32;Encoding.UTF8.GetBytes(IV);
+137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;csp.Key&#32;=&#32;key;
+138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(encrypting)&#32;{
+139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;csp.CreateEncryptor();
+140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;csp.CreateDecryptor();
+142 &#32;&#32;&#32;&#32;}
+143 
+144 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion&#32;Private&#32;Methods</emphasis>
+145 <emphasis class="preprocessor">}</emphasis>
     </computeroutput></literallayout>
 </section>

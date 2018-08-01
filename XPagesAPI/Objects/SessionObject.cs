@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+
 /// <summary>
 /// An object representing a Domino Session
 /// </summary>
@@ -6,15 +7,14 @@ using System.Collections.Generic;
 /// <c>SessionObject</c>:
 ///   <code>
 ///    SessionObject sObj = new SessionObject(connectorObj, DominoWebServiceURL); // the connector object and Full URL to the XPage database containing the Web Rest Service
-///    
+///
 ///    if(sObj!=null &amp;&amp; sObj.Initialize()){
 ///         // here you can then get the database object
-///         // your code here... 
+///         // your code here...
 ///    }
 ///   </code>
 /// </example>
-public class SessionObject
-{
+public class SessionObject {
 
     #region Constructors
 
@@ -28,8 +28,7 @@ public class SessionObject
         WebServiceURL = DominoWebServiceURL;
     }
 
-
-    #endregion
+    #endregion Constructors
 
     #region Properties
 
@@ -53,7 +52,8 @@ public class SessionObject
     ///  Collection of retrieved DatabaseObjects stored in a dictionary with key filepath of the database
     /// </summary>
     public SortedDictionary<string, DatabaseObject> Databases { get; protected internal set; }
-    #endregion
+
+    #endregion Properties
 
     #region Methods
 
@@ -69,14 +69,14 @@ public class SessionObject
         if (!ValidateInput()) {
             //message written trigger exception
             IsInitialized = false;
-            Connector.hasError = true;
+            Connector.HasError = true;
             return false;
         }
 
         // make a connection to the webservice database - this will check the users authentication on that database
         if (Connection.Request.ExecuteSessionRequest(WebServiceURL)) {
             Connector.ReturnMessages.Add("Session Initialized : " + WebServiceURL + " (SessionObject.Initialize)");
-            Connector.hasError = false;
+            Connector.HasError = false;
             IsInitialized = true;
             return true;
         } else {
@@ -84,7 +84,6 @@ public class SessionObject
             IsInitialized = false;
             return false;
         }
-
     }
 
     /// <summary>
@@ -92,9 +91,8 @@ public class SessionObject
     /// </summary>
     /// <returns>Boolean</returns>
     private bool ValidateInput() {
-
         if (Connection != null && WebServiceURL != null) {
-            if (Connection.isInitialized & Connection.isConnected) {
+            if (Connection.IsInitialized & Connection.IsConnected) {
                 //only when we already have a connection (user is authenticated)
                 if (WebServiceURL.ToLower().Contains("http://") || WebServiceURL.ToLower().Contains("https://")) {
                     //Connector.hasError = False
@@ -170,7 +168,7 @@ public class SessionObject
         if (IsInitialized) {
             dbObj = new DatabaseObject(this, replicationID, serverName);
             if (dbObj.Initialize()) {
-                if(Databases == null) {
+                if (Databases == null) {
                     Databases = new SortedDictionary<string, DatabaseObject>();
                 }
                 if (Databases.ContainsKey(dbObj.FilePath)) {
@@ -191,6 +189,5 @@ public class SessionObject
         Databases = null;
     }
 
-    #endregion
-
+    #endregion Methods
 }

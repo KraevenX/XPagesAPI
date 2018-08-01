@@ -6,21 +6,21 @@
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>string IV</para>
+                        <para>readonly string IV</para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>string PASSWORD</para>
+                        <para>readonly string PASSWORD</para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>string SALT</para>
+                        <para>readonly string SALT</para>
                     </listitem>
                 </itemizedlist>
             </para>

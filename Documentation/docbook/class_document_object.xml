@@ -258,10 +258,10 @@ Remove all the retrieved file objects from this document
 //&#32;DocumentObject&#32;docObj&#32;=&#32;new&#32;DocumentObject(formula,&#32;dbObj);&#32;//&#32;create&#32;new&#32;doc&#32;object&#32;by&#32;databaseobject&#32;and&#32;supplying&#32;a&#32;formula
 if(docObj!=null&#32;&amp;amp;&amp;amp;&#32;docObj.Initialize()){
 &#32;&#32;&#32;&#32;&#32;//&#32;here&#32;you&#32;can&#32;then&#32;get&#32;the&#32;fields&#32;of&#32;the&#32;document&#32;object
-&#32;&#32;&#32;&#32;&#32;//&#32;your&#32;code&#32;here...&#32;
+&#32;&#32;&#32;&#32;&#32;//&#32;your&#32;code&#32;here...
 }
 </computeroutput></literallayout> </para>
-                <para>Definition at line 25 of file DocumentObject.cs</para>
+                <para>Definition at line 22 of file DocumentObject.cs</para>
                 <para>The Documentation for this struct was generated from the following file: </para>
                 <para><itemizedlist><listitem><para>DocumentObject.cs</para></listitem></itemizedlist></para>
         </simplesect>

@@ -48,13 +48,13 @@ The following is an example of the usage of a {\ttfamily \mbox{\hyperlink{class_
 \begin{DoxyCode}
 \mbox{\hyperlink{class_file_object}{FileObject}} fObj = \textcolor{keyword}{new} \mbox{\hyperlink{class_file_object}{FileObject}}(docObj); \textcolor{comment}{// create new file object by providing the
        documentobject}
-\textcolor{keywordflow}{if}(fObj!=null &amp;&amp; fObj.Initialize(initializationString))\{ 
-     \textcolor{comment}{// your code here... }
+\textcolor{keywordflow}{if}(fObj!=null &amp;&amp; fObj.Initialize(initializationString))\{
+     \textcolor{comment}{// your code here...}
 \}
 \end{DoxyCode}
  
 
-Definition at line 14 of file File\+Object.\+cs.
+Definition at line 15 of file File\+Object.\+cs.
 
 
 
@@ -79,11 +79,11 @@ Extract the file from the X\+Pages U\+RL to a given file path
 \end{DoxyReturn}
 
 
-Definition at line 181 of file File\+Object.\+cs.
+Definition at line 179 of file File\+Object.\+cs.
 
 
 
-References Session\+Object.\+Connection, Document\+Object.\+Database, Document, Connector.\+has\+Error, Is\+Initialized, Database\+Object.\+Session, and U\+RL.
+References Session\+Object.\+Connection, Document\+Object.\+Database, Document, Connector.\+Has\+Error, Is\+Initialized, Database\+Object.\+Session, and U\+RL.
 
 
 
@@ -91,18 +91,18 @@ Referenced by Document\+Object.\+Export\+Files().
 
 
 \begin{DoxyCode}
-181                                              \{
-182         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
-183 
-184         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_file_object_a36ff6c07d0662885402bfe7d98cf2988}{IsInitialized}}) \{
-185             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_file_object_a0c9650a6ae1efb95f8211f9fa3b883fe}{Document}}.\mbox{\hyperlink{class_document_object_a69d5338c9835f748490323d2950eed09}{Database}}.\mbox{\hyperlink{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}{Session}}.\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.
+179                                              \{
+180         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+181 
+182         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_file_object_a36ff6c07d0662885402bfe7d98cf2988}{IsInitialized}}) \{
+183             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_file_object_a0c9650a6ae1efb95f8211f9fa3b883fe}{Document}}.\mbox{\hyperlink{class_document_object_a69d5338c9835f748490323d2950eed09}{Database}}.\mbox{\hyperlink{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}{Session}}.\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.
       ExecuteGetFileRequest(\mbox{\hyperlink{class_file_object_a7355eaeea3fe40bd8862d7f1f9b479da}{URL}}, filePath)) \{
-186                 \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError}} = \textcolor{keyword}{false};
-187                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-188             \}
-189         \}
-190         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-191     \}
+184                 \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a9365777a6b7b711b75bcfa6c4d53e989}{HasError}} = \textcolor{keyword}{false};
+185                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+186             \}
+187         \}
+188         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+189     \}
 \end{DoxyCode}
 
 
@@ -119,11 +119,11 @@ J\+PI associated application of the domino attachment
 
 
 
-Definition at line 53 of file File\+Object.\+cs.
+Definition at line 55 of file File\+Object.\+cs.
 
 
 \begin{DoxyCode}
-53 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
+55 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
 \end{DoxyCode}
 \mbox{\Hypertarget{class_file_object_a1ab7d29c80841b60b276b7430f4e5ec7}\label{class_file_object_a1ab7d29c80841b60b276b7430f4e5ec7}} 
 \index{File\+Object@{File\+Object}!Creator@{Creator}}
@@ -137,11 +137,11 @@ Creator of the domino attachment
 
 
 
-Definition at line 58 of file File\+Object.\+cs.
+Definition at line 60 of file File\+Object.\+cs.
 
 
 \begin{DoxyCode}
-58 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
+60 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
 \end{DoxyCode}
 \mbox{\Hypertarget{class_file_object_a372b9a7dad068368526b0698550f9504}\label{class_file_object_a372b9a7dad068368526b0698550f9504}} 
 \index{File\+Object@{File\+Object}!Date\+Created@{Date\+Created}}
@@ -155,11 +155,11 @@ Creation date of the domino attachment
 
 
 
-Definition at line 63 of file File\+Object.\+cs.
+Definition at line 65 of file File\+Object.\+cs.
 
 
 \begin{DoxyCode}
-63 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}
+65 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_file_object_a9a4c52e205bee3f8bdfa7040f465b6af}\label{class_file_object_a9a4c52e205bee3f8bdfa7040f465b6af}} 
 \index{File\+Object@{File\+Object}!Date\+Modified@{Date\+Modified}}
@@ -173,11 +173,11 @@ Modified date of the domino attachment
 
 
 
-Definition at line 68 of file File\+Object.\+cs.
+Definition at line 70 of file File\+Object.\+cs.
 
 
 \begin{DoxyCode}
-68 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}
+70 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_file_object_a0c9650a6ae1efb95f8211f9fa3b883fe}\label{class_file_object_a0c9650a6ae1efb95f8211f9fa3b883fe}} 
 \index{File\+Object@{File\+Object}!Document@{Document}}
@@ -191,7 +191,7 @@ Reference to this files document object
 
 
 
-Definition at line 29 of file File\+Object.\+cs.
+Definition at line 30 of file File\+Object.\+cs.
 
 
 
@@ -199,7 +199,7 @@ Referenced by Extract\+File().
 
 
 \begin{DoxyCode}
-29 \{ \textcolor{keyword}{get}; \}
+30 \{ \textcolor{keyword}{get}; \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_file_object_ae25b58dc19def323da91a48e17ba13ed}\label{class_file_object_ae25b58dc19def323da91a48e17ba13ed}} 
 \index{File\+Object@{File\+Object}!Extension@{Extension}}
@@ -213,11 +213,11 @@ The file extension of the domino attachment
 
 
 
-Definition at line 78 of file File\+Object.\+cs.
+Definition at line 80 of file File\+Object.\+cs.
 
 
 \begin{DoxyCode}
-78 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
+80 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
 \end{DoxyCode}
 \mbox{\Hypertarget{class_file_object_a26fa0ac628fee2387b7f89c78f93842e}\label{class_file_object_a26fa0ac628fee2387b7f89c78f93842e}} 
 \index{File\+Object@{File\+Object}!Field\+Name@{Field\+Name}}
@@ -231,11 +231,11 @@ Field\+Name (Rich-\/\+Text item) associated to the domino attachment if availabl
 
 
 
-Definition at line 73 of file File\+Object.\+cs.
+Definition at line 75 of file File\+Object.\+cs.
 
 
 \begin{DoxyCode}
-73 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
+75 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
 \end{DoxyCode}
 \mbox{\Hypertarget{class_file_object_a36ff6c07d0662885402bfe7d98cf2988}\label{class_file_object_a36ff6c07d0662885402bfe7d98cf2988}} 
 \index{File\+Object@{File\+Object}!Is\+Initialized@{Is\+Initialized}}
@@ -249,7 +249,7 @@ Indicates that the file is\+Initialized
 
 
 
-Definition at line 88 of file File\+Object.\+cs.
+Definition at line 90 of file File\+Object.\+cs.
 
 
 
@@ -257,7 +257,7 @@ Referenced by Extract\+File().
 
 
 \begin{DoxyCode}
-88 \{ \textcolor{keyword}{get}; \textcolor{keyword}{protected} \textcolor{keyword}{internal} \textcolor{keyword}{set}; \} = \textcolor{keyword}{false};
+90 \{ \textcolor{keyword}{get}; \textcolor{keyword}{protected} \textcolor{keyword}{internal} \textcolor{keyword}{set}; \} = \textcolor{keyword}{false};
 \end{DoxyCode}
 \mbox{\Hypertarget{class_file_object_a9d47aff166393cb47490da2661576d62}\label{class_file_object_a9d47aff166393cb47490da2661576d62}} 
 \index{File\+Object@{File\+Object}!Name@{Name}}
@@ -271,7 +271,7 @@ The file name of the domino attachment
 
 
 
-Definition at line 33 of file File\+Object.\+cs.
+Definition at line 35 of file File\+Object.\+cs.
 
 
 
@@ -279,7 +279,7 @@ Referenced by Document\+Object.\+Export\+Files().
 
 
 \begin{DoxyCode}
-33 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
+35 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
 \end{DoxyCode}
 \mbox{\Hypertarget{class_file_object_ab91b5eca56a04784f8d0187247e1280c}\label{class_file_object_ab91b5eca56a04784f8d0187247e1280c}} 
 \index{File\+Object@{File\+Object}!Other@{Other}}
@@ -293,11 +293,11 @@ Additional J\+PI information of the domino attachment
 
 
 
-Definition at line 83 of file File\+Object.\+cs.
+Definition at line 85 of file File\+Object.\+cs.
 
 
 \begin{DoxyCode}
-83 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
+85 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
 \end{DoxyCode}
 \mbox{\Hypertarget{class_file_object_a7aa7737c1ce05f4424ba16dded444949}\label{class_file_object_a7aa7737c1ce05f4424ba16dded444949}} 
 \index{File\+Object@{File\+Object}!Size@{Size}}
@@ -311,11 +311,11 @@ Size of the domino attachment in bytes
 
 
 
-Definition at line 43 of file File\+Object.\+cs.
+Definition at line 45 of file File\+Object.\+cs.
 
 
 \begin{DoxyCode}
-43 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}
+45 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_file_object_a5e9b8f083b53ea0450a0560c16292a2f}\label{class_file_object_a5e9b8f083b53ea0450a0560c16292a2f}} 
 \index{File\+Object@{File\+Object}!Soft\+Class@{Soft\+Class}}
@@ -329,11 +329,11 @@ J\+PI Soft Class of the domino attachment (Acad,ustn,office)
 
 
 
-Definition at line 48 of file File\+Object.\+cs.
+Definition at line 50 of file File\+Object.\+cs.
 
 
 \begin{DoxyCode}
-48 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
+50 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
 \end{DoxyCode}
 \mbox{\Hypertarget{class_file_object_a7355eaeea3fe40bd8862d7f1f9b479da}\label{class_file_object_a7355eaeea3fe40bd8862d7f1f9b479da}} 
 \index{File\+Object@{File\+Object}!U\+RL@{U\+RL}}
@@ -347,7 +347,7 @@ U\+RL of the domino attachment
 
 
 
-Definition at line 38 of file File\+Object.\+cs.
+Definition at line 40 of file File\+Object.\+cs.
 
 
 
@@ -355,7 +355,7 @@ Referenced by Extract\+File().
 
 
 \begin{DoxyCode}
-38 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
+40 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
 \end{DoxyCode}
 
 

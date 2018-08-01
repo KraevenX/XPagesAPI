@@ -1,16 +1,17 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace APITesting {
+
     [TestClass]
     public class API_UnitTesting {
-
         private TestContext testContextInstance;
 
         // Test intranet connection (http)
         private const string ServerURL = "http://antln-test.europe.jacobs.com";
+
         private const string UserName = "Kim Acket";
         private const string Password = "Je082018";
 
@@ -28,8 +29,10 @@ namespace APITesting {
 
         //Database To Access
         private const string DatabaseFilePath = "projects\\jpi4\\XP2015_JP.nsf";
+
         //Server To Access
         private const string DominoServerName = "ANTLN-TEST/ANTWERPEN/JacobsEngineering";
+
         // private const string DominoServerName = "JPI2/JPI";
 
         /// <summary>
@@ -48,7 +51,7 @@ namespace APITesting {
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
                 connector = new Connector(UserName, Password, ServerURL);
-                // in the initialize function you can specify the encryption pass, iv and salt 
+                // in the initialize function you can specify the encryption pass, iv and salt
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
                 //must always be called - if an invalid URL is provide this will return false
@@ -58,7 +61,7 @@ namespace APITesting {
                     // Assert.AreEqual(true, connector.Connect());
                     if (connector.Connect()) {
                         TestContext.WriteLine("Connected to JPI");
-                        Assert.AreEqual(true, connector.isConnected);
+                        Assert.AreEqual(true, connector.IsConnected);
                     } else {
                         Assert.Fail("Unable to Connect to the JPI Domino Server" + Environment.NewLine + GetReturnMessages(Connector.ReturnMessages));
                     }
@@ -70,7 +73,6 @@ namespace APITesting {
             }
         }
 
-
         [TestMethod]
         public void SessionTesting() {
             try {
@@ -78,7 +80,7 @@ namespace APITesting {
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
                 connector = new Connector(UserName, Password, ServerURL);
-                // in the initialize function you can specify the encryption pass, iv and salt 
+                // in the initialize function you can specify the encryption pass, iv and salt
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
                 //must always be called - if an invalid URL is provide this will return false
@@ -89,7 +91,7 @@ namespace APITesting {
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
                         session = connector.GetSession(XPagesServiceURL);
-                        if (Connector.hasError || session == null) {
+                        if (Connector.HasError || session == null) {
                             //we have an error in creating/getting the session object
                             Assert.Fail("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + GetReturnMessages(Connector.ReturnMessages));
                         } else {
@@ -115,7 +117,7 @@ namespace APITesting {
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
                 connector = new Connector(UserName, Password, ServerURL);
-                // in the initialize function you can specify the encryption pass, iv and salt 
+                // in the initialize function you can specify the encryption pass, iv and salt
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
                 //must always be called - if an invalid URL is provide this will return false
@@ -126,7 +128,7 @@ namespace APITesting {
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
                         session = connector.GetSession(XPagesServiceURL);
-                        if (Connector.hasError || session == null) {
+                        if (Connector.HasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                             Assert.Fail("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -134,7 +136,7 @@ namespace APITesting {
                             // Retrieve a Database via the session object - provide the server & database filepath to connect to
                             DatabaseObject dbObj = null;
                             dbObj = new DatabaseObject(DatabaseFilePath, DominoServerName, session);
-                            // Call initialize to establish a connection to the given database - if you have the access and the database can be found 
+                            // Call initialize to establish a connection to the given database - if you have the access and the database can be found
                             if (dbObj.Initialize()) {
                                 // Database found - db Isinitialized is set to true
                                 TestContext.WriteLine("DatabaseObject Retrieved!" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -148,7 +150,6 @@ namespace APITesting {
                     } else {
                         //TestContext.WriteLine("Unable to Connect to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                         Assert.Fail("Unable to Connect to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
-
                     }
                 } else {
                     //TestContext.WriteLine("Unable to Initialize the Connector!" +Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -157,7 +158,6 @@ namespace APITesting {
             } catch (Exception ex) {
                 //TestContext.WriteLine("Error : " + GetErrorInfo(ex));
                 Assert.Fail("Error : " + GetErrorInfo(ex));
-
             }
         }
 
@@ -168,7 +168,7 @@ namespace APITesting {
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
                 connector = new Connector(UserName, Password, ServerURL);
-                // in the initialize function you can specify the encryption pass, iv and salt 
+                // in the initialize function you can specify the encryption pass, iv and salt
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
                 //must always be called - if an invalid URL is provide this will return false
@@ -179,13 +179,13 @@ namespace APITesting {
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
                         session = connector.GetSession(XPagesServiceURL);
-                        if (Connector.hasError || session == null) {
+                        if (Connector.HasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                             Assert.Fail("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                         } else {
                             // Retrieve all Databases via the session object - provide the servername
-                            if (session.GetAllDatabases(DominoServerName) && !Connector.hasError) {
+                            if (session.GetAllDatabases(DominoServerName) && !Connector.HasError) {
                                 // This function will add the found database in the 'Databases' property of the session object
                                 if (session.Databases != null && session.Databases.Count > 0) {
                                     DatabaseObject dbObj = null;
@@ -209,7 +209,6 @@ namespace APITesting {
                     } else {
                         //TestContext.WriteLine("Unable to Connect to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                         Assert.Fail("Unable to Connect to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
-
                     }
                 } else {
                     //TestContext.WriteLine("Unable to Initialize the Connector!" +Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -218,7 +217,6 @@ namespace APITesting {
             } catch (Exception ex) {
                 //TestContext.WriteLine("Error : " + GetErrorInfo(ex));
                 Assert.Fail("Error : " + GetErrorInfo(ex));
-
             }
         }
 
@@ -229,7 +227,7 @@ namespace APITesting {
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
                 connector = new Connector(UserName, Password, ServerURL);
-                // in the initialize function you can specify the encryption pass, iv and salt 
+                // in the initialize function you can specify the encryption pass, iv and salt
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
                 //must always be called - if an invalid URL is provide this will return false
@@ -240,7 +238,7 @@ namespace APITesting {
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
                         session = connector.GetSession(XPagesServiceURL);
-                        if (Connector.hasError || session == null) {
+                        if (Connector.HasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                             Assert.Fail("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -248,7 +246,7 @@ namespace APITesting {
                             // Retrieve a Database via the session object - provide the server & database filepath to connect to
                             DatabaseObject dbObj = null;
                             dbObj = new DatabaseObject(DatabaseFilePath, DominoServerName, session);
-                            // Call initialize to establish a connection to the given database - if you have the access and the database can be found 
+                            // Call initialize to establish a connection to the given database - if you have the access and the database can be found
                             if (dbObj.Initialize()) {
                                 // Database found - db Isinitialized is set to true
                                 TestContext.WriteLine("DatabaseObject Retrieved!" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -277,7 +275,6 @@ namespace APITesting {
                     } else {
                         //TestContext.WriteLine("Unable to Connect to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                         Assert.Fail("Unable to Connect to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
-
                     }
                 } else {
                     //TestContext.WriteLine("Unable to Initialize the Connector!" +Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -286,7 +283,6 @@ namespace APITesting {
             } catch (Exception ex) {
                 //TestContext.WriteLine("Error : " + GetErrorInfo(ex));
                 Assert.Fail("Error : " + GetErrorInfo(ex));
-
             }
         }
 
@@ -297,7 +293,7 @@ namespace APITesting {
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
                 connector = new Connector(UserName, Password, ServerURL);
-                // in the initialize function you can specify the encryption pass, iv and salt 
+                // in the initialize function you can specify the encryption pass, iv and salt
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
                 //must always be called - if an invalid URL is provide this will return false
@@ -308,7 +304,7 @@ namespace APITesting {
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
                         session = connector.GetSession(XPagesServiceURL);
-                        if (Connector.hasError || session == null) {
+                        if (Connector.HasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                             Assert.Fail("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -316,7 +312,7 @@ namespace APITesting {
                             // Retrieve a Database via the session object - provide the server & database filepath to connect to
                             DatabaseObject dbObj = null;
                             dbObj = new DatabaseObject(DatabaseFilePath, DominoServerName, session);
-                            // Call initialize to establish a connection to the given database - if you have the access and the database can be found 
+                            // Call initialize to establish a connection to the given database - if you have the access and the database can be found
                             if (dbObj.Initialize()) {
                                 // Database found - db Isinitialized is set to true
                                 TestContext.WriteLine("DatabaseObject Retrieved!" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -346,7 +342,6 @@ namespace APITesting {
                     } else {
                         //TestContext.WriteLine("Unable to Connect to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                         Assert.Fail("Unable to Connect to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
-
                     }
                 } else {
                     //TestContext.WriteLine("Unable to Initialize the Connector!" +Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -355,7 +350,6 @@ namespace APITesting {
             } catch (Exception ex) {
                 //TestContext.WriteLine("Error : " + GetErrorInfo(ex));
                 Assert.Fail("Error : " + GetErrorInfo(ex));
-
             }
         }
 
@@ -366,7 +360,7 @@ namespace APITesting {
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
                 connector = new Connector(UserName, Password, ServerURL);
-                // in the initialize function you can specify the encryption pass, iv and salt 
+                // in the initialize function you can specify the encryption pass, iv and salt
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
                 //must always be called - if an invalid URL is provide this will return false
@@ -377,7 +371,7 @@ namespace APITesting {
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
                         session = connector.GetSession(XPagesServiceURL);
-                        if (Connector.hasError || session == null) {
+                        if (Connector.HasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                             Assert.Fail("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -385,7 +379,7 @@ namespace APITesting {
                             // Retrieve a Database via the session object - provide the server & database filepath to connect to
                             DatabaseObject dbObj = null;
                             dbObj = new DatabaseObject(DatabaseFilePath, DominoServerName, session);
-                            // Call initialize to establish a connection to the given database - if you have the access and the database can be found 
+                            // Call initialize to establish a connection to the given database - if you have the access and the database can be found
                             if (dbObj.Initialize()) {
                                 // Database found - db Isinitialized is set to true
                                 TestContext.WriteLine("DatabaseObject Retrieved!" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -415,7 +409,6 @@ namespace APITesting {
                     } else {
                         //TestContext.WriteLine("Unable to Connect to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                         Assert.Fail("Unable to Connect to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
-
                     }
                 } else {
                     //TestContext.WriteLine("Unable to Initialize the Connector!" +Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -424,7 +417,6 @@ namespace APITesting {
             } catch (Exception ex) {
                 //TestContext.WriteLine("Error : " + GetErrorInfo(ex));
                 Assert.Fail("Error : " + GetErrorInfo(ex));
-
             }
         }
 
@@ -435,7 +427,7 @@ namespace APITesting {
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
                 connector = new Connector(UserName, Password, ServerURL);
-                // in the initialize function you can specify the encryption pass, iv and salt 
+                // in the initialize function you can specify the encryption pass, iv and salt
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
                 //must always be called - if an invalid URL is provide this will return false
@@ -446,7 +438,7 @@ namespace APITesting {
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
                         session = connector.GetSession(XPagesServiceURL);
-                        if (Connector.hasError || session == null) {
+                        if (Connector.HasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                             Assert.Fail("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -454,7 +446,7 @@ namespace APITesting {
                             // Retrieve a Database via the session object - provide the server & database filepath to connect to
                             DatabaseObject dbObj = null;
                             dbObj = new DatabaseObject(DatabaseFilePath, DominoServerName, session);
-                            // Call initialize to establish a connection to the given database - if you have the access and the database can be found 
+                            // Call initialize to establish a connection to the given database - if you have the access and the database can be found
                             if (dbObj.Initialize()) {
                                 // Database found - db Isinitialized is set to true
                                 TestContext.WriteLine("DatabaseObject Retrieved!" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -497,7 +489,6 @@ namespace APITesting {
                     } else {
                         //TestContext.WriteLine("Unable to Connect to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                         Assert.Fail("Unable to Connect to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
-
                     }
                 } else {
                     //TestContext.WriteLine("Unable to Initialize the Connector!" +Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -506,10 +497,8 @@ namespace APITesting {
             } catch (Exception ex) {
                 //TestContext.WriteLine("Error : " + GetErrorInfo(ex));
                 Assert.Fail("Error : " + GetErrorInfo(ex));
-
             }
         }
-
 
         [TestMethod]
         public void DocumentRetrievalTestingByFormulaLoadFiles() {
@@ -518,7 +507,7 @@ namespace APITesting {
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
                 connector = new Connector(UserName, Password, ServerURL);
-                // in the initialize function you can specify the encryption pass, iv and salt 
+                // in the initialize function you can specify the encryption pass, iv and salt
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
                 //must always be called - if an invalid URL is provide this will return false
@@ -529,7 +518,7 @@ namespace APITesting {
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
                         session = connector.GetSession(XPagesServiceURL);
-                        if (Connector.hasError || session == null) {
+                        if (Connector.HasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                             Assert.Fail("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -537,7 +526,7 @@ namespace APITesting {
                             // Retrieve a Database via the session object - provide the server & database filepath to connect to
                             DatabaseObject dbObj = null;
                             dbObj = new DatabaseObject(DatabaseFilePath, DominoServerName, session);
-                            // Call initialize to establish a connection to the given database - if you have the access and the database can be found 
+                            // Call initialize to establish a connection to the given database - if you have the access and the database can be found
                             if (dbObj.Initialize()) {
                                 // Database found - db Isinitialized is set to true
                                 TestContext.WriteLine("DatabaseObject Retrieved!" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -554,7 +543,7 @@ namespace APITesting {
                                     TestContext.WriteLine("Form: " + docObj.Form);
                                     TestContext.WriteLine("URL: " + docObj.Url);
                                     // file objects should already be retrieved see above GetDocumentAndFiles
-                                    // if you use GetDocument - you can afterward use the docObj.GetFiles() method 
+                                    // if you use GetDocument - you can afterward use the docObj.GetFiles() method
                                     //- note this is slower - because it will get the document again
                                     if (docObj.Files.Count > 0) {
                                         TestContext.WriteLine("DocumentObject Files:");
@@ -567,7 +556,6 @@ namespace APITesting {
                                     }
 
                                     Assert.AreEqual(true, docObj.Files != null);
-
                                 } else {
                                     //we have an error - check Connector.ReturnMessages
                                     Assert.Fail("DocumentObject NOT Retrieved!" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -581,7 +569,6 @@ namespace APITesting {
                     } else {
                         //TestContext.WriteLine("Unable to Connect to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                         Assert.Fail("Unable to Connect to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
-
                     }
                 } else {
                     //TestContext.WriteLine("Unable to Initialize the Connector!" +Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -590,7 +577,6 @@ namespace APITesting {
             } catch (Exception ex) {
                 //TestContext.WriteLine("Error : " + GetErrorInfo(ex));
                 Assert.Fail("Error : " + GetErrorInfo(ex));
-
             }
         }
 
@@ -601,7 +587,7 @@ namespace APITesting {
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
                 connector = new Connector(UserName, Password, ServerURL);
-                // in the initialize function you can specify the encryption pass, iv and salt 
+                // in the initialize function you can specify the encryption pass, iv and salt
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
                 //must always be called - if an invalid URL is provide this will return false
@@ -612,7 +598,7 @@ namespace APITesting {
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
                         session = connector.GetSession(XPagesServiceURL);
-                        if (Connector.hasError || session == null) {
+                        if (Connector.HasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                             Assert.Fail("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -620,7 +606,7 @@ namespace APITesting {
                             // Retrieve a Database via the session object - provide the server & database filepath to connect to
                             DatabaseObject dbObj = null;
                             dbObj = new DatabaseObject(DatabaseFilePath, DominoServerName, session);
-                            // Call initialize to establish a connection to the given database - if you have the access and the database can be found 
+                            // Call initialize to establish a connection to the given database - if you have the access and the database can be found
                             if (dbObj.Initialize()) {
                                 // Database found - db Isinitialized is set to true
                                 TestContext.WriteLine("DatabaseObject Retrieved!" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -637,7 +623,7 @@ namespace APITesting {
                                     TestContext.WriteLine("Form: " + docObj.Form);
                                     TestContext.WriteLine("URL: " + docObj.Url);
                                     // file objects should already be retrieved see above GetDocumentAndFiles
-                                    // if you use GetDocument - you can afterward use the docObj.GetFiles() method 
+                                    // if you use GetDocument - you can afterward use the docObj.GetFiles() method
                                     //- note this is slower - because it will get the document again
                                     if (docObj.Files.Count > 0) {
                                         TestContext.WriteLine("DocumentObject Files:");
@@ -650,7 +636,6 @@ namespace APITesting {
                                     }
 
                                     Assert.AreEqual(true, docObj.Files != null);
-
                                 } else {
                                     //we have an error - check Connector.ReturnMessages
                                     Assert.Fail("DocumentObject NOT Retrieved!" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -664,7 +649,6 @@ namespace APITesting {
                     } else {
                         //TestContext.WriteLine("Unable to Connect to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                         Assert.Fail("Unable to Connect to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
-
                     }
                 } else {
                     //TestContext.WriteLine("Unable to Initialize the Connector!" +Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -673,7 +657,6 @@ namespace APITesting {
             } catch (Exception ex) {
                 //TestContext.WriteLine("Error : " + GetErrorInfo(ex));
                 Assert.Fail("Error : " + GetErrorInfo(ex));
-
             }
         }
 
@@ -684,7 +667,7 @@ namespace APITesting {
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
                 connector = new Connector(UserName, Password, ServerURL);
-                // in the initialize function you can specify the encryption pass, iv and salt 
+                // in the initialize function you can specify the encryption pass, iv and salt
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
                 //must always be called - if an invalid URL is provide this will return false
@@ -695,7 +678,7 @@ namespace APITesting {
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
                         session = connector.GetSession(XPagesServiceURL);
-                        if (Connector.hasError || session == null) {
+                        if (Connector.HasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                             Assert.Fail("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -703,7 +686,7 @@ namespace APITesting {
                             // Retrieve a Database via the session object - provide the server & database filepath to connect to
                             DatabaseObject dbObj = null;
                             dbObj = new DatabaseObject(DatabaseFilePath, DominoServerName, session);
-                            // Call initialize to establish a connection to the given database - if you have the access and the database can be found 
+                            // Call initialize to establish a connection to the given database - if you have the access and the database can be found
                             if (dbObj.Initialize()) {
                                 // Database found - db Isinitialized is set to true
                                 TestContext.WriteLine("DatabaseObject Retrieved!" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -746,7 +729,6 @@ namespace APITesting {
                     } else {
                         //TestContext.WriteLine("Unable to Connect to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                         Assert.Fail("Unable to Connect to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
-
                     }
                 } else {
                     //TestContext.WriteLine("Unable to Initialize the Connector!" +Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -755,7 +737,6 @@ namespace APITesting {
             } catch (Exception ex) {
                 //TestContext.WriteLine("Error : " + GetErrorInfo(ex));
                 Assert.Fail("Error : " + GetErrorInfo(ex));
-
             }
         }
 
@@ -766,7 +747,7 @@ namespace APITesting {
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
                 connector = new Connector(UserName, Password, ServerURL);
-                // in the initialize function you can specify the encryption pass, iv and salt 
+                // in the initialize function you can specify the encryption pass, iv and salt
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
                 //must always be called - if an invalid URL is provide this will return false
@@ -777,7 +758,7 @@ namespace APITesting {
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
                         session = connector.GetSession(XPagesServiceURL);
-                        if (Connector.hasError || session == null) {
+                        if (Connector.HasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                             Assert.Fail("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -785,7 +766,7 @@ namespace APITesting {
                             // Retrieve a Database via the session object - provide the server & database filepath to connect to
                             DatabaseObject dbObj = null;
                             dbObj = new DatabaseObject(DatabaseFilePath, DominoServerName, session);
-                            // Call initialize to establish a connection to the given database - if you have the access and the database can be found 
+                            // Call initialize to establish a connection to the given database - if you have the access and the database can be found
                             if (dbObj.Initialize()) {
                                 // Database found - db Isinitialized is set to true
                                 TestContext.WriteLine("DatabaseObject Retrieved!" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -828,7 +809,6 @@ namespace APITesting {
                     } else {
                         //TestContext.WriteLine("Unable to Connect to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                         Assert.Fail("Unable to Connect to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
-
                     }
                 } else {
                     //TestContext.WriteLine("Unable to Initialize the Connector!" +Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -837,7 +817,6 @@ namespace APITesting {
             } catch (Exception ex) {
                 //TestContext.WriteLine("Error : " + GetErrorInfo(ex));
                 Assert.Fail("Error : " + GetErrorInfo(ex));
-
             }
         }
 
@@ -848,7 +827,7 @@ namespace APITesting {
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
                 connector = new Connector(UserName, Password, ServerURL);
-                // in the initialize function you can specify the encryption pass, iv and salt 
+                // in the initialize function you can specify the encryption pass, iv and salt
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
                 //must always be called - if an invalid URL is provide this will return false
@@ -859,7 +838,7 @@ namespace APITesting {
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
                         session = connector.GetSession(XPagesServiceURL);
-                        if (Connector.hasError || session == null) {
+                        if (Connector.HasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                             Assert.Fail("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -867,7 +846,7 @@ namespace APITesting {
                             // Retrieve a Database via the session object - provide the server & database filepath to connect to
                             DatabaseObject dbObj = null;
                             dbObj = new DatabaseObject(DatabaseFilePath, DominoServerName, session);
-                            // Call initialize to establish a connection to the given database - if you have the access and the database can be found 
+                            // Call initialize to establish a connection to the given database - if you have the access and the database can be found
                             if (dbObj.Initialize()) {
                                 // Database found - db Isinitialized is set to true
                                 TestContext.WriteLine("DatabaseObject Retrieved!" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -884,7 +863,7 @@ namespace APITesting {
                                     TestContext.WriteLine("Form: " + docObj.Form);
                                     TestContext.WriteLine("URL: " + docObj.Url);
                                     // file objects should already be retrieved see above GetDocumentAndFiles
-                                    // if you use GetDocument - you can afterward use the docObj.GetFiles() method 
+                                    // if you use GetDocument - you can afterward use the docObj.GetFiles() method
                                     //- note this is slower - because it will get the document again
                                     if (docObj.Files.Count > 0) {
                                         TestContext.WriteLine("DocumentObject Files:");
@@ -897,7 +876,6 @@ namespace APITesting {
                                     }
 
                                     Assert.AreEqual(true, docObj.Files != null);
-
                                 } else {
                                     //we have an error - check Connector.ReturnMessages
                                     Assert.Fail("DocumentObject NOT Retrieved!" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -911,7 +889,6 @@ namespace APITesting {
                     } else {
                         //TestContext.WriteLine("Unable to Connect to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                         Assert.Fail("Unable to Connect to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
-
                     }
                 } else {
                     //TestContext.WriteLine("Unable to Initialize the Connector!" +Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -920,7 +897,6 @@ namespace APITesting {
             } catch (Exception ex) {
                 //TestContext.WriteLine("Error : " + GetErrorInfo(ex));
                 Assert.Fail("Error : " + GetErrorInfo(ex));
-
             }
         }
 
@@ -931,7 +907,7 @@ namespace APITesting {
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
                 connector = new Connector(UserName, Password, ServerURL);
-                // in the initialize function you can specify the encryption pass, iv and salt 
+                // in the initialize function you can specify the encryption pass, iv and salt
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
                 //must always be called - if an invalid URL is provide this will return false
@@ -942,7 +918,7 @@ namespace APITesting {
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
                         session = connector.GetSession(XPagesServiceURL);
-                        if (Connector.hasError || session == null) {
+                        if (Connector.HasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                             Assert.Fail("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -950,7 +926,7 @@ namespace APITesting {
                             // Retrieve a Database via the session object - provide the server & database filepath to connect to
                             DatabaseObject dbObj = null;
                             dbObj = new DatabaseObject(DatabaseFilePath, DominoServerName, session);
-                            // Call initialize to establish a connection to the given database - if you have the access and the database can be found 
+                            // Call initialize to establish a connection to the given database - if you have the access and the database can be found
                             if (dbObj.Initialize()) {
                                 // Database found - db Isinitialized is set to true
                                 TestContext.WriteLine("DatabaseObject Retrieved!" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -980,7 +956,6 @@ namespace APITesting {
                                     } else {
                                         Assert.Fail("DocumentObject Specific Fields NOT Retrieved!" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                                     }
-
                                 } else {
                                     //we have an error - check Connector.ReturnMessages
                                     Assert.Fail("DocumentObject NOT Retrieved!" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -994,7 +969,6 @@ namespace APITesting {
                     } else {
                         //TestContext.WriteLine("Unable to Connect to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                         Assert.Fail("Unable to Connect to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
-
                     }
                 } else {
                     //TestContext.WriteLine("Unable to Initialize the Connector!" +Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -1003,7 +977,6 @@ namespace APITesting {
             } catch (Exception ex) {
                 //TestContext.WriteLine("Error : " + GetErrorInfo(ex));
                 Assert.Fail("Error : " + GetErrorInfo(ex));
-
             }
         }
 
@@ -1014,7 +987,7 @@ namespace APITesting {
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
                 connector = new Connector(UserName, Password, ServerURL);
-                // in the initialize function you can specify the encryption pass, iv and salt 
+                // in the initialize function you can specify the encryption pass, iv and salt
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
                 //must always be called - if an invalid URL is provide this will return false
@@ -1025,7 +998,7 @@ namespace APITesting {
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
                         session = connector.GetSession(XPagesServiceURL);
-                        if (Connector.hasError || session == null) {
+                        if (Connector.HasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                             Assert.Fail("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -1033,7 +1006,7 @@ namespace APITesting {
                             // Retrieve a Database via the session object - provide the server & database filepath to connect to
                             DatabaseObject dbObj = null;
                             dbObj = new DatabaseObject(DatabaseFilePath, DominoServerName, session);
-                            // Call initialize to establish a connection to the given database - if you have the access and the database can be found 
+                            // Call initialize to establish a connection to the given database - if you have the access and the database can be found
                             if (dbObj.Initialize()) {
                                 // Database found - db Isinitialized is set to true
                                 TestContext.WriteLine("DatabaseObject Retrieved!" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -1077,7 +1050,6 @@ namespace APITesting {
                     } else {
                         //TestContext.WriteLine("Unable to Connect to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                         Assert.Fail("Unable to Connect to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
-
                     }
                 } else {
                     //TestContext.WriteLine("Unable to Initialize the Connector!" +Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -1086,7 +1058,6 @@ namespace APITesting {
             } catch (Exception ex) {
                 //TestContext.WriteLine("Error : " + GetErrorInfo(ex));
                 Assert.Fail("Error : " + GetErrorInfo(ex));
-
             }
         }
 
@@ -1097,7 +1068,7 @@ namespace APITesting {
                 Connector connector = null;
                 // this is done by providing the user name, password and the domino server URL
                 connector = new Connector(UserName, Password, ServerURL);
-                // in the initialize function you can specify the encryption pass, iv and salt 
+                // in the initialize function you can specify the encryption pass, iv and salt
                 // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
 
                 //must always be called - if an invalid URL is provide this will return false
@@ -1108,7 +1079,7 @@ namespace APITesting {
                         SessionObject session = null;
                         // Get the session via our connector by providing the full URL to the JPIService in the XPages database
                         session = connector.GetSession(XPagesServiceURL);
-                        if (Connector.hasError || session == null) {
+                        if (Connector.HasError || session == null) {
                             //we have an error in creating/getting the session object
                             //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                             Assert.Fail("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -1116,7 +1087,7 @@ namespace APITesting {
                             // Retrieve a Database via the session object - provide the server & database filepath to connect to
                             DatabaseObject dbObj = null;
                             dbObj = new DatabaseObject(DatabaseFilePath, DominoServerName, session);
-                            // Call initialize to establish a connection to the given database - if you have the access and the database can be found 
+                            // Call initialize to establish a connection to the given database - if you have the access and the database can be found
                             if (dbObj.Initialize()) {
                                 // Database found - db Isinitialized is set to true
                                 TestContext.WriteLine("DatabaseObject Retrieved!" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -1160,7 +1131,6 @@ namespace APITesting {
                     } else {
                         //TestContext.WriteLine("Unable to Connect to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                         Assert.Fail("Unable to Connect to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
-
                     }
                 } else {
                     //TestContext.WriteLine("Unable to Initialize the Connector!" +Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -1169,12 +1139,8 @@ namespace APITesting {
             } catch (Exception ex) {
                 //TestContext.WriteLine("Error : " + GetErrorInfo(ex));
                 Assert.Fail("Error : " + GetErrorInfo(ex));
-
             }
         }
-
-
-
 
         private string GetReturnMessages(ArrayList arList) {
             if (arList != null && arList.Count > 0) {
@@ -1206,6 +1172,5 @@ namespace APITesting {
             }
             return sb.ToString();
         }
-
     }
 }

@@ -6,24 +6,16 @@
     <member refid="class_common_1a13db3c30d3b537be69e3b9e1dc636a3e" kind="function"><name>ExceptionHandler</name></member>
   </compound>
   <compound refid="class_connector" kind="class"><name>Connector</name>
-    <member refid="class_connector_1a967a778263c45f7cca13269f15c185f9" kind="variable"><name>_isInitialized</name></member>
-    <member refid="class_connector_1a7962119e409b2dcadf1ba17bc96840e9" kind="variable"><name>_isConnected</name></member>
-    <member refid="class_connector_1a6fc825797909d044ce552367e9798952" kind="variable"><name>_SessionObject</name></member>
-    <member refid="class_connector_1a67cb5bdda79e011540d02207bbc3980d" kind="variable"><name>_EncryptionIV</name></member>
-    <member refid="class_connector_1a7bdde14f7982ddd5e1fa21efd9f899ea" kind="variable"><name>_EncryptionPASSWORD</name></member>
-    <member refid="class_connector_1a3ae3d1f2f81d61d96d7c431d000076be" kind="variable"><name>_EncryptionSALT</name></member>
-    <member refid="class_connector_1a887552df3fe7eb165c83dee1eb098c7a" kind="variable"><name>_XPIdentity</name></member>
     <member refid="class_connector_1a26cfd4ca2812289a3d91588e9d2f85c2" kind="variable"><name>_hasError</name></member>
-    <member refid="class_connector_1a45c9819bca6c0754d256a8a88b2ed66c" kind="variable"><name>_ReturnMessages</name></member>
     <member refid="class_connector_1a614ab27a88e29fae6d71d112c90b1dce" kind="variable"><name>Request</name></member>
     <member refid="class_connector_1a8ec0dcdbb4a85a56fa50f67686484c19" kind="variable"><name>ThrowException</name></member>
     <member refid="class_connector_1a41d247f09774f0ed206ce1a4a2463fed" kind="variable"><name>UserName</name></member>
     <member refid="class_connector_1a7dd469898462ef761d256392766461fe" kind="variable"><name>Password</name></member>
     <member refid="class_connector_1ac0cae400459978dde8030f75208e48f1" kind="variable"><name>ServerURL</name></member>
-    <member refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" kind="property"><name>hasError</name></member>
+    <member refid="class_connector_1a9365777a6b7b711b75bcfa6c4d53e989" kind="property"><name>HasError</name></member>
     <member refid="class_connector_1a1ed422674b344524fd77998dcf6a9ba6" kind="property"><name>ReturnMessages</name></member>
-    <member refid="class_connector_1acf2c3b519c360d02ed54543a01d199af" kind="property"><name>isConnected</name></member>
-    <member refid="class_connector_1a017d40b1f4cf2cbaa5d4b755cf09269e" kind="property"><name>isInitialized</name></member>
+    <member refid="class_connector_1a7e4bd5a6b59b228b169066b5f5ed4b0a" kind="property"><name>IsConnected</name></member>
+    <member refid="class_connector_1ae9cbe0b51d601dab13ba7271db4f3883" kind="property"><name>IsInitialized</name></member>
     <member refid="class_connector_1a092e3e36f92c129c07c57df9b8fb91ca" kind="property"><name>XPIdentity</name></member>
     <member refid="class_connector_1a62269f0d1749b4f2185a988c25bbe088" kind="property"><name>EncryptionIV</name></member>
     <member refid="class_connector_1a03d18ba01d41974d0705049712356446" kind="property"><name>EncryptionPASSWORD</name></member>
@@ -103,9 +95,9 @@
     <member refid="class_document_object_1a69c37390e7b77736c86315287674cc61" kind="function"><name>ValidateInput</name></member>
   </compound>
   <compound refid="class_encryptor" kind="class"><name>Encryptor</name>
-    <member refid="class_encryptor_1aaf6d24840413b8e75c700bf7c80feb05" kind="variable"><name>IV</name></member>
-    <member refid="class_encryptor_1acf0760ffab3011b5ebb78716b20c2a1e" kind="variable"><name>PASSWORD</name></member>
-    <member refid="class_encryptor_1af38c32db47420c134b17a3ed9ddbc958" kind="variable"><name>SALT</name></member>
+    <member refid="class_encryptor_1ab0ff59d15471f9021ce5b77ad3bf5d7f" kind="variable"><name>IV</name></member>
+    <member refid="class_encryptor_1a96d19a4eca87a6b15de1167ec97ed0f4" kind="variable"><name>PASSWORD</name></member>
+    <member refid="class_encryptor_1a776c62c255618ed61e969e960f272892" kind="variable"><name>SALT</name></member>
     <member refid="class_encryptor_1a67649ee1e1b16a45391f0a531e2ab693" kind="variable"><name>EncodedContent</name></member>
     <member refid="class_encryptor_1aac047820916734ee47921ba6ba30a65c" kind="variable"><name>isInitialized</name></member>
     <member refid="class_encryptor_1a3e35d06a4de0e180aa0be6f9cb6f5f37" kind="variable"><name>DecodedContent</name></member>
@@ -198,15 +190,11 @@
   </compound>
   <compound refid="namespace_system_1_1_reflection" kind="namespace"><name>System::Reflection</name>
   </compound>
-  <compound refid="namespace_system_1_1_runtime_1_1_compiler_services" kind="namespace"><name>System::Runtime::CompilerServices</name>
-  </compound>
   <compound refid="namespace_system_1_1_runtime_1_1_interop_services" kind="namespace"><name>System::Runtime::InteropServices</name>
   </compound>
   <compound refid="namespace_system_1_1_security_1_1_cryptography" kind="namespace"><name>System::Security::Cryptography</name>
   </compound>
   <compound refid="namespace_system_1_1_text" kind="namespace"><name>System::Text</name>
-  </compound>
-  <compound refid="namespace_system_1_1_threading_1_1_tasks" kind="namespace"><name>System::Threading::Tasks</name>
   </compound>
   <compound refid="_common_8cs" kind="file"><name>Common.cs</name>
   </compound>

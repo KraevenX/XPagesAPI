@@ -11,12 +11,11 @@ using System.Collections.Generic;
 ///    DatabaseObject dbObj = new DatabaseObject(filePath, dominoServerName,  sessionObject); // by FilePath
 ///    //  DatabaseObject dbObj = new DatabaseObject(sessionObject, replicationID, dominoServerName); // by ReplicationID
 ///    if(dbObj!=null &amp;&amp; dbObj.Initialize()){
-///         // your code here... 
+///         // your code here...
 ///    }
 ///   </code>
 /// </example>
-public class DatabaseObject
-{
+public class DatabaseObject {
 
     #region Properties
 
@@ -70,7 +69,7 @@ public class DatabaseObject
     /// </summary>
     public Dictionary<string, DocumentObject> Documents { get; protected internal set; } = null;
 
-    #endregion
+    #endregion Properties
 
     #region Constructors
 
@@ -80,11 +79,10 @@ public class DatabaseObject
     /// <param name="filePath">The domino file path (root = data folder)</param>
     /// <param name="server">The server name abbreviated (ANTLN-TEST/ANTWERPEN/JacobsEngineering) </param>
     /// <param name="session"></param>
-    public DatabaseObject(string filePath, string server,  SessionObject session) {
+    public DatabaseObject(string filePath, string server, SessionObject session) {
         Session = session;
         FilePath = filePath;
         ServerName = server;
-
     }
 
     /// <summary>
@@ -106,8 +104,7 @@ public class DatabaseObject
     /// <param name="session"></param>
     /// <param name="initString"></param>
     internal DatabaseObject(SessionObject session, string initString) {
-        
-        if(session != null && session.IsInitialized) {
+        if (session != null && session.IsInitialized) {
             Session = session;
             if (!String.IsNullOrEmpty(initString)) {
                 // FilePath§ServerName§ReplicationID§Title§Template§Size§URL
@@ -125,28 +122,27 @@ public class DatabaseObject
                     } else {
                         Connector.ReturnMessages.Add("Unable to create database object - Initialization String Not Validated");
                         IsInitialized = false;
-                        Connector.hasError = true;
+                        Connector.HasError = true;
                     }
                 } else {
                     Connector.ReturnMessages.Add("Unable to create database object - Initialization String Not Valid");
                     IsInitialized = false;
-                    Connector.hasError = true;
+                    Connector.HasError = true;
                 }
             } else {
                 Connector.ReturnMessages.Add("Unable to create database object - Initialization String Not Provided");
                 IsInitialized = false;
-                Connector.hasError = true;
+                Connector.HasError = true;
             }
         } else {
             // session is not valid
             Connector.ReturnMessages.Add("Unable to create database object - Session Object Not Valid");
             IsInitialized = false;
-            Connector.hasError = true;
+            Connector.HasError = true;
         }
-      
     }
 
-    #endregion
+    #endregion Constructors
 
     #region Methods
 
@@ -155,28 +151,26 @@ public class DatabaseObject
     /// </summary>
     /// <returns>Boolean</returns>
     public bool Initialize() {
-
         Connector.ResetReturn();
         // reset the list of docs
         Documents = null;
 
         if (!ValidateInput()) {
             IsInitialized = false;
-            Connector.hasError = true;
+            Connector.HasError = true;
             return false;   // throws exception
         }
 
         // make a connection to the webservice database - this will check the users authentication on that database
         if (Session.Connection.Request.ExecuteDatabaseRequest(Session.WebServiceURL, ServerName, FilePath, ReplicationID, this)) {
             IsInitialized = true;
-            Connector.hasError = false;
+            Connector.HasError = false;
             return true;
         } else {
             //error messages written to Connection.ReturnMessages by Connection.Request.ExecuteSessionRequest
             IsInitialized = false;
             return false;
         }
-                
     }
 
     /// <summary>
@@ -217,7 +211,7 @@ public class DatabaseObject
         DocumentObject docObj = null;
         if (IsInitialized) {
             docObj = new DocumentObject(this, unid);
-            if  (docObj.Initialize()) {
+            if (docObj.Initialize()) {
                 return docObj;
             } else {
                 return null;
@@ -234,19 +228,14 @@ public class DatabaseObject
     /// </summary>
     /// <param name="unid"></param>
     /// <returns>DocumentObject</returns>
-    public DocumentObject GetDocumentAndFiles(string unid)
-    {
+    public DocumentObject GetDocumentAndFiles(string unid) {
         Connector.ResetReturn();
         DocumentObject docObj = null;
-        if (IsInitialized)
-        {
+        if (IsInitialized) {
             docObj = new DocumentObject(this, unid);
-            if (docObj.InitializeWithFiles())
-            {
+            if (docObj.InitializeWithFiles()) {
                 return docObj;
-            }
-            else
-            {
+            } else {
                 return null;
             }
         }
@@ -266,7 +255,7 @@ public class DatabaseObject
         Connector.ResetReturn();
         DocumentObject docObj = null;
         if (IsInitialized) {
-            docObj = new DocumentObject(this, searchField,searchValue);
+            docObj = new DocumentObject(this, searchField, searchValue);
             if (docObj.Initialize()) {
                 return docObj;
             } else {
@@ -286,19 +275,14 @@ public class DatabaseObject
     /// <param name="searchField"></param>
     /// <param name="searchValue"></param>
     /// <returns>DocumentObject</returns>
-    public DocumentObject GetDocumentAndFilesByKey(string searchField, string searchValue)
-    {
+    public DocumentObject GetDocumentAndFilesByKey(string searchField, string searchValue) {
         Connector.ResetReturn();
         DocumentObject docObj = null;
-        if (IsInitialized)
-        {
+        if (IsInitialized) {
             docObj = new DocumentObject(this, searchField, searchValue);
-            if (docObj.InitializeWithFiles())
-            {
+            if (docObj.InitializeWithFiles()) {
                 return docObj;
-            }
-            else
-            {
+            } else {
                 return null;
             }
         }
@@ -317,7 +301,7 @@ public class DatabaseObject
         Connector.ResetReturn();
         DocumentObject docObj = null;
         if (IsInitialized) {
-            docObj = new DocumentObject(formula,this);
+            docObj = new DocumentObject(formula, this);
             if (docObj.Initialize()) {
                 return docObj;
             } else {
@@ -336,19 +320,14 @@ public class DatabaseObject
     /// </summary>
     /// <param name="formula"></param>
     /// <returns>DocumentObject</returns>
-    public DocumentObject GetDocumentAndFilesByFormula(string formula)
-    {
+    public DocumentObject GetDocumentAndFilesByFormula(string formula) {
         Connector.ResetReturn();
         DocumentObject docObj = null;
-        if (IsInitialized)
-        {
+        if (IsInitialized) {
             docObj = new DocumentObject(formula, this);
-            if (docObj.InitializeWithFiles())
-            {
+            if (docObj.InitializeWithFiles()) {
                 return docObj;
-            }
-            else
-            {
+            } else {
                 return null;
             }
         }
@@ -380,17 +359,12 @@ public class DatabaseObject
     /// <para>All documents found will be added to the property 'Documents'</para>
     /// </summary>
     /// <returns>Boolean</returns>
-    public bool GetAllDocumentsAndFiles()
-    {
+    public bool GetAllDocumentsAndFiles() {
         Connector.ResetReturn();
-        if (IsInitialized)
-        {
-            if (Session.Connection.Request.ExecuteAllDocumentsFilesRequest(Session.WebServiceURL, null, null, null, null, this))
-            {
+        if (IsInitialized) {
+            if (Session.Connection.Request.ExecuteAllDocumentsFilesRequest(Session.WebServiceURL, null, null, null, null, this)) {
                 return true;
-            }
-            else
-            {
+            } else {
                 return false;
             }
         }
@@ -424,17 +398,12 @@ public class DatabaseObject
     /// </summary>
     /// <param name="formula"></param>
     /// <returns>Boolean</returns>
-    public bool GetAllDocumentsAndFilesByFormula(string formula)
-    {
+    public bool GetAllDocumentsAndFilesByFormula(string formula) {
         Connector.ResetReturn();
-        if (IsInitialized)
-        {
-            if (Session.Connection.Request.ExecuteAllDocumentsFilesRequest(Session.WebServiceURL, null, null, formula, null, this))
-            {
+        if (IsInitialized) {
+            if (Session.Connection.Request.ExecuteAllDocumentsFilesRequest(Session.WebServiceURL, null, null, formula, null, this)) {
                 return true;
-            }
-            else
-            {
+            } else {
                 return false;
             }
         }
@@ -470,17 +439,12 @@ public class DatabaseObject
     /// </summary>
     /// <param name="unids"></param>
     /// <returns>Boolean</returns>
-    public bool GetAllDocumentsAndFilesByUnids(string unids)
-    {
+    public bool GetAllDocumentsAndFilesByUnids(string unids) {
         Connector.ResetReturn();
-        if (IsInitialized)
-        {
-            if (Session.Connection.Request.ExecuteAllDocumentsFilesRequest(Session.WebServiceURL, null, null, null, unids, this))
-            {
+        if (IsInitialized) {
+            if (Session.Connection.Request.ExecuteAllDocumentsFilesRequest(Session.WebServiceURL, null, null, null, unids, this)) {
                 return true;
-            }
-            else
-            {
+            } else {
                 return false;
             }
         }
@@ -516,19 +480,14 @@ public class DatabaseObject
     /// </summary>
     /// <param name="listUnids"></param>
     /// <returns>Boolean</returns>
-    public bool GetAllDocumentsAndFilesByUnids(IList listUnids)
-    {
+    public bool GetAllDocumentsAndFilesByUnids(IList listUnids) {
         Connector.ResetReturn();
-        if (IsInitialized)
-        {
+        if (IsInitialized) {
             string unids = Common.GetListAsString(listUnids, ";");
 
-            if (Session.Connection.Request.ExecuteAllDocumentsFilesRequest(Session.WebServiceURL, null, null, null, unids, this))
-            {
+            if (Session.Connection.Request.ExecuteAllDocumentsFilesRequest(Session.WebServiceURL, null, null, null, unids, this)) {
                 return true;
-            }
-            else
-            {
+            } else {
                 return false;
             }
         }
@@ -546,7 +505,7 @@ public class DatabaseObject
     public bool GetAllDocumentsByKey(string searchField, string searchValue) {
         Connector.ResetReturn();
         if (IsInitialized) {
-            if (Session.Connection.Request.ExecuteAllDocumentsRequest(Session.WebServiceURL,searchField,searchValue,null, null, this)) {
+            if (Session.Connection.Request.ExecuteAllDocumentsRequest(Session.WebServiceURL, searchField, searchValue, null, null, this)) {
                 return true;
             } else {
                 return false;
@@ -555,7 +514,6 @@ public class DatabaseObject
         return false;
     }
 
-  
     /// <summary>
     /// Retrieve all documents from this database by searching for a specific value in the provided field
     /// This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects
@@ -565,17 +523,12 @@ public class DatabaseObject
     /// <param name="searchField"></param>
     /// <param name="searchValue"></param>
     /// <returns>Boolean</returns>
-    public bool GetAllDocumentsAndFilesByKey(string searchField, string searchValue)
-    {
+    public bool GetAllDocumentsAndFilesByKey(string searchField, string searchValue) {
         Connector.ResetReturn();
-        if (IsInitialized)
-        {
-            if (Session.Connection.Request.ExecuteAllDocumentsFilesRequest(Session.WebServiceURL, searchField, searchValue, null, null, this))
-            {
+        if (IsInitialized) {
+            if (Session.Connection.Request.ExecuteAllDocumentsFilesRequest(Session.WebServiceURL, searchField, searchValue, null, null, this)) {
                 return true;
-            }
-            else
-            {
+            } else {
                 return false;
             }
         }
@@ -592,7 +545,7 @@ public class DatabaseObject
     public bool LoadDocumentFields(string listFields) {
         Connector.ResetReturn();
         if (IsInitialized && Documents != null && Documents.Count > 0) {
-            if (Session.Connection.Request.ExecuteAllFieldsRequest(Session.WebServiceURL,this,listFields)) {
+            if (Session.Connection.Request.ExecuteAllFieldsRequest(Session.WebServiceURL, this, listFields)) {
                 return true;
             } else {
                 return false;
@@ -625,17 +578,12 @@ public class DatabaseObject
     /// <para>This action will update the property collection Files inside each document object</para>
     /// </summary>
     /// <returns>Boolean</returns>
-    public bool LoadDocumentFiles()
-    {
+    public bool LoadDocumentFiles() {
         Connector.ResetReturn();
-        if (IsInitialized && Documents != null && Documents.Count > 0)
-        {
-            if (Session.Connection.Request.ExecuteAllFilesRequest(Session.WebServiceURL, this))
-            {
+        if (IsInitialized && Documents != null && Documents.Count > 0) {
+            if (Session.Connection.Request.ExecuteAllFilesRequest(Session.WebServiceURL, this)) {
                 return true;
-            }
-            else
-            {
+            } else {
                 return false;
             }
         }
@@ -649,6 +597,5 @@ public class DatabaseObject
         Documents = null;
     }
 
-    #endregion
-
+    #endregion Methods
 }

@@ -3,9 +3,9 @@
   <compounddef id="class_encryptor" kind="class" language="C#" prot="package">
     <compoundname>Encryptor</compoundname>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="class_encryptor_1aaf6d24840413b8e75c700bf7c80feb05" prot="private" static="no" mutable="no">
-        <type>string</type>
-        <definition>string Encryptor.IV</definition>
+      <memberdef kind="variable" id="class_encryptor_1ab0ff59d15471f9021ce5b77ad3bf5d7f" prot="private" static="no" mutable="no">
+        <type>readonly string</type>
+        <definition>readonly string Encryptor.IV</definition>
         <argsstring></argsstring>
         <name>IV</name>
         <initializer>= &quot;GeNar@tEdIv_K3y!&quot;</initializer>
@@ -17,9 +17,9 @@
         </inbodydescription>
         <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" line="11" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" bodystart="11" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_encryptor_1acf0760ffab3011b5ebb78716b20c2a1e" prot="private" static="no" mutable="no">
-        <type>string</type>
-        <definition>string Encryptor.PASSWORD</definition>
+      <memberdef kind="variable" id="class_encryptor_1a96d19a4eca87a6b15de1167ec97ed0f4" prot="private" static="no" mutable="no">
+        <type>readonly string</type>
+        <definition>readonly string Encryptor.PASSWORD</definition>
         <argsstring></argsstring>
         <name>PASSWORD</name>
         <initializer>= &quot;JPITeam@XPages!|&quot;</initializer>
@@ -31,9 +31,9 @@
         </inbodydescription>
         <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" line="12" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" bodystart="12" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_encryptor_1af38c32db47420c134b17a3ed9ddbc958" prot="private" static="no" mutable="no">
-        <type>string</type>
-        <definition>string Encryptor.SALT</definition>
+      <memberdef kind="variable" id="class_encryptor_1a776c62c255618ed61e969e960f272892" prot="private" static="no" mutable="no">
+        <type>readonly string</type>
+        <definition>readonly string Encryptor.SALT</definition>
         <argsstring></argsstring>
         <name>SALT</name>
         <initializer>= &quot;S@1tS@lt_Valu3@JPI_XP@ges&quot;</initializer>
@@ -139,7 +139,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" line="50" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" bodystart="50" bodyend="74"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" line="50" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" bodystart="50" bodyend="73"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -158,7 +158,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" line="76" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" bodystart="76" bodyend="86"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" line="75" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" bodystart="75" bodyend="85"/>
       </memberdef>
       <memberdef kind="function" id="class_encryptor_1a6c8fb36f29875f6c7bacb17ab845553f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>string</type>
@@ -175,7 +175,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" line="115" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" bodystart="115" bodyend="126"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" line="114" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" bodystart="114" bodyend="125"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -194,7 +194,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" line="88" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" bodystart="88" bodyend="98"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" line="87" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" bodystart="87" bodyend="97"/>
       </memberdef>
       <memberdef kind="function" id="class_encryptor_1a737fe41d9a282cb7a32c49ba4fd385b0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>byte []</type>
@@ -211,7 +211,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" line="100" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" bodystart="100" bodyend="113"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" line="99" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" bodystart="99" bodyend="112"/>
       </memberdef>
       <memberdef kind="function" id="class_encryptor_1ac0a2c64858c15d440fc6e2abf1631abe" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>ICryptoTransform</type>
@@ -232,14 +232,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" line="132" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" bodystart="132" bodyend="143"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" line="131" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" bodystart="131" bodyend="142"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" line="7" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" bodystart="7" bodyend="147"/>
+    <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" line="7" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Encryptor.cs" bodystart="7" bodyend="145"/>
     <listofallmembers>
       <member refid="class_encryptor_1a6c8fb36f29875f6c7bacb17ab845553f" prot="public" virt="non-virtual"><scope>Encryptor</scope><name>DecodeAndDecrypt</name></member>
       <member refid="class_encryptor_1a3e35d06a4de0e180aa0be6f9cb6f5f37" prot="package" virt="non-virtual"><scope>Encryptor</scope><name>DecodedContent</name></member>
@@ -252,9 +252,9 @@
       <member refid="class_encryptor_1ac0a2c64858c15d440fc6e2abf1631abe" prot="private" virt="non-virtual"><scope>Encryptor</scope><name>GetCryptoTransform</name></member>
       <member refid="class_encryptor_1a6ce2d934ee25a0e554f97d027399ce09" prot="package" virt="non-virtual"><scope>Encryptor</scope><name>Initialize</name></member>
       <member refid="class_encryptor_1aac047820916734ee47921ba6ba30a65c" prot="package" virt="non-virtual"><scope>Encryptor</scope><name>isInitialized</name></member>
-      <member refid="class_encryptor_1aaf6d24840413b8e75c700bf7c80feb05" prot="private" virt="non-virtual"><scope>Encryptor</scope><name>IV</name></member>
-      <member refid="class_encryptor_1acf0760ffab3011b5ebb78716b20c2a1e" prot="private" virt="non-virtual"><scope>Encryptor</scope><name>PASSWORD</name></member>
-      <member refid="class_encryptor_1af38c32db47420c134b17a3ed9ddbc958" prot="private" virt="non-virtual"><scope>Encryptor</scope><name>SALT</name></member>
+      <member refid="class_encryptor_1ab0ff59d15471f9021ce5b77ad3bf5d7f" prot="private" virt="non-virtual"><scope>Encryptor</scope><name>IV</name></member>
+      <member refid="class_encryptor_1a96d19a4eca87a6b15de1167ec97ed0f4" prot="private" virt="non-virtual"><scope>Encryptor</scope><name>PASSWORD</name></member>
+      <member refid="class_encryptor_1a776c62c255618ed61e969e960f272892" prot="private" virt="non-virtual"><scope>Encryptor</scope><name>SALT</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

@@ -14,32 +14,20 @@ using System.Collections;
 ///     //must always be called, possibility to add pass,iv,salt by default this is already set
 ///     if (connector.isInitialized) {
 ///         if (connector.Connect()) {  // establish a connection to the domino server
-///            
+///
 ///             // From the connector you can now create a session object
 ///             // The session object gives you the possibility to get a database object
 ///             // From that database you can get the actual document objects
 ///             // From those document objects you can then get the field objects (key/value)
-///         }   
+///         }
 ///     }
 ///   </code>
 /// </example>
 public class Connector {
 
     #region Variables
-
-    private bool _isInitialized = false;
-    private bool _isConnected = false;
     private static bool _hasError = false;
-    private SessionObject _SessionObject = null;
-
-    private static ArrayList _ReturnMessages = new ArrayList();
-
     internal Requestor Request;
-
-    private string _EncryptionIV = ""; // "GeNar@tEdIv_K3y!";    //"IV_VALUE_16_BYTE"                                                                   
-    private string _EncryptionPASSWORD = ""; //  "JPITeam@XPages!|";  //"PASSWORD_VALUE"
-    private string _EncryptionSALT = ""; //  "S@1tS@lt_Valu3@JPI_XP@ges";     //"SALT_VALUE"                                                                               
-    private string _XPIdentity = ""; // "JPI$XP@ges!C0nn3nt0r|Id3nTity@Request";  // used to identify the request is coming from an approved source
 
     /// <summary>
     /// A boolean to trigger the code to throw an exception when an error has been encountered.
@@ -51,16 +39,18 @@ public class Connector {
     /// Variable containing the supplied UserName (read-only)
     /// </summary>
     public readonly string UserName;
+
     /// <summary>
     /// Variable containing the supplied Password (read-only)
     /// </summary>
     public readonly string Password;
+
     /// <summary>
     /// Variable containing the supplied Server URL (read-only)
     /// </summary>
     public readonly string ServerURL;
 
-    #endregion
+    #endregion Variables
 
     #region Constructor
 
@@ -80,25 +70,25 @@ public class Connector {
             this.ServerURL = server;
             // validate server -> contains http:// ?
             if (server.ToLower().Contains("http://") || server.ToLower().Contains("https://")) {
-                _isInitialized = true;
+                IsInitialized = true;
             } else {
                 // not a valid URL
                 ReturnMessages.Add("Invalid Server URL Provided : " + server);
-                hasError = true;
+                HasError = true;
             }
         } else {
-            hasError = false;
+            HasError = false;
         }
     }
 
-    #endregion
+    #endregion Constructor
 
     #region Static Properties
-    
+
     /// <summary>
     /// This boolean will indicate if an error has occurred in the library and based on the ThrowException variable it will thow an execption when hasError is true
     /// </summary>
-    public static bool hasError {
+    public static bool HasError {
         get {
             return _hasError;
         }
@@ -106,7 +96,7 @@ public class Connector {
             _hasError = value;
             if (_hasError) {
                 if (ThrowException) {
-                    throw new Exception(Common.GetListAsString(Connector._ReturnMessages, Environment.NewLine));
+                    throw new Exception(Common.GetListAsString(Connector.ReturnMessages, Environment.NewLine));
                 }
             }
         }
@@ -116,103 +106,50 @@ public class Connector {
     /// A list of messages generated in the library
     /// <para>This list is used as a return mechanism of actions performed in this library</para>
     /// </summary>
-    public static ArrayList ReturnMessages {
-        get {
-            return _ReturnMessages;
-        }
-        set {
-            _ReturnMessages = value;
-        }
-    }
+    public static ArrayList ReturnMessages { get; set; } = new ArrayList();
 
-    #endregion
+    #endregion Static Properties
 
     #region Properties
 
     /// <summary>
     /// Indicates if a connection to the domino server has been established
     /// </summary>
-    public bool isConnected {
-        get {
-            return _isConnected;
-        }
-    }
+    public bool IsConnected { get; private set; } = false;
 
     /// <summary>
     /// Indicates if the connector has been initialized
     /// <para>When not initialized no other methods can be executed</para>
     /// </summary>
-    public bool isInitialized {
-        get {
-            return _isInitialized;
-        }
-    }
-
-   
+    public bool IsInitialized { get; private set; } = false;
 
     /// <summary>
     /// A custom identification header, used when sending request to the domino database
     /// </summary>
-    public string XPIdentity {
-        get {
-            return _XPIdentity;
-        }
-
-        set {
-            _XPIdentity = value;
-        }
-    }
+    public string XPIdentity { get; set; } = "";
 
     /// <summary>
     /// Encryption IV Key
     /// </summary>
-    protected internal string EncryptionIV {
-        get {
-            return _EncryptionIV;
-        }
-
-        set {
-            _EncryptionIV = value;
-        }
-    }
+    protected internal string EncryptionIV { get; set; } = "";
 
     /// <summary>
     /// Encryption Password
     /// </summary>
-    protected internal string EncryptionPASSWORD {
-        get {
-            return _EncryptionPASSWORD;
-        }
-
-        set {
-            _EncryptionPASSWORD = value;
-        }
-    }
+    protected internal string EncryptionPASSWORD { get; set; } = "";
 
     /// <summary>
     /// Encryption Salt Key
     /// </summary>
-    protected internal string EncryptionSALT {
-        get {
-            return _EncryptionSALT;
-        }
-
-        set {
-            _EncryptionSALT = value;
-        }
-    }
+    protected internal string EncryptionSALT { get; set; } = "";
 
     /// <summary>
     /// A SessionObject is used to establish a connection to the XPages database that hosts the Rest Service
     /// <para>In order to get the SessionObject, the user needs to have access to the XPages database</para>
     /// </summary>
-    public SessionObject SessionObject {
-        get {
-            return _SessionObject;
-        }
-    }
+    public SessionObject SessionObject { get; private set; } = null;
 
-    #endregion
+    #endregion Properties
 
     #region Public Methods
 
@@ -240,11 +177,11 @@ public class Connector {
             XPIdentity = Identify;
         }
         if (!_hasError) {
-            _isInitialized = true;
+            IsInitialized = true;
         } else {
-            _isInitialized = false;
+            IsInitialized = false;
         }
-        return _isInitialized;
+        return IsInitialized;
     }
 
     /// <summary>
@@ -254,22 +191,22 @@ public class Connector {
     /// <returns>bool</returns>
     public bool Connect() {
         // only try to connect if initialized - all info needed is available
-        if (_isInitialized) {
+        if (IsInitialized) {
             ResetReturn();
             // reset the error vars - will be populated by Requestor
             Request = new Requestor(this);
             // creates connection to domino and tries to login with supplied credentials
             if (Request.Initialize()) {
-                _isConnected = true;
+                IsConnected = true;
                 return true;
             } else {
                 //unable to connect - hasError set to true & returnmessages added
-                _isConnected = false;
+                IsConnected = false;
                 return false;
             }
         } else {
             //hasError is set to true (New()) and returnmessage contains reason
-            _isConnected = false;
+            IsConnected = false;
             return false;
         }
     }
@@ -283,35 +220,34 @@ public class Connector {
     public SessionObject GetSession(string DominoWebServiceURL) {
         ResetReturn();
         // reset the error vars - will be populated by SessionObject
-        if (_isConnected) {
+        if (IsConnected) {
             //we have a valid Requestor
             if (Request != null && Request.isInitialized) {
                 SessionObject sObj = new SessionObject(this, DominoWebServiceURL);
                 if (sObj.Initialize()) {
-                    _SessionObject = sObj;
+                    SessionObject = sObj;
                     return sObj;
                     //not written in initialize - just returning false
                 } else {
                     ReturnMessages.Add("Connector.GetSession unable to complete, unable to initialize the session object");
-                    hasError = true;
+                    HasError = true;
                     //throws exception
                     return null;
                 }
             } else {
                 ReturnMessages.Add("Connector.GetSession unable to complete, the request object is invalid or not initialized");
-                hasError = true;
+                HasError = true;
                 //throws exception
                 return null;
             }
         } else {
             ReturnMessages.Add("Connector.GetSession unable to complete, Connector is not connected to domino");
-            hasError = true;  //throws exception
+            HasError = true;  //throws exception
             return null;
         }
-
     }
 
-    #endregion
+    #endregion Public Methods
 
     #region Internal Methods
 
@@ -319,10 +255,9 @@ public class Connector {
     /// Internal method to reset the return mechanism
     /// </summary>
     static internal void ResetReturn() {
-        hasError = false;
+        HasError = false;
         ReturnMessages = new ArrayList();
     }
 
-    #endregion
-
+    #endregion Internal Methods
 }

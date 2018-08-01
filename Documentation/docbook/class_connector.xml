@@ -2,70 +2,11 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_connector">
 <title>Connector class Reference</title>
         <section>
-            <title>Private Attributes</title>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>bool _isInitialized</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>bool _isConnected</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>SessionObject _SessionObject</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>string _EncryptionIV</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>string _EncryptionPASSWORD</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>string _EncryptionSALT</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>string _XPIdentity</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-        </section>
-        <section>
             <title></title>
             <para>
                 <itemizedlist>
                     <listitem>
                         <para>static bool _hasError</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>static ArrayList _ReturnMessages</para>
                     </listitem>
                 </itemizedlist>
             </para>
@@ -257,21 +198,18 @@ Internal method to reset the return mechanism
 //&#32;From&#32;that&#32;database&#32;you&#32;can&#32;get&#32;the&#32;actual&#32;document&#32;objects
 //&#32;From&#32;those&#32;document&#32;objects&#32;you&#32;can&#32;then&#32;get&#32;the&#32;field&#32;objects&#32;(key/value)
 @endverbatim
-&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;&#32;&#32;
-&lt;br&gt;&#32;&#32;&#32;&#32;}
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+&#32;&#32;&#32;&#32;}
 </computeroutput></literallayout> </para>
                 <para>Definition at line 26 of file Connector.cs</para>
                 <para>The Documentation for this struct was generated from the following file: </para>
                 <para><itemizedlist><listitem><para>Connector.cs</para></listitem></itemizedlist></para>
         </simplesect>
-        <section>
-            <title>Member Data Documentation</title>
-        </section>
             <simplesect>
                 <title>bool Connector.ThrowException</title>                
 <para>If set to false, the errors are just stored in the static list ReturnMessages and it will be indicated by isError boolean variable</para>
 
-                <para>Definition at line 48 of file Connector.cs</para>
+                <para>Definition at line 36 of file Connector.cs</para>
                 <para>The Documentation for this struct was generated from the following file: </para>
                 <para><itemizedlist><listitem><para>Connector.cs</para></listitem></itemizedlist></para>
             </simplesect>
@@ -279,19 +217,19 @@ Internal method to reset the return mechanism
             <title>Member Data Documentation</title>
             <simplesect>
                 <title>readonly string Connector.UserName</title>                
-                <para>Definition at line 53 of file Connector.cs</para>
+                <para>Definition at line 41 of file Connector.cs</para>
                 <para>The Documentation for this struct was generated from the following file: </para>
                 <para><itemizedlist><listitem><para>Connector.cs</para></listitem></itemizedlist></para>
             </simplesect>
             <simplesect>
                 <title>readonly string Connector.Password</title>                
-                <para>Definition at line 57 of file Connector.cs</para>
+                <para>Definition at line 46 of file Connector.cs</para>
                 <para>The Documentation for this struct was generated from the following file: </para>
                 <para><itemizedlist><listitem><para>Connector.cs</para></listitem></itemizedlist></para>
             </simplesect>
             <simplesect>
                 <title>readonly string Connector.ServerURL</title>                
-                <para>Definition at line 61 of file Connector.cs</para>
+                <para>Definition at line 51 of file Connector.cs</para>
                 <para>The Documentation for this struct was generated from the following file: </para>
                 <para><itemizedlist><listitem><para>Connector.cs</para></listitem></itemizedlist></para>
             </simplesect>

@@ -81,7 +81,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="28" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="28" bodyend="53"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="29" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="29" bodyend="54"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="package-func">
@@ -96,7 +96,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="59" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="59" bodyend="137"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="60" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="60" bodyend="135"/>
       </memberdef>
       <memberdef kind="function" id="class_requestor_1abbdb09e9cfcb74f1b90ac00f87780630" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -113,7 +113,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="139" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="139" bodyend="329"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="137" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="137" bodyend="319"/>
       </memberdef>
       <memberdef kind="function" id="class_requestor_1a9e460007336e77741a15815272988292" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -146,7 +146,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="331" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="331" bodyend="548"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="321" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="321" bodyend="533"/>
       </memberdef>
       <memberdef kind="function" id="class_requestor_1a3c5127c71b3ce578dc859667845c8da2" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -171,7 +171,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="551" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="551" bodyend="741"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="535" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="535" bodyend="720"/>
       </memberdef>
       <memberdef kind="function" id="class_requestor_1abce2f7be8f91b5da4de34c0075bd2c6a" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -212,7 +212,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="743" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="743" bodyend="999"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="722" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="722" bodyend="970"/>
       </memberdef>
       <memberdef kind="function" id="class_requestor_1a20ef458488f2a22a7fe57012ad59add3" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -253,7 +253,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="1001" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="1001" bodyend="1281"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="972" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="972" bodyend="1243"/>
       </memberdef>
       <memberdef kind="function" id="class_requestor_1ac4b4d88f8ce2f1b1a6db7ee87c82f60a" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -290,7 +290,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="1283" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="1283" bodyend="1588"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="1245" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="1245" bodyend="1542"/>
       </memberdef>
       <memberdef kind="function" id="class_requestor_1a7e0df3b1d9d9d479f0b896e19be28a76" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -327,7 +327,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="1590" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="1590" bodyend="1921"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="1544" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="1544" bodyend="1867"/>
       </memberdef>
       <memberdef kind="function" id="class_requestor_1a79b18759ab798a2755a9a79a57478d82" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -352,7 +352,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="1923" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="1923" bodyend="2141"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="1869" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="1869" bodyend="2080"/>
       </memberdef>
       <memberdef kind="function" id="class_requestor_1a990a0641252e7863cc855212d300822a" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -373,7 +373,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="2143" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="2143" bodyend="2479"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="2082" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="2082" bodyend="2410"/>
       </memberdef>
       <memberdef kind="function" id="class_requestor_1a14632528cb1be88d2e390300da796faa" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -398,7 +398,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="2481" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="2481" bodyend="2767"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="2412" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="2412" bodyend="2686"/>
       </memberdef>
       <memberdef kind="function" id="class_requestor_1a55f57bbe4ec3c072c65171907e6428dc" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -419,14 +419,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="2769" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="2769" bodyend="2823"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="2688" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="2688" bodyend="2740"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="9" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="9" bodyend="2827"/>
+    <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" line="9" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Engine/Requestor.cs" bodystart="9" bodyend="2743"/>
     <listofallmembers>
       <member refid="class_requestor_1a073cd75eae2b7ce17d8e600c03564cd3" prot="private" virt="non-virtual"><scope>Requestor</scope><name>AddIdentityHeader</name></member>
       <member refid="class_requestor_1ac86d5f843bcfb2c1d99abb34252c8830" prot="private" virt="non-virtual"><scope>Requestor</scope><name>AuthenticationCookie</name></member>

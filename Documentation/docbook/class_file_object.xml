@@ -113,7 +113,7 @@
                     <listitem>
                         <para> <link linkend="class_file_object_1a0820c64117f9bcebf4ac750fbb320295">FileObject</link> (
 <link linkend="class_document_object">DocumentObject</link> docObj)<para><emphasis>&lt;summary&gt;
-FileObject Constructor 
+FileObject Constructor
 &lt;/summary&gt;</emphasis></para>
 </para>
                     </listitem>
@@ -153,11 +153,11 @@ Extract the file from the XPages URL to a given file path
             <title>Detailed Description</title>
 
 <para>The following is an example of the usage of a <computeroutput><link linkend="class_file_object">FileObject</link></computeroutput>: <literallayout><computeroutput>FileObject&#32;fObj&#32;=&#32;new&#32;FileObject(docObj);&#32;//&#32;create&#32;new&#32;file&#32;object&#32;by&#32;providing&#32;the&#32;documentobject
-if(fObj!=null&#32;&amp;amp;&amp;amp;&#32;fObj.Initialize(initializationString)){&#32;
-&#32;&#32;&#32;&#32;&#32;//&#32;your&#32;code&#32;here...&#32;
+if(fObj!=null&#32;&amp;amp;&amp;amp;&#32;fObj.Initialize(initializationString)){
+&#32;&#32;&#32;&#32;&#32;//&#32;your&#32;code&#32;here...
 }
 </computeroutput></literallayout> </para>
-                <para>Definition at line 14 of file FileObject.cs</para>
+                <para>Definition at line 15 of file FileObject.cs</para>
                 <para>The Documentation for this struct was generated from the following file: </para>
                 <para><itemizedlist><listitem><para>FileObject.cs</para></listitem></itemizedlist></para>
         </simplesect>
@@ -166,7 +166,7 @@ if(fObj!=null&#32;&amp;amp;&amp;amp;&#32;fObj.Initialize(initializationString)){
         </section>
             <section xml:id="class_file_object_1a0820c64117f9bcebf4ac750fbb320295">
                 <title>FileObject.FileObject (DocumentObject docObj)</title> <emphasis>&lt;summary&gt;
-FileObject Constructor 
+FileObject Constructor
 &lt;/summary&gt;</emphasis>
                 
             </section>

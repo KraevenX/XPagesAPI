@@ -35,317 +35,252 @@ Connector Object - Used to connect to a domino database - by interfacing with a 
 14 <emphasis class="comment">///&#32;&#32;&#32;&#32;&#32;//must&#32;always&#32;be&#32;called,&#32;possibility&#32;to&#32;add&#32;pass,iv,salt&#32;by&#32;default&#32;this&#32;is&#32;already&#32;set</emphasis>
 15 <emphasis class="comment">///&#32;&#32;&#32;&#32;&#32;if&#32;(connector.isInitialized)&#32;{</emphasis>
 16 <emphasis class="comment">///&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;if&#32;(connector.Connect())&#32;{&#32;&#32;//&#32;establish&#32;a&#32;connection&#32;to&#32;the&#32;domino&#32;server</emphasis>
-17 <emphasis class="comment">///&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;</emphasis>
+17 <emphasis class="comment">///</emphasis>
 18 <emphasis class="comment">///&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;//&#32;From&#32;the&#32;connector&#32;you&#32;can&#32;now&#32;create&#32;a&#32;session&#32;object</emphasis>
 19 <emphasis class="comment">///&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;//&#32;The&#32;session&#32;object&#32;gives&#32;you&#32;the&#32;possibility&#32;to&#32;get&#32;a&#32;database&#32;object</emphasis>
 20 <emphasis class="comment">///&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;//&#32;From&#32;that&#32;database&#32;you&#32;can&#32;get&#32;the&#32;actual&#32;document&#32;objects</emphasis>
 21 <emphasis class="comment">///&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;//&#32;From&#32;those&#32;document&#32;objects&#32;you&#32;can&#32;then&#32;get&#32;the&#32;field&#32;objects&#32;(key/value)</emphasis>
-22 <emphasis class="comment">///&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;&#32;&#32;</emphasis>
+22 <emphasis class="comment">///&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}</emphasis>
 23 <emphasis class="comment">///&#32;&#32;&#32;&#32;&#32;}</emphasis>
 24 <emphasis class="comment">///&#32;&#32;&#32;&lt;/code&gt;</emphasis>
 25 <emphasis class="comment">///&#32;&lt;/example&gt;</emphasis>
 <link linkend="class_connector">26 </link><emphasis class="comment"></emphasis><emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="class_connector">Connector</link>&#32;{
 27 
 28 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Variables</emphasis>
-29 
-30 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;_isInitialized&#32;=&#32;<emphasis class="keyword">false</emphasis>;
-31 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;_isConnected&#32;=&#32;<emphasis class="keyword">false</emphasis>;
-32 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;_hasError&#32;=&#32;<emphasis class="keyword">false</emphasis>;
-33 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<link linkend="class_session_object">SessionObject</link>&#32;_SessionObject&#32;=&#32;null;
-34 
-35 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;ArrayList&#32;_ReturnMessages&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;ArrayList();
-36 
-37 &#32;&#32;&#32;&#32;<emphasis class="keyword">internal</emphasis>&#32;Requestor&#32;Request;
-38 
-39 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;_EncryptionIV&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;&#32;<emphasis class="comment">//&#32;&quot;GeNar@tEdIv_K3y!&quot;;&#32;&#32;&#32;&#32;//&quot;IV_VALUE_16_BYTE&quot;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;</emphasis>
-40 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;_EncryptionPASSWORD&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;&#32;<emphasis class="comment">//&#32;&#32;&quot;JPITeam@XPages!|&quot;;&#32;&#32;//&quot;PASSWORD_VALUE&quot;</emphasis>
-41 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;_EncryptionSALT&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;&#32;<emphasis class="comment">//&#32;&#32;&quot;S@1tS@lt_Valu3@JPI_XP@ges&quot;;&#32;&#32;&#32;&#32;&#32;//&quot;SALT_VALUE&quot;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;</emphasis>
-42 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;_XPIdentity&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;&#32;<emphasis class="comment">//&#32;&quot;JPI$XP@ges!C0nn3nt0r|Id3nTity@Request&quot;;&#32;&#32;//&#32;used&#32;to&#32;identify&#32;the&#32;request&#32;is&#32;coming&#32;from&#32;an&#32;approved&#32;source</emphasis>
-43 <emphasis class="comment"></emphasis>
-44 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-45 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;A&#32;boolean&#32;to&#32;trigger&#32;the&#32;code&#32;to&#32;throw&#32;an&#32;exception&#32;when&#32;an&#32;error&#32;has&#32;been&#32;encountered.</emphasis>
-46 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;If&#32;set&#32;to&#32;false,&#32;the&#32;errors&#32;are&#32;just&#32;stored&#32;in&#32;the&#32;static&#32;list&#32;ReturnMessages&#32;and&#32;it&#32;will&#32;be&#32;indicated&#32;by&#32;isError&#32;boolean&#32;variable&lt;/para&gt;</emphasis>
-47 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-<link linkend="class_connector_1a8ec0dcdbb4a85a56fa50f67686484c19">48 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_connector_1a8ec0dcdbb4a85a56fa50f67686484c19">ThrowException</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
-49 <emphasis class="comment"></emphasis>
-50 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-51 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Variable&#32;containing&#32;the&#32;supplied&#32;UserName&#32;(read-only)</emphasis>
-52 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-<link linkend="class_connector_1a41d247f09774f0ed206ce1a4a2463fed">53 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;readonly&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_connector_1a41d247f09774f0ed206ce1a4a2463fed">UserName</link>;<emphasis class="comment"></emphasis>
-54 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-55 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Variable&#32;containing&#32;the&#32;supplied&#32;Password&#32;(read-only)</emphasis>
-56 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-<link linkend="class_connector_1a7dd469898462ef761d256392766461fe">57 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;readonly&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_connector_1a7dd469898462ef761d256392766461fe">Password</link>;<emphasis class="comment"></emphasis>
-58 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-59 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Variable&#32;containing&#32;the&#32;supplied&#32;Server&#32;URL&#32;(read-only)</emphasis>
-60 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-<link linkend="class_connector_1ac0cae400459978dde8030f75208e48f1">61 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;readonly&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_connector_1ac0cae400459978dde8030f75208e48f1">ServerURL</link>;
-62 
-63 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion</emphasis>
-64 
-65 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Constructor</emphasis>
-66 <emphasis class="comment"></emphasis>
-67 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-68 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Constructor&#32;method,&#32;provide&#32;the&#32;users&#32;credentials&#32;to&#32;logon&#32;to&#32;a&#32;domino&#32;server</emphasis>
-69 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-70 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;User&quot;&gt;&lt;/param&gt;</emphasis>
-71 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;Pass&quot;&gt;&lt;/param&gt;</emphasis>
-72 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;server&quot;&gt;&lt;/param&gt;</emphasis>
-<link linkend="class_connector_1a259c6d94252479cc3028038ebbaa7dc8">73 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<link linkend="class_connector_1a259c6d94252479cc3028038ebbaa7dc8">Connector</link>(<emphasis class="keywordtype">string</emphasis>&#32;User,&#32;<emphasis class="keywordtype">string</emphasis>&#32;Pass,&#32;<emphasis class="keywordtype">string</emphasis>&#32;server)&#32;{
-74 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ResetReturn();
-75 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;AppDomain.CurrentDomain.UnhandledException&#32;+=&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="namespace_system">System</link>.UnhandledExceptionEventHandler(Common.ExceptionHandler);
-76 
-77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(User&#32;!=&#32;null&#32;&amp;&amp;&#32;Pass&#32;!=&#32;null&#32;&amp;&amp;&#32;server&#32;!=&#32;null)&#32;{
-78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this.UserName&#32;=&#32;User;
-79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this.Password&#32;=&#32;Pass;
-80 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this.ServerURL&#32;=&#32;server;
-81 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;validate&#32;server&#32;-&gt;&#32;contains&#32;http://&#32;?</emphasis>
-82 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(server.ToLower().Contains(<emphasis class="stringliteral">&quot;http://&quot;</emphasis>)&#32;||&#32;server.ToLower().Contains(<emphasis class="stringliteral">&quot;https://&quot;</emphasis>))&#32;{
-83 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_isInitialized&#32;=&#32;<emphasis class="keyword">true</emphasis>;
-84 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
-85 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;not&#32;a&#32;valid&#32;URL</emphasis>
-86 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;Invalid&#32;Server&#32;URL&#32;Provided&#32;:&#32;&quot;</emphasis>&#32;+&#32;server);
-87 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector_1a079bae21a5417efa53bfe8954c0f533f">hasError</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;
-88 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
-90 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector_1a079bae21a5417efa53bfe8954c0f533f">hasError</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
-91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-92 &#32;&#32;&#32;&#32;}
-93 
-94 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion</emphasis>
-95 
-96 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Static&#32;Properties</emphasis>
-97 &#32;&#32;&#32;&#32;<emphasis class="comment"></emphasis>
-98 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-99 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;This&#32;boolean&#32;will&#32;indicate&#32;if&#32;an&#32;error&#32;has&#32;occurred&#32;in&#32;the&#32;library&#32;and&#32;based&#32;on&#32;the&#32;ThrowException&#32;variable&#32;it&#32;will&#32;thow&#32;an&#32;execption&#32;when&#32;hasError&#32;is&#32;true</emphasis>
-100 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-<link linkend="class_connector_1a079bae21a5417efa53bfe8954c0f533f">101 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_connector_1a079bae21a5417efa53bfe8954c0f533f">hasError</link>&#32;{
-102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{
-103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;_hasError;
-104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">protected</emphasis>&#32;<emphasis class="keyword">internal</emphasis>&#32;<emphasis class="keyword">set</emphasis>&#32;{
-106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_hasError&#32;=&#32;value;
-107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(_hasError)&#32;{
-108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_connector_1a8ec0dcdbb4a85a56fa50f67686484c19">ThrowException</link>)&#32;{
-109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">throw</emphasis>&#32;<emphasis class="keyword">new</emphasis>&#32;Exception(Common.GetListAsString(<link linkend="class_connector">Connector</link>._ReturnMessages,&#32;Environment.NewLine));
-110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-113 &#32;&#32;&#32;&#32;}
+29 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;_hasError&#32;=&#32;<emphasis class="keyword">false</emphasis>;
+30 &#32;&#32;&#32;&#32;<emphasis class="keyword">internal</emphasis>&#32;Requestor&#32;Request;
+31 <emphasis class="comment"></emphasis>
+32 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+33 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;A&#32;boolean&#32;to&#32;trigger&#32;the&#32;code&#32;to&#32;throw&#32;an&#32;exception&#32;when&#32;an&#32;error&#32;has&#32;been&#32;encountered.</emphasis>
+34 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;If&#32;set&#32;to&#32;false,&#32;the&#32;errors&#32;are&#32;just&#32;stored&#32;in&#32;the&#32;static&#32;list&#32;ReturnMessages&#32;and&#32;it&#32;will&#32;be&#32;indicated&#32;by&#32;isError&#32;boolean&#32;variable&lt;/para&gt;</emphasis>
+35 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_connector_1a8ec0dcdbb4a85a56fa50f67686484c19">36 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_connector_1a8ec0dcdbb4a85a56fa50f67686484c19">ThrowException</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
+37 <emphasis class="comment"></emphasis>
+38 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+39 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Variable&#32;containing&#32;the&#32;supplied&#32;UserName&#32;(read-only)</emphasis>
+40 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_connector_1a41d247f09774f0ed206ce1a4a2463fed">41 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;readonly&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_connector_1a41d247f09774f0ed206ce1a4a2463fed">UserName</link>;
+42 <emphasis class="comment"></emphasis>
+43 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+44 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Variable&#32;containing&#32;the&#32;supplied&#32;Password&#32;(read-only)</emphasis>
+45 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_connector_1a7dd469898462ef761d256392766461fe">46 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;readonly&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_connector_1a7dd469898462ef761d256392766461fe">Password</link>;
+47 <emphasis class="comment"></emphasis>
+48 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+49 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Variable&#32;containing&#32;the&#32;supplied&#32;Server&#32;URL&#32;(read-only)</emphasis>
+50 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_connector_1ac0cae400459978dde8030f75208e48f1">51 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;readonly&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_connector_1ac0cae400459978dde8030f75208e48f1">ServerURL</link>;
+52 
+53 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion&#32;Variables</emphasis>
+54 
+55 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Constructor</emphasis>
+56 <emphasis class="comment"></emphasis>
+57 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+58 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Constructor&#32;method,&#32;provide&#32;the&#32;users&#32;credentials&#32;to&#32;logon&#32;to&#32;a&#32;domino&#32;server</emphasis>
+59 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+60 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;User&quot;&gt;&lt;/param&gt;</emphasis>
+61 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;Pass&quot;&gt;&lt;/param&gt;</emphasis>
+62 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;server&quot;&gt;&lt;/param&gt;</emphasis>
+<link linkend="class_connector_1a259c6d94252479cc3028038ebbaa7dc8">63 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<link linkend="class_connector_1a259c6d94252479cc3028038ebbaa7dc8">Connector</link>(<emphasis class="keywordtype">string</emphasis>&#32;User,&#32;<emphasis class="keywordtype">string</emphasis>&#32;Pass,&#32;<emphasis class="keywordtype">string</emphasis>&#32;server)&#32;{
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ResetReturn();
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;AppDomain.CurrentDomain.UnhandledException&#32;+=&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="namespace_system">System</link>.UnhandledExceptionEventHandler(Common.ExceptionHandler);
+66 
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(User&#32;!=&#32;null&#32;&amp;&amp;&#32;Pass&#32;!=&#32;null&#32;&amp;&amp;&#32;server&#32;!=&#32;null)&#32;{
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this.UserName&#32;=&#32;User;
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this.Password&#32;=&#32;Pass;
+70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this.ServerURL&#32;=&#32;server;
+71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;validate&#32;server&#32;-&gt;&#32;contains&#32;http://&#32;?</emphasis>
+72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(server.ToLower().Contains(<emphasis class="stringliteral">&quot;http://&quot;</emphasis>)&#32;||&#32;server.ToLower().Contains(<emphasis class="stringliteral">&quot;https://&quot;</emphasis>))&#32;{
+73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector_1ae9cbe0b51d601dab13ba7271db4f3883">IsInitialized</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;
+74 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
+75 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;not&#32;a&#32;valid&#32;URL</emphasis>
+76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;Invalid&#32;Server&#32;URL&#32;Provided&#32;:&#32;&quot;</emphasis>&#32;+&#32;server);
+77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector_1a9365777a6b7b711b75bcfa6c4d53e989">HasError</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
+80 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector_1a9365777a6b7b711b75bcfa6c4d53e989">HasError</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
+81 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+82 &#32;&#32;&#32;&#32;}
+83 
+84 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion&#32;Constructor</emphasis>
+85 
+86 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Static&#32;Properties</emphasis>
+87 <emphasis class="comment"></emphasis>
+88 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+89 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;This&#32;boolean&#32;will&#32;indicate&#32;if&#32;an&#32;error&#32;has&#32;occurred&#32;in&#32;the&#32;library&#32;and&#32;based&#32;on&#32;the&#32;ThrowException&#32;variable&#32;it&#32;will&#32;thow&#32;an&#32;execption&#32;when&#32;hasError&#32;is&#32;true</emphasis>
+90 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_connector_1a9365777a6b7b711b75bcfa6c4d53e989">91 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_connector_1a9365777a6b7b711b75bcfa6c4d53e989">HasError</link>&#32;{
+92 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{
+93 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;_hasError;
+94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+95 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">protected</emphasis>&#32;<emphasis class="keyword">internal</emphasis>&#32;<emphasis class="keyword">set</emphasis>&#32;{
+96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_hasError&#32;=&#32;value;
+97 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(_hasError)&#32;{
+98 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_connector_1a8ec0dcdbb4a85a56fa50f67686484c19">ThrowException</link>)&#32;{
+99 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">throw</emphasis>&#32;<emphasis class="keyword">new</emphasis>&#32;Exception(Common.GetListAsString(<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>,&#32;Environment.NewLine));
+100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+103 &#32;&#32;&#32;&#32;}
+104 <emphasis class="comment"></emphasis>
+105 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+106 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;A&#32;list&#32;of&#32;messages&#32;generated&#32;in&#32;the&#32;library</emphasis>
+107 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;This&#32;list&#32;is&#32;used&#32;as&#32;a&#32;return&#32;mechanism&#32;of&#32;actions&#32;performed&#32;in&#32;this&#32;library&lt;/para&gt;</emphasis>
+108 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">109 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;ArrayList&#32;<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;ArrayList();
+110 
+111 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion&#32;Static&#32;Properties</emphasis>
+112 
+113 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Properties</emphasis>
 114 <emphasis class="comment"></emphasis>
 115 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-116 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;A&#32;list&#32;of&#32;messages&#32;generated&#32;in&#32;the&#32;library</emphasis>
-117 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;This&#32;list&#32;is&#32;used&#32;as&#32;a&#32;return&#32;mechanism&#32;of&#32;actions&#32;performed&#32;in&#32;this&#32;library&lt;/para&gt;</emphasis>
-118 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">119 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;ArrayList&#32;<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>&#32;{
-120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{
-121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;_ReturnMessages;
-122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{
-124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_ReturnMessages&#32;=&#32;value;
-125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-126 &#32;&#32;&#32;&#32;}
-127 
-128 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion</emphasis>
-129 
-130 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Properties</emphasis>
-131 <emphasis class="comment"></emphasis>
-132 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-133 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Indicates&#32;if&#32;a&#32;connection&#32;to&#32;the&#32;domino&#32;server&#32;has&#32;been&#32;established</emphasis>
-134 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-<link linkend="class_connector_1acf2c3b519c360d02ed54543a01d199af">135 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_connector_1acf2c3b519c360d02ed54543a01d199af">isConnected</link>&#32;{
-136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{
-137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;_isConnected;
-138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-139 &#32;&#32;&#32;&#32;}
+116 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Indicates&#32;if&#32;a&#32;connection&#32;to&#32;the&#32;domino&#32;server&#32;has&#32;been&#32;established</emphasis>
+117 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_connector_1a7e4bd5a6b59b228b169066b5f5ed4b0a">118 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_connector_1a7e4bd5a6b59b228b169066b5f5ed4b0a">IsConnected</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keyword">set</emphasis>;&#32;}&#32;=&#32;<emphasis class="keyword">false</emphasis>;
+119 <emphasis class="comment"></emphasis>
+120 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+121 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Indicates&#32;if&#32;the&#32;connector&#32;has&#32;been&#32;initialized</emphasis>
+122 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;When&#32;not&#32;initialized&#32;no&#32;other&#32;methods&#32;can&#32;be&#32;executed&lt;/para&gt;</emphasis>
+123 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_connector_1ae9cbe0b51d601dab13ba7271db4f3883">124 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_connector_1ae9cbe0b51d601dab13ba7271db4f3883">IsInitialized</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keyword">set</emphasis>;&#32;}&#32;=&#32;<emphasis class="keyword">false</emphasis>;
+125 <emphasis class="comment"></emphasis>
+126 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+127 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;A&#32;custom&#32;identification&#32;header,&#32;used&#32;when&#32;sending&#32;request&#32;to&#32;the&#32;domino&#32;database</emphasis>
+128 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_connector_1a092e3e36f92c129c07c57df9b8fb91ca">129 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_connector_1a092e3e36f92c129c07c57df9b8fb91ca">XPIdentity</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+130 <emphasis class="comment"></emphasis>
+131 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+132 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Encryption&#32;IV&#32;Key</emphasis>
+133 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+134 <emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">protected</emphasis>&#32;<emphasis class="keyword">internal</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;EncryptionIV&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+135 <emphasis class="comment"></emphasis>
+136 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+137 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Encryption&#32;Password</emphasis>
+138 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+139 <emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">protected</emphasis>&#32;<emphasis class="keyword">internal</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;EncryptionPASSWORD&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
 140 <emphasis class="comment"></emphasis>
 141 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-142 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Indicates&#32;if&#32;the&#32;connector&#32;has&#32;been&#32;initialized</emphasis>
-143 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;When&#32;not&#32;initialized&#32;no&#32;other&#32;methods&#32;can&#32;be&#32;executed&lt;/para&gt;</emphasis>
-144 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-<link linkend="class_connector_1a017d40b1f4cf2cbaa5d4b755cf09269e">145 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_connector_1a017d40b1f4cf2cbaa5d4b755cf09269e">isInitialized</link>&#32;{
-146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{
-147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;_isInitialized;
-148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-149 &#32;&#32;&#32;&#32;}
-150 
-151 &#32;&#32;&#32;
-152 <emphasis class="comment"></emphasis>
-153 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-154 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;A&#32;custom&#32;identification&#32;header,&#32;used&#32;when&#32;sending&#32;request&#32;to&#32;the&#32;domino&#32;database</emphasis>
-155 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-<link linkend="class_connector_1a092e3e36f92c129c07c57df9b8fb91ca">156 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_connector_1a092e3e36f92c129c07c57df9b8fb91ca">XPIdentity</link>&#32;{
-157 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{
-158 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;_XPIdentity;
-159 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-160 
-161 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{
-162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_XPIdentity&#32;=&#32;value;
-163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-164 &#32;&#32;&#32;&#32;}
-165 <emphasis class="comment"></emphasis>
-166 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-167 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Encryption&#32;IV&#32;Key</emphasis>
-168 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-169 <emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">protected</emphasis>&#32;<emphasis class="keyword">internal</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;EncryptionIV&#32;{
-170 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{
-171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;_EncryptionIV;
+142 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Encryption&#32;Salt&#32;Key</emphasis>
+143 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+144 <emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">protected</emphasis>&#32;<emphasis class="keyword">internal</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;EncryptionSALT&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+145 <emphasis class="comment"></emphasis>
+146 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+147 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;A&#32;SessionObject&#32;is&#32;used&#32;to&#32;establish&#32;a&#32;connection&#32;to&#32;the&#32;XPages&#32;database&#32;that&#32;hosts&#32;the&#32;Rest&#32;Service</emphasis>
+148 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;In&#32;order&#32;to&#32;get&#32;the&#32;SessionObject,&#32;the&#32;user&#32;needs&#32;to&#32;have&#32;access&#32;to&#32;the&#32;XPages&#32;database&lt;/para&gt;</emphasis>
+149 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_connector_1a0a7bb42f9530796c086ab50785147ce9">150 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<link linkend="class_session_object">SessionObject</link>&#32;<link linkend="class_session_object">SessionObject</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keyword">set</emphasis>;&#32;}&#32;=&#32;null;
+151 
+152 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion&#32;Properties</emphasis>
+153 
+154 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Public&#32;Methods</emphasis>
+155 <emphasis class="comment"></emphasis>
+156 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+157 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Initializes&#32;the&#32;Connector&#32;and&#32;provides&#32;the&#32;possibility&#32;to&#32;use&#32;custom&#32;encryption&#32;keys&#32;and&#32;Identification&#32;header</emphasis>
+158 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+159 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;EncryptionPassword&quot;&gt;&lt;/param&gt;</emphasis>
+160 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;EncryptionIV&quot;&gt;&lt;/param&gt;</emphasis>
+161 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;EncryptionSalt&quot;&gt;&lt;/param&gt;</emphasis>
+162 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;Identify&quot;&gt;&lt;/param&gt;</emphasis>
+163 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;bool&lt;/returns&gt;</emphasis>
+<link linkend="class_connector_1a376c1ed70efd33d0bb18bb36e5cf076e">164 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_connector_1a376c1ed70efd33d0bb18bb36e5cf076e">Initialize</link>(<emphasis class="keywordtype">string</emphasis>&#32;EncryptionPassword&#32;=&#32;null,&#32;<emphasis class="keywordtype">string</emphasis>&#32;EncryptionIV&#32;=&#32;null,&#32;<emphasis class="keywordtype">string</emphasis>&#32;EncryptionSalt&#32;=&#32;null,&#32;<emphasis class="keywordtype">string</emphasis>&#32;Identify&#32;=&#32;null)&#32;{
+165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ResetReturn();
+166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//no&#32;need&#32;to&#32;supply&#32;unless&#32;changes&#32;in&#32;XPages&#32;database&#32;-&#32;this&#32;will&#32;provide&#32;a&#32;way&#32;to&#32;enter&#32;new&#32;paswords</emphasis>
+167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(EncryptionPassword&#32;!=&#32;null)&#32;{
+168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this.EncryptionPASSWORD&#32;=&#32;EncryptionPassword;
+169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+170 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(EncryptionIV&#32;!=&#32;null)&#32;{
+171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this.EncryptionIV&#32;=&#32;EncryptionIV;
 172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-173 
-174 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{
-175 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_EncryptionIV&#32;=&#32;value;
-176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-177 &#32;&#32;&#32;&#32;}
-178 <emphasis class="comment"></emphasis>
-179 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-180 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Encryption&#32;Password</emphasis>
-181 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-182 <emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">protected</emphasis>&#32;<emphasis class="keyword">internal</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;EncryptionPASSWORD&#32;{
-183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{
-184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;_EncryptionPASSWORD;
-185 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-186 
-187 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{
-188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_EncryptionPASSWORD&#32;=&#32;value;
-189 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-190 &#32;&#32;&#32;&#32;}
-191 <emphasis class="comment"></emphasis>
-192 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-193 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Encryption&#32;Salt&#32;Key</emphasis>
-194 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-195 <emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">protected</emphasis>&#32;<emphasis class="keyword">internal</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;EncryptionSALT&#32;{
-196 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{
-197 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;_EncryptionSALT;
-198 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-199 
-200 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{
-201 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_EncryptionSALT&#32;=&#32;value;
-202 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-203 &#32;&#32;&#32;&#32;}
-204 <emphasis class="comment"></emphasis>
-205 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-206 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;A&#32;SessionObject&#32;is&#32;used&#32;to&#32;establish&#32;a&#32;connection&#32;to&#32;the&#32;XPages&#32;database&#32;that&#32;hosts&#32;the&#32;Rest&#32;Service</emphasis>
-207 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;In&#32;order&#32;to&#32;get&#32;the&#32;SessionObject,&#32;the&#32;user&#32;needs&#32;to&#32;have&#32;access&#32;to&#32;the&#32;XPages&#32;database&lt;/para&gt;</emphasis>
-208 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-<link linkend="class_connector_1a0a7bb42f9530796c086ab50785147ce9">209 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<link linkend="class_session_object">SessionObject</link>&#32;<link linkend="class_session_object">SessionObject</link>&#32;{
-210 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{
-211 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;_SessionObject;
-212 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-213 &#32;&#32;&#32;&#32;}
-214 
-215 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion</emphasis>
-216 
-217 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Public&#32;Methods</emphasis>
-218 <emphasis class="comment"></emphasis>
-219 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-220 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Initializes&#32;the&#32;Connector&#32;and&#32;provides&#32;the&#32;possibility&#32;to&#32;use&#32;custom&#32;encryption&#32;keys&#32;and&#32;Identification&#32;header</emphasis>
-221 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-222 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;EncryptionPassword&quot;&gt;&lt;/param&gt;</emphasis>
-223 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;EncryptionIV&quot;&gt;&lt;/param&gt;</emphasis>
-224 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;EncryptionSalt&quot;&gt;&lt;/param&gt;</emphasis>
-225 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;Identify&quot;&gt;&lt;/param&gt;</emphasis>
-226 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;bool&lt;/returns&gt;</emphasis>
-<link linkend="class_connector_1a376c1ed70efd33d0bb18bb36e5cf076e">227 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_connector_1a376c1ed70efd33d0bb18bb36e5cf076e">Initialize</link>(<emphasis class="keywordtype">string</emphasis>&#32;EncryptionPassword&#32;=&#32;null,&#32;<emphasis class="keywordtype">string</emphasis>&#32;EncryptionIV&#32;=&#32;null,&#32;<emphasis class="keywordtype">string</emphasis>&#32;EncryptionSalt&#32;=&#32;null,&#32;<emphasis class="keywordtype">string</emphasis>&#32;Identify&#32;=&#32;null)&#32;{
-228 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ResetReturn();
-229 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//no&#32;need&#32;to&#32;supply&#32;unless&#32;changes&#32;in&#32;XPages&#32;database&#32;-&#32;this&#32;will&#32;provide&#32;a&#32;way&#32;to&#32;enter&#32;new&#32;paswords</emphasis>
-230 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(EncryptionPassword&#32;!=&#32;null)&#32;{
-231 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this.EncryptionPASSWORD&#32;=&#32;EncryptionPassword;
-232 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-233 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(EncryptionIV&#32;!=&#32;null)&#32;{
-234 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this.EncryptionIV&#32;=&#32;EncryptionIV;
-235 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-236 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(EncryptionSalt&#32;!=&#32;null)&#32;{
-237 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this.EncryptionSALT&#32;=&#32;EncryptionSalt;
-238 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-239 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(Identify&#32;!=&#32;null)&#32;{
-240 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector_1a092e3e36f92c129c07c57df9b8fb91ca">XPIdentity</link>&#32;=&#32;Identify;
-241 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-242 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!_hasError)&#32;{
-243 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_isInitialized&#32;=&#32;<emphasis class="keyword">true</emphasis>;
-244 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
-245 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_isInitialized&#32;=&#32;<emphasis class="keyword">false</emphasis>;
-246 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-247 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;_isInitialized;
+173 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(EncryptionSalt&#32;!=&#32;null)&#32;{
+174 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this.EncryptionSALT&#32;=&#32;EncryptionSalt;
+175 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(Identify&#32;!=&#32;null)&#32;{
+177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector_1a092e3e36f92c129c07c57df9b8fb91ca">XPIdentity</link>&#32;=&#32;Identify;
+178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+179 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!_hasError)&#32;{
+180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector_1ae9cbe0b51d601dab13ba7271db4f3883">IsInitialized</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;
+181 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
+182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector_1ae9cbe0b51d601dab13ba7271db4f3883">IsInitialized</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
+183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_connector_1ae9cbe0b51d601dab13ba7271db4f3883">IsInitialized</link>;
+185 &#32;&#32;&#32;&#32;}
+186 <emphasis class="comment"></emphasis>
+187 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+188 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;When&#32;the&#32;connector&#32;has&#32;been&#32;initialized,&#32;this&#32;method&#32;will&#32;establish&#32;a&#32;connection&#32;to&#32;the&#32;domino&#32;server&#32;using&#32;the&#32;provided&#32;credentials</emphasis>
+189 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;Sets&#32;isConnected&#32;property&lt;/para&gt;</emphasis>
+190 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+191 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;bool&lt;/returns&gt;</emphasis>
+<link linkend="class_connector_1a0dcf8f969c37c4306c567417a872329a">192 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_connector_1a0dcf8f969c37c4306c567417a872329a">Connect</link>()&#32;{
+193 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;only&#32;try&#32;to&#32;connect&#32;if&#32;initialized&#32;-&#32;all&#32;info&#32;needed&#32;is&#32;available</emphasis>
+194 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_connector_1ae9cbe0b51d601dab13ba7271db4f3883">IsInitialized</link>)&#32;{
+195 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ResetReturn();
+196 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;reset&#32;the&#32;error&#32;vars&#32;-&#32;will&#32;be&#32;populated&#32;by&#32;Requestor</emphasis>
+197 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Request&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;Requestor(<emphasis class="keyword">this</emphasis>);
+198 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;creates&#32;connection&#32;to&#32;domino&#32;and&#32;tries&#32;to&#32;login&#32;with&#32;supplied&#32;credentials</emphasis>
+199 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(Request.Initialize())&#32;{
+200 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector_1a7e4bd5a6b59b228b169066b5f5ed4b0a">IsConnected</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;
+201 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">true</emphasis>;
+202 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
+203 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//unable&#32;to&#32;connect&#32;-&#32;hasError&#32;set&#32;to&#32;true&#32;&amp;&#32;returnmessages&#32;added</emphasis>
+204 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector_1a7e4bd5a6b59b228b169066b5f5ed4b0a">IsConnected</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
+205 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+206 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+207 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
+208 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//hasError&#32;is&#32;set&#32;to&#32;true&#32;(New())&#32;and&#32;returnmessage&#32;contains&#32;reason</emphasis>
+209 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector_1a7e4bd5a6b59b228b169066b5f5ed4b0a">IsConnected</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
+210 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+211 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+212 &#32;&#32;&#32;&#32;}
+213 <emphasis class="comment"></emphasis>
+214 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+215 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;This&#32;method&#32;will&#32;try&#32;to&#32;create&#32;a&#32;SessionObject,&#32;by&#32;connecting&#32;to&#32;the&#32;XPages&#32;database&#32;Rest&#32;Service</emphasis>
+216 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;In&#32;order&#32;to&#32;get&#32;the&#32;SessionObject,&#32;the&#32;user&#32;needs&#32;to&#32;have&#32;access&#32;to&#32;the&#32;XPages&#32;database&lt;/para&gt;</emphasis>
+217 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+218 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;DominoWebServiceURL&quot;&gt;&lt;/param&gt;</emphasis>
+219 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;SessionObject&lt;/returns&gt;</emphasis>
+<link linkend="class_connector_1a5d089c1639f255966f00b2b05add0993">220 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<link linkend="class_session_object">SessionObject</link>&#32;<link linkend="class_connector_1a5d089c1639f255966f00b2b05add0993">GetSession</link>(<emphasis class="keywordtype">string</emphasis>&#32;DominoWebServiceURL)&#32;{
+221 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ResetReturn();
+222 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;reset&#32;the&#32;error&#32;vars&#32;-&#32;will&#32;be&#32;populated&#32;by&#32;SessionObject</emphasis>
+223 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_connector_1a7e4bd5a6b59b228b169066b5f5ed4b0a">IsConnected</link>)&#32;{
+224 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//we&#32;have&#32;a&#32;valid&#32;Requestor</emphasis>
+225 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(Request&#32;!=&#32;null&#32;&amp;&amp;&#32;Request.isInitialized)&#32;{
+226 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_session_object">SessionObject</link>&#32;sObj&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="class_connector_1a0a7bb42f9530796c086ab50785147ce9">SessionObject</link>(<emphasis class="keyword">this</emphasis>,&#32;DominoWebServiceURL);
+227 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(sObj.<link linkend="class_session_object_1af3b9c9d56d98c848061952ed935f815b">Initialize</link>())&#32;{
+228 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_session_object">SessionObject</link>&#32;=&#32;sObj;
+229 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;sObj;
+230 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//not&#32;written&#32;in&#32;initialize&#32;-&#32;just&#32;returning&#32;false</emphasis>
+231 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
+232 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;Connector.GetSession&#32;unable&#32;to&#32;complete,&#32;unable&#32;to&#32;initialize&#32;the&#32;session&#32;object&quot;</emphasis>);
+233 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector_1a9365777a6b7b711b75bcfa6c4d53e989">HasError</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;
+234 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//throws&#32;exception</emphasis>
+235 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;null;
+236 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+237 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
+238 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;Connector.GetSession&#32;unable&#32;to&#32;complete,&#32;the&#32;request&#32;object&#32;is&#32;invalid&#32;or&#32;not&#32;initialized&quot;</emphasis>);
+239 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector_1a9365777a6b7b711b75bcfa6c4d53e989">HasError</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;
+240 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//throws&#32;exception</emphasis>
+241 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;null;
+242 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+243 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
+244 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;Connector.GetSession&#32;unable&#32;to&#32;complete,&#32;Connector&#32;is&#32;not&#32;connected&#32;to&#32;domino&quot;</emphasis>);
+245 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector_1a9365777a6b7b711b75bcfa6c4d53e989">HasError</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;&#32;&#32;<emphasis class="comment">//throws&#32;exception</emphasis>
+246 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;null;
+247 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
 248 &#32;&#32;&#32;&#32;}
-249 <emphasis class="comment"></emphasis>
-250 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-251 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;When&#32;the&#32;connector&#32;has&#32;been&#32;initialized,&#32;this&#32;method&#32;will&#32;establish&#32;a&#32;connection&#32;to&#32;the&#32;domino&#32;server&#32;using&#32;the&#32;provided&#32;credentials</emphasis>
-252 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;Sets&#32;isConnected&#32;property&lt;/para&gt;</emphasis>
-253 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-254 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;bool&lt;/returns&gt;</emphasis>
-<link linkend="class_connector_1a0dcf8f969c37c4306c567417a872329a">255 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_connector_1a0dcf8f969c37c4306c567417a872329a">Connect</link>()&#32;{
-256 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;only&#32;try&#32;to&#32;connect&#32;if&#32;initialized&#32;-&#32;all&#32;info&#32;needed&#32;is&#32;available</emphasis>
-257 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(_isInitialized)&#32;{
-258 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ResetReturn();
-259 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;reset&#32;the&#32;error&#32;vars&#32;-&#32;will&#32;be&#32;populated&#32;by&#32;Requestor</emphasis>
-260 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Request&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;Requestor(<emphasis class="keyword">this</emphasis>);
-261 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;creates&#32;connection&#32;to&#32;domino&#32;and&#32;tries&#32;to&#32;login&#32;with&#32;supplied&#32;credentials</emphasis>
-262 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(Request.Initialize())&#32;{
-263 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_isConnected&#32;=&#32;<emphasis class="keyword">true</emphasis>;
-264 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">true</emphasis>;
-265 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
-266 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//unable&#32;to&#32;connect&#32;-&#32;hasError&#32;set&#32;to&#32;true&#32;&amp;&#32;returnmessages&#32;added</emphasis>
-267 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_isConnected&#32;=&#32;<emphasis class="keyword">false</emphasis>;
-268 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
-269 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-270 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
-271 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//hasError&#32;is&#32;set&#32;to&#32;true&#32;(New())&#32;and&#32;returnmessage&#32;contains&#32;reason</emphasis>
-272 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_isConnected&#32;=&#32;<emphasis class="keyword">false</emphasis>;
-273 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
-274 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-275 &#32;&#32;&#32;&#32;}
-276 <emphasis class="comment"></emphasis>
-277 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-278 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;This&#32;method&#32;will&#32;try&#32;to&#32;create&#32;a&#32;SessionObject,&#32;by&#32;connecting&#32;to&#32;the&#32;XPages&#32;database&#32;Rest&#32;Service</emphasis>
-279 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;In&#32;order&#32;to&#32;get&#32;the&#32;SessionObject,&#32;the&#32;user&#32;needs&#32;to&#32;have&#32;access&#32;to&#32;the&#32;XPages&#32;database&lt;/para&gt;</emphasis>
-280 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-281 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;DominoWebServiceURL&quot;&gt;&lt;/param&gt;</emphasis>
-282 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;SessionObject&lt;/returns&gt;</emphasis>
-<link linkend="class_connector_1a5d089c1639f255966f00b2b05add0993">283 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<link linkend="class_session_object">SessionObject</link>&#32;<link linkend="class_connector_1a5d089c1639f255966f00b2b05add0993">GetSession</link>(<emphasis class="keywordtype">string</emphasis>&#32;DominoWebServiceURL)&#32;{
-284 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ResetReturn();
-285 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;reset&#32;the&#32;error&#32;vars&#32;-&#32;will&#32;be&#32;populated&#32;by&#32;SessionObject</emphasis>
-286 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(_isConnected)&#32;{
-287 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//we&#32;have&#32;a&#32;valid&#32;Requestor</emphasis>
-288 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(Request&#32;!=&#32;null&#32;&amp;&amp;&#32;Request.isInitialized)&#32;{
-289 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_session_object">SessionObject</link>&#32;sObj&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="class_connector_1a0a7bb42f9530796c086ab50785147ce9">SessionObject</link>(<emphasis class="keyword">this</emphasis>,&#32;DominoWebServiceURL);
-290 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(sObj.<link linkend="class_session_object_1af3b9c9d56d98c848061952ed935f815b">Initialize</link>())&#32;{
-291 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;_SessionObject&#32;=&#32;sObj;
-292 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;sObj;
-293 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//not&#32;written&#32;in&#32;initialize&#32;-&#32;just&#32;returning&#32;false</emphasis>
-294 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
-295 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;Connector.GetSession&#32;unable&#32;to&#32;complete,&#32;unable&#32;to&#32;initialize&#32;the&#32;session&#32;object&quot;</emphasis>);
-296 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector_1a079bae21a5417efa53bfe8954c0f533f">hasError</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;
-297 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//throws&#32;exception</emphasis>
-298 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;null;
-299 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-300 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
-301 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;Connector.GetSession&#32;unable&#32;to&#32;complete,&#32;the&#32;request&#32;object&#32;is&#32;invalid&#32;or&#32;not&#32;initialized&quot;</emphasis>);
-302 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector_1a079bae21a5417efa53bfe8954c0f533f">hasError</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;
-303 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//throws&#32;exception</emphasis>
-304 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;null;
-305 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-306 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
-307 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;Connector.GetSession&#32;unable&#32;to&#32;complete,&#32;Connector&#32;is&#32;not&#32;connected&#32;to&#32;domino&quot;</emphasis>);
-308 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector_1a079bae21a5417efa53bfe8954c0f533f">hasError</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;&#32;&#32;<emphasis class="comment">//throws&#32;exception</emphasis>
-309 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;null;
-310 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-311 
-312 &#32;&#32;&#32;&#32;}
-313 
-314 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion</emphasis>
-315 
-316 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Internal&#32;Methods</emphasis>
-317 <emphasis class="comment"></emphasis>
-318 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-319 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Internal&#32;method&#32;to&#32;reset&#32;the&#32;return&#32;mechanism</emphasis>
-320 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-321 <emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keyword">internal</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;ResetReturn()&#32;{
-322 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector_1a079bae21a5417efa53bfe8954c0f533f">hasError</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
-323 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;ArrayList();
-324 &#32;&#32;&#32;&#32;}
-325 
-326 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion</emphasis>
-327 
-328 }
+249 
+250 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion&#32;Public&#32;Methods</emphasis>
+251 
+252 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Internal&#32;Methods</emphasis>
+253 <emphasis class="comment"></emphasis>
+254 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+255 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Internal&#32;method&#32;to&#32;reset&#32;the&#32;return&#32;mechanism</emphasis>
+256 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+257 <emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keyword">internal</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;ResetReturn()&#32;{
+258 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector_1a9365777a6b7b711b75bcfa6c4d53e989">HasError</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
+259 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;ArrayList();
+260 &#32;&#32;&#32;&#32;}
+261 
+262 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion&#32;Internal&#32;Methods</emphasis>
+263 <emphasis class="preprocessor">}</emphasis>
     </computeroutput></literallayout>
 </section>

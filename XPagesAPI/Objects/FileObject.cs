@@ -1,4 +1,5 @@
 ﻿using System;
+
 /// <summary>
 /// An object representing a Domino File Attachment
 /// </summary>
@@ -6,8 +7,8 @@
 /// <c>FileObject</c>:
 ///   <code>
 ///    FileObject fObj = new FileObject(docObj); // create new file object by providing the documentobject
-///    if(fObj!=null &amp;&amp; fObj.Initialize(initializationString)){ 
-///         // your code here... 
+///    if(fObj!=null &amp;&amp; fObj.Initialize(initializationString)){
+///         // your code here...
 ///    }
 ///   </code>
 /// </example>
@@ -19,7 +20,7 @@ public class FileObject {
     private string strDateCreated = "";
     private string strDateModified = "";
 
-    #endregion
+    #endregion Variables
 
     #region Properties
 
@@ -27,6 +28,7 @@ public class FileObject {
     /// Reference to this files document object
     /// </summary>
     public DocumentObject Document { get; }
+
     /// <summary>
     /// The file name of the domino attachment
     /// </summary>
@@ -87,12 +89,12 @@ public class FileObject {
     /// </summary>
     public bool IsInitialized { get; protected internal set; } = false;
 
-    #endregion
+    #endregion Properties
 
     #region Constructor
 
     /// <summary>
-    /// FileObject Constructor 
+    /// FileObject Constructor
     /// </summary>
     internal FileObject(DocumentObject docObj) {
         Document = docObj;
@@ -106,12 +108,11 @@ public class FileObject {
     internal bool Initialize(string initString) {
         //split the string into the properties here
         if (!String.IsNullOrEmpty(initString)) {
-            // fObj.Application + "§" + fObj.Creator + "§" + fObj.DateCreated + "§" + fObj.DateModfied + "$" + fObj.FieldName + "§" + fObj.FileExtension + "§" + 
+            // fObj.Application + "§" + fObj.Creator + "§" + fObj.DateCreated + "§" + fObj.DateModfied + "$" + fObj.FieldName + "§" + fObj.FileExtension + "§" +
             //fObj.FileName + "$" + fObj.FileSize + "$" + fObj.LinkToFile + "$" + fObj.Other + "$" + fObj.SoftClass);
             if (initString.Contains("§")) {
                 String[] ar = initString.Split(new[] { "§" }, StringSplitOptions.None);
                 if (ar != null && ar.Length > 0 && ar.Length == 11) {
-
                     Application = ar[0];
                     Creator = ar[1];
                     strDateCreated = ar[2];
@@ -119,7 +120,6 @@ public class FileObject {
                         try {
                             //convert to real datetime
                             DateCreated = DateTime.Parse(strDateCreated);
-
                         } catch (Exception) {
                             //do nothing or report?
                         }
@@ -130,7 +130,6 @@ public class FileObject {
                         try {
                             //convert to real datetime
                             DateModified = DateTime.Parse(strDateModified);
-
                         } catch (Exception) {
                             //do nothing or report?
                         }
@@ -164,7 +163,6 @@ public class FileObject {
                 //report?
             }
 
-
             IsInitialized = true;
         } else {
             IsInitialized = false;
@@ -183,19 +181,12 @@ public class FileObject {
 
         if (IsInitialized) {
             if (Document.Database.Session.Connection.Request.ExecuteGetFileRequest(URL, filePath)) {
-                Connector.hasError = false;
+                Connector.HasError = false;
                 return true;
             }
         }
         return false;
     }
 
-    #endregion
-
-    #region Methods
-
-
-
-    #endregion
-
+    #endregion Constructor
 }

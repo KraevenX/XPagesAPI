@@ -13,11 +13,9 @@
         <xi:include href="namespace_system_1_1_linq.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="namespace_system_1_1_net.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="namespace_system_1_1_reflection.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-        <xi:include href="namespace_system_1_1_runtime_1_1_compiler_services.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="namespace_system_1_1_runtime_1_1_interop_services.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="namespace_system_1_1_security_1_1_cryptography.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="namespace_system_1_1_text.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-        <xi:include href="namespace_system_1_1_threading_1_1_tasks.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     </chapter>
     <chapter>
         <title>Class Documentation</title>

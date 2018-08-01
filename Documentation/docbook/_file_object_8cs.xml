@@ -19,128 +19,128 @@ An object representing a Domino File Attachment
     <para>Definition in file C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs</para>
     </simplesect>
     <literallayout><computeroutput>
-1 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>;<emphasis class="comment"></emphasis>
-2 <emphasis class="comment">///&#32;&lt;summary&gt;</emphasis>
-3 <emphasis class="comment">///&#32;An&#32;object&#32;representing&#32;a&#32;Domino&#32;File&#32;Attachment</emphasis>
-4 <emphasis class="comment">///&#32;&lt;/summary&gt;</emphasis>
-5 <emphasis class="comment">///&#32;&lt;example&gt;The&#32;following&#32;is&#32;an&#32;example&#32;of&#32;the&#32;usage&#32;of&#32;a</emphasis>
-6 <emphasis class="comment">///&#32;&lt;c&gt;FileObject&lt;/c&gt;:</emphasis>
-7 <emphasis class="comment">///&#32;&#32;&#32;&lt;code&gt;</emphasis>
-8 <emphasis class="comment">///&#32;&#32;&#32;&#32;FileObject&#32;fObj&#32;=&#32;new&#32;FileObject(docObj);&#32;//&#32;create&#32;new&#32;file&#32;object&#32;by&#32;providing&#32;the&#32;documentobject</emphasis>
-9 <emphasis class="comment">///&#32;&#32;&#32;&#32;if(fObj!=null&#32;&amp;amp;&amp;amp;&#32;fObj.Initialize(initializationString)){&#32;</emphasis>
-10 <emphasis class="comment">///&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;//&#32;your&#32;code&#32;here...&#32;</emphasis>
-11 <emphasis class="comment">///&#32;&#32;&#32;&#32;}</emphasis>
-12 <emphasis class="comment">///&#32;&#32;&#32;&lt;/code&gt;</emphasis>
-13 <emphasis class="comment">///&#32;&lt;/example&gt;</emphasis>
-<link linkend="class_file_object">14 </link><emphasis class="comment"></emphasis><emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="class_file_object">FileObject</link>&#32;{
-15 
-16 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Variables</emphasis>
-17 
-18 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;strSize&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
-19 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;strDateCreated&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
-20 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;strDateModified&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
-21 
-22 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion</emphasis>
-23 
-24 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Properties</emphasis>
-25 <emphasis class="comment"></emphasis>
-26 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-27 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Reference&#32;to&#32;this&#32;files&#32;document&#32;object</emphasis>
-28 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-<link linkend="class_file_object_1a0c9650a6ae1efb95f8211f9fa3b883fe">29 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<link linkend="class_document_object">DocumentObject</link>&#32;<link linkend="class_file_object_1a0c9650a6ae1efb95f8211f9fa3b883fe">Document</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;}<emphasis class="comment"></emphasis>
-30 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-31 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;The&#32;file&#32;name&#32;of&#32;the&#32;domino&#32;attachment</emphasis>
-32 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-<link linkend="class_file_object_1a9d47aff166393cb47490da2661576d62">33 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_file_object_1a9d47aff166393cb47490da2661576d62">Name</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
-34 <emphasis class="comment"></emphasis>
-35 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-36 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;URL&#32;of&#32;the&#32;domino&#32;attachment</emphasis>
-37 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-<link linkend="class_file_object_1a7355eaeea3fe40bd8862d7f1f9b479da">38 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_file_object_1a7355eaeea3fe40bd8862d7f1f9b479da">URL</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
-39 <emphasis class="comment"></emphasis>
-40 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-41 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Size&#32;of&#32;the&#32;domino&#32;attachment&#32;in&#32;bytes</emphasis>
-42 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-<link linkend="class_file_object_1a7aa7737c1ce05f4424ba16dded444949">43 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">long</emphasis>&#32;<link linkend="class_file_object_1a7aa7737c1ce05f4424ba16dded444949">Size</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}
-44 <emphasis class="comment"></emphasis>
-45 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-46 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;JPI&#32;Soft&#32;Class&#32;of&#32;the&#32;domino&#32;attachment&#32;(Acad,ustn,office)</emphasis>
-47 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-<link linkend="class_file_object_1a5e9b8f083b53ea0450a0560c16292a2f">48 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_file_object_1a5e9b8f083b53ea0450a0560c16292a2f">SoftClass</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
-49 <emphasis class="comment"></emphasis>
-50 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-51 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;JPI&#32;associated&#32;application&#32;of&#32;the&#32;domino&#32;attachment</emphasis>
-52 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-<link linkend="class_file_object_1a39640cdc4b16ee66e9c73803f4510396">53 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_file_object_1a39640cdc4b16ee66e9c73803f4510396">Application</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
-54 <emphasis class="comment"></emphasis>
-55 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-56 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Creator&#32;of&#32;the&#32;domino&#32;attachment</emphasis>
-57 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-<link linkend="class_file_object_1a1ab7d29c80841b60b276b7430f4e5ec7">58 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_file_object_1a1ab7d29c80841b60b276b7430f4e5ec7">Creator</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
-59 <emphasis class="comment"></emphasis>
-60 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-61 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Creation&#32;date&#32;of&#32;the&#32;domino&#32;attachment</emphasis>
-62 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-<link linkend="class_file_object_1a372b9a7dad068368526b0698550f9504">63 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;DateTime&#32;<link linkend="class_file_object_1a372b9a7dad068368526b0698550f9504">DateCreated</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}
-64 <emphasis class="comment"></emphasis>
-65 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-66 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Modified&#32;date&#32;of&#32;the&#32;domino&#32;attachment</emphasis>
-67 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-<link linkend="class_file_object_1a9a4c52e205bee3f8bdfa7040f465b6af">68 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;DateTime&#32;<link linkend="class_file_object_1a9a4c52e205bee3f8bdfa7040f465b6af">DateModified</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}
-69 <emphasis class="comment"></emphasis>
-70 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-71 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;FieldName&#32;(Rich-Text&#32;item)&#32;associated&#32;to&#32;the&#32;domino&#32;attachment&#32;if&#32;available</emphasis>
-72 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-<link linkend="class_file_object_1a26fa0ac628fee2387b7f89c78f93842e">73 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_file_object_1a26fa0ac628fee2387b7f89c78f93842e">FieldName</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
-74 <emphasis class="comment"></emphasis>
-75 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-76 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;The&#32;file&#32;extension&#32;of&#32;the&#32;domino&#32;attachment</emphasis>
-77 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-<link linkend="class_file_object_1ae25b58dc19def323da91a48e17ba13ed">78 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_file_object_1ae25b58dc19def323da91a48e17ba13ed">Extension</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
-79 <emphasis class="comment"></emphasis>
-80 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-81 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Additional&#32;JPI&#32;information&#32;of&#32;the&#32;domino&#32;attachment</emphasis>
-82 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-<link linkend="class_file_object_1ab91b5eca56a04784f8d0187247e1280c">83 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_file_object_1ab91b5eca56a04784f8d0187247e1280c">Other</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
-84 <emphasis class="comment"></emphasis>
-85 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-86 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Indicates&#32;that&#32;the&#32;file&#32;isInitialized</emphasis>
-87 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-<link linkend="class_file_object_1a36ff6c07d0662885402bfe7d98cf2988">88 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_file_object_1a36ff6c07d0662885402bfe7d98cf2988">IsInitialized</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">protected</emphasis>&#32;<emphasis class="keyword">internal</emphasis>&#32;<emphasis class="keyword">set</emphasis>;&#32;}&#32;=&#32;<emphasis class="keyword">false</emphasis>;
-89 
-90 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion</emphasis>
+1 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>;
+2 <emphasis class="comment"></emphasis>
+3 <emphasis class="comment">///&#32;&lt;summary&gt;</emphasis>
+4 <emphasis class="comment">///&#32;An&#32;object&#32;representing&#32;a&#32;Domino&#32;File&#32;Attachment</emphasis>
+5 <emphasis class="comment">///&#32;&lt;/summary&gt;</emphasis>
+6 <emphasis class="comment">///&#32;&lt;example&gt;The&#32;following&#32;is&#32;an&#32;example&#32;of&#32;the&#32;usage&#32;of&#32;a</emphasis>
+7 <emphasis class="comment">///&#32;&lt;c&gt;FileObject&lt;/c&gt;:</emphasis>
+8 <emphasis class="comment">///&#32;&#32;&#32;&lt;code&gt;</emphasis>
+9 <emphasis class="comment">///&#32;&#32;&#32;&#32;FileObject&#32;fObj&#32;=&#32;new&#32;FileObject(docObj);&#32;//&#32;create&#32;new&#32;file&#32;object&#32;by&#32;providing&#32;the&#32;documentobject</emphasis>
+10 <emphasis class="comment">///&#32;&#32;&#32;&#32;if(fObj!=null&#32;&amp;amp;&amp;amp;&#32;fObj.Initialize(initializationString)){</emphasis>
+11 <emphasis class="comment">///&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;//&#32;your&#32;code&#32;here...</emphasis>
+12 <emphasis class="comment">///&#32;&#32;&#32;&#32;}</emphasis>
+13 <emphasis class="comment">///&#32;&#32;&#32;&lt;/code&gt;</emphasis>
+14 <emphasis class="comment">///&#32;&lt;/example&gt;</emphasis>
+<link linkend="class_file_object">15 </link><emphasis class="comment"></emphasis><emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="class_file_object">FileObject</link>&#32;{
+16 
+17 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Variables</emphasis>
+18 
+19 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;strSize&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+20 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;strDateCreated&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+21 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;strDateModified&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+22 
+23 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion&#32;Variables</emphasis>
+24 
+25 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Properties</emphasis>
+26 <emphasis class="comment"></emphasis>
+27 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+28 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Reference&#32;to&#32;this&#32;files&#32;document&#32;object</emphasis>
+29 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_file_object_1a0c9650a6ae1efb95f8211f9fa3b883fe">30 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<link linkend="class_document_object">DocumentObject</link>&#32;<link linkend="class_file_object_1a0c9650a6ae1efb95f8211f9fa3b883fe">Document</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;}
+31 <emphasis class="comment"></emphasis>
+32 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+33 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;The&#32;file&#32;name&#32;of&#32;the&#32;domino&#32;attachment</emphasis>
+34 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_file_object_1a9d47aff166393cb47490da2661576d62">35 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_file_object_1a9d47aff166393cb47490da2661576d62">Name</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+36 <emphasis class="comment"></emphasis>
+37 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+38 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;URL&#32;of&#32;the&#32;domino&#32;attachment</emphasis>
+39 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_file_object_1a7355eaeea3fe40bd8862d7f1f9b479da">40 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_file_object_1a7355eaeea3fe40bd8862d7f1f9b479da">URL</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+41 <emphasis class="comment"></emphasis>
+42 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+43 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Size&#32;of&#32;the&#32;domino&#32;attachment&#32;in&#32;bytes</emphasis>
+44 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_file_object_1a7aa7737c1ce05f4424ba16dded444949">45 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">long</emphasis>&#32;<link linkend="class_file_object_1a7aa7737c1ce05f4424ba16dded444949">Size</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}
+46 <emphasis class="comment"></emphasis>
+47 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+48 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;JPI&#32;Soft&#32;Class&#32;of&#32;the&#32;domino&#32;attachment&#32;(Acad,ustn,office)</emphasis>
+49 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_file_object_1a5e9b8f083b53ea0450a0560c16292a2f">50 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_file_object_1a5e9b8f083b53ea0450a0560c16292a2f">SoftClass</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+51 <emphasis class="comment"></emphasis>
+52 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+53 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;JPI&#32;associated&#32;application&#32;of&#32;the&#32;domino&#32;attachment</emphasis>
+54 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_file_object_1a39640cdc4b16ee66e9c73803f4510396">55 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_file_object_1a39640cdc4b16ee66e9c73803f4510396">Application</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+56 <emphasis class="comment"></emphasis>
+57 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+58 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Creator&#32;of&#32;the&#32;domino&#32;attachment</emphasis>
+59 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_file_object_1a1ab7d29c80841b60b276b7430f4e5ec7">60 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_file_object_1a1ab7d29c80841b60b276b7430f4e5ec7">Creator</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+61 <emphasis class="comment"></emphasis>
+62 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+63 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Creation&#32;date&#32;of&#32;the&#32;domino&#32;attachment</emphasis>
+64 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_file_object_1a372b9a7dad068368526b0698550f9504">65 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;DateTime&#32;<link linkend="class_file_object_1a372b9a7dad068368526b0698550f9504">DateCreated</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}
+66 <emphasis class="comment"></emphasis>
+67 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+68 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Modified&#32;date&#32;of&#32;the&#32;domino&#32;attachment</emphasis>
+69 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_file_object_1a9a4c52e205bee3f8bdfa7040f465b6af">70 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;DateTime&#32;<link linkend="class_file_object_1a9a4c52e205bee3f8bdfa7040f465b6af">DateModified</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}
+71 <emphasis class="comment"></emphasis>
+72 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+73 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;FieldName&#32;(Rich-Text&#32;item)&#32;associated&#32;to&#32;the&#32;domino&#32;attachment&#32;if&#32;available</emphasis>
+74 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_file_object_1a26fa0ac628fee2387b7f89c78f93842e">75 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_file_object_1a26fa0ac628fee2387b7f89c78f93842e">FieldName</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+76 <emphasis class="comment"></emphasis>
+77 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+78 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;The&#32;file&#32;extension&#32;of&#32;the&#32;domino&#32;attachment</emphasis>
+79 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_file_object_1ae25b58dc19def323da91a48e17ba13ed">80 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_file_object_1ae25b58dc19def323da91a48e17ba13ed">Extension</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+81 <emphasis class="comment"></emphasis>
+82 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+83 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Additional&#32;JPI&#32;information&#32;of&#32;the&#32;domino&#32;attachment</emphasis>
+84 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_file_object_1ab91b5eca56a04784f8d0187247e1280c">85 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_file_object_1ab91b5eca56a04784f8d0187247e1280c">Other</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+86 <emphasis class="comment"></emphasis>
+87 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+88 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Indicates&#32;that&#32;the&#32;file&#32;isInitialized</emphasis>
+89 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_file_object_1a36ff6c07d0662885402bfe7d98cf2988">90 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_file_object_1a36ff6c07d0662885402bfe7d98cf2988">IsInitialized</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">protected</emphasis>&#32;<emphasis class="keyword">internal</emphasis>&#32;<emphasis class="keyword">set</emphasis>;&#32;}&#32;=&#32;<emphasis class="keyword">false</emphasis>;
 91 
-92 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Constructor</emphasis>
-93 <emphasis class="comment"></emphasis>
-94 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-95 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;FileObject&#32;Constructor&#32;</emphasis>
-96 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-97 <emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">internal</emphasis>&#32;<link linkend="class_file_object">FileObject</link>(<link linkend="class_document_object">DocumentObject</link>&#32;docObj)&#32;{
-98 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a0c9650a6ae1efb95f8211f9fa3b883fe">Document</link>&#32;=&#32;docObj;
-99 &#32;&#32;&#32;&#32;}
-100 <emphasis class="comment"></emphasis>
-101 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-102 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Initialize&#32;the&#32;file&#32;object,&#32;parses&#32;the&#32;initialization&#32;string&#32;into&#32;their&#32;respective&#32;properties</emphasis>
-103 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-104 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;initString&quot;&gt;&lt;/param&gt;</emphasis>
-105 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;&lt;/returns&gt;</emphasis>
-106 <emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">internal</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;Initialize(<emphasis class="keywordtype">string</emphasis>&#32;initString)&#32;{
-107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//split&#32;the&#32;string&#32;into&#32;the&#32;properties&#32;here</emphasis>
-108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!String.IsNullOrEmpty(initString))&#32;{
-109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;fObj.Application&#32;+&#32;&quot;§&quot;&#32;+&#32;fObj.Creator&#32;+&#32;&quot;§&quot;&#32;+&#32;fObj.DateCreated&#32;+&#32;&quot;§&quot;&#32;+&#32;fObj.DateModfied&#32;+&#32;&quot;$&quot;&#32;+&#32;fObj.FieldName&#32;+&#32;&quot;§&quot;&#32;+&#32;fObj.FileExtension&#32;+&#32;&quot;§&quot;&#32;+&#32;</emphasis>
-110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//fObj.FileName&#32;+&#32;&quot;$&quot;&#32;+&#32;fObj.FileSize&#32;+&#32;&quot;$&quot;&#32;+&#32;fObj.LinkToFile&#32;+&#32;&quot;$&quot;&#32;+&#32;fObj.Other&#32;+&#32;&quot;$&quot;&#32;+&#32;fObj.SoftClass);</emphasis>
-111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(initString.Contains(<emphasis class="stringliteral">&quot;§&quot;</emphasis>))&#32;{
-112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;String[]&#32;ar&#32;=&#32;initString.Split(<emphasis class="keyword">new</emphasis>[]&#32;{&#32;<emphasis class="stringliteral">&quot;§&quot;</emphasis>&#32;},&#32;StringSplitOptions.None);
-113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(ar&#32;!=&#32;null&#32;&amp;&amp;&#32;ar.Length&#32;&gt;&#32;0&#32;&amp;&amp;&#32;ar.Length&#32;==&#32;11)&#32;{
-114 
-115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a39640cdc4b16ee66e9c73803f4510396">Application</link>&#32;=&#32;ar[0];
-116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a1ab7d29c80841b60b276b7430f4e5ec7">Creator</link>&#32;=&#32;ar[1];
-117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;strDateCreated&#32;=&#32;ar[2];
-118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(strDateCreated)&#32;&amp;&amp;&#32;!strDateCreated.Equals(<emphasis class="stringliteral">&quot;.&quot;</emphasis>))&#32;{
-119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>&#32;{
-120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//convert&#32;to&#32;real&#32;datetime</emphasis>
-121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a372b9a7dad068368526b0698550f9504">DateCreated</link>&#32;=&#32;DateTime.Parse(strDateCreated);
-122 
+92 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion&#32;Properties</emphasis>
+93 
+94 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Constructor</emphasis>
+95 <emphasis class="comment"></emphasis>
+96 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+97 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;FileObject&#32;Constructor</emphasis>
+98 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+99 <emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">internal</emphasis>&#32;<link linkend="class_file_object">FileObject</link>(<link linkend="class_document_object">DocumentObject</link>&#32;docObj)&#32;{
+100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a0c9650a6ae1efb95f8211f9fa3b883fe">Document</link>&#32;=&#32;docObj;
+101 &#32;&#32;&#32;&#32;}
+102 <emphasis class="comment"></emphasis>
+103 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+104 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Initialize&#32;the&#32;file&#32;object,&#32;parses&#32;the&#32;initialization&#32;string&#32;into&#32;their&#32;respective&#32;properties</emphasis>
+105 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+106 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;initString&quot;&gt;&lt;/param&gt;</emphasis>
+107 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;&lt;/returns&gt;</emphasis>
+108 <emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">internal</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;Initialize(<emphasis class="keywordtype">string</emphasis>&#32;initString)&#32;{
+109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//split&#32;the&#32;string&#32;into&#32;the&#32;properties&#32;here</emphasis>
+110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!String.IsNullOrEmpty(initString))&#32;{
+111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;fObj.Application&#32;+&#32;&quot;§&quot;&#32;+&#32;fObj.Creator&#32;+&#32;&quot;§&quot;&#32;+&#32;fObj.DateCreated&#32;+&#32;&quot;§&quot;&#32;+&#32;fObj.DateModfied&#32;+&#32;&quot;$&quot;&#32;+&#32;fObj.FieldName&#32;+&#32;&quot;§&quot;&#32;+&#32;fObj.FileExtension&#32;+&#32;&quot;§&quot;&#32;+</emphasis>
+112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//fObj.FileName&#32;+&#32;&quot;$&quot;&#32;+&#32;fObj.FileSize&#32;+&#32;&quot;$&quot;&#32;+&#32;fObj.LinkToFile&#32;+&#32;&quot;$&quot;&#32;+&#32;fObj.Other&#32;+&#32;&quot;$&quot;&#32;+&#32;fObj.SoftClass);</emphasis>
+113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(initString.Contains(<emphasis class="stringliteral">&quot;§&quot;</emphasis>))&#32;{
+114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;String[]&#32;ar&#32;=&#32;initString.Split(<emphasis class="keyword">new</emphasis>[]&#32;{&#32;<emphasis class="stringliteral">&quot;§&quot;</emphasis>&#32;},&#32;StringSplitOptions.None);
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(ar&#32;!=&#32;null&#32;&amp;&amp;&#32;ar.Length&#32;&gt;&#32;0&#32;&amp;&amp;&#32;ar.Length&#32;==&#32;11)&#32;{
+116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a39640cdc4b16ee66e9c73803f4510396">Application</link>&#32;=&#32;ar[0];
+117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a1ab7d29c80841b60b276b7430f4e5ec7">Creator</link>&#32;=&#32;ar[1];
+118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;strDateCreated&#32;=&#32;ar[2];
+119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(strDateCreated)&#32;&amp;&amp;&#32;!strDateCreated.Equals(<emphasis class="stringliteral">&quot;.&quot;</emphasis>))&#32;{
+120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>&#32;{
+121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//convert&#32;to&#32;real&#32;datetime</emphasis>
+122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a372b9a7dad068368526b0698550f9504">DateCreated</link>&#32;=&#32;DateTime.Parse(strDateCreated);
 123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(Exception)&#32;{
 124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//do&#32;nothing&#32;or&#32;report?</emphasis>
 125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
@@ -151,74 +151,65 @@ An object representing a Domino File Attachment
 130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>&#32;{
 131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//convert&#32;to&#32;real&#32;datetime</emphasis>
 132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a9a4c52e205bee3f8bdfa7040f465b6af">DateModified</link>&#32;=&#32;DateTime.Parse(strDateModified);
-133 
-134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(Exception)&#32;{
-135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//do&#32;nothing&#32;or&#32;report?</emphasis>
-136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-138 
-139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a26fa0ac628fee2387b7f89c78f93842e">FieldName</link>&#32;=&#32;ar[4];
-140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1ae25b58dc19def323da91a48e17ba13ed">Extension</link>&#32;=&#32;ar[5];
-141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a9d47aff166393cb47490da2661576d62">Name</link>&#32;=&#32;ar[6];
-142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;strSize&#32;=&#32;ar[7];
-143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(strSize))&#32;{
-144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>&#32;{
-145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a7aa7737c1ce05f4424ba16dded444949">Size</link>&#32;=&#32;<emphasis class="keywordtype">long</emphasis>.Parse(strSize);
-146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a7aa7737c1ce05f4424ba16dded444949">Size</link>&#32;=&#32;<link linkend="class_file_object_1a7aa7737c1ce05f4424ba16dded444949">Size</link>&#32;*&#32;1024;
-147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(Exception)&#32;{
-148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;throw;</emphasis>
-149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-151 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a7355eaeea3fe40bd8862d7f1f9b479da">URL</link>&#32;=&#32;ar[8];
-152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1ab91b5eca56a04784f8d0187247e1280c">Other</link>&#32;=&#32;ar[9];
-153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a5e9b8f083b53ea0450a0560c16292a2f">SoftClass</link>&#32;=&#32;ar[10];
-154 
-155 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//validating&#32;can&#32;be&#32;done&#32;here&#32;if&#32;not&#32;all&#32;values&#32;are&#32;retrieved&#32;-&#32;atm&#32;see&#32;what&#32;we&#32;can&#32;get&#32;without&#32;failing</emphasis>
-156 
-157 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a36ff6c07d0662885402bfe7d98cf2988">IsInitialized</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;
-158 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
-159 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a36ff6c07d0662885402bfe7d98cf2988">IsInitialized</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
-160 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//report?</emphasis>
-161 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
-163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a36ff6c07d0662885402bfe7d98cf2988">IsInitialized</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
-164 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//report?</emphasis>
-165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-166 
-167 
-168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a36ff6c07d0662885402bfe7d98cf2988">IsInitialized</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;
-169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
-170 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a36ff6c07d0662885402bfe7d98cf2988">IsInitialized</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
-171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-172 
-173 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_file_object_1a36ff6c07d0662885402bfe7d98cf2988">IsInitialized</link>;
-174 &#32;&#32;&#32;&#32;}
-175 <emphasis class="comment"></emphasis>
-176 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-177 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Extract&#32;the&#32;file&#32;from&#32;the&#32;XPages&#32;URL&#32;to&#32;a&#32;given&#32;file&#32;path</emphasis>
-178 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-179 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;filePath&quot;&gt;&lt;/param&gt;</emphasis>
-180 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;&lt;/returns&gt;</emphasis>
-<link linkend="class_file_object_1ae21fac09c5ab2f9fac96a3f084cb9ddc">181 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_file_object_1ae21fac09c5ab2f9fac96a3f084cb9ddc">ExtractFile</link>(String&#32;filePath)&#32;{
-182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.ResetReturn();
-183 
-184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_file_object_1a36ff6c07d0662885402bfe7d98cf2988">IsInitialized</link>)&#32;{
-185 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_file_object_1a0c9650a6ae1efb95f8211f9fa3b883fe">Document</link>.<link linkend="class_document_object_1a69d5338c9835f748490323d2950eed09">Database</link>.<link linkend="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07">Session</link>.<link linkend="class_session_object_1a014bdbf705a753540e19bfb53030c55c">Connection</link>.Request.ExecuteGetFileRequest(<link linkend="class_file_object_1a7355eaeea3fe40bd8862d7f1f9b479da">URL</link>,&#32;filePath))&#32;{
-186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a079bae21a5417efa53bfe8954c0f533f">hasError</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
-187 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">true</emphasis>;
-188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-189 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-190 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
-191 &#32;&#32;&#32;&#32;}
-192 
-193 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion</emphasis>
-194 
-195 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Methods</emphasis>
-196 
-197 
-198 
-199 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion</emphasis>
-200 
-201 }
+133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(Exception)&#32;{
+134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//do&#32;nothing&#32;or&#32;report?</emphasis>
+135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+137 
+138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a26fa0ac628fee2387b7f89c78f93842e">FieldName</link>&#32;=&#32;ar[4];
+139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1ae25b58dc19def323da91a48e17ba13ed">Extension</link>&#32;=&#32;ar[5];
+140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a9d47aff166393cb47490da2661576d62">Name</link>&#32;=&#32;ar[6];
+141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;strSize&#32;=&#32;ar[7];
+142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(strSize))&#32;{
+143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>&#32;{
+144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a7aa7737c1ce05f4424ba16dded444949">Size</link>&#32;=&#32;<emphasis class="keywordtype">long</emphasis>.Parse(strSize);
+145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a7aa7737c1ce05f4424ba16dded444949">Size</link>&#32;=&#32;<link linkend="class_file_object_1a7aa7737c1ce05f4424ba16dded444949">Size</link>&#32;*&#32;1024;
+146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(Exception)&#32;{
+147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;throw;</emphasis>
+148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a7355eaeea3fe40bd8862d7f1f9b479da">URL</link>&#32;=&#32;ar[8];
+151 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1ab91b5eca56a04784f8d0187247e1280c">Other</link>&#32;=&#32;ar[9];
+152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a5e9b8f083b53ea0450a0560c16292a2f">SoftClass</link>&#32;=&#32;ar[10];
+153 
+154 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//validating&#32;can&#32;be&#32;done&#32;here&#32;if&#32;not&#32;all&#32;values&#32;are&#32;retrieved&#32;-&#32;atm&#32;see&#32;what&#32;we&#32;can&#32;get&#32;without&#32;failing</emphasis>
+155 
+156 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a36ff6c07d0662885402bfe7d98cf2988">IsInitialized</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;
+157 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
+158 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a36ff6c07d0662885402bfe7d98cf2988">IsInitialized</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
+159 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//report?</emphasis>
+160 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+161 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
+162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a36ff6c07d0662885402bfe7d98cf2988">IsInitialized</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
+163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//report?</emphasis>
+164 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+165 
+166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a36ff6c07d0662885402bfe7d98cf2988">IsInitialized</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;
+167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
+168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_file_object_1a36ff6c07d0662885402bfe7d98cf2988">IsInitialized</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
+169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+170 
+171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_file_object_1a36ff6c07d0662885402bfe7d98cf2988">IsInitialized</link>;
+172 &#32;&#32;&#32;&#32;}
+173 <emphasis class="comment"></emphasis>
+174 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+175 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Extract&#32;the&#32;file&#32;from&#32;the&#32;XPages&#32;URL&#32;to&#32;a&#32;given&#32;file&#32;path</emphasis>
+176 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+177 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;filePath&quot;&gt;&lt;/param&gt;</emphasis>
+178 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;&lt;/returns&gt;</emphasis>
+<link linkend="class_file_object_1ae21fac09c5ab2f9fac96a3f084cb9ddc">179 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_file_object_1ae21fac09c5ab2f9fac96a3f084cb9ddc">ExtractFile</link>(String&#32;filePath)&#32;{
+180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.ResetReturn();
+181 
+182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_file_object_1a36ff6c07d0662885402bfe7d98cf2988">IsInitialized</link>)&#32;{
+183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_file_object_1a0c9650a6ae1efb95f8211f9fa3b883fe">Document</link>.<link linkend="class_document_object_1a69d5338c9835f748490323d2950eed09">Database</link>.<link linkend="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07">Session</link>.<link linkend="class_session_object_1a014bdbf705a753540e19bfb53030c55c">Connection</link>.Request.ExecuteGetFileRequest(<link linkend="class_file_object_1a7355eaeea3fe40bd8862d7f1f9b479da">URL</link>,&#32;filePath))&#32;{
+184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a9365777a6b7b711b75bcfa6c4d53e989">HasError</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
+185 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">true</emphasis>;
+186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+187 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+189 &#32;&#32;&#32;&#32;}
+190 
+191 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion&#32;Constructor</emphasis>
+192 <emphasis class="preprocessor">}</emphasis>
     </computeroutput></literallayout>
 </section>

@@ -27,7 +27,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Common.cs" line="17" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Common.cs" bodystart="17" bodyend="39"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Common.cs" line="15" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Common.cs" bodystart="15" bodyend="36"/>
       </memberdef>
       <memberdef kind="function" id="class_common_1a6468d361244e4fd42f8be6e584075a21" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>string</type>
@@ -64,7 +64,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Common.cs" line="48" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Common.cs" bodystart="48" bodyend="58"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Common.cs" line="44" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Common.cs" bodystart="44" bodyend="53"/>
       </memberdef>
       <memberdef kind="function" id="class_common_1a13db3c30d3b537be69e3b9e1dc636a3e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -101,14 +101,14 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Common.cs" line="67" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Common.cs" bodystart="67" bodyend="76"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Common.cs" line="62" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Common.cs" bodystart="62" bodyend="70"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>Class with common methods </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Common.cs" line="9" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Common.cs" bodystart="8" bodyend="77"/>
+    <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Common.cs" line="7" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Common.cs" bodystart="7" bodyend="71"/>
     <listofallmembers>
       <member refid="class_common_1a13db3c30d3b537be69e3b9e1dc636a3e" prot="public" virt="non-virtual"><scope>Common</scope><name>ExceptionHandler</name></member>
       <member refid="class_common_1a95a895bd81dcbd1ed2a07814462d0fc7" prot="public" virt="non-virtual"><scope>Common</scope><name>GetErrorInfo</name></member>

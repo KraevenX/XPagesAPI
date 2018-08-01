@@ -10,8 +10,8 @@ var class_connector =
     [ "EncryptionIV", "class_connector.html#a62269f0d1749b4f2185a988c25bbe088", null ],
     [ "EncryptionPASSWORD", "class_connector.html#a03d18ba01d41974d0705049712356446", null ],
     [ "EncryptionSALT", "class_connector.html#a41efb9b95da0b7da84bc82c09b913af9", null ],
-    [ "isConnected", "class_connector.html#acf2c3b519c360d02ed54543a01d199af", null ],
-    [ "isInitialized", "class_connector.html#a017d40b1f4cf2cbaa5d4b755cf09269e", null ],
+    [ "IsConnected", "class_connector.html#a7e4bd5a6b59b228b169066b5f5ed4b0a", null ],
+    [ "IsInitialized", "class_connector.html#ae9cbe0b51d601dab13ba7271db4f3883", null ],
     [ "SessionObject", "class_connector.html#a0a7bb42f9530796c086ab50785147ce9", null ],
     [ "XPIdentity", "class_connector.html#a092e3e36f92c129c07c57df9b8fb91ca", null ]
 ];

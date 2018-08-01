@@ -1,23 +1,23 @@
-using System.Security.Cryptography;
-using System.Text;
 using System;
 using System.IO;
 using System.IO.Compression;
+using System.Security.Cryptography;
+using System.Text;
 
 internal class Encryptor {
 
     #region Variables
 
-    private string IV = "GeNar@tEdIv_K3y!"; // "IV_VALUE_16_BYTE"                    
-    private string PASSWORD = "JPITeam@XPages!|"; // "PASSWORD_VALUE"
-    private string SALT = "S@1tS@lt_Valu3@JPI_XP@ges"; //"SALT_VALUE"
+    private readonly string IV = "GeNar@tEdIv_K3y!"; // "IV_VALUE_16_BYTE"
+    private readonly string PASSWORD = "JPITeam@XPages!|"; // "PASSWORD_VALUE"
+    private readonly string SALT = "S@1tS@lt_Valu3@JPI_XP@ges"; //"SALT_VALUE"
 
     protected internal string EncodedContent;
     protected internal bool isInitialized = false;
     protected internal string DecodedContent;
     protected internal bool Encode = false;
 
-    #endregion
+    #endregion Variables
 
     #region Constructor
 
@@ -43,7 +43,7 @@ internal class Encryptor {
         }
     }
 
-    #endregion
+    #endregion Constructor
 
     #region Public Methods
 
@@ -70,9 +70,8 @@ internal class Encryptor {
                 return false;
             }
         }
-
     }
-    
+
     public string EncryptAndEncode(string raw) {
         AesCryptoServiceProvider csp = new AesCryptoServiceProvider();
         using (csp) {
@@ -125,7 +124,7 @@ internal class Encryptor {
         }
     }
 
-    #endregion
+    #endregion Public Methods
 
     #region Private Methods
 
@@ -133,7 +132,7 @@ internal class Encryptor {
         csp.Mode = CipherMode.CBC;
         csp.Padding = PaddingMode.PKCS7;
         Rfc2898DeriveBytes spec = new Rfc2898DeriveBytes(Encoding.UTF8.GetBytes(PASSWORD), Encoding.UTF8.GetBytes(SALT), 65536);
-        byte [] key = spec.GetBytes(16);
+        byte[] key = spec.GetBytes(16);
         csp.IV = Encoding.UTF8.GetBytes(IV);
         csp.Key = key;
         if (encrypting) {
@@ -142,6 +141,5 @@ internal class Encryptor {
         return csp.CreateDecryptor();
     }
 
-    #endregion
-
+    #endregion Private Methods
 }
