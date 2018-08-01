@@ -26,21 +26,9 @@ public class DocumentObject
 
     #region Variables
 
-    private DatabaseObject _Database;
-
-    private bool _isInitialized = false;
-    private string _DateCreated = "";
-    private string _DateModified = "";
-    private string _UniversalID = "";
-    private string _NoteID = "";
     private string _SearchField = "";
-    private string _SearchValue = "";
-    private string _Formula = "";
-    private string _Size = "";
-    private string _Url = "";
-    private string _Form = "";
-    private SortedDictionary<String, FieldObject> _Fields = null;
-    private SortedDictionary<String, FileObject> _Files = null;
+    private readonly string _SearchValue = "";
+    private readonly string _Formula = "";
 
     #endregion
 
@@ -49,140 +37,57 @@ public class DocumentObject
     /// <summary>
     /// Reference to this documents database object
     /// </summary>
-    public DatabaseObject Database {
-        get {
-            return _Database;
-        }
-    }
+    public DatabaseObject Database { get; }
 
     /// <summary>
     /// Indicates that the document isInitialized
     /// </summary>
-    public bool IsInitialized {
-        get {
-            return _isInitialized;
-        }
-        protected internal set {
-            _isInitialized = value;
-        }
-    }
+    public bool IsInitialized { get; protected internal set; } = false;
 
     /// <summary>
     /// Document Size
     /// </summary>
-    public string Size {
-        get {
-            return _Size;
-        }
-
-        protected internal set {
-            _Size = value;
-        }
-    }
+    public string Size { get; protected internal set; } = "";
 
     /// <summary>
     /// Document URL
     /// </summary>
-    public string Url {
-        get {
-            return _Url;
-        }
-
-        protected internal set {
-            _Url = value;
-        }
-    }
+    public string Url { get; protected internal set; } = "";
 
     /// <summary>
     /// Documents Form (if any)
     /// </summary>
-    public string Form {
-        get {
-            return _Form;
-        }
-
-        protected internal set {
-            _Form = value;
-        }
-    }
+    public string Form { get; protected internal set; } = "";
 
     /// <summary>
     /// Document NoteId
     /// </summary>
-    public string NoteID {
-        get {
-            return _NoteID;
-        }
-
-        protected internal set {
-            _NoteID = value;
-        }
-    }
+    public string NoteID { get; protected internal set; } = "";
 
     /// <summary>
     /// Collection of retrieved FieldObjects stored in a dictionary with key name of the field
     /// </summary>
-    public SortedDictionary<string, FieldObject> Fields {
-        get {
-            return _Fields;
-        }
-
-        protected internal set {
-            _Fields = value;
-        }
-    }
+    public SortedDictionary<string, FieldObject> Fields { get; protected internal set; } = null;
 
     /// <summary>
     /// Collection of retrieved FileObjects stored in a dictionary with key filename of the attachment
     /// </summary>
-    public SortedDictionary<string, FileObject> Files {
-        get {
-            return _Files;
-        }
-
-        protected internal set {
-            _Files = value;
-        }
-    }
+    public SortedDictionary<string, FileObject> Files { get; protected internal set; } = null;
 
     /// <summary>
     /// Document UniversalID
     /// </summary>
-    public string UniversalID {
-        get {
-            return _UniversalID;
-        }
-
-        protected internal set {
-            _UniversalID = value;
-        }
-    }
+    public string UniversalID { get; protected internal set; } = "";
 
     /// <summary>
     /// Document Creation Date
     /// </summary>
-    public string DateCreated {
-        get {
-            return _DateCreated;
-        }
-
-        set {
-            _DateCreated = value;
-        }
-    }
+    public string DateCreated { get; set; } = "";
 
     /// <summary>
     /// Document Modification Date
     /// </summary>
-    public string DateModified {
-        get {
-            return _DateModified;
-        }
-
-        set {
-            _DateModified = value;
-        }
-    }
+    public string DateModified { get; set; } = "";
 
     #endregion
 
@@ -195,8 +100,8 @@ public class DocumentObject
     /// <param name="UniversalID"></param>
     public DocumentObject(DatabaseObject dbObj, String UniversalID)
     {
-        _Database = dbObj;
-        _UniversalID = UniversalID;
+        Database = dbObj;
+        this.UniversalID = UniversalID;
     }
 
     /// <summary>
@@ -207,7 +112,7 @@ public class DocumentObject
     /// <param name="SearchValue"></param>
     public DocumentObject(DatabaseObject dbObj, string SeachField, string SearchValue)
     {
-        _Database = dbObj;
+        Database = dbObj;
         _SearchField = SeachField;
         _SearchValue = SearchValue;
     }
@@ -219,7 +124,7 @@ public class DocumentObject
     /// <param name="dbObj"></param>
     public DocumentObject(string formula, DatabaseObject dbObj)
     {
-        _Database = dbObj;
+        Database = dbObj;
         _Formula = formula;
     }
 
@@ -229,14 +134,14 @@ public class DocumentObject
 
     private bool ValidateInput()
     {
-        if (_Database == null || !_Database.IsInitialized)
+        if (Database == null || !Database.IsInitialized)
         {
             //can only be initialized if valid connector and connector is initialized and connected, and session is initialized & databaseobject isInitialized
             Connector.ReturnMessages.Add("DocumentObject can not be validated : Database is not initialized! (DocumentObject.ValidateInput)");
             return false;
         }
 
-        if (string.IsNullOrEmpty(_UniversalID))
+        if (string.IsNullOrEmpty(UniversalID))
         {
             //can be empty if we are searching by key
             if (string.IsNullOrEmpty(_SearchField) && string.IsNullOrEmpty(_SearchValue))
@@ -265,17 +170,21 @@ public class DocumentObject
 
         Connector.ResetReturn();
 
+        // reset the lists
+        Fields = null;
+        Files = null;
+
         if (!ValidateInput())
         {
-            _isInitialized = false;
+            IsInitialized = false;
             Connector.hasError = true;
             return false;   // throws exception
         }
 
         // make a connection to the webservice database - this will check the users authentication on that database
-        if (_Database.Session.Connection.Request.ExecuteDocumentRequest(_Database.Session.WebServiceURL, _UniversalID, _SearchField, _SearchValue, _Formula, _Database, this))
+        if (Database.Session.Connection.Request.ExecuteDocumentRequest(Database.Session.WebServiceURL, UniversalID, _SearchField, _SearchValue, _Formula, Database, this))
         {
-            _isInitialized = true;
+            IsInitialized = true;
             //  Connector.ReturnMessages.Add("Document Initialized : " + _UniversalID + " in : " + _Database.FilePath + " from : "+_Database.ServerName + " (DocumentObject.Initialize)");
             Connector.hasError = false;
             return true;
@@ -283,7 +192,7 @@ public class DocumentObject
         else
         {
             //error messages written to Connection.ReturnMessages by Connection.Request.ExecuteSessionRequest
-            _isInitialized = false;
+            IsInitialized = false;
             return false;
         }
     }
@@ -300,15 +209,15 @@ public class DocumentObject
 
         if (!ValidateInput())
         {
-            _isInitialized = false;
+            IsInitialized = false;
             Connector.hasError = true;
             return false;   // throws exception
         }
 
         // make a connection to the webservice database - this will check the users authentication on that database
-        if (_Database.Session.Connection.Request.ExecuteDocumentFilesRequest(_Database.Session.WebServiceURL, _UniversalID, _SearchField, _SearchValue, _Formula, _Database, this))
+        if (Database.Session.Connection.Request.ExecuteDocumentFilesRequest(Database.Session.WebServiceURL, UniversalID, _SearchField, _SearchValue, _Formula, Database, this))
         {
-            _isInitialized = true;
+            IsInitialized = true;
             //  Connector.ReturnMessages.Add("Document Initialized : " + _UniversalID + " in : " + _Database.FilePath + " from : "+_Database.ServerName + " (DocumentObject.Initialize)");
             Connector.hasError = false;
             return true;
@@ -316,7 +225,7 @@ public class DocumentObject
         else
         {
             //error messages written to Connection.ReturnMessages by Connection.Request.ExecuteSessionRequest
-            _isInitialized = false;
+            IsInitialized = false;
             return false;
         }
     }
@@ -332,11 +241,11 @@ public class DocumentObject
     {
         Connector.ResetReturn();
 
-        if (_isInitialized)
+        if (IsInitialized)
         {
             // if (!String.IsNullOrEmpty(fields)) {
             //this will update _Fields list in this object
-            if (_Database.Session.Connection.Request.ExecuteFieldsRequest(_Database.Session.WebServiceURL, this, fields))
+            if (Database.Session.Connection.Request.ExecuteFieldsRequest(Database.Session.WebServiceURL, this, fields))
             {
                 Connector.hasError = false;
                 return true;
@@ -357,12 +266,12 @@ public class DocumentObject
     {
         Connector.ResetReturn();
         // get the files from XPages
-        if (_isInitialized)
+        if (IsInitialized)
         {
 
             //this will update _Fields list in this object
             //string WebServiceURL, string Unid, string searchField, string searchValue, string formula, DatabaseObject dbObj, DocumentObject docObj
-            if (_Database.Session.Connection.Request.ExecuteDocumentFilesRequest(_Database.Session.WebServiceURL, this._UniversalID,this._SearchField,this._SearchValue, this._Formula,this._Database, this))
+            if (Database.Session.Connection.Request.ExecuteDocumentFilesRequest(Database.Session.WebServiceURL, this.UniversalID,this._SearchField,this._SearchValue, this._Formula,this.Database, this))
             {
                 Connector.hasError = false;
                 return true;
@@ -382,13 +291,13 @@ public class DocumentObject
     {
         Connector.ResetReturn();
         string f = "";
-        if (_isInitialized)
+        if (IsInitialized)
         {
 
             f = Common.GetListAsString(fields, ";"); // can be empty - get's all fields
             // if (!String.IsNullOrEmpty(fields)) {
             //this will update _Fields list in this object
-            if (_Database.Session.Connection.Request.ExecuteFieldsRequest(_Database.Session.WebServiceURL, this, f))
+            if (Database.Session.Connection.Request.ExecuteFieldsRequest(Database.Session.WebServiceURL, this, f))
             {
                 Connector.hasError = false;
                 return true;
@@ -398,8 +307,6 @@ public class DocumentObject
         }
         return false;
     }
-
-   
 
     /// <summary>
     /// Retrieve all fields for this documents by triggering the all fields request
@@ -411,10 +318,10 @@ public class DocumentObject
         //get all the fields from the domino document and store them in Fields
         Connector.ResetReturn();
 
-        if (_isInitialized)
+        if (IsInitialized)
         {
 
-            if (_Database.Session.Connection.Request.ExecuteFieldsRequest(_Database.Session.WebServiceURL, this, null))
+            if (Database.Session.Connection.Request.ExecuteFieldsRequest(Database.Session.WebServiceURL, this, null))
             {
                 Connector.hasError = false;
                 return true;
@@ -554,6 +461,20 @@ public class DocumentObject
             Connector.hasError = true;
             return false;
         }
+    }
+    
+    /// <summary>
+    /// Remove all the retrieved field objects from this document
+    /// </summary>
+    public void ClearFields() {
+        Fields = null;
+    }
+
+    /// <summary>
+    /// Remove all the retrieved file objects from this document
+    /// </summary>
+    public void ClearFiles() {
+        Files = null;
     }
 
     #endregion

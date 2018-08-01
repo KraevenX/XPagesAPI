@@ -10,27 +10,27 @@ namespace APITesting {
         private TestContext testContextInstance;
 
         // Test intranet connection (http)
-        //private const string ServerName = "http://antln-test.europe.jacobs.com";
-        //private const string UserName = "Kim Acket";
-        //private const string Password = "Je082018";
+        private const string ServerURL = "http://antln-test.europe.jacobs.com";
+        private const string UserName = "Kim Acket";
+        private const string Password = "Je082018";
 
         // Test internet connection (https)
-        private const string ServerURL = "https://jpi2.jacobs.com";
-        private const string UserName = "Kim Acket";
-        private const string Password = "Lambam1608";
+        //private const string ServerURL = "https://jpi2.jacobs.com";
+        //private const string UserName = "Kim Acket";
+        //private const string Password = "Lambam1608";
 
         // XPages JPI Service URL on intranet (http)
-        //private const string XPagesServiceURL = "http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService";
-        //private const string XPagesServiceURL = "http://antln-test.europe.jacobs.com/projects/jpix/XPageDev1300_XP.nsf/xpJPIService.xsp/JPIService";
-        
+        // private const string XPagesServiceURL = "http://antln-test.europe.jacobs.com/projects/jpix/XPagesAPI_Interface.nsf/xpJPIService.xsp/JPIService";
+        private const string XPagesServiceURL = "http://antln-test.europe.jacobs.com/projects/jpix/XPageDev1300_XP.nsf/xpJPIService.xsp/JPIService";
+
         // XPages JPI Service URL on internet (https)
-        private const string XPagesServiceURL = "https://jpi2.jacobs.com/projects/jpix/XPageDev1300_XP.nsf/xpJPIService.xsp/JPIService";
+        //private const string XPagesServiceURL = "https://jpi2.jacobs.com/projects/jpix/XPageDev1300_XP.nsf/xpJPIService.xsp/JPIService";
 
         //Database To Access
         private const string DatabaseFilePath = "projects\\jpi4\\XP2015_JP.nsf";
         //Server To Access
-        // private const string DominoServerName = "ANTLN-TEST/ANTWERPEN/JacobsEngineering";
-        private const string DominoServerName = "JPI2/JPI";
+        private const string DominoServerName = "ANTLN-TEST/ANTWERPEN/JacobsEngineering";
+        // private const string DominoServerName = "JPI2/JPI";
 
         /// <summary>
         ///  Gets or sets the test context which provides
@@ -143,6 +143,67 @@ namespace APITesting {
                             } else {
                                 // TestContext.WriteLine("DatabaseObject NOT Retrieved!" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                                 Assert.Fail("DatabaseObject NOT Retrieved!" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
+                            }
+                        }
+                    } else {
+                        //TestContext.WriteLine("Unable to Connect to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
+                        Assert.Fail("Unable to Connect to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
+
+                    }
+                } else {
+                    //TestContext.WriteLine("Unable to Initialize the Connector!" +Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
+                    Assert.Fail("Unable to Initialize the Connector!" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
+                }
+            } catch (Exception ex) {
+                //TestContext.WriteLine("Error : " + GetErrorInfo(ex));
+                Assert.Fail("Error : " + GetErrorInfo(ex));
+
+            }
+        }
+
+        [TestMethod]
+        public void AllDatabasesTesting() {
+            try {
+                // to start the session we need to setup the connector
+                Connector connector = null;
+                // this is done by providing the user name, password and the domino server URL
+                connector = new Connector(UserName, Password, ServerURL);
+                // in the initialize function you can specify the encryption pass, iv and salt 
+                // Do not provide this unless you also change the Xpages Interface Database JPIService to reflect the new encryption strings
+
+                //must always be called - if an invalid URL is provide this will return false
+                if (connector.Initialize()) {
+                    // Connect to the JPI IBM Domino Server - this function will execute an authentication request - sets flag isConnected
+                    if (connector.Connect()) {
+                        // create a new session to JPI via the XPages Interface Database - JPIService
+                        SessionObject session = null;
+                        // Get the session via our connector by providing the full URL to the JPIService in the XPages database
+                        session = connector.GetSession(XPagesServiceURL);
+                        if (Connector.hasError || session == null) {
+                            //we have an error in creating/getting the session object
+                            //  TestContext.WriteLine("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
+                            Assert.Fail("Unable to Create a Session to the JPI Domino Server" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
+                        } else {
+                            // Retrieve all Databases via the session object - provide the servername
+                            if (session.GetAllDatabases(DominoServerName) && !Connector.hasError) {
+                                // This function will add the found database in the 'Databases' property of the session object
+                                if (session.Databases != null && session.Databases.Count > 0) {
+                                    DatabaseObject dbObj = null;
+                                    TestContext.WriteLine("All DatabaseObjects Retrieved!" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
+                                    TestContext.WriteLine("");
+                                    foreach (KeyValuePair<string, DatabaseObject> kvp in session.Databases) {
+                                        dbObj = kvp.Value;
+                                        TestContext.WriteLine("FilePath : " + dbObj.FilePath + Environment.NewLine + "Server : " + dbObj.ServerName + Environment.NewLine + "Template: " + dbObj.Template + Environment.NewLine + "Title: " + dbObj.Title + Environment.NewLine + "Size: " + dbObj.Size + Environment.NewLine + "URL: " + dbObj.Url);
+                                        TestContext.WriteLine("");
+                                    }
+                                    Assert.AreEqual(true, session.Databases != null && session.Databases.Count > 0);
+                                } else {
+                                    // TestContext.WriteLine("DatabaseObject NOT Retrieved!" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
+                                    Assert.Fail("DatabaseObjects NOT Retrieved!" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
+                                }
+                            } else {
+                                // TestContext.WriteLine("DatabaseObject NOT Retrieved!" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
+                                Assert.Fail("DatabaseObjects NOT Retrieved!" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
                             }
                         }
                     } else {
@@ -589,7 +650,7 @@ namespace APITesting {
                                     }
 
                                     Assert.AreEqual(true, docObj.Files != null);
-                               
+
                                 } else {
                                     //we have an error - check Connector.ReturnMessages
                                     Assert.Fail("DocumentObject NOT Retrieved!" + Environment.NewLine + "ReturnMessages : " + GetReturnMessages(Connector.ReturnMessages));
@@ -815,7 +876,7 @@ namespace APITesting {
                                 DocumentObject docObj = null;
                                 // get the document by providing a universal id of the document
                                 //this function will call documentobject initialize and the isInitialized flag is set
-                                docObj = dbObj.GetDocumentAndFilesByKey("INTERFACEKEY","ABCD00095");
+                                docObj = dbObj.GetDocumentAndFilesByKey("INTERFACEKEY", "ABCD00095");
                                 if (docObj != null && docObj.IsInitialized) {
                                     TestContext.WriteLine("DocumentObject Found");
                                     TestContext.WriteLine("Created On: " + docObj.DateCreated);

@@ -73,29 +73,6 @@ internal class Encryptor {
 
     }
     
-    //public string EncryptAndEncode(string raw) {
-    //    AesCryptoServiceProvider csp = new AesCryptoServiceProvider();
-    //    using (csp) {
-    //        ICryptoTransform e = GetCryptoTransform(csp, true);
-    //        byte [] inputBuffer = Encoding.UTF8.GetBytes(raw);
-    //        byte [] output = e.TransformFinalBlock(inputBuffer, 0, inputBuffer.Length);
-    //        string encrypted = Convert.ToBase64String(output);
-    //        return encrypted;
-    //    }
-    //}
-
-    //public string DecodeAndDecrypt(string encrypted) {
-    //    AesCryptoServiceProvider csp = new AesCryptoServiceProvider();
-    //    using (csp) {
-    //        ICryptoTransform d = GetCryptoTransform(csp, false);
-    //        byte [] output = Convert.FromBase64String(encrypted);
-    //        byte [] decryptedOutput = d.TransformFinalBlock(output, 0, output.Length);
-    //        string decypted = Encoding.UTF8.GetString(decryptedOutput);
-    //        return decypted;
-    //    }
-    //}
-
-
     public string EncryptAndEncode(string raw) {
         AesCryptoServiceProvider csp = new AesCryptoServiceProvider();
         using (csp) {

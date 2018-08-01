@@ -2,6 +2,7 @@ var class_database_object =
 [
     [ "DatabaseObject", "class_database_object.html#ab16b4327b02ffedcd1b003cea9d949a1", null ],
     [ "DatabaseObject", "class_database_object.html#a75d3e8a876c6899bd01b866e35475ed2", null ],
+    [ "ClearDocuments", "class_database_object.html#af9c4789dea0a14e5a2f914758d3bc54e", null ],
     [ "GetAllDocuments", "class_database_object.html#ad3010e55b2e75d0863e168fed1e279c5", null ],
     [ "GetAllDocumentsAndFiles", "class_database_object.html#a72239fa2b2a549665e45cdd340cd70a0", null ],
     [ "GetAllDocumentsAndFilesByFormula", "class_database_object.html#ac478ff9264805edc8569d510916c4c00", null ],

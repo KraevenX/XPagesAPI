@@ -6,41 +6,6 @@
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>DocumentObject _Document</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>bool _isInitialized</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>string _Name</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>string _URL</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>long _Size</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
                         <para>string strSize</para>
                     </listitem>
                 </itemizedlist>
@@ -56,62 +21,6 @@
                 <itemizedlist>
                     <listitem>
                         <para>string strDateModified</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>string _Application</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>string _Creator</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>DateTime _DateCreated</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>DateTime _DateModified</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>string _FieldName</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>string _Extension</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>string _Other</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>string _SoftClass</para>
                     </listitem>
                 </itemizedlist>
             </para>
@@ -221,6 +130,9 @@ Initialize the file object, parses the initialization string into their respecti
                     </listitem>
                 </itemizedlist>
             </para>
+        </section>
+        <section>
+            <title></title>
             <para>
                 <itemizedlist>
                     <listitem>
@@ -245,7 +157,7 @@ if(fObj!=null&#32;&amp;amp;&amp;amp;&#32;fObj.Initialize(initializationString)){
 &#32;&#32;&#32;&#32;&#32;//&#32;your&#32;code&#32;here...&#32;
 }
 </computeroutput></literallayout> </para>
-                <para>Definition at line 15 of file FileObject.cs</para>
+                <para>Definition at line 14 of file FileObject.cs</para>
                 <para>The Documentation for this struct was generated from the following file: </para>
                 <para><itemizedlist><listitem><para>FileObject.cs</para></listitem></itemizedlist></para>
         </simplesect>

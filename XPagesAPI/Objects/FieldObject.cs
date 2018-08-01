@@ -3,58 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 
 /// <summary>
-/// An object representing a Domino item
+/// An object representing a Notes Item (domino document field)
 /// </summary>
 public class FieldObject {
-
-    #region Variables
-
-    private string _Name = "";
-    private object _Value = null;
-    private string _Type = "";
-
-    #endregion
 
     #region Properties
 
     /// <summary>
     /// Name of the field
     /// </summary>
-    public string Name {
-        get {
-            return _Name;
-        }
-
-        protected internal set {
-            _Name = value;
-        }
-    }
+    public string Name { get; protected internal set; } = "";
 
     /// <summary>
     /// Value of the field
     /// </summary>
-    public object Value {
-        get {
-            return _Value;
-        }
-
-        protected internal set {
-            _Value = value;
-        }
-    }
+    public object Value { get; protected internal set; } = null;
 
     /// <summary>
     /// Type of the field
     /// </summary>
-    public string Type {
-        get {
-            return _Type;
-        }
-
-        protected internal set {
-            _Type = value;
-        }
-    }
+    public string Type { get; protected internal set; } = "";
 
     #endregion
 
@@ -64,8 +32,8 @@ public class FieldObject {
     /// Field Constructor 
     /// </summary>
     /// <param name="name"></param>
-    public FieldObject(string name) {
-        _Name = name;
+    internal FieldObject(string name) {
+        Name = name;
     }
 
     #endregion
@@ -76,26 +44,26 @@ public class FieldObject {
     /// Method to get the value of the field, by converting it to the provided type
     /// </summary>
     /// <returns></returns>
-    public object getValue() {
+    public object GetValue() {
 
         try {
             // return converted value
-            if (_Type == "String") {
-                return (String) _Value;
-            } else if (_Type == "Number") {
-                return (double) _Value;
-            } else if (_Type == "Date") {
-                return (DateTime) _Value;
-            } else if (_Type == "List") {
+            if (Type == "String") {
+                return (String) Value;
+            } else if (Type == "Number") {
+                return (double) Value;
+            } else if (Type == "Date") {
+                return (DateTime) Value;
+            } else if (Type == "List") {
                 List<string> list = null;
-                list = _Value.ToString().Split(';').ToList<string>();
+                list = Value.ToString().Split(';').ToList<string>();
                 return list;
             } else {
-                return _Value;
+                return Value;
             }
         } catch (Exception ex) {
 
-            Connector.ReturnMessages.Add("Unable to get the value of the field : " + _Name);
+            Connector.ReturnMessages.Add("Unable to get the value of the field : " + Name);
             Connector.ReturnMessages.Add(Common.GetErrorInfo(ex));
             Connector.hasError = true;
             return null;
@@ -112,9 +80,9 @@ public class FieldObject {
     public string GetValueAsString() {
         try {
 
-            return (string) _Value;
+            return (string) Value;
         } catch(Exception ex) {
-            Connector.ReturnMessages.Add("Unable to get field : " + _Name + " as string");
+            Connector.ReturnMessages.Add("Unable to get field : " + Name + " as string");
             Connector.ReturnMessages.Add(Common.GetErrorInfo(ex));
             Connector.hasError = true;
             return "";
@@ -129,9 +97,9 @@ public class FieldObject {
     public double GetValueAsDouble() {
         try {
 
-            return (double) _Value;
+            return (double) Value;
         } catch(Exception ex) {
-            Connector.ReturnMessages.Add("Unable to get field : " + _Name + " as double");
+            Connector.ReturnMessages.Add("Unable to get field : " + Name + " as double");
             Connector.ReturnMessages.Add(Common.GetErrorInfo(ex));
             Connector.hasError = true;
             return 0;
@@ -145,9 +113,9 @@ public class FieldObject {
     /// <returns></returns>
     public DateTime GetValueAsDate() {
         try {
-            return (DateTime) _Value;
+            return (DateTime) Value;
         } catch (Exception ex) {
-            Connector.ReturnMessages.Add("Unable to get field : " + _Name + " as date");
+            Connector.ReturnMessages.Add("Unable to get field : " + Name + " as date");
             Connector.ReturnMessages.Add(Common.GetErrorInfo(ex));
             Connector.hasError = true;
             return new DateTime(0);
@@ -162,10 +130,10 @@ public class FieldObject {
     public List<string> GetValueAsList() {
         try {
             List<string> list = null;
-            list = _Value.ToString().Split(';').ToList<string>();
+            list = Value.ToString().Split(';').ToList<string>();
             return list;
         } catch (Exception ex) {
-            Connector.ReturnMessages.Add("Unable to get field : " + _Name + " as list");
+            Connector.ReturnMessages.Add("Unable to get field : " + Name + " as list");
             Connector.ReturnMessages.Add(Common.GetErrorInfo(ex));
             Connector.hasError = true;
             return null;

@@ -18,144 +18,57 @@ using System.Collections.Generic;
 public class DatabaseObject
 {
 
-
-    #region Variables
-
-    private SessionObject _Session;
-
-    private bool _isInitialized = false;
-
-    private string _FilePath = "";
-    private string _ReplicationID = "";
-    private string _ServerName = "";
-    private string _Title = "";
-    private string _Template = "";
-    private string _Size = "";
-    private string _Url = "";
-    private Dictionary<String, DocumentObject> _Documents = null;
-
-
-    #endregion
-
     #region Properties
 
     /// <summary>
     /// Reference to the session object that retrieve this database object
     /// </summary>
-    public SessionObject Session {
-        get {
-            return _Session;
-        }
-    }
+    public SessionObject Session { get; }
 
     /// <summary>
     /// Indicates is the DatabaseObject has been initialized
     /// </summary>
-    public bool IsInitialized {
-        get {
-            return _isInitialized;
-        }
-    }
+    public bool IsInitialized { get; private set; } = false;
 
     /// <summary>
     /// Database FilePath
     /// </summary>
-    public string FilePath {
-        get {
-            return _FilePath;
-        }
-        protected internal set {
-            _FilePath = value;
-        }
-    }
+    public string FilePath { get; protected internal set; } = "";
 
     /// <summary>
     /// Database ReplicationID
     /// </summary>
-    public string ReplicationID {
-        get {
-            return _ReplicationID;
-        }
-        protected internal set {
-            _ReplicationID = value;
-        }
-    }
+    public string ReplicationID { get; protected internal set; } = "";
 
     /// <summary>
     /// Database ServerName
     /// </summary>
-    public string ServerName {
-        get {
-            return _ServerName;
-        }
-        protected internal set {
-            _ServerName = value;
-        }
-    }
+    public string ServerName { get; protected internal set; } = "";
 
     /// <summary>
     /// Database Title
     /// </summary>
-    public string Title {
-        get {
-            return _Title;
-        }
-        protected internal set {
-            _Title = value;
-        }
-    }
+    public string Title { get; protected internal set; } = "";
 
     /// <summary>
     /// Database Template name
     /// </summary>
-    public string Template {
-        get {
-            return _Template;
-        }
-
-        protected internal set {
-            _Template = value;
-        }
-    }
+    public string Template { get; protected internal set; } = "";
 
     /// <summary>
     /// Database size (bytes, Kb, Mb, Gb, Tb)
     /// </summary>
-    public string Size {
-        get {
-            return _Size;
-        }
-
-          protected internal  set {
-            _Size = value;
-        }
-    }
+    public string Size { get; protected internal set; } = "";
 
     /// <summary>
     /// Database URL
     /// </summary>
-    public string Url {
-        get {
-            return _Url;
-        }
-
-        protected internal set {
-            _Url = value;
-        }
-    }
+    public string Url { get; protected internal set; } = "";
 
     /// <summary>
     /// Collection of retrieved DocumentObjects stored in a dictionary with key universalID of the document
     /// </summary>
-    public Dictionary<string, DocumentObject> Documents {
-        get {
-            return _Documents;
-        }
-
-        protected internal set {
-            _Documents = value;
-        }
-    }
+    public Dictionary<string, DocumentObject> Documents { get; protected internal set; } = null;
 
     #endregion
 
@@ -168,9 +81,9 @@ public class DatabaseObject
     /// <param name="server">The server name abbreviated (ANTLN-TEST/ANTWERPEN/JacobsEngineering) </param>
     /// <param name="session"></param>
     public DatabaseObject(string filePath, string server,  SessionObject session) {
-        _Session = session;
-        _FilePath = filePath;
-        _ServerName = server;
+        Session = session;
+        FilePath = filePath;
+        ServerName = server;
 
     }
 
@@ -180,10 +93,57 @@ public class DatabaseObject
     /// <param name="session"></param>
     /// <param name="replicationID"></param>
     /// <param name="server">The server name abbreviated (ANTLN-TEST/ANTWERPEN/JacobsEngineering) </param>
-    public DatabaseObject( SessionObject session, string replicationID, string server) {
-        _Session = session;
-        _ReplicationID = replicationID;
-        _ServerName = server;
+    public DatabaseObject(SessionObject session, string replicationID, string server) {
+        Session = session;
+        ReplicationID = replicationID;
+        ServerName = server;
+    }
+
+    /// <summary>
+    /// Database constructor method via session with initialization string.
+    /// This will not reset the Connector ReturnMessages
+    /// </summary>
+    /// <param name="session"></param>
+    /// <param name="initString"></param>
+    internal DatabaseObject(SessionObject session, string initString) {
+        
+        if(session != null && session.IsInitialized) {
+            Session = session;
+            if (!String.IsNullOrEmpty(initString)) {
+                // FilePath§ServerName§ReplicationID§Title§Template§Size§URL
+                if (initString.Contains("§")) {
+                    String[] ar = initString.Split(new[] { "§" }, StringSplitOptions.None);
+                    if (ar != null && ar.Length > 0 && ar.Length == 7) {
+                        FilePath = ar[0];
+                        ServerName = ar[1];
+                        ReplicationID = ar[2];
+                        Title = ar[3];
+                        Template = ar[4];
+                        Size = ar[5];
+                        Url = ar[6];
+                        IsInitialized = true;
+                    } else {
+                        Connector.ReturnMessages.Add("Unable to create database object - Initialization String Not Validated");
+                        IsInitialized = false;
+                        Connector.hasError = true;
+                    }
+                } else {
+                    Connector.ReturnMessages.Add("Unable to create database object - Initialization String Not Valid");
+                    IsInitialized = false;
+                    Connector.hasError = true;
+                }
+            } else {
+                Connector.ReturnMessages.Add("Unable to create database object - Initialization String Not Provided");
+                IsInitialized = false;
+                Connector.hasError = true;
+            }
+        } else {
+            // session is not valid
+            Connector.ReturnMessages.Add("Unable to create database object - Session Object Not Valid");
+            IsInitialized = false;
+            Connector.hasError = true;
+        }
+      
     }
 
     #endregion
@@ -198,22 +158,22 @@ public class DatabaseObject
 
         Connector.ResetReturn();
         // reset the list of docs
-        _Documents = null;
+        Documents = null;
 
         if (!ValidateInput()) {
-            _isInitialized = false;
+            IsInitialized = false;
             Connector.hasError = true;
             return false;   // throws exception
         }
 
         // make a connection to the webservice database - this will check the users authentication on that database
-        if (_Session.Connection.Request.ExecuteDatabaseRequest(_Session.WebServiceURL, _ServerName, _FilePath, _ReplicationID, this)) {
-            _isInitialized = true;
+        if (Session.Connection.Request.ExecuteDatabaseRequest(Session.WebServiceURL, ServerName, FilePath, ReplicationID, this)) {
+            IsInitialized = true;
             Connector.hasError = false;
             return true;
         } else {
             //error messages written to Connection.ReturnMessages by Connection.Request.ExecuteSessionRequest
-            _isInitialized = false;
+            IsInitialized = false;
             return false;
         }
                 
@@ -224,20 +184,20 @@ public class DatabaseObject
     /// </summary>
     /// <returns>Boolean</returns>
     private bool ValidateInput() {
-        if (_Session == null || !_Session.IsInitialized) {
+        if (Session == null || !Session.IsInitialized) {
             //can only be initialized if valid connector and connector is initialized and connected
             Connector.ReturnMessages.Add("DatabaseObject can not be validated : Session is not initialized! (DatabaseObject.ValidateInput)");
             return false;
         }
         //check server, dbrep or filepath
-        if (string.IsNullOrEmpty(_ServerName)) {
+        if (string.IsNullOrEmpty(ServerName)) {
             Connector.ReturnMessages.Add("DatabaseObject can not be validated : ServerName has not been provided! (DatabaseObject.ValidateInput)");
             return false;
         }
 
-        if (string.IsNullOrEmpty(_FilePath)) {
+        if (string.IsNullOrEmpty(FilePath)) {
             //we must have a rep id
-            if (string.IsNullOrEmpty(_ReplicationID)) {
+            if (string.IsNullOrEmpty(ReplicationID)) {
                 Connector.ReturnMessages.Add("DatabaseObject can not be validated : FilePath/ReplicationID has not been provided! (DatabaseObject.ValidateInput)");
                 return false;
             }
@@ -255,7 +215,7 @@ public class DatabaseObject
     public DocumentObject GetDocument(string unid) {
         Connector.ResetReturn();
         DocumentObject docObj = null;
-        if (_isInitialized) {
+        if (IsInitialized) {
             docObj = new DocumentObject(this, unid);
             if  (docObj.Initialize()) {
                 return docObj;
@@ -278,7 +238,7 @@ public class DatabaseObject
     {
         Connector.ResetReturn();
         DocumentObject docObj = null;
-        if (_isInitialized)
+        if (IsInitialized)
         {
             docObj = new DocumentObject(this, unid);
             if (docObj.InitializeWithFiles())
@@ -305,7 +265,7 @@ public class DatabaseObject
     public DocumentObject GetDocumentByKey(string searchField, string searchValue) {
         Connector.ResetReturn();
         DocumentObject docObj = null;
-        if (_isInitialized) {
+        if (IsInitialized) {
             docObj = new DocumentObject(this, searchField,searchValue);
             if (docObj.Initialize()) {
                 return docObj;
@@ -330,7 +290,7 @@ public class DatabaseObject
     {
         Connector.ResetReturn();
         DocumentObject docObj = null;
-        if (_isInitialized)
+        if (IsInitialized)
         {
             docObj = new DocumentObject(this, searchField, searchValue);
             if (docObj.InitializeWithFiles())
@@ -356,7 +316,7 @@ public class DatabaseObject
     public DocumentObject GetDocumentByFormula(string formula) {
         Connector.ResetReturn();
         DocumentObject docObj = null;
-        if (_isInitialized) {
+        if (IsInitialized) {
             docObj = new DocumentObject(formula,this);
             if (docObj.Initialize()) {
                 return docObj;
@@ -380,7 +340,7 @@ public class DatabaseObject
     {
         Connector.ResetReturn();
         DocumentObject docObj = null;
-        if (_isInitialized)
+        if (IsInitialized)
         {
             docObj = new DocumentObject(formula, this);
             if (docObj.InitializeWithFiles())
@@ -403,8 +363,8 @@ public class DatabaseObject
     /// <returns>Boolean</returns>
     public bool GetAllDocuments() {
         Connector.ResetReturn();
-        if (_isInitialized) {
-            if (_Session.Connection.Request.ExecuteAllDocumentsRequest(_Session.WebServiceURL, null, null, null, null, this)) {
+        if (IsInitialized) {
+            if (Session.Connection.Request.ExecuteAllDocumentsRequest(Session.WebServiceURL, null, null, null, null, this)) {
                 return true;
             } else {
                 return false;
@@ -423,9 +383,9 @@ public class DatabaseObject
     public bool GetAllDocumentsAndFiles()
     {
         Connector.ResetReturn();
-        if (_isInitialized)
+        if (IsInitialized)
         {
-            if (_Session.Connection.Request.ExecuteAllDocumentsFilesRequest(_Session.WebServiceURL, null, null, null, null, this))
+            if (Session.Connection.Request.ExecuteAllDocumentsFilesRequest(Session.WebServiceURL, null, null, null, null, this))
             {
                 return true;
             }
@@ -446,8 +406,8 @@ public class DatabaseObject
     /// <returns>Boolean</returns>
     public bool GetAllDocumentsByFormula(string formula) {
         Connector.ResetReturn();
-        if (_isInitialized) {
-            if (_Session.Connection.Request.ExecuteAllDocumentsRequest(_Session.WebServiceURL, null, null, formula, null, this)) {
+        if (IsInitialized) {
+            if (Session.Connection.Request.ExecuteAllDocumentsRequest(Session.WebServiceURL, null, null, formula, null, this)) {
                 return true;
             } else {
                 return false;
@@ -467,9 +427,9 @@ public class DatabaseObject
     public bool GetAllDocumentsAndFilesByFormula(string formula)
     {
         Connector.ResetReturn();
-        if (_isInitialized)
+        if (IsInitialized)
         {
-            if (_Session.Connection.Request.ExecuteAllDocumentsFilesRequest(_Session.WebServiceURL, null, null, formula, null, this))
+            if (Session.Connection.Request.ExecuteAllDocumentsFilesRequest(Session.WebServiceURL, null, null, formula, null, this))
             {
                 return true;
             }
@@ -491,8 +451,8 @@ public class DatabaseObject
     /// <returns>Boolean</returns>
     public bool GetAllDocumentsByUnids(string unids) {
         Connector.ResetReturn();
-        if (_isInitialized) {
-            if (_Session.Connection.Request.ExecuteAllDocumentsRequest(_Session.WebServiceURL, null, null, null, unids, this)) {
+        if (IsInitialized) {
+            if (Session.Connection.Request.ExecuteAllDocumentsRequest(Session.WebServiceURL, null, null, null, unids, this)) {
                 return true;
             } else {
                 return false;
@@ -513,9 +473,9 @@ public class DatabaseObject
     public bool GetAllDocumentsAndFilesByUnids(string unids)
     {
         Connector.ResetReturn();
-        if (_isInitialized)
+        if (IsInitialized)
         {
-            if (_Session.Connection.Request.ExecuteAllDocumentsFilesRequest(_Session.WebServiceURL, null, null, null, unids, this))
+            if (Session.Connection.Request.ExecuteAllDocumentsFilesRequest(Session.WebServiceURL, null, null, null, unids, this))
             {
                 return true;
             }
@@ -536,10 +496,10 @@ public class DatabaseObject
     /// <returns>Boolean</returns>
     public bool GetAllDocumentsByUnids(IList listUnids) {
         Connector.ResetReturn();
-        if (_isInitialized) {
+        if (IsInitialized) {
             string unids = Common.GetListAsString(listUnids, ";");
 
-            if (_Session.Connection.Request.ExecuteAllDocumentsRequest(_Session.WebServiceURL, null, null, null, unids, this)) {
+            if (Session.Connection.Request.ExecuteAllDocumentsRequest(Session.WebServiceURL, null, null, null, unids, this)) {
                 return true;
             } else {
                 return false;
@@ -559,11 +519,11 @@ public class DatabaseObject
     public bool GetAllDocumentsAndFilesByUnids(IList listUnids)
     {
         Connector.ResetReturn();
-        if (_isInitialized)
+        if (IsInitialized)
         {
             string unids = Common.GetListAsString(listUnids, ";");
 
-            if (_Session.Connection.Request.ExecuteAllDocumentsFilesRequest(_Session.WebServiceURL, null, null, null, unids, this))
+            if (Session.Connection.Request.ExecuteAllDocumentsFilesRequest(Session.WebServiceURL, null, null, null, unids, this))
             {
                 return true;
             }
@@ -585,8 +545,8 @@ public class DatabaseObject
     /// <returns>Boolean</returns>
     public bool GetAllDocumentsByKey(string searchField, string searchValue) {
         Connector.ResetReturn();
-        if (_isInitialized) {
-            if (_Session.Connection.Request.ExecuteAllDocumentsRequest(_Session.WebServiceURL,searchField,searchValue,null, null, this)) {
+        if (IsInitialized) {
+            if (Session.Connection.Request.ExecuteAllDocumentsRequest(Session.WebServiceURL,searchField,searchValue,null, null, this)) {
                 return true;
             } else {
                 return false;
@@ -608,9 +568,9 @@ public class DatabaseObject
     public bool GetAllDocumentsAndFilesByKey(string searchField, string searchValue)
     {
         Connector.ResetReturn();
-        if (_isInitialized)
+        if (IsInitialized)
         {
-            if (_Session.Connection.Request.ExecuteAllDocumentsFilesRequest(_Session.WebServiceURL, searchField, searchValue, null, null, this))
+            if (Session.Connection.Request.ExecuteAllDocumentsFilesRequest(Session.WebServiceURL, searchField, searchValue, null, null, this))
             {
                 return true;
             }
@@ -631,8 +591,8 @@ public class DatabaseObject
     /// <returns>Boolean</returns>
     public bool LoadDocumentFields(string listFields) {
         Connector.ResetReturn();
-        if (_isInitialized && _Documents != null && _Documents.Count > 0) {
-            if (_Session.Connection.Request.ExecuteAllFieldsRequest(_Session.WebServiceURL,this,listFields)) {
+        if (IsInitialized && Documents != null && Documents.Count > 0) {
+            if (Session.Connection.Request.ExecuteAllFieldsRequest(Session.WebServiceURL,this,listFields)) {
                 return true;
             } else {
                 return false;
@@ -649,9 +609,9 @@ public class DatabaseObject
     /// <returns>Boolean</returns>
     public bool LoadDocumentFields(IList listFields) {
         Connector.ResetReturn();
-        if (_isInitialized && _Documents != null && _Documents.Count > 0) {
+        if (IsInitialized && Documents != null && Documents.Count > 0) {
             string fields = Common.GetListAsString(listFields, ";");
-            if (_Session.Connection.Request.ExecuteAllFieldsRequest(_Session.WebServiceURL, this, fields)) {
+            if (Session.Connection.Request.ExecuteAllFieldsRequest(Session.WebServiceURL, this, fields)) {
                 return true;
             } else {
                 return false;
@@ -668,9 +628,9 @@ public class DatabaseObject
     public bool LoadDocumentFiles()
     {
         Connector.ResetReturn();
-        if (_isInitialized && _Documents != null && _Documents.Count > 0)
+        if (IsInitialized && Documents != null && Documents.Count > 0)
         {
-            if (_Session.Connection.Request.ExecuteAllFilesRequest(_Session.WebServiceURL, this))
+            if (Session.Connection.Request.ExecuteAllFilesRequest(Session.WebServiceURL, this))
             {
                 return true;
             }
@@ -680,6 +640,13 @@ public class DatabaseObject
             }
         }
         return true;
+    }
+
+    /// <summary>
+    /// Remove all retrieved documents from the 'Documents' property
+    /// </summary>
+    public void ClearDocuments() {
+        Documents = null;
     }
 
     #endregion

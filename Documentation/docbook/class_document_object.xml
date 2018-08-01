@@ -6,48 +6,6 @@
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>DatabaseObject _Database</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>bool _isInitialized</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>string _DateCreated</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>string _DateModified</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>string _UniversalID</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>string _NoteID</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
                         <para>string _SearchField</para>
                     </listitem>
                 </itemizedlist>
@@ -55,49 +13,14 @@
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>string _SearchValue</para>
+                        <para>readonly string _SearchValue</para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>string _Formula</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>string _Size</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>string _Url</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>string _Form</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>SortedDictionary&lt; String, FieldObject &gt; _Fields</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>SortedDictionary&lt; String, FileObject &gt; _Files</para>
+                        <para>readonly string _Formula</para>
                     </listitem>
                 </itemizedlist>
             </para>
@@ -285,6 +208,28 @@ Exports the content of the property &apos;Fields&apos; to a file</emphasis></par
                         <para>bool <link linkend="class_document_object_1a8753abc5a871bf84fc910e6a99936b2b">ExportFiles</link> (
 string filePath, bool overwriteExistingFile)<para><emphasis>&lt;summary&gt;
 Exports the files from the XPages URL for all FileObjects in the Files property</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_document_object_1a28ab6562c34b5cf44ce7ab738d1730e1">ClearFields</link> (
+)<para><emphasis>&lt;summary&gt;
+Remove all the retrieved field objects from this document
+&lt;/summary&gt;</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_document_object_1a4caebae7aec2a9375112739d2cf29f29">ClearFiles</link> (
+)<para><emphasis>&lt;summary&gt;
+Remove all the retrieved file objects from this document
+&lt;/summary&gt;</emphasis></para>
 </para>
                     </listitem>
                 </itemizedlist>
@@ -594,6 +539,18 @@ Exports the files from the XPages URL for all FileObjects in the Files property<
 </formalpara>
 </para>
 
+            </section>
+            <section xml:id="class_document_object_1a28ab6562c34b5cf44ce7ab738d1730e1">
+                <title>void DocumentObject.ClearFields ()</title> <emphasis>&lt;summary&gt;
+Remove all the retrieved field objects from this document
+&lt;/summary&gt;</emphasis>
+                
+            </section>
+            <section xml:id="class_document_object_1a4caebae7aec2a9375112739d2cf29f29">
+                <title>void DocumentObject.ClearFiles ()</title> <emphasis>&lt;summary&gt;
+Remove all the retrieved file objects from this document
+&lt;/summary&gt;</emphasis>
+                
             </section>
             <section xml:id="class_document_object_1a69c37390e7b77736c86315287674cc61">
                 <title>bool DocumentObject.ValidateInput ()</title> <emphasis></emphasis>

@@ -79,6 +79,14 @@ string WebServiceURL, string ServerName, string dbFilePath, string dbReplication
             <para>
                 <itemizedlist>
                     <listitem>
+                        <para>bool <link linkend="class_requestor_1a3c5127c71b3ce578dc859667845c8da2">ExecuteAllDatabasesRequest</link> (
+string WebServiceURL, string ServerName, <link linkend="class_session_object">SessionObject</link> sObj)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
                         <para>bool <link linkend="class_requestor_1abce2f7be8f91b5da4de34c0075bd2c6a">ExecuteDocumentRequest</link> (
 string WebServiceURL, string Unid, string searchField, string searchValue, string formula, <link linkend="class_database_object">DatabaseObject</link> dbObj, <link linkend="class_document_object">DocumentObject</link> docObj)</para>
                     </listitem>
@@ -162,6 +170,10 @@ string FileURL, string LocalFilePath)</para>
             </section>
             <section xml:id="class_requestor_1a9e460007336e77741a15815272988292">
                 <title>bool Requestor.ExecuteDatabaseRequest (string WebServiceURL, string ServerName, string dbFilePath, string dbReplicationId, DatabaseObject dbObj)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_requestor_1a3c5127c71b3ce578dc859667845c8da2">
+                <title>bool Requestor.ExecuteAllDatabasesRequest (string WebServiceURL, string ServerName, SessionObject sObj)</title> <emphasis></emphasis>
                 
             </section>
             <section xml:id="class_requestor_1abce2f7be8f91b5da4de34c0075bd2c6a">

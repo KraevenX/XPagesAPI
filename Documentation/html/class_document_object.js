@@ -3,6 +3,8 @@ var class_document_object =
     [ "DocumentObject", "class_document_object.html#a46c89e7d40b15a91542a5482b2d8a084", null ],
     [ "DocumentObject", "class_document_object.html#a7c98c6485f7395697561500a8ff42d79", null ],
     [ "DocumentObject", "class_document_object.html#a4eb6c7aaa4774d1d5dbf5bf17dff23d9", null ],
+    [ "ClearFields", "class_document_object.html#a28ab6562c34b5cf44ce7ab738d1730e1", null ],
+    [ "ClearFiles", "class_document_object.html#a4caebae7aec2a9375112739d2cf29f29", null ],
     [ "ExportFields", "class_document_object.html#a1a763aa01710b370634f46c89b7d2d8e", null ],
     [ "ExportFiles", "class_document_object.html#a8753abc5a871bf84fc910e6a99936b2b", null ],
     [ "GetAllFields", "class_document_object.html#a5e070c7c0a45ac06422ee992c841e780", null ],

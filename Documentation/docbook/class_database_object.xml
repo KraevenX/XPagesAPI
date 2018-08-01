@@ -2,79 +2,6 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_database_object">
 <title>DatabaseObject class Reference</title>
         <section>
-            <title>Private Attributes</title>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>SessionObject _Session</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>bool _isInitialized</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>string _FilePath</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>string _ReplicationID</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>string _ServerName</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>string _Title</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>string _Template</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>string _Size</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>string _Url</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>Dictionary&lt; String, DocumentObject &gt; _Documents</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-        </section>
-        <section>
             <title></title>
             <para>
                 <itemizedlist>
@@ -370,6 +297,32 @@ Retrieve file objects for all documents in the property &apos;Documents&apos;</e
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_database_object_1af9c4789dea0a14e5a2f914758d3bc54e">ClearDocuments</link> (
+)<para><emphasis>&lt;summary&gt;
+Remove all retrieved documents from the &apos;Documents&apos; property
+&lt;/summary&gt;</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_database_object_1a71980017a5aa2512e6b21a13a10d5223">DatabaseObject</link> (
+<link linkend="class_session_object">SessionObject</link> session, string initString)<para><emphasis>&lt;summary&gt;
+Database constructor method via session with initialization string.
+This will not reset the Connector ReturnMessages
+&lt;/summary&gt;</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </section>
         <section>
             <title></title>
@@ -402,9 +355,6 @@ if(dbObj!=null&#32;&amp;amp;&amp;amp;&#32;dbObj.Initialize()){
                 <para>The Documentation for this struct was generated from the following file: </para>
                 <para><itemizedlist><listitem><para>DatabaseObject.cs</para></listitem></itemizedlist></para>
         </simplesect>
-        <section>
-            <title>Member Data Documentation</title>
-        </section>
             <section xml:id="class_database_object_1ab16b4327b02ffedcd1b003cea9d949a1">
                 <title>DatabaseObject.DatabaseObject (string filePath, string server, SessionObject session)</title> <emphasis>&lt;summary&gt;
 Database constructor method
@@ -1076,6 +1026,42 @@ Retrieve file objects for all documents in the property &apos;Documents&apos;</e
 <para>Boolean</para>
 </formalpara>
 </para>
+
+            </section>
+            <section xml:id="class_database_object_1af9c4789dea0a14e5a2f914758d3bc54e">
+                <title>void DatabaseObject.ClearDocuments ()</title> <emphasis>&lt;summary&gt;
+Remove all retrieved documents from the &apos;Documents&apos; property
+&lt;/summary&gt;</emphasis>
+                
+            </section>
+            <section xml:id="class_database_object_1a71980017a5aa2512e6b21a13a10d5223">
+                <title>DatabaseObject.DatabaseObject (SessionObject session, string initString)</title> <emphasis>&lt;summary&gt;
+Database constructor method via session with initialization string.
+This will not reset the Connector ReturnMessages
+&lt;/summary&gt;</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>session</entry>
+                                <entry></entry>
+                            </row>
+                            <row>
+                                <entry>initString</entry>
+                                <entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
 
             </section>
             <section xml:id="class_database_object_1a591d685be9079e68a59473b4a1e2c687">

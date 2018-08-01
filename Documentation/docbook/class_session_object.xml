@@ -2,31 +2,13 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_session_object">
 <title>SessionObject class Reference</title>
         <section>
-            <title>Private Attributes</title>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>Connector _Connection</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>string _WebServiceURL</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>bool _isInitialized</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-        </section>
-        <section>
             <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
             <para>
                 <itemizedlist>
                     <listitem>
@@ -83,9 +65,31 @@ Method to retrieve a specific database by filepath on the given server
             <para>
                 <itemizedlist>
                     <listitem>
+                        <para>bool <link linkend="class_session_object_1ae1dc8cf45f981c629d0f77fbff04ae66">GetAllDatabases</link> (
+string serverName)<para><emphasis>&lt;summary&gt;
+Method to retrieve all databases from a given server
+&lt;/summary&gt;</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
                         <para><link linkend="class_database_object">DatabaseObject</link> <link linkend="class_session_object_1ae53bad1d2fe161060ae409024b3e0de4">GetDatabaseByID</link> (
 string replicationID, string serverName)<para><emphasis>&lt;summary&gt;
 Method to retrieve a specific database by replicationID on the given server
+&lt;/summary&gt;</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_session_object_1a7a13510147dc63acd76f3015b6f8e409">ClearDatabases</link> (
+)<para><emphasis>&lt;summary&gt;
+Remove all retrieved databases from the &apos;Databases&apos; property
 &lt;/summary&gt;</emphasis></para>
 </para>
                     </listitem>
@@ -124,9 +128,6 @@ if(sObj!=null&#32;&amp;amp;&amp;amp;&#32;sObj.Initialize()){
                 <para>The Documentation for this struct was generated from the following file: </para>
                 <para><itemizedlist><listitem><para>SessionObject.cs</para></listitem></itemizedlist></para>
         </simplesect>
-        <section>
-            <title>Member Data Documentation</title>
-        </section>
             <section xml:id="class_session_object_1a173822a7aec467880195d79a1bc9f520">
                 <title>SessionObject.SessionObject (Connector ConnectorObject, string DominoWebServiceURL)</title> <emphasis>&lt;summary&gt;
 SessionObject Constructor method
@@ -202,6 +203,35 @@ Method to retrieve a specific database by filepath on the given server
 </para>
 
             </section>
+            <section xml:id="class_session_object_1ae1dc8cf45f981c629d0f77fbff04ae66">
+                <title>bool SessionObject.GetAllDatabases (string serverName)</title> <emphasis>&lt;summary&gt;
+Method to retrieve all databases from a given server
+&lt;/summary&gt;</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>serverName</entry>
+                                <entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para><link linkend="class_database_object">DatabaseObject</link></para>
+</formalpara>
+</para>
+
+            </section>
             <section xml:id="class_session_object_1ae53bad1d2fe161060ae409024b3e0de4">
                 <title>DatabaseObject SessionObject.GetDatabaseByID (string replicationID, string serverName)</title> <emphasis>&lt;summary&gt;
 Method to retrieve a specific database by replicationID on the given server
@@ -234,6 +264,12 @@ Method to retrieve a specific database by replicationID on the given server
 </formalpara>
 </para>
 
+            </section>
+            <section xml:id="class_session_object_1a7a13510147dc63acd76f3015b6f8e409">
+                <title>void SessionObject.ClearDatabases ()</title> <emphasis>&lt;summary&gt;
+Remove all retrieved databases from the &apos;Databases&apos; property
+&lt;/summary&gt;</emphasis>
+                
             </section>
             <section xml:id="class_session_object_1a0356749b1ead2f55edac9aee2414702a">
                 <title>bool SessionObject.ValidateInput ()</title> <emphasis>&lt;summary&gt;

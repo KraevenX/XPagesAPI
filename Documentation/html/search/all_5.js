@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['getalldatabases',['GetAllDatabases',['../class_session_object.html#ae1dc8cf45f981c629d0f77fbff04ae66',1,'SessionObject']]],
   ['getalldocuments',['GetAllDocuments',['../class_database_object.html#ad3010e55b2e75d0863e168fed1e279c5',1,'DatabaseObject']]],
   ['getalldocumentsandfiles',['GetAllDocumentsAndFiles',['../class_database_object.html#a72239fa2b2a549665e45cdd340cd70a0',1,'DatabaseObject']]],
   ['getalldocumentsandfilesbyformula',['GetAllDocumentsAndFilesByFormula',['../class_database_object.html#ac478ff9264805edc8569d510916c4c00',1,'DatabaseObject']]],
@@ -20,7 +21,7 @@ var searchData=
   ['getfields',['GetFields',['../class_document_object.html#a8883fec3b5b1b6e2e43f4b5ca4092684',1,'DocumentObject.GetFields(string fields)'],['../class_document_object.html#a8e38704e02850b2480d29d184ae2c0e0',1,'DocumentObject.GetFields(IList fields)']]],
   ['getfiles',['GetFiles',['../class_document_object.html#a2c8aee9450e8fdd1e84e8ff26d0950a1',1,'DocumentObject']]],
   ['getsession',['GetSession',['../class_connector.html#a5d089c1639f255966f00b2b05add0993',1,'Connector']]],
-  ['getvalue',['getValue',['../class_field_object.html#a8d962cda039f78f485232bd2764176c4',1,'FieldObject']]],
+  ['getvalue',['GetValue',['../class_field_object.html#a65571e8154ad1333252cb9a8ab5f2c45',1,'FieldObject']]],
   ['getvalueasdate',['GetValueAsDate',['../class_field_object.html#a797ebc6615a86bafd9bd17f09562f2ee',1,'FieldObject']]],
   ['getvalueasdouble',['GetValueAsDouble',['../class_field_object.html#aafe2b7d3e7d414345d85e19dddce3c47',1,'FieldObject']]],
   ['getvalueaslist',['GetValueAsList',['../class_field_object.html#a635d7598cbf7bbc29821cb1c012de964',1,'FieldObject']]],

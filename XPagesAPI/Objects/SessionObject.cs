@@ -1,4 +1,4 @@
-// XML comment has badly formed XML
+using System.Collections.Generic;
 /// <summary>
 /// An object representing a Domino Session
 /// </summary>
@@ -15,13 +15,6 @@
 /// </example>
 public class SessionObject
 {
-    #region Variables
-
-    private Connector _Connection;
-    private string _WebServiceURL;
-    private bool _isInitialized = false;
-
-    #endregion
 
     #region Constructors
 
@@ -31,8 +24,8 @@ public class SessionObject
     /// <param name="ConnectorObject"></param>
     /// <param name="DominoWebServiceURL"></param>
     public SessionObject(Connector ConnectorObject, string DominoWebServiceURL) {
-        _Connection = ConnectorObject;
-        _WebServiceURL = DominoWebServiceURL;
+        Connection = ConnectorObject;
+        WebServiceURL = DominoWebServiceURL;
     }
 
 
@@ -43,31 +36,23 @@ public class SessionObject
     /// <summary>
     /// Indicates if the session has been intialized
     /// </summary>
-    public bool IsInitialized {
-        get {
-            return _isInitialized;
-        }
-    }
+    public bool IsInitialized { get; private set; } = false;
 
     /// <summary>
     /// XPages Rest Serive URL
     /// Example: http://antln-test.europe.jacobs.com/projects/jpix/Interface.nsf/xpJPIService.xsp/JPIService
     /// </summary>
-    public string WebServiceURL {
-        get {
-            return _WebServiceURL;
-        }
-    }
+    public string WebServiceURL { get; }
 
     /// <summary>
     /// Reference to Connector
     /// </summary>
-    public Connector Connection {
-        get {
-            return _Connection;
-        }
-    }
+    public Connector Connection { get; }
 
+    /// <summary>
+    ///  Collection of retrieved DatabaseObjects stored in a dictionary with key filepath of the database
+    /// </summary>
+    public SortedDictionary<string, DatabaseObject> Databases { get; protected internal set; }
     #endregion
 
     #region Methods
@@ -83,7 +68,7 @@ public class SessionObject
 
         if (!ValidateInput()) {
             //message written trigger exception
-            _isInitialized = false;
+            IsInitialized = false;
             Connector.hasError = true;
             return false;
         }
@@ -92,11 +77,11 @@ public class SessionObject
         if (Connection.Request.ExecuteSessionRequest(WebServiceURL)) {
             Connector.ReturnMessages.Add("Session Initialized : " + WebServiceURL + " (SessionObject.Initialize)");
             Connector.hasError = false;
-            _isInitialized = true;
+            IsInitialized = true;
             return true;
         } else {
             //error messages written to Connection.ReturnMessages by Connection.Request.ExecuteSessionRequest
-            _isInitialized = false;
+            IsInitialized = false;
             return false;
         }
 
@@ -108,8 +93,8 @@ public class SessionObject
     /// <returns>Boolean</returns>
     private bool ValidateInput() {
 
-        if (_Connection != null && _WebServiceURL != null) {
-            if (_Connection.isInitialized & _Connection.isConnected) {
+        if (Connection != null && WebServiceURL != null) {
+            if (Connection.isInitialized & Connection.isConnected) {
                 //only when we already have a connection (user is authenticated)
                 if (WebServiceURL.ToLower().Contains("http://") || WebServiceURL.ToLower().Contains("https://")) {
                     //Connector.hasError = False
@@ -140,13 +125,38 @@ public class SessionObject
     /// <returns>DatabaseObject</returns>
     public DatabaseObject GetDatabase(string filePath, string serverName) {
         DatabaseObject dbObj = null;
-        if (_isInitialized) {
+        if (IsInitialized) {
             dbObj = new DatabaseObject(filePath, serverName, this);
             if (dbObj.Initialize()) {
+                if (Databases == null) {
+                    Databases = new SortedDictionary<string, DatabaseObject>();
+                }
+                if (Databases.ContainsKey(dbObj.FilePath)) {
+                    //remove this and replace we newly retrieved database
+                    Databases.Remove(dbObj.FilePath);
+                }
+                Databases.Add(dbObj.FilePath, dbObj);
                 return dbObj;
             }
         }
         return dbObj;
+    }
+
+    /// <summary>
+    /// Method to retrieve all databases from a given server
+    /// </summary>
+    /// <param name="serverName"></param>
+    /// <returns>DatabaseObject</returns>
+    public bool GetAllDatabases(string serverName) {
+        Connector.ResetReturn();
+        if (IsInitialized) {
+            if (this.Connection.Request.ExecuteAllDatabasesRequest(this.WebServiceURL, serverName, this)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        return false;
     }
 
     /// <summary>
@@ -157,13 +167,28 @@ public class SessionObject
     /// <returns></returns>
     public DatabaseObject GetDatabaseByID(string replicationID, string serverName) {
         DatabaseObject dbObj = null;
-        if (_isInitialized) {
+        if (IsInitialized) {
             dbObj = new DatabaseObject(this, replicationID, serverName);
             if (dbObj.Initialize()) {
+                if(Databases == null) {
+                    Databases = new SortedDictionary<string, DatabaseObject>();
+                }
+                if (Databases.ContainsKey(dbObj.FilePath)) {
+                    //remove this and replace we newly retrieved database
+                    Databases.Remove(dbObj.FilePath);
+                }
+                Databases.Add(dbObj.FilePath, dbObj);
                 return dbObj;
             }
         }
         return dbObj;
+    }
+
+    /// <summary>
+    /// Remove all retrieved databases from the 'Databases' property
+    /// </summary>
+    public void ClearDatabases() {
+        Databases = null;
     }
 
     #endregion

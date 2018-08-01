@@ -1,28 +1,5 @@
 var searchData=
 [
-  ['getalldocuments',['GetAllDocuments',['../class_database_object.html#ad3010e55b2e75d0863e168fed1e279c5',1,'DatabaseObject']]],
-  ['getalldocumentsandfiles',['GetAllDocumentsAndFiles',['../class_database_object.html#a72239fa2b2a549665e45cdd340cd70a0',1,'DatabaseObject']]],
-  ['getalldocumentsandfilesbyformula',['GetAllDocumentsAndFilesByFormula',['../class_database_object.html#ac478ff9264805edc8569d510916c4c00',1,'DatabaseObject']]],
-  ['getalldocumentsandfilesbykey',['GetAllDocumentsAndFilesByKey',['../class_database_object.html#a6c2fb05fb6972d74d5bea67e323985fb',1,'DatabaseObject']]],
-  ['getalldocumentsandfilesbyunids',['GetAllDocumentsAndFilesByUnids',['../class_database_object.html#a9332713c924ab14195fe51bf0b8d35d1',1,'DatabaseObject.GetAllDocumentsAndFilesByUnids(string unids)'],['../class_database_object.html#aa69262a50977a28a2decf400d1eedd20',1,'DatabaseObject.GetAllDocumentsAndFilesByUnids(IList listUnids)']]],
-  ['getalldocumentsbyformula',['GetAllDocumentsByFormula',['../class_database_object.html#a6bfb480373a7e2bdbeaa67e4e3303a3a',1,'DatabaseObject']]],
-  ['getalldocumentsbykey',['GetAllDocumentsByKey',['../class_database_object.html#ad4834e7677cd0418969a657eed99653c',1,'DatabaseObject']]],
-  ['getalldocumentsbyunids',['GetAllDocumentsByUnids',['../class_database_object.html#a4d8a7d73614f53a04fe8eb79bef2f614',1,'DatabaseObject.GetAllDocumentsByUnids(string unids)'],['../class_database_object.html#a92e80ea30e83cddf47f29d0f502b81c5',1,'DatabaseObject.GetAllDocumentsByUnids(IList listUnids)']]],
-  ['getallfields',['GetAllFields',['../class_document_object.html#a5e070c7c0a45ac06422ee992c841e780',1,'DocumentObject']]],
-  ['getdatabase',['GetDatabase',['../class_session_object.html#aa4871ea2dac4215bef0274a2bd71ae72',1,'SessionObject']]],
-  ['getdatabasebyid',['GetDatabaseByID',['../class_session_object.html#ae53bad1d2fe161060ae409024b3e0de4',1,'SessionObject']]],
-  ['getdocument',['GetDocument',['../class_database_object.html#a9435cc20fe3a92747e509011b7726aff',1,'DatabaseObject']]],
-  ['getdocumentandfiles',['GetDocumentAndFiles',['../class_database_object.html#a9be31ba852e56a107e93f7d925f8a0c3',1,'DatabaseObject']]],
-  ['getdocumentandfilesbyformula',['GetDocumentAndFilesByFormula',['../class_database_object.html#a1d35f51baee4be6adb69a954efe5b4bf',1,'DatabaseObject']]],
-  ['getdocumentandfilesbykey',['GetDocumentAndFilesByKey',['../class_database_object.html#a30968034c65328e44ddb0fdac8ab1435',1,'DatabaseObject']]],
-  ['getdocumentbyformula',['GetDocumentByFormula',['../class_database_object.html#ae5477aedfcd0d54b21017faa1389bc71',1,'DatabaseObject']]],
-  ['getdocumentbykey',['GetDocumentByKey',['../class_database_object.html#a57bfc77d2754236cbcf6ac30a90da529',1,'DatabaseObject']]],
-  ['getfields',['GetFields',['../class_document_object.html#a8883fec3b5b1b6e2e43f4b5ca4092684',1,'DocumentObject.GetFields(string fields)'],['../class_document_object.html#a8e38704e02850b2480d29d184ae2c0e0',1,'DocumentObject.GetFields(IList fields)']]],
-  ['getfiles',['GetFiles',['../class_document_object.html#a2c8aee9450e8fdd1e84e8ff26d0950a1',1,'DocumentObject']]],
-  ['getsession',['GetSession',['../class_connector.html#a5d089c1639f255966f00b2b05add0993',1,'Connector']]],
-  ['getvalue',['getValue',['../class_field_object.html#a8d962cda039f78f485232bd2764176c4',1,'FieldObject']]],
-  ['getvalueasdate',['GetValueAsDate',['../class_field_object.html#a797ebc6615a86bafd9bd17f09562f2ee',1,'FieldObject']]],
-  ['getvalueasdouble',['GetValueAsDouble',['../class_field_object.html#aafe2b7d3e7d414345d85e19dddce3c47',1,'FieldObject']]],
-  ['getvalueaslist',['GetValueAsList',['../class_field_object.html#a635d7598cbf7bbc29821cb1c012de964',1,'FieldObject']]],
-  ['getvalueasstring',['GetValueAsString',['../class_field_object.html#ad223b04d429de4b2c57838ffb41d124b',1,'FieldObject']]]
+  ['initialize',['Initialize',['../class_connector.html#a376c1ed70efd33d0bb18bb36e5cf076e',1,'Connector.Initialize()'],['../class_database_object.html#a7de43a21bd287deec537cffec343f41d',1,'DatabaseObject.Initialize()'],['../class_document_object.html#af4298d6cfbb9ea60643d9995309b73f1',1,'DocumentObject.Initialize()'],['../class_session_object.html#af3b9c9d56d98c848061952ed935f815b',1,'SessionObject.Initialize()']]],
+  ['initializewithfiles',['InitializeWithFiles',['../class_document_object.html#a83f0e855adc5fb7afd02d2e34767f5c8',1,'DocumentObject']]]
 ];

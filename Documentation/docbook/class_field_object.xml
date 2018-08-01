@@ -2,30 +2,6 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_field_object">
 <title>FieldObject class Reference</title>
         <section>
-            <title>Private Attributes</title>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>string _Name</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>object _Value</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>string _Type</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-        </section>
-        <section>
             <title></title>
             <para>
                 <itemizedlist>
@@ -59,10 +35,13 @@ Field Constructor
                     </listitem>
                 </itemizedlist>
             </para>
+        </section>
+        <section>
+            <title></title>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>object <link linkend="class_field_object_1a8d962cda039f78f485232bd2764176c4">getValue</link> (
+                        <para>object <link linkend="class_field_object_1a65571e8154ad1333252cb9a8ab5f2c45">GetValue</link> (
 )<para><emphasis>&lt;summary&gt;
 Method to get the value of the field, by converting it to the provided type
 &lt;/summary&gt;</emphasis></para>
@@ -117,7 +96,7 @@ Get the value of the field as list of strings
         </section>
     <simplesect>
 
-<para>An object representing a Domino item </para>
+<para>An object representing a Notes Item (domino document field) </para>
     </simplesect>
         <simplesect>
             <title>Detailed Description</title>
@@ -125,9 +104,6 @@ Get the value of the field as list of strings
                 <para>The Documentation for this struct was generated from the following file: </para>
                 <para><itemizedlist><listitem><para>FieldObject.cs</para></listitem></itemizedlist></para>
         </simplesect>
-        <section>
-            <title>Member Data Documentation</title>
-        </section>
             <section xml:id="class_field_object_1a87d8d3f1a36d94dec64e8e467950074b">
                 <title>FieldObject.FieldObject (string name)</title> <emphasis>&lt;summary&gt;
 Field Constructor 
@@ -153,8 +129,8 @@ Field Constructor
                 </para>
 
             </section>
-            <section xml:id="class_field_object_1a8d962cda039f78f485232bd2764176c4">
-                <title>object FieldObject.getValue ()</title> <emphasis>&lt;summary&gt;
+            <section xml:id="class_field_object_1a65571e8154ad1333252cb9a8ab5f2c45">
+                <title>object FieldObject.GetValue ()</title> <emphasis>&lt;summary&gt;
 Method to get the value of the field, by converting it to the provided type
 &lt;/summary&gt;</emphasis>
                 

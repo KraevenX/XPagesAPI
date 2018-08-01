@@ -3,89 +3,6 @@
   <compounddef id="class_document_object" kind="class" language="C#" prot="public">
     <compoundname>DocumentObject</compoundname>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="class_document_object_1a7a9107e3718e78ec9857fbb1fbbef821" prot="private" static="no" mutable="no">
-        <type><ref refid="class_database_object" kindref="compound">DatabaseObject</ref></type>
-        <definition>DatabaseObject DocumentObject._Database</definition>
-        <argsstring></argsstring>
-        <name>_Database</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="29" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="29" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_document_object_1af242ee84f45c76369417a84391fa1439" prot="private" static="no" mutable="no">
-        <type>bool</type>
-        <definition>bool DocumentObject._isInitialized</definition>
-        <argsstring></argsstring>
-        <name>_isInitialized</name>
-        <initializer>= false</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="31" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="31" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_document_object_1a806b3290bfec2a9eb711408a6c069ebc" prot="private" static="no" mutable="no">
-        <type>string</type>
-        <definition>string DocumentObject._DateCreated</definition>
-        <argsstring></argsstring>
-        <name>_DateCreated</name>
-        <initializer>= &quot;&quot;</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="32" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="32" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_document_object_1a88efdd20ebba2aea5b0be7bac37557d5" prot="private" static="no" mutable="no">
-        <type>string</type>
-        <definition>string DocumentObject._DateModified</definition>
-        <argsstring></argsstring>
-        <name>_DateModified</name>
-        <initializer>= &quot;&quot;</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="33" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="33" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_document_object_1abe737cd57acd3950c7249b8a1e6300cf" prot="private" static="no" mutable="no">
-        <type>string</type>
-        <definition>string DocumentObject._UniversalID</definition>
-        <argsstring></argsstring>
-        <name>_UniversalID</name>
-        <initializer>= &quot;&quot;</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="34" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="34" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_document_object_1a2421fc68c7e4a42bf31df38711d63107" prot="private" static="no" mutable="no">
-        <type>string</type>
-        <definition>string DocumentObject._NoteID</definition>
-        <argsstring></argsstring>
-        <name>_NoteID</name>
-        <initializer>= &quot;&quot;</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="35" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="35" bodyend="-1"/>
-      </memberdef>
       <memberdef kind="variable" id="class_document_object_1a8407f6933472bbf6c1d4d3e4beb4f1cd" prot="private" static="no" mutable="no">
         <type>string</type>
         <definition>string DocumentObject._SearchField</definition>
@@ -98,11 +15,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="36" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="36" bodyend="-1"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="29" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="29" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_document_object_1a3e6c5344b7fda31cf3456fb14af7667d" prot="private" static="no" mutable="no">
-        <type>string</type>
-        <definition>string DocumentObject._SearchValue</definition>
+      <memberdef kind="variable" id="class_document_object_1a1183db6ad4cbbd0f5de2b48c128d039b" prot="private" static="no" mutable="no">
+        <type>readonly string</type>
+        <definition>readonly string DocumentObject._SearchValue</definition>
         <argsstring></argsstring>
         <name>_SearchValue</name>
         <initializer>= &quot;&quot;</initializer>
@@ -112,11 +29,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="37" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="37" bodyend="-1"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="30" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="30" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_document_object_1a2027ec5a67e68e811e9b7a72bf00b6bd" prot="private" static="no" mutable="no">
-        <type>string</type>
-        <definition>string DocumentObject._Formula</definition>
+      <memberdef kind="variable" id="class_document_object_1a07276cf3fbe1cf857be0aedf6bb48396" prot="private" static="no" mutable="no">
+        <type>readonly string</type>
+        <definition>readonly string DocumentObject._Formula</definition>
         <argsstring></argsstring>
         <name>_Formula</name>
         <initializer>= &quot;&quot;</initializer>
@@ -126,77 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="38" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="38" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_document_object_1af4eae32f9d7f740db5232be90f5a18a0" prot="private" static="no" mutable="no">
-        <type>string</type>
-        <definition>string DocumentObject._Size</definition>
-        <argsstring></argsstring>
-        <name>_Size</name>
-        <initializer>= &quot;&quot;</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="39" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="39" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_document_object_1a727a6ecff108fa38ee54cfa8d89d66cd" prot="private" static="no" mutable="no">
-        <type>string</type>
-        <definition>string DocumentObject._Url</definition>
-        <argsstring></argsstring>
-        <name>_Url</name>
-        <initializer>= &quot;&quot;</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="40" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="40" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_document_object_1a38bd268ccc77c3e74828d5e3a2d7b73c" prot="private" static="no" mutable="no">
-        <type>string</type>
-        <definition>string DocumentObject._Form</definition>
-        <argsstring></argsstring>
-        <name>_Form</name>
-        <initializer>= &quot;&quot;</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="41" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="41" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_document_object_1a6f8b5a77924b2a1fa585c86393532ee5" prot="private" static="no" mutable="no">
-        <type>SortedDictionary&lt; String, <ref refid="class_field_object" kindref="compound">FieldObject</ref> &gt;</type>
-        <definition>SortedDictionary&lt;String, FieldObject&gt; DocumentObject._Fields</definition>
-        <argsstring></argsstring>
-        <name>_Fields</name>
-        <initializer>= null</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="42" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="42" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_document_object_1a77cdaf09cbe7e9f61a5e59c8023d2671" prot="private" static="no" mutable="no">
-        <type>SortedDictionary&lt; String, <ref refid="class_file_object" kindref="compound">FileObject</ref> &gt;</type>
-        <definition>SortedDictionary&lt;String, FileObject&gt; DocumentObject._Files</definition>
-        <argsstring></argsstring>
-        <name>_Files</name>
-        <initializer>= null</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="43" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="43" bodyend="-1"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="31" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="31" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="property">
@@ -211,143 +58,170 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="52" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="52" bodyend="56"/>
-        <referencedby refid="class_file_object_1ae21fac09c5ab2f9fac96a3f084cb9ddc" compoundref="_file_object_8cs" startline="230" endline="243">FileObject.ExtractFile</referencedby>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="40" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="40" bodyend="40"/>
+        <referencedby refid="class_document_object_1a46c89e7d40b15a91542a5482b2d8a084" compoundref="_document_object_8cs" startline="101" endline="105">DocumentObject</referencedby>
+        <referencedby refid="class_file_object_1ae21fac09c5ab2f9fac96a3f084cb9ddc" compoundref="_file_object_8cs" startline="181" endline="191">FileObject.ExtractFile</referencedby>
+        <referencedby refid="class_document_object_1a5e070c7c0a45ac06422ee992c841e780" compoundref="_document_object_8cs" startline="316" endline="333">GetAllFields</referencedby>
+        <referencedby refid="class_document_object_1a8883fec3b5b1b6e2e43f4b5ca4092684" compoundref="_document_object_8cs" startline="240" endline="258">GetFields</referencedby>
+        <referencedby refid="class_document_object_1a2c8aee9450e8fdd1e84e8ff26d0950a1" compoundref="_document_object_8cs" startline="265" endline="282">GetFiles</referencedby>
+        <referencedby refid="class_document_object_1af4298d6cfbb9ea60643d9995309b73f1" compoundref="_document_object_8cs" startline="168" endline="198">Initialize</referencedby>
+        <referencedby refid="class_document_object_1a83f0e855adc5fb7afd02d2e34767f5c8" compoundref="_document_object_8cs" startline="205" endline="231">InitializeWithFiles</referencedby>
       </memberdef>
       <memberdef kind="property" id="class_document_object_1a3b2075b73f38d05091b69decc6ce7992" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>bool</type>
         <definition>bool DocumentObject.IsInitialized</definition>
         <argsstring></argsstring>
         <name>IsInitialized</name>
+        <initializer>= false</initializer>
         <briefdescription>
 <para>Indicates that the document isInitialized </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="61" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="61" bodyend="68"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="45" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="45" bodyend="45"/>
+        <referencedby refid="class_document_object_1a5e070c7c0a45ac06422ee992c841e780" compoundref="_document_object_8cs" startline="316" endline="333">GetAllFields</referencedby>
+        <referencedby refid="class_document_object_1a8883fec3b5b1b6e2e43f4b5ca4092684" compoundref="_document_object_8cs" startline="240" endline="258">GetFields</referencedby>
+        <referencedby refid="class_document_object_1a2c8aee9450e8fdd1e84e8ff26d0950a1" compoundref="_document_object_8cs" startline="265" endline="282">GetFiles</referencedby>
+        <referencedby refid="class_document_object_1af4298d6cfbb9ea60643d9995309b73f1" compoundref="_document_object_8cs" startline="168" endline="198">Initialize</referencedby>
+        <referencedby refid="class_document_object_1a83f0e855adc5fb7afd02d2e34767f5c8" compoundref="_document_object_8cs" startline="205" endline="231">InitializeWithFiles</referencedby>
       </memberdef>
       <memberdef kind="property" id="class_document_object_1abdc1a6dfc1bb2261b523cf94468448b9" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>string</type>
         <definition>string DocumentObject.Size</definition>
         <argsstring></argsstring>
         <name>Size</name>
+        <initializer>= &quot;&quot;</initializer>
         <briefdescription>
 <para>Document Size </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="73" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="73" bodyend="81"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="50" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="50" bodyend="50"/>
       </memberdef>
       <memberdef kind="property" id="class_document_object_1ac86b730cf8931b2221af577d32ca2f31" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>string</type>
         <definition>string DocumentObject.Url</definition>
         <argsstring></argsstring>
         <name>Url</name>
+        <initializer>= &quot;&quot;</initializer>
         <briefdescription>
 <para>Document URL </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="86" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="86" bodyend="94"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="55" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="55" bodyend="55"/>
       </memberdef>
       <memberdef kind="property" id="class_document_object_1ad3444a6c018474405064070fa9a94afe" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>string</type>
         <definition>string DocumentObject.Form</definition>
         <argsstring></argsstring>
         <name>Form</name>
+        <initializer>= &quot;&quot;</initializer>
         <briefdescription>
 <para>Documents Form (if any) </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="99" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="99" bodyend="107"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="60" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="60" bodyend="60"/>
       </memberdef>
       <memberdef kind="property" id="class_document_object_1ac447461e3dc7f8258695f902ef0758a7" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>string</type>
         <definition>string DocumentObject.NoteID</definition>
         <argsstring></argsstring>
         <name>NoteID</name>
+        <initializer>= &quot;&quot;</initializer>
         <briefdescription>
 <para>Document NoteId </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="112" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="112" bodyend="120"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="65" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="65" bodyend="65"/>
       </memberdef>
       <memberdef kind="property" id="class_document_object_1ae203b8a3e40b6c428145d2335b71245c" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>SortedDictionary&lt; string, <ref refid="class_field_object" kindref="compound">FieldObject</ref> &gt;</type>
         <definition>SortedDictionary&lt;string, FieldObject&gt; DocumentObject.Fields</definition>
         <argsstring></argsstring>
         <name>Fields</name>
+        <initializer>= null</initializer>
         <briefdescription>
 <para>Collection of retrieved FieldObjects stored in a dictionary with key name of the field </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="125" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="125" bodyend="133"/>
-        <referencedby refid="class_document_object_1a1a763aa01710b370634f46c89b7d2d8e" compoundref="_document_object_8cs" startline="435" endline="488">ExportFields</referencedby>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="70" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="70" bodyend="70"/>
+        <referencedby refid="class_document_object_1a28ab6562c34b5cf44ce7ab738d1730e1" compoundref="_document_object_8cs" startline="469" endline="471">ClearFields</referencedby>
+        <referencedby refid="class_document_object_1a1a763aa01710b370634f46c89b7d2d8e" compoundref="_document_object_8cs" startline="342" endline="395">ExportFields</referencedby>
+        <referencedby refid="class_document_object_1af4298d6cfbb9ea60643d9995309b73f1" compoundref="_document_object_8cs" startline="168" endline="198">Initialize</referencedby>
       </memberdef>
       <memberdef kind="property" id="class_document_object_1afe6bcf5175607f91dde768491f23a0a4" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>SortedDictionary&lt; string, <ref refid="class_file_object" kindref="compound">FileObject</ref> &gt;</type>
         <definition>SortedDictionary&lt;string, FileObject&gt; DocumentObject.Files</definition>
         <argsstring></argsstring>
         <name>Files</name>
+        <initializer>= null</initializer>
         <briefdescription>
 <para>Collection of retrieved FileObjects stored in a dictionary with key filename of the attachment </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="138" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="138" bodyend="146"/>
-        <referencedby refid="class_document_object_1a8753abc5a871bf84fc910e6a99936b2b" compoundref="_document_object_8cs" startline="497" endline="557">ExportFiles</referencedby>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="75" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="75" bodyend="75"/>
+        <referencedby refid="class_document_object_1a4caebae7aec2a9375112739d2cf29f29" compoundref="_document_object_8cs" startline="476" endline="478">ClearFiles</referencedby>
+        <referencedby refid="class_document_object_1a8753abc5a871bf84fc910e6a99936b2b" compoundref="_document_object_8cs" startline="404" endline="464">ExportFiles</referencedby>
+        <referencedby refid="class_document_object_1af4298d6cfbb9ea60643d9995309b73f1" compoundref="_document_object_8cs" startline="168" endline="198">Initialize</referencedby>
       </memberdef>
       <memberdef kind="property" id="class_document_object_1a8b96d04632a2802e7cc5466ca5cee8cf" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>string</type>
         <definition>string DocumentObject.UniversalID</definition>
         <argsstring></argsstring>
         <name>UniversalID</name>
+        <initializer>= &quot;&quot;</initializer>
         <briefdescription>
 <para>Document UniversalID </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="151" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="151" bodyend="159"/>
-        <referencedby refid="class_document_object_1a46c89e7d40b15a91542a5482b2d8a084" compoundref="_document_object_8cs" startline="196" endline="200">DocumentObject</referencedby>
-        <referencedby refid="class_document_object_1a1a763aa01710b370634f46c89b7d2d8e" compoundref="_document_object_8cs" startline="435" endline="488">ExportFields</referencedby>
-        <referencedby refid="class_document_object_1a8753abc5a871bf84fc910e6a99936b2b" compoundref="_document_object_8cs" startline="497" endline="557">ExportFiles</referencedby>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="80" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="80" bodyend="80"/>
+        <referencedby refid="class_document_object_1a46c89e7d40b15a91542a5482b2d8a084" compoundref="_document_object_8cs" startline="101" endline="105">DocumentObject</referencedby>
+        <referencedby refid="class_document_object_1a1a763aa01710b370634f46c89b7d2d8e" compoundref="_document_object_8cs" startline="342" endline="395">ExportFields</referencedby>
+        <referencedby refid="class_document_object_1a8753abc5a871bf84fc910e6a99936b2b" compoundref="_document_object_8cs" startline="404" endline="464">ExportFiles</referencedby>
+        <referencedby refid="class_document_object_1af4298d6cfbb9ea60643d9995309b73f1" compoundref="_document_object_8cs" startline="168" endline="198">Initialize</referencedby>
+        <referencedby refid="class_document_object_1a83f0e855adc5fb7afd02d2e34767f5c8" compoundref="_document_object_8cs" startline="205" endline="231">InitializeWithFiles</referencedby>
       </memberdef>
       <memberdef kind="property" id="class_document_object_1a819cb8baad094f6e5990c54ec1eee8b0" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>string</type>
         <definition>string DocumentObject.DateCreated</definition>
         <argsstring></argsstring>
         <name>DateCreated</name>
+        <initializer>= &quot;&quot;</initializer>
         <briefdescription>
 <para>Document Creation Date </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="164" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="164" bodyend="172"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="85" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="85" bodyend="85"/>
       </memberdef>
       <memberdef kind="property" id="class_document_object_1a87ba1b3ac1b74b104972c25b245c504b" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>string</type>
         <definition>string DocumentObject.DateModified</definition>
         <argsstring></argsstring>
         <name>DateModified</name>
+        <initializer>= &quot;&quot;</initializer>
         <briefdescription>
 <para>Document Modification Date </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="177" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="177" bodyend="185"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="90" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="90" bodyend="90"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -385,8 +259,9 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="196" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="196" bodyend="200"/>
-        <references refid="class_document_object_1a8b96d04632a2802e7cc5466ca5cee8cf" compoundref="_document_object_8cs" startline="151" endline="159">UniversalID</references>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="101" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="101" bodyend="105"/>
+        <references refid="class_document_object_1a69d5338c9835f748490323d2950eed09" compoundref="_document_object_8cs" startline="40" endline="40">Database</references>
+        <references refid="class_document_object_1a8b96d04632a2802e7cc5466ca5cee8cf" compoundref="_document_object_8cs" startline="80" endline="80">UniversalID</references>
       </memberdef>
       <memberdef kind="function" id="class_document_object_1a7c98c6485f7395697561500a8ff42d79" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -433,7 +308,8 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="208" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="208" bodyend="213"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="113" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="113" bodyend="118"/>
+        <references refid="class_document_object_1a69d5338c9835f748490323d2950eed09" compoundref="_document_object_8cs" startline="40" endline="40">Database</references>
       </memberdef>
       <memberdef kind="function" id="class_document_object_1a4eb6c7aaa4774d1d5dbf5bf17dff23d9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -469,7 +345,8 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="220" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="220" bodyend="224"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="125" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="125" bodyend="129"/>
+        <references refid="class_document_object_1a69d5338c9835f748490323d2950eed09" compoundref="_document_object_8cs" startline="40" endline="40">Database</references>
       </memberdef>
       <memberdef kind="function" id="class_document_object_1af4298d6cfbb9ea60643d9995309b73f1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -483,14 +360,19 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="263" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="263" bodyend="289"/>
-        <references refid="class_session_object_1a014bdbf705a753540e19bfb53030c55c" compoundref="_session_object_8cs" startline="65" endline="69">SessionObject.Connection</references>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="168" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="168" bodyend="198"/>
+        <references refid="class_session_object_1a014bdbf705a753540e19bfb53030c55c" compoundref="_session_object_8cs" startline="50" endline="50">SessionObject.Connection</references>
+        <references refid="class_document_object_1a69d5338c9835f748490323d2950eed09" compoundref="_document_object_8cs" startline="40" endline="40">Database</references>
+        <references refid="class_document_object_1ae203b8a3e40b6c428145d2335b71245c" compoundref="_document_object_8cs" startline="70" endline="70">Fields</references>
+        <references refid="class_document_object_1afe6bcf5175607f91dde768491f23a0a4" compoundref="_document_object_8cs" startline="75" endline="75">Files</references>
         <references refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" compoundref="_connector_8cs" startline="101" endline="113">Connector.hasError</references>
-        <references refid="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07" compoundref="_database_object_8cs" startline="45" endline="49">DatabaseObject.Session</references>
-        <references refid="class_session_object_1a697c071c812fbf7ad1166b896fb44c16" compoundref="_session_object_8cs" startline="56" endline="60">SessionObject.WebServiceURL</references>
-        <referencedby refid="class_database_object_1a9435cc20fe3a92747e509011b7726aff" compoundref="_database_object_8cs" startline="255" endline="267">DatabaseObject.GetDocument</referencedby>
-        <referencedby refid="class_database_object_1ae5477aedfcd0d54b21017faa1389bc71" compoundref="_database_object_8cs" startline="356" endline="368">DatabaseObject.GetDocumentByFormula</referencedby>
-        <referencedby refid="class_database_object_1a57bfc77d2754236cbcf6ac30a90da529" compoundref="_database_object_8cs" startline="305" endline="317">DatabaseObject.GetDocumentByKey</referencedby>
+        <references refid="class_document_object_1a3b2075b73f38d05091b69decc6ce7992" compoundref="_document_object_8cs" startline="45" endline="45">IsInitialized</references>
+        <references refid="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07" compoundref="_database_object_8cs" startline="26" endline="26">DatabaseObject.Session</references>
+        <references refid="class_document_object_1a8b96d04632a2802e7cc5466ca5cee8cf" compoundref="_document_object_8cs" startline="80" endline="80">UniversalID</references>
+        <references refid="class_session_object_1a697c071c812fbf7ad1166b896fb44c16" compoundref="_session_object_8cs" startline="45" endline="45">SessionObject.WebServiceURL</references>
+        <referencedby refid="class_database_object_1a9435cc20fe3a92747e509011b7726aff" compoundref="_database_object_8cs" startline="215" endline="227">DatabaseObject.GetDocument</referencedby>
+        <referencedby refid="class_database_object_1ae5477aedfcd0d54b21017faa1389bc71" compoundref="_database_object_8cs" startline="316" endline="328">DatabaseObject.GetDocumentByFormula</referencedby>
+        <referencedby refid="class_database_object_1a57bfc77d2754236cbcf6ac30a90da529" compoundref="_database_object_8cs" startline="265" endline="277">DatabaseObject.GetDocumentByKey</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_document_object_1a83f0e855adc5fb7afd02d2e34767f5c8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -504,14 +386,17 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="296" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="296" bodyend="322"/>
-        <references refid="class_session_object_1a014bdbf705a753540e19bfb53030c55c" compoundref="_session_object_8cs" startline="65" endline="69">SessionObject.Connection</references>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="205" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="205" bodyend="231"/>
+        <references refid="class_session_object_1a014bdbf705a753540e19bfb53030c55c" compoundref="_session_object_8cs" startline="50" endline="50">SessionObject.Connection</references>
+        <references refid="class_document_object_1a69d5338c9835f748490323d2950eed09" compoundref="_document_object_8cs" startline="40" endline="40">Database</references>
         <references refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" compoundref="_connector_8cs" startline="101" endline="113">Connector.hasError</references>
-        <references refid="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07" compoundref="_database_object_8cs" startline="45" endline="49">DatabaseObject.Session</references>
-        <references refid="class_session_object_1a697c071c812fbf7ad1166b896fb44c16" compoundref="_session_object_8cs" startline="56" endline="60">SessionObject.WebServiceURL</references>
-        <referencedby refid="class_database_object_1a9be31ba852e56a107e93f7d925f8a0c3" compoundref="_database_object_8cs" startline="277" endline="294">DatabaseObject.GetDocumentAndFiles</referencedby>
-        <referencedby refid="class_database_object_1a1d35f51baee4be6adb69a954efe5b4bf" compoundref="_database_object_8cs" startline="379" endline="396">DatabaseObject.GetDocumentAndFilesByFormula</referencedby>
-        <referencedby refid="class_database_object_1a30968034c65328e44ddb0fdac8ab1435" compoundref="_database_object_8cs" startline="329" endline="346">DatabaseObject.GetDocumentAndFilesByKey</referencedby>
+        <references refid="class_document_object_1a3b2075b73f38d05091b69decc6ce7992" compoundref="_document_object_8cs" startline="45" endline="45">IsInitialized</references>
+        <references refid="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07" compoundref="_database_object_8cs" startline="26" endline="26">DatabaseObject.Session</references>
+        <references refid="class_document_object_1a8b96d04632a2802e7cc5466ca5cee8cf" compoundref="_document_object_8cs" startline="80" endline="80">UniversalID</references>
+        <references refid="class_session_object_1a697c071c812fbf7ad1166b896fb44c16" compoundref="_session_object_8cs" startline="45" endline="45">SessionObject.WebServiceURL</references>
+        <referencedby refid="class_database_object_1a9be31ba852e56a107e93f7d925f8a0c3" compoundref="_database_object_8cs" startline="237" endline="254">DatabaseObject.GetDocumentAndFiles</referencedby>
+        <referencedby refid="class_database_object_1a1d35f51baee4be6adb69a954efe5b4bf" compoundref="_database_object_8cs" startline="339" endline="356">DatabaseObject.GetDocumentAndFilesByFormula</referencedby>
+        <referencedby refid="class_database_object_1a30968034c65328e44ddb0fdac8ab1435" compoundref="_database_object_8cs" startline="289" endline="306">DatabaseObject.GetDocumentAndFilesByKey</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_document_object_1a8883fec3b5b1b6e2e43f4b5ca4092684" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -537,11 +422,13 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="331" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="331" bodyend="349"/>
-        <references refid="class_session_object_1a014bdbf705a753540e19bfb53030c55c" compoundref="_session_object_8cs" startline="65" endline="69">SessionObject.Connection</references>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="240" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="240" bodyend="258"/>
+        <references refid="class_session_object_1a014bdbf705a753540e19bfb53030c55c" compoundref="_session_object_8cs" startline="50" endline="50">SessionObject.Connection</references>
+        <references refid="class_document_object_1a69d5338c9835f748490323d2950eed09" compoundref="_document_object_8cs" startline="40" endline="40">Database</references>
         <references refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" compoundref="_connector_8cs" startline="101" endline="113">Connector.hasError</references>
-        <references refid="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07" compoundref="_database_object_8cs" startline="45" endline="49">DatabaseObject.Session</references>
-        <references refid="class_session_object_1a697c071c812fbf7ad1166b896fb44c16" compoundref="_session_object_8cs" startline="56" endline="60">SessionObject.WebServiceURL</references>
+        <references refid="class_document_object_1a3b2075b73f38d05091b69decc6ce7992" compoundref="_document_object_8cs" startline="45" endline="45">IsInitialized</references>
+        <references refid="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07" compoundref="_database_object_8cs" startline="26" endline="26">DatabaseObject.Session</references>
+        <references refid="class_session_object_1a697c071c812fbf7ad1166b896fb44c16" compoundref="_session_object_8cs" startline="45" endline="45">SessionObject.WebServiceURL</references>
       </memberdef>
       <memberdef kind="function" id="class_document_object_1a2c8aee9450e8fdd1e84e8ff26d0950a1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -555,11 +442,13 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="356" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="356" bodyend="373"/>
-        <references refid="class_session_object_1a014bdbf705a753540e19bfb53030c55c" compoundref="_session_object_8cs" startline="65" endline="69">SessionObject.Connection</references>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="265" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="265" bodyend="282"/>
+        <references refid="class_session_object_1a014bdbf705a753540e19bfb53030c55c" compoundref="_session_object_8cs" startline="50" endline="50">SessionObject.Connection</references>
+        <references refid="class_document_object_1a69d5338c9835f748490323d2950eed09" compoundref="_document_object_8cs" startline="40" endline="40">Database</references>
         <references refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" compoundref="_connector_8cs" startline="101" endline="113">Connector.hasError</references>
-        <references refid="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07" compoundref="_database_object_8cs" startline="45" endline="49">DatabaseObject.Session</references>
-        <references refid="class_session_object_1a697c071c812fbf7ad1166b896fb44c16" compoundref="_session_object_8cs" startline="56" endline="60">SessionObject.WebServiceURL</references>
+        <references refid="class_document_object_1a3b2075b73f38d05091b69decc6ce7992" compoundref="_document_object_8cs" startline="45" endline="45">IsInitialized</references>
+        <references refid="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07" compoundref="_database_object_8cs" startline="26" endline="26">DatabaseObject.Session</references>
+        <references refid="class_session_object_1a697c071c812fbf7ad1166b896fb44c16" compoundref="_session_object_8cs" startline="45" endline="45">SessionObject.WebServiceURL</references>
       </memberdef>
       <memberdef kind="function" id="class_document_object_1a8e38704e02850b2480d29d184ae2c0e0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -585,11 +474,13 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="381" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="381" bodyend="400"/>
-        <references refid="class_session_object_1a014bdbf705a753540e19bfb53030c55c" compoundref="_session_object_8cs" startline="65" endline="69">SessionObject.Connection</references>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="290" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="290" bodyend="309"/>
+        <references refid="class_session_object_1a014bdbf705a753540e19bfb53030c55c" compoundref="_session_object_8cs" startline="50" endline="50">SessionObject.Connection</references>
+        <references refid="class_document_object_1a69d5338c9835f748490323d2950eed09" compoundref="_document_object_8cs" startline="40" endline="40">Database</references>
         <references refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" compoundref="_connector_8cs" startline="101" endline="113">Connector.hasError</references>
-        <references refid="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07" compoundref="_database_object_8cs" startline="45" endline="49">DatabaseObject.Session</references>
-        <references refid="class_session_object_1a697c071c812fbf7ad1166b896fb44c16" compoundref="_session_object_8cs" startline="56" endline="60">SessionObject.WebServiceURL</references>
+        <references refid="class_document_object_1a3b2075b73f38d05091b69decc6ce7992" compoundref="_document_object_8cs" startline="45" endline="45">IsInitialized</references>
+        <references refid="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07" compoundref="_database_object_8cs" startline="26" endline="26">DatabaseObject.Session</references>
+        <references refid="class_session_object_1a697c071c812fbf7ad1166b896fb44c16" compoundref="_session_object_8cs" startline="45" endline="45">SessionObject.WebServiceURL</references>
       </memberdef>
       <memberdef kind="function" id="class_document_object_1a5e070c7c0a45ac06422ee992c841e780" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -603,11 +494,13 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="409" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="409" bodyend="426"/>
-        <references refid="class_session_object_1a014bdbf705a753540e19bfb53030c55c" compoundref="_session_object_8cs" startline="65" endline="69">SessionObject.Connection</references>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="316" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="316" bodyend="333"/>
+        <references refid="class_session_object_1a014bdbf705a753540e19bfb53030c55c" compoundref="_session_object_8cs" startline="50" endline="50">SessionObject.Connection</references>
+        <references refid="class_document_object_1a69d5338c9835f748490323d2950eed09" compoundref="_document_object_8cs" startline="40" endline="40">Database</references>
         <references refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" compoundref="_connector_8cs" startline="101" endline="113">Connector.hasError</references>
-        <references refid="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07" compoundref="_database_object_8cs" startline="45" endline="49">DatabaseObject.Session</references>
-        <references refid="class_session_object_1a697c071c812fbf7ad1166b896fb44c16" compoundref="_session_object_8cs" startline="56" endline="60">SessionObject.WebServiceURL</references>
+        <references refid="class_document_object_1a3b2075b73f38d05091b69decc6ce7992" compoundref="_document_object_8cs" startline="45" endline="45">IsInitialized</references>
+        <references refid="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07" compoundref="_database_object_8cs" startline="26" endline="26">DatabaseObject.Session</references>
+        <references refid="class_session_object_1a697c071c812fbf7ad1166b896fb44c16" compoundref="_session_object_8cs" startline="45" endline="45">SessionObject.WebServiceURL</references>
       </memberdef>
       <memberdef kind="function" id="class_document_object_1a1a763aa01710b370634f46c89b7d2d8e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -644,11 +537,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="435" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="435" bodyend="488"/>
-        <references refid="class_document_object_1ae203b8a3e40b6c428145d2335b71245c" compoundref="_document_object_8cs" startline="125" endline="133">Fields</references>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="342" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="342" bodyend="395"/>
+        <references refid="class_document_object_1ae203b8a3e40b6c428145d2335b71245c" compoundref="_document_object_8cs" startline="70" endline="70">Fields</references>
         <references refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" compoundref="_connector_8cs" startline="101" endline="113">Connector.hasError</references>
         <references refid="class_connector_1a1ed422674b344524fd77998dcf6a9ba6" compoundref="_connector_8cs" startline="119" endline="126">Connector.ReturnMessages</references>
-        <references refid="class_document_object_1a8b96d04632a2802e7cc5466ca5cee8cf" compoundref="_document_object_8cs" startline="151" endline="159">UniversalID</references>
+        <references refid="class_document_object_1a8b96d04632a2802e7cc5466ca5cee8cf" compoundref="_document_object_8cs" startline="80" endline="80">UniversalID</references>
       </memberdef>
       <memberdef kind="function" id="class_document_object_1a8753abc5a871bf84fc910e6a99936b2b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -685,13 +578,41 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="497" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="497" bodyend="557"/>
-        <references refid="class_file_object_1ae21fac09c5ab2f9fac96a3f084cb9ddc" compoundref="_file_object_8cs" startline="230" endline="243">FileObject.ExtractFile</references>
-        <references refid="class_document_object_1afe6bcf5175607f91dde768491f23a0a4" compoundref="_document_object_8cs" startline="138" endline="146">Files</references>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="404" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="404" bodyend="464"/>
+        <references refid="class_file_object_1ae21fac09c5ab2f9fac96a3f084cb9ddc" compoundref="_file_object_8cs" startline="181" endline="191">FileObject.ExtractFile</references>
+        <references refid="class_document_object_1afe6bcf5175607f91dde768491f23a0a4" compoundref="_document_object_8cs" startline="75" endline="75">Files</references>
         <references refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" compoundref="_connector_8cs" startline="101" endline="113">Connector.hasError</references>
-        <references refid="class_file_object_1a9d47aff166393cb47490da2661576d62" compoundref="_file_object_8cs" startline="55" endline="55">FileObject.Name</references>
+        <references refid="class_file_object_1a9d47aff166393cb47490da2661576d62" compoundref="_file_object_8cs" startline="33" endline="33">FileObject.Name</references>
         <references refid="class_connector_1a1ed422674b344524fd77998dcf6a9ba6" compoundref="_connector_8cs" startline="119" endline="126">Connector.ReturnMessages</references>
-        <references refid="class_document_object_1a8b96d04632a2802e7cc5466ca5cee8cf" compoundref="_document_object_8cs" startline="151" endline="159">UniversalID</references>
+        <references refid="class_document_object_1a8b96d04632a2802e7cc5466ca5cee8cf" compoundref="_document_object_8cs" startline="80" endline="80">UniversalID</references>
+      </memberdef>
+      <memberdef kind="function" id="class_document_object_1a28ab6562c34b5cf44ce7ab738d1730e1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void DocumentObject.ClearFields</definition>
+        <argsstring>()</argsstring>
+        <name>ClearFields</name>
+        <briefdescription>
+<para>Remove all the retrieved field objects from this document </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="469" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="469" bodyend="471"/>
+        <references refid="class_document_object_1ae203b8a3e40b6c428145d2335b71245c" compoundref="_document_object_8cs" startline="70" endline="70">Fields</references>
+      </memberdef>
+      <memberdef kind="function" id="class_document_object_1a4caebae7aec2a9375112739d2cf29f29" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void DocumentObject.ClearFiles</definition>
+        <argsstring>()</argsstring>
+        <name>ClearFiles</name>
+        <briefdescription>
+<para>Remove all the retrieved file objects from this document </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="476" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="476" bodyend="478"/>
+        <references refid="class_document_object_1afe6bcf5175607f91dde768491f23a0a4" compoundref="_document_object_8cs" startline="75" endline="75">Files</references>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -706,7 +627,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="230" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="230" bodyend="253"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="135" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="135" bodyend="158"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -720,22 +641,13 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>//<sp/>your<sp/>code<sp/>here...<sp/></highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting> </para>    </detaileddescription>
-    <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="25" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="24" bodyend="561"/>
+    <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" line="25" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs" bodystart="24" bodyend="482"/>
     <listofallmembers>
-      <member refid="class_document_object_1a7a9107e3718e78ec9857fbb1fbbef821" prot="private" virt="non-virtual"><scope>DocumentObject</scope><name>_Database</name></member>
-      <member refid="class_document_object_1a806b3290bfec2a9eb711408a6c069ebc" prot="private" virt="non-virtual"><scope>DocumentObject</scope><name>_DateCreated</name></member>
-      <member refid="class_document_object_1a88efdd20ebba2aea5b0be7bac37557d5" prot="private" virt="non-virtual"><scope>DocumentObject</scope><name>_DateModified</name></member>
-      <member refid="class_document_object_1a6f8b5a77924b2a1fa585c86393532ee5" prot="private" virt="non-virtual"><scope>DocumentObject</scope><name>_Fields</name></member>
-      <member refid="class_document_object_1a77cdaf09cbe7e9f61a5e59c8023d2671" prot="private" virt="non-virtual"><scope>DocumentObject</scope><name>_Files</name></member>
-      <member refid="class_document_object_1a38bd268ccc77c3e74828d5e3a2d7b73c" prot="private" virt="non-virtual"><scope>DocumentObject</scope><name>_Form</name></member>
-      <member refid="class_document_object_1a2027ec5a67e68e811e9b7a72bf00b6bd" prot="private" virt="non-virtual"><scope>DocumentObject</scope><name>_Formula</name></member>
-      <member refid="class_document_object_1af242ee84f45c76369417a84391fa1439" prot="private" virt="non-virtual"><scope>DocumentObject</scope><name>_isInitialized</name></member>
-      <member refid="class_document_object_1a2421fc68c7e4a42bf31df38711d63107" prot="private" virt="non-virtual"><scope>DocumentObject</scope><name>_NoteID</name></member>
+      <member refid="class_document_object_1a07276cf3fbe1cf857be0aedf6bb48396" prot="private" virt="non-virtual"><scope>DocumentObject</scope><name>_Formula</name></member>
       <member refid="class_document_object_1a8407f6933472bbf6c1d4d3e4beb4f1cd" prot="private" virt="non-virtual"><scope>DocumentObject</scope><name>_SearchField</name></member>
-      <member refid="class_document_object_1a3e6c5344b7fda31cf3456fb14af7667d" prot="private" virt="non-virtual"><scope>DocumentObject</scope><name>_SearchValue</name></member>
-      <member refid="class_document_object_1af4eae32f9d7f740db5232be90f5a18a0" prot="private" virt="non-virtual"><scope>DocumentObject</scope><name>_Size</name></member>
-      <member refid="class_document_object_1abe737cd57acd3950c7249b8a1e6300cf" prot="private" virt="non-virtual"><scope>DocumentObject</scope><name>_UniversalID</name></member>
-      <member refid="class_document_object_1a727a6ecff108fa38ee54cfa8d89d66cd" prot="private" virt="non-virtual"><scope>DocumentObject</scope><name>_Url</name></member>
+      <member refid="class_document_object_1a1183db6ad4cbbd0f5de2b48c128d039b" prot="private" virt="non-virtual"><scope>DocumentObject</scope><name>_SearchValue</name></member>
+      <member refid="class_document_object_1a28ab6562c34b5cf44ce7ab738d1730e1" prot="public" virt="non-virtual"><scope>DocumentObject</scope><name>ClearFields</name></member>
+      <member refid="class_document_object_1a4caebae7aec2a9375112739d2cf29f29" prot="public" virt="non-virtual"><scope>DocumentObject</scope><name>ClearFiles</name></member>
       <member refid="class_document_object_1a69d5338c9835f748490323d2950eed09" prot="public" virt="non-virtual"><scope>DocumentObject</scope><name>Database</name></member>
       <member refid="class_document_object_1a819cb8baad094f6e5990c54ec1eee8b0" prot="public" virt="non-virtual"><scope>DocumentObject</scope><name>DateCreated</name></member>
       <member refid="class_document_object_1a87ba1b3ac1b74b104972c25b245c504b" prot="public" virt="non-virtual"><scope>DocumentObject</scope><name>DateModified</name></member>

@@ -14,17 +14,23 @@ bool \mbox{\hyperlink{class_session_object_af3b9c9d56d98c848061952ed935f815b}{In
 \begin{DoxyCompactList}\small\item\em Initializes the \mbox{\hyperlink{class_session_object}{Session\+Object}} by validating the input and triggering the session request \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_database_object}{Database\+Object}} \mbox{\hyperlink{class_session_object_aa4871ea2dac4215bef0274a2bd71ae72}{Get\+Database}} (string file\+Path, string server\+Name)
 \begin{DoxyCompactList}\small\item\em Method to retrieve a specific database by filepath on the given server \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_session_object_ae1dc8cf45f981c629d0f77fbff04ae66}{Get\+All\+Databases}} (string server\+Name)
+\begin{DoxyCompactList}\small\item\em Method to retrieve all databases from a given server \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_database_object}{Database\+Object}} \mbox{\hyperlink{class_session_object_ae53bad1d2fe161060ae409024b3e0de4}{Get\+Database\+By\+ID}} (string replication\+ID, string server\+Name)
-\begin{DoxyCompactList}\small\item\em Method to retrieve a specific database by replication\+ID on the given server \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Method to retrieve a specific database by replication\+ID on the given server \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_session_object_a7a13510147dc63acd76f3015b6f8e409}{Clear\+Databases}} ()
+\begin{DoxyCompactList}\small\item\em Remove all retrieved databases from the \textquotesingle{}Databases\textquotesingle{} property \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{class_session_object_ae0885b9054fc3ce287307ac16ff69990}{Is\+Initialized}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+bool \mbox{\hyperlink{class_session_object_ae0885b9054fc3ce287307ac16ff69990}{Is\+Initialized}} = false\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Indicates if the session has been intialized \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{Web\+Service\+U\+RL}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \begin{DoxyCompactList}\small\item\em X\+Pages Rest Serive U\+RL Example\+: \href{http://antln-test.europe.jacobs.com/projects/jpix/Interface.nsf/xpJPIService.xsp/JPIService}{\tt http\+://antln-\/test.\+europe.\+jacobs.\+com/projects/jpix/\+Interface.\+nsf/xp\+J\+P\+I\+Service.\+xsp/\+J\+P\+I\+Service} \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_connector}{Connector}} \mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\begin{DoxyCompactList}\small\item\em Reference to \mbox{\hyperlink{class_connector}{Connector}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Reference to \mbox{\hyperlink{class_connector}{Connector}} \end{DoxyCompactList}\item 
+Sorted\+Dictionary$<$ string, \mbox{\hyperlink{class_database_object}{Database\+Object}} $>$ \mbox{\hyperlink{class_session_object_aa0b75f5b9d0a6325f436e08db27204a2}{Databases}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Collection of retrieved Database\+Objects stored in a dictionary with key filepath of the database \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -66,18 +72,87 @@ Definition at line 16 of file Session\+Object.\+cs.
 \end{DoxyParams}
 
 
-Definition at line 33 of file Session\+Object.\+cs.
+Definition at line 26 of file Session\+Object.\+cs.
+
+
+
+References Connection, and Web\+Service\+U\+RL.
 
 
 \begin{DoxyCode}
-33                                                                                 \{
-34         \_Connection = ConnectorObject;
-35         \_WebServiceURL = DominoWebServiceURL;
-36     \}
+26                                                                                 \{
+27         \mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}} = ConnectorObject;
+28         \mbox{\hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}} = DominoWebServiceURL;
+29     \}
 \end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_session_object_a7a13510147dc63acd76f3015b6f8e409}\label{class_session_object_a7a13510147dc63acd76f3015b6f8e409}} 
+\index{Session\+Object@{Session\+Object}!Clear\+Databases@{Clear\+Databases}}
+\index{Clear\+Databases@{Clear\+Databases}!Session\+Object@{Session\+Object}}
+\subsubsection{\texorpdfstring{Clear\+Databases()}{ClearDatabases()}}
+{\footnotesize\ttfamily void Session\+Object.\+Clear\+Databases (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Remove all retrieved databases from the \textquotesingle{}Databases\textquotesingle{} property 
+
+
+
+Definition at line 190 of file Session\+Object.\+cs.
+
+
+
+References Databases.
+
+
+\begin{DoxyCode}
+190                                  \{
+191         \mbox{\hyperlink{class_session_object_aa0b75f5b9d0a6325f436e08db27204a2}{Databases}} = null;
+192     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_session_object_ae1dc8cf45f981c629d0f77fbff04ae66}\label{class_session_object_ae1dc8cf45f981c629d0f77fbff04ae66}} 
+\index{Session\+Object@{Session\+Object}!Get\+All\+Databases@{Get\+All\+Databases}}
+\index{Get\+All\+Databases@{Get\+All\+Databases}!Session\+Object@{Session\+Object}}
+\subsubsection{\texorpdfstring{Get\+All\+Databases()}{GetAllDatabases()}}
+{\footnotesize\ttfamily bool Session\+Object.\+Get\+All\+Databases (\begin{DoxyParamCaption}\item[{string}]{server\+Name }\end{DoxyParamCaption})}
+
+
+
+Method to retrieve all databases from a given server 
+
+
+\begin{DoxyParams}{Parameters}
+{\em server\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_database_object}{Database\+Object}}
+\end{DoxyReturn}
+
+
+Definition at line 150 of file Session\+Object.\+cs.
+
+
+
+References Connection, and Is\+Initialized.
+
+
+\begin{DoxyCode}
+150                                                    \{
+151         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+152         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_session_object_ae0885b9054fc3ce287307ac16ff69990}{IsInitialized}}) \{
+153             \textcolor{keywordflow}{if} (this.\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.ExecuteAllDatabasesRequest(\textcolor{keyword}{this}.WebServiceURL, serverName
+      , \textcolor{keyword}{this})) \{
+154                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+155             \} \textcolor{keywordflow}{else} \{
+156                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+157             \}
+158         \}
+159         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+160     \}
+\end{DoxyCode}
 \mbox{\Hypertarget{class_session_object_aa4871ea2dac4215bef0274a2bd71ae72}\label{class_session_object_aa4871ea2dac4215bef0274a2bd71ae72}} 
 \index{Session\+Object@{Session\+Object}!Get\+Database@{Get\+Database}}
 \index{Get\+Database@{Get\+Database}!Session\+Object@{Session\+Object}}
@@ -100,24 +175,32 @@ Method to retrieve a specific database by filepath on the given server
 \end{DoxyReturn}
 
 
-Definition at line 141 of file Session\+Object.\+cs.
+Definition at line 126 of file Session\+Object.\+cs.
 
 
 
-References Database\+Object.\+Initialize().
+References Databases, Database\+Object.\+File\+Path, Database\+Object.\+Initialize(), and Is\+Initialized.
 
 
 \begin{DoxyCode}
-141                                                                           \{
-142         \mbox{\hyperlink{class_database_object}{DatabaseObject}} dbObj = null;
-143         \textcolor{keywordflow}{if} (\_isInitialized) \{
-144             dbObj = \textcolor{keyword}{new} \mbox{\hyperlink{class_database_object}{DatabaseObject}}(filePath, serverName, \textcolor{keyword}{this});
-145             \textcolor{keywordflow}{if} (dbObj.\mbox{\hyperlink{class_database_object_a7de43a21bd287deec537cffec343f41d}{Initialize}}()) \{
-146                 \textcolor{keywordflow}{return} dbObj;
-147             \}
-148         \}
-149         \textcolor{keywordflow}{return} dbObj;
-150     \}
+126                                                                           \{
+127         \mbox{\hyperlink{class_database_object}{DatabaseObject}} dbObj = null;
+128         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_session_object_ae0885b9054fc3ce287307ac16ff69990}{IsInitialized}}) \{
+129             dbObj = \textcolor{keyword}{new} \mbox{\hyperlink{class_database_object}{DatabaseObject}}(filePath, serverName, \textcolor{keyword}{this});
+130             \textcolor{keywordflow}{if} (dbObj.\mbox{\hyperlink{class_database_object_a7de43a21bd287deec537cffec343f41d}{Initialize}}()) \{
+131                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_session_object_aa0b75f5b9d0a6325f436e08db27204a2}{Databases}} == null) \{
+132                     \mbox{\hyperlink{class_session_object_aa0b75f5b9d0a6325f436e08db27204a2}{Databases}} = \textcolor{keyword}{new} SortedDictionary<string, DatabaseObject>();
+133                 \}
+134                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_session_object_aa0b75f5b9d0a6325f436e08db27204a2}{Databases}}.ContainsKey(dbObj.\mbox{\hyperlink{class_database_object_a38a1a78430c6cd1fc4eef054e39145ce}{FilePath}})) \{
+135                     \textcolor{comment}{//remove this and replace we newly retrieved database}
+136                     \mbox{\hyperlink{class_session_object_aa0b75f5b9d0a6325f436e08db27204a2}{Databases}}.Remove(dbObj.\mbox{\hyperlink{class_database_object_a38a1a78430c6cd1fc4eef054e39145ce}{FilePath}});
+137                 \}
+138                 \mbox{\hyperlink{class_session_object_aa0b75f5b9d0a6325f436e08db27204a2}{Databases}}.Add(dbObj.\mbox{\hyperlink{class_database_object_a38a1a78430c6cd1fc4eef054e39145ce}{FilePath}}, dbObj);
+139                 \textcolor{keywordflow}{return} dbObj;
+140             \}
+141         \}
+142         \textcolor{keywordflow}{return} dbObj;
+143     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_session_object_ae53bad1d2fe161060ae409024b3e0de4}\label{class_session_object_ae53bad1d2fe161060ae409024b3e0de4}} 
 \index{Session\+Object@{Session\+Object}!Get\+Database\+By\+ID@{Get\+Database\+By\+ID}}
@@ -141,24 +224,32 @@ Method to retrieve a specific database by replication\+ID on the given server
 \end{DoxyReturn}
 
 
-Definition at line 158 of file Session\+Object.\+cs.
+Definition at line 168 of file Session\+Object.\+cs.
 
 
 
-References Database\+Object.\+Initialize().
+References Databases, Database\+Object.\+File\+Path, Database\+Object.\+Initialize(), and Is\+Initialized.
 
 
 \begin{DoxyCode}
-158                                                                                    \{
-159         \mbox{\hyperlink{class_database_object}{DatabaseObject}} dbObj = null;
-160         \textcolor{keywordflow}{if} (\_isInitialized) \{
-161             dbObj = \textcolor{keyword}{new} \mbox{\hyperlink{class_database_object}{DatabaseObject}}(\textcolor{keyword}{this}, replicationID, serverName);
-162             \textcolor{keywordflow}{if} (dbObj.\mbox{\hyperlink{class_database_object_a7de43a21bd287deec537cffec343f41d}{Initialize}}()) \{
-163                 \textcolor{keywordflow}{return} dbObj;
-164             \}
-165         \}
-166         \textcolor{keywordflow}{return} dbObj;
-167     \}
+168                                                                                    \{
+169         \mbox{\hyperlink{class_database_object}{DatabaseObject}} dbObj = null;
+170         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_session_object_ae0885b9054fc3ce287307ac16ff69990}{IsInitialized}}) \{
+171             dbObj = \textcolor{keyword}{new} \mbox{\hyperlink{class_database_object}{DatabaseObject}}(\textcolor{keyword}{this}, replicationID, serverName);
+172             \textcolor{keywordflow}{if} (dbObj.\mbox{\hyperlink{class_database_object_a7de43a21bd287deec537cffec343f41d}{Initialize}}()) \{
+173                 \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_session_object_aa0b75f5b9d0a6325f436e08db27204a2}{Databases}} == null) \{
+174                     \mbox{\hyperlink{class_session_object_aa0b75f5b9d0a6325f436e08db27204a2}{Databases}} = \textcolor{keyword}{new} SortedDictionary<string, DatabaseObject>();
+175                 \}
+176                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_session_object_aa0b75f5b9d0a6325f436e08db27204a2}{Databases}}.ContainsKey(dbObj.\mbox{\hyperlink{class_database_object_a38a1a78430c6cd1fc4eef054e39145ce}{FilePath}})) \{
+177                     \textcolor{comment}{//remove this and replace we newly retrieved database}
+178                     \mbox{\hyperlink{class_session_object_aa0b75f5b9d0a6325f436e08db27204a2}{Databases}}.Remove(dbObj.\mbox{\hyperlink{class_database_object_a38a1a78430c6cd1fc4eef054e39145ce}{FilePath}});
+179                 \}
+180                 \mbox{\hyperlink{class_session_object_aa0b75f5b9d0a6325f436e08db27204a2}{Databases}}.Add(dbObj.\mbox{\hyperlink{class_database_object_a38a1a78430c6cd1fc4eef054e39145ce}{FilePath}}, dbObj);
+181                 \textcolor{keywordflow}{return} dbObj;
+182             \}
+183         \}
+184         \textcolor{keywordflow}{return} dbObj;
+185     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_session_object_af3b9c9d56d98c848061952ed935f815b}\label{class_session_object_af3b9c9d56d98c848061952ed935f815b}} 
 \index{Session\+Object@{Session\+Object}!Initialize@{Initialize}}
@@ -177,11 +268,11 @@ Boolean
 \end{DoxyReturn}
 
 
-Definition at line 80 of file Session\+Object.\+cs.
+Definition at line 65 of file Session\+Object.\+cs.
 
 
 
-References Connection, Connector.\+has\+Error, Connector.\+Return\+Messages, and Web\+Service\+U\+RL.
+References Connection, Connector.\+has\+Error, Is\+Initialized, Connector.\+Return\+Messages, and Web\+Service\+U\+RL.
 
 
 
@@ -189,33 +280,33 @@ Referenced by Connector.\+Get\+Session().
 
 
 \begin{DoxyCode}
-80                              \{
-81         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
-82         \textcolor{comment}{//clear msgs}
-83 
-84         \textcolor{keywordflow}{if} (!ValidateInput()) \{
-85             \textcolor{comment}{//message written trigger exception}
-86             \_isInitialized = \textcolor{keyword}{false};
-87             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError}} = \textcolor{keyword}{true};
-88             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-89         \}
-90 
-91         \textcolor{comment}{// make a connection to the webservice database - this will check the users authentication on that
+65                              \{
+66         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+67         \textcolor{comment}{//clear msgs}
+68 
+69         \textcolor{keywordflow}{if} (!ValidateInput()) \{
+70             \textcolor{comment}{//message written trigger exception}
+71             \mbox{\hyperlink{class_session_object_ae0885b9054fc3ce287307ac16ff69990}{IsInitialized}} = \textcolor{keyword}{false};
+72             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError}} = \textcolor{keyword}{true};
+73             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+74         \}
+75 
+76         \textcolor{comment}{// make a connection to the webservice database - this will check the users authentication on that
        database}
-92         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.ExecuteSessionRequest(\mbox{\hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}})) \{
-93             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"Session Initialized : "} + 
+77         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.ExecuteSessionRequest(\mbox{\hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}})) \{
+78             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"Session Initialized : "} + 
       \mbox{\hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}} + \textcolor{stringliteral}{" (SessionObject.Initialize)"});
-94             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError}} = \textcolor{keyword}{false};
-95             \_isInitialized = \textcolor{keyword}{true};
-96             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-97         \} \textcolor{keywordflow}{else} \{
-98             \textcolor{comment}{//error messages written to Connection.ReturnMessages by
+79             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a079bae21a5417efa53bfe8954c0f533f}{hasError}} = \textcolor{keyword}{false};
+80             \mbox{\hyperlink{class_session_object_ae0885b9054fc3ce287307ac16ff69990}{IsInitialized}} = \textcolor{keyword}{true};
+81             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+82         \} \textcolor{keywordflow}{else} \{
+83             \textcolor{comment}{//error messages written to Connection.ReturnMessages by
        Connection.Request.ExecuteSessionRequest}
-99             \_isInitialized = \textcolor{keyword}{false};
-100             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-101         \}
-102 
-103     \}
+84             \mbox{\hyperlink{class_session_object_ae0885b9054fc3ce287307ac16ff69990}{IsInitialized}} = \textcolor{keyword}{false};
+85             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+86         \}
+87 
+88     \}
 \end{DoxyCode}
 
 
@@ -232,25 +323,43 @@ Reference to \mbox{\hyperlink{class_connector}{Connector}}
 
 
 
-Definition at line 65 of file Session\+Object.\+cs.
+Definition at line 50 of file Session\+Object.\+cs.
 
 
 
-Referenced by File\+Object.\+Extract\+File(), Database\+Object.\+Get\+All\+Documents(), Database\+Object.\+Get\+All\+Documents\+And\+Files(), Database\+Object.\+Get\+All\+Documents\+And\+Files\+By\+Formula(), Database\+Object.\+Get\+All\+Documents\+And\+Files\+By\+Key(), Database\+Object.\+Get\+All\+Documents\+And\+Files\+By\+Unids(), Database\+Object.\+Get\+All\+Documents\+By\+Formula(), Database\+Object.\+Get\+All\+Documents\+By\+Key(), Database\+Object.\+Get\+All\+Documents\+By\+Unids(), Document\+Object.\+Get\+All\+Fields(), Document\+Object.\+Get\+Fields(), Document\+Object.\+Get\+Files(), Initialize(), Database\+Object.\+Initialize(), Document\+Object.\+Initialize(), Document\+Object.\+Initialize\+With\+Files(), Database\+Object.\+Load\+Document\+Fields(), and Database\+Object.\+Load\+Document\+Files().
+Referenced by File\+Object.\+Extract\+File(), Get\+All\+Databases(), Database\+Object.\+Get\+All\+Documents(), Database\+Object.\+Get\+All\+Documents\+And\+Files(), Database\+Object.\+Get\+All\+Documents\+And\+Files\+By\+Formula(), Database\+Object.\+Get\+All\+Documents\+And\+Files\+By\+Key(), Database\+Object.\+Get\+All\+Documents\+And\+Files\+By\+Unids(), Database\+Object.\+Get\+All\+Documents\+By\+Formula(), Database\+Object.\+Get\+All\+Documents\+By\+Key(), Database\+Object.\+Get\+All\+Documents\+By\+Unids(), Document\+Object.\+Get\+All\+Fields(), Document\+Object.\+Get\+Fields(), Document\+Object.\+Get\+Files(), Initialize(), Database\+Object.\+Initialize(), Document\+Object.\+Initialize(), Document\+Object.\+Initialize\+With\+Files(), Database\+Object.\+Load\+Document\+Fields(), Database\+Object.\+Load\+Document\+Files(), and Session\+Object().
 
 
 \begin{DoxyCode}
-65                                 \{
-66         \textcolor{keyword}{get} \{
-67             \textcolor{keywordflow}{return} \_Connection;
-68         \}
-69     \}
+50 \{ \textcolor{keyword}{get}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_session_object_aa0b75f5b9d0a6325f436e08db27204a2}\label{class_session_object_aa0b75f5b9d0a6325f436e08db27204a2}} 
+\index{Session\+Object@{Session\+Object}!Databases@{Databases}}
+\index{Databases@{Databases}!Session\+Object@{Session\+Object}}
+\subsubsection{\texorpdfstring{Databases}{Databases}}
+{\footnotesize\ttfamily Sorted\+Dictionary$<$string, \mbox{\hyperlink{class_database_object}{Database\+Object}}$>$ Session\+Object.\+Databases\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Collection of retrieved Database\+Objects stored in a dictionary with key filepath of the database 
+
+
+
+Definition at line 55 of file Session\+Object.\+cs.
+
+
+
+Referenced by Clear\+Databases(), Get\+Database(), and Get\+Database\+By\+I\+D().
+
+
+\begin{DoxyCode}
+55 \{ \textcolor{keyword}{get}; \textcolor{keyword}{protected} \textcolor{keyword}{internal} \textcolor{keyword}{set}; \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_session_object_ae0885b9054fc3ce287307ac16ff69990}\label{class_session_object_ae0885b9054fc3ce287307ac16ff69990}} 
 \index{Session\+Object@{Session\+Object}!Is\+Initialized@{Is\+Initialized}}
 \index{Is\+Initialized@{Is\+Initialized}!Session\+Object@{Session\+Object}}
 \subsubsection{\texorpdfstring{Is\+Initialized}{IsInitialized}}
-{\footnotesize\ttfamily bool Session\+Object.\+Is\+Initialized\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily bool Session\+Object.\+Is\+Initialized = false\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
@@ -258,15 +367,15 @@ Indicates if the session has been intialized
 
 
 
-Definition at line 46 of file Session\+Object.\+cs.
+Definition at line 39 of file Session\+Object.\+cs.
+
+
+
+Referenced by Get\+All\+Databases(), Get\+Database(), Get\+Database\+By\+I\+D(), and Initialize().
 
 
 \begin{DoxyCode}
-46                               \{
-47         \textcolor{keyword}{get} \{
-48             \textcolor{keywordflow}{return} \_isInitialized;
-49         \}
-50     \}
+39 \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \} = \textcolor{keyword}{false};
 \end{DoxyCode}
 \mbox{\Hypertarget{class_session_object_a697c071c812fbf7ad1166b896fb44c16}\label{class_session_object_a697c071c812fbf7ad1166b896fb44c16}} 
 \index{Session\+Object@{Session\+Object}!Web\+Service\+U\+RL@{Web\+Service\+U\+RL}}
@@ -280,19 +389,15 @@ X\+Pages Rest Serive U\+RL Example\+: \href{http://antln-test.europe.jacobs.com/
 
 
 
-Definition at line 56 of file Session\+Object.\+cs.
+Definition at line 45 of file Session\+Object.\+cs.
 
 
 
-Referenced by Database\+Object.\+Get\+All\+Documents(), Database\+Object.\+Get\+All\+Documents\+And\+Files(), Database\+Object.\+Get\+All\+Documents\+And\+Files\+By\+Formula(), Database\+Object.\+Get\+All\+Documents\+And\+Files\+By\+Key(), Database\+Object.\+Get\+All\+Documents\+And\+Files\+By\+Unids(), Database\+Object.\+Get\+All\+Documents\+By\+Formula(), Database\+Object.\+Get\+All\+Documents\+By\+Key(), Database\+Object.\+Get\+All\+Documents\+By\+Unids(), Document\+Object.\+Get\+All\+Fields(), Document\+Object.\+Get\+Fields(), Document\+Object.\+Get\+Files(), Initialize(), Database\+Object.\+Initialize(), Document\+Object.\+Initialize(), Document\+Object.\+Initialize\+With\+Files(), Database\+Object.\+Load\+Document\+Fields(), and Database\+Object.\+Load\+Document\+Files().
+Referenced by Database\+Object.\+Get\+All\+Documents(), Database\+Object.\+Get\+All\+Documents\+And\+Files(), Database\+Object.\+Get\+All\+Documents\+And\+Files\+By\+Formula(), Database\+Object.\+Get\+All\+Documents\+And\+Files\+By\+Key(), Database\+Object.\+Get\+All\+Documents\+And\+Files\+By\+Unids(), Database\+Object.\+Get\+All\+Documents\+By\+Formula(), Database\+Object.\+Get\+All\+Documents\+By\+Key(), Database\+Object.\+Get\+All\+Documents\+By\+Unids(), Document\+Object.\+Get\+All\+Fields(), Document\+Object.\+Get\+Fields(), Document\+Object.\+Get\+Files(), Initialize(), Database\+Object.\+Initialize(), Document\+Object.\+Initialize(), Document\+Object.\+Initialize\+With\+Files(), Database\+Object.\+Load\+Document\+Fields(), Database\+Object.\+Load\+Document\+Files(), and Session\+Object().
 
 
 \begin{DoxyCode}
-56                                 \{
-57         \textcolor{keyword}{get} \{
-58             \textcolor{keywordflow}{return} \_WebServiceURL;
-59         \}
-60     \}
+45 \{ \textcolor{keyword}{get}; \}
 \end{DoxyCode}
 
 

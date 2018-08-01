@@ -1,8 +1,6 @@
 var class_file_object =
 [
-    [ "FileObject", "class_file_object.html#a0820c64117f9bcebf4ac750fbb320295", null ],
     [ "ExtractFile", "class_file_object.html#ae21fac09c5ab2f9fac96a3f084cb9ddc", null ],
-    [ "Initialize", "class_file_object.html#a1d371eb0e306cda4b80d2e8d32e987e0", null ],
     [ "Application", "class_file_object.html#a39640cdc4b16ee66e9c73803f4510396", null ],
     [ "Creator", "class_file_object.html#a1ab7d29c80841b60b276b7430f4e5ec7", null ],
     [ "DateCreated", "class_file_object.html#a372b9a7dad068368526b0698550f9504", null ],

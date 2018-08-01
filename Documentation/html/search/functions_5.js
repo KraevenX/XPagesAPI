@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['initialize',['Initialize',['../class_connector.html#a376c1ed70efd33d0bb18bb36e5cf076e',1,'Connector.Initialize()'],['../class_database_object.html#a7de43a21bd287deec537cffec343f41d',1,'DatabaseObject.Initialize()'],['../class_document_object.html#af4298d6cfbb9ea60643d9995309b73f1',1,'DocumentObject.Initialize()'],['../class_file_object.html#a1d371eb0e306cda4b80d2e8d32e987e0',1,'FileObject.Initialize()'],['../class_session_object.html#af3b9c9d56d98c848061952ed935f815b',1,'SessionObject.Initialize()']]],
-  ['initializewithfiles',['InitializeWithFiles',['../class_document_object.html#a83f0e855adc5fb7afd02d2e34767f5c8',1,'DocumentObject']]]
+  ['loaddocumentfields',['LoadDocumentFields',['../class_database_object.html#a88ae0bcda671009e2742858ab945a18c',1,'DatabaseObject.LoadDocumentFields(string listFields)'],['../class_database_object.html#a8a64b91e2e4228b2fc552e51959987c4',1,'DatabaseObject.LoadDocumentFields(IList listFields)']]],
+  ['loaddocumentfiles',['LoadDocumentFiles',['../class_database_object.html#acdf5c9ee898d4473350a2f4878af5a23',1,'DatabaseObject']]]
 ];

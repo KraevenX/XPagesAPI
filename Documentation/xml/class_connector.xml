@@ -218,22 +218,22 @@
         </inbodydescription>
         <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs" line="101" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs" bodystart="101" bodyend="113"/>
         <referencedby refid="class_connector_1a259c6d94252479cc3028038ebbaa7dc8" compoundref="_connector_8cs" startline="73" endline="92">Connector</referencedby>
-        <referencedby refid="class_document_object_1a1a763aa01710b370634f46c89b7d2d8e" compoundref="_document_object_8cs" startline="435" endline="488">DocumentObject.ExportFields</referencedby>
-        <referencedby refid="class_document_object_1a8753abc5a871bf84fc910e6a99936b2b" compoundref="_document_object_8cs" startline="497" endline="557">DocumentObject.ExportFiles</referencedby>
-        <referencedby refid="class_file_object_1ae21fac09c5ab2f9fac96a3f084cb9ddc" compoundref="_file_object_8cs" startline="230" endline="243">FileObject.ExtractFile</referencedby>
-        <referencedby refid="class_document_object_1a5e070c7c0a45ac06422ee992c841e780" compoundref="_document_object_8cs" startline="409" endline="426">DocumentObject.GetAllFields</referencedby>
-        <referencedby refid="class_document_object_1a8883fec3b5b1b6e2e43f4b5ca4092684" compoundref="_document_object_8cs" startline="331" endline="349">DocumentObject.GetFields</referencedby>
-        <referencedby refid="class_document_object_1a2c8aee9450e8fdd1e84e8ff26d0950a1" compoundref="_document_object_8cs" startline="356" endline="373">DocumentObject.GetFiles</referencedby>
+        <referencedby refid="class_document_object_1a1a763aa01710b370634f46c89b7d2d8e" compoundref="_document_object_8cs" startline="342" endline="395">DocumentObject.ExportFields</referencedby>
+        <referencedby refid="class_document_object_1a8753abc5a871bf84fc910e6a99936b2b" compoundref="_document_object_8cs" startline="404" endline="464">DocumentObject.ExportFiles</referencedby>
+        <referencedby refid="class_file_object_1ae21fac09c5ab2f9fac96a3f084cb9ddc" compoundref="_file_object_8cs" startline="181" endline="191">FileObject.ExtractFile</referencedby>
+        <referencedby refid="class_document_object_1a5e070c7c0a45ac06422ee992c841e780" compoundref="_document_object_8cs" startline="316" endline="333">DocumentObject.GetAllFields</referencedby>
+        <referencedby refid="class_document_object_1a8883fec3b5b1b6e2e43f4b5ca4092684" compoundref="_document_object_8cs" startline="240" endline="258">DocumentObject.GetFields</referencedby>
+        <referencedby refid="class_document_object_1a2c8aee9450e8fdd1e84e8ff26d0950a1" compoundref="_document_object_8cs" startline="265" endline="282">DocumentObject.GetFiles</referencedby>
         <referencedby refid="class_connector_1a5d089c1639f255966f00b2b05add0993" compoundref="_connector_8cs" startline="283" endline="312">GetSession</referencedby>
-        <referencedby refid="class_field_object_1a8d962cda039f78f485232bd2764176c4" compoundref="_field_object_8cs" startline="79" endline="104">FieldObject.getValue</referencedby>
-        <referencedby refid="class_field_object_1a797ebc6615a86bafd9bd17f09562f2ee" compoundref="_field_object_8cs" startline="146" endline="156">FieldObject.GetValueAsDate</referencedby>
-        <referencedby refid="class_field_object_1aafe2b7d3e7d414345d85e19dddce3c47" compoundref="_field_object_8cs" startline="129" endline="140">FieldObject.GetValueAsDouble</referencedby>
-        <referencedby refid="class_field_object_1a635d7598cbf7bbc29821cb1c012de964" compoundref="_field_object_8cs" startline="162" endline="173">FieldObject.GetValueAsList</referencedby>
-        <referencedby refid="class_field_object_1ad223b04d429de4b2c57838ffb41d124b" compoundref="_field_object_8cs" startline="112" endline="123">FieldObject.GetValueAsString</referencedby>
-        <referencedby refid="class_session_object_1af3b9c9d56d98c848061952ed935f815b" compoundref="_session_object_8cs" startline="80" endline="103">SessionObject.Initialize</referencedby>
-        <referencedby refid="class_database_object_1a7de43a21bd287deec537cffec343f41d" compoundref="_database_object_8cs" startline="197" endline="220">DatabaseObject.Initialize</referencedby>
-        <referencedby refid="class_document_object_1af4298d6cfbb9ea60643d9995309b73f1" compoundref="_document_object_8cs" startline="263" endline="289">DocumentObject.Initialize</referencedby>
-        <referencedby refid="class_document_object_1a83f0e855adc5fb7afd02d2e34767f5c8" compoundref="_document_object_8cs" startline="296" endline="322">DocumentObject.InitializeWithFiles</referencedby>
+        <referencedby refid="class_field_object_1a65571e8154ad1333252cb9a8ab5f2c45" compoundref="_field_object_8cs" startline="47" endline="72">FieldObject.GetValue</referencedby>
+        <referencedby refid="class_field_object_1a797ebc6615a86bafd9bd17f09562f2ee" compoundref="_field_object_8cs" startline="114" endline="124">FieldObject.GetValueAsDate</referencedby>
+        <referencedby refid="class_field_object_1aafe2b7d3e7d414345d85e19dddce3c47" compoundref="_field_object_8cs" startline="97" endline="108">FieldObject.GetValueAsDouble</referencedby>
+        <referencedby refid="class_field_object_1a635d7598cbf7bbc29821cb1c012de964" compoundref="_field_object_8cs" startline="130" endline="141">FieldObject.GetValueAsList</referencedby>
+        <referencedby refid="class_field_object_1ad223b04d429de4b2c57838ffb41d124b" compoundref="_field_object_8cs" startline="80" endline="91">FieldObject.GetValueAsString</referencedby>
+        <referencedby refid="class_session_object_1af3b9c9d56d98c848061952ed935f815b" compoundref="_session_object_8cs" startline="65" endline="88">SessionObject.Initialize</referencedby>
+        <referencedby refid="class_database_object_1a7de43a21bd287deec537cffec343f41d" compoundref="_database_object_8cs" startline="157" endline="180">DatabaseObject.Initialize</referencedby>
+        <referencedby refid="class_document_object_1af4298d6cfbb9ea60643d9995309b73f1" compoundref="_document_object_8cs" startline="168" endline="198">DocumentObject.Initialize</referencedby>
+        <referencedby refid="class_document_object_1a83f0e855adc5fb7afd02d2e34767f5c8" compoundref="_document_object_8cs" startline="205" endline="231">DocumentObject.InitializeWithFiles</referencedby>
       </memberdef>
       <memberdef kind="property" id="class_connector_1a1ed422674b344524fd77998dcf6a9ba6" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>ArrayList</type>
@@ -248,15 +248,15 @@
         </inbodydescription>
         <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs" line="119" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs" bodystart="119" bodyend="126"/>
         <referencedby refid="class_connector_1a259c6d94252479cc3028038ebbaa7dc8" compoundref="_connector_8cs" startline="73" endline="92">Connector</referencedby>
-        <referencedby refid="class_document_object_1a1a763aa01710b370634f46c89b7d2d8e" compoundref="_document_object_8cs" startline="435" endline="488">DocumentObject.ExportFields</referencedby>
-        <referencedby refid="class_document_object_1a8753abc5a871bf84fc910e6a99936b2b" compoundref="_document_object_8cs" startline="497" endline="557">DocumentObject.ExportFiles</referencedby>
+        <referencedby refid="class_document_object_1a1a763aa01710b370634f46c89b7d2d8e" compoundref="_document_object_8cs" startline="342" endline="395">DocumentObject.ExportFields</referencedby>
+        <referencedby refid="class_document_object_1a8753abc5a871bf84fc910e6a99936b2b" compoundref="_document_object_8cs" startline="404" endline="464">DocumentObject.ExportFiles</referencedby>
         <referencedby refid="class_connector_1a5d089c1639f255966f00b2b05add0993" compoundref="_connector_8cs" startline="283" endline="312">GetSession</referencedby>
-        <referencedby refid="class_field_object_1a8d962cda039f78f485232bd2764176c4" compoundref="_field_object_8cs" startline="79" endline="104">FieldObject.getValue</referencedby>
-        <referencedby refid="class_field_object_1a797ebc6615a86bafd9bd17f09562f2ee" compoundref="_field_object_8cs" startline="146" endline="156">FieldObject.GetValueAsDate</referencedby>
-        <referencedby refid="class_field_object_1aafe2b7d3e7d414345d85e19dddce3c47" compoundref="_field_object_8cs" startline="129" endline="140">FieldObject.GetValueAsDouble</referencedby>
-        <referencedby refid="class_field_object_1a635d7598cbf7bbc29821cb1c012de964" compoundref="_field_object_8cs" startline="162" endline="173">FieldObject.GetValueAsList</referencedby>
-        <referencedby refid="class_field_object_1ad223b04d429de4b2c57838ffb41d124b" compoundref="_field_object_8cs" startline="112" endline="123">FieldObject.GetValueAsString</referencedby>
-        <referencedby refid="class_session_object_1af3b9c9d56d98c848061952ed935f815b" compoundref="_session_object_8cs" startline="80" endline="103">SessionObject.Initialize</referencedby>
+        <referencedby refid="class_field_object_1a65571e8154ad1333252cb9a8ab5f2c45" compoundref="_field_object_8cs" startline="47" endline="72">FieldObject.GetValue</referencedby>
+        <referencedby refid="class_field_object_1a797ebc6615a86bafd9bd17f09562f2ee" compoundref="_field_object_8cs" startline="114" endline="124">FieldObject.GetValueAsDate</referencedby>
+        <referencedby refid="class_field_object_1aafe2b7d3e7d414345d85e19dddce3c47" compoundref="_field_object_8cs" startline="97" endline="108">FieldObject.GetValueAsDouble</referencedby>
+        <referencedby refid="class_field_object_1a635d7598cbf7bbc29821cb1c012de964" compoundref="_field_object_8cs" startline="130" endline="141">FieldObject.GetValueAsList</referencedby>
+        <referencedby refid="class_field_object_1ad223b04d429de4b2c57838ffb41d124b" compoundref="_field_object_8cs" startline="80" endline="91">FieldObject.GetValueAsString</referencedby>
+        <referencedby refid="class_session_object_1af3b9c9d56d98c848061952ed935f815b" compoundref="_session_object_8cs" startline="65" endline="88">SessionObject.Initialize</referencedby>
       </memberdef>
       <memberdef kind="property" id="class_connector_1acf2c3b519c360d02ed54543a01d199af" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
         <type>bool</type>
@@ -506,7 +506,7 @@
         </inbodydescription>
         <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs" line="283" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Connector.cs" bodystart="283" bodyend="312"/>
         <references refid="class_connector_1a079bae21a5417efa53bfe8954c0f533f" compoundref="_connector_8cs" startline="101" endline="113">hasError</references>
-        <references refid="class_session_object_1af3b9c9d56d98c848061952ed935f815b" compoundref="_session_object_8cs" startline="80" endline="103">SessionObject.Initialize</references>
+        <references refid="class_session_object_1af3b9c9d56d98c848061952ed935f815b" compoundref="_session_object_8cs" startline="65" endline="88">SessionObject.Initialize</references>
         <references refid="class_connector_1a1ed422674b344524fd77998dcf6a9ba6" compoundref="_connector_8cs" startline="119" endline="126">ReturnMessages</references>
         <references refid="class_connector_1a0a7bb42f9530796c086ab50785147ce9" compoundref="_connector_8cs" startline="209" endline="213">SessionObject</references>
       </memberdef>

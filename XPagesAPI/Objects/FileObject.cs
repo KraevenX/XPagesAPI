@@ -11,31 +11,13 @@
 ///    }
 ///   </code>
 /// </example>
-public class FileObject
-{
+public class FileObject {
 
     #region Variables
-
-    private DocumentObject _Document;
-
-    private bool _isInitialized = false;
-    private string _Name = "";
-    private string _URL = "";
-    private long _Size;
 
     private string strSize = "";
     private string strDateCreated = "";
     private string strDateModified = "";
-
-    private string _Application = "";
-    private string _Creator = "";
-    private DateTime _DateCreated;
-    private DateTime _DateModified;
-    private string _FieldName = "";
-    private string _Extension = "";
-    private string _Other = "";
-    private string _SoftClass = "";
-    //sb.append("FileObject: " + fObj.Application + "§" + fObj.Creator + "§" + fObj.DateCreated + "§" + fObj.DateModfied + "$" + fObj.FieldName + "§" + fObj.FileExtension + "§" + fObj.FileName + "$" + fObj.FileSize + "$" + fObj.LinkToFile + "$" + fObj.Other + "$"	+ fObj.SoftClass);
 
     #endregion
 
@@ -44,77 +26,67 @@ public class FileObject
     /// <summary>
     /// Reference to this files document object
     /// </summary>
-    public DocumentObject Document {
-        get {
-            return _Document;
-        }
-    }
+    public DocumentObject Document { get; }
     /// <summary>
     /// The file name of the domino attachment
     /// </summary>
-    public string Name { get => _Name; set => _Name = value; }
+    public string Name { get; set; } = "";
 
     /// <summary>
     /// URL of the domino attachment
     /// </summary>
-    public string URL { get => _URL; set => _URL = value; }
+    public string URL { get; set; } = "";
 
     /// <summary>
     /// Size of the domino attachment in bytes
     /// </summary>
-    public long Size { get => _Size; set => _Size = value; }
+    public long Size { get; set; }
 
     /// <summary>
     /// JPI Soft Class of the domino attachment (Acad,ustn,office)
     /// </summary>
-    public string SoftClass { get => _SoftClass; set => _SoftClass = value; }
+    public string SoftClass { get; set; } = "";
 
     /// <summary>
     /// JPI associated application of the domino attachment
     /// </summary>
-    public string Application { get => _Application; set => _Application = value; }
+    public string Application { get; set; } = "";
 
     /// <summary>
     /// Creator of the domino attachment
     /// </summary>
-    public string Creator { get => _Creator; set => _Creator = value; }
+    public string Creator { get; set; } = "";
 
     /// <summary>
     /// Creation date of the domino attachment
     /// </summary>
-    public DateTime DateCreated { get => _DateCreated; set => _DateCreated = value; }
+    public DateTime DateCreated { get; set; }
 
     /// <summary>
     /// Modified date of the domino attachment
     /// </summary>
-    public DateTime DateModified { get => _DateModified; set => _DateModified = value; }
+    public DateTime DateModified { get; set; }
 
     /// <summary>
     /// FieldName (Rich-Text item) associated to the domino attachment if available
     /// </summary>
-    public string FieldName { get => _FieldName; set => _FieldName = value; }
+    public string FieldName { get; set; } = "";
 
     /// <summary>
     /// The file extension of the domino attachment
     /// </summary>
-    public string Extension { get => _Extension; set => _Extension = value; }
+    public string Extension { get; set; } = "";
 
     /// <summary>
     /// Additional JPI information of the domino attachment
     /// </summary>
-    public string Other { get => _Other; set => _Other = value; }
+    public string Other { get; set; } = "";
 
     /// <summary>
     /// Indicates that the file isInitialized
     /// </summary>
-    public bool IsInitialized {
-        get {
-            return _isInitialized;
-        }
-        protected internal set {
-            _isInitialized = value;
-        }
-    }
+    public bool IsInitialized { get; protected internal set; } = false;
+
     #endregion
 
     #region Constructor
@@ -122,9 +94,8 @@ public class FileObject
     /// <summary>
     /// FileObject Constructor 
     /// </summary>
-    public FileObject(DocumentObject docObj)
-    {
-        _Document = docObj;
+    internal FileObject(DocumentObject docObj) {
+        Document = docObj;
     }
 
     /// <summary>
@@ -132,94 +103,74 @@ public class FileObject
     /// </summary>
     /// <param name="initString"></param>
     /// <returns></returns>
-    public bool Initialize(string initString)
-    {
+    internal bool Initialize(string initString) {
         //split the string into the properties here
-        if (!String.IsNullOrEmpty(initString)){
+        if (!String.IsNullOrEmpty(initString)) {
             // fObj.Application + "§" + fObj.Creator + "§" + fObj.DateCreated + "§" + fObj.DateModfied + "$" + fObj.FieldName + "§" + fObj.FileExtension + "§" + 
             //fObj.FileName + "$" + fObj.FileSize + "$" + fObj.LinkToFile + "$" + fObj.Other + "$" + fObj.SoftClass);
-            if (initString.Contains("§"))
-            {
+            if (initString.Contains("§")) {
                 String[] ar = initString.Split(new[] { "§" }, StringSplitOptions.None);
-                if(ar != null && ar.Length > 0 && ar.Length == 11)
-                {
+                if (ar != null && ar.Length > 0 && ar.Length == 11) {
 
-                    _Application = ar[0];
-                    _Creator = ar[1];
+                    Application = ar[0];
+                    Creator = ar[1];
                     strDateCreated = ar[2];
-                    if (!string.IsNullOrEmpty(strDateCreated) && !strDateCreated.Equals("."))
-                    {
-                        try
-                        {
+                    if (!string.IsNullOrEmpty(strDateCreated) && !strDateCreated.Equals(".")) {
+                        try {
                             //convert to real datetime
-                            _DateCreated = DateTime.Parse(strDateCreated);
+                            DateCreated = DateTime.Parse(strDateCreated);
 
-                        }catch(Exception)
-                        {
+                        } catch (Exception) {
                             //do nothing or report?
                         }
                     }
 
                     strDateModified = ar[3];
-                    if (!string.IsNullOrEmpty(strDateModified) && !strDateModified.Equals("."))
-                    {
-                        try
-                        {
+                    if (!string.IsNullOrEmpty(strDateModified) && !strDateModified.Equals(".")) {
+                        try {
                             //convert to real datetime
-                            _DateModified = DateTime.Parse(strDateModified);
+                            DateModified = DateTime.Parse(strDateModified);
 
-                        }
-                        catch (Exception)
-                        {
+                        } catch (Exception) {
                             //do nothing or report?
                         }
                     }
 
-                    _FieldName = ar[4];
-                    _Extension = ar[5];
-                    _Name = ar[6];
+                    FieldName = ar[4];
+                    Extension = ar[5];
+                    Name = ar[6];
                     strSize = ar[7];
-                    if (!string.IsNullOrEmpty(strSize))
-                    {
-                        try
-                        {
-                            _Size = long.Parse(strSize);
-                            _Size = _Size * 1024;
-                        }
-                        catch (Exception)
-                        {
+                    if (!string.IsNullOrEmpty(strSize)) {
+                        try {
+                            Size = long.Parse(strSize);
+                            Size = Size * 1024;
+                        } catch (Exception) {
                             // throw;
                         }
                     }
-                    _URL = ar[8];
-                    _Other = ar[9];
-                    _SoftClass = ar[10];
+                    URL = ar[8];
+                    Other = ar[9];
+                    SoftClass = ar[10];
 
                     //validating can be done here if not all values are retrieved - atm see what we can get without failing
 
-                    _isInitialized = true;
-                }
-                else
-                {
-                    _isInitialized = false;
+                    IsInitialized = true;
+                } else {
+                    IsInitialized = false;
                     //report?
                 }
-            }
-            else
-            {
-                _isInitialized = false;
+            } else {
+                IsInitialized = false;
                 //report?
             }
 
 
-            _isInitialized = true;
+            IsInitialized = true;
+        } else {
+            IsInitialized = false;
         }
-        else
-        {
-            _isInitialized = false;
-        }
-        
-        return _isInitialized;
+
+        return IsInitialized;
     }
 
     /// <summary>
@@ -227,14 +178,11 @@ public class FileObject
     /// </summary>
     /// <param name="filePath"></param>
     /// <returns></returns>
-    public bool ExtractFile(String filePath)
-    {
+    public bool ExtractFile(String filePath) {
         Connector.ResetReturn();
 
-        if (_isInitialized)
-        {
-            if (_Document.Database.Session.Connection.Request.ExecuteGetFileRequest(_URL, filePath))
-            {
+        if (IsInitialized) {
+            if (Document.Database.Session.Connection.Request.ExecuteGetFileRequest(URL, filePath)) {
                 Connector.hasError = false;
                 return true;
             }
