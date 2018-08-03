@@ -27,62 +27,62 @@ public class FileObject {
     /// <summary>
     /// Reference to this files document object
     /// </summary>
-    public DocumentObject Document { get; }
+    public DocumentObject Document { get; protected internal set; }
 
     /// <summary>
     /// The file name of the domino attachment
     /// </summary>
-    public string Name { get; set; } = "";
+    public string Name { get; protected internal set; } = "";
 
     /// <summary>
     /// URL of the domino attachment
     /// </summary>
-    public string URL { get; set; } = "";
+    public string URL { get; protected internal set; } = "";
 
     /// <summary>
     /// Size of the domino attachment in bytes
     /// </summary>
-    public long Size { get; set; }
+    public long Size { get; protected internal set; }
 
     /// <summary>
     /// JPI Soft Class of the domino attachment (Acad,ustn,office)
     /// </summary>
-    public string SoftClass { get; set; } = "";
+    public string SoftClass { get; protected internal set; } = "";
 
     /// <summary>
     /// JPI associated application of the domino attachment
     /// </summary>
-    public string Application { get; set; } = "";
+    public string Application { get; protected internal set; } = "";
 
     /// <summary>
     /// Creator of the domino attachment
     /// </summary>
-    public string Creator { get; set; } = "";
+    public string Creator { get; protected internal set; } = "";
 
     /// <summary>
     /// Creation date of the domino attachment
     /// </summary>
-    public DateTime DateCreated { get; set; }
+    public DateTime DateCreated { get; protected internal set; }
 
     /// <summary>
     /// Modified date of the domino attachment
     /// </summary>
-    public DateTime DateModified { get; set; }
+    public DateTime DateModified { get; protected internal set; }
 
     /// <summary>
     /// FieldName (Rich-Text item) associated to the domino attachment if available
     /// </summary>
-    public string FieldName { get; set; } = "";
+    public string FieldName { get; protected internal set; } = "";
 
     /// <summary>
     /// The file extension of the domino attachment
     /// </summary>
-    public string Extension { get; set; } = "";
+    public string Extension { get; protected internal set; } = "";
 
     /// <summary>
     /// Additional JPI information of the domino attachment
     /// </summary>
-    public string Other { get; set; } = "";
+    public string Other { get; protected internal set; } = "";
 
     /// <summary>
     /// Indicates that the file isInitialized
@@ -103,9 +103,10 @@ public class FileObject {
     /// <summary>
     /// Initialize the file object, parses the initialization string into their respective properties
     /// </summary>
-    /// <param name="initString"></param>
+    /// <param name="initString">Initialization string</param>
     /// <returns></returns>
     internal bool Initialize(string initString) {
+        
         //split the string into the properties here
         if (!String.IsNullOrEmpty(initString)) {
             // fObj.Application + "§" + fObj.Creator + "§" + fObj.DateCreated + "§" + fObj.DateModfied + "$" + fObj.FieldName + "§" + fObj.FileExtension + "§" +
@@ -142,7 +143,7 @@ public class FileObject {
                     if (!string.IsNullOrEmpty(strSize)) {
                         try {
                             Size = long.Parse(strSize);
-                            Size = Size * 1024;
+                            
                         } catch (Exception) {
                             // throw;
                         }

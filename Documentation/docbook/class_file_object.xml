@@ -186,7 +186,9 @@ Initialize the file object, parses the initialization string into their respecti
                         <tbody>
                             <row>
                                 <entry>initString</entry>
-                                <entry></entry>
+                                <entry>
+<para>Initialization string</para>
+</entry>
                             </row>
                         </tbody>
                         </tgroup>

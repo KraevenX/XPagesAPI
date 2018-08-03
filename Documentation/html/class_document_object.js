@@ -13,6 +13,8 @@ var class_document_object =
     [ "GetFiles", "class_document_object.html#a2c8aee9450e8fdd1e84e8ff26d0950a1", null ],
     [ "Initialize", "class_document_object.html#af4298d6cfbb9ea60643d9995309b73f1", null ],
     [ "InitializeWithFiles", "class_document_object.html#a83f0e855adc5fb7afd02d2e34767f5c8", null ],
+    [ "InitializeWithFilesAndFields", "class_document_object.html#a16350c0f471c95c82b418b7f1dc53694", null ],
+    [ "InitializeWithFilesAndFields", "class_document_object.html#af68a4510477845f4a1dce889bab7ed2f", null ],
     [ "Database", "class_document_object.html#a69d5338c9835f748490323d2950eed09", null ],
     [ "DateCreated", "class_document_object.html#a819cb8baad094f6e5990c54ec1eee8b0", null ],
     [ "DateModified", "class_document_object.html#a87ba1b3ac1b74b104972c25b245c504b", null ],

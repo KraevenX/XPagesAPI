@@ -2,6 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="dir_43724e81dd40e09f32417973865cdd64" kind="dir">
     <compoundname>C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/obj</compoundname>
+    <innerdir refid="dir_a71c3b2ad23b9ff58220dd012d201987">C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/obj/Debug</innerdir>
     <innerdir refid="dir_9fe5cc214b8578ee5b8e153089aca810">C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/obj/Release</innerdir>
     <briefdescription>
     </briefdescription>

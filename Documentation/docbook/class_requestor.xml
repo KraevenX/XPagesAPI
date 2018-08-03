@@ -103,6 +103,14 @@ string WebServiceURL, string Unid, string searchField, string searchValue, strin
             <para>
                 <itemizedlist>
                     <listitem>
+                        <para>bool <link linkend="class_requestor_1a3785b1112fd28459f331e1562399acad">ExecuteDocumentFilesFieldsRequest</link> (
+string WebServiceURL, string Unid, string searchField, string searchValue, string formula, string fields, <link linkend="class_database_object">DatabaseObject</link> dbObj, <link linkend="class_document_object">DocumentObject</link> docObj)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
                         <para>bool <link linkend="class_requestor_1ac4b4d88f8ce2f1b1a6db7ee87c82f60a">ExecuteAllDocumentsRequest</link> (
 string WebServiceURL, string searchField, string searchValue, string formula, string unids, <link linkend="class_database_object">DatabaseObject</link> dbObj)</para>
                     </listitem>
@@ -129,6 +137,14 @@ string WebServiceURL, <link linkend="class_document_object">DocumentObject</link
                     <listitem>
                         <para>bool <link linkend="class_requestor_1a990a0641252e7863cc855212d300822a">ExecuteAllFilesRequest</link> (
 string WebServiceURL, <link linkend="class_database_object">DatabaseObject</link> dbObj)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_requestor_1a6a0ee310044413ce0c0f68d0fb7c085c">ExecuteAllDocumentsFilesFieldsRequest</link> (
+string WebServiceURL, string searchField, string searchValue, string formula, string unids, <link linkend="class_database_object">DatabaseObject</link> dbObj, string fields)</para>
                     </listitem>
                 </itemizedlist>
             </para>
@@ -184,6 +200,10 @@ string FileURL, string LocalFilePath)</para>
                 <title>bool Requestor.ExecuteDocumentFilesRequest (string WebServiceURL, string Unid, string searchField, string searchValue, string formula, DatabaseObject dbObj, DocumentObject docObj)</title> <emphasis></emphasis>
                 
             </section>
+            <section xml:id="class_requestor_1a3785b1112fd28459f331e1562399acad">
+                <title>bool Requestor.ExecuteDocumentFilesFieldsRequest (string WebServiceURL, string Unid, string searchField, string searchValue, string formula, string fields, DatabaseObject dbObj, DocumentObject docObj)</title> <emphasis></emphasis>
+                
+            </section>
             <section xml:id="class_requestor_1ac4b4d88f8ce2f1b1a6db7ee87c82f60a">
                 <title>bool Requestor.ExecuteAllDocumentsRequest (string WebServiceURL, string searchField, string searchValue, string formula, string unids, DatabaseObject dbObj)</title> <emphasis></emphasis>
                 
@@ -198,6 +218,10 @@ string FileURL, string LocalFilePath)</para>
             </section>
             <section xml:id="class_requestor_1a990a0641252e7863cc855212d300822a">
                 <title>bool Requestor.ExecuteAllFilesRequest (string WebServiceURL, DatabaseObject dbObj)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_requestor_1a6a0ee310044413ce0c0f68d0fb7c085c">
+                <title>bool Requestor.ExecuteAllDocumentsFilesFieldsRequest (string WebServiceURL, string searchField, string searchValue, string formula, string unids, DatabaseObject dbObj, string fields)</title> <emphasis></emphasis>
                 
             </section>
             <section xml:id="class_requestor_1a14632528cb1be88d2e390300da796faa">

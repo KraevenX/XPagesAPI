@@ -417,32 +417,32 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_document_object_8cs_1a1a763aa01710b370634f46c89b7d2d8e';
-        sec-mem-ref-line = '299';
+        sec-mem-ref-line = '356';
         sec-mem-ref-name = 'DocumentObject::ExportFields';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_document_object_8cs_1a8753abc5a871bf84fc910e6a99936b2b';
-        sec-mem-ref-line = '345';
+        sec-mem-ref-line = '402';
         sec-mem-ref-name = 'DocumentObject::ExportFiles';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_file_object_8cs_1ae21fac09c5ab2f9fac96a3f084cb9ddc';
-        sec-mem-ref-line = '179';
+        sec-mem-ref-line = '180';
         sec-mem-ref-name = 'FileObject::ExtractFile';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_document_object_8cs_1a5e070c7c0a45ac06422ee992c841e780';
-        sec-mem-ref-line = '279';
+        sec-mem-ref-line = '336';
         sec-mem-ref-name = 'DocumentObject::GetAllFields';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_document_object_8cs_1a8883fec3b5b1b6e2e43f4b5ca4092684';
-        sec-mem-ref-line = '217';
+        sec-mem-ref-line = '274';
         sec-mem-ref-name = 'DocumentObject::GetFields';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_document_object_8cs_1a2c8aee9450e8fdd1e84e8ff26d0950a1';
-        sec-mem-ref-line = '238';
+        sec-mem-ref-line = '295';
         sec-mem-ref-name = 'DocumentObject::GetFiles';
     };
       sec-mem-referenceby = {
@@ -495,6 +495,11 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-ref-line = '188';
         sec-mem-ref-name = 'DocumentObject::InitializeWithFiles';
     };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_document_object_8cs_1a16350c0f471c95c82b418b7f1dc53694';
+        sec-mem-ref-line = '215';
+        sec-mem-ref-name = 'DocumentObject::InitializeWithFilesAndFields';
+    };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'property';
@@ -525,12 +530,12 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_document_object_8cs_1a1a763aa01710b370634f46c89b7d2d8e';
-        sec-mem-ref-line = '299';
+        sec-mem-ref-line = '356';
         sec-mem-ref-name = 'DocumentObject::ExportFields';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_document_object_8cs_1a8753abc5a871bf84fc910e6a99936b2b';
-        sec-mem-ref-line = '345';
+        sec-mem-ref-line = '402';
         sec-mem-ref-name = 'DocumentObject::ExportFiles';
     };
       sec-mem-referenceby = {
@@ -1138,6 +1143,93 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
+      sec-mem-id   = 'class_database_object_1a9ad284130fc620b1745bc3fd8db505a5';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+DocumentObject
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetDocumentAndFilesAndFields';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'unid';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '253';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Retrieve a document from this database by universalID
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and all fields
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>Triggers a document request</para>
+<para>The document will be added to the property 'Documents'</para>
+</summary>
+<param name="unid">UniversalID of the Notes Document</param>
+<returns>DocumentObject</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_document_object_8cs_1a16350c0f471c95c82b418b7f1dc53694';
+        sec-mem-ref-line = '215';
+        sec-mem-ref-name = 'DocumentObject::InitializeWithFilesAndFields';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1a5fe036d32a30eb10d1b3f6a30263f740';
+        sec-mem-ref-line = '30';
+        sec-mem-ref-name = 'IsInitialized';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_database_object_1a3de8e675278647046b0e48109ab0784f';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+DocumentObject
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetDocumentAndFilesAndFields';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'unid';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'fields';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '276';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Retrieve a document from this database by universalID
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and specific fields
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>Triggers a document request</para>
+<para>The document will be added to the property 'Documents'</para>
+</summary>
+<param name="unid">UniversalID of the Notes Document</param>
+<param name="fields">List of fields separated by ; </param>
+<returns>DocumentObject</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_document_object_8cs_1a16350c0f471c95c82b418b7f1dc53694';
+        sec-mem-ref-line = '215';
+        sec-mem-ref-name = 'DocumentObject::InitializeWithFilesAndFields';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1a5fe036d32a30eb10d1b3f6a30263f740';
+        sec-mem-ref-line = '30';
+        sec-mem-ref-name = 'IsInitialized';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
       sec-mem-id   = 'class_database_object_1a57bfc77d2754236cbcf6ac30a90da529';
       sec-mem-virt = normal;
       sec-mem-prot = public;
@@ -1158,7 +1250,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'searchValue';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
-      sec-mem-desc-line = '254';
+      sec-mem-desc-line = '299';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 <summary>
 Retrieve a document from this database by searching for a specific value in the provided field.
@@ -1205,7 +1297,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'searchValue';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
-      sec-mem-desc-line = '278';
+      sec-mem-desc-line = '323';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 <summary>
 Retrieve a document from this database by searching for a specific value in the provided field.
@@ -1233,6 +1325,109 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
+      sec-mem-id   = 'class_database_object_1a6fb63750e0d3ecb2393c8d416122f5d9';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+DocumentObject
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetDocumentAndFilesAndFieldsByKey';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'searchField';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'searchValue';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '347';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Retrieve a document from this database by searching for a specific value in the provided field.
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and all fields
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>The first document found will be returned</para>
+<para>Triggers a document request</para>
+<para>The document will be added to the property 'Documents'</para>
+</summary>
+<param name="searchField"></param>
+<param name="searchValue"></param>
+<returns>DocumentObject</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_document_object_8cs_1a16350c0f471c95c82b418b7f1dc53694';
+        sec-mem-ref-line = '215';
+        sec-mem-ref-name = 'DocumentObject::InitializeWithFilesAndFields';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1a5fe036d32a30eb10d1b3f6a30263f740';
+        sec-mem-ref-line = '30';
+        sec-mem-ref-name = 'IsInitialized';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_database_object_1a995e2ce483797f6e53607435d58da7c4';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+DocumentObject
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetDocumentAndFilesAndFieldsByKey';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'searchField';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'searchValue';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'fields';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '372';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Retrieve a document from this database by searching for a specific value in the provided field.
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and specific fields
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>The first document found will be returned</para>
+<para>Triggers a document request</para>
+<para>The document will be added to the property 'Documents'</para>
+</summary>
+<param name="searchField">Notes Field Name</param>
+<param name="searchValue">Notes Field Value</param>
+<param name="fields"></param>
+<returns>DocumentObject</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_document_object_8cs_1a16350c0f471c95c82b418b7f1dc53694';
+        sec-mem-ref-line = '215';
+        sec-mem-ref-name = 'DocumentObject::InitializeWithFilesAndFields';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1a5fe036d32a30eb10d1b3f6a30263f740';
+        sec-mem-ref-line = '30';
+        sec-mem-ref-name = 'IsInitialized';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
       sec-mem-id   = 'class_database_object_1ae5477aedfcd0d54b21017faa1389bc71';
       sec-mem-virt = normal;
       sec-mem-prot = public;
@@ -1247,7 +1442,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'formula';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
-      sec-mem-desc-line = '300';
+      sec-mem-desc-line = '394';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 <summary>
 Retrieve a document from this database by searching using the provided formula.
@@ -1287,7 +1482,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'formula';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
-      sec-mem-desc-line = '323';
+      sec-mem-desc-line = '417';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 <summary>
 Retrieve a document from this database by searching using the provided formula.
@@ -1314,6 +1509,95 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
+      sec-mem-id   = 'class_database_object_1ac158fa645a9ab75299dd3249576e3893';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+DocumentObject
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetDocumentAndFilesAndFieldsByFormula';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'formula';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'fields';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '441';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Retrieve a document from this database by searching using the provided formula.
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and and specific fields
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>The first document found will be returned</para>
+<para>Triggers a document request</para>
+<para>The document will be added to the property 'Documents'</para>
+</summary>
+<param name="formula">Lotus Notes Formula</param>
+<param name="fields">List of fields to retrieve separated by ; </param>
+<returns>DocumentObject</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_document_object_8cs_1a16350c0f471c95c82b418b7f1dc53694';
+        sec-mem-ref-line = '215';
+        sec-mem-ref-name = 'DocumentObject::InitializeWithFilesAndFields';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1a5fe036d32a30eb10d1b3f6a30263f740';
+        sec-mem-ref-line = '30';
+        sec-mem-ref-name = 'IsInitialized';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_database_object_1a8df18648821ead79c6709a73fd54afeb';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+DocumentObject
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetDocumentAndFilesAndFieldsByFormula';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'formula';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '464';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Retrieve a document from this database by searching using the provided formula.
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and all fields
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>The first document found will be returned</para>
+<para>Triggers a document request</para>
+<para>The document will be added to the property 'Documents'</para>
+</summary>
+<param name="formula">Lotus Notes Formula</param>
+<returns>DocumentObject</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_document_object_8cs_1a16350c0f471c95c82b418b7f1dc53694';
+        sec-mem-ref-line = '215';
+        sec-mem-ref-name = 'DocumentObject::InitializeWithFilesAndFields';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1a5fe036d32a30eb10d1b3f6a30263f740';
+        sec-mem-ref-line = '30';
+        sec-mem-ref-name = 'IsInitialized';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
       sec-mem-id   = 'class_database_object_1ad3010e55b2e75d0863e168fed1e279c5';
       sec-mem-virt = normal;
       sec-mem-prot = public;
@@ -1322,7 +1606,7 @@ bool
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'GetAllDocuments';
       sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
-      sec-mem-desc-line = '343';
+      sec-mem-desc-line = '485';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 <summary>
 Retrieve all documents from the database
@@ -1364,7 +1648,7 @@ bool
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'GetAllDocumentsAndFiles';
       sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
-      sec-mem-desc-line = '362';
+      sec-mem-desc-line = '504';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 <summary>
 Retrieve all documents from the database
@@ -1413,7 +1697,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'formula';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
-      sec-mem-desc-line = '381';
+      sec-mem-desc-line = '525';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 <summary>
 Retrieve all documents from this database that correspond to the provided formula
@@ -1462,7 +1746,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'formula';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
-      sec-mem-desc-line = '401';
+      sec-mem-desc-line = '545';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 <summary>
 Retrieve all documents from this database that correspond to the provided formula
@@ -1473,6 +1757,113 @@ _EnD_oF_dEf_TeXt_;
 <para>All documents found will be added to the property 'Documents'</para>
 </summary>
 <param name="formula"></param>
+<returns>Boolean</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a014bdbf705a753540e19bfb53030c55c';
+        sec-mem-ref-line = '49';
+        sec-mem-ref-name = 'SessionObject::Connection';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1a5fe036d32a30eb10d1b3f6a30263f740';
+        sec-mem-ref-line = '30';
+        sec-mem-ref-name = 'IsInitialized';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1aa8484162b7d2a7c4c9426bca13c64c07';
+        sec-mem-ref-line = '25';
+        sec-mem-ref-name = 'Session';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a697c071c812fbf7ad1166b896fb44c16';
+        sec-mem-ref-line = '44';
+        sec-mem-ref-name = 'SessionObject::WebServiceURL';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_database_object_1ae6b850b56e26c6960ec2b7ff4d78372c';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetAllDocumentsAndFilesAndFieldsByFormula';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'formula';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '565';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Retrieve all documents from this database that correspond to the provided formula
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and all fields
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>Triggers an all documents request</para>
+<para>All documents found will be added to the property 'Documents'</para>
+</summary>
+<param name="formula"></param>
+<returns>Boolean</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a014bdbf705a753540e19bfb53030c55c';
+        sec-mem-ref-line = '49';
+        sec-mem-ref-name = 'SessionObject::Connection';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1a5fe036d32a30eb10d1b3f6a30263f740';
+        sec-mem-ref-line = '30';
+        sec-mem-ref-name = 'IsInitialized';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1aa8484162b7d2a7c4c9426bca13c64c07';
+        sec-mem-ref-line = '25';
+        sec-mem-ref-name = 'Session';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a697c071c812fbf7ad1166b896fb44c16';
+        sec-mem-ref-line = '44';
+        sec-mem-ref-name = 'SessionObject::WebServiceURL';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_database_object_1a5f69325c3b09142f2a3a9ae509ef02fa';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetAllDocumentsAndFilesAndFieldsByFormula';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'formula';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'fields';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '587';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Retrieve all documents from this database that correspond to the provided formula
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and specific fields
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>Triggers an all documents request</para>
+<para>All documents found will be added to the property 'Documents'</para>
+</summary>
+<param name="formula">Lotus Notes Formula</param>
+<param name="fields">A list of fields to retrieve separated by ; </param>
 <returns>Boolean</returns>  
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
@@ -1512,7 +1903,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'unids';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
-      sec-mem-desc-line = '421';
+      sec-mem-desc-line = '608';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 <summary>
 Retrieve all documents from this database by universalIDs
@@ -1562,7 +1953,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'unids';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
-      sec-mem-desc-line = '442';
+      sec-mem-desc-line = '629';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 <summary>
 Retrieve all documents from this database by universalIDs
@@ -1574,6 +1965,115 @@ _EnD_oF_dEf_TeXt_;
 <para>All documents found will be added to the property 'Documents'</para>
 </summary>
 <param name="unids"></param>
+<returns>Boolean</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a014bdbf705a753540e19bfb53030c55c';
+        sec-mem-ref-line = '49';
+        sec-mem-ref-name = 'SessionObject::Connection';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1a5fe036d32a30eb10d1b3f6a30263f740';
+        sec-mem-ref-line = '30';
+        sec-mem-ref-name = 'IsInitialized';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1aa8484162b7d2a7c4c9426bca13c64c07';
+        sec-mem-ref-line = '25';
+        sec-mem-ref-name = 'Session';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a697c071c812fbf7ad1166b896fb44c16';
+        sec-mem-ref-line = '44';
+        sec-mem-ref-name = 'SessionObject::WebServiceURL';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_database_object_1a92de6fceafa29d3dcc8d3fff6961e6d6';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetAllDocumentsAndFilesAndFieldsByUnids';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'unids';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '650';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Retrieve all documents from this database by universalIDs
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and all fields
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para> Provide the universalIds separated by ;</para>
+<para>Triggers an all documents request</para>
+<para>All documents found will be added to the property 'Documents'</para>
+</summary>
+<param name="unids"></param>
+<returns>Boolean</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a014bdbf705a753540e19bfb53030c55c';
+        sec-mem-ref-line = '49';
+        sec-mem-ref-name = 'SessionObject::Connection';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1a5fe036d32a30eb10d1b3f6a30263f740';
+        sec-mem-ref-line = '30';
+        sec-mem-ref-name = 'IsInitialized';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1aa8484162b7d2a7c4c9426bca13c64c07';
+        sec-mem-ref-line = '25';
+        sec-mem-ref-name = 'Session';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a697c071c812fbf7ad1166b896fb44c16';
+        sec-mem-ref-line = '44';
+        sec-mem-ref-name = 'SessionObject::WebServiceURL';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_database_object_1a0e6ff0557f91850aee2d5bf77ba7fc82';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetAllDocumentsAndFilesAndFieldsByUnids';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'unids';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'fields';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '672';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Retrieve all documents from this database by universalIDs
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and specific fields
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para> Provide the universalIds separated by ;</para>
+<para>Triggers an all documents request</para>
+<para>All documents found will be added to the property 'Documents'</para>
+</summary>
+<param name="unids">UniversalID of Notes Documents separated by ; </param>
+<param name="fields">A list of fields to retrieve separated by ; </param>
 <returns>Boolean</returns>  
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
@@ -1613,7 +2113,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'listUnids';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
-      sec-mem-desc-line = '461';
+      sec-mem-desc-line = '691';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 <summary>
 Retrieve all documents from this database by universalIDs
@@ -1662,7 +2162,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'listUnids';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
-      sec-mem-desc-line = '483';
+      sec-mem-desc-line = '713';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 <summary>
 Retrieve all documents from this database by universalIDs
@@ -1673,6 +2173,113 @@ _EnD_oF_dEf_TeXt_;
 <para>All documents found will be added to the property 'Documents'</para>
 </summary>
 <param name="listUnids"></param>
+<returns>Boolean</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a014bdbf705a753540e19bfb53030c55c';
+        sec-mem-ref-line = '49';
+        sec-mem-ref-name = 'SessionObject::Connection';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1a5fe036d32a30eb10d1b3f6a30263f740';
+        sec-mem-ref-line = '30';
+        sec-mem-ref-name = 'IsInitialized';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1aa8484162b7d2a7c4c9426bca13c64c07';
+        sec-mem-ref-line = '25';
+        sec-mem-ref-name = 'Session';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a697c071c812fbf7ad1166b896fb44c16';
+        sec-mem-ref-line = '44';
+        sec-mem-ref-name = 'SessionObject::WebServiceURL';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_database_object_1a9eb9436d27f446982f0ec4ddce49e843';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetAllDocumentsAndFilesAndFieldsByUnids';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+IList
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'listUnids';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '735';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Retrieve all documents from this database by universalIDs
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and all fields
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>Triggers an all documents request</para>
+<para>All documents found will be added to the property 'Documents'</para>
+</summary>
+<param name="listUnids"></param>
+<returns>Boolean</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a014bdbf705a753540e19bfb53030c55c';
+        sec-mem-ref-line = '49';
+        sec-mem-ref-name = 'SessionObject::Connection';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1a5fe036d32a30eb10d1b3f6a30263f740';
+        sec-mem-ref-line = '30';
+        sec-mem-ref-name = 'IsInitialized';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1aa8484162b7d2a7c4c9426bca13c64c07';
+        sec-mem-ref-line = '25';
+        sec-mem-ref-name = 'Session';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a697c071c812fbf7ad1166b896fb44c16';
+        sec-mem-ref-line = '44';
+        sec-mem-ref-name = 'SessionObject::WebServiceURL';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_database_object_1aaf0f7fbe6f346bfc24b3844610c3e8f3';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetAllDocumentsAndFilesAndFieldsByUnids';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+IList
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'listUnids';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'fields';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '758';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Retrieve all documents from this database by universalIDs
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and specific fields
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>Triggers an all documents request</para>
+<para>All documents found will be added to the property 'Documents'</para>
+</summary>
+<param name="listUnids">List of UniversalIDs of Notes Documents</param>
+<param name="fields">A list of fields to retrieve separated by ; </param>
 <returns>Boolean</returns>  
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
@@ -1718,7 +2325,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'searchValue';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
-      sec-mem-desc-line = '505';
+      sec-mem-desc-line = '780';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 <summary>
 Retrieve all documents from this database by searching for a specific value in the provided field
@@ -1774,7 +2381,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'searchValue';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
-      sec-mem-desc-line = '526';
+      sec-mem-desc-line = '801';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 <summary>
 Retrieve all documents from this database by searching for a specific value in the provided field
@@ -1786,6 +2393,127 @@ _EnD_oF_dEf_TeXt_;
 </summary>
 <param name="searchField"></param>
 <param name="searchValue"></param>
+<returns>Boolean</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a014bdbf705a753540e19bfb53030c55c';
+        sec-mem-ref-line = '49';
+        sec-mem-ref-name = 'SessionObject::Connection';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1a5fe036d32a30eb10d1b3f6a30263f740';
+        sec-mem-ref-line = '30';
+        sec-mem-ref-name = 'IsInitialized';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1aa8484162b7d2a7c4c9426bca13c64c07';
+        sec-mem-ref-line = '25';
+        sec-mem-ref-name = 'Session';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a697c071c812fbf7ad1166b896fb44c16';
+        sec-mem-ref-line = '44';
+        sec-mem-ref-name = 'SessionObject::WebServiceURL';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_database_object_1a612844c9d2bbb0b1b5013c07bf661d4a';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetAllDocumentsAndFilesAndFieldsByKey';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'searchField';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'searchValue';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '822';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Retrieve all documents from this database by searching for a specific value in the provided field
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and all fields
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>Triggers an all documents request</para>
+<para>All documents found will be added to the property 'Documents'</para>
+</summary>
+<param name="searchField"></param>
+<param name="searchValue"></param>
+<returns>Boolean</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a014bdbf705a753540e19bfb53030c55c';
+        sec-mem-ref-line = '49';
+        sec-mem-ref-name = 'SessionObject::Connection';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1a5fe036d32a30eb10d1b3f6a30263f740';
+        sec-mem-ref-line = '30';
+        sec-mem-ref-name = 'IsInitialized';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1aa8484162b7d2a7c4c9426bca13c64c07';
+        sec-mem-ref-line = '25';
+        sec-mem-ref-name = 'Session';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a697c071c812fbf7ad1166b896fb44c16';
+        sec-mem-ref-line = '44';
+        sec-mem-ref-name = 'SessionObject::WebServiceURL';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_database_object_1a6f7a8cf66063a0b1ae67bc59f4589102';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GetAllDocumentsAndFilesAndFieldsByKey';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'searchField';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'searchValue';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'fields';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
+      sec-mem-desc-line = '845';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Retrieve all documents from this database by searching for a specific value in the provided field
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and specific fields
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>Triggers an all documents request</para>
+<para>All documents found will be added to the property 'Documents'</para>
+</summary>
+<param name="searchField"></param>
+<param name="searchValue"></param>
+<param name="fields">A list of fields to retrieve separated by ; </param>
 <returns>Boolean</returns>  
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
@@ -1825,7 +2553,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'listFields';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
-      sec-mem-desc-line = '545';
+      sec-mem-desc-line = '864';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 <summary>
 Retrieve fields for all documents in the property 'Documents'
@@ -1879,7 +2607,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'listFields';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
-      sec-mem-desc-line = '563';
+      sec-mem-desc-line = '882';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 <summary>
 Retrieve fields for all documents in the property 'Documents'
@@ -1926,7 +2654,7 @@ bool
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'LoadDocumentFiles';
       sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
-      sec-mem-desc-line = '581';
+      sec-mem-desc-line = '900';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 <summary>
 Retrieve file objects for all documents in the property 'Documents'
@@ -1972,7 +2700,7 @@ void
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'ClearDocuments';
       sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DatabaseObject.cs';
-      sec-mem-desc-line = '596';
+      sec-mem-desc-line = '915';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 <summary>
 Remove all retrieved documents from the 'Documents' property
@@ -2016,62 +2744,77 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_file_object_8cs_1ae21fac09c5ab2f9fac96a3f084cb9ddc';
-        sec-mem-ref-line = '179';
+        sec-mem-ref-line = '180';
         sec-mem-ref-name = 'FileObject::ExtractFile';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1ad3010e55b2e75d0863e168fed1e279c5';
-        sec-mem-ref-line = '343';
+        sec-mem-ref-line = '485';
         sec-mem-ref-name = 'GetAllDocuments';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a72239fa2b2a549665e45cdd340cd70a0';
-        sec-mem-ref-line = '362';
+        sec-mem-ref-line = '504';
         sec-mem-ref-name = 'GetAllDocumentsAndFiles';
     };
       sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1ae6b850b56e26c6960ec2b7ff4d78372c';
+        sec-mem-ref-line = '565';
+        sec-mem-ref-name = 'GetAllDocumentsAndFilesAndFieldsByFormula';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1a612844c9d2bbb0b1b5013c07bf661d4a';
+        sec-mem-ref-line = '822';
+        sec-mem-ref-name = 'GetAllDocumentsAndFilesAndFieldsByKey';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1a92de6fceafa29d3dcc8d3fff6961e6d6';
+        sec-mem-ref-line = '650';
+        sec-mem-ref-name = 'GetAllDocumentsAndFilesAndFieldsByUnids';
+    };
+      sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1ac478ff9264805edc8569d510916c4c00';
-        sec-mem-ref-line = '401';
+        sec-mem-ref-line = '545';
         sec-mem-ref-name = 'GetAllDocumentsAndFilesByFormula';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a6c2fb05fb6972d74d5bea67e323985fb';
-        sec-mem-ref-line = '526';
+        sec-mem-ref-line = '801';
         sec-mem-ref-name = 'GetAllDocumentsAndFilesByKey';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a9332713c924ab14195fe51bf0b8d35d1';
-        sec-mem-ref-line = '442';
+        sec-mem-ref-line = '629';
         sec-mem-ref-name = 'GetAllDocumentsAndFilesByUnids';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a6bfb480373a7e2bdbeaa67e4e3303a3a';
-        sec-mem-ref-line = '381';
+        sec-mem-ref-line = '525';
         sec-mem-ref-name = 'GetAllDocumentsByFormula';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1ad4834e7677cd0418969a657eed99653c';
-        sec-mem-ref-line = '505';
+        sec-mem-ref-line = '780';
         sec-mem-ref-name = 'GetAllDocumentsByKey';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a4d8a7d73614f53a04fe8eb79bef2f614';
-        sec-mem-ref-line = '421';
+        sec-mem-ref-line = '608';
         sec-mem-ref-name = 'GetAllDocumentsByUnids';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_document_object_8cs_1a5e070c7c0a45ac06422ee992c841e780';
-        sec-mem-ref-line = '279';
+        sec-mem-ref-line = '336';
         sec-mem-ref-name = 'DocumentObject::GetAllFields';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_document_object_8cs_1a8883fec3b5b1b6e2e43f4b5ca4092684';
-        sec-mem-ref-line = '217';
+        sec-mem-ref-line = '274';
         sec-mem-ref-name = 'DocumentObject::GetFields';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_document_object_8cs_1a2c8aee9450e8fdd1e84e8ff26d0950a1';
-        sec-mem-ref-line = '238';
+        sec-mem-ref-line = '295';
         sec-mem-ref-name = 'DocumentObject::GetFiles';
     };
       sec-mem-referenceby = {
@@ -2090,13 +2833,18 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-ref-name = 'DocumentObject::InitializeWithFiles';
     };
       sec-mem-referenceby = {
+        sec-mem-ref-id = '_document_object_8cs_1a16350c0f471c95c82b418b7f1dc53694';
+        sec-mem-ref-line = '215';
+        sec-mem-ref-name = 'DocumentObject::InitializeWithFilesAndFields';
+    };
+      sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a88ae0bcda671009e2742858ab945a18c';
-        sec-mem-ref-line = '545';
+        sec-mem-ref-line = '864';
         sec-mem-ref-name = 'LoadDocumentFields';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1acdf5c9ee898d4473350a2f4878af5a23';
-        sec-mem-ref-line = '581';
+        sec-mem-ref-line = '900';
         sec-mem-ref-name = 'LoadDocumentFiles';
     };
     }; /* sec-member */
@@ -2124,42 +2872,57 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1ad3010e55b2e75d0863e168fed1e279c5';
-        sec-mem-ref-line = '343';
+        sec-mem-ref-line = '485';
         sec-mem-ref-name = 'GetAllDocuments';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a72239fa2b2a549665e45cdd340cd70a0';
-        sec-mem-ref-line = '362';
+        sec-mem-ref-line = '504';
         sec-mem-ref-name = 'GetAllDocumentsAndFiles';
     };
       sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1ae6b850b56e26c6960ec2b7ff4d78372c';
+        sec-mem-ref-line = '565';
+        sec-mem-ref-name = 'GetAllDocumentsAndFilesAndFieldsByFormula';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1a612844c9d2bbb0b1b5013c07bf661d4a';
+        sec-mem-ref-line = '822';
+        sec-mem-ref-name = 'GetAllDocumentsAndFilesAndFieldsByKey';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1a92de6fceafa29d3dcc8d3fff6961e6d6';
+        sec-mem-ref-line = '650';
+        sec-mem-ref-name = 'GetAllDocumentsAndFilesAndFieldsByUnids';
+    };
+      sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1ac478ff9264805edc8569d510916c4c00';
-        sec-mem-ref-line = '401';
+        sec-mem-ref-line = '545';
         sec-mem-ref-name = 'GetAllDocumentsAndFilesByFormula';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a6c2fb05fb6972d74d5bea67e323985fb';
-        sec-mem-ref-line = '526';
+        sec-mem-ref-line = '801';
         sec-mem-ref-name = 'GetAllDocumentsAndFilesByKey';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a9332713c924ab14195fe51bf0b8d35d1';
-        sec-mem-ref-line = '442';
+        sec-mem-ref-line = '629';
         sec-mem-ref-name = 'GetAllDocumentsAndFilesByUnids';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a6bfb480373a7e2bdbeaa67e4e3303a3a';
-        sec-mem-ref-line = '381';
+        sec-mem-ref-line = '525';
         sec-mem-ref-name = 'GetAllDocumentsByFormula';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1ad4834e7677cd0418969a657eed99653c';
-        sec-mem-ref-line = '505';
+        sec-mem-ref-line = '780';
         sec-mem-ref-name = 'GetAllDocumentsByKey';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a4d8a7d73614f53a04fe8eb79bef2f614';
-        sec-mem-ref-line = '421';
+        sec-mem-ref-line = '608';
         sec-mem-ref-name = 'GetAllDocumentsByUnids';
     };
       sec-mem-referenceby = {
@@ -2173,23 +2936,38 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-ref-name = 'GetDocumentAndFiles';
     };
       sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1a9ad284130fc620b1745bc3fd8db505a5';
+        sec-mem-ref-line = '253';
+        sec-mem-ref-name = 'GetDocumentAndFilesAndFields';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1ac158fa645a9ab75299dd3249576e3893';
+        sec-mem-ref-line = '441';
+        sec-mem-ref-name = 'GetDocumentAndFilesAndFieldsByFormula';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1a6fb63750e0d3ecb2393c8d416122f5d9';
+        sec-mem-ref-line = '347';
+        sec-mem-ref-name = 'GetDocumentAndFilesAndFieldsByKey';
+    };
+      sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a1d35f51baee4be6adb69a954efe5b4bf';
-        sec-mem-ref-line = '323';
+        sec-mem-ref-line = '417';
         sec-mem-ref-name = 'GetDocumentAndFilesByFormula';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a30968034c65328e44ddb0fdac8ab1435';
-        sec-mem-ref-line = '278';
+        sec-mem-ref-line = '323';
         sec-mem-ref-name = 'GetDocumentAndFilesByKey';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1ae5477aedfcd0d54b21017faa1389bc71';
-        sec-mem-ref-line = '300';
+        sec-mem-ref-line = '394';
         sec-mem-ref-name = 'GetDocumentByFormula';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a57bfc77d2754236cbcf6ac30a90da529';
-        sec-mem-ref-line = '254';
+        sec-mem-ref-line = '299';
         sec-mem-ref-name = 'GetDocumentByKey';
     };
       sec-mem-referenceby = {
@@ -2199,12 +2977,12 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a88ae0bcda671009e2742858ab945a18c';
-        sec-mem-ref-line = '545';
+        sec-mem-ref-line = '864';
         sec-mem-ref-name = 'LoadDocumentFields';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1acdf5c9ee898d4473350a2f4878af5a23';
-        sec-mem-ref-line = '581';
+        sec-mem-ref-line = '900';
         sec-mem-ref-name = 'LoadDocumentFiles';
     };
     }; /* sec-member */
@@ -2433,7 +3211,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1af9c4789dea0a14e5a2f914758d3bc54e';
-        sec-mem-ref-line = '596';
+        sec-mem-ref-line = '915';
         sec-mem-ref-name = 'ClearDocuments';
     };
       sec-mem-referenceby = {
@@ -2443,12 +3221,12 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a88ae0bcda671009e2742858ab945a18c';
-        sec-mem-ref-line = '545';
+        sec-mem-ref-line = '864';
         sec-mem-ref-name = 'LoadDocumentFields';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1acdf5c9ee898d4473350a2f4878af5a23';
-        sec-mem-ref-line = '581';
+        sec-mem-ref-line = '900';
         sec-mem-ref-name = 'LoadDocumentFiles';
     };
     }; /* sec-member */
@@ -2698,12 +3476,12 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1ae5477aedfcd0d54b21017faa1389bc71';
-        sec-mem-ref-line = '300';
+        sec-mem-ref-line = '394';
         sec-mem-ref-name = 'DatabaseObject::GetDocumentByFormula';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a57bfc77d2754236cbcf6ac30a90da529';
-        sec-mem-ref-line = '254';
+        sec-mem-ref-line = '299';
         sec-mem-ref-name = 'DatabaseObject::GetDocumentByKey';
     };
     }; /* sec-member */
@@ -2769,13 +3547,148 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a1d35f51baee4be6adb69a954efe5b4bf';
-        sec-mem-ref-line = '323';
+        sec-mem-ref-line = '417';
         sec-mem-ref-name = 'DatabaseObject::GetDocumentAndFilesByFormula';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a30968034c65328e44ddb0fdac8ab1435';
-        sec-mem-ref-line = '278';
+        sec-mem-ref-line = '323';
         sec-mem-ref-name = 'DatabaseObject::GetDocumentAndFilesByKey';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_document_object_1a16350c0f471c95c82b418b7f1dc53694';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'InitializeWithFilesAndFields';
+      sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '215';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Initializes the document by validating the input and triggering the document request
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and all fields
+</summary>
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<returns>Boolean</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a014bdbf705a753540e19bfb53030c55c';
+        sec-mem-ref-line = '49';
+        sec-mem-ref-name = 'SessionObject::Connection';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_document_object_8cs_1a69d5338c9835f748490323d2950eed09';
+        sec-mem-ref-line = '37';
+        sec-mem-ref-name = 'Database';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1a9365777a6b7b711b75bcfa6c4d53e989';
+        sec-mem-ref-line = '91';
+        sec-mem-ref-name = 'Connector::HasError';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_document_object_8cs_1a3b2075b73f38d05091b69decc6ce7992';
+        sec-mem-ref-line = '42';
+        sec-mem-ref-name = 'IsInitialized';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1aa8484162b7d2a7c4c9426bca13c64c07';
+        sec-mem-ref-line = '25';
+        sec-mem-ref-name = 'DatabaseObject::Session';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_document_object_8cs_1a8b96d04632a2802e7cc5466ca5cee8cf';
+        sec-mem-ref-line = '77';
+        sec-mem-ref-name = 'UniversalID';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a697c071c812fbf7ad1166b896fb44c16';
+        sec-mem-ref-line = '44';
+        sec-mem-ref-name = 'SessionObject::WebServiceURL';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1a9ad284130fc620b1745bc3fd8db505a5';
+        sec-mem-ref-line = '253';
+        sec-mem-ref-name = 'DatabaseObject::GetDocumentAndFilesAndFields';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1ac158fa645a9ab75299dd3249576e3893';
+        sec-mem-ref-line = '441';
+        sec-mem-ref-name = 'DatabaseObject::GetDocumentAndFilesAndFieldsByFormula';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1a6fb63750e0d3ecb2393c8d416122f5d9';
+        sec-mem-ref-line = '347';
+        sec-mem-ref-name = 'DatabaseObject::GetDocumentAndFilesAndFieldsByKey';
+    };
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_document_object_1af68a4510477845f4a1dce889bab7ed2f';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'InitializeWithFilesAndFields';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+string
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'fields';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs';
+      sec-mem-desc-line = '244';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+<summary>
+Initializes the document by validating the input and triggering the document request
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+<para>This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and specific fields</para>
+<para>Provide the fields separated by ;</para>
+</summary>
+<param name="fields">Field Names separated by ; </param>
+<returns>bool</returns>  
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a014bdbf705a753540e19bfb53030c55c';
+        sec-mem-ref-line = '49';
+        sec-mem-ref-name = 'SessionObject::Connection';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_document_object_8cs_1a69d5338c9835f748490323d2950eed09';
+        sec-mem-ref-line = '37';
+        sec-mem-ref-name = 'Database';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_connector_8cs_1a9365777a6b7b711b75bcfa6c4d53e989';
+        sec-mem-ref-line = '91';
+        sec-mem-ref-name = 'Connector::HasError';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_document_object_8cs_1a3b2075b73f38d05091b69decc6ce7992';
+        sec-mem-ref-line = '42';
+        sec-mem-ref-name = 'IsInitialized';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_database_object_8cs_1aa8484162b7d2a7c4c9426bca13c64c07';
+        sec-mem-ref-line = '25';
+        sec-mem-ref-name = 'DatabaseObject::Session';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_document_object_8cs_1a8b96d04632a2802e7cc5466ca5cee8cf';
+        sec-mem-ref-line = '77';
+        sec-mem-ref-name = 'UniversalID';
+    };
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_session_object_8cs_1a697c071c812fbf7ad1166b896fb44c16';
+        sec-mem-ref-line = '44';
+        sec-mem-ref-name = 'SessionObject::WebServiceURL';
     };
     }; /* sec-member */
     sec-member = {
@@ -2794,7 +3707,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'fields';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs';
-      sec-mem-desc-line = '217';
+      sec-mem-desc-line = '274';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 <summary>
 Retrieve fields for this documents by triggering the field request
@@ -2804,7 +3717,7 @@ _EnD_oF_dEf_TeXt_;
 <para>This action will update the property 'Fields'</para>
 </summary>
 <param name="fields"></param>
-<returns>Boolean</returns>  
+<returns>bool</returns>  
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
         sec-mem-ref-id = '_session_object_8cs_1a014bdbf705a753540e19bfb53030c55c';
@@ -2847,7 +3760,7 @@ bool
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'GetFiles';
       sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs';
-      sec-mem-desc-line = '238';
+      sec-mem-desc-line = '295';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 <summary>
 Retrieve file objects for this documents by triggering the document files request
@@ -2904,7 +3817,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'fields';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs';
-      sec-mem-desc-line = '258';
+      sec-mem-desc-line = '315';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 <summary>
 Retrieve fields for this documents by triggering the field request
@@ -2956,7 +3869,7 @@ bool
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'GetAllFields';
       sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs';
-      sec-mem-desc-line = '279';
+      sec-mem-desc-line = '336';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 <summary>
 Retrieve all fields for this documents by triggering the all fields request
@@ -3019,7 +3932,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'overwriteExistingFile';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs';
-      sec-mem-desc-line = '299';
+      sec-mem-desc-line = '356';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 <summary>
 Exports the content of the property 'Fields' to a file
@@ -3074,7 +3987,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'overwriteExistingFile';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs';
-      sec-mem-desc-line = '345';
+      sec-mem-desc-line = '402';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 <summary>
 Exports the files from the XPages URL for all FileObjects in the Files property
@@ -3088,7 +4001,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
         sec-mem-ref-id = '_file_object_8cs_1ae21fac09c5ab2f9fac96a3f084cb9ddc';
-        sec-mem-ref-line = '179';
+        sec-mem-ref-line = '180';
         sec-mem-ref-name = 'FileObject::ExtractFile';
     };
       sec-mem-referenceto = {
@@ -3127,7 +4040,7 @@ void
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'ClearFields';
       sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs';
-      sec-mem-desc-line = '392';
+      sec-mem-desc-line = '449';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 <summary>
 Remove all the retrieved field objects from this document
@@ -3152,7 +4065,7 @@ void
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'ClearFiles';
       sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/DocumentObject.cs';
-      sec-mem-desc-line = '399';
+      sec-mem-desc-line = '456';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 <summary>
 Remove all the retrieved file objects from this document
@@ -3196,22 +4109,22 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_file_object_8cs_1ae21fac09c5ab2f9fac96a3f084cb9ddc';
-        sec-mem-ref-line = '179';
+        sec-mem-ref-line = '180';
         sec-mem-ref-name = 'FileObject::ExtractFile';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_document_object_8cs_1a5e070c7c0a45ac06422ee992c841e780';
-        sec-mem-ref-line = '279';
+        sec-mem-ref-line = '336';
         sec-mem-ref-name = 'GetAllFields';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_document_object_8cs_1a8883fec3b5b1b6e2e43f4b5ca4092684';
-        sec-mem-ref-line = '217';
+        sec-mem-ref-line = '274';
         sec-mem-ref-name = 'GetFields';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_document_object_8cs_1a2c8aee9450e8fdd1e84e8ff26d0950a1';
-        sec-mem-ref-line = '238';
+        sec-mem-ref-line = '295';
         sec-mem-ref-name = 'GetFiles';
     };
       sec-mem-referenceby = {
@@ -3223,6 +4136,11 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-ref-id = '_document_object_8cs_1a83f0e855adc5fb7afd02d2e34767f5c8';
         sec-mem-ref-line = '188';
         sec-mem-ref-name = 'InitializeWithFiles';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_document_object_8cs_1a16350c0f471c95c82b418b7f1dc53694';
+        sec-mem-ref-line = '215';
+        sec-mem-ref-name = 'InitializeWithFilesAndFields';
     };
     }; /* sec-member */
     sec-member = {
@@ -3249,17 +4167,17 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceby = {
         sec-mem-ref-id = '_document_object_8cs_1a5e070c7c0a45ac06422ee992c841e780';
-        sec-mem-ref-line = '279';
+        sec-mem-ref-line = '336';
         sec-mem-ref-name = 'GetAllFields';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_document_object_8cs_1a8883fec3b5b1b6e2e43f4b5ca4092684';
-        sec-mem-ref-line = '217';
+        sec-mem-ref-line = '274';
         sec-mem-ref-name = 'GetFields';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_document_object_8cs_1a2c8aee9450e8fdd1e84e8ff26d0950a1';
-        sec-mem-ref-line = '238';
+        sec-mem-ref-line = '295';
         sec-mem-ref-name = 'GetFiles';
     };
       sec-mem-referenceby = {
@@ -3271,6 +4189,11 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-ref-id = '_document_object_8cs_1a83f0e855adc5fb7afd02d2e34767f5c8';
         sec-mem-ref-line = '188';
         sec-mem-ref-name = 'InitializeWithFiles';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_document_object_8cs_1a16350c0f471c95c82b418b7f1dc53694';
+        sec-mem-ref-line = '215';
+        sec-mem-ref-name = 'InitializeWithFilesAndFields';
     };
     }; /* sec-member */
     sec-member = {
@@ -3389,12 +4312,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceby = {
         sec-mem-ref-id = '_document_object_8cs_1a28ab6562c34b5cf44ce7ab738d1730e1';
-        sec-mem-ref-line = '392';
+        sec-mem-ref-line = '449';
         sec-mem-ref-name = 'ClearFields';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_document_object_8cs_1a1a763aa01710b370634f46c89b7d2d8e';
-        sec-mem-ref-line = '299';
+        sec-mem-ref-line = '356';
         sec-mem-ref-name = 'ExportFields';
     };
       sec-mem-referenceby = {
@@ -3427,12 +4350,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceby = {
         sec-mem-ref-id = '_document_object_8cs_1a4caebae7aec2a9375112739d2cf29f29';
-        sec-mem-ref-line = '399';
+        sec-mem-ref-line = '456';
         sec-mem-ref-name = 'ClearFiles';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_document_object_8cs_1a8753abc5a871bf84fc910e6a99936b2b';
-        sec-mem-ref-line = '345';
+        sec-mem-ref-line = '402';
         sec-mem-ref-name = 'ExportFiles';
     };
       sec-mem-referenceby = {
@@ -3470,12 +4393,12 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_document_object_8cs_1a1a763aa01710b370634f46c89b7d2d8e';
-        sec-mem-ref-line = '299';
+        sec-mem-ref-line = '356';
         sec-mem-ref-name = 'ExportFields';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_document_object_8cs_1a8753abc5a871bf84fc910e6a99936b2b';
-        sec-mem-ref-line = '345';
+        sec-mem-ref-line = '402';
         sec-mem-ref-name = 'ExportFiles';
     };
       sec-mem-referenceby = {
@@ -3487,6 +4410,11 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-ref-id = '_document_object_8cs_1a83f0e855adc5fb7afd02d2e34767f5c8';
         sec-mem-ref-line = '188';
         sec-mem-ref-name = 'InitializeWithFiles';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_document_object_8cs_1a16350c0f471c95c82b418b7f1dc53694';
+        sec-mem-ref-line = '215';
+        sec-mem-ref-name = 'InitializeWithFilesAndFields';
     };
     }; /* sec-member */
     sec-member = {
@@ -3561,11 +4489,11 @@ _EnD_oF_dEf_TeXt_;
     sec-kind = 'private-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'class_document_object_1a8407f6933472bbf6c1d4d3e4beb4f1cd';
+      sec-mem-id   = 'class_document_object_1acfcf6d60e948e97798a0ea66007ccc79';
       sec-mem-virt = normal;
       sec-mem-prot = private;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
-string
+readonly string
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = '_SearchField';
       sec-mem-initializer = <<_EnD_oF_dEf_TeXt_
@@ -4225,7 +5153,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'filePath';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs';
-      sec-mem-desc-line = '179';
+      sec-mem-desc-line = '180';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 <summary>
 Extract the file from the XPages URL to a given file path
@@ -4272,7 +5200,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_document_object_8cs_1a8753abc5a871bf84fc910e6a99936b2b';
-        sec-mem-ref-line = '345';
+        sec-mem-ref-line = '402';
         sec-mem-ref-name = 'DocumentObject::ExportFiles';
     };
     }; /* sec-member */
@@ -4300,7 +5228,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceby = {
         sec-mem-ref-id = '_file_object_8cs_1ae21fac09c5ab2f9fac96a3f084cb9ddc';
-        sec-mem-ref-line = '179';
+        sec-mem-ref-line = '180';
         sec-mem-ref-name = 'ExtractFile';
     };
     }; /* sec-member */
@@ -4328,7 +5256,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceby = {
         sec-mem-ref-id = '_document_object_8cs_1a8753abc5a871bf84fc910e6a99936b2b';
-        sec-mem-ref-line = '345';
+        sec-mem-ref-line = '402';
         sec-mem-ref-name = 'DocumentObject::ExportFiles';
     };
     }; /* sec-member */
@@ -4356,7 +5284,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceby = {
         sec-mem-ref-id = '_file_object_8cs_1ae21fac09c5ab2f9fac96a3f084cb9ddc';
-        sec-mem-ref-line = '179';
+        sec-mem-ref-line = '180';
         sec-mem-ref-name = 'ExtractFile';
     };
     }; /* sec-member */
@@ -4582,7 +5510,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceby = {
         sec-mem-ref-id = '_file_object_8cs_1ae21fac09c5ab2f9fac96a3f084cb9ddc';
-        sec-mem-ref-line = '179';
+        sec-mem-ref-line = '180';
         sec-mem-ref-name = 'ExtractFile';
     };
     }; /* sec-member */
@@ -5114,57 +6042,72 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1ad3010e55b2e75d0863e168fed1e279c5';
-        sec-mem-ref-line = '343';
+        sec-mem-ref-line = '485';
         sec-mem-ref-name = 'DatabaseObject::GetAllDocuments';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a72239fa2b2a549665e45cdd340cd70a0';
-        sec-mem-ref-line = '362';
+        sec-mem-ref-line = '504';
         sec-mem-ref-name = 'DatabaseObject::GetAllDocumentsAndFiles';
     };
       sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1ae6b850b56e26c6960ec2b7ff4d78372c';
+        sec-mem-ref-line = '565';
+        sec-mem-ref-name = 'DatabaseObject::GetAllDocumentsAndFilesAndFieldsByFormula';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1a612844c9d2bbb0b1b5013c07bf661d4a';
+        sec-mem-ref-line = '822';
+        sec-mem-ref-name = 'DatabaseObject::GetAllDocumentsAndFilesAndFieldsByKey';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1a92de6fceafa29d3dcc8d3fff6961e6d6';
+        sec-mem-ref-line = '650';
+        sec-mem-ref-name = 'DatabaseObject::GetAllDocumentsAndFilesAndFieldsByUnids';
+    };
+      sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1ac478ff9264805edc8569d510916c4c00';
-        sec-mem-ref-line = '401';
+        sec-mem-ref-line = '545';
         sec-mem-ref-name = 'DatabaseObject::GetAllDocumentsAndFilesByFormula';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a6c2fb05fb6972d74d5bea67e323985fb';
-        sec-mem-ref-line = '526';
+        sec-mem-ref-line = '801';
         sec-mem-ref-name = 'DatabaseObject::GetAllDocumentsAndFilesByKey';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a9332713c924ab14195fe51bf0b8d35d1';
-        sec-mem-ref-line = '442';
+        sec-mem-ref-line = '629';
         sec-mem-ref-name = 'DatabaseObject::GetAllDocumentsAndFilesByUnids';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a6bfb480373a7e2bdbeaa67e4e3303a3a';
-        sec-mem-ref-line = '381';
+        sec-mem-ref-line = '525';
         sec-mem-ref-name = 'DatabaseObject::GetAllDocumentsByFormula';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1ad4834e7677cd0418969a657eed99653c';
-        sec-mem-ref-line = '505';
+        sec-mem-ref-line = '780';
         sec-mem-ref-name = 'DatabaseObject::GetAllDocumentsByKey';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a4d8a7d73614f53a04fe8eb79bef2f614';
-        sec-mem-ref-line = '421';
+        sec-mem-ref-line = '608';
         sec-mem-ref-name = 'DatabaseObject::GetAllDocumentsByUnids';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_document_object_8cs_1a5e070c7c0a45ac06422ee992c841e780';
-        sec-mem-ref-line = '279';
+        sec-mem-ref-line = '336';
         sec-mem-ref-name = 'DocumentObject::GetAllFields';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_document_object_8cs_1a8883fec3b5b1b6e2e43f4b5ca4092684';
-        sec-mem-ref-line = '217';
+        sec-mem-ref-line = '274';
         sec-mem-ref-name = 'DocumentObject::GetFields';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_document_object_8cs_1a2c8aee9450e8fdd1e84e8ff26d0950a1';
-        sec-mem-ref-line = '238';
+        sec-mem-ref-line = '295';
         sec-mem-ref-name = 'DocumentObject::GetFiles';
     };
       sec-mem-referenceby = {
@@ -5188,13 +6131,18 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-ref-name = 'DocumentObject::InitializeWithFiles';
     };
       sec-mem-referenceby = {
+        sec-mem-ref-id = '_document_object_8cs_1a16350c0f471c95c82b418b7f1dc53694';
+        sec-mem-ref-line = '215';
+        sec-mem-ref-name = 'DocumentObject::InitializeWithFilesAndFields';
+    };
+      sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a88ae0bcda671009e2742858ab945a18c';
-        sec-mem-ref-line = '545';
+        sec-mem-ref-line = '864';
         sec-mem-ref-name = 'DatabaseObject::LoadDocumentFields';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1acdf5c9ee898d4473350a2f4878af5a23';
-        sec-mem-ref-line = '581';
+        sec-mem-ref-line = '900';
         sec-mem-ref-name = 'DatabaseObject::LoadDocumentFiles';
     };
       sec-mem-referenceby = {
@@ -5224,7 +6172,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceby = {
         sec-mem-ref-id = '_file_object_8cs_1ae21fac09c5ab2f9fac96a3f084cb9ddc';
-        sec-mem-ref-line = '179';
+        sec-mem-ref-line = '180';
         sec-mem-ref-name = 'FileObject::ExtractFile';
     };
       sec-mem-referenceby = {
@@ -5234,57 +6182,72 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1ad3010e55b2e75d0863e168fed1e279c5';
-        sec-mem-ref-line = '343';
+        sec-mem-ref-line = '485';
         sec-mem-ref-name = 'DatabaseObject::GetAllDocuments';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a72239fa2b2a549665e45cdd340cd70a0';
-        sec-mem-ref-line = '362';
+        sec-mem-ref-line = '504';
         sec-mem-ref-name = 'DatabaseObject::GetAllDocumentsAndFiles';
     };
       sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1ae6b850b56e26c6960ec2b7ff4d78372c';
+        sec-mem-ref-line = '565';
+        sec-mem-ref-name = 'DatabaseObject::GetAllDocumentsAndFilesAndFieldsByFormula';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1a612844c9d2bbb0b1b5013c07bf661d4a';
+        sec-mem-ref-line = '822';
+        sec-mem-ref-name = 'DatabaseObject::GetAllDocumentsAndFilesAndFieldsByKey';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = '_database_object_8cs_1a92de6fceafa29d3dcc8d3fff6961e6d6';
+        sec-mem-ref-line = '650';
+        sec-mem-ref-name = 'DatabaseObject::GetAllDocumentsAndFilesAndFieldsByUnids';
+    };
+      sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1ac478ff9264805edc8569d510916c4c00';
-        sec-mem-ref-line = '401';
+        sec-mem-ref-line = '545';
         sec-mem-ref-name = 'DatabaseObject::GetAllDocumentsAndFilesByFormula';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a6c2fb05fb6972d74d5bea67e323985fb';
-        sec-mem-ref-line = '526';
+        sec-mem-ref-line = '801';
         sec-mem-ref-name = 'DatabaseObject::GetAllDocumentsAndFilesByKey';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a9332713c924ab14195fe51bf0b8d35d1';
-        sec-mem-ref-line = '442';
+        sec-mem-ref-line = '629';
         sec-mem-ref-name = 'DatabaseObject::GetAllDocumentsAndFilesByUnids';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a6bfb480373a7e2bdbeaa67e4e3303a3a';
-        sec-mem-ref-line = '381';
+        sec-mem-ref-line = '525';
         sec-mem-ref-name = 'DatabaseObject::GetAllDocumentsByFormula';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1ad4834e7677cd0418969a657eed99653c';
-        sec-mem-ref-line = '505';
+        sec-mem-ref-line = '780';
         sec-mem-ref-name = 'DatabaseObject::GetAllDocumentsByKey';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a4d8a7d73614f53a04fe8eb79bef2f614';
-        sec-mem-ref-line = '421';
+        sec-mem-ref-line = '608';
         sec-mem-ref-name = 'DatabaseObject::GetAllDocumentsByUnids';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_document_object_8cs_1a5e070c7c0a45ac06422ee992c841e780';
-        sec-mem-ref-line = '279';
+        sec-mem-ref-line = '336';
         sec-mem-ref-name = 'DocumentObject::GetAllFields';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_document_object_8cs_1a8883fec3b5b1b6e2e43f4b5ca4092684';
-        sec-mem-ref-line = '217';
+        sec-mem-ref-line = '274';
         sec-mem-ref-name = 'DocumentObject::GetFields';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_document_object_8cs_1a2c8aee9450e8fdd1e84e8ff26d0950a1';
-        sec-mem-ref-line = '238';
+        sec-mem-ref-line = '295';
         sec-mem-ref-name = 'DocumentObject::GetFiles';
     };
       sec-mem-referenceby = {
@@ -5308,13 +6271,18 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-ref-name = 'DocumentObject::InitializeWithFiles';
     };
       sec-mem-referenceby = {
+        sec-mem-ref-id = '_document_object_8cs_1a16350c0f471c95c82b418b7f1dc53694';
+        sec-mem-ref-line = '215';
+        sec-mem-ref-name = 'DocumentObject::InitializeWithFilesAndFields';
+    };
+      sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1a88ae0bcda671009e2742858ab945a18c';
-        sec-mem-ref-line = '545';
+        sec-mem-ref-line = '864';
         sec-mem-ref-name = 'DatabaseObject::LoadDocumentFields';
     };
       sec-mem-referenceby = {
         sec-mem-ref-id = '_database_object_8cs_1acdf5c9ee898d4473350a2f4878af5a23';
-        sec-mem-ref-line = '581';
+        sec-mem-ref-line = '900';
         sec-mem-ref-name = 'DatabaseObject::LoadDocumentFiles';
     };
       sec-mem-referenceby = {
@@ -5452,7 +6420,19 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* file */
 file = {
-  file-id   = '_temporary_generated_file__036_c0_b5_b-1481-4323-8_d20-8_f5_a_d_c_b23_d92_8cs';
+  file-id   = '_debug_2_temporary_generated_file__036_c0_b5_b-1481-4323-8_d20-8_f5_a_d_c_b23_d92_8cs';
+  file-name = 'TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs';
+  file-full-name  = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = '_release_2_temporary_generated_file__036_c0_b5_b-1481-4323-8_d20-8_f5_a_d_c_b23_d92_8cs';
   file-name = 'TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs';
   file-full-name  = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/obj/Release/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs';
   file-first-line = '1';
@@ -5464,7 +6444,19 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* file */
 file = {
-  file-id   = '_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs';
+  file-id   = '_debug_2_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs';
+  file-name = 'TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs';
+  file-full-name  = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = '_release_2_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs';
   file-name = 'TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs';
   file-full-name  = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/obj/Release/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs';
   file-first-line = '1';
@@ -5476,7 +6468,19 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* file */
 file = {
-  file-id   = '_temporary_generated_file___e7_a71_f73-0_f8_d-4_b9_b-_b56_e-8_e70_b10_b_c5_d3_8cs';
+  file-id   = '_debug_2_temporary_generated_file___e7_a71_f73-0_f8_d-4_b9_b-_b56_e-8_e70_b10_b_c5_d3_8cs';
+  file-name = 'TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs';
+  file-full-name  = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = '_release_2_temporary_generated_file___e7_a71_f73-0_f8_d-4_b9_b-_b56_e-8_e70_b10_b_c5_d3_8cs';
   file-name = 'TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs';
   file-full-name  = 'C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/obj/Release/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs';
   file-first-line = '1';

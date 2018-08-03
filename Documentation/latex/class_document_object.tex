@@ -18,6 +18,10 @@ bool \mbox{\hyperlink{class_document_object_af4298d6cfbb9ea60643d9995309b73f1}{I
 \begin{DoxyCompactList}\small\item\em Initializes the document by validating the input and triggering the document request \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_document_object_a83f0e855adc5fb7afd02d2e34767f5c8}{Initialize\+With\+Files}} ()
 \begin{DoxyCompactList}\small\item\em Initializes the document by validating the input and triggering the document request This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_document_object_a16350c0f471c95c82b418b7f1dc53694}{Initialize\+With\+Files\+And\+Fields}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the document by validating the input and triggering the document request This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and all fields \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_document_object_af68a4510477845f4a1dce889bab7ed2f}{Initialize\+With\+Files\+And\+Fields}} (string fields)
+\begin{DoxyCompactList}\small\item\em Initializes the document by validating the input and triggering the document request \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_document_object_a8883fec3b5b1b6e2e43f4b5ca4092684}{Get\+Fields}} (string fields)
 \begin{DoxyCompactList}\small\item\em Retrieve fields for this documents by triggering the field request \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_document_object_a2c8aee9450e8fdd1e84e8ff26d0950a1}{Get\+Files}} ()
@@ -198,7 +202,7 @@ Remove all the retrieved field objects from this document
 
 
 
-Definition at line 392 of file Document\+Object.\+cs.
+Definition at line 449 of file Document\+Object.\+cs.
 
 
 
@@ -206,9 +210,9 @@ References Fields.
 
 
 \begin{DoxyCode}
-392                               \{
-393         \mbox{\hyperlink{class_document_object_ae203b8a3e40b6c428145d2335b71245c}{Fields}} = null;
-394     \}
+449                               \{
+450         \mbox{\hyperlink{class_document_object_ae203b8a3e40b6c428145d2335b71245c}{Fields}} = null;
+451     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_document_object_a4caebae7aec2a9375112739d2cf29f29}\label{class_document_object_a4caebae7aec2a9375112739d2cf29f29}} 
 \index{Document\+Object@{Document\+Object}!Clear\+Files@{Clear\+Files}}
@@ -222,7 +226,7 @@ Remove all the retrieved file objects from this document
 
 
 
-Definition at line 399 of file Document\+Object.\+cs.
+Definition at line 456 of file Document\+Object.\+cs.
 
 
 
@@ -230,9 +234,9 @@ References Files.
 
 
 \begin{DoxyCode}
-399                              \{
-400         \mbox{\hyperlink{class_document_object_afe6bcf5175607f91dde768491f23a0a4}{Files}} = null;
-401     \}
+456                              \{
+457         \mbox{\hyperlink{class_document_object_afe6bcf5175607f91dde768491f23a0a4}{Files}} = null;
+458     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_document_object_a1a763aa01710b370634f46c89b7d2d8e}\label{class_document_object_a1a763aa01710b370634f46c89b7d2d8e}} 
 \index{Document\+Object@{Document\+Object}!Export\+Fields@{Export\+Fields}}
@@ -258,7 +262,7 @@ Provide the path to the file and specify if you want to overwrite this file if i
 \end{DoxyReturn}
 
 
-Definition at line 299 of file Document\+Object.\+cs.
+Definition at line 356 of file Document\+Object.\+cs.
 
 
 
@@ -266,51 +270,51 @@ References Fields, Connector.\+Has\+Error, Connector.\+Return\+Messages, and Uni
 
 
 \begin{DoxyCode}
-299                                                                           \{
-300         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
-301         \textcolor{keywordflow}{try} \{
-302             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_document_object_ae203b8a3e40b6c428145d2335b71245c}{Fields}} != null && \mbox{\hyperlink{class_document_object_ae203b8a3e40b6c428145d2335b71245c}{Fields}}.Count > 0) \{
-303                 \textcolor{comment}{//write all to stringbuilder, output to file}
-304                 StringBuilder sb = \textcolor{keyword}{new} StringBuilder();
-305                 \textcolor{keywordflow}{foreach} (KeyValuePair<string, FieldObject> field \textcolor{keywordflow}{in} \mbox{\hyperlink{class_document_object_ae203b8a3e40b6c428145d2335b71245c}{Fields}}) \{
-306                     \textcolor{keywordflow}{if} (field.Value.Type.Equals(\textcolor{stringliteral}{"[FIELDNOTFOUND]"})) \{
-307                         sb.AppendLine(field.Value.Name + \textcolor{stringliteral}{" : "} + field.Value.Type); \textcolor{comment}{// add type to indicate
+356                                                                           \{
+357         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+358         \textcolor{keywordflow}{try} \{
+359             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_document_object_ae203b8a3e40b6c428145d2335b71245c}{Fields}} != null && \mbox{\hyperlink{class_document_object_ae203b8a3e40b6c428145d2335b71245c}{Fields}}.Count > 0) \{
+360                 \textcolor{comment}{//write all to stringbuilder, output to file}
+361                 StringBuilder sb = \textcolor{keyword}{new} StringBuilder();
+362                 \textcolor{keywordflow}{foreach} (KeyValuePair<string, FieldObject> field \textcolor{keywordflow}{in} \mbox{\hyperlink{class_document_object_ae203b8a3e40b6c428145d2335b71245c}{Fields}}) \{
+363                     \textcolor{keywordflow}{if} (field.Value.Type.Equals(\textcolor{stringliteral}{"[FIELDNOTFOUND]"})) \{
+364                         sb.AppendLine(field.Value.Name + \textcolor{stringliteral}{" : "} + field.Value.Type); \textcolor{comment}{// add type to indicate
        the field was not found}
-308                     \} \textcolor{keywordflow}{else} \{
-309                         sb.AppendLine(field.Value.Name + \textcolor{stringliteral}{" : "} + field.Value.GetValueAsString()); \textcolor{comment}{//+ " ("
+365                     \} \textcolor{keywordflow}{else} \{
+366                         sb.AppendLine(field.Value.Name + \textcolor{stringliteral}{" : "} + field.Value.GetValueAsString()); \textcolor{comment}{//+ " ("
        + field.Value.Type + ")");}
-310                     \}
-311                 \}
-312                 \textcolor{keywordflow}{if} (File.Exists(filePath)) \{
-313                     \textcolor{keywordflow}{if} (overwriteExistingFile) \{
-314                         File.Delete(filePath);
-315                     \} \textcolor{keywordflow}{else} \{
-316                         \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"Unable to export the fields to
+367                     \}
+368                 \}
+369                 \textcolor{keywordflow}{if} (File.Exists(filePath)) \{
+370                     \textcolor{keywordflow}{if} (overwriteExistingFile) \{
+371                         File.Delete(filePath);
+372                     \} \textcolor{keywordflow}{else} \{
+373                         \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"Unable to export the fields to
        the file : "} + filePath);
-317                         \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"A file already exist with the
+374                         \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"A file already exist with the
        same name, provide a new file path"});
-318                         \textcolor{comment}{// Connector.hasError = true;}
-319                         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-320                     \}
-321                 \}
-322                 \textcolor{comment}{//File.CreateText(filePath);}
-323                 File.WriteAllText(filePath, sb.ToString());
-324                 \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"Exported all fields of document : "} + 
+375                         \textcolor{comment}{// Connector.hasError = true;}
+376                         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+377                     \}
+378                 \}
+379                 \textcolor{comment}{//File.CreateText(filePath);}
+380                 File.WriteAllText(filePath, sb.ToString());
+381                 \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"Exported all fields of document : "} + 
       \mbox{\hyperlink{class_document_object_a8b96d04632a2802e7cc5466ca5cee8cf}{UniversalID}} + \textcolor{stringliteral}{" to the file : "} + filePath);
-325                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-326             \} \textcolor{keywordflow}{else} \{
-327                 \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"The document : "} + 
+382                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+383             \} \textcolor{keywordflow}{else} \{
+384                 \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"The document : "} + 
       \mbox{\hyperlink{class_document_object_a8b96d04632a2802e7cc5466ca5cee8cf}{UniversalID}} + \textcolor{stringliteral}{" does not contain any fields to export"});
-328                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-329             \}
-330         \} \textcolor{keywordflow}{catch} (Exception ex) \{
-331             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"Unable to export the fields to the file : 
+385                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+386             \}
+387         \} \textcolor{keywordflow}{catch} (Exception ex) \{
+388             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"Unable to export the fields to the file : 
       "} + filePath);
-332             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(Common.GetErrorInfo(ex));
-333             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a9365777a6b7b711b75bcfa6c4d53e989}{HasError}} = \textcolor{keyword}{true};
-334             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-335         \}
-336     \}
+389             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(Common.GetErrorInfo(ex));
+390             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a9365777a6b7b711b75bcfa6c4d53e989}{HasError}} = \textcolor{keyword}{true};
+391             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+392         \}
+393     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_document_object_a8753abc5a871bf84fc910e6a99936b2b}\label{class_document_object_a8753abc5a871bf84fc910e6a99936b2b}} 
 \index{Document\+Object@{Document\+Object}!Export\+Files@{Export\+Files}}
@@ -336,7 +340,7 @@ Provide the path to the file and specify if you want to overwrite this file if i
 \end{DoxyReturn}
 
 
-Definition at line 345 of file Document\+Object.\+cs.
+Definition at line 402 of file Document\+Object.\+cs.
 
 
 
@@ -344,55 +348,55 @@ References File\+Object.\+Extract\+File(), Files, Connector.\+Has\+Error, File\+
 
 
 \begin{DoxyCode}
-345                                                                          \{
-346         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
-347         \textcolor{keywordflow}{try} \{
-348             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_document_object_afe6bcf5175607f91dde768491f23a0a4}{Files}} != null && \mbox{\hyperlink{class_document_object_afe6bcf5175607f91dde768491f23a0a4}{Files}}.Count > 0) \{
-349                 \textcolor{keywordflow}{if} (!Directory.Exists(filePath)) \{
-350                     \textcolor{comment}{//create folde structure}
-351                     Directory.CreateDirectory(filePath);
-352                 \}
-353 
-354                 \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_file_object}{FileObject}} fObj \textcolor{keywordflow}{in} \mbox{\hyperlink{class_document_object_afe6bcf5175607f91dde768491f23a0a4}{Files}}.Values) \{
-355                     \textcolor{keywordtype}{string} fileName = \textcolor{stringliteral}{""};
-356                     fileName = \mbox{\hyperlink{namespace_system}{System}}.IO.Path.Combine(filePath, fObj.\mbox{\hyperlink{class_file_object_a9d47aff166393cb47490da2661576d62}{Name}});
-357                     \textcolor{keywordflow}{if} (File.Exists(fileName)) \{
-358                         \textcolor{keywordflow}{if} (overwriteExistingFile) \{
-359                             File.Delete(fileName);
-360                         \} \textcolor{keywordflow}{else} \{
-361                             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"Unable to export the file
+402                                                                          \{
+403         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+404         \textcolor{keywordflow}{try} \{
+405             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_document_object_afe6bcf5175607f91dde768491f23a0a4}{Files}} != null && \mbox{\hyperlink{class_document_object_afe6bcf5175607f91dde768491f23a0a4}{Files}}.Count > 0) \{
+406                 \textcolor{keywordflow}{if} (!Directory.Exists(filePath)) \{
+407                     \textcolor{comment}{//create folde structure}
+408                     Directory.CreateDirectory(filePath);
+409                 \}
+410 
+411                 \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_file_object}{FileObject}} fObj \textcolor{keywordflow}{in} \mbox{\hyperlink{class_document_object_afe6bcf5175607f91dde768491f23a0a4}{Files}}.Values) \{
+412                     \textcolor{keywordtype}{string} fileName = \textcolor{stringliteral}{""};
+413                     fileName = \mbox{\hyperlink{namespace_system}{System}}.IO.Path.Combine(filePath, fObj.\mbox{\hyperlink{class_file_object_a9d47aff166393cb47490da2661576d62}{Name}});
+414                     \textcolor{keywordflow}{if} (File.Exists(fileName)) \{
+415                         \textcolor{keywordflow}{if} (overwriteExistingFile) \{
+416                             File.Delete(fileName);
+417                         \} \textcolor{keywordflow}{else} \{
+418                             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"Unable to export the file
        to : "} + filePath);
-362                             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"A file already exist with
+419                             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"A file already exist with
        the same name, provide a new file path"});
-363                             \textcolor{comment}{// Connector.hasError = true;}
-364                             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-365                         \}
-366                     \}
-367 
-368                     \textcolor{keywordflow}{if} (!fObj.\mbox{\hyperlink{class_file_object_ae21fac09c5ab2f9fac96a3f084cb9ddc}{ExtractFile}}(fileName)) \{
-369                         \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Insert(0, \textcolor{stringliteral}{"Unable to export the
+420                             \textcolor{comment}{// Connector.hasError = true;}
+421                             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+422                         \}
+423                     \}
+424 
+425                     \textcolor{keywordflow}{if} (!fObj.\mbox{\hyperlink{class_file_object_ae21fac09c5ab2f9fac96a3f084cb9ddc}{ExtractFile}}(fileName)) \{
+426                         \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Insert(0, \textcolor{stringliteral}{"Unable to export the
        file : "} + fObj.\mbox{\hyperlink{class_file_object_a9d47aff166393cb47490da2661576d62}{Name}});
-370                         \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a9365777a6b7b711b75bcfa6c4d53e989}{HasError}} = \textcolor{keyword}{true};
-371                         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-372                     \}
-373                 \}
-374 
-375                 \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"Exported all fields of document : "} + 
+427                         \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a9365777a6b7b711b75bcfa6c4d53e989}{HasError}} = \textcolor{keyword}{true};
+428                         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+429                     \}
+430                 \}
+431 
+432                 \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"Exported all fields of document : "} + 
       \mbox{\hyperlink{class_document_object_a8b96d04632a2802e7cc5466ca5cee8cf}{UniversalID}} + \textcolor{stringliteral}{" to the file : "} + filePath);
-376                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-377             \} \textcolor{keywordflow}{else} \{
-378                 \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"The document : "} + 
+433                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+434             \} \textcolor{keywordflow}{else} \{
+435                 \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"The document : "} + 
       \mbox{\hyperlink{class_document_object_a8b96d04632a2802e7cc5466ca5cee8cf}{UniversalID}} + \textcolor{stringliteral}{" does not contain any fields to export"});
-379                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-380             \}
-381         \} \textcolor{keywordflow}{catch} (Exception ex) \{
-382             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"Unable to export the fields to the file : 
+436                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+437             \}
+438         \} \textcolor{keywordflow}{catch} (Exception ex) \{
+439             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(\textcolor{stringliteral}{"Unable to export the fields to the file : 
       "} + filePath);
-383             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(Common.GetErrorInfo(ex));
-384             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a9365777a6b7b711b75bcfa6c4d53e989}{HasError}} = \textcolor{keyword}{true};
-385             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-386         \}
-387     \}
+440             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a1ed422674b344524fd77998dcf6a9ba6}{ReturnMessages}}.Add(Common.GetErrorInfo(ex));
+441             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a9365777a6b7b711b75bcfa6c4d53e989}{HasError}} = \textcolor{keyword}{true};
+442             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+443         \}
+444     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_document_object_a5e070c7c0a45ac06422ee992c841e780}\label{class_document_object_a5e070c7c0a45ac06422ee992c841e780}} 
 \index{Document\+Object@{Document\+Object}!Get\+All\+Fields@{Get\+All\+Fields}}
@@ -411,7 +415,7 @@ Boolean
 \end{DoxyReturn}
 
 
-Definition at line 279 of file Document\+Object.\+cs.
+Definition at line 336 of file Document\+Object.\+cs.
 
 
 
@@ -419,19 +423,19 @@ References Session\+Object.\+Connection, Database, Connector.\+Has\+Error, Is\+I
 
 
 \begin{DoxyCode}
-279                                \{
-280         \textcolor{comment}{//get all the fields from the domino document and store them in Fields}
-281         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
-282 
-283         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_document_object_a3b2075b73f38d05091b69decc6ce7992}{IsInitialized}}) \{
-284             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_document_object_a69d5338c9835f748490323d2950eed09}{Database}}.\mbox{\hyperlink{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}{Session}}.\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.ExecuteFieldsRequest(
+336                                \{
+337         \textcolor{comment}{//get all the fields from the domino document and store them in Fields}
+338         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+339 
+340         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_document_object_a3b2075b73f38d05091b69decc6ce7992}{IsInitialized}}) \{
+341             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_document_object_a69d5338c9835f748490323d2950eed09}{Database}}.\mbox{\hyperlink{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}{Session}}.\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.ExecuteFieldsRequest(
       \mbox{\hyperlink{class_document_object_a69d5338c9835f748490323d2950eed09}{Database}}.\mbox{\hyperlink{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}{Session}}.\mbox{\hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}}, \textcolor{keyword}{this}, null)) \{
-285                 \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a9365777a6b7b711b75bcfa6c4d53e989}{HasError}} = \textcolor{keyword}{false};
-286                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-287             \}
-288         \}
-289         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-290     \}
+342                 \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a9365777a6b7b711b75bcfa6c4d53e989}{HasError}} = \textcolor{keyword}{false};
+343                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+344             \}
+345         \}
+346         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+347     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_document_object_a8883fec3b5b1b6e2e43f4b5ca4092684}\label{class_document_object_a8883fec3b5b1b6e2e43f4b5ca4092684}} 
 \index{Document\+Object@{Document\+Object}!Get\+Fields@{Get\+Fields}}
@@ -453,11 +457,11 @@ This action will update the property \textquotesingle{}Fields\textquotesingle{}
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Boolean
+bool
 \end{DoxyReturn}
 
 
-Definition at line 217 of file Document\+Object.\+cs.
+Definition at line 274 of file Document\+Object.\+cs.
 
 
 
@@ -465,22 +469,22 @@ References Session\+Object.\+Connection, Database, Connector.\+Has\+Error, Is\+I
 
 
 \begin{DoxyCode}
-217                                          \{
-218         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
-219 
-220         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_document_object_a3b2075b73f38d05091b69decc6ce7992}{IsInitialized}}) \{
-221             \textcolor{comment}{// if (!String.IsNullOrEmpty(fields)) \{}
-222             \textcolor{comment}{//this will update \_Fields list in this object}
-223             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_document_object_a69d5338c9835f748490323d2950eed09}{Database}}.\mbox{\hyperlink{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}{Session}}.\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.ExecuteFieldsRequest(
+274                                          \{
+275         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+276 
+277         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_document_object_a3b2075b73f38d05091b69decc6ce7992}{IsInitialized}}) \{
+278             \textcolor{comment}{// if (!String.IsNullOrEmpty(fields)) \{}
+279             \textcolor{comment}{//this will update \_Fields list in this object}
+280             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_document_object_a69d5338c9835f748490323d2950eed09}{Database}}.\mbox{\hyperlink{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}{Session}}.\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.ExecuteFieldsRequest(
       \mbox{\hyperlink{class_document_object_a69d5338c9835f748490323d2950eed09}{Database}}.\mbox{\hyperlink{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}{Session}}.\mbox{\hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}}, \textcolor{keyword}{this}, fields)) \{
-224                 \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a9365777a6b7b711b75bcfa6c4d53e989}{HasError}} = \textcolor{keyword}{false};
-225                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-226             \}
-227             \textcolor{comment}{//\}}
-228         \}
-229         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-230         \textcolor{comment}{// get the fields from XPages}
-231     \}
+281                 \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a9365777a6b7b711b75bcfa6c4d53e989}{HasError}} = \textcolor{keyword}{false};
+282                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+283             \}
+284             \textcolor{comment}{//\}}
+285         \}
+286         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+287         \textcolor{comment}{// get the fields from XPages}
+288     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_document_object_a8e38704e02850b2480d29d184ae2c0e0}\label{class_document_object_a8e38704e02850b2480d29d184ae2c0e0}} 
 \index{Document\+Object@{Document\+Object}!Get\+Fields@{Get\+Fields}}
@@ -504,7 +508,7 @@ Boolean
 \end{DoxyReturn}
 
 
-Definition at line 258 of file Document\+Object.\+cs.
+Definition at line 315 of file Document\+Object.\+cs.
 
 
 
@@ -512,22 +516,22 @@ References Session\+Object.\+Connection, Database, Connector.\+Has\+Error, Is\+I
 
 
 \begin{DoxyCode}
-258                                         \{
-259         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
-260         \textcolor{keywordtype}{string} f = \textcolor{stringliteral}{""};
-261         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_document_object_a3b2075b73f38d05091b69decc6ce7992}{IsInitialized}}) \{
-262             f = Common.GetListAsString(fields, \textcolor{stringliteral}{";"}); \textcolor{comment}{// can be empty - get's all fields}
-263             \textcolor{comment}{// if (!String.IsNullOrEmpty(fields)) \{}
-264             \textcolor{comment}{//this will update \_Fields list in this object}
-265             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_document_object_a69d5338c9835f748490323d2950eed09}{Database}}.\mbox{\hyperlink{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}{Session}}.\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.ExecuteFieldsRequest(
+315                                         \{
+316         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+317         \textcolor{keywordtype}{string} f = \textcolor{stringliteral}{""};
+318         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_document_object_a3b2075b73f38d05091b69decc6ce7992}{IsInitialized}}) \{
+319             f = Common.GetListAsString(fields, \textcolor{stringliteral}{";"}); \textcolor{comment}{// can be empty - get's all fields}
+320             \textcolor{comment}{// if (!String.IsNullOrEmpty(fields)) \{}
+321             \textcolor{comment}{//this will update \_Fields list in this object}
+322             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_document_object_a69d5338c9835f748490323d2950eed09}{Database}}.\mbox{\hyperlink{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}{Session}}.\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.ExecuteFieldsRequest(
       \mbox{\hyperlink{class_document_object_a69d5338c9835f748490323d2950eed09}{Database}}.\mbox{\hyperlink{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}{Session}}.\mbox{\hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}}, \textcolor{keyword}{this}, f)) \{
-266                 \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a9365777a6b7b711b75bcfa6c4d53e989}{HasError}} = \textcolor{keyword}{false};
-267                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-268             \}
-269             \textcolor{comment}{//\}}
-270         \}
-271         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-272     \}
+323                 \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a9365777a6b7b711b75bcfa6c4d53e989}{HasError}} = \textcolor{keyword}{false};
+324                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+325             \}
+326             \textcolor{comment}{//\}}
+327         \}
+328         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+329     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_document_object_a2c8aee9450e8fdd1e84e8ff26d0950a1}\label{class_document_object_a2c8aee9450e8fdd1e84e8ff26d0950a1}} 
 \index{Document\+Object@{Document\+Object}!Get\+Files@{Get\+Files}}
@@ -546,7 +550,7 @@ Boolean
 \end{DoxyReturn}
 
 
-Definition at line 238 of file Document\+Object.\+cs.
+Definition at line 295 of file Document\+Object.\+cs.
 
 
 
@@ -554,22 +558,22 @@ References Session\+Object.\+Connection, Database, Connector.\+Has\+Error, Is\+I
 
 
 \begin{DoxyCode}
-238                            \{
-239         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
-240         \textcolor{comment}{// get the files from XPages}
-241         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_document_object_a3b2075b73f38d05091b69decc6ce7992}{IsInitialized}}) \{
-242             \textcolor{comment}{//this will update \_Fields list in this object}
-243             \textcolor{comment}{//string WebServiceURL, string Unid, string searchField, string searchValue, string formula,
+295                            \{
+296         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+297         \textcolor{comment}{// get the files from XPages}
+298         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_document_object_a3b2075b73f38d05091b69decc6ce7992}{IsInitialized}}) \{
+299             \textcolor{comment}{//this will update \_Fields list in this object}
+300             \textcolor{comment}{//string WebServiceURL, string Unid, string searchField, string searchValue, string formula,
        DatabaseObject dbObj, DocumentObject docObj}
-244             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_document_object_a69d5338c9835f748490323d2950eed09}{Database}}.\mbox{\hyperlink{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}{Session}}.\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.ExecuteDocumentFilesRequest(
+301             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_document_object_a69d5338c9835f748490323d2950eed09}{Database}}.\mbox{\hyperlink{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}{Session}}.\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.ExecuteDocumentFilesRequest(
       \mbox{\hyperlink{class_document_object_a69d5338c9835f748490323d2950eed09}{Database}}.\mbox{\hyperlink{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}{Session}}.\mbox{\hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}}, \textcolor{keyword}{this}.UniversalID, \textcolor{keyword}{this}.\_SearchField, \textcolor{keyword}{this}.
       \_SearchValue, \textcolor{keyword}{this}.\_Formula, \textcolor{keyword}{this}.Database, \textcolor{keyword}{this})) \{
-245                 \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a9365777a6b7b711b75bcfa6c4d53e989}{HasError}} = \textcolor{keyword}{false};
-246                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-247             \}
-248         \}
-249         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-250     \}
+302                 \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a9365777a6b7b711b75bcfa6c4d53e989}{HasError}} = \textcolor{keyword}{false};
+303                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+304             \}
+305         \}
+306         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+307     \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_document_object_af4298d6cfbb9ea60643d9995309b73f1}\label{class_document_object_af4298d6cfbb9ea60643d9995309b73f1}} 
 \index{Document\+Object@{Document\+Object}!Initialize@{Initialize}}
@@ -683,6 +687,119 @@ Referenced by Database\+Object.\+Get\+Document\+And\+Files(), Database\+Object.\
 207         \}
 208     \}
 \end{DoxyCode}
+\mbox{\Hypertarget{class_document_object_a16350c0f471c95c82b418b7f1dc53694}\label{class_document_object_a16350c0f471c95c82b418b7f1dc53694}} 
+\index{Document\+Object@{Document\+Object}!Initialize\+With\+Files\+And\+Fields@{Initialize\+With\+Files\+And\+Fields}}
+\index{Initialize\+With\+Files\+And\+Fields@{Initialize\+With\+Files\+And\+Fields}!Document\+Object@{Document\+Object}}
+\subsubsection{\texorpdfstring{Initialize\+With\+Files\+And\+Fields()}{InitializeWithFilesAndFields()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Document\+Object.\+Initialize\+With\+Files\+And\+Fields (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the document by validating the input and triggering the document request This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and all fields 
+
+\begin{DoxyReturn}{Returns}
+Boolean
+\end{DoxyReturn}
+
+
+Definition at line 215 of file Document\+Object.\+cs.
+
+
+
+References Session\+Object.\+Connection, Database, Connector.\+Has\+Error, Is\+Initialized, Database\+Object.\+Session, Universal\+ID, and Session\+Object.\+Web\+Service\+U\+RL.
+
+
+
+Referenced by Database\+Object.\+Get\+Document\+And\+Files\+And\+Fields(), Database\+Object.\+Get\+Document\+And\+Files\+And\+Fields\+By\+Formula(), and Database\+Object.\+Get\+Document\+And\+Files\+And\+Fields\+By\+Key().
+
+
+\begin{DoxyCode}
+215                                                \{
+216         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+217 
+218         \textcolor{keywordflow}{if} (!ValidateInput()) \{
+219             \mbox{\hyperlink{class_document_object_a3b2075b73f38d05091b69decc6ce7992}{IsInitialized}} = \textcolor{keyword}{false};
+220             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a9365777a6b7b711b75bcfa6c4d53e989}{HasError}} = \textcolor{keyword}{true};
+221             \textcolor{keywordflow}{return} \textcolor{keyword}{false};   \textcolor{comment}{// throws exception}
+222         \}
+223 
+224         \textcolor{comment}{// make a connection to the webservice database - this will check the users authentication on that
+       database}
+225         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_document_object_a69d5338c9835f748490323d2950eed09}{Database}}.\mbox{\hyperlink{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}{Session}}.\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.ExecuteDocumentFilesFieldsRequest(
+      \mbox{\hyperlink{class_document_object_a69d5338c9835f748490323d2950eed09}{Database}}.\mbox{\hyperlink{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}{Session}}.\mbox{\hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}}, \mbox{\hyperlink{class_document_object_a8b96d04632a2802e7cc5466ca5cee8cf}{UniversalID}}, \_SearchField, 
+      \_SearchValue, \_Formula, \textcolor{stringliteral}{""}, \mbox{\hyperlink{class_document_object_a69d5338c9835f748490323d2950eed09}{Database}}, \textcolor{keyword}{this})) \{
+226             \mbox{\hyperlink{class_document_object_a3b2075b73f38d05091b69decc6ce7992}{IsInitialized}} = \textcolor{keyword}{true};
+227             \textcolor{comment}{//  Connector.ReturnMessages.Add("Document Initialized : " + \_UniversalID + " in : " +
+       \_Database.FilePath + " from : "+\_Database.ServerName + " (DocumentObject.Initialize)");}
+228             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a9365777a6b7b711b75bcfa6c4d53e989}{HasError}} = \textcolor{keyword}{false};
+229             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+230         \} \textcolor{keywordflow}{else} \{
+231             \textcolor{comment}{//error messages written to Connection.ReturnMessages by
+       Connection.Request.ExecuteSessionRequest}
+232             \mbox{\hyperlink{class_document_object_a3b2075b73f38d05091b69decc6ce7992}{IsInitialized}} = \textcolor{keyword}{false};
+233             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+234         \}
+235     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_document_object_af68a4510477845f4a1dce889bab7ed2f}\label{class_document_object_af68a4510477845f4a1dce889bab7ed2f}} 
+\index{Document\+Object@{Document\+Object}!Initialize\+With\+Files\+And\+Fields@{Initialize\+With\+Files\+And\+Fields}}
+\index{Initialize\+With\+Files\+And\+Fields@{Initialize\+With\+Files\+And\+Fields}!Document\+Object@{Document\+Object}}
+\subsubsection{\texorpdfstring{Initialize\+With\+Files\+And\+Fields()}{InitializeWithFilesAndFields()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Document\+Object.\+Initialize\+With\+Files\+And\+Fields (\begin{DoxyParamCaption}\item[{string}]{fields }\end{DoxyParamCaption})}
+
+
+
+Initializes the document by validating the input and triggering the document request 
+
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and specific fields
+
+Provide the fields separated by ;
+
+
+\begin{DoxyParams}{Parameters}
+{\em fields} & Field Names separated by ; \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+
+
+Definition at line 244 of file Document\+Object.\+cs.
+
+
+
+References Session\+Object.\+Connection, Database, Connector.\+Has\+Error, Is\+Initialized, Database\+Object.\+Session, Universal\+ID, and Session\+Object.\+Web\+Service\+U\+RL.
+
+
+\begin{DoxyCode}
+244                                                             \{
+245         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+246 
+247         \textcolor{keywordflow}{if} (!ValidateInput()) \{
+248             \mbox{\hyperlink{class_document_object_a3b2075b73f38d05091b69decc6ce7992}{IsInitialized}} = \textcolor{keyword}{false};
+249             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a9365777a6b7b711b75bcfa6c4d53e989}{HasError}} = \textcolor{keyword}{true};
+250             \textcolor{keywordflow}{return} \textcolor{keyword}{false};   \textcolor{comment}{// throws exception}
+251         \}
+252 
+253         \textcolor{comment}{// make a connection to the webservice database - this will check the users authentication on that
+       database}
+254         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_document_object_a69d5338c9835f748490323d2950eed09}{Database}}.\mbox{\hyperlink{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}{Session}}.\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.ExecuteDocumentFilesFieldsRequest(
+      \mbox{\hyperlink{class_document_object_a69d5338c9835f748490323d2950eed09}{Database}}.\mbox{\hyperlink{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}{Session}}.\mbox{\hyperlink{class_session_object_a697c071c812fbf7ad1166b896fb44c16}{WebServiceURL}}, \mbox{\hyperlink{class_document_object_a8b96d04632a2802e7cc5466ca5cee8cf}{UniversalID}}, \_SearchField, 
+      \_SearchValue, \_Formula, fields, \mbox{\hyperlink{class_document_object_a69d5338c9835f748490323d2950eed09}{Database}}, \textcolor{keyword}{this})) \{
+255             \mbox{\hyperlink{class_document_object_a3b2075b73f38d05091b69decc6ce7992}{IsInitialized}} = \textcolor{keyword}{true};
+256             \textcolor{comment}{//  Connector.ReturnMessages.Add("Document Initialized : " + \_UniversalID + " in : " +
+       \_Database.FilePath + " from : "+\_Database.ServerName + " (DocumentObject.Initialize)");}
+257             \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a9365777a6b7b711b75bcfa6c4d53e989}{HasError}} = \textcolor{keyword}{false};
+258             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+259         \} \textcolor{keywordflow}{else} \{
+260             \textcolor{comment}{//error messages written to Connection.ReturnMessages by
+       Connection.Request.ExecuteSessionRequest}
+261             \mbox{\hyperlink{class_document_object_a3b2075b73f38d05091b69decc6ce7992}{IsInitialized}} = \textcolor{keyword}{false};
+262             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+263         \}
+264     \}
+\end{DoxyCode}
 
 
 \subsection{Property Documentation}
@@ -702,7 +819,7 @@ Definition at line 37 of file Document\+Object.\+cs.
 
 
 
-Referenced by Document\+Object(), File\+Object.\+Extract\+File(), Get\+All\+Fields(), Get\+Fields(), Get\+Files(), Initialize(), and Initialize\+With\+Files().
+Referenced by Document\+Object(), File\+Object.\+Extract\+File(), Get\+All\+Fields(), Get\+Fields(), Get\+Files(), Initialize(), Initialize\+With\+Files(), and Initialize\+With\+Files\+And\+Fields().
 
 
 \begin{DoxyCode}
@@ -822,7 +939,7 @@ Definition at line 42 of file Document\+Object.\+cs.
 
 
 
-Referenced by Get\+All\+Fields(), Get\+Fields(), Get\+Files(), Initialize(), and Initialize\+With\+Files().
+Referenced by Get\+All\+Fields(), Get\+Fields(), Get\+Files(), Initialize(), Initialize\+With\+Files(), and Initialize\+With\+Files\+And\+Fields().
 
 
 \begin{DoxyCode}
@@ -880,7 +997,7 @@ Definition at line 77 of file Document\+Object.\+cs.
 
 
 
-Referenced by Document\+Object(), Export\+Fields(), Export\+Files(), Initialize(), and Initialize\+With\+Files().
+Referenced by Document\+Object(), Export\+Fields(), Export\+Files(), Initialize(), Initialize\+With\+Files(), and Initialize\+With\+Files\+And\+Fields().
 
 
 \begin{DoxyCode}

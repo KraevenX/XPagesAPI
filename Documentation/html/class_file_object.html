@@ -108,7 +108,7 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a0c9650a6ae1efb95f8211f9fa3b883fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_document_object.html">DocumentObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_object.html#a0c9650a6ae1efb95f8211f9fa3b883fe">Document</a><code> [get]</code></td></tr>
+<tr class="memitem:a0c9650a6ae1efb95f8211f9fa3b883fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_document_object.html">DocumentObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_object.html#a0c9650a6ae1efb95f8211f9fa3b883fe">Document</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a0c9650a6ae1efb95f8211f9fa3b883fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to this files document object  <a href="#a0c9650a6ae1efb95f8211f9fa3b883fe">More...</a><br /></td></tr>
 <tr class="separator:a0c9650a6ae1efb95f8211f9fa3b883fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d47aff166393cb47490da2661576d62"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_object.html#a9d47aff166393cb47490da2661576d62">Name</a> = &quot;&quot;<code> [get, set]</code></td></tr>
@@ -178,12 +178,12 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_file_object_8cs_source.html#l00179">179</a> of file <a class="el" href="_file_object_8cs_source.html">FileObject.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_file_object_8cs_source.html#l00180">180</a> of file <a class="el" href="_file_object_8cs_source.html">FileObject.cs</a>.</p>
 
 <p class="reference">References <a class="el" href="_session_object_8cs_source.html#l00049">SessionObject.Connection</a>, <a class="el" href="_document_object_8cs_source.html#l00037">DocumentObject.Database</a>, <a class="el" href="_file_object_8cs_source.html#l00030">Document</a>, <a class="el" href="_connector_8cs_source.html#l00091">Connector.HasError</a>, <a class="el" href="_file_object_8cs_source.html#l00090">IsInitialized</a>, <a class="el" href="_database_object_8cs_source.html#l00025">DatabaseObject.Session</a>, and <a class="el" href="_file_object_8cs_source.html#l00040">URL</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_document_object_8cs_source.html#l00345">DocumentObject.ExportFiles()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                                             {</div><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <a class="code" href="class_connector.html">Connector</a>.ResetReturn();</div><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_file_object.html#a36ff6c07d0662885402bfe7d98cf2988">IsInitialized</a>) {</div><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_file_object.html#a0c9650a6ae1efb95f8211f9fa3b883fe">Document</a>.<a class="code" href="class_document_object.html#a69d5338c9835f748490323d2950eed09">Database</a>.<a class="code" href="class_database_object.html#aa8484162b7d2a7c4c9426bca13c64c07">Session</a>.<a class="code" href="class_session_object.html#a014bdbf705a753540e19bfb53030c55c">Connection</a>.Request.ExecuteGetFileRequest(<a class="code" href="class_file_object.html#a7355eaeea3fe40bd8862d7f1f9b479da">URL</a>, filePath)) {</div><div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                <a class="code" href="class_connector.html">Connector</a>.<a class="code" href="class_connector.html#a9365777a6b7b711b75bcfa6c4d53e989">HasError</a> = <span class="keyword">false</span>;</div><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            }</div><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        }</div><div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    }</div><div class="ttc" id="class_file_object_html_a0c9650a6ae1efb95f8211f9fa3b883fe"><div class="ttname"><a href="class_file_object.html#a0c9650a6ae1efb95f8211f9fa3b883fe">FileObject.Document</a></div><div class="ttdeci">DocumentObject Document</div><div class="ttdoc">Reference to this files document object </div><div class="ttdef"><b>Definition:</b> <a href="_file_object_8cs_source.html#l00030">FileObject.cs:30</a></div></div>
+<p class="reference">Referenced by <a class="el" href="_document_object_8cs_source.html#l00402">DocumentObject.ExportFiles()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                                             {</div><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <a class="code" href="class_connector.html">Connector</a>.ResetReturn();</div><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_file_object.html#a36ff6c07d0662885402bfe7d98cf2988">IsInitialized</a>) {</div><div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_file_object.html#a0c9650a6ae1efb95f8211f9fa3b883fe">Document</a>.<a class="code" href="class_document_object.html#a69d5338c9835f748490323d2950eed09">Database</a>.<a class="code" href="class_database_object.html#aa8484162b7d2a7c4c9426bca13c64c07">Session</a>.<a class="code" href="class_session_object.html#a014bdbf705a753540e19bfb53030c55c">Connection</a>.Request.ExecuteGetFileRequest(<a class="code" href="class_file_object.html#a7355eaeea3fe40bd8862d7f1f9b479da">URL</a>, filePath)) {</div><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                <a class="code" href="class_connector.html">Connector</a>.<a class="code" href="class_connector.html#a9365777a6b7b711b75bcfa6c4d53e989">HasError</a> = <span class="keyword">false</span>;</div><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            }</div><div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        }</div><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    }</div><div class="ttc" id="class_file_object_html_a0c9650a6ae1efb95f8211f9fa3b883fe"><div class="ttname"><a href="class_file_object.html#a0c9650a6ae1efb95f8211f9fa3b883fe">FileObject.Document</a></div><div class="ttdeci">DocumentObject Document</div><div class="ttdoc">Reference to this files document object </div><div class="ttdef"><b>Definition:</b> <a href="_file_object_8cs_source.html#l00030">FileObject.cs:30</a></div></div>
 <div class="ttc" id="class_file_object_html_a36ff6c07d0662885402bfe7d98cf2988"><div class="ttname"><a href="class_file_object.html#a36ff6c07d0662885402bfe7d98cf2988">FileObject.IsInitialized</a></div><div class="ttdeci">bool IsInitialized</div><div class="ttdoc">Indicates that the file isInitialized </div><div class="ttdef"><b>Definition:</b> <a href="_file_object_8cs_source.html#l00090">FileObject.cs:90</a></div></div>
 <div class="ttc" id="class_file_object_html_a7355eaeea3fe40bd8862d7f1f9b479da"><div class="ttname"><a href="class_file_object.html#a7355eaeea3fe40bd8862d7f1f9b479da">FileObject.URL</a></div><div class="ttdeci">string URL</div><div class="ttdoc">URL of the domino attachment </div><div class="ttdef"><b>Definition:</b> <a href="_file_object_8cs_source.html#l00040">FileObject.cs:40</a></div></div>
 <div class="ttc" id="class_connector_html_a9365777a6b7b711b75bcfa6c4d53e989"><div class="ttname"><a href="class_connector.html#a9365777a6b7b711b75bcfa6c4d53e989">Connector.HasError</a></div><div class="ttdeci">static bool HasError</div><div class="ttdoc">This boolean will indicate if an error has occurred in the library and based on the ThrowException va...</div><div class="ttdef"><b>Definition:</b> <a href="_connector_8cs_source.html#l00091">Connector.cs:91</a></div></div>
@@ -218,7 +218,7 @@ Properties</h2></td></tr>
 <p>JPI associated application of the domino attachment </p>
 
 <p class="definition">Definition at line <a class="el" href="_file_object_8cs_source.html#l00055">55</a> of file <a class="el" href="_file_object_8cs_source.html">FileObject.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{ <span class="keyword">get</span>; <span class="keyword">set</span>; } = <span class="stringliteral">&quot;&quot;</span>;</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{ <span class="keyword">get</span>; <span class="keyword">protected</span> <span class="keyword">internal</span> <span class="keyword">set</span>; } = <span class="stringliteral">&quot;&quot;</span>;</div></div><!-- fragment -->
 </div>
 </div>
 <a id="a1ab7d29c80841b60b276b7430f4e5ec7"></a>
@@ -244,7 +244,7 @@ Properties</h2></td></tr>
 <p>Creator of the domino attachment </p>
 
 <p class="definition">Definition at line <a class="el" href="_file_object_8cs_source.html#l00060">60</a> of file <a class="el" href="_file_object_8cs_source.html">FileObject.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{ <span class="keyword">get</span>; <span class="keyword">set</span>; } = <span class="stringliteral">&quot;&quot;</span>;</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{ <span class="keyword">get</span>; <span class="keyword">protected</span> <span class="keyword">internal</span> <span class="keyword">set</span>; } = <span class="stringliteral">&quot;&quot;</span>;</div></div><!-- fragment -->
 </div>
 </div>
 <a id="a372b9a7dad068368526b0698550f9504"></a>
@@ -270,7 +270,7 @@ Properties</h2></td></tr>
 <p>Creation date of the domino attachment </p>
 
 <p class="definition">Definition at line <a class="el" href="_file_object_8cs_source.html#l00065">65</a> of file <a class="el" href="_file_object_8cs_source.html">FileObject.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{ <span class="keyword">get</span>; <span class="keyword">protected</span> <span class="keyword">internal</span> <span class="keyword">set</span>; }</div></div><!-- fragment -->
 </div>
 </div>
 <a id="a9a4c52e205bee3f8bdfa7040f465b6af"></a>
@@ -296,7 +296,7 @@ Properties</h2></td></tr>
 <p>Modified date of the domino attachment </p>
 
 <p class="definition">Definition at line <a class="el" href="_file_object_8cs_source.html#l00070">70</a> of file <a class="el" href="_file_object_8cs_source.html">FileObject.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{ <span class="keyword">get</span>; <span class="keyword">protected</span> <span class="keyword">internal</span> <span class="keyword">set</span>; }</div></div><!-- fragment -->
 </div>
 </div>
 <a id="a0c9650a6ae1efb95f8211f9fa3b883fe"></a>
@@ -314,7 +314,7 @@ Properties</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -323,8 +323,8 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_file_object_8cs_source.html#l00030">30</a> of file <a class="el" href="_file_object_8cs_source.html">FileObject.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_file_object_8cs_source.html#l00179">ExtractFile()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{ <span class="keyword">get</span>; }</div></div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="_file_object_8cs_source.html#l00180">ExtractFile()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{ <span class="keyword">get</span>; <span class="keyword">protected</span> <span class="keyword">internal</span> <span class="keyword">set</span>; }</div></div><!-- fragment -->
 </div>
 </div>
 <a id="ae25b58dc19def323da91a48e17ba13ed"></a>
@@ -350,7 +350,7 @@ Properties</h2></td></tr>
 <p>The file extension of the domino attachment </p>
 
 <p class="definition">Definition at line <a class="el" href="_file_object_8cs_source.html#l00080">80</a> of file <a class="el" href="_file_object_8cs_source.html">FileObject.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{ <span class="keyword">get</span>; <span class="keyword">set</span>; } = <span class="stringliteral">&quot;&quot;</span>;</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{ <span class="keyword">get</span>; <span class="keyword">protected</span> <span class="keyword">internal</span> <span class="keyword">set</span>; } = <span class="stringliteral">&quot;&quot;</span>;</div></div><!-- fragment -->
 </div>
 </div>
 <a id="a26fa0ac628fee2387b7f89c78f93842e"></a>
@@ -376,7 +376,7 @@ Properties</h2></td></tr>
 <p>FieldName (Rich-Text item) associated to the domino attachment if available </p>
 
 <p class="definition">Definition at line <a class="el" href="_file_object_8cs_source.html#l00075">75</a> of file <a class="el" href="_file_object_8cs_source.html">FileObject.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{ <span class="keyword">get</span>; <span class="keyword">set</span>; } = <span class="stringliteral">&quot;&quot;</span>;</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{ <span class="keyword">get</span>; <span class="keyword">protected</span> <span class="keyword">internal</span> <span class="keyword">set</span>; } = <span class="stringliteral">&quot;&quot;</span>;</div></div><!-- fragment -->
 </div>
 </div>
 <a id="a36ff6c07d0662885402bfe7d98cf2988"></a>
@@ -403,7 +403,7 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_file_object_8cs_source.html#l00090">90</a> of file <a class="el" href="_file_object_8cs_source.html">FileObject.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_file_object_8cs_source.html#l00179">ExtractFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_file_object_8cs_source.html#l00180">ExtractFile()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{ <span class="keyword">get</span>; <span class="keyword">protected</span> <span class="keyword">internal</span> <span class="keyword">set</span>; } = <span class="keyword">false</span>;</div></div><!-- fragment -->
 </div>
 </div>
@@ -431,8 +431,8 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_file_object_8cs_source.html#l00035">35</a> of file <a class="el" href="_file_object_8cs_source.html">FileObject.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_document_object_8cs_source.html#l00345">DocumentObject.ExportFiles()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{ <span class="keyword">get</span>; <span class="keyword">set</span>; } = <span class="stringliteral">&quot;&quot;</span>;</div></div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="_document_object_8cs_source.html#l00402">DocumentObject.ExportFiles()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{ <span class="keyword">get</span>; <span class="keyword">protected</span> <span class="keyword">internal</span> <span class="keyword">set</span>; } = <span class="stringliteral">&quot;&quot;</span>;</div></div><!-- fragment -->
 </div>
 </div>
 <a id="ab91b5eca56a04784f8d0187247e1280c"></a>
@@ -458,7 +458,7 @@ Properties</h2></td></tr>
 <p>Additional JPI information of the domino attachment </p>
 
 <p class="definition">Definition at line <a class="el" href="_file_object_8cs_source.html#l00085">85</a> of file <a class="el" href="_file_object_8cs_source.html">FileObject.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{ <span class="keyword">get</span>; <span class="keyword">set</span>; } = <span class="stringliteral">&quot;&quot;</span>;</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{ <span class="keyword">get</span>; <span class="keyword">protected</span> <span class="keyword">internal</span> <span class="keyword">set</span>; } = <span class="stringliteral">&quot;&quot;</span>;</div></div><!-- fragment -->
 </div>
 </div>
 <a id="a7aa7737c1ce05f4424ba16dded444949"></a>
@@ -484,7 +484,7 @@ Properties</h2></td></tr>
 <p>Size of the domino attachment in bytes </p>
 
 <p class="definition">Definition at line <a class="el" href="_file_object_8cs_source.html#l00045">45</a> of file <a class="el" href="_file_object_8cs_source.html">FileObject.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{ <span class="keyword">get</span>; <span class="keyword">protected</span> <span class="keyword">internal</span> <span class="keyword">set</span>; }</div></div><!-- fragment -->
 </div>
 </div>
 <a id="a5e9b8f083b53ea0450a0560c16292a2f"></a>
@@ -510,7 +510,7 @@ Properties</h2></td></tr>
 <p>JPI Soft Class of the domino attachment (Acad,ustn,office) </p>
 
 <p class="definition">Definition at line <a class="el" href="_file_object_8cs_source.html#l00050">50</a> of file <a class="el" href="_file_object_8cs_source.html">FileObject.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{ <span class="keyword">get</span>; <span class="keyword">set</span>; } = <span class="stringliteral">&quot;&quot;</span>;</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{ <span class="keyword">get</span>; <span class="keyword">protected</span> <span class="keyword">internal</span> <span class="keyword">set</span>; } = <span class="stringliteral">&quot;&quot;</span>;</div></div><!-- fragment -->
 </div>
 </div>
 <a id="a7355eaeea3fe40bd8862d7f1f9b479da"></a>
@@ -537,8 +537,8 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_file_object_8cs_source.html#l00040">40</a> of file <a class="el" href="_file_object_8cs_source.html">FileObject.cs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_file_object_8cs_source.html#l00179">ExtractFile()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{ <span class="keyword">get</span>; <span class="keyword">set</span>; } = <span class="stringliteral">&quot;&quot;</span>;</div></div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="_file_object_8cs_source.html#l00180">ExtractFile()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{ <span class="keyword">get</span>; <span class="keyword">protected</span> <span class="keyword">internal</span> <span class="keyword">set</span>; } = <span class="stringliteral">&quot;&quot;</span>;</div></div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

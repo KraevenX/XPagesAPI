@@ -22,7 +22,7 @@ public class DatabaseObject {
     /// <summary>
     /// Reference to the session object that retrieve this database object
     /// </summary>
-    public SessionObject Session { get; }
+    public SessionObject Session { get; protected internal set; }
 
     /// <summary>
     /// Indicates is the DatabaseObject has been initialized
@@ -243,6 +243,51 @@ public class DatabaseObject {
     }
 
     /// <summary>
+    /// Retrieve a document from this database by universalID
+    /// This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and all fields
+    /// <para>Triggers a document request</para>
+    /// <para>The document will be added to the property 'Documents'</para>
+    /// </summary>
+    /// <param name="unid">UniversalID of the Notes Document</param>
+    /// <returns>DocumentObject</returns>
+    public DocumentObject GetDocumentAndFilesAndFields(string unid) {
+        Connector.ResetReturn();
+        DocumentObject docObj = null;
+        if (IsInitialized) {
+            docObj = new DocumentObject(this, unid);
+            if (docObj.InitializeWithFilesAndFields()) {
+                return docObj;
+            } else {
+                return null;
+            }
+        }
+        return docObj;
+    }
+
+    /// <summary>
+    /// Retrieve a document from this database by universalID
+    /// This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and specific fields
+    /// <para>Triggers a document request</para>
+    /// <para>The document will be added to the property 'Documents'</para>
+    /// </summary>
+    /// <param name="unid">UniversalID of the Notes Document</param>
+    /// <param name="fields">List of fields separated by ; </param>
+    /// <returns>DocumentObject</returns>
+    public DocumentObject GetDocumentAndFilesAndFields(string unid, string fields) {
+        Connector.ResetReturn();
+        DocumentObject docObj = null;
+        if (IsInitialized) {
+            docObj = new DocumentObject(this, unid);
+            if (docObj.InitializeWithFilesAndFields(fields)) {
+                return docObj;
+            } else {
+                return null;
+            }
+        }
+        return docObj;
+    }
+
+    /// <summary>
     /// Retrieve a document from this database by searching for a specific value in the provided field.
     /// <para>The first document found will be returned</para>
     /// <para>Triggers a document request</para>
@@ -281,6 +326,55 @@ public class DatabaseObject {
         if (IsInitialized) {
             docObj = new DocumentObject(this, searchField, searchValue);
             if (docObj.InitializeWithFiles()) {
+                return docObj;
+            } else {
+                return null;
+            }
+        }
+        return docObj;
+    }
+
+    /// <summary>
+    /// Retrieve a document from this database by searching for a specific value in the provided field.
+    /// This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and all fields
+    /// <para>The first document found will be returned</para>
+    /// <para>Triggers a document request</para>
+    /// <para>The document will be added to the property 'Documents'</para>
+    /// </summary>
+    /// <param name="searchField"></param>
+    /// <param name="searchValue"></param>
+    /// <returns>DocumentObject</returns>
+    public DocumentObject GetDocumentAndFilesAndFieldsByKey(string searchField, string searchValue) {
+        Connector.ResetReturn();
+        DocumentObject docObj = null;
+        if (IsInitialized) {
+            docObj = new DocumentObject(this, searchField, searchValue);
+            if (docObj.InitializeWithFilesAndFields()) {
+                return docObj;
+            } else {
+                return null;
+            }
+        }
+        return docObj;
+    }
+
+    /// <summary>
+    /// Retrieve a document from this database by searching for a specific value in the provided field.
+    /// This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and specific fields
+    /// <para>The first document found will be returned</para>
+    /// <para>Triggers a document request</para>
+    /// <para>The document will be added to the property 'Documents'</para>
+    /// </summary>
+    /// <param name="searchField">Notes Field Name</param>
+    /// <param name="searchValue">Notes Field Value</param>
+    /// <param name="fields"></param>
+    /// <returns>DocumentObject</returns>
+    public DocumentObject GetDocumentAndFilesAndFieldsByKey(string searchField, string searchValue, string fields) {
+        Connector.ResetReturn();
+        DocumentObject docObj = null;
+        if (IsInitialized) {
+            docObj = new DocumentObject(this, searchField, searchValue);
+            if (docObj.InitializeWithFilesAndFields(fields)) {
                 return docObj;
             } else {
                 return null;
@@ -335,6 +429,54 @@ public class DatabaseObject {
     }
 
     /// <summary>
+    /// Retrieve a document from this database by searching using the provided formula.
+    /// This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and and specific fields
+    /// <para>The first document found will be returned</para>
+    /// <para>Triggers a document request</para>
+    /// <para>The document will be added to the property 'Documents'</para>
+    /// </summary>
+    /// <param name="formula">Lotus Notes Formula</param>
+    /// <param name="fields">List of fields to retrieve separated by ; </param>
+    /// <returns>DocumentObject</returns>
+    public DocumentObject GetDocumentAndFilesAndFieldsByFormula(string formula, string fields) {
+        Connector.ResetReturn();
+        DocumentObject docObj = null;
+        if (IsInitialized) {
+            docObj = new DocumentObject(formula, this);
+            if (docObj.InitializeWithFilesAndFields(fields)) {
+                return docObj;
+            } else {
+                return null;
+            }
+        }
+        return docObj;
+    }
+
+    /// <summary>
+    /// Retrieve a document from this database by searching using the provided formula.
+    /// This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and all fields
+    /// <para>The first document found will be returned</para>
+    /// <para>Triggers a document request</para>
+    /// <para>The document will be added to the property 'Documents'</para>
+    /// </summary>
+    /// <param name="formula">Lotus Notes Formula</param>
+    /// <returns>DocumentObject</returns>
+    public DocumentObject GetDocumentAndFilesAndFieldsByFormula(string formula) {
+        Connector.ResetReturn();
+        DocumentObject docObj = null;
+        if (IsInitialized) {
+            docObj = new DocumentObject(formula, this);
+            if (docObj.InitializeWithFilesAndFields()) {
+                return docObj;
+            } else {
+                return null;
+            }
+        }
+        return docObj;
+    }
+
+
+    /// <summary>
     /// Retrieve all documents from the database
     /// <para>Triggers an all documents request</para>
     /// <para>All documents found will be added to the property 'Documents'</para>
@@ -370,6 +512,8 @@ public class DatabaseObject {
         }
         return false;
     }
+
+   
 
     /// <summary>
     /// Retrieve all documents from this database that correspond to the provided formula
@@ -411,6 +555,49 @@ public class DatabaseObject {
     }
 
     /// <summary>
+    /// Retrieve all documents from this database that correspond to the provided formula
+    /// This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and all fields
+    /// <para>Triggers an all documents request</para>
+    /// <para>All documents found will be added to the property 'Documents'</para>
+    /// </summary>
+    /// <param name="formula"></param>
+    /// <returns>Boolean</returns>
+    public bool GetAllDocumentsAndFilesAndFieldsByFormula(string formula) {
+        Connector.ResetReturn();
+        if (IsInitialized) {
+            //last parameter empty -> all fields will be requested
+            if (Session.Connection.Request.ExecuteAllDocumentsFilesFieldsRequest(Session.WebServiceURL, null, null, formula, null, this, null)) { 
+                return true;
+            } else {
+                return false;
+            }
+        }
+        return false;
+    }
+
+    /// <summary>
+    /// Retrieve all documents from this database that correspond to the provided formula
+    /// This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and specific fields
+    /// <para>Triggers an all documents request</para>
+    /// <para>All documents found will be added to the property 'Documents'</para>
+    /// </summary>
+    /// <param name="formula">Lotus Notes Formula</param>
+    /// <param name="fields">A list of fields to retrieve separated by ; </param>
+    /// <returns>Boolean</returns>
+    public bool GetAllDocumentsAndFilesAndFieldsByFormula(string formula,string fields) {
+        Connector.ResetReturn();
+        if (IsInitialized) {
+            //last parameter empty -> all fields will be requested
+            if (Session.Connection.Request.ExecuteAllDocumentsFilesFieldsRequest(Session.WebServiceURL, null, null, formula, null, this, fields)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        return false;
+    }
+
+    /// <summary>
     /// Retrieve all documents from this database by universalIDs
     /// <para> Provide the universalIds separated by ;</para>
     /// <para>Triggers an all documents request</para>
@@ -443,6 +630,49 @@ public class DatabaseObject {
         Connector.ResetReturn();
         if (IsInitialized) {
             if (Session.Connection.Request.ExecuteAllDocumentsFilesRequest(Session.WebServiceURL, null, null, null, unids, this)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        return false;
+    }
+
+    /// <summary>
+    /// Retrieve all documents from this database by universalIDs
+    /// This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and all fields
+    /// <para> Provide the universalIds separated by ;</para>
+    /// <para>Triggers an all documents request</para>
+    /// <para>All documents found will be added to the property 'Documents'</para>
+    /// </summary>
+    /// <param name="unids"></param>
+    /// <returns>Boolean</returns>
+    public bool GetAllDocumentsAndFilesAndFieldsByUnids(string unids) {
+        Connector.ResetReturn();
+        if (IsInitialized) {
+            if (Session.Connection.Request.ExecuteAllDocumentsFilesFieldsRequest(Session.WebServiceURL, null, null, null, unids, this, null)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        return false;
+    }
+
+    /// <summary>
+    /// Retrieve all documents from this database by universalIDs
+    /// This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and specific fields
+    /// <para> Provide the universalIds separated by ;</para>
+    /// <para>Triggers an all documents request</para>
+    /// <para>All documents found will be added to the property 'Documents'</para>
+    /// </summary>
+    /// <param name="unids">UniversalID of Notes Documents separated by ; </param>
+    /// <param name="fields">A list of fields to retrieve separated by ; </param>
+    /// <returns>Boolean</returns>
+    public bool GetAllDocumentsAndFilesAndFieldsByUnids(string unids, string fields) {
+        Connector.ResetReturn();
+        if (IsInitialized) {
+            if (Session.Connection.Request.ExecuteAllDocumentsFilesFieldsRequest(Session.WebServiceURL, null, null, null, unids, this, null)) {
                 return true;
             } else {
                 return false;
@@ -495,6 +725,51 @@ public class DatabaseObject {
     }
 
     /// <summary>
+    /// Retrieve all documents from this database by universalIDs
+    /// This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and all fields
+    /// <para>Triggers an all documents request</para>
+    /// <para>All documents found will be added to the property 'Documents'</para>
+    /// </summary>
+    /// <param name="listUnids"></param>
+    /// <returns>Boolean</returns>
+    public bool GetAllDocumentsAndFilesAndFieldsByUnids(IList listUnids) {
+        Connector.ResetReturn();
+        if (IsInitialized) {
+            string unids = Common.GetListAsString(listUnids, ";");
+
+            if (Session.Connection.Request.ExecuteAllDocumentsFilesFieldsRequest(Session.WebServiceURL, null, null, null, unids, this, null)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        return false;
+    }
+
+    /// <summary>
+    /// Retrieve all documents from this database by universalIDs
+    /// This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and specific fields
+    /// <para>Triggers an all documents request</para>
+    /// <para>All documents found will be added to the property 'Documents'</para>
+    /// </summary>
+    /// <param name="listUnids">List of UniversalIDs of Notes Documents</param>
+    /// <param name="fields">A list of fields to retrieve separated by ; </param>
+    /// <returns>Boolean</returns>
+    public bool GetAllDocumentsAndFilesAndFieldsByUnids(IList listUnids, string fields) {
+        Connector.ResetReturn();
+        if (IsInitialized) {
+            string unids = Common.GetListAsString(listUnids, ";");
+
+            if (Session.Connection.Request.ExecuteAllDocumentsFilesFieldsRequest(Session.WebServiceURL, null, null, null, unids, this, fields)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        return false;
+    }
+
+    /// <summary>
     /// Retrieve all documents from this database by searching for a specific value in the provided field
     /// <para>Triggers an all documents request</para>
     /// <para>All documents found will be added to the property 'Documents'</para>
@@ -527,6 +802,50 @@ public class DatabaseObject {
         Connector.ResetReturn();
         if (IsInitialized) {
             if (Session.Connection.Request.ExecuteAllDocumentsFilesRequest(Session.WebServiceURL, searchField, searchValue, null, null, this)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        return false;
+    }
+
+    /// <summary>
+    /// Retrieve all documents from this database by searching for a specific value in the provided field
+    /// This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and all fields
+    /// <para>Triggers an all documents request</para>
+    /// <para>All documents found will be added to the property 'Documents'</para>
+    /// </summary>
+    /// <param name="searchField"></param>
+    /// <param name="searchValue"></param>
+    /// <returns>Boolean</returns>
+    public bool GetAllDocumentsAndFilesAndFieldsByKey(string searchField, string searchValue) {
+        Connector.ResetReturn();
+        if (IsInitialized) {
+            if (Session.Connection.Request.ExecuteAllDocumentsFilesFieldsRequest(Session.WebServiceURL, searchField, searchValue, null, null, this, null)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        return false;
+    }
+
+
+    /// <summary>
+    /// Retrieve all documents from this database by searching for a specific value in the provided field
+    /// This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and specific fields
+    /// <para>Triggers an all documents request</para>
+    /// <para>All documents found will be added to the property 'Documents'</para>
+    /// </summary>
+    /// <param name="searchField"></param>
+    /// <param name="searchValue"></param>
+    /// <param name="fields">A list of fields to retrieve separated by ; </param>
+    /// <returns>Boolean</returns>
+    public bool GetAllDocumentsAndFilesAndFieldsByKey(string searchField, string searchValue, string fields) {
+        Connector.ResetReturn();
+        if (IsInitialized) {
+            if (Session.Connection.Request.ExecuteAllDocumentsFilesFieldsRequest(Session.WebServiceURL, searchField, searchValue, null, null, this, fields)) {
                 return true;
             } else {
                 return false;

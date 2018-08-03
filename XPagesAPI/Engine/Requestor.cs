@@ -1242,6 +1242,333 @@ internal class Requestor {
         }
     }
 
+
+    protected internal bool ExecuteDocumentFilesFieldsRequest(string WebServiceURL, string Unid, string searchField, string searchValue, string formula, string fields, DatabaseObject dbObj, DocumentObject docObj) {
+        HttpWebRequest request = null;
+
+        try {
+            if (!isInitialized) {
+                Connector.ReturnMessages.Add("Unable to execute the DocumentFilesFields Request - Not Initialized/Connected To Server");
+                Connector.HasError = true;
+                return false;
+            }
+
+            // ServicePointManager.Expect100Continue = false;
+
+            //create an HTTP request
+
+            request = (HttpWebRequest)WebRequest.Create(WebServiceURL + "?API_FieldsFiles");
+
+            request.CookieContainer = this.AuthenticationCookie;
+            //  request.KeepAlive = True
+            request.AllowAutoRedirect = true;
+
+            request.Method = WebRequestMethods.Http.Post;   //"POST"
+            request.ContentType = "application/jpi; charset=utf-8"; //application/json
+                                                                    // Set the request stream
+            string result;
+
+            //add a identifier in the header to be use in JPI Service to check if the request is coming from a valid source aka JPI XPages Connector
+            if (!AddIdentityHeader(ref request)) {
+                Connector.ReturnMessages.Add("Unable to Execute DocumentFilesFields Request : Identity Header could not be added!");
+                Connector.HasError = true;  //throws error
+                return false;
+            }
+
+            //test with encryption
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("UserName: " + Connection.UserName);
+            sb.AppendLine("ServerName: " + docObj.Database.ServerName);
+            sb.AppendLine("FilePath: " + docObj.Database.FilePath);
+            sb.AppendLine("ReplicationID: " + docObj.Database.ReplicationID);
+            sb.AppendLine("UniversalID: " + Unid);
+            sb.AppendLine("SearchField: " + searchField);
+            sb.AppendLine("SearchValue: " + searchValue);
+            sb.AppendLine("Formula: " + formula);
+            sb.AppendLine("Fields: " + fields);
+            sb.AppendLine("Connecting via XPagesAPI");
+
+            byte[] b = Encoding.Default.GetBytes(sb.ToString().Replace(Environment.NewLine, " | "));
+            string myString = Encoding.UTF8.GetString(b);
+            Encryptor EncodedEncryptedContent = new Encryptor(myString, true, ref Connection);
+            if (EncodedEncryptedContent.Initialize()) {
+                Stream requestStream = null;
+                try {
+                    requestStream = request.GetRequestStream();
+                    using (StreamWriter writer = new StreamWriter(requestStream, Encoding.UTF8)) {
+                        writer.Write(EncodedEncryptedContent.EncodedContent);
+                    }
+                } catch (Exception e) {
+                    Connector.ReturnMessages.Add("Unable to execute the DocumentFilesFields Request : " + Common.GetErrorInfo(e));
+                    Connector.HasError = true;  //throws exception
+                    return false;
+                } finally {
+                    //if (requestStream != null) {
+                    //    requestStream.Dispose();
+                    //}
+                }
+            } else {
+                Connector.ReturnMessages.Add("Executing DocumentFilesFields Request - Unable to encode/encrypt the content of the request!");
+                Connector.HasError = true; //throws exception
+                return false;
+            }
+
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();  //can give webexception error 500
+
+            if ((response.StatusCode == HttpStatusCode.OK) || (response.StatusCode == HttpStatusCode.Found) || (response.StatusCode == HttpStatusCode.Redirect) || (response.StatusCode == HttpStatusCode.Moved) || (response.StatusCode == HttpStatusCode.MovedPermanently)) {
+                Stream responseStream = null;
+                try {
+                    responseStream = request.GetResponse().GetResponseStream();
+                    using (StreamReader reader = new StreamReader(responseStream, true)) {
+                        result = reader.ReadToEnd();
+                    }
+                } catch (Exception e) {
+                    Connector.ReturnMessages.Add("Unable to execute the DocumentFilesFields Request : " + Common.GetErrorInfo(e));
+                    Connector.HasError = true;  //throws exception
+                    return false;
+                } finally {
+                    //if (responseStream != null) {
+                    //    responseStream.Dispose();
+                    //}
+                }
+
+                if (result != null) {
+                    Encryptor DecodeDecryptedContent = new Encryptor(result, false, ref Connection);
+                    if (DecodeDecryptedContent.Initialize()) {
+                        ArrayList arList = new ArrayList();
+
+                        string[] ar = null;
+                        bool isError = false;
+
+                        string message = "";
+                        string details = "";
+                        string value = "";
+                        string unid = "";
+                        string noteId = "";
+                        string form = "";
+                        string size = "";
+                        string url = "";
+                        string created = "";
+                        string modified = "";
+
+                        string[] fieldnames = null;
+                        string[] fieldvalues = null;
+                        string[] fieldtypes = null;
+
+                        string[] sep = { "||" };
+
+                        List<string> fList = new List<String>();
+
+                        ar = DecodeDecryptedContent.DecodedContent.Split(new[] { " | " }, StringSplitOptions.None);
+                        arList.AddRange(ar);
+
+                        foreach (string str in arList) {
+                            //YES/NO
+                            if (str.StartsWith("Error: ")) {
+                                if (str.Replace("Error: ", "").Equals("Y", StringComparison.OrdinalIgnoreCase)) {
+                                    isError = true;
+                                }
+                            }
+                            if (str.StartsWith("Message: ")) {
+                                message = str.Replace("Message: ", "");
+                            }
+                            if (str.StartsWith("Details: ")) {
+                                details = str.Replace("Details: ", "");
+                            }
+
+                            if (str.StartsWith("NoteID: ")) {
+                                value = str.Replace("NoteID: ", "");
+                                if (!string.IsNullOrEmpty(value)) {
+                                    noteId = value;
+                                }
+                            }
+                            if (str.StartsWith("Unid: ")) {
+                                value = str.Replace("Unid: ", "");
+                                if (!string.IsNullOrEmpty(value)) {
+                                    unid = value;
+                                }
+                            }
+                            if (str.StartsWith("Form: ")) {
+                                value = str.Replace("Form: ", "");
+                                if (!string.IsNullOrEmpty(value)) {
+                                    form = value;
+                                }
+                            }
+
+                            if (str.StartsWith("Size: ")) {
+                                value = str.Replace("Size: ", "");
+                                if (!string.IsNullOrEmpty(value)) {
+                                    size = value;
+                                }
+                            }
+
+                            if (str.StartsWith("URL: ")) {
+                                value = str.Replace("URL: ", "");
+                                if (!string.IsNullOrEmpty(value)) {
+                                    url = value;
+                                }
+                            }
+
+                            if (str.StartsWith("Created: ")) {
+                                value = str.Replace("Created: ", "");
+                                if (!string.IsNullOrEmpty(value)) {
+                                    created = value;
+                                }
+                            }
+
+                            if (str.StartsWith("Modified: ")) {
+                                value = str.Replace("Modified: ", "");
+                                if (!string.IsNullOrEmpty(value)) {
+                                    modified = value;
+                                }
+                            }
+
+                            if (str.StartsWith("FileObject: ")) {
+                                value = str.Replace("FileObject: ", "");
+                                if (!string.IsNullOrEmpty(value)) {
+                                    // files = value;
+                                    fList.Add(value);
+                                }
+                            }
+
+                            if (str.StartsWith("FieldNames: ")) {
+                                value = str.Replace("FieldNames: ", "");
+                                if (!string.IsNullOrEmpty(value)) {
+                                    fieldnames = value.Split(sep, StringSplitOptions.None);
+                                }
+                            }
+
+                            if (str.StartsWith("FieldValues: ")) {
+                                value = str.Replace("FieldValues: ", "");
+                                if (!string.IsNullOrEmpty(value)) {
+                                    fieldvalues = value.Split(sep, StringSplitOptions.None);
+                                }
+                            }
+
+                            if (str.StartsWith("FieldTypes: ")) {
+                                value = str.Replace("FieldTypes: ", "");
+                                if (!string.IsNullOrEmpty(value)) {
+                                    fieldtypes = value.Split(sep, StringSplitOptions.None);
+                                }
+                            }
+
+                          
+                        }
+
+                        if (isError) {
+                            Connector.ReturnMessages.Add(message);
+                            Connector.ReturnMessages.Add(details);
+                            Connector.HasError = true; //throws exception
+                            return false;
+                        } else {
+                            // add doc to list
+                            if (dbObj.Documents == null) {
+                                dbObj.Documents = new Dictionary<string, DocumentObject>();
+                            }
+                            if (!string.IsNullOrEmpty(unid)) {
+                                //docObj = new DocumentObject(dbObj, unid);
+                                docObj.UniversalID = unid;
+                                docObj.NoteID = noteId;
+                                docObj.Size = size;
+                                docObj.Url = url;
+                                docObj.Form = form;
+                                docObj.DateCreated = created;
+                                docObj.DateModified = modified;
+                                //create file objects
+                                SortedDictionary<string, FileObject> files = new SortedDictionary<string, FileObject>();
+                                FileObject fObj = null;
+                                foreach (string str in fList) {
+                                    if (!string.IsNullOrEmpty(str) && !str.Contains("<NO_FILES_ATTACHED>")) {
+                                        //can be valid file here split on § and count
+                                        //fObj.Application + "§" + fObj.Creator + "§" + fObj.DateCreated + "§" + fObj.DateModfied + "$" + fObj.FieldName + "§" + fObj.FileExtension + "§" + fObj.FileName + "$" + fObj.FileSize + "$" + fObj.LinkToFile + "$" + fObj.Other + "$" + fObj.SoftClass);
+                                        fObj = new FileObject(docObj);
+                                        if (fObj.Initialize(str)) {
+                                            files.Add(fObj.Name, fObj);
+                                        }
+                                    }
+                                }
+                                docObj.Files = files;
+
+                                // create fields
+                                FieldObject fieldObj = null;
+                                if (docObj.Fields == null) {
+                                    docObj.Fields = new SortedDictionary<string, FieldObject>();
+                                }
+                                for (int i = 0; i < fieldnames.Length; i++) {
+                                    fieldObj = new FieldObject(fieldnames[i]);
+                                    if (fieldvalues.Length - 1 >= i) {
+                                        fieldObj.Value = fieldvalues[i];
+                                    }
+                                    if (fieldtypes.Length - 1 >= i) {
+                                        fieldObj.Type = fieldtypes[i];
+                                    }
+
+                                    if (docObj.Fields.ContainsKey(fieldObj.Name)) {
+                                        docObj.Fields.Remove(fieldObj.Name);
+                                    }
+                                    docObj.Fields.Add(fieldObj.Name, fieldObj);
+                                }
+
+                                if (dbObj.Documents.ContainsKey(unid)) {
+                                    dbObj.Documents.Remove(unid);
+                                }
+                                dbObj.Documents.Add(unid, docObj);
+
+                                Connector.ReturnMessages.Add(message);
+                                Connector.ReturnMessages.Add(details);
+                                Connector.HasError = false; //SUCCESS
+                            } else {
+                                // unid not found??
+                                Connector.ReturnMessages.Add(message);
+                                Connector.ReturnMessages.Add(details);
+                                Connector.ReturnMessages.Add("Universal ID not found!");
+                                Connector.HasError = true; // throws exception
+                            }
+                        }
+                    } else {
+                        Connector.ReturnMessages.Add("Executing DocumentFilesFields Request - Unable to decode/decrypt the content of the response!");
+                        Connector.HasError = true;  //throws exception
+                        return false;
+                    }
+                } else {
+                    //no response from server
+                    Connector.ReturnMessages.Add("Executing DocumentFilesFields Request -  Unable to get response from XPages!");
+                    Connector.HasError = true;  //throws exception
+                    return false;
+                }
+                return true;
+            } else {
+                Connector.ReturnMessages.Add("Executing DocumentFilesFields Request -  Unable to get the Document - Authentication Issue");
+                Connector.HasError = true;  //throws exception
+                return false;
+            }
+        } catch (Exception ex) {
+            if (ex.GetType() == typeof(WebException)) {
+                WebException webex;
+                webex = (WebException)ex;
+                if (webex.Response != null) {
+                    Stream stream = webex.Response.GetResponseStream();
+                    using (StreamReader reader = new StreamReader(stream)) {
+                        string errorResp = reader.ReadToEnd();
+                        errorResp = errorResp.Replace("{", "").Replace("}", "").Replace("\\\\r\\\\n\\\\", Environment.NewLine).Replace(",", Environment.NewLine).Replace(((char)34).ToString(), "").Replace("\\\\r\\\\n", Environment.NewLine);
+                        Connector.ReturnMessages.Add("Unable to Execute the DocumentFilesFields Request : Invalid request or not authenticated : " + Environment.NewLine + "Web Request Error Response : " + errorResp);
+                        Connector.HasError = true;  //throws exception
+                        return false;
+                    }
+                } else {
+                    Connector.ReturnMessages.Add("Unable to Execute the DocumentFilesFields Request : " + Common.GetErrorInfo(ex));
+                    Connector.HasError = true;  //throws exception
+                    return false;
+                }
+            } else {
+                Connector.ReturnMessages.Add("Unable to Execute the DocumentFilesFields Request : " + Common.GetErrorInfo(ex));
+                Connector.HasError = true;  //throws exception
+                return false;
+            }
+        }
+    }
+
     protected internal bool ExecuteAllDocumentsRequest(string WebServiceURL, string searchField, string searchValue, string formula, string unids, DatabaseObject dbObj) {
         HttpWebRequest request = null;
 
@@ -2340,7 +2667,7 @@ internal class Requestor {
                                     foreach (string str in arFiles) {
                                         if (!string.IsNullOrEmpty(str) && !str.Contains("<NO_FILES_ATTACHED>")) {
                                             //can be valid file here split on § and count
-                                            //fObj.Application + "§" + fObj.Creator + "§" + fObj.DateCreated + "§" + fObj.DateModfied + "$" + fObj.FieldName + "§" + fObj.FileExtension + "§" + fObj.FileName + "$" + fObj.FileSize + "$" + fObj.LinkToFile + "$" + fObj.Other + "$" + fObj.SoftClass);
+                                            //fObj.Application + "§" + fObj.Creator + "§" + fObj.DateCreated + "§" + fObj.DateModfied + "$" + fObj.FieldName + "§" + fObj.FileExtension + "§" + fObj.FileName + "§" + fObj.FileSize + "§" + fObj.LinkToFile + "§" + fObj.Other + "§" + fObj.SoftClass);
                                             fObj = new FileObject(docObj);
                                             if (fObj.Initialize(str)) {
                                                 docObj.Files.Add(fObj.Name, fObj);
@@ -2353,6 +2680,486 @@ internal class Requestor {
                                 }
                                 docObj.IsInitialized = true;
                                 dbObj.Documents.Add(Unids[i], docObj);
+                            }
+                        }
+
+                        if (isError) {
+                            Connector.ReturnMessages.Add(message);
+                            Connector.ReturnMessages.Add(details);
+                            Connector.HasError = true; //throws exception
+                            return false;
+                        } else {
+                            Connector.ReturnMessages.Add(message);
+                            Connector.ReturnMessages.Add(details);
+                            Connector.HasError = false; //SUCCESS
+                        }
+                    } else {
+                        Connector.ReturnMessages.Add("Executing All Files Request - Unable to decode/decrypt the content of the response!");
+                        Connector.HasError = true;  //throws exception
+                        return false;
+                    }
+                } else {
+                    //no response from server
+                    Connector.ReturnMessages.Add("Executing All Files Request -  Unable to get response from XPages!");
+                    Connector.HasError = true;  //throws exception
+                    return false;
+                }
+                return true;
+            } else {
+                Connector.ReturnMessages.Add("Executing All Files Request -  Unable to get the Document - Authentication Issue");
+                Connector.HasError = true;  //throws exception
+                return false;
+            }
+        } catch (Exception ex) {
+            if (ex.GetType() == typeof(WebException)) {
+                WebException webex;
+                webex = (WebException)ex;
+                if (webex.Response != null) {
+                    Stream stream = webex.Response.GetResponseStream();
+                    using (StreamReader reader = new StreamReader(stream)) {
+                        string errorResp = reader.ReadToEnd();
+                        errorResp = errorResp.Replace("{", "").Replace("}", "").Replace("\\\\r\\\\n\\\\", Environment.NewLine).Replace(",", Environment.NewLine).Replace(((char)34).ToString(), "").Replace("\\\\r\\\\n", Environment.NewLine);
+                        Connector.ReturnMessages.Add("Unable to Execute the All Files Request : Invalid request or not authenticated : " + Environment.NewLine + "Web Request Error Response : " + errorResp);
+                        Connector.HasError = true;  //throws exception
+                        return false;
+                    }
+                } else {
+                    Connector.ReturnMessages.Add("Unable to Execute the All Files Request : " + Common.GetErrorInfo(ex));
+                    Connector.HasError = true;  //throws exception
+                    return false;
+                }
+            } else {
+                Connector.ReturnMessages.Add("Unable to Execute the All Files Request : " + Common.GetErrorInfo(ex));
+                Connector.HasError = true;  //throws exception
+                return false;
+            }
+        }
+    }
+
+    protected internal bool ExecuteAllDocumentsFilesFieldsRequest(string WebServiceURL, string searchField, string searchValue, string formula, string unids, DatabaseObject dbObj, string fields) {
+        HttpWebRequest request = null;
+
+        try {
+            if (!isInitialized) {
+                Connector.ReturnMessages.Add("Unable to execute the All Files Fields  Request - Not Initialized/Connected To Server");
+                Connector.HasError = true;
+                return false;
+            }
+
+            //  ServicePointManager.Expect100Continue = false;
+
+            //create an HTTP request
+
+            request = (HttpWebRequest)WebRequest.Create(WebServiceURL + "?API_AllFilesFields");
+            //request.Timeout = 300000; // set timeout to 5minutes
+            request.Timeout = 1800000; //half an hour!
+            request.CookieContainer = this.AuthenticationCookie;
+            //  request.KeepAlive = True
+            request.AllowAutoRedirect = true;
+
+            request.Method = WebRequestMethods.Http.Post;   //"POST"
+            request.ContentType = "application/jpi; charset=utf-8"; //application/json
+                                                                    // Set the request stream
+            string result;
+
+            //add a identifier in the header to be use in JPI Service to check if the request is coming from a valid source aka JPI XPages Connector
+            if (!AddIdentityHeader(ref request)) {
+                Connector.ReturnMessages.Add("Unable to Execute All Files Fields Request : Identity Header could not be added!");
+                Connector.HasError = true;  //throws error
+                return false;
+            }
+
+            //test with encryption
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("UserName: " + Connection.UserName);
+            sb.AppendLine("ServerName: " + dbObj.ServerName);
+            sb.AppendLine("FilePath: " + dbObj.FilePath);
+            sb.AppendLine("ReplicationID: " + dbObj.ReplicationID);
+            sb.AppendLine("SearchField: " + searchField);
+            sb.AppendLine("SearchValue: " + searchValue);
+            sb.AppendLine("Formula: " + formula);
+            sb.AppendLine("Unids: " + unids);
+            sb.AppendLine("Fields: " + fields);
+
+            sb.AppendLine("Connecting via XPagesAPI");
+
+            byte[] b = Encoding.Default.GetBytes(sb.ToString().Replace(Environment.NewLine, " | "));
+            string myString = Encoding.UTF8.GetString(b);
+            Encryptor EncodedEncryptedContent = new Encryptor(myString, true, ref Connection);
+            if (EncodedEncryptedContent.Initialize()) {
+                Stream requestStream = null;
+                try {
+                    requestStream = request.GetRequestStream();
+                    using (StreamWriter writer = new StreamWriter(requestStream, Encoding.UTF8)) {
+                        writer.Write(EncodedEncryptedContent.EncodedContent);
+                    }
+                } catch (Exception e) {
+                    Connector.ReturnMessages.Add("Unable to execute the All Files Fields  Request : " + Common.GetErrorInfo(e));
+                    Connector.HasError = true;  //throws exception
+                    return false;
+                } finally {
+                    //if (requestStream != null) {
+                    //    requestStream.Dispose();
+                    //}
+                }
+            } else {
+                Connector.ReturnMessages.Add("Executing All Files Fields Request - Unable to encode/encrypt the content of the request!");
+                Connector.HasError = true; //throws exception
+                return false;
+            }
+
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();  //can give webexception error 500
+
+            if ((response.StatusCode == HttpStatusCode.OK) || (response.StatusCode == HttpStatusCode.Found) || (response.StatusCode == HttpStatusCode.Redirect) || (response.StatusCode == HttpStatusCode.Moved) || (response.StatusCode == HttpStatusCode.MovedPermanently)) {
+                Stream responseStream = null;
+                try {
+                    responseStream = request.GetResponse().GetResponseStream();
+                    using (StreamReader reader = new StreamReader(responseStream, true)) {
+                        result = reader.ReadToEnd();
+                    }
+                } catch (Exception e) {
+                    Connector.ReturnMessages.Add("Unable to execute the All Files Fields Request : " + Common.GetErrorInfo(e));
+                    Connector.HasError = true;  //throws exception
+                    return false;
+                } finally {
+                    //if (responseStream != null) {
+                    //    responseStream.Dispose();
+                    //}
+                }
+
+                if (result != null) {
+                    Encryptor DecodeDecryptedContent = new Encryptor(result, false, ref Connection);
+                    if (DecodeDecryptedContent.Initialize()) {
+                        ArrayList arList = new ArrayList();
+
+                        string[] ar = null;
+                        bool isError = false;
+                        string unid = "";
+
+                        string message = "";
+                        string details = "";
+                        string value = "";
+                        string[] sep = { "||" };
+                        string[] sepFields = { "§§" };
+                        string[] sepFieldNames = { "@FieldNames@: " };
+                        string[] sepFieldValues = { "@FieldValues@: " };
+                        string[] sepFieldTypes = { "@FieldTypes@: " };
+                        string[] NoteIds = { };
+                        string[] Unids = { };
+                        string[] Forms = { };
+                        string[] Sizes = { };
+                        string[] URLs = { };
+                        string[] Created = { };
+                        string[] Modified = { };
+                        string[] Files = { };
+
+                        Dictionary<string, List<string[]>> dict = new Dictionary<string, List<string[]>>();
+                        string[] fieldnames = null;
+                        string[] fieldvalues = null;
+                        string[] fieldtypes = null;
+
+                       
+                        ar = DecodeDecryptedContent.DecodedContent.Split(new[] { " | " }, StringSplitOptions.None);
+                        arList.AddRange(ar);
+                        foreach (string str in arList) {
+                            //YES/NO
+                            if (str.StartsWith("Error: ")) {
+                                if (str.Replace("Error: ", "").Equals("Y", StringComparison.OrdinalIgnoreCase)) {
+                                    isError = true;
+                                }
+                            }
+                            if (str.StartsWith("Message: ")) {
+                                message = str.Replace("Message: ", "");
+                            }
+                            if (str.StartsWith("Details: ")) {
+                                details = str.Replace("Details: ", "");
+                            }
+
+                            if (str.StartsWith("Unids: ")) {
+                                value = str.Replace("Unids: ", "");
+                                if (!string.IsNullOrEmpty(value)) {
+                                    Unids = value.Split(sep, StringSplitOptions.None);
+                                }
+                            }
+
+                            if (str.StartsWith("NoteIDs: ")) {
+                                value = str.Replace("NoteIDs: ", "");
+                                if (!string.IsNullOrEmpty(value)) {
+                                    NoteIds = value.Split(sep, StringSplitOptions.None);
+                                }
+                            }
+
+                            if (str.StartsWith("Forms: ")) {
+                                value = str.Replace("Forms: ", "");
+                                if (!string.IsNullOrEmpty(value)) {
+                                    Forms = value.Split(sep, StringSplitOptions.None);
+                                }
+                            }
+
+                            if (str.StartsWith("Sizes: ")) {
+                                value = str.Replace("Sizes: ", "");
+                                if (!string.IsNullOrEmpty(value)) {
+                                    Sizes = value.Split(sep, StringSplitOptions.None);
+                                }
+                            }
+
+                            if (str.StartsWith("URLs: ")) {
+                                value = str.Replace("URLs: ", "");
+                                if (!string.IsNullOrEmpty(value)) {
+                                    URLs = value.Split(sep, StringSplitOptions.None);
+                                }
+                            }
+
+                            if (str.StartsWith("Created: ")) {
+                                value = str.Replace("Created: ", "");
+                                if (!string.IsNullOrEmpty(value)) {
+                                    Created = value.Split(sep, StringSplitOptions.None);
+                                }
+                            }
+
+                            if (str.StartsWith("Modified: ")) {
+                                value = str.Replace("Modified: ", "");
+                                if (!string.IsNullOrEmpty(value)) {
+                                    Modified = value.Split(sep, StringSplitOptions.None);
+                                }
+                            }
+
+                            // 'FieldNames: Unid: '
+                            if (str.StartsWith("@@ListFieldNames: ")) {
+                                value = str.Replace("@@ListFieldNames: ", "");
+
+                                if (!string.IsNullOrEmpty(value)) {
+                                    fieldnames = value.Split(sepFieldNames, StringSplitOptions.RemoveEmptyEntries);
+                                }
+                             
+                            }
+
+                            if (str.StartsWith("@@ListFieldValues: ")) {
+                                value = str.Replace("@@ListFieldValues: ", "");
+
+                                if (!string.IsNullOrEmpty(value)) {
+                                    fieldvalues = value.Split(sepFieldValues, StringSplitOptions.RemoveEmptyEntries);
+                                }
+                            }
+
+                            if (str.StartsWith("@@ListFieldTypes: ")) {
+                                value = str.Replace("@@ListFieldTypes: ", "");
+
+                                if (!string.IsNullOrEmpty(value)) {
+                                    fieldtypes = value.Split(sepFieldTypes, StringSplitOptions.RemoveEmptyEntries);
+                                }
+                            }
+
+                            if (str.StartsWith("FileObjects: ")) {
+                                value = str.Replace("FileObjects: ", "");
+                                if (!string.IsNullOrEmpty(value)) {
+                                    Files = value.Split(sep, StringSplitOptions.None);
+                                }
+                            }
+                        }
+
+                        //loop through unids, notesids, forms, sizes, urls and create document objects
+                        // check if all have the same number of items!
+                        int count = 0;
+                        if (Unids != null && Unids.Length > 0) {
+                            count = Unids.Length;
+                            if (NoteIds != null && NoteIds.Length > 0) {
+                                if (count != NoteIds.Length) {
+                                    Connector.ReturnMessages.Add("Executing All Files Request -  Unable to get the Documents - Unids <> NoteIds");
+                                    Connector.HasError = true;  //throws exception
+                                    return false;
+                                } else {
+                                    
+                                    if (Sizes != null && Sizes.Length > 0) {
+                                        if (count != Sizes.Length) {
+                                            Connector.ReturnMessages.Add("Executing All Files Request -  Unable to get the Documents - Unids <> Sizes");
+                                            Connector.HasError = true;  //throws exception
+                                            return false;
+                                        } else {
+                                            if (URLs != null && URLs.Length > 0) {
+                                                if (count != URLs.Length) {
+                                                    Connector.ReturnMessages.Add("Executing All Files Request -  Unable to get the Documents - Unids <> URLs");
+                                                    Connector.HasError = true;  //throws exception
+                                                    return false;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    //   }
+                                    // }
+                                }
+                            }
+                            // loop through and create doc obj
+                            DocumentObject docObj = null;
+                            if (dbObj.Documents == null) {
+                                dbObj.Documents = new Dictionary<string, DocumentObject>();
+                            }
+                            for (int i = 0; i < Unids.Length; i++) {
+                                docObj = new DocumentObject(dbObj, Unids[i]);
+                                if (NoteIds.Length - 1 >= i) {
+                                    docObj.NoteID = NoteIds[i];
+                                }
+                                if (Forms.Length - 1 >= i) {
+                                    docObj.Form = Forms[i];
+                                }
+                                if (Sizes.Length - 1 >= i) {
+                                    docObj.Size = Sizes[i];
+                                }
+                                if (URLs.Length - 1 >= i) {
+                                    docObj.Url = URLs[i];
+                                }
+                                if (Created.Length - 1 >= i) {
+                                    docObj.DateCreated = Created[i];
+                                }
+                                if (Modified.Length - 1 >= i) {
+                                    docObj.DateModified = Modified[i];
+                                }
+                                if (Files.Length - 1 >= i) {
+                                    //docObj.DateModified = Files[i];
+                                    //get all files into fileobjects here - split on 'FileObject: '
+                                    docObj.Files = new SortedDictionary<string, FileObject>();
+                                    FileObject fileObj = null;
+                                    string[] arFiles = Files[i].Split(new[] { "§§FileObject: " }, StringSplitOptions.RemoveEmptyEntries);
+
+                                    foreach (string str in arFiles) {
+                                        if (!string.IsNullOrEmpty(str) && !str.Contains("<NO_FILES_ATTACHED>")) {
+                                            //can be valid file here split on § and count
+                                            //fObj.Application + "§" + fObj.Creator + "§" + fObj.DateCreated + "§" + fObj.DateModfied + "$" + fObj.FieldName + "§" + fObj.FileExtension + "§" + fObj.FileName + "§" + fObj.FileSize + "§" + fObj.LinkToFile + "§" + fObj.Other + "§" + fObj.SoftClass);
+                                            fileObj = new FileObject(docObj);
+                                            if (fileObj.Initialize(str)) {
+                                                docObj.Files.Add(fileObj.Name, fileObj);
+                                            }
+                                        }
+                                    }
+                                }
+
+                                if (fieldnames.Length - 1 >= i) {
+
+                                    // remove unid here
+
+                                    //get the unid C125760F0054EEFBC1257356002F192D
+                                    //split the values here in @FieldNames@
+                                    value = "";
+                                    value = fieldnames[i];
+
+                                    if (value.Length > 34) { //Unid is 32 + ': '
+                                        unid = value.Substring(0, 32);
+                                        //remove unid
+                                        value = value.Remove(0, 34);
+                                        if (!string.IsNullOrEmpty(value)) {
+                                            string[] listfieldnames = value.Split(sepFields, StringSplitOptions.None);
+                                            // check if item is already in dict
+                                            if (!dict.ContainsKey(unid)) {
+                                                dict.Add(unid, new List<string[]>());
+                                            }
+                                            dict[unid].Add(listfieldnames);
+                                        }
+                                    }// else something is wrong
+
+                                }
+
+                                if (fieldvalues.Length - 1 >= i) {
+
+                                    // remove unid here
+
+                                    //get the unid C125760F0054EEFBC1257356002F192D
+                                    //split the values here in @FieldNames@
+                                    value = "";
+                                    value = fieldvalues[i];
+
+                                    if (value.Length > 34) { //Unid is 32 + ': '
+                                        unid = value.Substring(0, 32);
+                                        //remove unid
+                                        value = value.Remove(0, 34);
+                                        if (!string.IsNullOrEmpty(value)) {
+                                            string[] listfieldvalues = value.Split(sepFields, StringSplitOptions.None);
+                                            // check if item is already in dict
+                                            if (!dict.ContainsKey(unid)) {
+                                                dict.Add(unid, new List<string[]>());
+                                            }
+                                            dict[unid].Add(listfieldvalues);
+                                        }
+                                    }// else something is wrong
+
+                                }
+
+                                if (fieldtypes.Length - 1 >= i) {
+
+                                    // remove unid here
+
+                                    //get the unid C125760F0054EEFBC1257356002F192D
+                                    //split the values here in @FieldNames@
+                                    value = "";
+                                    value = fieldtypes[i];
+
+                                    if (value.Length > 34) { //Unid is 32 + ': '
+                                        unid = value.Substring(0, 32);
+                                        //remove unid
+                                        value = value.Remove(0, 34);
+                                        if (!string.IsNullOrEmpty(value)) {
+                                            string[] listfieldtypes = value.Split(sepFields, StringSplitOptions.None);
+                                            // check if item is already in dict
+                                            if (!dict.ContainsKey(unid)) {
+                                                dict.Add(unid, new List<string[]>());
+                                            }
+                                            dict[unid].Add(listfieldtypes);
+                                        }
+                                    }// else something is wrong
+
+                                }
+
+                                if (dbObj.Documents.ContainsKey(Unids[i])) {
+                                    dbObj.Documents.Remove(Unids[i]);
+                                }
+                                docObj.IsInitialized = true;
+                                dbObj.Documents.Add(Unids[i], docObj);
+                            }
+
+
+                            docObj = null;
+                            FieldObject fObj = null;
+
+                            foreach (KeyValuePair<string, List<string[]>> kvp in dict) {
+                                if (dbObj.Documents.ContainsKey(kvp.Key)) {
+                                    docObj = dbObj.Documents[kvp.Key];
+                                    if (docObj.Fields == null) {
+                                        docObj.Fields = new SortedDictionary<string, FieldObject>();
+                                    }
+                                    //reset
+                                    fieldnames = null;
+                                    fieldvalues = null;
+                                    fieldtypes = null;
+                                    // first array in list should be fieldnames, then values then types
+                                    fieldnames = kvp.Value[0];
+                                    fieldvalues = kvp.Value[1];
+                                    fieldtypes = kvp.Value[2];
+
+                                    for (int i = 0; i < fieldnames.Length; i++) {//fieldnames
+                                        fObj = new FieldObject(fieldnames[i]);
+                                        if (fieldvalues.Length - 1 >= i) {
+                                            fObj.Value = fieldvalues[i];
+                                        }
+                                        if (fieldtypes.Length - 1 >= i) {
+                                            fObj.Type = fieldtypes[i];
+                                        }
+
+                                        if (docObj.Fields.ContainsKey(fObj.Name)) {
+                                            docObj.Fields.Remove(fObj.Name);
+                                        }
+                                        docObj.Fields.Add(fObj.Name, fObj);
+                                    }
+
+                                    if (dbObj.Documents.ContainsKey(kvp.Key)) {
+                                        dbObj.Documents.Remove(kvp.Key);
+                                    }
+                                    docObj.IsInitialized = true;
+                                    dbObj.Documents.Add(kvp.Key, docObj);
+
+                                } else {
+                                    Connector.ReturnMessages.Add("Unable to find the document in the databaseobject :" + kvp.Key);
+                                    isError = true;
+                                }
                             }
                         }
 
@@ -2472,7 +3279,7 @@ internal class Requestor {
                         writer.Write(EncodedEncryptedContent.EncodedContent);
                     }
                 } catch (Exception e) {
-                    Connector.ReturnMessages.Add("Unable to execute the Request : " + Common.GetErrorInfo(e));
+                    Connector.ReturnMessages.Add("Unable to execute the All Fields Request : " + Common.GetErrorInfo(e));
                     Connector.HasError = true;  //throws exception
                     return false;
                 } finally {
@@ -2481,7 +3288,7 @@ internal class Requestor {
                     //}
                 }
             } else {
-                Connector.ReturnMessages.Add("Executing Fields Request - Unable to encode/encrypt the content of the request!");
+                Connector.ReturnMessages.Add("Executing All Fields Request - Unable to encode/encrypt the content of the request!");
                 Connector.HasError = true; //throws exception
                 return false;
             }
@@ -2496,7 +3303,7 @@ internal class Requestor {
                         result = reader.ReadToEnd();
                     }
                 } catch (Exception e) {
-                    Connector.ReturnMessages.Add("Unable to execute the Request : " + Common.GetErrorInfo(e));
+                    Connector.ReturnMessages.Add("Unable to execute the All Fields Request : " + Common.GetErrorInfo(e));
                     Connector.HasError = true;  //throws exception
                     return false;
                 } finally {

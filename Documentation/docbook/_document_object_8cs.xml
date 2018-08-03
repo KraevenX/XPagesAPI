@@ -44,7 +44,7 @@ An object representing a Domino Document
 23 
 24 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#region&#32;Variables</emphasis>
 25 
-26 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;_SearchField&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+26 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;readonly&#32;<emphasis class="keywordtype">string</emphasis>&#32;_SearchField&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
 27 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;readonly&#32;<emphasis class="keywordtype">string</emphasis>&#32;_SearchValue&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
 28 &#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;readonly&#32;<emphasis class="keywordtype">string</emphasis>&#32;_Formula&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
 29 
@@ -229,199 +229,256 @@ An object representing a Domino Document
 208 &#32;&#32;&#32;&#32;}
 209 <emphasis class="comment"></emphasis>
 210 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-211 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Retrieve&#32;fields&#32;for&#32;this&#32;documents&#32;by&#32;triggering&#32;the&#32;field&#32;request</emphasis>
-212 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;Provide&#32;the&#32;fields&#32;separated&#32;by&#32;;&lt;/para&gt;</emphasis>
-213 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;This&#32;action&#32;will&#32;update&#32;the&#32;property&#32;&apos;Fields&apos;&lt;/para&gt;</emphasis>
-214 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-215 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;fields&quot;&gt;&lt;/param&gt;</emphasis>
-216 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;Boolean&lt;/returns&gt;</emphasis>
-<link linkend="class_document_object_1a8883fec3b5b1b6e2e43f4b5ca4092684">217 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_document_object_1a8883fec3b5b1b6e2e43f4b5ca4092684">GetFields</link>(<emphasis class="keywordtype">string</emphasis>&#32;fields)&#32;{
-218 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.ResetReturn();
-219 
-220 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_document_object_1a3b2075b73f38d05091b69decc6ce7992">IsInitialized</link>)&#32;{
-221 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;if&#32;(!String.IsNullOrEmpty(fields))&#32;{</emphasis>
-222 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//this&#32;will&#32;update&#32;_Fields&#32;list&#32;in&#32;this&#32;object</emphasis>
-223 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_document_object_1a69d5338c9835f748490323d2950eed09">Database</link>.<link linkend="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07">Session</link>.<link linkend="class_session_object_1a014bdbf705a753540e19bfb53030c55c">Connection</link>.Request.ExecuteFieldsRequest(<link linkend="class_document_object_1a69d5338c9835f748490323d2950eed09">Database</link>.<link linkend="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07">Session</link>.<link linkend="class_session_object_1a697c071c812fbf7ad1166b896fb44c16">WebServiceURL</link>,&#32;<emphasis class="keyword">this</emphasis>,&#32;fields))&#32;{
-224 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a9365777a6b7b711b75bcfa6c4d53e989">HasError</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
-225 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">true</emphasis>;
-226 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-227 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//}</emphasis>
-228 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-229 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
-230 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;get&#32;the&#32;fields&#32;from&#32;XPages</emphasis>
-231 &#32;&#32;&#32;&#32;}
-232 <emphasis class="comment"></emphasis>
-233 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-234 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Retrieve&#32;file&#32;objects&#32;for&#32;this&#32;documents&#32;by&#32;triggering&#32;the&#32;document&#32;files&#32;request</emphasis>
-235 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;This&#32;action&#32;will&#32;update&#32;the&#32;property&#32;&apos;Files&apos;&lt;/para&gt;</emphasis>
-236 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-237 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;Boolean&lt;/returns&gt;</emphasis>
-<link linkend="class_document_object_1a2c8aee9450e8fdd1e84e8ff26d0950a1">238 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_document_object_1a2c8aee9450e8fdd1e84e8ff26d0950a1">GetFiles</link>()&#32;{
-239 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.ResetReturn();
-240 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;get&#32;the&#32;files&#32;from&#32;XPages</emphasis>
-241 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_document_object_1a3b2075b73f38d05091b69decc6ce7992">IsInitialized</link>)&#32;{
-242 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//this&#32;will&#32;update&#32;_Fields&#32;list&#32;in&#32;this&#32;object</emphasis>
-243 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//string&#32;WebServiceURL,&#32;string&#32;Unid,&#32;string&#32;searchField,&#32;string&#32;searchValue,&#32;string&#32;formula,&#32;DatabaseObject&#32;dbObj,&#32;DocumentObject&#32;docObj</emphasis>
-244 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_document_object_1a69d5338c9835f748490323d2950eed09">Database</link>.<link linkend="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07">Session</link>.<link linkend="class_session_object_1a014bdbf705a753540e19bfb53030c55c">Connection</link>.Request.ExecuteDocumentFilesRequest(<link linkend="class_document_object_1a69d5338c9835f748490323d2950eed09">Database</link>.<link linkend="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07">Session</link>.<link linkend="class_session_object_1a697c071c812fbf7ad1166b896fb44c16">WebServiceURL</link>,&#32;<emphasis class="keyword">this</emphasis>.UniversalID,&#32;<emphasis class="keyword">this</emphasis>._SearchField,&#32;<emphasis class="keyword">this</emphasis>._SearchValue,&#32;<emphasis class="keyword">this</emphasis>._Formula,&#32;<emphasis class="keyword">this</emphasis>.Database,&#32;<emphasis class="keyword">this</emphasis>))&#32;{
-245 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a9365777a6b7b711b75bcfa6c4d53e989">HasError</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
-246 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">true</emphasis>;
-247 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-248 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-249 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
-250 &#32;&#32;&#32;&#32;}
-251 <emphasis class="comment"></emphasis>
-252 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-253 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Retrieve&#32;fields&#32;for&#32;this&#32;documents&#32;by&#32;triggering&#32;the&#32;field&#32;request</emphasis>
-254 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;This&#32;action&#32;will&#32;update&#32;the&#32;property&#32;&apos;Fields&apos;&lt;/para&gt;</emphasis>
-255 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-256 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;fields&quot;&gt;&lt;/param&gt;</emphasis>
-257 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;Boolean&lt;/returns&gt;</emphasis>
-<link linkend="class_document_object_1a8e38704e02850b2480d29d184ae2c0e0">258 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_document_object_1a8e38704e02850b2480d29d184ae2c0e0">GetFields</link>(IList&#32;fields)&#32;{
-259 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.ResetReturn();
-260 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;f&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
-261 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_document_object_1a3b2075b73f38d05091b69decc6ce7992">IsInitialized</link>)&#32;{
-262 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;f&#32;=&#32;Common.GetListAsString(fields,&#32;<emphasis class="stringliteral">&quot;;&quot;</emphasis>);&#32;<emphasis class="comment">//&#32;can&#32;be&#32;empty&#32;-&#32;get&apos;s&#32;all&#32;fields</emphasis>
-263 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;if&#32;(!String.IsNullOrEmpty(fields))&#32;{</emphasis>
-264 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//this&#32;will&#32;update&#32;_Fields&#32;list&#32;in&#32;this&#32;object</emphasis>
-265 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_document_object_1a69d5338c9835f748490323d2950eed09">Database</link>.<link linkend="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07">Session</link>.<link linkend="class_session_object_1a014bdbf705a753540e19bfb53030c55c">Connection</link>.Request.ExecuteFieldsRequest(<link linkend="class_document_object_1a69d5338c9835f748490323d2950eed09">Database</link>.<link linkend="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07">Session</link>.<link linkend="class_session_object_1a697c071c812fbf7ad1166b896fb44c16">WebServiceURL</link>,&#32;<emphasis class="keyword">this</emphasis>,&#32;f))&#32;{
-266 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a9365777a6b7b711b75bcfa6c4d53e989">HasError</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
-267 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">true</emphasis>;
-268 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-269 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//}</emphasis>
-270 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-271 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
-272 &#32;&#32;&#32;&#32;}
-273 <emphasis class="comment"></emphasis>
-274 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-275 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Retrieve&#32;all&#32;fields&#32;for&#32;this&#32;documents&#32;by&#32;triggering&#32;the&#32;all&#32;fields&#32;request</emphasis>
-276 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;&#32;This&#32;action&#32;will&#32;update&#32;the&#32;property&#32;&apos;Fields&apos;&#32;&lt;/para&gt;</emphasis>
-277 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-278 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;Boolean&lt;/returns&gt;</emphasis>
-<link linkend="class_document_object_1a5e070c7c0a45ac06422ee992c841e780">279 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_document_object_1a5e070c7c0a45ac06422ee992c841e780">GetAllFields</link>()&#32;{
-280 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//get&#32;all&#32;the&#32;fields&#32;from&#32;the&#32;domino&#32;document&#32;and&#32;store&#32;them&#32;in&#32;Fields</emphasis>
-281 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.ResetReturn();
-282 
-283 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_document_object_1a3b2075b73f38d05091b69decc6ce7992">IsInitialized</link>)&#32;{
-284 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_document_object_1a69d5338c9835f748490323d2950eed09">Database</link>.<link linkend="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07">Session</link>.<link linkend="class_session_object_1a014bdbf705a753540e19bfb53030c55c">Connection</link>.Request.ExecuteFieldsRequest(<link linkend="class_document_object_1a69d5338c9835f748490323d2950eed09">Database</link>.<link linkend="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07">Session</link>.<link linkend="class_session_object_1a697c071c812fbf7ad1166b896fb44c16">WebServiceURL</link>,&#32;<emphasis class="keyword">this</emphasis>,&#32;null))&#32;{
-285 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a9365777a6b7b711b75bcfa6c4d53e989">HasError</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
-286 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">true</emphasis>;
-287 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-288 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-289 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
-290 &#32;&#32;&#32;&#32;}
-291 <emphasis class="comment"></emphasis>
-292 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-293 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Exports&#32;the&#32;content&#32;of&#32;the&#32;property&#32;&apos;Fields&apos;&#32;to&#32;a&#32;file</emphasis>
-294 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;Provide&#32;the&#32;path&#32;to&#32;the&#32;file&#32;and&#32;specify&#32;if&#32;you&#32;want&#32;to&#32;overwrite&#32;this&#32;file&#32;if&#32;it&#32;exists&lt;/para&gt;</emphasis>
-295 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-296 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;filePath&quot;&gt;&lt;/param&gt;</emphasis>
-297 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;overwriteExistingFile&quot;&gt;&lt;/param&gt;</emphasis>
-298 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;&lt;/returns&gt;</emphasis>
-<link linkend="class_document_object_1a1a763aa01710b370634f46c89b7d2d8e">299 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_document_object_1a1a763aa01710b370634f46c89b7d2d8e">ExportFields</link>(<emphasis class="keywordtype">string</emphasis>&#32;filePath,&#32;<emphasis class="keywordtype">bool</emphasis>&#32;overwriteExistingFile)&#32;{
-300 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.ResetReturn();
-301 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>&#32;{
-302 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_document_object_1ae203b8a3e40b6c428145d2335b71245c">Fields</link>&#32;!=&#32;null&#32;&amp;&amp;&#32;<link linkend="class_document_object_1ae203b8a3e40b6c428145d2335b71245c">Fields</link>.Count&#32;&gt;&#32;0)&#32;{
-303 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//write&#32;all&#32;to&#32;stringbuilder,&#32;output&#32;to&#32;file</emphasis>
-304 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;StringBuilder&#32;sb&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;StringBuilder();
-305 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(KeyValuePair&lt;string,&#32;FieldObject&gt;&#32;field&#32;<emphasis class="keywordflow">in</emphasis>&#32;<link linkend="class_document_object_1ae203b8a3e40b6c428145d2335b71245c">Fields</link>)&#32;{
-306 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(field.Value.Type.Equals(<emphasis class="stringliteral">&quot;[FIELDNOTFOUND]&quot;</emphasis>))&#32;{
-307 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sb.AppendLine(field.Value.Name&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;:&#32;&quot;</emphasis>&#32;+&#32;field.Value.Type);&#32;<emphasis class="comment">//&#32;add&#32;type&#32;to&#32;indicate&#32;the&#32;field&#32;was&#32;not&#32;found</emphasis>
-308 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
-309 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sb.AppendLine(field.Value.Name&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;:&#32;&quot;</emphasis>&#32;+&#32;field.Value.GetValueAsString());&#32;<emphasis class="comment">//+&#32;&quot;&#32;(&quot;&#32;+&#32;field.Value.Type&#32;+&#32;&quot;)&quot;);</emphasis>
-310 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-311 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-312 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(File.Exists(filePath))&#32;{
-313 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(overwriteExistingFile)&#32;{
-314 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.Delete(filePath);
-315 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
-316 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;Unable&#32;to&#32;export&#32;the&#32;fields&#32;to&#32;the&#32;file&#32;:&#32;&quot;</emphasis>&#32;+&#32;filePath);
-317 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;A&#32;file&#32;already&#32;exist&#32;with&#32;the&#32;same&#32;name,&#32;provide&#32;a&#32;new&#32;file&#32;path&quot;</emphasis>);
-318 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;Connector.hasError&#32;=&#32;true;</emphasis>
-319 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
-320 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-321 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-322 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//File.CreateText(filePath);</emphasis>
-323 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.WriteAllText(filePath,&#32;sb.ToString());
-324 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;Exported&#32;all&#32;fields&#32;of&#32;document&#32;:&#32;&quot;</emphasis>&#32;+&#32;<link linkend="class_document_object_1a8b96d04632a2802e7cc5466ca5cee8cf">UniversalID</link>&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;to&#32;the&#32;file&#32;:&#32;&quot;</emphasis>&#32;+&#32;filePath);
-325 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">true</emphasis>;
-326 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
-327 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;The&#32;document&#32;:&#32;&quot;</emphasis>&#32;+&#32;<link linkend="class_document_object_1a8b96d04632a2802e7cc5466ca5cee8cf">UniversalID</link>&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;does&#32;not&#32;contain&#32;any&#32;fields&#32;to&#32;export&quot;</emphasis>);
-328 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
-329 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-330 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(Exception&#32;ex)&#32;{
-331 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;Unable&#32;to&#32;export&#32;the&#32;fields&#32;to&#32;the&#32;file&#32;:&#32;&quot;</emphasis>&#32;+&#32;filePath);
-332 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(Common.GetErrorInfo(ex));
-333 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a9365777a6b7b711b75bcfa6c4d53e989">HasError</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;
-334 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
-335 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-336 &#32;&#32;&#32;&#32;}
-337 <emphasis class="comment"></emphasis>
-338 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-339 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Exports&#32;the&#32;files&#32;from&#32;the&#32;XPages&#32;URL&#32;for&#32;all&#32;FileObjects&#32;in&#32;the&#32;Files&#32;property</emphasis>
-340 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;Provide&#32;the&#32;path&#32;to&#32;the&#32;file&#32;and&#32;specify&#32;if&#32;you&#32;want&#32;to&#32;overwrite&#32;this&#32;file&#32;if&#32;it&#32;exists&lt;/para&gt;</emphasis>
-341 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-342 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;filePath&quot;&gt;&lt;/param&gt;</emphasis>
-343 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;overwriteExistingFile&quot;&gt;&lt;/param&gt;</emphasis>
-344 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;&lt;/returns&gt;</emphasis>
-<link linkend="class_document_object_1a8753abc5a871bf84fc910e6a99936b2b">345 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_document_object_1a8753abc5a871bf84fc910e6a99936b2b">ExportFiles</link>(<emphasis class="keywordtype">string</emphasis>&#32;filePath,&#32;<emphasis class="keywordtype">bool</emphasis>&#32;overwriteExistingFile)&#32;{
-346 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.ResetReturn();
-347 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>&#32;{
-348 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_document_object_1afe6bcf5175607f91dde768491f23a0a4">Files</link>&#32;!=&#32;null&#32;&amp;&amp;&#32;<link linkend="class_document_object_1afe6bcf5175607f91dde768491f23a0a4">Files</link>.Count&#32;&gt;&#32;0)&#32;{
-349 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!Directory.Exists(filePath))&#32;{
-350 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//create&#32;folde&#32;structure</emphasis>
-351 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Directory.CreateDirectory(filePath);
-352 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-353 
-354 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(<link linkend="class_file_object">FileObject</link>&#32;fObj&#32;<emphasis class="keywordflow">in</emphasis>&#32;<link linkend="class_document_object_1afe6bcf5175607f91dde768491f23a0a4">Files</link>.Values)&#32;{
-355 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;fileName&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
-356 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fileName&#32;=&#32;<link linkend="namespace_system">System</link>.IO.Path.Combine(filePath,&#32;fObj.<link linkend="class_file_object_1a9d47aff166393cb47490da2661576d62">Name</link>);
-357 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(File.Exists(fileName))&#32;{
-358 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(overwriteExistingFile)&#32;{
-359 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.Delete(fileName);
-360 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
-361 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;Unable&#32;to&#32;export&#32;the&#32;file&#32;to&#32;:&#32;&quot;</emphasis>&#32;+&#32;filePath);
-362 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;A&#32;file&#32;already&#32;exist&#32;with&#32;the&#32;same&#32;name,&#32;provide&#32;a&#32;new&#32;file&#32;path&quot;</emphasis>);
-363 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;Connector.hasError&#32;=&#32;true;</emphasis>
-364 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
-365 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-366 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-367 
-368 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!fObj.<link linkend="class_file_object_1ae21fac09c5ab2f9fac96a3f084cb9ddc">ExtractFile</link>(fileName))&#32;{
-369 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Insert(0,&#32;<emphasis class="stringliteral">&quot;Unable&#32;to&#32;export&#32;the&#32;file&#32;:&#32;&quot;</emphasis>&#32;+&#32;fObj.<link linkend="class_file_object_1a9d47aff166393cb47490da2661576d62">Name</link>);
-370 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a9365777a6b7b711b75bcfa6c4d53e989">HasError</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;
-371 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
-372 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-373 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-374 
-375 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;Exported&#32;all&#32;fields&#32;of&#32;document&#32;:&#32;&quot;</emphasis>&#32;+&#32;<link linkend="class_document_object_1a8b96d04632a2802e7cc5466ca5cee8cf">UniversalID</link>&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;to&#32;the&#32;file&#32;:&#32;&quot;</emphasis>&#32;+&#32;filePath);
-376 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">true</emphasis>;
-377 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
-378 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;The&#32;document&#32;:&#32;&quot;</emphasis>&#32;+&#32;<link linkend="class_document_object_1a8b96d04632a2802e7cc5466ca5cee8cf">UniversalID</link>&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;does&#32;not&#32;contain&#32;any&#32;fields&#32;to&#32;export&quot;</emphasis>);
-379 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
-380 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-381 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(Exception&#32;ex)&#32;{
-382 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;Unable&#32;to&#32;export&#32;the&#32;fields&#32;to&#32;the&#32;file&#32;:&#32;&quot;</emphasis>&#32;+&#32;filePath);
-383 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(Common.GetErrorInfo(ex));
-384 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a9365777a6b7b711b75bcfa6c4d53e989">HasError</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;
-385 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
-386 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-387 &#32;&#32;&#32;&#32;}
-388 <emphasis class="comment"></emphasis>
-389 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-390 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Remove&#32;all&#32;the&#32;retrieved&#32;field&#32;objects&#32;from&#32;this&#32;document</emphasis>
-391 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-<link linkend="class_document_object_1a28ab6562c34b5cf44ce7ab738d1730e1">392 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_document_object_1a28ab6562c34b5cf44ce7ab738d1730e1">ClearFields</link>()&#32;{
-393 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_document_object_1ae203b8a3e40b6c428145d2335b71245c">Fields</link>&#32;=&#32;null;
-394 &#32;&#32;&#32;&#32;}
-395 <emphasis class="comment"></emphasis>
-396 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
-397 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Remove&#32;all&#32;the&#32;retrieved&#32;file&#32;objects&#32;from&#32;this&#32;document</emphasis>
+211 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Initializes&#32;the&#32;document&#32;by&#32;validating&#32;the&#32;input&#32;and&#32;triggering&#32;the&#32;document&#32;request</emphasis>
+212 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;This&#32;function&#32;will,&#32;in&#32;addition&#32;to&#32;retrieving&#32;the&#32;default&#32;document&#32;information,&#32;retrieve&#32;the&#32;associated&#32;domino&#32;attachment&#32;file&#32;objects&#32;and&#32;all&#32;fields</emphasis>
+213 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+214 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;Boolean&lt;/returns&gt;</emphasis>
+<link linkend="class_document_object_1a16350c0f471c95c82b418b7f1dc53694">215 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_document_object_1a16350c0f471c95c82b418b7f1dc53694">InitializeWithFilesAndFields</link>()&#32;{
+216 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.ResetReturn();
+217 
+218 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!ValidateInput())&#32;{
+219 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_document_object_1a3b2075b73f38d05091b69decc6ce7992">IsInitialized</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
+220 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a9365777a6b7b711b75bcfa6c4d53e989">HasError</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;
+221 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;&#32;&#32;&#32;<emphasis class="comment">//&#32;throws&#32;exception</emphasis>
+222 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+223 
+224 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;make&#32;a&#32;connection&#32;to&#32;the&#32;webservice&#32;database&#32;-&#32;this&#32;will&#32;check&#32;the&#32;users&#32;authentication&#32;on&#32;that&#32;database</emphasis>
+225 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_document_object_1a69d5338c9835f748490323d2950eed09">Database</link>.<link linkend="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07">Session</link>.<link linkend="class_session_object_1a014bdbf705a753540e19bfb53030c55c">Connection</link>.Request.ExecuteDocumentFilesFieldsRequest(<link linkend="class_document_object_1a69d5338c9835f748490323d2950eed09">Database</link>.<link linkend="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07">Session</link>.<link linkend="class_session_object_1a697c071c812fbf7ad1166b896fb44c16">WebServiceURL</link>,&#32;<link linkend="class_document_object_1a8b96d04632a2802e7cc5466ca5cee8cf">UniversalID</link>,&#32;_SearchField,&#32;_SearchValue,&#32;_Formula,&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>,&#32;<link linkend="class_document_object_1a69d5338c9835f748490323d2950eed09">Database</link>,&#32;<emphasis class="keyword">this</emphasis>))&#32;{
+226 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_document_object_1a3b2075b73f38d05091b69decc6ce7992">IsInitialized</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;
+227 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;Connector.ReturnMessages.Add(&quot;Document&#32;Initialized&#32;:&#32;&quot;&#32;+&#32;_UniversalID&#32;+&#32;&quot;&#32;in&#32;:&#32;&quot;&#32;+&#32;_Database.FilePath&#32;+&#32;&quot;&#32;from&#32;:&#32;&quot;+_Database.ServerName&#32;+&#32;&quot;&#32;(DocumentObject.Initialize)&quot;);</emphasis>
+228 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a9365777a6b7b711b75bcfa6c4d53e989">HasError</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
+229 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">true</emphasis>;
+230 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
+231 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//error&#32;messages&#32;written&#32;to&#32;Connection.ReturnMessages&#32;by&#32;Connection.Request.ExecuteSessionRequest</emphasis>
+232 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_document_object_1a3b2075b73f38d05091b69decc6ce7992">IsInitialized</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
+233 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+234 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+235 &#32;&#32;&#32;&#32;}
+236 <emphasis class="comment"></emphasis>
+237 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+238 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Initializes&#32;the&#32;document&#32;by&#32;validating&#32;the&#32;input&#32;and&#32;triggering&#32;the&#32;document&#32;request</emphasis>
+239 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;This&#32;function&#32;will,&#32;in&#32;addition&#32;to&#32;retrieving&#32;the&#32;default&#32;document&#32;information,&#32;retrieve&#32;the&#32;associated&#32;domino&#32;attachment&#32;file&#32;objects&#32;and&#32;specific&#32;fields&lt;/para&gt;</emphasis>
+240 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;Provide&#32;the&#32;fields&#32;separated&#32;by&#32;;&lt;/para&gt;</emphasis>
+241 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+242 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;fields&quot;&gt;Field&#32;Names&#32;separated&#32;by&#32;;&#32;&lt;/param&gt;</emphasis>
+243 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;bool&lt;/returns&gt;</emphasis>
+<link linkend="class_document_object_1af68a4510477845f4a1dce889bab7ed2f">244 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_document_object_1af68a4510477845f4a1dce889bab7ed2f">InitializeWithFilesAndFields</link>(<emphasis class="keywordtype">string</emphasis>&#32;fields)&#32;{
+245 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.ResetReturn();
+246 
+247 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!ValidateInput())&#32;{
+248 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_document_object_1a3b2075b73f38d05091b69decc6ce7992">IsInitialized</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
+249 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a9365777a6b7b711b75bcfa6c4d53e989">HasError</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;
+250 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;&#32;&#32;&#32;<emphasis class="comment">//&#32;throws&#32;exception</emphasis>
+251 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+252 
+253 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;make&#32;a&#32;connection&#32;to&#32;the&#32;webservice&#32;database&#32;-&#32;this&#32;will&#32;check&#32;the&#32;users&#32;authentication&#32;on&#32;that&#32;database</emphasis>
+254 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_document_object_1a69d5338c9835f748490323d2950eed09">Database</link>.<link linkend="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07">Session</link>.<link linkend="class_session_object_1a014bdbf705a753540e19bfb53030c55c">Connection</link>.Request.ExecuteDocumentFilesFieldsRequest(<link linkend="class_document_object_1a69d5338c9835f748490323d2950eed09">Database</link>.<link linkend="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07">Session</link>.<link linkend="class_session_object_1a697c071c812fbf7ad1166b896fb44c16">WebServiceURL</link>,&#32;<link linkend="class_document_object_1a8b96d04632a2802e7cc5466ca5cee8cf">UniversalID</link>,&#32;_SearchField,&#32;_SearchValue,&#32;_Formula,&#32;fields,&#32;<link linkend="class_document_object_1a69d5338c9835f748490323d2950eed09">Database</link>,&#32;<emphasis class="keyword">this</emphasis>))&#32;{
+255 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_document_object_1a3b2075b73f38d05091b69decc6ce7992">IsInitialized</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;
+256 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;Connector.ReturnMessages.Add(&quot;Document&#32;Initialized&#32;:&#32;&quot;&#32;+&#32;_UniversalID&#32;+&#32;&quot;&#32;in&#32;:&#32;&quot;&#32;+&#32;_Database.FilePath&#32;+&#32;&quot;&#32;from&#32;:&#32;&quot;+_Database.ServerName&#32;+&#32;&quot;&#32;(DocumentObject.Initialize)&quot;);</emphasis>
+257 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a9365777a6b7b711b75bcfa6c4d53e989">HasError</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
+258 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">true</emphasis>;
+259 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
+260 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//error&#32;messages&#32;written&#32;to&#32;Connection.ReturnMessages&#32;by&#32;Connection.Request.ExecuteSessionRequest</emphasis>
+261 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_document_object_1a3b2075b73f38d05091b69decc6ce7992">IsInitialized</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
+262 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+263 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+264 &#32;&#32;&#32;&#32;}
+265 
+266 <emphasis class="comment"></emphasis>
+267 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+268 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Retrieve&#32;fields&#32;for&#32;this&#32;documents&#32;by&#32;triggering&#32;the&#32;field&#32;request</emphasis>
+269 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;Provide&#32;the&#32;fields&#32;separated&#32;by&#32;;&lt;/para&gt;</emphasis>
+270 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;This&#32;action&#32;will&#32;update&#32;the&#32;property&#32;&apos;Fields&apos;&lt;/para&gt;</emphasis>
+271 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+272 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;fields&quot;&gt;&lt;/param&gt;</emphasis>
+273 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;bool&lt;/returns&gt;</emphasis>
+<link linkend="class_document_object_1a8883fec3b5b1b6e2e43f4b5ca4092684">274 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_document_object_1a8883fec3b5b1b6e2e43f4b5ca4092684">GetFields</link>(<emphasis class="keywordtype">string</emphasis>&#32;fields)&#32;{
+275 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.ResetReturn();
+276 
+277 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_document_object_1a3b2075b73f38d05091b69decc6ce7992">IsInitialized</link>)&#32;{
+278 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;if&#32;(!String.IsNullOrEmpty(fields))&#32;{</emphasis>
+279 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//this&#32;will&#32;update&#32;_Fields&#32;list&#32;in&#32;this&#32;object</emphasis>
+280 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_document_object_1a69d5338c9835f748490323d2950eed09">Database</link>.<link linkend="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07">Session</link>.<link linkend="class_session_object_1a014bdbf705a753540e19bfb53030c55c">Connection</link>.Request.ExecuteFieldsRequest(<link linkend="class_document_object_1a69d5338c9835f748490323d2950eed09">Database</link>.<link linkend="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07">Session</link>.<link linkend="class_session_object_1a697c071c812fbf7ad1166b896fb44c16">WebServiceURL</link>,&#32;<emphasis class="keyword">this</emphasis>,&#32;fields))&#32;{
+281 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a9365777a6b7b711b75bcfa6c4d53e989">HasError</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
+282 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">true</emphasis>;
+283 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+284 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//}</emphasis>
+285 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+286 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+287 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;get&#32;the&#32;fields&#32;from&#32;XPages</emphasis>
+288 &#32;&#32;&#32;&#32;}
+289 <emphasis class="comment"></emphasis>
+290 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+291 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Retrieve&#32;file&#32;objects&#32;for&#32;this&#32;documents&#32;by&#32;triggering&#32;the&#32;document&#32;files&#32;request</emphasis>
+292 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;This&#32;action&#32;will&#32;update&#32;the&#32;property&#32;&apos;Files&apos;&lt;/para&gt;</emphasis>
+293 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+294 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;Boolean&lt;/returns&gt;</emphasis>
+<link linkend="class_document_object_1a2c8aee9450e8fdd1e84e8ff26d0950a1">295 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_document_object_1a2c8aee9450e8fdd1e84e8ff26d0950a1">GetFiles</link>()&#32;{
+296 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.ResetReturn();
+297 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;get&#32;the&#32;files&#32;from&#32;XPages</emphasis>
+298 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_document_object_1a3b2075b73f38d05091b69decc6ce7992">IsInitialized</link>)&#32;{
+299 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//this&#32;will&#32;update&#32;_Fields&#32;list&#32;in&#32;this&#32;object</emphasis>
+300 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//string&#32;WebServiceURL,&#32;string&#32;Unid,&#32;string&#32;searchField,&#32;string&#32;searchValue,&#32;string&#32;formula,&#32;DatabaseObject&#32;dbObj,&#32;DocumentObject&#32;docObj</emphasis>
+301 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_document_object_1a69d5338c9835f748490323d2950eed09">Database</link>.<link linkend="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07">Session</link>.<link linkend="class_session_object_1a014bdbf705a753540e19bfb53030c55c">Connection</link>.Request.ExecuteDocumentFilesRequest(<link linkend="class_document_object_1a69d5338c9835f748490323d2950eed09">Database</link>.<link linkend="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07">Session</link>.<link linkend="class_session_object_1a697c071c812fbf7ad1166b896fb44c16">WebServiceURL</link>,&#32;<emphasis class="keyword">this</emphasis>.UniversalID,&#32;<emphasis class="keyword">this</emphasis>._SearchField,&#32;<emphasis class="keyword">this</emphasis>._SearchValue,&#32;<emphasis class="keyword">this</emphasis>._Formula,&#32;<emphasis class="keyword">this</emphasis>.Database,&#32;<emphasis class="keyword">this</emphasis>))&#32;{
+302 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a9365777a6b7b711b75bcfa6c4d53e989">HasError</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
+303 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">true</emphasis>;
+304 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+305 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+306 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+307 &#32;&#32;&#32;&#32;}
+308 <emphasis class="comment"></emphasis>
+309 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+310 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Retrieve&#32;fields&#32;for&#32;this&#32;documents&#32;by&#32;triggering&#32;the&#32;field&#32;request</emphasis>
+311 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;This&#32;action&#32;will&#32;update&#32;the&#32;property&#32;&apos;Fields&apos;&lt;/para&gt;</emphasis>
+312 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+313 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;fields&quot;&gt;&lt;/param&gt;</emphasis>
+314 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;Boolean&lt;/returns&gt;</emphasis>
+<link linkend="class_document_object_1a8e38704e02850b2480d29d184ae2c0e0">315 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_document_object_1a8e38704e02850b2480d29d184ae2c0e0">GetFields</link>(IList&#32;fields)&#32;{
+316 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.ResetReturn();
+317 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;f&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+318 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_document_object_1a3b2075b73f38d05091b69decc6ce7992">IsInitialized</link>)&#32;{
+319 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;f&#32;=&#32;Common.GetListAsString(fields,&#32;<emphasis class="stringliteral">&quot;;&quot;</emphasis>);&#32;<emphasis class="comment">//&#32;can&#32;be&#32;empty&#32;-&#32;get&apos;s&#32;all&#32;fields</emphasis>
+320 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;if&#32;(!String.IsNullOrEmpty(fields))&#32;{</emphasis>
+321 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//this&#32;will&#32;update&#32;_Fields&#32;list&#32;in&#32;this&#32;object</emphasis>
+322 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_document_object_1a69d5338c9835f748490323d2950eed09">Database</link>.<link linkend="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07">Session</link>.<link linkend="class_session_object_1a014bdbf705a753540e19bfb53030c55c">Connection</link>.Request.ExecuteFieldsRequest(<link linkend="class_document_object_1a69d5338c9835f748490323d2950eed09">Database</link>.<link linkend="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07">Session</link>.<link linkend="class_session_object_1a697c071c812fbf7ad1166b896fb44c16">WebServiceURL</link>,&#32;<emphasis class="keyword">this</emphasis>,&#32;f))&#32;{
+323 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a9365777a6b7b711b75bcfa6c4d53e989">HasError</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
+324 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">true</emphasis>;
+325 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+326 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//}</emphasis>
+327 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+328 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+329 &#32;&#32;&#32;&#32;}
+330 <emphasis class="comment"></emphasis>
+331 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+332 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Retrieve&#32;all&#32;fields&#32;for&#32;this&#32;documents&#32;by&#32;triggering&#32;the&#32;all&#32;fields&#32;request</emphasis>
+333 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;&#32;This&#32;action&#32;will&#32;update&#32;the&#32;property&#32;&apos;Fields&apos;&#32;&lt;/para&gt;</emphasis>
+334 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+335 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;Boolean&lt;/returns&gt;</emphasis>
+<link linkend="class_document_object_1a5e070c7c0a45ac06422ee992c841e780">336 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_document_object_1a5e070c7c0a45ac06422ee992c841e780">GetAllFields</link>()&#32;{
+337 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//get&#32;all&#32;the&#32;fields&#32;from&#32;the&#32;domino&#32;document&#32;and&#32;store&#32;them&#32;in&#32;Fields</emphasis>
+338 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.ResetReturn();
+339 
+340 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_document_object_1a3b2075b73f38d05091b69decc6ce7992">IsInitialized</link>)&#32;{
+341 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_document_object_1a69d5338c9835f748490323d2950eed09">Database</link>.<link linkend="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07">Session</link>.<link linkend="class_session_object_1a014bdbf705a753540e19bfb53030c55c">Connection</link>.Request.ExecuteFieldsRequest(<link linkend="class_document_object_1a69d5338c9835f748490323d2950eed09">Database</link>.<link linkend="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07">Session</link>.<link linkend="class_session_object_1a697c071c812fbf7ad1166b896fb44c16">WebServiceURL</link>,&#32;<emphasis class="keyword">this</emphasis>,&#32;null))&#32;{
+342 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a9365777a6b7b711b75bcfa6c4d53e989">HasError</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
+343 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">true</emphasis>;
+344 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+345 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+346 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+347 &#32;&#32;&#32;&#32;}
+348 <emphasis class="comment"></emphasis>
+349 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+350 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Exports&#32;the&#32;content&#32;of&#32;the&#32;property&#32;&apos;Fields&apos;&#32;to&#32;a&#32;file</emphasis>
+351 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;Provide&#32;the&#32;path&#32;to&#32;the&#32;file&#32;and&#32;specify&#32;if&#32;you&#32;want&#32;to&#32;overwrite&#32;this&#32;file&#32;if&#32;it&#32;exists&lt;/para&gt;</emphasis>
+352 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+353 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;filePath&quot;&gt;&lt;/param&gt;</emphasis>
+354 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;overwriteExistingFile&quot;&gt;&lt;/param&gt;</emphasis>
+355 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;&lt;/returns&gt;</emphasis>
+<link linkend="class_document_object_1a1a763aa01710b370634f46c89b7d2d8e">356 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_document_object_1a1a763aa01710b370634f46c89b7d2d8e">ExportFields</link>(<emphasis class="keywordtype">string</emphasis>&#32;filePath,&#32;<emphasis class="keywordtype">bool</emphasis>&#32;overwriteExistingFile)&#32;{
+357 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.ResetReturn();
+358 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>&#32;{
+359 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_document_object_1ae203b8a3e40b6c428145d2335b71245c">Fields</link>&#32;!=&#32;null&#32;&amp;&amp;&#32;<link linkend="class_document_object_1ae203b8a3e40b6c428145d2335b71245c">Fields</link>.Count&#32;&gt;&#32;0)&#32;{
+360 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//write&#32;all&#32;to&#32;stringbuilder,&#32;output&#32;to&#32;file</emphasis>
+361 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;StringBuilder&#32;sb&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;StringBuilder();
+362 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(KeyValuePair&lt;string,&#32;FieldObject&gt;&#32;field&#32;<emphasis class="keywordflow">in</emphasis>&#32;<link linkend="class_document_object_1ae203b8a3e40b6c428145d2335b71245c">Fields</link>)&#32;{
+363 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(field.Value.Type.Equals(<emphasis class="stringliteral">&quot;[FIELDNOTFOUND]&quot;</emphasis>))&#32;{
+364 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sb.AppendLine(field.Value.Name&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;:&#32;&quot;</emphasis>&#32;+&#32;field.Value.Type);&#32;<emphasis class="comment">//&#32;add&#32;type&#32;to&#32;indicate&#32;the&#32;field&#32;was&#32;not&#32;found</emphasis>
+365 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
+366 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sb.AppendLine(field.Value.Name&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;:&#32;&quot;</emphasis>&#32;+&#32;field.Value.GetValueAsString());&#32;<emphasis class="comment">//+&#32;&quot;&#32;(&quot;&#32;+&#32;field.Value.Type&#32;+&#32;&quot;)&quot;);</emphasis>
+367 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+368 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+369 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(File.Exists(filePath))&#32;{
+370 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(overwriteExistingFile)&#32;{
+371 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.Delete(filePath);
+372 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
+373 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;Unable&#32;to&#32;export&#32;the&#32;fields&#32;to&#32;the&#32;file&#32;:&#32;&quot;</emphasis>&#32;+&#32;filePath);
+374 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;A&#32;file&#32;already&#32;exist&#32;with&#32;the&#32;same&#32;name,&#32;provide&#32;a&#32;new&#32;file&#32;path&quot;</emphasis>);
+375 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;Connector.hasError&#32;=&#32;true;</emphasis>
+376 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+377 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+378 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+379 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//File.CreateText(filePath);</emphasis>
+380 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.WriteAllText(filePath,&#32;sb.ToString());
+381 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;Exported&#32;all&#32;fields&#32;of&#32;document&#32;:&#32;&quot;</emphasis>&#32;+&#32;<link linkend="class_document_object_1a8b96d04632a2802e7cc5466ca5cee8cf">UniversalID</link>&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;to&#32;the&#32;file&#32;:&#32;&quot;</emphasis>&#32;+&#32;filePath);
+382 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">true</emphasis>;
+383 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
+384 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;The&#32;document&#32;:&#32;&quot;</emphasis>&#32;+&#32;<link linkend="class_document_object_1a8b96d04632a2802e7cc5466ca5cee8cf">UniversalID</link>&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;does&#32;not&#32;contain&#32;any&#32;fields&#32;to&#32;export&quot;</emphasis>);
+385 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+386 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+387 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(Exception&#32;ex)&#32;{
+388 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;Unable&#32;to&#32;export&#32;the&#32;fields&#32;to&#32;the&#32;file&#32;:&#32;&quot;</emphasis>&#32;+&#32;filePath);
+389 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(Common.GetErrorInfo(ex));
+390 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a9365777a6b7b711b75bcfa6c4d53e989">HasError</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;
+391 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+392 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+393 &#32;&#32;&#32;&#32;}
+394 <emphasis class="comment"></emphasis>
+395 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+396 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Exports&#32;the&#32;files&#32;from&#32;the&#32;XPages&#32;URL&#32;for&#32;all&#32;FileObjects&#32;in&#32;the&#32;Files&#32;property</emphasis>
+397 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;para&gt;Provide&#32;the&#32;path&#32;to&#32;the&#32;file&#32;and&#32;specify&#32;if&#32;you&#32;want&#32;to&#32;overwrite&#32;this&#32;file&#32;if&#32;it&#32;exists&lt;/para&gt;</emphasis>
 398 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
-<link linkend="class_document_object_1a4caebae7aec2a9375112739d2cf29f29">399 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_document_object_1a4caebae7aec2a9375112739d2cf29f29">ClearFiles</link>()&#32;{
-400 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_document_object_1afe6bcf5175607f91dde768491f23a0a4">Files</link>&#32;=&#32;null;
-401 &#32;&#32;&#32;&#32;}
-402 
-403 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion&#32;Public&#32;Methods</emphasis>
-404 <emphasis class="preprocessor">}</emphasis>
+399 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;filePath&quot;&gt;&lt;/param&gt;</emphasis>
+400 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;param&#32;name=&quot;overwriteExistingFile&quot;&gt;&lt;/param&gt;</emphasis>
+401 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;returns&gt;&lt;/returns&gt;</emphasis>
+<link linkend="class_document_object_1a8753abc5a871bf84fc910e6a99936b2b">402 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_document_object_1a8753abc5a871bf84fc910e6a99936b2b">ExportFiles</link>(<emphasis class="keywordtype">string</emphasis>&#32;filePath,&#32;<emphasis class="keywordtype">bool</emphasis>&#32;overwriteExistingFile)&#32;{
+403 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.ResetReturn();
+404 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>&#32;{
+405 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_document_object_1afe6bcf5175607f91dde768491f23a0a4">Files</link>&#32;!=&#32;null&#32;&amp;&amp;&#32;<link linkend="class_document_object_1afe6bcf5175607f91dde768491f23a0a4">Files</link>.Count&#32;&gt;&#32;0)&#32;{
+406 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!Directory.Exists(filePath))&#32;{
+407 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//create&#32;folde&#32;structure</emphasis>
+408 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Directory.CreateDirectory(filePath);
+409 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+410 
+411 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(<link linkend="class_file_object">FileObject</link>&#32;fObj&#32;<emphasis class="keywordflow">in</emphasis>&#32;<link linkend="class_document_object_1afe6bcf5175607f91dde768491f23a0a4">Files</link>.Values)&#32;{
+412 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;fileName&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+413 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fileName&#32;=&#32;<link linkend="namespace_system">System</link>.IO.Path.Combine(filePath,&#32;fObj.<link linkend="class_file_object_1a9d47aff166393cb47490da2661576d62">Name</link>);
+414 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(File.Exists(fileName))&#32;{
+415 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(overwriteExistingFile)&#32;{
+416 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.Delete(fileName);
+417 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
+418 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;Unable&#32;to&#32;export&#32;the&#32;file&#32;to&#32;:&#32;&quot;</emphasis>&#32;+&#32;filePath);
+419 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;A&#32;file&#32;already&#32;exist&#32;with&#32;the&#32;same&#32;name,&#32;provide&#32;a&#32;new&#32;file&#32;path&quot;</emphasis>);
+420 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;Connector.hasError&#32;=&#32;true;</emphasis>
+421 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+422 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+423 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+424 
+425 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!fObj.<link linkend="class_file_object_1ae21fac09c5ab2f9fac96a3f084cb9ddc">ExtractFile</link>(fileName))&#32;{
+426 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Insert(0,&#32;<emphasis class="stringliteral">&quot;Unable&#32;to&#32;export&#32;the&#32;file&#32;:&#32;&quot;</emphasis>&#32;+&#32;fObj.<link linkend="class_file_object_1a9d47aff166393cb47490da2661576d62">Name</link>);
+427 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a9365777a6b7b711b75bcfa6c4d53e989">HasError</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;
+428 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+429 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+430 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+431 
+432 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;Exported&#32;all&#32;fields&#32;of&#32;document&#32;:&#32;&quot;</emphasis>&#32;+&#32;<link linkend="class_document_object_1a8b96d04632a2802e7cc5466ca5cee8cf">UniversalID</link>&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;to&#32;the&#32;file&#32;:&#32;&quot;</emphasis>&#32;+&#32;filePath);
+433 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">true</emphasis>;
+434 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">else</emphasis>&#32;{
+435 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;The&#32;document&#32;:&#32;&quot;</emphasis>&#32;+&#32;<link linkend="class_document_object_1a8b96d04632a2802e7cc5466ca5cee8cf">UniversalID</link>&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;does&#32;not&#32;contain&#32;any&#32;fields&#32;to&#32;export&quot;</emphasis>);
+436 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+437 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+438 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(Exception&#32;ex)&#32;{
+439 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(<emphasis class="stringliteral">&quot;Unable&#32;to&#32;export&#32;the&#32;fields&#32;to&#32;the&#32;file&#32;:&#32;&quot;</emphasis>&#32;+&#32;filePath);
+440 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a1ed422674b344524fd77998dcf6a9ba6">ReturnMessages</link>.Add(Common.GetErrorInfo(ex));
+441 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_connector">Connector</link>.<link linkend="class_connector_1a9365777a6b7b711b75bcfa6c4d53e989">HasError</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;
+442 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="keyword">false</emphasis>;
+443 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+444 &#32;&#32;&#32;&#32;}
+445 <emphasis class="comment"></emphasis>
+446 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+447 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Remove&#32;all&#32;the&#32;retrieved&#32;field&#32;objects&#32;from&#32;this&#32;document</emphasis>
+448 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_document_object_1a28ab6562c34b5cf44ce7ab738d1730e1">449 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_document_object_1a28ab6562c34b5cf44ce7ab738d1730e1">ClearFields</link>()&#32;{
+450 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_document_object_1ae203b8a3e40b6c428145d2335b71245c">Fields</link>&#32;=&#32;null;
+451 &#32;&#32;&#32;&#32;}
+452 <emphasis class="comment"></emphasis>
+453 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;summary&gt;</emphasis>
+454 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;Remove&#32;all&#32;the&#32;retrieved&#32;file&#32;objects&#32;from&#32;this&#32;document</emphasis>
+455 <emphasis class="comment">&#32;&#32;&#32;&#32;///&#32;&lt;/summary&gt;</emphasis>
+<link linkend="class_document_object_1a4caebae7aec2a9375112739d2cf29f29">456 </link><emphasis class="comment"></emphasis>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_document_object_1a4caebae7aec2a9375112739d2cf29f29">ClearFiles</link>()&#32;{
+457 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_document_object_1afe6bcf5175607f91dde768491f23a0a4">Files</link>&#32;=&#32;null;
+458 &#32;&#32;&#32;&#32;}
+459 
+460 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;#endregion&#32;Public&#32;Methods</emphasis>
+461 <emphasis class="preprocessor">}</emphasis>
     </computeroutput></literallayout>
 </section>

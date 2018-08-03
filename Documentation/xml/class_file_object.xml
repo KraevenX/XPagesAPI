@@ -47,7 +47,7 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="property">
-      <memberdef kind="property" id="class_file_object_1a0c9650a6ae1efb95f8211f9fa3b883fe" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+      <memberdef kind="property" id="class_file_object_1a0c9650a6ae1efb95f8211f9fa3b883fe" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type><ref refid="class_document_object" kindref="compound">DocumentObject</ref></type>
         <definition>DocumentObject FileObject.Document</definition>
         <argsstring></argsstring>
@@ -59,7 +59,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="30" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="30" bodyend="30"/>
-        <referencedby refid="class_file_object_1ae21fac09c5ab2f9fac96a3f084cb9ddc" compoundref="_file_object_8cs" startline="179" endline="189">ExtractFile</referencedby>
+        <referencedby refid="class_file_object_1ae21fac09c5ab2f9fac96a3f084cb9ddc" compoundref="_file_object_8cs" startline="180" endline="190">ExtractFile</referencedby>
       </memberdef>
       <memberdef kind="property" id="class_file_object_1a9d47aff166393cb47490da2661576d62" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>string</type>
@@ -74,7 +74,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="35" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="35" bodyend="35"/>
-        <referencedby refid="class_document_object_1a8753abc5a871bf84fc910e6a99936b2b" compoundref="_document_object_8cs" startline="345" endline="387">DocumentObject.ExportFiles</referencedby>
+        <referencedby refid="class_document_object_1a8753abc5a871bf84fc910e6a99936b2b" compoundref="_document_object_8cs" startline="402" endline="444">DocumentObject.ExportFiles</referencedby>
       </memberdef>
       <memberdef kind="property" id="class_file_object_1a7355eaeea3fe40bd8862d7f1f9b479da" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>string</type>
@@ -89,7 +89,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="40" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="40" bodyend="40"/>
-        <referencedby refid="class_file_object_1ae21fac09c5ab2f9fac96a3f084cb9ddc" compoundref="_file_object_8cs" startline="179" endline="189">ExtractFile</referencedby>
+        <referencedby refid="class_file_object_1ae21fac09c5ab2f9fac96a3f084cb9ddc" compoundref="_file_object_8cs" startline="180" endline="190">ExtractFile</referencedby>
       </memberdef>
       <memberdef kind="property" id="class_file_object_1a7aa7737c1ce05f4424ba16dded444949" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>long</type>
@@ -227,7 +227,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="90" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="90" bodyend="90"/>
-        <referencedby refid="class_file_object_1ae21fac09c5ab2f9fac96a3f084cb9ddc" compoundref="_file_object_8cs" startline="179" endline="189">ExtractFile</referencedby>
+        <referencedby refid="class_file_object_1ae21fac09c5ab2f9fac96a3f084cb9ddc" compoundref="_file_object_8cs" startline="180" endline="190">ExtractFile</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="package-func">
@@ -265,14 +265,14 @@
 <parametername>initString</parametername>
 </parameternamelist>
 <parameterdescription>
-</parameterdescription>
+<para>Initialization string</para></parameterdescription>
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para></para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="108" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="108" bodyend="172"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="108" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="108" bodyend="173"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -300,7 +300,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="179" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="179" bodyend="189"/>
+        <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="180" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="180" bodyend="190"/>
         <references refid="class_session_object_1a014bdbf705a753540e19bfb53030c55c" compoundref="_session_object_8cs" startline="49" endline="49">SessionObject.Connection</references>
         <references refid="class_document_object_1a69d5338c9835f748490323d2950eed09" compoundref="_document_object_8cs" startline="37" endline="37">DocumentObject.Database</references>
         <references refid="class_file_object_1a0c9650a6ae1efb95f8211f9fa3b883fe" compoundref="_file_object_8cs" startline="30" endline="30">Document</references>
@@ -308,7 +308,7 @@
         <references refid="class_file_object_1a36ff6c07d0662885402bfe7d98cf2988" compoundref="_file_object_8cs" startline="90" endline="90">IsInitialized</references>
         <references refid="class_database_object_1aa8484162b7d2a7c4c9426bca13c64c07" compoundref="_database_object_8cs" startline="25" endline="25">DatabaseObject.Session</references>
         <references refid="class_file_object_1a7355eaeea3fe40bd8862d7f1f9b479da" compoundref="_file_object_8cs" startline="40" endline="40">URL</references>
-        <referencedby refid="class_document_object_1a8753abc5a871bf84fc910e6a99936b2b" compoundref="_document_object_8cs" startline="345" endline="387">DocumentObject.ExportFiles</referencedby>
+        <referencedby refid="class_document_object_1a8753abc5a871bf84fc910e6a99936b2b" compoundref="_document_object_8cs" startline="402" endline="444">DocumentObject.ExportFiles</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -319,7 +319,7 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>//<sp/>your<sp/>code<sp/>here...</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting> </para>    </detaileddescription>
-    <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="15" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="15" bodyend="192"/>
+    <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" line="15" column="1" bodyfile="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Objects/FileObject.cs" bodystart="15" bodyend="193"/>
     <listofallmembers>
       <member refid="class_file_object_1a39640cdc4b16ee66e9c73803f4510396" prot="public" virt="non-virtual"><scope>FileObject</scope><name>Application</name></member>
       <member refid="class_file_object_1a1ab7d29c80841b60b276b7430f4e5ec7" prot="public" virt="non-virtual"><scope>FileObject</scope><name>Creator</name></member>

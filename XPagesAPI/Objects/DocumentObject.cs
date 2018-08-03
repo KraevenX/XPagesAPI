@@ -23,7 +23,7 @@ public class DocumentObject {
 
     #region Variables
 
-    private string _SearchField = "";
+    private readonly string _SearchField = "";
     private readonly string _SearchValue = "";
     private readonly string _Formula = "";
 
@@ -208,12 +208,69 @@ public class DocumentObject {
     }
 
     /// <summary>
+    /// Initializes the document by validating the input and triggering the document request
+    /// This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and all fields
+    /// </summary>
+    /// <returns>Boolean</returns>
+    public bool InitializeWithFilesAndFields() {
+        Connector.ResetReturn();
+
+        if (!ValidateInput()) {
+            IsInitialized = false;
+            Connector.HasError = true;
+            return false;   // throws exception
+        }
+
+        // make a connection to the webservice database - this will check the users authentication on that database
+        if (Database.Session.Connection.Request.ExecuteDocumentFilesFieldsRequest(Database.Session.WebServiceURL, UniversalID, _SearchField, _SearchValue, _Formula, "", Database, this)) {
+            IsInitialized = true;
+            //  Connector.ReturnMessages.Add("Document Initialized : " + _UniversalID + " in : " + _Database.FilePath + " from : "+_Database.ServerName + " (DocumentObject.Initialize)");
+            Connector.HasError = false;
+            return true;
+        } else {
+            //error messages written to Connection.ReturnMessages by Connection.Request.ExecuteSessionRequest
+            IsInitialized = false;
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// Initializes the document by validating the input and triggering the document request
+    /// <para>This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and specific fields</para>
+    /// <para>Provide the fields separated by ;</para>
+    /// </summary>
+    /// <param name="fields">Field Names separated by ; </param>
+    /// <returns>bool</returns>
+    public bool InitializeWithFilesAndFields(string fields) {
+        Connector.ResetReturn();
+
+        if (!ValidateInput()) {
+            IsInitialized = false;
+            Connector.HasError = true;
+            return false;   // throws exception
+        }
+
+        // make a connection to the webservice database - this will check the users authentication on that database
+        if (Database.Session.Connection.Request.ExecuteDocumentFilesFieldsRequest(Database.Session.WebServiceURL, UniversalID, _SearchField, _SearchValue, _Formula, fields, Database, this)) {
+            IsInitialized = true;
+            //  Connector.ReturnMessages.Add("Document Initialized : " + _UniversalID + " in : " + _Database.FilePath + " from : "+_Database.ServerName + " (DocumentObject.Initialize)");
+            Connector.HasError = false;
+            return true;
+        } else {
+            //error messages written to Connection.ReturnMessages by Connection.Request.ExecuteSessionRequest
+            IsInitialized = false;
+            return false;
+        }
+    }
+
+
+    /// <summary>
     /// Retrieve fields for this documents by triggering the field request
     /// <para>Provide the fields separated by ;</para>
     /// <para>This action will update the property 'Fields'</para>
     /// </summary>
     /// <param name="fields"></param>
-    /// <returns>Boolean</returns>
+    /// <returns>bool</returns>
     public bool GetFields(string fields) {
         Connector.ResetReturn();
 

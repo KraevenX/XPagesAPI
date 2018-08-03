@@ -13,7 +13,7 @@ bool \mbox{\hyperlink{class_file_object_ae21fac09c5ab2f9fac96a3f084cb9ddc}{Extra
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_document_object}{Document\+Object}} \mbox{\hyperlink{class_file_object_a0c9650a6ae1efb95f8211f9fa3b883fe}{Document}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\mbox{\hyperlink{class_document_object}{Document\+Object}} \mbox{\hyperlink{class_file_object_a0c9650a6ae1efb95f8211f9fa3b883fe}{Document}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Reference to this files document object \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_file_object_a9d47aff166393cb47490da2661576d62}{Name}} = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em The file name of the domino attachment \end{DoxyCompactList}\item 
@@ -79,7 +79,7 @@ Extract the file from the X\+Pages U\+RL to a given file path
 \end{DoxyReturn}
 
 
-Definition at line 179 of file File\+Object.\+cs.
+Definition at line 180 of file File\+Object.\+cs.
 
 
 
@@ -91,18 +91,18 @@ Referenced by Document\+Object.\+Export\+Files().
 
 
 \begin{DoxyCode}
-179                                              \{
-180         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
-181 
-182         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_file_object_a36ff6c07d0662885402bfe7d98cf2988}{IsInitialized}}) \{
-183             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_file_object_a0c9650a6ae1efb95f8211f9fa3b883fe}{Document}}.\mbox{\hyperlink{class_document_object_a69d5338c9835f748490323d2950eed09}{Database}}.\mbox{\hyperlink{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}{Session}}.\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.
+180                                              \{
+181         \mbox{\hyperlink{class_connector}{Connector}}.ResetReturn();
+182 
+183         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_file_object_a36ff6c07d0662885402bfe7d98cf2988}{IsInitialized}}) \{
+184             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_file_object_a0c9650a6ae1efb95f8211f9fa3b883fe}{Document}}.\mbox{\hyperlink{class_document_object_a69d5338c9835f748490323d2950eed09}{Database}}.\mbox{\hyperlink{class_database_object_aa8484162b7d2a7c4c9426bca13c64c07}{Session}}.\mbox{\hyperlink{class_session_object_a014bdbf705a753540e19bfb53030c55c}{Connection}}.Request.
       ExecuteGetFileRequest(\mbox{\hyperlink{class_file_object_a7355eaeea3fe40bd8862d7f1f9b479da}{URL}}, filePath)) \{
-184                 \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a9365777a6b7b711b75bcfa6c4d53e989}{HasError}} = \textcolor{keyword}{false};
-185                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-186             \}
-187         \}
-188         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-189     \}
+185                 \mbox{\hyperlink{class_connector}{Connector}}.\mbox{\hyperlink{class_connector_a9365777a6b7b711b75bcfa6c4d53e989}{HasError}} = \textcolor{keyword}{false};
+186                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+187             \}
+188         \}
+189         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+190     \}
 \end{DoxyCode}
 
 
@@ -123,7 +123,7 @@ Definition at line 55 of file File\+Object.\+cs.
 
 
 \begin{DoxyCode}
-55 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
+55 \{ \textcolor{keyword}{get}; \textcolor{keyword}{protected} \textcolor{keyword}{internal} \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
 \end{DoxyCode}
 \mbox{\Hypertarget{class_file_object_a1ab7d29c80841b60b276b7430f4e5ec7}\label{class_file_object_a1ab7d29c80841b60b276b7430f4e5ec7}} 
 \index{File\+Object@{File\+Object}!Creator@{Creator}}
@@ -141,7 +141,7 @@ Definition at line 60 of file File\+Object.\+cs.
 
 
 \begin{DoxyCode}
-60 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
+60 \{ \textcolor{keyword}{get}; \textcolor{keyword}{protected} \textcolor{keyword}{internal} \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
 \end{DoxyCode}
 \mbox{\Hypertarget{class_file_object_a372b9a7dad068368526b0698550f9504}\label{class_file_object_a372b9a7dad068368526b0698550f9504}} 
 \index{File\+Object@{File\+Object}!Date\+Created@{Date\+Created}}
@@ -159,7 +159,7 @@ Definition at line 65 of file File\+Object.\+cs.
 
 
 \begin{DoxyCode}
-65 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}
+65 \{ \textcolor{keyword}{get}; \textcolor{keyword}{protected} \textcolor{keyword}{internal} \textcolor{keyword}{set}; \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_file_object_a9a4c52e205bee3f8bdfa7040f465b6af}\label{class_file_object_a9a4c52e205bee3f8bdfa7040f465b6af}} 
 \index{File\+Object@{File\+Object}!Date\+Modified@{Date\+Modified}}
@@ -177,13 +177,13 @@ Definition at line 70 of file File\+Object.\+cs.
 
 
 \begin{DoxyCode}
-70 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}
+70 \{ \textcolor{keyword}{get}; \textcolor{keyword}{protected} \textcolor{keyword}{internal} \textcolor{keyword}{set}; \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_file_object_a0c9650a6ae1efb95f8211f9fa3b883fe}\label{class_file_object_a0c9650a6ae1efb95f8211f9fa3b883fe}} 
 \index{File\+Object@{File\+Object}!Document@{Document}}
 \index{Document@{Document}!File\+Object@{File\+Object}}
 \subsubsection{\texorpdfstring{Document}{Document}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_document_object}{Document\+Object}} File\+Object.\+Document\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_document_object}{Document\+Object}} File\+Object.\+Document\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
 
 
@@ -199,7 +199,7 @@ Referenced by Extract\+File().
 
 
 \begin{DoxyCode}
-30 \{ \textcolor{keyword}{get}; \}
+30 \{ \textcolor{keyword}{get}; \textcolor{keyword}{protected} \textcolor{keyword}{internal} \textcolor{keyword}{set}; \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_file_object_ae25b58dc19def323da91a48e17ba13ed}\label{class_file_object_ae25b58dc19def323da91a48e17ba13ed}} 
 \index{File\+Object@{File\+Object}!Extension@{Extension}}
@@ -217,7 +217,7 @@ Definition at line 80 of file File\+Object.\+cs.
 
 
 \begin{DoxyCode}
-80 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
+80 \{ \textcolor{keyword}{get}; \textcolor{keyword}{protected} \textcolor{keyword}{internal} \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
 \end{DoxyCode}
 \mbox{\Hypertarget{class_file_object_a26fa0ac628fee2387b7f89c78f93842e}\label{class_file_object_a26fa0ac628fee2387b7f89c78f93842e}} 
 \index{File\+Object@{File\+Object}!Field\+Name@{Field\+Name}}
@@ -235,7 +235,7 @@ Definition at line 75 of file File\+Object.\+cs.
 
 
 \begin{DoxyCode}
-75 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
+75 \{ \textcolor{keyword}{get}; \textcolor{keyword}{protected} \textcolor{keyword}{internal} \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
 \end{DoxyCode}
 \mbox{\Hypertarget{class_file_object_a36ff6c07d0662885402bfe7d98cf2988}\label{class_file_object_a36ff6c07d0662885402bfe7d98cf2988}} 
 \index{File\+Object@{File\+Object}!Is\+Initialized@{Is\+Initialized}}
@@ -279,7 +279,7 @@ Referenced by Document\+Object.\+Export\+Files().
 
 
 \begin{DoxyCode}
-35 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
+35 \{ \textcolor{keyword}{get}; \textcolor{keyword}{protected} \textcolor{keyword}{internal} \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
 \end{DoxyCode}
 \mbox{\Hypertarget{class_file_object_ab91b5eca56a04784f8d0187247e1280c}\label{class_file_object_ab91b5eca56a04784f8d0187247e1280c}} 
 \index{File\+Object@{File\+Object}!Other@{Other}}
@@ -297,7 +297,7 @@ Definition at line 85 of file File\+Object.\+cs.
 
 
 \begin{DoxyCode}
-85 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
+85 \{ \textcolor{keyword}{get}; \textcolor{keyword}{protected} \textcolor{keyword}{internal} \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
 \end{DoxyCode}
 \mbox{\Hypertarget{class_file_object_a7aa7737c1ce05f4424ba16dded444949}\label{class_file_object_a7aa7737c1ce05f4424ba16dded444949}} 
 \index{File\+Object@{File\+Object}!Size@{Size}}
@@ -315,7 +315,7 @@ Definition at line 45 of file File\+Object.\+cs.
 
 
 \begin{DoxyCode}
-45 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \}
+45 \{ \textcolor{keyword}{get}; \textcolor{keyword}{protected} \textcolor{keyword}{internal} \textcolor{keyword}{set}; \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_file_object_a5e9b8f083b53ea0450a0560c16292a2f}\label{class_file_object_a5e9b8f083b53ea0450a0560c16292a2f}} 
 \index{File\+Object@{File\+Object}!Soft\+Class@{Soft\+Class}}
@@ -333,7 +333,7 @@ Definition at line 50 of file File\+Object.\+cs.
 
 
 \begin{DoxyCode}
-50 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
+50 \{ \textcolor{keyword}{get}; \textcolor{keyword}{protected} \textcolor{keyword}{internal} \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
 \end{DoxyCode}
 \mbox{\Hypertarget{class_file_object_a7355eaeea3fe40bd8862d7f1f9b479da}\label{class_file_object_a7355eaeea3fe40bd8862d7f1f9b479da}} 
 \index{File\+Object@{File\+Object}!U\+RL@{U\+RL}}
@@ -355,7 +355,7 @@ Referenced by Extract\+File().
 
 
 \begin{DoxyCode}
-40 \{ \textcolor{keyword}{get}; \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
+40 \{ \textcolor{keyword}{get}; \textcolor{keyword}{protected} \textcolor{keyword}{internal} \textcolor{keyword}{set}; \} = \textcolor{stringliteral}{""};
 \end{DoxyCode}
 
 

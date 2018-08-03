@@ -6,7 +6,7 @@
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>string _SearchField</para>
+                        <para>readonly string _SearchField</para>
                     </listitem>
                 </itemizedlist>
             </para>
@@ -148,6 +148,28 @@ Initializes the document by validating the input and triggering the document req
 Initializes the document by validating the input and triggering the document request
 This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects
 &lt;/summary&gt;</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_document_object_1a16350c0f471c95c82b418b7f1dc53694">InitializeWithFilesAndFields</link> (
+)<para><emphasis>&lt;summary&gt;
+Initializes the document by validating the input and triggering the document request
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and all fields
+&lt;/summary&gt;</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_document_object_1af68a4510477845f4a1dce889bab7ed2f">InitializeWithFilesAndFields</link> (
+string fields)<para><emphasis>&lt;summary&gt;
+Initializes the document by validating the input and triggering the document request</emphasis></para>
 </para>
                     </listitem>
                 </itemizedlist>
@@ -384,6 +406,53 @@ This function will, in addition to retrieving the default document information, 
 </para>
 
             </section>
+            <section xml:id="class_document_object_1a16350c0f471c95c82b418b7f1dc53694">
+                <title>bool DocumentObject.InitializeWithFilesAndFields ()</title> <emphasis>&lt;summary&gt;
+Initializes the document by validating the input and triggering the document request
+This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and all fields
+&lt;/summary&gt;</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>Boolean</para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="class_document_object_1af68a4510477845f4a1dce889bab7ed2f">
+                <title>bool DocumentObject.InitializeWithFilesAndFields (string fields)</title> <emphasis>&lt;summary&gt;
+Initializes the document by validating the input and triggering the document request</emphasis>
+                
+<para>This function will, in addition to retrieving the default document information, retrieve the associated domino attachment file objects and specific fields</para>
+
+<para>Provide the fields separated by ;</para>
+
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>fields</entry>
+                                <entry>
+<para>Field Names separated by ; </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>bool</para>
+</formalpara>
+</para>
+
+            </section>
             <section xml:id="class_document_object_1a8883fec3b5b1b6e2e43f4b5ca4092684">
                 <title>bool DocumentObject.GetFields (string fields)</title> <emphasis>&lt;summary&gt;
 Retrieve fields for this documents by triggering the field request</emphasis>
@@ -411,7 +480,7 @@ Retrieve fields for this documents by triggering the field request</emphasis>
                 </formalpara>
                 <formalpara><title>Returns: </title>
 
-<para>Boolean</para>
+<para>bool</para>
 </formalpara>
 </para>
 
