@@ -56,7 +56,7 @@
 31 <emphasis class="comment">//&#32;You&#32;can&#32;specify&#32;all&#32;the&#32;values&#32;or&#32;you&#32;can&#32;default&#32;the&#32;Build&#32;and&#32;Revision&#32;Numbers</emphasis>
 32 <emphasis class="comment">//&#32;by&#32;using&#32;the&#32;&apos;*&apos;&#32;as&#32;shown&#32;below:</emphasis>
 33 <emphasis class="comment">//&#32;[assembly:&#32;AssemblyVersion(&quot;1.0.*&quot;)]</emphasis>
-34 [assembly:&#32;AssemblyVersion(<emphasis class="stringliteral">&quot;0.0.0.3&quot;</emphasis>)]
-35 [assembly:&#32;AssemblyFileVersion(<emphasis class="stringliteral">&quot;0.0.0.3&quot;</emphasis>)]
+34 [assembly:&#32;AssemblyVersion(<emphasis class="stringliteral">&quot;0.0.0.4&quot;</emphasis>)]
+35 [assembly:&#32;AssemblyFileVersion(<emphasis class="stringliteral">&quot;0.0.0.4&quot;</emphasis>)]
     </computeroutput></literallayout>
 </section>

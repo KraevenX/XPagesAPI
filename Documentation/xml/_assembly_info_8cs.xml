@@ -42,8 +42,8 @@
 <codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">//<sp/>You<sp/>can<sp/>specify<sp/>all<sp/>the<sp/>values<sp/>or<sp/>you<sp/>can<sp/>default<sp/>the<sp/>Build<sp/>and<sp/>Revision<sp/>Numbers</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">//<sp/>by<sp/>using<sp/>the<sp/>&apos;*&apos;<sp/>as<sp/>shown<sp/>below:</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">//<sp/>[assembly:<sp/>AssemblyVersion(&quot;1.0.*&quot;)]</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal">[assembly:<sp/>AssemblyVersion(</highlight><highlight class="stringliteral">&quot;0.0.0.3&quot;</highlight><highlight class="normal">)]</highlight></codeline>
-<codeline lineno="35"><highlight class="normal">[assembly:<sp/>AssemblyFileVersion(</highlight><highlight class="stringliteral">&quot;0.0.0.3&quot;</highlight><highlight class="normal">)]</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">[assembly:<sp/>AssemblyVersion(</highlight><highlight class="stringliteral">&quot;0.0.0.4&quot;</highlight><highlight class="normal">)]</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">[assembly:<sp/>AssemblyFileVersion(</highlight><highlight class="stringliteral">&quot;0.0.0.4&quot;</highlight><highlight class="normal">)]</highlight></codeline>
     </programlisting>
     <location file="C:/Users/Acketk/source/repos/VSTS/XPagesAPI/XPagesAPI/Properties/AssemblyInfo.cs"/>
   </compounddef>
